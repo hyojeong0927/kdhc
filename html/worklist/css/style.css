@@ -1,0 +1,231 @@
+.pub-container {
+    min-width: 1920px;
+    height: 100%;
+    font-size: 13px;
+    background-color: #f6f6f6;
+}
+/* scroll bar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.pub-container a {
+    text-decoration: none;
+}
+.pub-container header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 80px;
+    background-color: #000;
+}
+.pub-container header h1 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+.pub-container header h1 small {
+    display: block;
+    padding-top: 5px;
+    color: #ddd;
+    font-size: 13px;
+    font-weight: normal;
+}
+.pub-container header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.pub-container header nav ul li a {
+    padding: 0 10px;
+    color: #fff;
+    text-decoration: none;
+}
+.pub-main {
+    padding: 20px;
+    height: calc(100% - 80px);
+}
+
+.pub-srch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.pub-srch .ul-select select {
+    width: 150px;
+}
+.pub-srch .projCount {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex: 1;
+    margin-left: auto;
+}
+.pub-tbl table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+.pub-tbl caption {
+    visibility: hidden;
+}
+.pub-tbl th, .pub-tbl td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+.pub-tbl th {
+    font-weight: bold;
+}
+.pub-tbl .center {
+    text-align: center;
+}
+.pub-tbl a {
+    color: #000;
+}
+.pub-tbl td button {
+    font-size: 12px;
+}
+.btn-top {
+    position: fixed;
+    bottom: 20px;
+    right: 37px;
+    background: #333;
+    color: #fff;
+    font-size: 11px;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+/* 진행 상태에 따라 색상 지정 */
+.projCount i {
+    font-weight: bold;
+}
+.ing {
+    color: blue;
+}
+.comp {
+    color: green;
+}
+.modi {
+    color: red;
+}
+.진행중 {
+    background-color: #f0f9ff;
+}
+
+.완료 {
+    background-color: #e6ffe6;
+}
+
+.진행대기 {
+    background-color: #fff;
+}
+.수정 {
+    background-color: #ffffd2;
+}
+
+/* popup */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+.popup-content {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f4f4f4;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.popup-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.popup-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+.popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.popup-iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    padding: 0;
+}
+.history-list {
+    counter-reset: custom-counter;
+    padding: 10px 20px 20px;
+    font-size: 13px;
+}
+.history-list li {
+    counter-increment: custom-counter;
+    display: flex;
+    align-items: normal;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+.history-list li::before {
+    content: counter(custom-counter) ")";
+    display: block;
+    font-weight: bold;
+}
+.history-list .date {
+    font-weight: bold;
+}

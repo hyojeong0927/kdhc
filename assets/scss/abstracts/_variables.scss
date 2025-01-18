@@ -1,0 +1,32 @@
+/* Variables
+========================================================================== */
+
+//colors
+$color-white: #fff;
+$color-blue: #1359c2;
+$color-light-gray: null;
+$color-dark-gray: null;
+
+// typography
+$ff: 'Noto Sans Kr', sans-serif;
+$fw-l:300;
+$fw-n: 400;
+$fw-b: 700;
+
+$fs-normal: 16px; // 1rem
+$fs-h1:  calc(56px / $fs-normal) * 1rem; // * 1rem 곱하면 rem 단위로 변함
+$fs-body: calc(24px / $fs-normal) * 1rem;
+
+$fs-xl: calc(72px / $fs-normal) * 1rem;
+$fs-l: calc(32px / $fs-normal) * 1rem;
+$fs-sm: calc(16px / $fs-normal) * 1rem;
+
+$ls: 5px; // letter-sacing
+.cls {
+    font-size: $fs-h1;
+}
+
+//기타
+$spacer: 1rem;  // $spacer 공간 단위
+$bs: 0 0 1rem $color-light-gray; // box-shadow
+$bs-accent: 0 0 1.2rem $color-dark-gray;

@@ -1,0 +1,9 @@
+/* Input, Textarea, Date Picker
+========================================================================== */
+$type: ('text', 'textarea', 'data-picker', 'number');
+
+.input {
+  .input-#{$type} {
+           
+    }
+}

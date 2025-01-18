@@ -1,0 +1,112 @@
+/* Media-query
+========================================================================== */
+$bp: default;
+$bp-next: default;
+$breakpoint: $bp (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$breakpoint-next: $bp-next (
+  xs: sm,
+  sm: md,
+  md: lg,
+  lg: xl,
+  xl: xxl,
+  xxl: '',
+);
+
+// min-width 이상 구간
+@mixin mq-breakpoint-up($bp) {
+  $min-value: map-get($breakpoint, $bg);
+  @if $bp == xs {
+    @content;
+  } @else {
+      @media screen and (min-width: $min-value) {
+        @content;
+      }
+  }
+}
+
+// max-width 이하 구간
+@mixin mq-breakpoint-down($bp) {
+  $max-value: map-get($breakpoint, $bg);
+  @if $bp == xs {
+    @error 'Breakpoint xs isn\'t available.'; // max 값이 0 일 경우 에러 메세지 출력
+  } @else {
+     $max-value: map-get($breakpoint, $bp) - 0.02px;
+  }
+  @media screen and (max-width: $max-value) {
+    @content;
+  }
+}
+
+// 해당 breakpint 구간
+@mixin mq-breakpoint-only($bp) {
+  $min-value: map-get($breakpoint, $bg);
+  $max-value: 0;
+  @if $bp == xs {
+    $max-value: map-get($breakpoint, sm) - 0.02px;
+    @media screen and (max-width: $max-value) {
+      @content;
+    }
+  } @else if $bp == xxl {
+    $min-value: map-get($breakpoint, xxl);
+    @media screen and (min-width: $min-value) {
+      @content;
+    }
+  } @else {
+    $bp-next: map-get($breakpoint, $bg);
+    $max-value: map-get($breakpoint, $bp-next) - 0.02px;
+    @media screen and (min-width: $min-value) and (max-width: $max-value) {
+      @content;
+    }
+  }
+}
+
+// 두 breakpoint 사이 구간
+@mixin mq-breakpoint-between($bp-min, $bp-max) {
+  $min-value: map-get($breakpoint, $bp-min);
+  $max-value: map-get($breakpoint, $bp-max) - 0.02px;
+  @media screen and (min-width: $min-value) and (max-width: $max-value) {
+    @content;
+  }
+}
+
+// @include 예시
+
+// min-width
+// @include media-breakpoint-up(xs) {}
+// @include media-breakpoint-up(sm) {}
+// @include media-breakpoint-up(md) {}
+// @include media-breakpoint-up(lg) {}
+// @include media-breakpoint-up(xl) {}
+// @include media-breakpoint-up(xxl) {}
+
+// // max-width
+// @include media-breakpoint-down(xs) {}
+// @include media-breakpoint-down(sm) {}
+// @include media-breakpoint-down(md) {}
+// @include media-breakpoint-down(lg) {}
+// @include media-breakpoint-down(xl) {}
+// @include media-breakpoint-down(xxl) {}
+
+// // single width
+// @include media-breakpoint-only(xs) {}
+// @include media-breakpoint-only(sm) {}
+// @include media-breakpoint-only(md) {}
+// @include media-breakpoint-only(lg) {}
+// @include media-breakpoint-only(xl) {}
+// @include media-breakpoint-only(xxl) {}
+
+// // between width min ~ max
+// @include media-breakpoint-between(xs) {}
+// @include media-breakpoint-between(sm) {}
+// @include media-breakpoint-between(md) {}
+// @include media-breakpoint-between(lg) {}
+// @include media-breakpoint-between(xl) {}
+// @include media-breakpoint-between(xxl) {}

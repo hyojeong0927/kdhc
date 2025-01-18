@@ -1,0 +1,223 @@
+/* Mixin
+========================================================================== */
+
+// mixin flex
+// @include flex($flexDirection, '$justifyContent', '$alignItems', $gap)
+// @include flex(true, 'end', 'start', 10px); 
+
+@mixin flex(
+    $flexDirection: true, 
+    $justifyContent:'start',
+    $alignItems: 'start',
+    $gap: 0px,
+    ) {
+    display: flex;
+
+    @if $flexDirection == true {
+        flex-direction: row;
+    } @else {
+        flex-direction: column;
+    }
+    @if $justifyContent == 'start' {
+        justify-content: flex-start;
+    } @else if $justifyContent == 'center' {
+        justify-content: center;
+    } @else if $justifyContent == 'end' {
+        justify-content: flex-end;
+    } @else if $justifyContent == 'around'{
+        justify-content: space-around;
+    } @else if $justifyContent == 'between'{
+        justify-content: space-between;
+    } @else if $justifyContent == 'evenly'{
+        justify-content: space-evenly;
+    } @else {
+      justify-content: flex-start;
+    }
+
+    @if $alignItems == 'start' {
+        align-items: flex-start;
+    } @else if $alignItems == 'center' {
+        align-items: center;
+    } @else if $alignItems == 'end' {
+        align-items: flex-end;
+    } @else {
+        align-items: normal;
+    }
+    gap: $gap;
+}
+// mixin grid
+// @include grid($columns: repeat(3, 1fr), $gap: 1rem);
+// @include grid(
+//   $columns: repeat(auto-fill, minmax(200px, 1fr)),
+//   $rows: auto,
+//   $gap: 2rem,
+//   $justifyItems: center,
+//   $alignItems: start
+// );
+// @include grid();
+@mixin grid(
+    $columns: auto,
+    $rows: auto,
+    $gap: 0,
+    $justifyItems: stretch,
+    $alignItems: stretch
+) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+    gap: $gap;
+    justify-items: $justifyItems;
+    align-items: $alignItems;
+}
+
+// Font
+// @include font(family SpoqaHanSans size rem(17) weight 300 lh 1.45);
+@mixin font($args) {
+    $props: style weight variant size size-adjust family stretch kerning line-height lh;
+  
+    @each $prop in $props {
+      $prop-index: index($args, $prop);
+      @if $prop-index {
+        $value: nth($args, $prop-index + 1);
+        @if $prop == 'line-height' or $prop == 'lh' {
+          line-height: $value;
+        } @else {
+          font-#{$prop}: $value;
+        }
+      }
+    }
+  }
+
+// Box
+// @include box($type, $header, $content, $footer, $round);
+// @include box(.box-type-02, true, true, false, 16px); 
+
+@mixin box (
+  $type: '.#{$type}',
+  $header: false,
+  $content: true,
+  $footer: false,
+  $round,
+  ) {
+    @if $type == '.box-row-01' {
+      @if $header == true {
+        .box-header {
+          border: none;
+        }
+      } @else {
+        .box-header {
+          display: none;
+        }
+      }
+      @if $content == true {
+        .box-content {
+          border: none;
+        }
+      } @else {
+        .box-content {
+          display: none;
+        }
+      }
+      @if $footer == true {
+        .box-footer {
+          border: none;
+        }
+      } @else {
+        .box-footer {
+          border-radius: $border-radius;
+        } 
+      }
+      @if $round == true {
+        border-radius: $round;
+      }
+    }
+    // box default value
+    display: block;
+    margin: 0 0 20px;
+    padding: 0 0 20px;
+}
+
+// :before, :after
+// $before($before, $absolute, 2px, 3px, 0px, 0px);
+// $before(true, true, 2px, 3px, 0px, 0px);
+@mixin before (
+  $before: true,
+  $content: '',
+  $absolute: true,
+  $left: 0px,
+  $top: 0px,
+  $right: 0px,
+  $bottom: 0px 
+  ) {
+    @if $before == true {
+      &::before {
+        content: $content;
+        display: block;
+        @if $absolute == true {
+          left: $left;
+          top: $top;
+          right: $right;
+          bottom: $bottom;
+        } @else {
+  
+        }
+      }
+     
+    } @else {
+      &::after {
+        content: $content;
+        display: block;
+        @if $absolute == true {
+          left: $left;
+          top: $top;
+          right: $right;
+          bottom: $bottom;
+        } @else {
+  
+        }
+      }
+    } 
+  
+}
+// icon
+// @include icon($icon-name, $width, $height, $url)
+@mixin icon (
+  $icon-name,
+  $width,
+  $height,
+  $url,
+) {
+  display: inline-block;
+  padding: 0;
+  background: {
+    size: 100%;
+    position: center;
+    repeat: no-repeat;
+  }
+  box-sizing: content-box;
+  transform: l;
+  &.#{$icon-name} {
+    width: $width;
+    height: $height;
+    background-image: url("$url");
+  }
+}
+
+// scroll
+@mixin scroll-y {
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #888; 
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+}

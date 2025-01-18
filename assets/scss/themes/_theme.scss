@@ -1,0 +1,13 @@
+/* Theme
+========================================================================== */
+$theme-types: ('top', 'left', 'right', 'down');
+
+.theme {
+
+    @each $bt in $theme-types {
+        .theme-#{$bt} {
+           
+        }
+    }
+    
+}

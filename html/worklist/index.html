@@ -1,0 +1,109 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퍼블현황</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <section class="pub-container">
+        <header>
+            <h1>퍼블현황 <small>local에서 리스트가 안보일 경우 vscode에서 live server 로 오픈</small></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">1차</a></li>
+                    <li><a href="../guide/index.html" target="_blank">Guide/Common</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="pub-main">
+            <div class="pub-srch">
+                <div class="ul-select">
+                    <label for="projState">진행상태</label>
+                    <!-- 퍼블 진행 상태 필터 -->
+                    <select id="projState">
+                        <option value="전체">전체</option>
+                        <option value="진행대기">진행대기</option>
+                        <option value="진행중">진행중</option>
+                        <option value="완료">완료</option>
+                        <option value="수정">수정</option>
+                        <option value="보류">보류</option>
+                        <option value="제외">제외</option>
+                    </select>
+                </div>
+                <div class="ul-select">
+                    <label for="projCategory">Category</label>
+                    <!-- depth1 기준 필터 -->
+                    <select id="projCategory">
+                        <option value="전체">전체</option>
+                        <option value="menu00">menu00</option>
+                        <option value="menu01">menu01</option>
+                        <option value="menu02">menu02</option>
+                        <option value="menu03">menu03</option>
+                        <option value="menu04">menu04</option>
+                        <option value="menu05">menu05</option>
+                    </select>
+                </div>
+                <div class="projCount"><!-- 퍼블리싱 전체 현황 Counter 나오는 곳 --></div>
+            </div>
+            <div class="pub-tbl">
+                <table>
+                    <caption>퍼블리싱 작업 리스트</caption>
+                    <colgroup>
+                        <col width="50px" />
+                        <col />
+                        <col />
+                        <col />
+                        <col />
+                        <col width="100px" />
+                        <col width="100px" />
+                        <col />
+                        <col width="100px" />
+                        <col width="100px" />
+                        <col width="100px" />
+                        <col width="100px" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Depth-01</th>
+                            <th scope="col">Depth-02</th>
+                            <th scope="col">Depth-03</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Folder</th>
+                            <th scope="col">File</th>
+                            <th scope="col">진행상태</th>
+                            <th scope="col">시작</th>
+                            <th scope="col">완료</th>
+                            <th scope="col">History</th>
+                        </tr>
+                    </thead>
+                    <tbody><!-- 퍼블리싱 데이터 나오는 곳 --></tbody>
+                </table>
+            </div>
+        </main>
+    </section>
+    <!-- top 이동 버튼 -->
+    <button type="button" class="btn-top">
+        <span>Top</span>
+    </button>
+    <!-- script -->
+    <script src="./js/worklist.js" type="module"></script>
+    <!-- popup -->
+    <div id="layerPopup" class="popup hidden">
+        <div class="popup-overlay"></div>
+        <div class="popup-content">
+            <!-- popup header -->
+            <div class="popup-header">
+                <h2 class="popup-title">ID:</h2>
+                <button class="popup-close">x</button>
+            </div>
+            <!-- popup content -->
+            <iframe src="" frameborder="0" class="popup-iframe"></iframe>
+        </div>
+    </div>
+</body>
+</html>

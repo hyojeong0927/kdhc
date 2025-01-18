@@ -1,0 +1,27 @@
+/* List
+========================================================================== */
+$ulist-types: ('01', '02', '03');
+$dlist-types: ('01', '02', '03');
+$olist-types: ('01', '02', '03');
+
+.ulist {
+    @each $ut in $ulist-types {
+        .ulist-#{$ut} {
+            
+        }
+    }
+}
+.dlist {
+    @each $dt in $dlist-types {
+        .dlist-#{$dt} {
+            
+        }
+    }
+}
+.olist {
+    @each $ot in $olist-types {
+        .olist-#{$ot} {
+            
+        }
+    }
+}
