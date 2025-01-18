@@ -27,7 +27,7 @@
         padding: 20px;
         width: 250px;
         height: calc(100% - 50px);
-        background-color: #f4f4f4;
+        background-color: #f1f1f1;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     }
 
@@ -127,6 +127,39 @@
             line-height: 1.2;
             border: none;
             background-color: #555;
+        }
+    }
+    .cont-box {
+        padding: 10px 0 20px;
+    }
+    .tbl-wrap {
+        .tbl {
+            width: 100%;
+            caption {
+                visibility: hidden;
+            }
+            thead {
+                th {
+                    padding: 10px;
+                    text-align: center;
+                    border: 1px solid #fff;
+                    background-color: #ddd;
+                }
+            }
+            tbody {
+                th {
+                    padding: 10px;
+                    text-align: center;
+                    border: 1px solid #fff;
+                    background-color: #ddd;
+                }
+                td {
+                    padding: 10px;
+                    text-align: left;
+                    border: 1px solid #ddd;
+                    background-color: #fff;
+                }
+            }
         }
     }
 }

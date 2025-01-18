@@ -98,9 +98,11 @@
 }
 .pub-tbl a {
     color: #000;
+    text-decoration: underline;
 }
 .pub-tbl td button {
     font-size: 12px;
+    text-decoration: underline;
 }
 .btn-top {
     position: fixed;

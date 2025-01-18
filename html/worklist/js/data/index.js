@@ -14,7 +14,6 @@ const allProjects = [
     ...menu05Projects
 ];
 
-// Exporting the 'projects' variable
 export const projects = allProjects;
 
 console.log(projects);
