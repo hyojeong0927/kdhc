@@ -1,75 +1,58 @@
 let gridApi;
 
+const columnDefs = [
+  {
+    headerCheckboxSelection: true,
+    checkboxSelection: true,
+    width: 50,
+  },
+  {
+    field: "category",
+    editable: true,
+    cellEditor: 'agTextCellEditor',
+  },
+  { field: "item" },
+  { field: "price" },
+  {
+    field: "선택",
+    editable: true,
+    cellEditor: 'agSelectCellEditor',
+    cellRenderer: (params) => {
+      // Return the value as a set of checkboxes (for display purpose)
+      const values = params.value ? params.value.split(',') : [];
+      return `<input type="checkbox" ${values.includes('1') ? 'checked' : ''} /> 1
+              <input type="checkbox" ${values.includes('2') ? 'checked' : ''} /> 2
+              <input type="checkbox" ${values.includes('3') ? 'checked' : ''} /> 3`;
+    },
+    // This can also be implemented in a more sophisticated way using a custom editor
+    valueSetter: (params) => {
+      // Get the selected checkbox values and update the model
+      const selectedValues = [];
+      if (params.newValue.includes('1')) selectedValues.push('1');
+      if (params.newValue.includes('2')) selectedValues.push('2');
+      if (params.newValue.includes('3')) selectedValues.push('3');
+      params.data[params.colDef.field] = selectedValues.join(',');
+      return true;
+    }
+  },
+];
+
+const rowData = [
+  { category: "Electronics", item: "Laptop", price: 1000, 선택: "1" },
+  { category: "Electronics", item: "Phone", price: 500, 선택: "2" },
+  { category: "Electronics", item: "Tablet", price: 300, 선택: "3" },
+  { category: "Furniture", item: "Chair", price: 100, 선택: "1,3" },
+  { category: "Furniture", item: "Table", price: 200, 선택: "2" },
+];
+
 const gridOptions = {
-  columnDefs: [
-    { field: "athlete", width: 150 },
-    { field: "age", width: 90 },
-    { 
-      field: "country", 
-      width: 150,
-      editable: true,
-    },
-    { field: "year", width: 90 },
-    { field: "date", width: 150 },
-    { field: "sport", width: 150 },
-    { field: "gold", width: 100 },
-    { field: "silver", width: 100 },
-    { field: "bronze", width: 100 },
-    { field: "total", width: 100 },
-    { 
-      field: "선택", 
-      width: 300,
-      colSpan: function(params) {
-        return 3;
-      },
-      cellRenderer: function(params) {
-        const container = document.createElement('div');
-        container.style.display = 'flex';
-        container.style.gap = '10px';
-
-        const numberOfCheckboxes = 3;
-        const values = params.value || Array(numberOfCheckboxes).fill(false);
-
-        for (let i = 0; i < numberOfCheckboxes; i++) {
-          const checkbox = document.createElement('input');
-          checkbox.type = 'checkbox';
-          checkbox.checked = values[i];
-          checkbox.addEventListener('change', () => {
-            values[i] = checkbox.checked;
-            params.setValue(values);
-          });
-
-          container.appendChild(checkbox);
-        }
-
-        return container;
-      },
-    },
-  ],
-  
+  columnDefs: columnDefs,
+  rowData: rowData,
+  defaultColDef: {
+    resizable: true,
+  },
+  suppressRowClickSelection: true,
 };
-
-function fillLarge() {
-  setWidthAndHeight("100%");
-}
-
-function fillMedium() {
-  setWidthAndHeight("60%");
-}
-
-function fillExact() {
-  setWidthAndHeight("700px");
-}
-
-function setWidthAndHeight(size) {
-  const eGridDiv = document.querySelector("#myGrid");
-  eGridDiv.style.setProperty("width", size);
-  eGridDiv.style.setProperty("height", size);
-}
 
 const gridDiv = document.querySelector("#myGrid");
 gridApi = agGrid.createGrid(gridDiv, gridOptions);
-
-fetch("https://www.ag-grid.com/example-assets/olympic-winners.json")
-  .then((response) => response.json())
-  .then((data) => gridApi.setGridOption("rowData", data));
