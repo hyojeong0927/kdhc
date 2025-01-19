@@ -628,6 +628,7 @@ template {
   height: 48px !important;
   min-height: 48px !important;
 }
+.colspan .ag-column-first,
 .colspan .colspan {
   height: 48px !important;
 }

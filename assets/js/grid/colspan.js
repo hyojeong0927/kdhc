@@ -10,6 +10,11 @@ const rowData = [
 const colspanGridOptions = {
     columnDefs: [
         {
+            headerCheckboxSelection: true, 
+            checkboxSelection: true,
+            width: 50,
+        },
+        {
             headerName: "이름",
             field: "name",
             headerClass: 'colspan',
@@ -88,24 +93,36 @@ const colspanGridOptions = {
                     field: 'col3',
                     width: 50,
                     headerClass: 'header-hidden',
-                    headerCheckboxSelection: true,
-                    checkboxSelection: true,
+                    cellRenderer: (params) => {
+                        const values = params.value ? params.value.split(',') : [];
+                        return `
+                            <input type="checkbox" ${values.includes('1') ? 'checked' : ''} />
+                        `;
+                    },
                 },
                 {
                     headerName: '3.2',
                     field: 'col4',
                     width: 50,
                     headerClass: 'header-hidden',
-                    headerCheckboxSelection: true,
-                    checkboxSelection: true,
+                    cellRenderer: (params) => {
+                        const values = params.value ? params.value.split(',') : [];
+                        return `
+                            <input type="checkbox" ${values.includes('1') ? 'checked' : ''} />
+                        `;
+                    },
                 },
                 {
                     headerName: '3.3',
                     field: 'col5',
                     width: 50,
                     headerClass: 'header-hidden',
-                    headerCheckboxSelection: true,
-                    checkboxSelection: true,
+                    cellRenderer: (params) => {
+                        const values = params.value ? params.value.split(',') : [];
+                        return `
+                            <input type="checkbox" ${values.includes('1') ? 'checked' : ''} />
+                        `;
+                    },
                 }
             ]
         },
@@ -125,5 +142,3 @@ const colspanGridOptions = {
 
 const colspanGridDiv = document.querySelector('#colspanGrid');
 colspanGridApi = agGrid.createGrid(colspanGridDiv, colspanGridOptions);
-
-
