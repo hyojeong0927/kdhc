@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grid Example</title>
+    <title>AG Grid</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../../assets/css/index.css">
     <!-- Includes all JS & CSS for the JavaScript Data Grid -->
@@ -11,135 +11,15 @@
 <body>
     <article class="guide-contents">
         <div class="title">
-            <h3>AG Grid Example</h3>
+            <h3>AG Grid</h3>
         </div>
-        <div id="myGrid" class="ag-theme-alpine" style="width: 100%; height: 500px;"></div>
-        <script>
-            const rowData = [
-                { name: "민지", birth: "2004-05-07", nationality: "대한민국" },
-                { name: "하니", birth: "2004-10-06", nationality: "호주|베트남" },
-                { name: "다니엘", birth: "2005-04-11", nationality: "호주|한국" },
-                { name: "해린", birth: "2006-05-15", nationality: "대한민국" },
-                { name: "혜인", birth: "2008-04-21", nationality: "대한민국" }
-            ];
-
-            const gridOptions = {
-                rowData: rowData,
-                columnDefs: [
-                    {
-                        headerCheckboxSelection: true,
-                        checkboxSelection: true,
-                        width: 50,
-                    },
-                    { 
-                        field: "name",
-                        headerName: "이름",
-                        editable: true,
-                        cellEditor: 'agTextCellEditor',
-                        tooltipField: "country",
-                        headerTooltip: "Tooltip for Athlete Column Header",
-                    },
-                    { 
-                        field: "birth",
-                        headerName: "생일",
-                        editable: true,
-                        cellRenderer: MyComp
-                    },
-                    { 
-                        field: "nationality",
-                        headerName: "국적",
-                        cellStyle: { textAlign: "center" },
-                        tooltipValueGetter: (p) =>
-                            "This is a dynamic tooltip using the value of " + p.value,
-                        headerTooltip: "Tooltip for Age Column Header",
-                    },
-                    {
-                        field: "선택",
-                        cellRenderer: (params) => {
-                       
-                        const values = params.value ? params.value.split(',') : [];
-                        return `<input type="checkbox" ${values.includes('1') ? 'checked' : ''} />
-                                <input type="checkbox" ${values.includes('2') ? 'checked' : ''} />
-                                <input type="checkbox" ${values.includes('3') ? 'checked' : ''} />`;
-                        },
-
-                        valueSetter: (params) => {
-
-                            const selectedValues = [];
-                            if (params.newValue.includes('1')) selectedValues.push('1');
-                            if (params.newValue.includes('2')) selectedValues.push('2');
-                            if (params.newValue.includes('3')) selectedValues.push('3');
-                            params.data[params.colDef.field] = selectedValues.join(',');
-                            return true;
-                        }
-                    },
-                ],
-                autoSizeStrategy: {
-                    type: 'fitGridWidth',
-                    defaultMinWidth: 50
-                },
-                rowHeight: 45,
-               // enables pagination in the grid
-                pagination: true,
-                paginationPageSize: 10,
-                paginationPageSizeSelector: [10, 20, 50, 100],
-                tooltipShowDelay: 500,
-            };
-
-            function MyComp() {
-                return this;
-            }
-
-            MyComp.prototype.init = function (params) {
-                this.eGui = document.createElement('div');
-                this.eGui.innerHTML = `
-                    <input type="date" value="" class="myCal" style="border:0px;width:0px"> 
-                    <span class="mySpan">${params.value}</span> 
-                `;
-
-                this.myCal = this.eGui.querySelector('.myCal')
-                this.mySpan = this.eGui.querySelector('.mySpan')
-                this.mySpan.onclick = () => {
-                    this.myCal.showPicker();
-                }
-                this.myCal.onchange = () => {
-                    console.log("check", this.myCal.value);
-                    this.mySpan.innerHTML = this.myCal.value;
-                }
-            }
-
-            MyComp.prototype.getGui = function () {
-                console.log("check1");
-                return this.eGui;
-            }
-
-            MyComp.prototype.refresh = function () {
-                console.log("check2");
-                return true;
-            }
-
-            MyComp.prototype.destroy = function () {
-                console.log("check3");
-            }
-
-            function ranDate() {
-                let now = new Date();
-                now.setDate(now.getDate() - Math.floor(Math.random() * 90));
-
-                let rYear = now.getFullYear();
-
-                let rMonth = now.getMonth() + 1;
-                if (rMonth < 10) rMonth = "0" + rMonth;
-
-                let rDate = now.getDate();
-                if (rDate < 10) rDate = "0" + rDate;
-
-                return `${rYear}-${rMonth}-${rDate}`;
-            }
-            const gridDiv = document.querySelector('#myGrid');
-            const gridApi = agGrid.createGrid(gridDiv, gridOptions);
-        </script>
-        <!-- <script src="../../assets/js/data/sample.js"></script> -->
+        <h4>normal / cellEditor</h4>
+        <div id="normalLayout" style="width: 100%; height: 400px;"></div>
+        <br />
+        <h4>multi checkbox / date / tooltip / pagination / colspan / cellStyle</h4>
+        <div id="colspanGrid" class="colspan" style="width: 100%; height: 400px;"></div>
     </article>
+    <script src="../../assets/js/grid/normal.js"></script>
+    <script src="../../assets/js/grid/colspan.js"></script>
 </body>
 </html>

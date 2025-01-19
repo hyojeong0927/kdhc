@@ -131,6 +131,19 @@
     }
     .cont-box {
         padding: 10px 0 20px;
+        textarea {
+            margin-top: 10px;
+            padding: 10px;
+            width: 800px;
+            height: 500px;
+            color: #fff;
+            line-height: 1.2;
+            border: none;
+            background-color: #555;
+            &.sm {
+                height: 100px;
+            }
+        }
     }
     .tbl-wrap {
         .tbl {
@@ -159,6 +172,9 @@
                     border: 1px solid #ddd;
                     background-color: #fff;
                 }
+            }
+            &.md {
+                width: 900px;
             }
         }
     }

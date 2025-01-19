@@ -1,2 +1,16 @@
 /* AG Grid
 ========================================================================== */
+.header-hidden {
+    display: none;
+}
+
+.colspan {
+    .ag-header {
+        height: 48px !important;
+        min-height: 48px !important;
+    }
+    .colspan {
+        height: 48px !important;
+    }
+}
+
