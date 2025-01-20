@@ -624,6 +624,11 @@ template {
   display: none;
 }
 
+.empty-input {
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+
 .colspan .ag-header {
   height: 48px !important;
   min-height: 48px !important;
