@@ -5,7 +5,7 @@ const rowData = [
         nationality: "대한민국",
         input: "",
         boolean: true,
-        language: 'English',
+        language: "English",
         number: 1,
     },
     {
@@ -14,7 +14,7 @@ const rowData = [
         nationality: "호주|베트남",
         input: "입력값2",
         boolean: false,
-        language: 'Spanish',
+        language: "Spanish",
         number: 2,
     },
     {
@@ -23,7 +23,7 @@ const rowData = [
         nationality: "호주|,한국",
         input: "입력값3",
         boolean: true,
-        language: 'French',
+        language: "French",
         number: 0,
     },
     {
@@ -32,7 +32,7 @@ const rowData = [
         nationality: "대한민국",
         input: "입력값4",
         boolean: false,
-        language: '',
+        language: "",
         number: 0,
     },
     {
@@ -41,7 +41,7 @@ const rowData = [
         nationality: "대한민국",
         input: "입력값5",
         boolean: false,
-        language: 'other',
+        language: "other",
         number: 6,
     }
 ];
@@ -52,7 +52,7 @@ const columnDefs = [
         headerName: "이름(agTextCellEditor)",
         field: "name",
         headerClass: "colspan",
-        cellEditor: 'agTextCellEditor',
+        cellEditor: "agTextCellEditor",
         tooltipField: "country",
         headerTooltip: "Tooltip for Athlete Column Header",
     },
@@ -85,49 +85,56 @@ const columnDefs = [
         headerName: "입력(rowIndex)",
         field: "input",
         headerClass: "colspan",
-        cellEditor: 'agTextCellEditor',
+        cellEditor: "agTextCellEditor",
         cellClassRules: {
-            'empty-input': (params) => !params.value || params.value.trim() === '',
+            "empty-input": (params) => !params.value || params.value.trim() === "", 
+        },
+        valueFormatter: function (params) {
+            const editingCells = params.api.getEditingCells();
+            const isEditing = editingCells.some(cell => 
+                cell.rowIndex === params.node.rowIndex && cell.column.getId() === params.column.getId()
+            );
+            return !isEditing && (!params.value || params.value.trim() === "") ? "입력하세요" : params.value;
         },
         // 특정 인덱스에만 넣을 경우
         // cellRenderer: (params) => {
         //     const rowIndex = params.node.rowIndex;
         //     if (rowIndex === 0) {
-        //         const values = params.value ? params.value.split(',') : [];
+        //         const values = params.value ? params.value.split(",") : [];
         //         return `
-        //             <input type="text" value="${values.includes('1') ? '1' : ''}" />
+        //             <input type="text" value="${values.includes("1") ? "1" : ""}" />
         //         `;
         //     } else {
-        //         return params.value || '';
+        //         return params.value || "";
         //     }
         // }
     },
   
     {
-        headerName: 'colspan(sort 안됨)',
+        headerName: "colspan(sort 안됨)",
         headerClass: "colspan",
         children: [
             {
-                headerName: '3.1',
+                headerName: "3.1",
                 field: "boolean",
                 width: 50,
-                headerClass: 'header-hidden',
-                cellEditor: 'agCheckboxCellEditor',
+                headerClass: "header-hidden",
+                cellEditor: "agCheckboxCellEditor",
             },
             {
-                headerName: '3.2',
+                headerName: "3.2",
                 field: "boolean",
                 width: 50,
-                headerClass: 'header-hidden',
-                cellEditor: 'agCheckboxCellEditor',
+                headerClass: "header-hidden",
+                cellEditor: "agCheckboxCellEditor",
             },
             {
-                headerName: '3.3',
+                headerName: "3.3",
                 field: "boolean",
                 width: 50,
-                headerClass: 'header-hidden',
-                cellRenderer: 'agCheckboxCellRenderer',
-                cellEditor: 'agCheckboxCellEditor',
+                headerClass: "header-hidden",
+                cellRenderer: "agCheckboxCellRenderer",
+                cellEditor: "agCheckboxCellEditor",
             }
         ]
     },
@@ -140,14 +147,26 @@ const columnDefs = [
             values: languages,
         },
         cellClassRules: {
-            'empty-input': (params) => !params.value || params.value.trim() === '',
+            "empty-input": (params) => !params.value || params.value.trim() === "",
+        },
+        valueFormatter: function (params) {
+            if (!params.node || !params.column || !params.api) {
+                return params.value || "선택하세요";
+            }
+            const editingCells = params.api.getEditingCells();
+            const isEditing = editingCells.some(cell => 
+                cell.rowIndex === params.node.rowIndex && cell.column.getId() === params.column.getId()
+            );
+            return !isEditing && (!params.value || params.value.trim() === "")
+                ? "선택하세요"
+                : params.value;
         },
     },
     {
         headerName: "Number Cell Editor",
         field: "number",
         headerClass: "colspan",
-        cellEditor: 'agNumberCellEditor',
+        cellEditor: "agNumberCellEditor",
         cellEditorParams: {
             min: 0,
             max: 100
@@ -209,5 +228,5 @@ const sampleGridOptions = {
     tooltipShowDelay: 500,
 };
 
-const sampleGridDiv = document.querySelector('#sampleGrid');
+const sampleGridDiv = document.querySelector("#sampleGrid");
 sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
