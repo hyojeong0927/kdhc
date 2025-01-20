@@ -181,7 +181,6 @@ class CustomMultiNumberCellEditor {
         this.container.style.gap = "5px";
 
         const values = params.value ? params.value.split(",") : ["", "", ""];
-
         this.inputs = [];
         for (let i = 0; i < 3; i++) {
             const input = document.createElement("input");
@@ -195,15 +194,12 @@ class CustomMultiNumberCellEditor {
             this.container.appendChild(input);
         }
     }
-
     getGui() {
         return this.container;
     }
-
     getValue() {
         return this.inputs.map(input => input.value || "").join(",");
     }
-
     destroy() {
     }
 }
