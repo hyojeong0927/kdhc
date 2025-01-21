@@ -13,16 +13,16 @@
 		</header>
 		<aside>
 			<nav>
-				<h2>Guide</h2>
-				<ul>
+				<h2 class="lnb-dropdown">Guide</h2>
+				<ul class="lnbList">
 					<li><a href="rule.html">Rule</a></li>
 					<li><a href="term.html">Term</a></li>
 					<li><a href="color.html">Color</a></li>
 					<li><a href="typography.html">Typography</a></li>
 					<li><a href="layout.html">Layout</a></li>
 				</ul>
-				<h2>Common</h2>
-				<ul>
+				<h2 class="lnb-dropdown">Common</h2>
+				<ul class="lnbList">
 					<li><a href="../common/accorion.html">Accordion</a></li>
 					<li><a href="../common/ag-grid.html">AG Grid</a></li>
 					<li><a href="../common/alert.html">Alert</a></li>
@@ -71,6 +71,20 @@
 				iframe.src = link.getAttribute('href');
 			});
 		});
+		
+		const acc = document.getElementsByClassName("lnb-dropdown");
+
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", () => {
+                acc[i].classList.toggle("active");
+                const lnbList = acc[i].nextElementSibling;
+                if (lnbList.style.maxHeight) {
+                    lnbList.style.maxHeight = null;
+                } else {
+                    lnbList.style.maxHeight = `${lnbList.scrollHeight}px`;
+                }
+            });
+        }
 	</script>
 </body>
 </html>

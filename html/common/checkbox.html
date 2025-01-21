@@ -103,19 +103,20 @@
         <!-- 전체 선택 체크박스 스크립트 -->
         <script>
             document.getElementById('selectAllCheckbox')
-            .addEventListener('change', function () {
-                let checkboxes = document.querySelectorAll('.checkboxes');
-                checkboxes.forEach(function (checkbox) {
-                    checkbox.checked = this.checked;
-                }, this);
-            });
-            let individualCheckboxes = document.querySelectorAll('.checkboxes');
-            individualCheckboxes.forEach(function (checkbox) {
-                checkbox.addEventListener('change', function () {
-                    let allChecked = Array.from(individualCheckboxes).every(cb => cb.checked);
-                    document.getElementById('selectAllCheckbox').checked = allChecked;
+            .addEventListener('change', (event) => {
+                const checkboxes = document.querySelectorAll('.checkboxes');
+                checkboxes.forEach((checkbox) => {
+                    checkbox.checked = event.target.checked;
                 });
             });
+
+        const individualCheckboxes = document.querySelectorAll('.checkboxes');
+        individualCheckboxes.forEach((checkbox) => {
+            checkbox.addEventListener('change', () => {
+                const allChecked = Array.from(individualCheckboxes).every(cb => cb.checked);
+                document.getElementById('selectAllCheckbox').checked = allChecked;
+            });
+        });
         </script>
     </article>
 </body>
