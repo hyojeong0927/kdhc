@@ -1,0 +1,33 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snackbar / Toast</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../assets/css/index.css">
+</head>
+<body>
+    <article class="guide-contents">
+        <div class="title">
+			<h3>Snackbar / Toast</h3>
+		</div>
+        <!-- Use a button to open the snackbar -->
+        <button onclick="myFunction()">Show Snackbar</button>
+
+        <!-- The actual snackbar -->
+        <div id="snackbar">Some text some message..</div>
+    </article>
+    <script>
+        function myFunction() {
+            // Get the snackbar DIV
+            var x = document.getElementById("snackbar");
+
+            // Add the "show" class to DIV
+            x.className = "show";
+
+            // After 3 seconds, remove the show class from DIV
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }
+    </script>
+</body>
+</html>

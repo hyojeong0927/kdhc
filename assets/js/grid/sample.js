@@ -111,7 +111,7 @@ const columnDefs = [
     },
   
     {
-        headerName: "colspan(sort 안됨)",
+        headerName: "merge(sort 안됨)",
         headerClass: "colspan",
         children: [
             {
