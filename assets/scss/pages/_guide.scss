@@ -32,10 +32,14 @@
     }
 
     nav h2 {
+        cursor: pointer;
         margin-bottom: 10px;
         color: #333;
         font-size: 16px;
         font-weight: bold;
+        &.active {
+            background-color: transparent;
+        }
     }
 
     nav ul {

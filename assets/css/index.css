@@ -1026,10 +1026,14 @@ template {
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 .guide-container nav h2 {
+  cursor: pointer;
   margin-bottom: 10px;
   color: #333;
   font-size: 16px;
   font-weight: bold;
+}
+.guide-container nav h2.active {
+  background-color: transparent;
 }
 .guide-container nav ul {
   margin: 0 0 20px;
