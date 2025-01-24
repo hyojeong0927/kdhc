@@ -93,9 +93,9 @@ function updateCounts(filteredProjects) {
     projCount.innerHTML = `
         <span>전체: <i>${counts.전체}</i>건,</span>
         <span>진행대기: <i>${counts.진행대기}</i>건(${((counts.진행대기 / total) * 100).toFixed(1)}%),</span>
-        <span>진행중: <i class="ing">${counts.진행중}</i>건(${((counts.진행중 / total) * 100).toFixed(1)}%),</span>
-        <span>완료: <i class="comp">${counts.완료}</i>건(${((counts.완료 / total) * 100).toFixed(1)}%),</span>
-        <span>수정: <i class="modi">${counts.수정}</i>건(${((counts.수정 / total) * 100).toFixed(1)}%),</span>
+        <span class="box-ing">진행중: <i class="ing">${counts.진행중}</i>건(${((counts.진행중 / total) * 100).toFixed(1)}%),</span>
+        <span class="box-comp">완료: <i class="comp">${counts.완료}</i>건(${((counts.완료 / total) * 100).toFixed(1)}%),</span>
+        <span class="box-modi">수정: <i class="modi">${counts.수정}</i>건(${((counts.수정 / total) * 100).toFixed(1)}%),</span>
         <span>보류: <i>${counts.보류}</i>건(${((counts.보류 / total) * 100).toFixed(1)}%),</span>
         <span>제외: <i>${counts.제외}</i>건(${((counts.제외 / total) * 100).toFixed(1)}%),</span>
         <span>표시된: <i>${filteredProjects.length}</i>건</span>

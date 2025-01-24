@@ -123,11 +123,20 @@
 .ing {
     color: blue;
 }
+.box-ing {
+    background-color: #f0f9ff;
+}
 .comp {
     color: green;
 }
+.box-comp {
+    background-color: #e6ffe6;
+}
 .modi {
     color: red;
+}
+.box-modi {
+    background-color: #ffffd2;
 }
 .진행중 {
     background-color: #f0f9ff;
