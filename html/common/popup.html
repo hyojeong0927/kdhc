@@ -5,6 +5,7 @@
     <title>popup</title>
     <!-- css -->
     <link rel="stylesheet" href="../../assets/css/index.css">
+    
 </head>
 <body>
     <article class="guide-contents">
@@ -29,10 +30,50 @@
 			</ol>
 		</div>
         <div class="cont-box">
-            <button>small popup</button>
-            <button>medium popup</button>
-            <button>large popup</button>
+            <button onclick="openPopup('small')">small</button>
+            <button onclick="openPopup('medium')">medium</button>
+            <button onclick="openPopup('large')">large</button>
         </div>
     </article>
+   
+    <script>
+        const urlList = {
+            small: 'https://www.naver.com?type=small',
+            medium: 'https://www.daum.net?type=medium',
+            large: 'https://www.google.com?type=large',
+        };
+        function openPopup(size) {
+            const url = urlList[size];
+            if (!url) {
+                alert('잘못된 크기 선택입니다.');
+                return;
+            }
+            let width, height;
+
+            // 팝업 크기 설정
+            if (size === 'small') {
+                width = 300;
+                height = 200;
+            } else if (size === 'medium') {
+                width = 600;
+                height = 400;
+            } else if (size === 'large') {
+                width = 1200;
+                height = 800;
+            }
+
+            const left = window.screenX + (window.innerWidth - width) / 2;
+            const top = window.screenY + (window.innerHeight - height) / 2;
+
+            const features = `width=${width},height=${height},top=${top},left=${left},scrollbars=yes,resizable=yes`;
+            const popup = window.open(url, `Popup${size}`, features);
+
+            if (popup) {
+                console.log(`${size} 팝업 창이 성공적으로 열렸습니다.`);
+            } else {
+                console.error('팝업이 차단되었습니다.');
+            }
+        }
+    </script>
 </body>
 </html>
