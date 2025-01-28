@@ -36,7 +36,7 @@
     </article>
    
     <script type="module">
-        import { openPopupWindow } from '../../assets/js/common.js';
+        import { setupPopupListeners } from '../../assets/js/common.js';
     
         const urlList = {
             small: 'https://www.naver.com?type=small',
@@ -44,32 +44,7 @@
             large: 'https://www.google.com?type=large',
         };
 
-        function openPopup(size) {
-            const url = urlList[size];
-
-            if (!url) {
-                alert('잘못된 크기 선택입니다.');
-                return;
-            }
-
-            let width, height;
-
-            // 팝업 크기 설정
-            if (size === 'small') {
-                width = 300;
-                height = 200;
-            } else if (size === 'medium') {
-                width = 600;
-                height = 400;
-            } else if (size === 'large') {
-                width = 1200;
-                height = 800;
-            }
-            openPopupWindow(url, width, height, `Popup${size}`);
-        }
-        document.getElementById('small-btn').addEventListener('click', () => openPopup('small'));
-        document.getElementById('medium-btn').addEventListener('click', () => openPopup('medium'));
-        document.getElementById('large-btn').addEventListener('click', () => openPopup('large'));
+        setupPopupListeners(urlList);
     </script>
 </body>
 </html>

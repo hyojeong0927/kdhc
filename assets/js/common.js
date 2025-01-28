@@ -1,6 +1,30 @@
 // -------------------------------------------------------- //
 // window popup
 //-------------------------------------------------------- //
+export function openPopup(size, urlList) {
+    const url = urlList[size];
+
+    if (!url) {
+        alert('잘못된 크기 선택입니다.');
+        return;
+    }
+
+    let width, height;
+
+    if (size === 'small') {
+        width = 300;
+        height = 200;
+    } else if (size === 'medium') {
+        width = 600;
+        height = 400;
+    } else if (size === 'large') {
+        width = 1200;
+        height = 800;
+    }
+
+    openPopupWindow(url, width, height, `Popup${size}`);
+}
+
 export function openPopupWindow(url, width, height, popupName = 'Popup') {
     const left = window.screenX + (window.innerWidth - width) / 2;
     const top = window.screenY + (window.innerHeight - height) / 2;
@@ -13,6 +37,14 @@ export function openPopupWindow(url, width, height, popupName = 'Popup') {
     } else {
         console.error('팝업이 차단되었습니다.');
     }
+}
+
+export function setupPopupListeners(urlList) {
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('small-btn').addEventListener('click', () => openPopup('small', urlList));
+        document.getElementById('medium-btn').addEventListener('click', () => openPopup('medium', urlList));
+        document.getElementById('large-btn').addEventListener('click', () => openPopup('large', urlList));
+    });
 }
 // window popup end
 
