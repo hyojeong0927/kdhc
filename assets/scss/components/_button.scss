@@ -2,7 +2,17 @@
 ========================================================================== */
 $button-types: ('xlg', 'lg', 'mid', 'sm', 'xsm');
 
+%button-base {
+  // 공통 스타일
+  @include text-style(12);
+  height: 20px;
+  padding: 0 6px;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
 .button {
+    @extend %button-base;
     @each $bt in $button-types {
         .button-#{$bt} {
            

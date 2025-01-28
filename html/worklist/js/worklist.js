@@ -32,7 +32,10 @@ function renderTable(filterState = "전체", filterCategory = "전체") {
                 <td class="center">${project.type}</td>
                 <td class="center">${project.folder}</td>
                 <td class="center"><a href="../../html/${project.folder}/${project.file}" target="_blank">${project.file}</a></td>
-                <td class="center">${project.status}</td>
+                <td class="center ${
+                    ['수정', '진행중', '완료']
+                    .map(status => (project.status === status ? status === '수정' ? 'modi' : status === '진행중' ? 'ing' : 'comp' : ''))
+                    .filter(Boolean) .join(' ')}">${project.status}</td>
                 <td class="center">${project.start}</td>
                 <td class="center">${project.end}</td>
                 <td class="center"><button class="history-btn">View</button></td>

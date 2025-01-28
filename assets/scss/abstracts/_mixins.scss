@@ -6,10 +6,10 @@
 // @include flex(true, 'end', 'start', 10px); 
 
 @mixin flex(
-    $flexDirection: true, 
-    $justifyContent:'start',
-    $alignItems: 'start',
-    $gap: 0px,
+        $flexDirection: true, 
+        $justifyContent:'start',
+        $alignItems: 'start',
+        $gap: 0px,
     ) {
     display: flex;
 
@@ -71,22 +71,21 @@
 }
 
 // Font
-// @include font(family SpoqaHanSans size rem(17) weight 300 lh 1.45);
-@mixin font($args) {
-    $props: style weight variant size size-adjust family stretch kerning line-height lh;
-  
-    @each $prop in $props {
-      $prop-index: index($args, $prop);
-      @if $prop-index {
-        $value: nth($args, $prop-index + 1);
-        @if $prop == 'line-height' or $prop == 'lh' {
-          line-height: $value;
-        } @else {
-          font-#{$prop}: $value;
-        }
-      }
-    }
+//선언
+@mixin text-style-12($color: false) {
+  font-size: $font-size-12;
+  line-height: $line-height-12;
+  letter-spacing: $letter-spacing-12;
+  color: $color;
+
+  @if (type-of($color) == color) {
+    color: $color;
   }
+}
+//사용
+// p {
+//   @include text-style-12;
+// }
 
 // Box
 // @include box($type, $header, $content, $footer, $round);
@@ -135,6 +134,15 @@
     display: block;
     margin: 0 0 20px;
     padding: 0 0 20px;
+}
+// position
+@mixin postion-center($type: absolute) {
+  @if ($type == fixed or $type == absolute) {
+    position: $type;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 // :before, :after
@@ -219,5 +227,13 @@
     }
     ::-webkit-scrollbar-thumb:hover {
         background: #555;
+    }
+}
+
+@mixin scroll-x {
+    @include scroll-y;
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
     }
 }
