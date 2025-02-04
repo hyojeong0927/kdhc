@@ -1,0 +1,50 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popup</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../../assets/css/index.css">
+</head>
+<body>
+    <article class="guide-contents">
+        <div class="title">
+			<h3>Popup</h3>
+		</div>
+        <div class="text-box">
+			<ol>
+				<li>팝업 사이즈
+                    <ul>
+                        <li>small: </li>
+                        <li>medium: </li>
+                        <li>large: </li>
+                    </ul>
+                </li>
+				<li> 여백 규칙
+					<ul>
+						<li>내부 패딩: 최소 16px</li>
+						<li>외부 마진: 최소 24px</li>
+					</ul>
+				</li>
+			</ol>
+		</div>
+        <div class="cont-box">
+            <button id="small-btn">small</button>
+            <button id="medium-btn">medium</button>
+            <button id="large-btn">large</button>
+        </div>
+    </article>
+   
+    <script type="module">
+        import { setupPopupListeners } from '../../../assets/js/common.js';
+    
+        const urlList = {
+            small: 'https://www.naver.com?type=small',
+            medium: 'https://www.daum.net?type=medium',
+            large: 'https://www.google.com?type=large',
+        };
+
+        setupPopupListeners(urlList);
+    </script>
+</body>
+</html>

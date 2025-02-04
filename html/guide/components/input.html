@@ -1,0 +1,181 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../../assets/css/index.css">
+</head>
+<body>
+    <article class="guide-contents">
+        <div class="title">
+			<h3>Input</h3>
+		</div>
+        <div class="tbl-wrap">
+             <table class="tbl">
+                <caption>입력 필드</caption>
+                <colgroup>
+                    <col width="10%" />
+                    <col width="18%" />
+                    <col width="18%" />
+                    <col width="18%" />
+                    <col width="18%" />
+                    <col width="18%" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>구분</th>
+                        <th>normal</th>
+                        <th>focus/hover</th>
+                        <th>disable</th>
+                        <th>readonly</th>
+                        <th>error</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Input [type="text"]</th>
+                        <td>
+                            <label for="">label</label>
+                            <input type="text"/>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Input [type="number"]</th>
+                        <td>
+                            <label for="">label</label>
+                            <input type="number"/>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Input [type="email"]</th>
+                        <td>
+                            <label for="email">Enter your example.com email:</label>
+                            <input type="email" id="email" pattern=".+@example\.com" size="30" required />
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Input [type="file"]</th>
+                        <td>
+                            <label for="avatar">Choose a profile picture:</label>
+                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Input [type="password"]</th>
+                        <td>
+                            <label for="pass">Password (8 characters minimum):</label>
+                            <input type="password" id="pass" name="password" minlength="8" required />
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Input [type="search"]</th>
+                        <td>
+                            <label for="site-search">Search the site:</label>
+                            <input type="search" id="site-search" name="q" />
+                            <button>Search</button>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Input [type="tel"]</th>
+                        <td>
+                            <label for="phone">
+                                Enter your phone number:<br />
+                                <small>Format: 123-456-7890</small>
+                            </label>
+                            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Input [type="url"]</th>
+                        <td>
+                            <label for="url">Enter an https:// URL:</label>
+                            <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30" required />
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>TextArea</th>
+                        <td>
+                            <label for="story">label</label>
+                            <textarea id="story" name="story" rows="5" cols="33">
+                                It was a dark and stormy night...
+                            </textarea>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Date</th>
+                        <td>
+                            <label for="start">Start date:</label>
+                            <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Select</th>
+                        <td>
+                            <label for="dino-select">Choose a dinosaur:</label>
+                            <select>
+                                <optgroup label="Group 1">
+                                    <option>Option 1.1</option>
+                                </optgroup>
+                                <optgroup label="Group 2">
+                                    <option>Option 2.1</option>
+                                    <option>Option 2.2</option>
+                                </optgroup>
+                                <optgroup label="Group 3" disabled>
+                                    <option>Option 3.1</option>
+                                    <option>Option 3.2</option>
+                                    <option>Option 3.3</option>
+                                </optgroup>
+                            </select>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+             </table>
+        </div>
+    </article>
+</body>
+</html>

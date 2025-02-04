@@ -1,0 +1,45 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>progress</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../../assets/css/index.css">
+</head>
+<body>
+    <article class="guide-contents">
+        <div class="title">
+			<h3>Progress / Range</h3>
+		</div>
+        <h4>Progress</h4>
+        <div class="cont-box">
+            <label for="file">File progress:</label>
+            <progress id="file" max="100" value="70">70%</progress>
+        </div>
+        <h4>Range</h4>
+        <div class="cont-box">
+            <form id="example-form">
+                <input type="range" id="b" name="b" value="50" /> +
+                <input type="number" id="a" name="a" value="10" /> =
+                <output name="result" for="a b">60</output>
+            </form>
+        </div>
+    </article>
+    <script>
+        const form = document.getElementById("example-form");
+        const a = form.elements["a"];
+        const b = form.elements["b"];
+        const result = form.elements["result"];
+
+        function updateResult() {
+            const aValue = parseInt(a.value);
+            const bValue = parseInt(b.value);
+            result.value = aValue + bValue;
+        }
+
+        form.addEventListener("input", updateResult);
+
+        updateResult();
+    </script>
+</body>
+</html>
