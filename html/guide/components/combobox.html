@@ -1,0 +1,97 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combobox</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../../assets/css/index.css">
+    <style>
+        .multi-selectbox {
+            width: 300px;
+            background-color: #BCC2C1;
+        }
+ 
+        .selectbox {
+            position: relative;
+        }
+ 
+        .selectbox select {
+            width: 100%;
+            font-weight: bold;
+        }
+ 
+        .overSelect {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+ 
+        #checkBoxes {
+            display: none;
+            border: 1px #8DF5E4 solid;
+        }
+ 
+        #checkBoxes label {
+            display: block;
+        }
+ 
+        #checkBoxes label:hover {
+            background-color: #4F615E;
+            color: white;
+            /* Added text color for better visibility */
+        }
+    </style>
+</head>
+<body>
+    <article class="guide-contents">
+        <div class="title">
+			<h3>Combobox</h3>
+		</div>
+        <div class="multi-selectbox">
+            <div class="selectbox" onclick="showCheckboxes()">
+                <select>
+                    <option id="result">Select options</option>
+                </select>
+                <div class="overSelect"></div>
+            </div>
+ 
+            <div id="checkBoxes">
+                <label for="first">
+                    <input type="checkbox" id="first" value="checkBox1" />
+                    checkBox1
+                </label>
+ 
+                <label for="second">
+                    <input type="checkbox" id="second" value="checkBox2"/>
+                    checkBox2
+                </label>
+                <label for="third">
+                    <input type="checkbox" id="third" value="checkBox3"/>
+                    checkBox3
+                </label>
+                <label for="fourth">
+                    <input type="checkbox" id="fourth" value="checkBox4"/>
+                    checkBox4
+                </label>
+            </div>
+        </div>
+    </article>
+    <script>
+        let show = true;
+ 
+        function showCheckboxes() {
+            let checkboxes = document.getElementById("checkBoxes");
+ 
+            if (show) {
+                checkboxes.style.display = "block";
+                show = false;
+            } else {
+                checkboxes.style.display = "none";
+                show = true;
+            }
+        }
+    </script>
+</body>
+</html>
