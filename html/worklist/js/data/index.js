@@ -1,17 +1,23 @@
-import menu00Projects from './menu00.js';
+import components from './components.js';
+import common from './common.js';
 import menu01Projects from './menu01.js';
 import menu02Projects from './menu02.js';
 import menu03Projects from './menu03.js';
 import menu04Projects from './menu04.js';
 import menu05Projects from './menu05.js';
+import menu06Projects from './menu06.js';
+import menu07Projects from './menu07.js';
 
 const allProjects = [
-    ...menu00Projects,
+    ...components,
+    ...common,
     ...menu01Projects,
     ...menu02Projects,
     ...menu03Projects,
     ...menu04Projects,
-    ...menu05Projects
+    ...menu05Projects,
+    ...menu06Projects,
+    ...menu07Projects,
 ];
 
 export const projects = allProjects;

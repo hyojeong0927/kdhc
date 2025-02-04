@@ -1,4 +1,75 @@
 const menu02Projects = [
-    { id: "KDHC005", depth1: "menu02", depth2: "", depth3: "", type: "웹", folder: "auth", file: "login.html", status: "진행대기", start: "", end: "" }
+    {
+        id: "SB-USR-018",
+        depth1: "물리보안",
+        depth2: "영상정보장치점검관리",
+        depth3: "",
+        type: "",
+        folder: "usr",
+        file: "SB-USR-018.html",
+        status: "진행대기",
+        start: "",
+        end: ""
+    },
+    {
+        id: "SB-USR-019",
+        depth1: "물리보안",
+        depth2: "영상정보장치점검관리",
+        depth3: "등록",
+        type: "",
+        folder: "usr",
+        file: "SB-USR-019.html",
+        status: "진행대기",
+        start: "",
+        end: ""
+    },
+    {
+        id: "SB-USR-020",
+        depth1: "물리보안",
+        depth2: "영상정보장치점검관리",
+        depth3: "상세",
+        type: "",
+        folder: "usr",
+        file: "SB-USR-020.html",
+        status: "진행대기",
+        start: "",
+        end: ""
+    },
+    {
+        id: "SB-USR-021",
+        depth1: "물리보안",
+        depth2: "봉인장치사용내역",
+        depth3: "",
+        type: "",
+        folder: "usr",
+        file: "SB-USR-021.html",
+        status: "진행대기",
+        start: "",
+        end: ""
+    },
+    {
+        id: "SB-USR-022",
+        depth1: "물리보안",
+        depth2: "봉인장치사용내역",
+        depth3: "등록",
+        type: "",
+        folder: "usr",
+        file: "SB-USR-022.html",
+        status: "진행대기",
+        start: "",
+        end: ""
+    },
+    {
+        id: "SB-USR-023",
+        depth1: "물리보안",
+        depth2: "봉인장치사용내역",
+        depth3: "상세",
+        type: "",
+        folder: "usr",
+        file: "SB-USR-023.html",
+        status: "진행대기",
+        start: "",
+        end: ""
+    },
 ];
 export default menu02Projects;
