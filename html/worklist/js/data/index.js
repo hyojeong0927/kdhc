@@ -1,5 +1,5 @@
 import components from './components.js';
-import common from './common.js';
+import menu00Projects from './menu00.js';
 import menu01Projects from './menu01.js';
 import menu02Projects from './menu02.js';
 import menu03Projects from './menu03.js';
@@ -10,7 +10,7 @@ import menu07Projects from './menu07.js';
 
 const allProjects = [
     ...components,
-    ...common,
+    ...menu00Projects,
     ...menu01Projects,
     ...menu02Projects,
     ...menu03Projects,
