@@ -12992,9 +12992,10 @@ template {
   align-items: flex-start;
   gap: 0px;
   flex-wrap: wrap;
+  width: 100%;
   min-width: 120rem;
   height: 100%;
-  font-size: 13px;
+  font-size: 0.81rem;
   background-color: #fff;
 }
 .guide-container header {
@@ -13003,20 +13004,20 @@ template {
   justify-content: flex-start;
   align-items: center;
   gap: 0px;
-  padding: 10px;
+  padding: 0.63rem;
   width: 100%;
-  height: 50px;
+  height: 3.13rem;
   color: #fff;
   background-color: #000;
 }
 .guide-container header h1 {
-  font-size: 18px;
+  font-size: 1.13rem;
   font-weight: bold;
 }
 .guide-container aside {
   overflow-y: auto;
-  padding: 20px;
-  width: 250px;
+  padding: 1.25rem;
+  width: 15.63rem;
   height: 100%;
   min-height: 100dvh;
   max-height: 100dvh;
@@ -13058,7 +13059,7 @@ template {
   align-items: flex-start;
   gap: 0px;
   padding-bottom: 50px;
-  width: calc(100% - 250px);
+  width: calc(100% - 15.63rem);
   height: 100%;
 }
 .guide-container .guide-frame {
