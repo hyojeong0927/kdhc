@@ -1,3 +1,5 @@
+'use strict'
+
 // bootstrap
 import "./bootstrap.bundle.min.js";
 
