@@ -90,39 +90,19 @@
         </div>
     </article>
     <script>
-    let show = true;
-
-    function showCheckboxes() {
-        let checkboxes = document.getElementById("checkBoxes");
-        checkboxes.style.display = show ? "block" : "none";
-        show = !show;
-    }
-
-    function updateDropdown() {
-        let dropdown = document.getElementById("dropdown");
-        let selectedOptions = document.querySelectorAll("#checkBoxes input[type='checkbox']:checked:not(#selectAll)");
-        
-        dropdown.innerHTML = "";
-        
-        let selectedValues = [];
-        selectedOptions.forEach(option => {
-            selectedValues.push(option.value);
-        });
-        
-        let newOption = document.createElement("option");
-        newOption.text = selectedValues.length > 0 ? selectedValues.join(", ") : "Select options";
-        newOption.value = selectedValues.join(", ");
-        dropdown.appendChild(newOption);
-    }
-
-    function toggleAllCheckboxes() {
-        let selectAll = document.getElementById("selectAll");
-        let checkboxes = document.querySelectorAll("#checkBoxes input[type='checkbox']:not(#selectAll)");
-        checkboxes.forEach(checkbox => {
-            checkbox.checked = selectAll.checked;
-        });
-        updateDropdown();
-    }
-</script>
+        let show = true;
+ 
+        function showCheckboxes() {
+            let checkboxes = document.getElementById("checkBoxes");
+ 
+            if (show) {
+                checkboxes.style.display = "block";
+                show = false;
+            } else {
+                checkboxes.style.display = "none";
+                show = true;
+            }
+        }
+    </script>
 </body>
 </html>
