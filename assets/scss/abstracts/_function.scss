@@ -10,30 +10,33 @@ $device-base-height: 760px;
 // ex) font-size: rem(12px)
 @function rem($value, $base: $base-rem-size) {
     $remCalc: math.div($value, $base) * 1rem;
-    @return math.round($remCalc * 100) / 100;
+    @return  math.div(math.round($remCalc * 100), 100);
 }
 
 // 단위 변환 함수 px => em
 // ex) font-size: em(12px)
 @function em($value, $base: $base-rem-size) {
     $emCalc: math.div($value, $base) * 1em;
-    @return math.round($emCalc * 100) / 100;
+    @return math.div(math.round($emCalc * 100), 100);
 }
 
 // 단위 변환 함수 px => %
 // ex) width: per(12px)
 @function per($value) {
-    @return (math.div($value, $device-base-width) * 100) * 1%;
+    $perCalc: (math.div($value, $device-base-width) * 100) * 1%;
+    @return math.div(math.round($perCalc * 100), 100);
 }
 
 // 단위 변환 함수 px => vw
 // ex) width: vw(100px);
 @function vw($value) {
-    @return (math.div($value, $device-base-width) * 100) * 1vw;
+    $vwCalc: (math.div($value, $device-base-width) * 100) * 1vw;
+    @return math.div(math.round($vwCalc * 100), 100);
 }
 
 // 단위 변환 함수 px => vh
 // ex) width: vh(100px);
 @function vh($value) {
-    @return (math.div($value, $device-base-height) * 100) * 1vh;
+    $vhCalc: (math.div($value, $device-base-height) * 100) * 1vh;
+    @return math.div(math.round($vhCalc * 100), 100);
 }
