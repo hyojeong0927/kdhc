@@ -1,27 +1,34 @@
 /* scss folder structure @import
 ========================================================================== */
 
+// vendors
+@import 'vendors/agGrid';
+@import 'vendors/bootstrap';
+
+// abstracts
 @import 'abstracts/variables';
 @import 'abstracts/function';
 @import 'abstracts/colors';
 @import 'abstracts/mixins';
 @import 'abstracts/media-query';
 
-
+// base
 @import 'base/reset';
 @import 'base/typography';
 
+// layouts
 @import 'layouts/header';
 @import 'layouts/navigation';
 @import 'layouts/footer';
 @import 'layouts/sidebar';
 @import 'layouts/forms';
 
+// utilities
 @import 'utilities/main';
 @import 'utilities/container';
-@import 'utilities/helpers';
-@import 'utilities/spacing';
+@import 'utilities/util';
 
+// components
 @import 'components/accordian';
 @import 'components/alert';
 @import 'components/box';
@@ -43,11 +50,11 @@
 @import 'components/tags';
 @import 'components/title';
 
-@import 'vendors/agGrid';
-
-@import 'pages/about';
+// pages
+@import 'pages/common';
 @import 'pages/contact';
 @import 'pages/guide';
 
+// themes
 @import 'themes/admin';
 @import 'themes/theme';

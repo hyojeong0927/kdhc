@@ -1,40 +1,23 @@
 /* Accodian
 ========================================================================== */
-.accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  transition: 0.4s;
-}
-
-.accordion.active,
-.accordion:hover {
-  background-color: #ccc;
-}
-
-.accordion:after {
-  content: '\002B';
-  color: #777;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
-}
-
-.accordion.active:after {
-  content: "\2212";
-}
-
-.lnbList,
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
+// --#{$prefix}accordion-color: #{$accordion-color};
+// --#{$prefix}accordion-bg: #{$accordion-bg};
+// --#{$prefix}accordion-transition: #{$accordion-transition};
+// --#{$prefix}accordion-border-color: #{$accordion-border-color};
+// --#{$prefix}accordion-border-width: #{$accordion-border-width};
+// --#{$prefix}accordion-border-radius: #{$accordion-border-radius};
+// --#{$prefix}accordion-inner-border-radius: #{$accordion-inner-border-radius};
+// --#{$prefix}accordion-btn-padding-x: #{$accordion-button-padding-x};
+// --#{$prefix}accordion-btn-padding-y: #{$accordion-button-padding-y};
+// --#{$prefix}accordion-btn-color: #{$accordion-button-color};
+// --#{$prefix}accordion-btn-bg: #{$accordion-button-bg};
+// --#{$prefix}accordion-btn-icon: #{escape-svg($accordion-button-icon)};
+// --#{$prefix}accordion-btn-icon-width: #{$accordion-icon-width};
+// --#{$prefix}accordion-btn-icon-transform: #{$accordion-icon-transform};
+// --#{$prefix}accordion-btn-icon-transition: #{$accordion-icon-transition};
+// --#{$prefix}accordion-btn-active-icon: #{escape-svg($accordion-button-active-icon)};
+// --#{$prefix}accordion-btn-focus-box-shadow: #{$accordion-button-focus-box-shadow};
+// --#{$prefix}accordion-body-padding-x: #{$accordion-body-padding-x};
+// --#{$prefix}accordion-body-padding-y: #{$accordion-body-padding-y};
+// --#{$prefix}accordion-active-color: #{$accordion-button-active-color};
+// --#{$prefix}accordion-active-bg: #{$accordion-button-active-bg};

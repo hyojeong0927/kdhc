@@ -1,4 +1,5 @@
 const header = document.querySelector("header");
+
 header.innerHTML = `
     <h1>로고</h1>
     <nav>

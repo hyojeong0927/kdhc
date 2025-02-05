@@ -70,23 +70,6 @@
     align-items: $alignItems;
 }
 
-// Font
-//선언
-@mixin text-style-12($color: false) {
-  font-size: $font-size-12;
-  line-height: $line-height-12;
-  letter-spacing: $letter-spacing-12;
-  color: $color;
-
-  @if (type-of($color) == color) {
-    color: $color;
-  }
-}
-//사용
-// p {
-//   @include text-style-12;
-// }
-
 // Box
 // @include box($type, $header, $content, $footer, $round);
 // @include box(.box-type-02, true, true, false, 16px); 
@@ -237,3 +220,12 @@
         height: 6px;
     }
 }
+
+// clearfix
+@mixin clearfix() {
+    &::after {
+      display: block;
+      clear: both;
+      content: "";
+    }
+  }

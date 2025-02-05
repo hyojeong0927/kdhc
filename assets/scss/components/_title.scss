@@ -4,7 +4,7 @@ $title-types: ('h1', 'h2', 'h3');
 
 %title-base {
   // 공통 스타일
-  @include text-style(12);
+  // @include text-style(12);
   height: 20px;
   padding: 0 6px;
   font-weight: 700;

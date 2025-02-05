@@ -12,10 +12,9 @@
   body {
     text-size-adjust: 100%;
     position: relative;
-  
+    overflow: hidden;
     width: 100%;
-    min-height: 100vh;
-  
+    height: 100%;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeSpeed;
