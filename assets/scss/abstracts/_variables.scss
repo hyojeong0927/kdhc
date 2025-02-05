@@ -1,7 +1,80 @@
 /* Variables
 ========================================================================== */
-// typography
+$prefix: "kdhc-";
+// color start
+// base
+$black: #000;
+$white: #fff;
 
+// gray
+$gray-001: #DCDCDC;
+$gray-002: null;
+$gray-003: #A5A5A5;
+
+// yewllow
+$yellow-100: null;
+
+// red
+$red-100: null;
+
+// blue
+$blue-100: null;
+
+// green
+$green-100: null;
+
+// theme
+$primary: null;
+$secondary: null;
+$success: null;
+$info: null;
+$warning: null;
+$danger: null;
+$light: null;
+$dark: null;
+// color end
+
+// font-family
+$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+$font-family-base:            var(--#{$prefix}font-sans-serif);
+$font-family-code:            var(--#{$prefix}font-monospace);
+
+$font-size-root:              null;
+$font-size-base:              16px;
+$font-size-sm:                $font-size-base * .875;
+$font-size-lg:                $font-size-base * 1.25;
+
+$font-weight-lighter:         lighter;
+$font-weight-light:           300;
+$font-weight-normal:          400;
+$font-weight-medium:          500;
+$font-weight-semibold:        600;
+$font-weight-bold:            700;
+$font-weight-bolder:          bolder;
+
+$font-weight-base:            $font-weight-normal;
+
+$line-height-base:            1.5;
+$line-height-sm:              1.25;
+$line-height-lg:              2;
+
+$h1-font-size:                $font-size-base * 2.5;
+$h2-font-size:                $font-size-base * 2;
+$h3-font-size:                $font-size-base * 1.75;
+$h4-font-size:                $font-size-base * 1.5;
+$h5-font-size:                $font-size-base * 1.25;
+$h6-font-size:                $font-size-base;
+
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size
+);
 // letter-sacing
 
 // position
@@ -23,6 +96,20 @@ $spacers: (
     5: $spacer * 3,
 );
 
+// form controls
+$input-padding-x: 16px;
+$input-padding-y: 0px;
+$input-font-family: $font-family-base;
+$input-font-size: $font-size-base;
+$input-font-weight: $font-weight-base;
+$input-line-height: 19.2px;
+
+$input-bg: $white;
+$input-disabled-bg: $gray-001;
+$input-disabled-border-color: null;
+
+$input-color: $body-color;
+
 // z-index
 $zindex-levels: (
     n1: -1,
@@ -42,39 +129,3 @@ $zindex-modal:                      1055;
 $zindex-popover:                    1070;
 $zindex-tooltip:                    1080;
 $zindex-toast:                      1090;
-
-
-// accordion
-// $accordion-padding-y:                     1rem;
-// $accordion-padding-x:                     1.25rem;
-// $accordion-color:                         var(--#{$prefix}body-color);
-// $accordion-bg:                            var(--#{$prefix}body-bg);
-// $accordion-border-width:                  var(--#{$prefix}border-width);
-// $accordion-border-color:                  var(--#{$prefix}border-color);
-// $accordion-border-radius:                 var(--#{$prefix}border-radius);
-// $accordion-inner-border-radius:           subtract($accordion-border-radius, $accordion-border-width);
-
-// $accordion-body-padding-y:                $accordion-padding-y;
-// $accordion-body-padding-x:                $accordion-padding-x;
-
-// $accordion-button-padding-y:              $accordion-padding-y;
-// $accordion-button-padding-x:              $accordion-padding-x;
-// $accordion-button-color:                  var(--#{$prefix}body-color);
-// $accordion-button-bg:                     var(--#{$prefix}accordion-bg);
-// $accordion-transition:                    $btn-transition, border-radius .15s ease;
-// $accordion-button-active-bg:              var(--#{$prefix}primary-bg-subtle);
-// $accordion-button-active-color:           var(--#{$prefix}primary-text-emphasis);
-
-// fusv-disable
-// $accordion-button-focus-border-color:     $input-focus-border-color; // Deprecated in v5.3.3
-// // fusv-enable
-// $accordion-button-focus-box-shadow:       $btn-focus-box-shadow;
-
-// $accordion-icon-width:                    1.25rem;
-// $accordion-icon-color:                    $body-color;
-// $accordion-icon-active-color:             $primary-text-emphasis;
-// $accordion-icon-transition:               transform .2s ease-in-out;
-// $accordion-icon-transform:                rotate(-180deg);
-
-// $accordion-button-icon:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='#{$accordion-icon-color}' stroke-linecap='round' stroke-linejoin='round'><path d='M2 5L8 11L14 5'/></svg>");
-// $accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='#{$accordion-icon-active-color}' stroke-linecap='round' stroke-linejoin='round'><path d='M2 5L8 11L14 5'/></svg>");

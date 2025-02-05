@@ -6,6 +6,8 @@
     <title>input</title>
     <!-- css -->
     <link rel="stylesheet" href="../../../assets/css/index.css">
+    <!-- script -->
+    <script type="module" src="../../../assets/js/common.js"></script>
 </head>
 <body>
     <article class="guide-contents">
@@ -37,8 +39,8 @@
                     <tr>
                         <th>Input [type="text"]</th>
                         <td>
-                            <label for="">label</label>
-                            <input type="text"/>
+                            <label for="usr">Name:</label>
+                            <input type="text" class="form-control" id="usr">
                         </td>
                         <td></td>
                         <td></td>
@@ -59,8 +61,8 @@
                     <tr>
                         <th>Input [type="email"]</th>
                         <td>
-                            <label for="email">Enter your example.com email:</label>
-                            <input type="email" id="email" pattern=".+@example\.com" size="30" required />
+                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                         </td>
                         <td></td>
                         <td></td>
@@ -70,8 +72,8 @@
                     <tr>
                         <th>Input [type="file"]</th>
                         <td>
-                            <label for="avatar">Choose a profile picture:</label>
-                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+                            <label for="formFile" class="form-label">Default file input example</label>
+                            <input class="form-control" type="file" id="formFile">
                         </td>
                         <td></td>
                         <td></td>
@@ -81,8 +83,11 @@
                     <tr>
                         <th>Input [type="password"]</th>
                         <td>
-                            <label for="pass">Password (8 characters minimum):</label>
-                            <input type="password" id="pass" name="password" minlength="8" required />
+                            <label for="inputPassword5" class="form-label">Password</label>
+                            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+                            <div id="passwordHelpBlock" class="form-text">
+                            Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                            </div>
                         </td>
                         <td></td>
                         <td></td>
@@ -92,9 +97,14 @@
                     <tr>
                         <th>Input [type="search"]</th>
                         <td>
-                            <label for="site-search">Search the site:</label>
-                            <input type="search" id="site-search" name="q" />
-                            <button>Search</button>
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="Search">
+                                <div class="input-group-btn">
+                                  <button class="btn btn-default" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                  </button>
+                                </div>
+                            </div>
                         </td>
                         <td></td>
                         <td></td>
@@ -129,10 +139,8 @@
                     <tr>
                         <th>TextArea</th>
                         <td>
-                            <label for="story">label</label>
-                            <textarea id="story" name="story" rows="5" cols="33">
-                                It was a dark and stormy night...
-                            </textarea>
+                            <label for="comment">Comment:</label>
+                            <textarea class="form-control" rows="5" id="comment"></textarea>
                         </td>
                         <td></td>
                         <td></td>
@@ -153,20 +161,11 @@
                     <tr>
                         <th>Select</th>
                         <td>
-                            <label for="dino-select">Choose a dinosaur:</label>
-                            <select>
-                                <optgroup label="Group 1">
-                                    <option>Option 1.1</option>
-                                </optgroup>
-                                <optgroup label="Group 2">
-                                    <option>Option 2.1</option>
-                                    <option>Option 2.2</option>
-                                </optgroup>
-                                <optgroup label="Group 3" disabled>
-                                    <option>Option 3.1</option>
-                                    <option>Option 3.2</option>
-                                    <option>Option 3.3</option>
-                                </optgroup>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
                             </select>
                         </td>
                         <td></td>

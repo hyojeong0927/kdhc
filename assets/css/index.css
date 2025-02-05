@@ -12048,9 +12048,6 @@ html:focus-within {
 }
 
 body {
-  -webkit-text-size-adjust: 100%;
-     -moz-text-size-adjust: 100%;
-          text-size-adjust: 100%;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -12058,6 +12055,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeSpeed;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 /* Box sizing normalization */
@@ -12591,6 +12592,55 @@ template {
 
 /* Typography
 ========================================================================== */
+@font-face {
+  font-display: swap;
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: lighter;
+  src: url("../fonts/noto-sans-kr-200.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/noto-sans-kr-300.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/noto-sans-kr-regular.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/noto-sans-kr-500.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/noto-sans-kr-600.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/noto-sans-kr-700.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: bolder;
+  src: url("../fonts/noto-sans-kr-800.woff2") format("woff2");
+}
 /* Header
 ========================================================================== */
 /* Navigation
@@ -12743,8 +12793,18 @@ template {
 /* Icons
 //@include icon($icon-name, $width, $height, $url)
 ========================================================================== */
-/* Input, Textarea, Date Picker
+/* Input, Textarea, Date Picker, Select
 ========================================================================== */
+input[type=text].form-control {
+  padding: 0rem 1rem;
+  width: 100%;
+  height: 2.25rem;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  border-radius: 0.25rem;
+  border: 1px solid #A5A5A5;
+}
+
 /* List
 ========================================================================== */
 /* Modal

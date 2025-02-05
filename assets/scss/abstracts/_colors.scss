@@ -1,34 +1,6 @@
 /* Colors
 ========================================================================== */
-
-// base
-$black: #000;
-$white: #fff;
-
-// gray
-$gray-100: null;
-
-// yewllow
-$yellow-100: null;
-
-// red
-$red-100: null;
-
-// blue
-$blue-100: null;
-
-// green
-$green-100: null;
-
-// theme
-$primary: null;
-$secondary: null;
-$success: null;
-$info: null;
-$warning: null;
-$danger: null;
-$light: null;
-$dark: null;
+@use 'sass:color';
 
 $theme-colors: (
     "primary":    $primary,

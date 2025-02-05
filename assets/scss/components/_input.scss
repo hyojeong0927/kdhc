@@ -1,9 +1,18 @@
-/* Input, Textarea, Date Picker
+/* Input, Textarea, Date Picker, Select
 ========================================================================== */
-$type: ('text', 'textarea', 'data-picker', 'number');
+%input-base {
+    // 공통 스타일
+    padding: rem($input-padding-y) rem($input-padding-x);
+    width: 100%;
+    height: rem(36px);
+    font-size: rem($input-font-size);
+    line-height: rem($input-line-height);
+    border-radius: rem(4px);
+    border: 1px solid $gray-003;
+}
 
-.input {
-  .input-#{$type} {
-           
+input[type="text"] {
+    &.form-control {
+        @extend %input-base;
     }
 }
