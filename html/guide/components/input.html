@@ -210,38 +210,31 @@
                     <tr>
                         <th>Date</th>
                         <td>
-                            <input type="date" class="form-control" id="start" name="trip-start" data-placeholder="YYYY-MM-DD" value="" min="" max="" required />
+                            <input type="date" class="form-control" id="start" data-placeholder="yyyy-mm-dd" pattern="\d{4}-\d{2}-\d{2}" required />
                         </td>
                         <td>
-                            <input type="date" class="form-control" id="start" name="trip-start" data-placeholder="YYYY-MM-DD" pattern="(?:19|20)\[0-9\]{2}-(?:(?:0\[1-9\]|1\[0-2\])-(?:0\[1-9\]|1\[0-9\]|2\[0-9\])|(?:(?!02)(?:0\[1-9\]|1\[0-2\])-(?:30))|(?:(?:0\[13578\]|1\[02\])-31))" 
-                            title="Enter a date in this format YYYY-MM-DD" value="2018-07-22" min="2018-01-01" max="2018-12-31" required />
+                            <input type="date" class="form-control" id="start" data-placeholder="yyyy-mm-dd" pattern="\d{4}-\d{2}-\d{2}" value="2018-07-22" min="2018-01-01" max="2018-12-31" required />
                         </td>
                         <td>
-                            <input type="date" class="form-control active" id="start" name="trip-start" data-placeholder="YYYY-MM-DD" pattern="(?:19|20)\[0-9\]{2}-(?:(?:0\[1-9\]|1\[0-2\])-(?:0\[1-9\]|1\[0-9\]|2\[0-9\])|(?:(?!02)(?:0\[1-9\]|1\[0-2\])-(?:30))|(?:(?:0\[13578\]|1\[02\])-31))" 
-                            title="Enter a date in this format YYYY-MM-DD" value="2018-07-22" min="2018-01-01" max="2018-12-31" required/>
+                            <input type="date" class="form-control active" id="start" data-placeholder="yyyy-mm-dd" pattern="\d{4}-\d{2}-\d{2}" value="2018-07-22" min="2018-01-01" max="2018-12-31" required/>
                         </td>
                         <td>
-                            <input type="date" class="form-control" id="start" name="trip-start" data-placeholder="YYYY-MM-DD" pattern="(?:19|20)\[0-9\]{2}-(?:(?:0\[1-9\]|1\[0-2\])-(?:0\[1-9\]|1\[0-9\]|2\[0-9\])|(?:(?!02)(?:0\[1-9\]|1\[0-2\])-(?:30))|(?:(?:0\[13578\]|1\[02\])-31))" 
-                            title="Enter a date in this format YYYY-MM-DD" value="2018-07-22" min="2018-01-01" max="2018-12-31" aria-disabled="true" disabled required/>
+                            <input type="date" class="form-control" id="start" data-placeholder="yyyy-mm-dd" pattern="\d{4}-\d{2}-\d{2}" value="2018-07-22" min="2018-01-01" max="2018-12-31" aria-disabled="true" disabled required/>
                         </td>
                         <td>
-                            <input type="date" class="form-control" id="start" name="trip-start" data-placeholder="YYYY-MM-DD" pattern="(?:19|20)\[0-9\]{2}-(?:(?:0\[1-9\]|1\[0-2\])-(?:0\[1-9\]|1\[0-9\]|2\[0-9\])|(?:(?!02)(?:0\[1-9\]|1\[0-2\])-(?:30))|(?:(?:0\[13578\]|1\[02\])-31))" 
-                            title="Enter a date in this format YYYY-MM-DD" value="2018-07-22" min="2018-01-01" max="2018-12-31" aria-readonly="true" readonly required/>
+                            <input type="date" class="form-control" id="start" data-placeholder="yyyy-mm-dd" pattern="\d{4}-\d{2}-\d{2}" value="2018-07-22" min="2018-01-01" max="2018-12-31" aria-readonly="true" readonly required/>
                         </td>
                         <td>
-                            <input type="date" class="form-control error" id="start" name="trip-start" data-placeholder="YYYY-MM-DD" pattern="(?:19|20)\[0-9\]{2}-(?:(?:0\[1-9\]|1\[0-2\])-(?:0\[1-9\]|1\[0-9\]|2\[0-9\])|(?:(?!02)(?:0\[1-9\]|1\[0-2\])-(?:30))|(?:(?:0\[13578\]|1\[02\])-31))" 
-                            title="Enter a date in this format YYYY-MM-DD" value="2018-07-22" min="2018-01-01" max="2018-12-31" required/>
+                            <input type="date" class="form-control error" id="start" data-placeholder="yyyy-mm-dd" pattern="\d{4}-\d{2}-\d{2}"  value="2018-07-22" min="2018-01-01" max="2018-12-31" required/>
                         </td>
                     </tr>
                     <tr>
                         <th>Period</th>
                         <td>
                             <div class="input-group">
-                                <input type="date" class="form-control" id="start" name="trip-start" data-placeholder="YYYY-MM-DD" pattern="(?:19|20)\[0-9\]{2}-(?:(?:0\[1-9\]|1\[0-2\])-(?:0\[1-9\]|1\[0-9\]|2\[0-9\])|(?:(?!02)(?:0\[1-9\]|1\[0-2\])-(?:30))|(?:(?:0\[13578\]|1\[02\])-31))" 
-                                title="Enter a date in this format YYYY-MM-DD" value="" min="" max="" required />
+                                <input type="date" class="form-control" id="start" value="" min="" max="" required />
                                 <span class="to">-</span>
-                                <input type="date" class="form-control" id="start" name="trip-start" data-placeholder="YYYY-MM-DD" pattern="(?:19|20)\[0-9\]{2}-(?:(?:0\[1-9\]|1\[0-2\])-(?:0\[1-9\]|1\[0-9\]|2\[0-9\])|(?:(?!02)(?:0\[1-9\]|1\[0-2\])-(?:30))|(?:(?:0\[13578\]|1\[02\])-31))" 
-                                title="Enter a date in this format YYYY-MM-DD" value="" min="" max="" required />
+                                <input type="date" class="form-control" id="start" value="" min="" max="" required />
                             </div>
                         </td>
                     </tr>

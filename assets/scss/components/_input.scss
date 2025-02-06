@@ -163,13 +163,13 @@ input[type="date"] {
     &::-webkit-inner-spin-button {
         display: none;
     }
-    &::-webkit-datetime-edit-text,
-    &::-webkit-datetime-edit-month-field,
-    &::-webkit-datetime-edit-day-field,
-    &::-webkit-datetime-edit-year-field {
-        -webkit-appearance: none;
-        display: none;
-    }
+    // &::-webkit-datetime-edit-text,
+    // &::-webkit-datetime-edit-month-field,
+    // &::-webkit-datetime-edit-day-field,
+    // &::-webkit-datetime-edit-year-field {
+    //     -webkit-appearance: none;
+    //     display: none;
+    // }
     &::-webkit-calendar-picker-indicator {
         position:absolute;
         left: 0;
@@ -179,10 +179,10 @@ input[type="date"] {
         background: transparent;
         color: transparent;
     }
-    &::before {
-        content: attr(data-placeholder);
-        width: 100%;
-    }
+    // &::before {
+    //     content: attr(data-placeholder);
+    //     width: 100%;
+    // }
     &:focus::before,
     &:valid::before {
         display: none;
