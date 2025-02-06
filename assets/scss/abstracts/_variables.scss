@@ -8,14 +8,21 @@ $white: #fff;
 
 // gray
 $gray-001: #DCDCDC;
-$gray-002: null;
-$gray-003: #A5A5A5;
+$gray-002: #18191C;
+$gray-003: #A5A5A5; // border color
+$gray-004: #C8C8C8; // placeholder font color
+$gray-005: #18191C; // input focus
+$gray-006: #DCDCDC; // disabled bg
+$gray-007: null;
+$gray-008: null;
+$gray-009: null;
+$gray-010: null;
 
 // yewllow
 $yellow-100: null;
 
 // red
-$red-100: null;
+$red-001: #DC3545; // error
 
 // blue
 $blue-100: null;
@@ -32,6 +39,7 @@ $warning: null;
 $danger: null;
 $light: null;
 $dark: null;
+$error: $red-001;
 // color end
 
 // font-family
@@ -56,7 +64,7 @@ $font-weight-bolder:          bolder;
 
 $font-weight-base:            $font-weight-normal;
 
-$line-height-base:            1.5;
+$line-height-base:            1;
 $line-height-sm:              1.25;
 $line-height-lg:              2;
 
@@ -75,7 +83,8 @@ $font-sizes: (
   5: $h5-font-size,
   6: $h6-font-size
 );
-// letter-sacing
+// letter-spacing
+$letter-spacing-base: null;
 
 // position
 $position-values: (
@@ -96,19 +105,83 @@ $spacers: (
     5: $spacer * 3,
 );
 
-// form controls
+// input start
 $input-padding-x: 16px;
 $input-padding-y: 0px;
 $input-font-family: $font-family-base;
+$input-font-color: $gray-002;
 $input-font-size: $font-size-base;
 $input-font-weight: $font-weight-base;
 $input-line-height: 19.2px;
+$input-letter-spacing: -3%;
+
+$input-border-color: $gray-003;
+$input-border-width: 1px;
+$input-border-radius: 4px;
+$input-border-style: solid;
 
 $input-bg: $white;
-$input-disabled-bg: $gray-001;
-$input-disabled-border-color: null;
 
-$input-color: $body-color;
+$input-focus-bg: $input-bg;
+$input-focus-border-color: $gray-005;
+$input-focus-color: $input-font-color;
+
+$input-placeholder-color: $gray-004;
+
+$input-disabled-bg: $gray-006;
+$input-disabled-border-color: $input-border-color;
+$input-disabled-color: $input-border-color;
+
+$input-error-border-color: $error;
+
+$input-wdith: 100%;
+$input-height: 36px;
+$input-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+// input end
+
+// textarea start
+$input-textarea-height: 50px;
+// textarea end
+
+// select start
+$form-select-padding-x: 0px;
+$form-select-padding-x-l: 12px;
+$form-select-padding-y: 0px;
+
+$form-select-width: 100%;
+$form-select-height: $input-height;
+
+$form-select-font-color: $input-font-color;
+$form-select-font-size: $input-font-size;
+$form-select-font-weight: $input-font-weight;
+$form-select-font-line-height: $input-line-height;
+$form-select-letter-spacing: $input-letter-spacing;
+
+$form-select-bg: $input-bg;
+$form-select-border: $input-border-width $input-border-style $input-border-color;
+$form-select-border-radius: $input-border-radius;
+
+$form-select-placeholder-color: $input-placeholder-color;
+// select end
+
+// form start
+$form-label-margin-bottom: null;
+$form-label-font-size: null;
+$form-label-font-style: null;
+$form-label-font-weight: null;
+$form-label-color: null;
+
+$form-text-margin-top: null;
+$form-text-font-size: null;
+$form-text-font-style: null;
+$form-text-font-weight: null;
+$form-text-color: null;
+// form end
+
+// icon start
+$icon-size-20: 20px;
+$icon-size-30: 30px;
+// icon end
 
 // z-index
 $zindex-levels: (

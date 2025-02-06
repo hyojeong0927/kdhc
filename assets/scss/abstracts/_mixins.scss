@@ -186,11 +186,10 @@
     repeat: no-repeat;
   }
   box-sizing: content-box;
-  transform: l;
   &.#{$icon-name} {
     width: $width;
     height: $height;
-    background-image: url("$url");
+    background-image: url($url);
   }
 }
 
