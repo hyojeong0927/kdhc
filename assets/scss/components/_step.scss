@@ -1,2 +1,112 @@
 /* Step
 ========================================================================== */
+$step-size: ("lg", "sm");
+$step-status: ("default", "current", "reject", "done");
+
+%step-base {
+    .step-list {
+        position: relative;
+        @include flex(true, "around", "center");
+        @include before(true, true, rem(40px), 0, 0, 0);
+        
+        &::before {
+            height: 1px;
+            width: 100%;
+            background-color: $gray-003;
+            z-index: -1;
+        }
+        li {
+            flex: 1;
+        }
+    }
+}
+%step-img {
+    @include flex(true, "center", "center");
+    @extend .icon;
+    background-size: rem(48px);
+    border-radius: 50%;
+}
+%step-txt {
+    font-weight: $font-weight-medium;
+}
+.step {
+    @extend %step-base;
+    
+    @each $size in $step-size {
+        &.step-#{$size} {
+            @if $size== "lg" {
+                .step-img {
+                    width: rem(80px);
+                    height: rem(80px);
+                }
+                .txt {
+                    font-size: rem(18px);
+                    line-height: rem(21.6px);
+                    letter-spacing: -2%;
+                    @extend %step-txt;
+                }
+            }
+            @else if $size == "sm" {
+                .step-list {
+                    &::before {
+                        top: rem(14px);
+                    }
+                }
+                .step-img {
+                    width: rem(28px);
+                    height: rem(28px);
+                    background-size: rem(16px);
+                }
+                .txt {
+                    font-size: rem(12px);
+                    line-height: rem(14.4px);
+                    letter-spacing: -3%;
+                    @extend %step-txt;
+                }
+            }
+        }
+    }
+    @each $status in $step-status {
+        .step-#{$status} {
+            .step-img {
+                @extend %step-img;
+            }
+            @if $status== "default" {
+                .step-img {
+                    background-color: $gray-003;
+                    @extend .step-check;
+                }
+                .txt {
+                    color: $gray-003;
+                }
+            }
+            @else if $status == "current" {
+                .step-img {
+                    background-color: $orange-001;
+                    @extend .step-doc;
+                }
+                .txt {
+                    color: $orange-001;
+                }
+            }
+            @else if $status == "reject" {
+                .step-img {
+                    background-color: $error;
+                    @extend .step-reject;
+                }
+                .txt {
+                    color: $error;
+                }
+            }
+            @else if $status == "done" {
+                .step-img {
+                    background-color: $blue-002;
+                    @extend .step-check;
+                }
+                .txt {
+                    color: $blue-002;
+                }
+            }
+        }
+    }
+}

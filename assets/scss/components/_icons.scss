@@ -7,4 +7,10 @@ $icon: 'icon';
     @include icon("calendar", rem($icon-size-20), rem($icon-size-20), "/assets/images/svg/calendar.svg");
     @include icon("arrow-down", rem($icon-size-20), rem($icon-size-20), "/assets/images/svg/arrow-down.svg");
     @include icon("search", rem($icon-size-20), rem($icon-size-20), "/assets/images/svg/search.svg");
+    @include icon("checked", rem($icon-size-12), rem($icon-size-12), "/assets/images/svg/checked.svg");
+    @include icon("checked-disabled", rem($icon-size-12), rem($icon-size-12), "/assets/images/svg/checked-disabled.svg");
+    @include icon("radio-checked", rem($icon-size-20), rem($icon-size-20), "/assets/images/svg/radio-checked.svg");
+    @include icon("step-doc", rem(48px), rem(48px), "/assets/images/svg/step-doc.svg");
+    @include icon("step-reject", rem(48px), rem(48px), "/assets/images/svg/step-reject.svg");
+    @include icon("step-check", rem(48px), rem(48px), "/assets/images/svg/step-check.svg");
 }

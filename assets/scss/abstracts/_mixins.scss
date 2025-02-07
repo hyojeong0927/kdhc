@@ -130,45 +130,44 @@
 
 // :before, :after
 // $before($before, $absolute, 2px, 3px, 0px, 0px);
-// $before(true, true, 2px, 3px, 0px, 0px);
+// before(true, true, 2px, 3px, 0px, 0px);
 @mixin before (
-  $before: true,
-  $content: '',
-  $absolute: true,
-  $left: 0px,
-  $top: 0px,
-  $right: 0px,
-  $bottom: 0px 
-  ) {
-    @if $before == true {
-      &::before {
-        content: $content;
-        display: block;
-        @if $absolute == true {
-          left: $left;
-          top: $top;
-          right: $right;
-          bottom: $bottom;
+    $before: true,
+    $absolute: true,
+    $top: 0px,
+    $right: 0px,
+    $bottom: 0px,
+    $left: 0px, 
+    ) {
+        @if $before == true {
+            &::before {
+                content:'';
+
+                @if $absolute == true {
+                    position: absolute;
+                    top: $top;
+                    right: $right;
+                    bottom: $bottom;
+                    left: $left;
+                } @else {
+                    display: block;
+                }
+            }
         } @else {
-  
+            &::after {
+                content: '';
+
+                @if $absolute == true {
+                    position: absolute;
+                    top: $top;
+                    right: $right;
+                    bottom: $bottom;
+                    left: $left;
+                } @else {
+                    display: block;
+                }
+            }
         }
-      }
-     
-    } @else {
-      &::after {
-        content: $content;
-        display: block;
-        @if $absolute == true {
-          left: $left;
-          top: $top;
-          right: $right;
-          bottom: $bottom;
-        } @else {
-  
-        }
-      }
-    } 
-  
 }
 // icon
 // @include icon($icon-name, $width, $height, $url)

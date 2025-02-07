@@ -1,75 +1,109 @@
 /* Checkbox and Radio
 ========================================================================== */
-.checkbox[type="checkbox"] {
-
-    &:disabled {
-
-    }
-
+// checkbox 공통 스타일 start
+%checkbox-base {
+    margin: $form-check-margin-bottom;
+    padding: $form-check-padding;
+    width: rem($form-check-input-width);
+    height: rem($form-check-min-height);
+    vertical-align: top;
+    border: $form-check-input-border;
+    background-color: $form-check-input-bg;
+    box-shadow: $form-check-input-focus-box-shadow;
+    filter: none;
 }
-.radio[type="radio"] {
-    &:disabled {
-        
+%checkbox-checked {
+    border: $form-check-input-checked-border-color;
+    background-color: $form-check-input-checked-bg-color;
+}
+%checkbox-checked-disabled {
+    border-color: $form-check-input-disabled-bg !important;
+}
+%checkbox-disabled {
+    border: $form-check-input-border;
+    background-color: $form-check-input-disabled-bg;
+    opacity: $form-check-input-disabled-opacity;
+}
+// %checkbox-label {
+
+// }
+// checkbox 공통 스타일 end
+
+// checkbox
+.form-check-input[type="checkbox"] {
+    @extend %checkbox-base;
+    border-radius: $form-check-input-border-radius;
+
+    &.active,
+    &:hover,
+    &:active,
+    &:focus-visible,
+    &:focus-within,
+    &:focus {
+        @extend %checkbox-base;
+        outline: none;
+    }
+    &:checked {
+        @extend %checkbox-checked;
+        --bs-form-check-bg-image: url(/assets/images/svg/checked.svg);
+        background-size: rem(12px) rem(12px);
+
+        &[disabled] {
+            @extend %checkbox-disabled;
+            @extend %checkbox-checked-disabled;
+            --bs-form-check-bg-image: url(/assets/images/svg/checked-disabled.svg);
+        }
+    }
+    &[disabled] {
+        @extend %checkbox-disabled;
     }
 }
-/* The switch - the box around the slider */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  /* Hide default HTML checkbox */
-    input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
+// radio
+.form-check-input[type="radio"] {
+    @extend %checkbox-base;
+    border-radius: $form-check-radio-border-radius;
 
-    /* The slider */
-    .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        -webkit-transition: .4s;
-        transition: .4s;
+    &.active,
+    &:hover,
+    &:active,
+    &:focus-visible,
+    &:focus-within,
+    &:focus {
+        @extend %checkbox-base;
+        outline: none;
     }
+    &:checked {
+        border: $form-check-input-checked-border-color;
+        background-color: $form-check-input-checked-bg-color;
+        --bs-form-check-bg-image: url(/assets/images/svg/radio-checked.svg);
 
-    .slider:before {
-        position: absolute;
-        content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
+        &[disabled] {
+            @extend %checkbox-disabled;
+            --bs-form-check-bg-image: url(/assets/images/svg/radio-checked-disabled.svg);
+            background-size: rem(10px);
+            background-position: center;
+        }
     }
-
-    input:checked + .slider {
-        background-color: #2196F3;
+    &[disabled] {
+        @extend %checkbox-disabled;
     }
+}
 
-    input:focus + .slider {
-        box-shadow: 0 0 1px #2196F3;
-    }
-
-    input:checked + .slider:before {
-        -webkit-transform: translateX(26px);
-        -ms-transform: translateX(26px);
-        transform: translateX(26px);
-    }
-
-    /* Rounded sliders */
-    .slider.round {
-        border-radius: 34px;
-    }
-
-    .slider.round:before {
-        border-radius: 50%;
+// switch
+.form-switch {
+    .form-check-input[type="checkbox"] {
+        width: rem(40px);
+        height: rem(24px);
+        background-image: url(/assets/images/svg/switch-default.svg);
+        background-size: rem(20px);
+        background-color: $input-border-color;
+        background-position: left rem(3px) center;
+        border: 0;
+        border-radius: rem(30px);
+        transition: background-position .15s ease-in-out;
+        &:checked {
+            background-color: $form-check-input-checked-bg-color;
+            background-position: right rem(3px) center;
+        }
     }
 }

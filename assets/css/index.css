@@ -12322,7 +12322,7 @@ body {
   -webkit-text-size-adjust: 100%;
      -moz-text-size-adjust: 100%;
           text-size-adjust: 100%;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans KR", Roboto, "Helvetica Neue", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   box-sizing: border-box;
 }
 
@@ -12916,6 +12916,15 @@ template {
 ========================================================================== */
 /* Forms
 ========================================================================== */
+.form-check {
+  padding: 0rem;
+  min-height: 1.25rem;
+  margin: 0rem;
+}
+.form-check label {
+  margin-left: 0.25rem;
+}
+
 /* Main
 ========================================================================== */
 /* Container
@@ -12947,66 +12956,143 @@ template {
 ========================================================================== */
 /* Button
 ========================================================================== */
-.button {
-  height: 20px;
-  padding: 0 6px;
-  font-weight: 700;
+.btn {
+  display: inline-block;
+  font-weight: 500;
+  line-height: 1.35rem;
+  letter-spacing: -2%;
+  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans KR", Roboto, "Helvetica Neue", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  border-style: solid;
+}
+
+.btn.btn-outline[disabled], .btn.btn-secondary[disabled], .btn.btn-primary[disabled] {
+  opacity: 1;
+}
+
+.btn.btn-lg {
+  padding: 0.5rem 1rem;
+  min-width: 6rem;
+  height: 2.38rem;
+  font-size: 1.13rem;
+  border-radius: 6px;
+}
+.btn.btn-md {
+  padding: 0.38rem 0.75rem;
+  min-width: 5.25rem;
+  height: 2.13rem;
+  font-size: 1.13rem;
+  border-radius: 6px;
+}
+.btn.btn-sm {
+  padding: 0.38rem 1rem;
+  min-width: 5.19rem;
+  height: 1.81rem;
+  font-size: 0.88rem;
   border-radius: 4px;
+}
+.btn.btn-primary {
+  color: #fff;
+  background-color: #384B5E;
+  border-color: #384B5E;
+}
+.btn.btn-primary[disabled] {
+  border-color: #C8C8C8;
+  background-color: #C8C8C8;
+}
+.btn.btn-secondary {
+  color: #fff;
+  background-color: #3D6F94;
+  border-color: #3D6F94;
+}
+.btn.btn-secondary[disabled] {
+  border-color: #C5CDD5;
+  background-color: #C5CDD5;
+}
+.btn.btn-outline {
+  color: #384B5E;
+  background-color: #fff;
+  border-width: 1px;
+  border-color: #384B5E;
+}
+.btn.btn-outline[disabled] {
+  color: #C8C8C8;
+  border-color: #C8C8C8;
 }
 
 /* Calendar
 ========================================================================== */
 /* Checkbox and Radio
 ========================================================================== */
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-  /* Hide default HTML checkbox */
-  /* The slider */
-  /* Rounded sliders */
+.form-check-input[type=radio].active, .form-check-input[type=radio]:hover, .form-check-input[type=radio]:active, .form-check-input[type=radio]:focus-visible, .form-check-input[type=radio]:focus-within, .form-check-input[type=radio]:focus, .form-check-input[type=radio], .form-check-input[type=checkbox].active, .form-check-input[type=checkbox]:hover, .form-check-input[type=checkbox]:active, .form-check-input[type=checkbox]:focus-visible, .form-check-input[type=checkbox]:focus-within, .form-check-input[type=checkbox]:focus, .form-check-input[type=checkbox] {
+  margin: 0px;
+  padding: 0px;
+  width: 1.25rem;
+  height: 1.25rem;
+  vertical-align: top;
+  border: 1px solid #A5A5A5;
+  background-color: #fff;
+  box-shadow: none;
+  filter: none;
 }
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+
+.form-check-input[type=checkbox]:checked {
+  border: #3D6F94;
+  background-color: #3D6F94;
 }
-.switch .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
+
+.form-check-input[type=checkbox]:checked[disabled] {
+  border-color: #DCDCDC !important;
 }
-.switch .slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: 0.4s;
+
+.form-check-input[type=radio][disabled], .form-check-input[type=radio]:checked[disabled], .form-check-input[type=checkbox][disabled], .form-check-input[type=checkbox]:checked[disabled] {
+  border: 1px solid #A5A5A5;
+  background-color: #DCDCDC;
+  opacity: 1;
 }
-.switch input:checked + .slider {
-  background-color: #2196F3;
+
+.form-check-input[type=checkbox] {
+  border-radius: 4px;
 }
-.switch input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+.form-check-input[type=checkbox].active, .form-check-input[type=checkbox]:hover, .form-check-input[type=checkbox]:active, .form-check-input[type=checkbox]:focus-visible, .form-check-input[type=checkbox]:focus-within, .form-check-input[type=checkbox]:focus {
+  outline: none;
 }
-.switch input:checked + .slider:before {
-  transform: translateX(26px);
+.form-check-input[type=checkbox]:checked {
+  --bs-form-check-bg-image: url(/assets/images/svg/checked.svg);
+  background-size: 0.75rem 0.75rem;
 }
-.switch .slider.round {
-  border-radius: 34px;
+.form-check-input[type=checkbox]:checked[disabled] {
+  --bs-form-check-bg-image: url(/assets/images/svg/checked-disabled.svg);
 }
-.switch .slider.round:before {
+.form-check-input[type=radio] {
   border-radius: 50%;
+}
+.form-check-input[type=radio].active, .form-check-input[type=radio]:hover, .form-check-input[type=radio]:active, .form-check-input[type=radio]:focus-visible, .form-check-input[type=radio]:focus-within, .form-check-input[type=radio]:focus {
+  outline: none;
+}
+.form-check-input[type=radio]:checked {
+  border: #3D6F94;
+  background-color: #3D6F94;
+  --bs-form-check-bg-image: url(/assets/images/svg/radio-checked.svg);
+}
+.form-check-input[type=radio]:checked[disabled] {
+  --bs-form-check-bg-image: url(/assets/images/svg/radio-checked-disabled.svg);
+  background-size: 0.63rem;
+  background-position: center;
+}
+.form-switch .form-check-input[type=checkbox] {
+  width: 2.5rem;
+  height: 1.5rem;
+  background-image: url(/assets/images/svg/switch-default.svg);
+  background-size: 1.25rem;
+  background-color: #A5A5A5;
+  background-position: left 0.19rem center;
+  border: 0;
+  border-radius: 1.88rem;
+  transition: background-position 0.15s ease-in-out;
+}
+.form-switch .form-check-input[type=checkbox]:checked {
+  background-color: #3D6F94;
+  background-position: right 0.19rem center;
 }
 
 /* DropDown
@@ -13058,7 +13144,43 @@ template {
 /* Icons
 //@include icon($icon-name, $width, $height, $url)
 ========================================================================== */
-.icon, input[type=date], .form-select {
+.icon, .step .step-done .step-img, .step .step-reject .step-img, .step .step-current .step-img, .step .step-default .step-img, input[type=date], .form-select {
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
   display: inline-block;
   padding: 0;
   background-size: 100%;
@@ -13078,20 +13200,50 @@ template {
   background-repeat: no-repeat;
   box-sizing: content-box;
 }
-.icon.calendar, input[type=date], .calendar.form-select {
+.icon.calendar, .step .step-done .calendar.step-img, .step .step-reject .calendar.step-img, .step .step-current .calendar.step-img, .step .step-default .calendar.step-img, input[type=date], .calendar.form-select {
   width: 1.25rem;
   height: 1.25rem;
   background-image: url("/assets/images/svg/calendar.svg");
 }
-.icon.arrow-down, input.arrow-down[type=date], .form-select {
+.icon.arrow-down, .step .step-done .arrow-down.step-img, .step .step-reject .arrow-down.step-img, .step .step-current .arrow-down.step-img, .step .step-default .arrow-down.step-img, input.arrow-down[type=date], .form-select {
   width: 1.25rem;
   height: 1.25rem;
   background-image: url("/assets/images/svg/arrow-down.svg");
 }
-.icon.search, input.search[type=date], .search.form-select {
+.icon.search, .step .step-done .search.step-img, .step .step-reject .search.step-img, .step .step-current .search.step-img, .step .step-default .search.step-img, input.search[type=date], .search.form-select {
   width: 1.25rem;
   height: 1.25rem;
   background-image: url("/assets/images/svg/search.svg");
+}
+.icon.checked, .step .step-done .checked.step-img, .step .step-reject .checked.step-img, .step .step-current .checked.step-img, .step .step-default .checked.step-img, input.checked[type=date], .checked.form-select {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-image: url("/assets/images/svg/checked.svg");
+}
+.icon.checked-disabled, .step .step-done .checked-disabled.step-img, .step .step-reject .checked-disabled.step-img, .step .step-current .checked-disabled.step-img, .step .step-default .checked-disabled.step-img, input.checked-disabled[type=date], .checked-disabled.form-select {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-image: url("/assets/images/svg/checked-disabled.svg");
+}
+.icon.radio-checked, .step .step-done .radio-checked.step-img, .step .step-reject .radio-checked.step-img, .step .step-current .radio-checked.step-img, .step .step-default .radio-checked.step-img, input.radio-checked[type=date], .radio-checked.form-select {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url("/assets/images/svg/radio-checked.svg");
+}
+.icon.step-doc, .step .step-done .step-doc.step-img, .step .step-reject .step-doc.step-img, .step .step-current .step-img, .step .step-default .step-doc.step-img, input.step-doc[type=date], .step-doc.form-select {
+  width: 3rem;
+  height: 3rem;
+  background-image: url("/assets/images/svg/step-doc.svg");
+}
+.icon.step-reject, .step .step-done .step-reject.step-img, .step .step-reject .step-img, .step .step-current .step-reject.step-img, .step .step-default .step-reject.step-img, input.step-reject[type=date], .step-reject.form-select {
+  width: 3rem;
+  height: 3rem;
+  background-image: url("/assets/images/svg/step-reject.svg");
+}
+.icon.step-check, .step .step-done .step-img, .step .step-reject .step-check.step-img, .step .step-current .step-check.step-img, .step .step-default .step-img, input.step-check[type=date], .step-check.form-select {
+  width: 3rem;
+  height: 3rem;
+  background-image: url("/assets/images/svg/step-check.svg");
 }
 
 /* Input, Textarea, Date Picker, Select
@@ -13414,6 +13566,93 @@ input[type=date]:focus::before, input[type=date]:valid::before {
 }
 /* Step
 ========================================================================== */
+.step .step-list {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0px;
+}
+.step .step-list::before {
+  content: "";
+  position: absolute;
+  top: 2.5rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.step .step-list::before {
+  height: 1px;
+  width: 100%;
+  background-color: #A5A5A5;
+  z-index: -1;
+}
+.step .step-list li {
+  flex: 1;
+}
+
+.step .step-done .step-img, .step .step-reject .step-img, .step .step-current .step-img, .step .step-default .step-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  background-size: 3rem;
+  border-radius: 50%;
+}
+
+.step.step-sm .txt, .step.step-lg .txt {
+  font-weight: 500;
+}
+
+.step.step-lg .step-img {
+  width: 5rem;
+  height: 5rem;
+}
+.step.step-lg .txt {
+  font-size: 1.13rem;
+  line-height: 1.35rem;
+  letter-spacing: -2%;
+}
+.step.step-sm .step-list::before {
+  top: 0.88rem;
+}
+.step.step-sm .step-img {
+  width: 1.75rem;
+  height: 1.75rem;
+  background-size: 1rem;
+}
+.step.step-sm .txt {
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+  letter-spacing: -3%;
+}
+.step .step-default .step-img {
+  background-color: #A5A5A5;
+}
+.step .step-default .txt {
+  color: #A5A5A5;
+}
+.step .step-current .step-img {
+  background-color: #FF8C14;
+}
+.step .step-current .txt {
+  color: #FF8C14;
+}
+.step .step-reject .step-img {
+  background-color: #DC3545;
+}
+.step .step-reject .txt {
+  color: #DC3545;
+}
+.step .step-done .step-img {
+  background-color: #0D63D4;
+}
+.step .step-done .txt {
+  color: #0D63D4;
+}
+
 /* Tables
 ========================================================================== */
 /* Tabs

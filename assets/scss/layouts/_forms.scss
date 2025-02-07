@@ -3,3 +3,13 @@
 .form {
     
 }
+
+.form-check {
+    padding: rem($form-check-padding);
+    min-height: rem($form-check-min-height);
+    margin: rem($form-check-margin-bottom);
+
+    label {
+        margin-left: rem($form-check-label-left);
+    }
+}

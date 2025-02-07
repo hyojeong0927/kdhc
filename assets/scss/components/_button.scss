@@ -1,21 +1,82 @@
 /* Button
 ========================================================================== */
-$button-types: ('xlg', 'lg', 'mid', 'sm', 'xsm');
+$button-size: ("lg", "md", "sm");
+$button-types: ("primary", "secondary", "outline");
 
 %button-base {
-  // 공통 스타일
-  // @include text-style(12);
-  height: 20px;
-  padding: 0 6px;
-  font-weight: 700;
-  border-radius: 4px;
+    // 공통 스타일
+    display: inline-block;
+    font-weight: $btn-font-weight;
+    line-height: rem($btn-line-height);
+    letter-spacing: $btn-letter-spacing;
+    font-family: $btn-font-family;
+    border-style: solid;
+}
+%button-disabled {
+    opacity: $btn-disabled-opacity;   
 }
 
-.button {
+.btn {
     @extend %button-base;
+
+    @each $bs in $button-size {
+        &.btn-#{$bs} {
+           @if $bs == "lg" {
+                padding: rem($btn-padding-y-lg) rem($btn-padding-x-lg);
+                min-width: rem(96px);
+                height: rem(38px);
+                font-size: rem($btn-font-size-lg);
+                border-radius: $btn-border-radius-lg;
+            }
+            @else if $bs == "md" {
+                padding:  rem($btn-padding-y) rem($btn-padding-x);
+                min-width: rem(84px);
+                height: rem(34px);
+                font-size: rem($btn-font-size);
+                border-radius: $btn-border-radius;
+            }
+            @else if $bs == "sm" {
+                padding: rem($btn-padding-y-sm) rem($btn-padding-x-sm);
+                min-width: rem(83px);
+                height: rem(29px);
+                font-size: rem($btn-font-size-sm);
+                border-radius: $btn-border-radius-sm;
+            }
+        }
+    }
     @each $bt in $button-types {
-        .button-#{$bt} {
-           
+        &.btn-#{$bt} {
+            @if $bt == "primary" {
+                color: $btn-link-color;
+                background-color: $primary;
+                border-color: $primary;
+                &[disabled] {
+                    border-color: $btn-disabled;
+                    background-color: $btn-disabled-bg;
+                    @extend %button-disabled;
+                }
+            }
+            @else if $bt == "secondary" {
+                color: $btn-link-color;
+                background-color: $secondary;
+                border-color: $secondary;
+                &[disabled] {
+                    border-color: $gray-007;
+                    background-color: $gray-007;
+                    @extend %button-disabled;
+                }
+            }
+            @else if $bt == "outline" {
+                color: $primary;
+                background-color: $white;
+                border-width: $btn-border-width;
+                border-color: $primary;
+                &[disabled] {
+                    color: $btn-disabled;
+                    border-color: $btn-disabled;
+                    @extend %button-disabled;
+                }
+            }
         }
     }
 }

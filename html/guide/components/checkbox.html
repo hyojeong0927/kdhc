@@ -19,86 +19,129 @@
                 <caption>입력 필드</caption>
                 <colgroup>
                     <col width="10%" />
-                    <col width="18%" />
-                    <col width="18%" />
-                    <col width="18%" />
-                    <col width="18%" />
-                    <col width="18%" />
+                    <col width="30%" />
+                    <col width="30%" />
+                    <col width="30%" />
                 </colgroup>
                 <thead>
                     <tr>
                         <th>구분</th>
-                        <th>normal</th>
-                        <th>focus/hover</th>
+                        <th>default</th>
+                        <th>checked</th>
                         <th>disable</th>
-                        <th>readonly</th>
-                        <th>error</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <th>Checkbox</th>
                         <td>
-                            <div>
-                                <input type="checkbox" id="checkbox-1" name="checkbox-1" checked />
-                                <label for="checkbox-1">Checkbox 1</label>
-                            </div>
-
-                            <div>
-                                <input type="checkbox" id="checkbox-2" name="checkbox-2" />
-                                <label for="checkbox-2">Checkbox 2</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  default
+                                </label>
                             </div>
                         </td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input active" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <label class="form-check-label" for="flexCheckChecked">
+                                  checked
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
+                                <label class="form-check-label" for="flexCheckDisabled">
+                                    disable
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" checked disabled>
+                                <label class="form-check-label" for="flexCheckCheckedDisabled">
+                                    checked disable
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>inline</th>
+                        <td>
+                            <div class="form-check-group">
+                                <input class="form-check-input"  type="checkbox" id="selectAllCheckbox" name="selectAllCheckbox">
+                                <label for="selectAllCheckbox">Select All</label>
+                                <input class="form-check-input" type="checkbox" id="checkbox01" name="checkbox01" class="checkboxes">
+                                <label for="checkbox01">Checkbox 1</label>
+                                <input class="form-check-input" type="checkbox" id="checkbox02" name="checkbox02" class="checkboxes"> <label for="checkbox02">Checkbox 2</label>
+                                <input class="form-check-input" type="checkbox" id="checkbox03" name="checkbox03" class="checkboxes"> <label for="checkbox03">Checkbox 3</label>
+                                <input class="form-check-input" type="checkbox" id="checkbox04" name="checkbox04" class="checkboxes"> <label for="checkbox04">Checkbox 4</label>
+                            </div>
+                        </td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr>
-                        <th>Checkbox all</th>
+                        <th>vertical</th>
                         <td>
-                            <input type="checkbox" id="selectAllCheckbox" name="selectAllCheckbox">
-                            <label for="selectAllCheckbox">Select All</label>
-                            <input type="checkbox" id="checkbox01" name="checkbox01" class="checkboxes">
-                            <label for="checkbox01">Checkbox 1</label>
-                            <input type="checkbox" id="checkbox02" name="checkbox02" class="checkboxes"> <label for="checkbox02">Checkbox 2</label>
-                            <input type="checkbox" id="checkbox03" name="checkbox03" class="checkboxes"> <label for="checkbox03">Checkbox 3</label>
-                            <input type="checkbox" id="checkbox04" name="checkbox04" class="checkboxes"> <label for="checkbox04">Checkbox 4</label>
+                            <div class="form-check-group">
+                                <input class="form-check-input" type="checkbox" id="selectAllCheckbox" name="selectAllCheckbox">
+                                <label for="selectAllCheckbox">Select All</label>
+                                <input class="form-check-input" type="checkbox" id="checkbox01" name="checkbox01" class="checkboxes">
+                                <label for="checkbox01">Checkbox 1</label>
+                                <input class="form-check-input" type="checkbox" id="checkbox02" name="checkbox02" class="checkboxes"> <label for="checkbox02">Checkbox 2</label>
+                                <input class="form-check-input" type="checkbox" id="checkbox03" name="checkbox03" class="checkboxes"> <label for="checkbox03">Checkbox 3</label>
+                                <input class="form-check-input" type="checkbox" id="checkbox04" name="checkbox04" class="checkboxes"> <label for="checkbox04">Checkbox 4</label>
+                            </div>
                         </td>
-                        <td></td>
-                        <td></td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr>
                         <th>Radio</th>
                         <td>
-                            <div>
-                                <input type="radio" id="radio01" name="drone" value="radio01" checked />
-                                <label for="radio01">radio01</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="radio02" name="drone" value="radio02" />
-                                <label for="radio02">radio02</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="radio01" name="drone1" value="radio01" />
+                                <label for="radio01">radio</label>
                             </div>
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="radio02" name="drone2" value="radio02" checked />
+                                <label for="radio02">radio  checked</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="radio03" name="drone3" value="radio03" disabled />
+                                <label for="radio03">radio disabled</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="radio04" name="drone4" value="radio04" checked disabled />
+                                <label for="radio04">radio  checked disabled</label>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <th>Switch</th>
                         <td>
-                            <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                            </label>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckSwitch">
+                                <label class="form-check-label" for="flexSwitchCheckSwitch">Default switch checkbox input</label>
+                            </div>
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckSwitchChecked" checked>
+                                <label class="form-check-label" for="flexSwitchCheckSwitchChecked">Default switch checkbox input</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckSwitchDisabled" disabled>
+                                <label class="form-check-label" for="flexSwitchCheckSwitchDisabled">Default switch checkbox input</label>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
              </table>
