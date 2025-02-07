@@ -185,10 +185,19 @@
                     text-align: left;
                     border: 1px solid #ddd;
                     background-color: #fff;
+                    xmp {
+                        display: block;
+                        margin: 10px 0;
+                    }
                 }
             }
             &.md {
                 width: 900px;
+            }
+            &.icon-tbl {
+                td {
+                    text-align: center;
+                }
             }
         }
     }

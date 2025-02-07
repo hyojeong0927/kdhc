@@ -1,11 +1,64 @@
 /* Navigation
 ========================================================================== */
-$nav-types: ('top', 'left', 'right', 'down');
-
-.nav {
-    @each $bt in $nav-types {
-        .nav-#{$bt} {
-           
+nav {
+    // pagination 스타일
+    &.page-navigation {
+        @include flex(true, "center", "center");
+        .pagination {
+            @include flex(true, "center", "center", rem(8px));
+            .page-item {
+                min-width: rem(36px);
+                height: rem(36px);
+                .page-link {
+                    @include flex(true, "center", "center");
+                    padding: rem(6px);
+                    min-width: inherit;
+                    height: inherit;
+                    color: $gray-002;
+                    font-size: rem(16px);
+                    line-height: 19.2px;
+                    letter-spacing: -3%;
+                    text-align: center;
+                    border: none;
+                    border-radius: rem(6px);
+                    background-color: $white;
+                }
+                &.active {
+                    background-color: transparent;
+                    .page-link {
+                        color: $white;
+                        background-color: $secondary;
+                    }
+                }
+                &.disabled {
+                    .page-link {
+                        color: $gray-008;
+                    }
+                }
+                &.next,
+                &.prev {
+                    .page-link {
+                        @extend .icon;
+                        min-width: rem(61px);
+                        width: rem(61px) !important;
+                        height: rem(36px) !important;
+                        background-repeat: no-repeat;
+                        background-size: rem(20px);
+                    }
+                }
+                &.prev {
+                    .page-link {
+                        background-position: left center;
+                        @extend .arrow-left;
+                    }
+                }
+                &.next {
+                    .page-link {
+                        @extend .arrow-right;
+                        background-position: right center;
+                    }
+                }
+            }
         }
     }
 }

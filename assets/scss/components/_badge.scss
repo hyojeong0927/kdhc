@@ -1,0 +1,30 @@
+/* Tags
+========================================================================== */
+$badge-types: ("type01", "type02");
+
+%badge-base {
+    // 공통 스타일
+    padding: rem($badge-padding-y) rem($badge-padding-x);
+    color: $badge-color;
+    font-size: rem($badge-font-size);
+    font-weight: $badge-font-weight;
+    line-height: rem($badge-line-height);
+    border-radius: rem($badge-border-radius);
+}
+
+.badge {
+    @extend %badge-base;
+    @each $bt in $badge-types {
+        &.badge-#{$bt} {
+            @if $bt == "type01" {
+                color: $blue-002;
+                background-color: $blue-003;
+            }
+            @else if $bt == "type02"  {
+                color: $error;
+                background-color: $red-002;
+                
+            }
+        }  
+    }
+}

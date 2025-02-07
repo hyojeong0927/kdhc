@@ -12910,6 +12910,66 @@ template {
 ========================================================================== */
 /* Navigation
 ========================================================================== */
+nav.page-navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+nav.page-navigation .pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+nav.page-navigation .pagination .page-item {
+  min-width: 2.25rem;
+  height: 2.25rem;
+}
+nav.page-navigation .pagination .page-item .page-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  padding: 0.38rem;
+  min-width: inherit;
+  height: inherit;
+  color: #18191C;
+  font-size: 1rem;
+  line-height: 19.2px;
+  letter-spacing: -3%;
+  text-align: center;
+  border: none;
+  border-radius: 0.38rem;
+  background-color: #fff;
+}
+nav.page-navigation .pagination .page-item.active {
+  background-color: transparent;
+}
+nav.page-navigation .pagination .page-item.active .page-link {
+  color: #fff;
+  background-color: #3D6F94;
+}
+nav.page-navigation .pagination .page-item.disabled .page-link {
+  color: #555555;
+}
+nav.page-navigation .pagination .page-item.next .page-link, nav.page-navigation .pagination .page-item.prev .page-link {
+  min-width: 3.81rem;
+  width: 3.81rem !important;
+  height: 2.25rem !important;
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+}
+nav.page-navigation .pagination .page-item.prev .page-link {
+  background-position: left center;
+}
+nav.page-navigation .pagination .page-item.next .page-link {
+  background-position: right center;
+}
+
 /* Footer
 ========================================================================== */
 /* Sidebar
@@ -12952,6 +13012,26 @@ template {
 ========================================================================== */
 /* Alert
 ========================================================================== */
+/* Tags
+========================================================================== */
+.badge {
+  padding: 0.25rem 0.5rem;
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.05rem;
+  border-radius: 0.25rem;
+}
+
+.badge.badge-type01 {
+  color: #0D63D4;
+  background-color: #D9EAFF;
+}
+.badge.badge-type02 {
+  color: #DC3545;
+  background-color: #FFE9D9;
+}
+
 /* Box
 ========================================================================== */
 /* Button
@@ -13144,7 +13224,67 @@ template {
 /* Icons
 //@include icon($icon-name, $width, $height, $url)
 ========================================================================== */
-.icon, .form-select, .step .step-done .step-img, .step .step-reject .step-img, .step .step-current .step-img, .step .step-default .step-img, input[type=date] {
+.icon, .form-select, .step .step-done .step-img, .step .step-reject .step-img, .step .step-current .step-img, .step .step-default .step-img, input[type=date], nav.page-navigation .pagination .page-item.next .page-link, nav.page-navigation .pagination .page-item.prev .page-link {
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
   display: inline-block;
   padding: 0;
   background-size: 100%;
@@ -13200,50 +13340,100 @@ template {
   background-repeat: no-repeat;
   box-sizing: content-box;
 }
-.icon.calendar, .calendar.form-select, .step .step-done .calendar.step-img, .step .step-reject .calendar.step-img, .step .step-current .calendar.step-img, .step .step-default .calendar.step-img, input[type=date] {
+.icon.h1-logo, .h1-logo.form-select, .step .step-done .h1-logo.step-img, .step .step-reject .h1-logo.step-img, .step .step-current .h1-logo.step-img, .step .step-default .h1-logo.step-img, input.h1-logo[type=date], nav.page-navigation .pagination .page-item.next .h1-logo.page-link, nav.page-navigation .pagination .page-item.prev .h1-logo.page-link {
+  width: 4rem;
+  height: 3.13rem;
+  background-image: url("/assets/images/svg/logo.svg");
+}
+.icon.top-clipboard, .top-clipboard.form-select, .step .step-done .top-clipboard.step-img, .step .step-reject .top-clipboard.step-img, .step .step-current .top-clipboard.step-img, .step .step-default .top-clipboard.step-img, input.top-clipboard[type=date], nav.page-navigation .pagination .page-item.next .top-clipboard.page-link, nav.page-navigation .pagination .page-item.prev .top-clipboard.page-link {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url("/assets/images/svg/clipboard.svg");
+}
+.icon.calendar-check, .calendar-check.form-select, .step .step-done .calendar-check.step-img, .step .step-reject .calendar-check.step-img, .step .step-current .calendar-check.step-img, .step .step-default .calendar-check.step-img, input.calendar-check[type=date], nav.page-navigation .pagination .page-item.next .calendar-check.page-link, nav.page-navigation .pagination .page-item.prev .calendar-check.page-link {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url("/assets/images/svg/calendar-check.svg");
+}
+.icon.file-check, .file-check.form-select, .step .step-done .file-check.step-img, .step .step-reject .file-check.step-img, .step .step-current .file-check.step-img, .step .step-default .file-check.step-img, input.file-check[type=date], nav.page-navigation .pagination .page-item.next .file-check.page-link, nav.page-navigation .pagination .page-item.prev .file-check.page-link {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url("/assets/images/svg/file-check.svg");
+}
+.icon.user-circle, .user-circle.form-select, .step .step-done .user-circle.step-img, .step .step-reject .user-circle.step-img, .step .step-current .user-circle.step-img, .step .step-default .user-circle.step-img, input.user-circle[type=date], nav.page-navigation .pagination .page-item.next .user-circle.page-link, nav.page-navigation .pagination .page-item.prev .user-circle.page-link {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url("/assets/images/svg/user-circle.svg");
+}
+.icon.arrow-expansion, .arrow-expansion.form-select, .step .step-done .arrow-expansion.step-img, .step .step-reject .arrow-expansion.step-img, .step .step-current .arrow-expansion.step-img, .step .step-default .arrow-expansion.step-img, input.arrow-expansion[type=date], nav.page-navigation .pagination .page-item.next .arrow-expansion.page-link, nav.page-navigation .pagination .page-item.prev .arrow-expansion.page-link {
+  width: 2rem;
+  height: 2rem;
+  background-image: url("/assets/images/svg/arrow-expansion.svg");
+}
+.icon.arrow-close, .arrow-close.form-select, .step .step-done .arrow-close.step-img, .step .step-reject .arrow-close.step-img, .step .step-current .arrow-close.step-img, .step .step-default .arrow-close.step-img, input.arrow-close[type=date], nav.page-navigation .pagination .page-item.next .arrow-close.page-link, nav.page-navigation .pagination .page-item.prev .arrow-close.page-link {
+  width: 2rem;
+  height: 2rem;
+  background-image: url("/assets/images/svg/arrow-close.svg");
+}
+.icon.calendar, .calendar.form-select, .step .step-done .calendar.step-img, .step .step-reject .calendar.step-img, .step .step-current .calendar.step-img, .step .step-default .calendar.step-img, input[type=date], nav.page-navigation .pagination .page-item.next .calendar.page-link, nav.page-navigation .pagination .page-item.next input.page-link[type=date], nav.page-navigation .pagination .page-item.prev .calendar.page-link, nav.page-navigation .pagination .page-item.prev input.page-link[type=date] {
   width: 1.25rem;
   height: 1.25rem;
   background-image: url("/assets/images/svg/calendar.svg");
 }
-.icon.arrow-down, .form-select, .step .step-done .arrow-down.step-img, .step .step-done .step-img.form-select, .step .step-reject .arrow-down.step-img, .step .step-reject .step-img.form-select, .step .step-current .arrow-down.step-img, .step .step-current .step-img.form-select, .step .step-default .arrow-down.step-img, .step .step-default .step-img.form-select, input.arrow-down[type=date], input[type=date].form-select {
+.icon.arrow-down, .form-select, .step .step-done .arrow-down.step-img, .step .step-done .step-img.form-select, .step .step-reject .arrow-down.step-img, .step .step-reject .step-img.form-select, .step .step-current .arrow-down.step-img, .step .step-current .step-img.form-select, .step .step-default .arrow-down.step-img, .step .step-default .step-img.form-select, input.arrow-down[type=date], input[type=date].form-select, nav.page-navigation .pagination .page-item.next .arrow-down.page-link, nav.page-navigation .pagination .page-item.next .page-link.form-select, nav.page-navigation .pagination .page-item.prev .arrow-down.page-link, nav.page-navigation .pagination .page-item.prev .page-link.form-select {
   width: 1.25rem;
   height: 1.25rem;
   background-image: url("/assets/images/svg/arrow-down.svg");
 }
-.icon.search, .search.form-select, .step .step-done .search.step-img, .step .step-reject .search.step-img, .step .step-current .search.step-img, .step .step-default .search.step-img, input.search[type=date] {
+.icon.search, .search.form-select, .step .step-done .search.step-img, .step .step-reject .search.step-img, .step .step-current .search.step-img, .step .step-default .search.step-img, input.search[type=date], nav.page-navigation .pagination .page-item.next .search.page-link, nav.page-navigation .pagination .page-item.prev .search.page-link {
   width: 1.25rem;
   height: 1.25rem;
   background-image: url("/assets/images/svg/search.svg");
 }
-.icon.checked, .checked.form-select, .step .step-done .checked.step-img, .step .step-reject .checked.step-img, .step .step-current .checked.step-img, .step .step-default .checked.step-img, input.checked[type=date] {
+.icon.checked, .checked.form-select, .step .step-done .checked.step-img, .step .step-reject .checked.step-img, .step .step-current .checked.step-img, .step .step-default .checked.step-img, input.checked[type=date], nav.page-navigation .pagination .page-item.next .checked.page-link, nav.page-navigation .pagination .page-item.prev .checked.page-link {
   width: 0.75rem;
   height: 0.75rem;
   background-image: url("/assets/images/svg/checked.svg");
 }
-.icon.checked-disabled, .checked-disabled.form-select, .step .step-done .checked-disabled.step-img, .step .step-reject .checked-disabled.step-img, .step .step-current .checked-disabled.step-img, .step .step-default .checked-disabled.step-img, input.checked-disabled[type=date] {
+.icon.checked-disabled, .checked-disabled.form-select, .step .step-done .checked-disabled.step-img, .step .step-reject .checked-disabled.step-img, .step .step-current .checked-disabled.step-img, .step .step-default .checked-disabled.step-img, input.checked-disabled[type=date], nav.page-navigation .pagination .page-item.next .checked-disabled.page-link, nav.page-navigation .pagination .page-item.prev .checked-disabled.page-link {
   width: 0.75rem;
   height: 0.75rem;
   background-image: url("/assets/images/svg/checked-disabled.svg");
 }
-.icon.radio-checked, .radio-checked.form-select, .step .step-done .radio-checked.step-img, .step .step-reject .radio-checked.step-img, .step .step-current .radio-checked.step-img, .step .step-default .radio-checked.step-img, input.radio-checked[type=date] {
+.icon.radio-checked, .radio-checked.form-select, .step .step-done .radio-checked.step-img, .step .step-reject .radio-checked.step-img, .step .step-current .radio-checked.step-img, .step .step-default .radio-checked.step-img, input.radio-checked[type=date], nav.page-navigation .pagination .page-item.next .radio-checked.page-link, nav.page-navigation .pagination .page-item.prev .radio-checked.page-link {
   width: 1.25rem;
   height: 1.25rem;
   background-image: url("/assets/images/svg/radio-checked.svg");
 }
-.icon.step-doc, .step-doc.form-select, .step .step-done .step-doc.step-img, .step .step-reject .step-doc.step-img, .step .step-current .step-img, .step .step-default .step-doc.step-img, input.step-doc[type=date] {
+.icon.close, .close.form-select, .step .step-done .close.step-img, .step .step-reject .close.step-img, .step .step-current .close.step-img, .step .step-default .close.step-img, input.close[type=date], nav.page-navigation .pagination .page-item.next .close.page-link, nav.page-navigation .pagination .page-item.prev .close.page-link {
+  width: 2rem;
+  height: 2rem;
+  background-image: url("/assets/images/svg/close.svg");
+}
+.icon.step-doc, .step-doc.form-select, .step .step-done .step-doc.step-img, .step .step-reject .step-doc.step-img, .step .step-current .step-img, .step .step-default .step-doc.step-img, input.step-doc[type=date], nav.page-navigation .pagination .page-item.next .step-doc.page-link, nav.page-navigation .pagination .page-item.next .step .step-current .page-link.step-img, .step .step-current nav.page-navigation .pagination .page-item.next .page-link.step-img, nav.page-navigation .pagination .page-item.prev .step-doc.page-link, nav.page-navigation .pagination .page-item.prev .step .step-current .page-link.step-img, .step .step-current nav.page-navigation .pagination .page-item.prev .page-link.step-img {
   width: 3rem;
   height: 3rem;
   background-image: url("/assets/images/svg/step-doc.svg");
 }
-.icon.step-reject, .step-reject.form-select, .step .step-done .step-reject.step-img, .step .step-reject .step-img, .step .step-current .step-reject.step-img, .step .step-default .step-reject.step-img, input.step-reject[type=date] {
+.icon.step-reject, .step-reject.form-select, .step .step-done .step-reject.step-img, .step .step-reject .step-img, .step .step-current .step-reject.step-img, .step .step-default .step-reject.step-img, input.step-reject[type=date], nav.page-navigation .pagination .page-item.next .step-reject.page-link, nav.page-navigation .pagination .page-item.next .step .step-reject .page-link.step-img, .step .step-reject nav.page-navigation .pagination .page-item.next .page-link.step-img, nav.page-navigation .pagination .page-item.prev .step-reject.page-link, nav.page-navigation .pagination .page-item.prev .step .step-reject .page-link.step-img, .step .step-reject nav.page-navigation .pagination .page-item.prev .page-link.step-img {
   width: 3rem;
   height: 3rem;
   background-image: url("/assets/images/svg/step-reject.svg");
 }
-.icon.step-check, .step-check.form-select, .step .step-done .step-img, .step .step-reject .step-check.step-img, .step .step-current .step-check.step-img, .step .step-default .step-img, input.step-check[type=date] {
+.icon.step-check, .step-check.form-select, .step .step-done .step-img, .step .step-reject .step-check.step-img, .step .step-current .step-check.step-img, .step .step-default .step-img, input.step-check[type=date], nav.page-navigation .pagination .page-item.next .step-check.page-link, nav.page-navigation .pagination .page-item.next .step .step-done .page-link.step-img, .step .step-done nav.page-navigation .pagination .page-item.next .page-link.step-img, nav.page-navigation .pagination .page-item.next .step .step-default .page-link.step-img, .step .step-default nav.page-navigation .pagination .page-item.next .page-link.step-img, nav.page-navigation .pagination .page-item.prev .step-check.page-link, nav.page-navigation .pagination .page-item.prev .step .step-done .page-link.step-img, .step .step-done nav.page-navigation .pagination .page-item.prev .page-link.step-img, nav.page-navigation .pagination .page-item.prev .step .step-default .page-link.step-img, .step .step-default nav.page-navigation .pagination .page-item.prev .page-link.step-img {
   width: 3rem;
   height: 3rem;
   background-image: url("/assets/images/svg/step-check.svg");
+}
+.icon.arrow-left, .arrow-left.form-select, .step .step-done .arrow-left.step-img, .step .step-reject .arrow-left.step-img, .step .step-current .arrow-left.step-img, .step .step-default .arrow-left.step-img, input.arrow-left[type=date], nav.page-navigation .pagination .page-item.next .arrow-left.page-link, nav.page-navigation .pagination .page-item.prev .page-link {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url("/assets/images/svg/arrow-left.svg");
+}
+.icon.arrow-right, .arrow-right.form-select, .step .step-done .arrow-right.step-img, .step .step-reject .arrow-right.step-img, .step .step-current .arrow-right.step-img, .step .step-default .arrow-right.step-img, input.arrow-right[type=date], nav.page-navigation .pagination .page-item.prev .arrow-right.page-link, nav.page-navigation .pagination .page-item.next .page-link {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url("/assets/images/svg/arrow-right.svg");
 }
 
 /* Input, Textarea, Date Picker
@@ -13708,15 +13898,6 @@ input[type=date]:focus::before, input[type=date]:valid::before {
     opacity: 1;
   }
 }
-/* Tags
-========================================================================== */
-.tag {
-  height: 20px;
-  padding: 0 6px;
-  font-weight: 700;
-  border-radius: 4px;
-}
-
 /* Title & Breadcrumbs
 ========================================================================== */
 .title {
@@ -13938,8 +14119,15 @@ input[type=date]:focus::before, input[type=date]:valid::before {
   border: 1px solid #ddd;
   background-color: #fff;
 }
+.guide-contents .tbl-wrap .tbl tbody td xmp {
+  display: block;
+  margin: 10px 0;
+}
 .guide-contents .tbl-wrap .tbl.md {
   width: 900px;
+}
+.guide-contents .tbl-wrap .tbl.icon-tbl td {
+  text-align: center;
 }
 
 /* Admin
