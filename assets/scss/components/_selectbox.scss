@@ -1,0 +1,64 @@
+/* selectbox
+========================================================================== */
+// selectbox start
+.form-select {
+    cursor: pointer;
+    padding: {
+        top: rem($form-select-padding-y);
+        right: rem($form-select-padding-x);
+        left: rem($form-select-padding-x-l);
+        bottom: rem($form-select-padding-y);
+    };
+    width: $form-select-width;
+    height: $form-select-height;
+    color: $form-select-font-color;
+    font-size: rem($form-select-font-size);
+    line-height: rem($form-select-font-line-height);
+    font-weight: $form-select-font-weight;
+    letter-spacing: $form-select-letter-spacing;
+    border-radius: rem($form-select-border-radius);
+    border: $form-select-border;
+    background-color: $input-bg;
+    transition: $input-transition;
+    @extend .icon;
+    @extend .arrow-down;
+    background-size: rem($icon-size-20);
+    background-position: right rem(12px) center;
+    box-sizing: border-box;
+    &:required:invalid {
+        color: $form-select-placeholder-color;
+    }
+    option {
+        &[value=""][disabled] {
+            display: none;
+        }
+        color: $form-select-font-color;
+    }
+    &.active,
+    &:hover,
+    &:active,
+    &:focus-visible,
+    &:focus-within,
+    &:focus {
+        @extend %input-focus;
+    }
+    &[aria-readonly="true"] {
+        @extend %input-read-only;
+        pointer-events: none;
+
+    }
+    &[aria-disabled="true"],
+    &[disabled] {
+        @extend %input-disabled;
+    }
+    &.error {
+        @extend %input-error;
+    }
+    option {
+        margin: 0;
+        padding: 0;
+        background-color: $form-select-bg;
+        border-radius: $form-select-border-radius;
+    }
+}
+// selectbox end

@@ -13144,7 +13144,7 @@ template {
 /* Icons
 //@include icon($icon-name, $width, $height, $url)
 ========================================================================== */
-.icon, .step .step-done .step-img, .step .step-reject .step-img, .step .step-current .step-img, .step .step-default .step-img, input[type=date], .form-select {
+.icon, .form-select, .step .step-done .step-img, .step .step-reject .step-img, .step .step-current .step-img, .step .step-default .step-img, input[type=date] {
   display: inline-block;
   padding: 0;
   background-size: 100%;
@@ -13200,53 +13200,53 @@ template {
   background-repeat: no-repeat;
   box-sizing: content-box;
 }
-.icon.calendar, .step .step-done .calendar.step-img, .step .step-reject .calendar.step-img, .step .step-current .calendar.step-img, .step .step-default .calendar.step-img, input[type=date], .calendar.form-select {
+.icon.calendar, .calendar.form-select, .step .step-done .calendar.step-img, .step .step-reject .calendar.step-img, .step .step-current .calendar.step-img, .step .step-default .calendar.step-img, input[type=date] {
   width: 1.25rem;
   height: 1.25rem;
   background-image: url("/assets/images/svg/calendar.svg");
 }
-.icon.arrow-down, .step .step-done .arrow-down.step-img, .step .step-reject .arrow-down.step-img, .step .step-current .arrow-down.step-img, .step .step-default .arrow-down.step-img, input.arrow-down[type=date], .form-select {
+.icon.arrow-down, .form-select, .step .step-done .arrow-down.step-img, .step .step-done .step-img.form-select, .step .step-reject .arrow-down.step-img, .step .step-reject .step-img.form-select, .step .step-current .arrow-down.step-img, .step .step-current .step-img.form-select, .step .step-default .arrow-down.step-img, .step .step-default .step-img.form-select, input.arrow-down[type=date], input[type=date].form-select {
   width: 1.25rem;
   height: 1.25rem;
   background-image: url("/assets/images/svg/arrow-down.svg");
 }
-.icon.search, .step .step-done .search.step-img, .step .step-reject .search.step-img, .step .step-current .search.step-img, .step .step-default .search.step-img, input.search[type=date], .search.form-select {
+.icon.search, .search.form-select, .step .step-done .search.step-img, .step .step-reject .search.step-img, .step .step-current .search.step-img, .step .step-default .search.step-img, input.search[type=date] {
   width: 1.25rem;
   height: 1.25rem;
   background-image: url("/assets/images/svg/search.svg");
 }
-.icon.checked, .step .step-done .checked.step-img, .step .step-reject .checked.step-img, .step .step-current .checked.step-img, .step .step-default .checked.step-img, input.checked[type=date], .checked.form-select {
+.icon.checked, .checked.form-select, .step .step-done .checked.step-img, .step .step-reject .checked.step-img, .step .step-current .checked.step-img, .step .step-default .checked.step-img, input.checked[type=date] {
   width: 0.75rem;
   height: 0.75rem;
   background-image: url("/assets/images/svg/checked.svg");
 }
-.icon.checked-disabled, .step .step-done .checked-disabled.step-img, .step .step-reject .checked-disabled.step-img, .step .step-current .checked-disabled.step-img, .step .step-default .checked-disabled.step-img, input.checked-disabled[type=date], .checked-disabled.form-select {
+.icon.checked-disabled, .checked-disabled.form-select, .step .step-done .checked-disabled.step-img, .step .step-reject .checked-disabled.step-img, .step .step-current .checked-disabled.step-img, .step .step-default .checked-disabled.step-img, input.checked-disabled[type=date] {
   width: 0.75rem;
   height: 0.75rem;
   background-image: url("/assets/images/svg/checked-disabled.svg");
 }
-.icon.radio-checked, .step .step-done .radio-checked.step-img, .step .step-reject .radio-checked.step-img, .step .step-current .radio-checked.step-img, .step .step-default .radio-checked.step-img, input.radio-checked[type=date], .radio-checked.form-select {
+.icon.radio-checked, .radio-checked.form-select, .step .step-done .radio-checked.step-img, .step .step-reject .radio-checked.step-img, .step .step-current .radio-checked.step-img, .step .step-default .radio-checked.step-img, input.radio-checked[type=date] {
   width: 1.25rem;
   height: 1.25rem;
   background-image: url("/assets/images/svg/radio-checked.svg");
 }
-.icon.step-doc, .step .step-done .step-doc.step-img, .step .step-reject .step-doc.step-img, .step .step-current .step-img, .step .step-default .step-doc.step-img, input.step-doc[type=date], .step-doc.form-select {
+.icon.step-doc, .step-doc.form-select, .step .step-done .step-doc.step-img, .step .step-reject .step-doc.step-img, .step .step-current .step-img, .step .step-default .step-doc.step-img, input.step-doc[type=date] {
   width: 3rem;
   height: 3rem;
   background-image: url("/assets/images/svg/step-doc.svg");
 }
-.icon.step-reject, .step .step-done .step-reject.step-img, .step .step-reject .step-img, .step .step-current .step-reject.step-img, .step .step-default .step-reject.step-img, input.step-reject[type=date], .step-reject.form-select {
+.icon.step-reject, .step-reject.form-select, .step .step-done .step-reject.step-img, .step .step-reject .step-img, .step .step-current .step-reject.step-img, .step .step-default .step-reject.step-img, input.step-reject[type=date] {
   width: 3rem;
   height: 3rem;
   background-image: url("/assets/images/svg/step-reject.svg");
 }
-.icon.step-check, .step .step-done .step-img, .step .step-reject .step-check.step-img, .step .step-current .step-check.step-img, .step .step-default .step-img, input.step-check[type=date], .step-check.form-select {
+.icon.step-check, .step-check.form-select, .step .step-done .step-img, .step .step-reject .step-check.step-img, .step .step-current .step-check.step-img, .step .step-default .step-img, input.step-check[type=date] {
   width: 3rem;
   height: 3rem;
   background-image: url("/assets/images/svg/step-check.svg");
 }
 
-/* Input, Textarea, Date Picker, Select
+/* Input, Textarea, Date Picker
 ========================================================================== */
 input[type=date], .form-control, textarea.form-control, input[type=text],
 input[type=number],
@@ -13359,46 +13359,6 @@ input.error[type=url] {
 textarea.form-control {
   height: auto;
   min-height: 3.13rem;
-}
-
-.form-select {
-  cursor: pointer;
-  padding-top: 0rem;
-  padding-right: 0rem;
-  padding-left: 0.75rem;
-  padding-bottom: 0rem;
-  width: 100%;
-  height: 36px;
-  color: #18191C;
-  font-size: 1rem;
-  line-height: 1.2rem;
-  font-weight: 400;
-  letter-spacing: -3%;
-  border-radius: 0.25rem;
-  border: 1px solid #A5A5A5;
-  background-color: #fff;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  background-size: 1.25rem;
-  background-position: right 0.75rem center;
-  box-sizing: border-box;
-}
-.form-select:required:invalid {
-  color: #C8C8C8;
-}
-.form-select option {
-  color: #18191C;
-}
-.form-select option[value=""][disabled] {
-  display: none;
-}
-.form-select[aria-readonly=true] {
-  pointer-events: none;
-}
-.form-select option {
-  margin: 0;
-  padding: 0;
-  background-color: #fff;
-  border-radius: 4px;
 }
 
 input[type=date] {
@@ -13651,6 +13611,48 @@ input[type=date]:focus::before, input[type=date]:valid::before {
 }
 .step .step-done .txt {
   color: #0D63D4;
+}
+
+/* selectbox
+========================================================================== */
+.form-select {
+  cursor: pointer;
+  padding-top: 0rem;
+  padding-right: 0rem;
+  padding-left: 0.75rem;
+  padding-bottom: 0rem;
+  width: 100%;
+  height: 36px;
+  color: #18191C;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  font-weight: 400;
+  letter-spacing: -3%;
+  border-radius: 0.25rem;
+  border: 1px solid #A5A5A5;
+  background-color: #fff;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-size: 1.25rem;
+  background-position: right 0.75rem center;
+  box-sizing: border-box;
+}
+.form-select:required:invalid {
+  color: #C8C8C8;
+}
+.form-select option {
+  color: #18191C;
+}
+.form-select option[value=""][disabled] {
+  display: none;
+}
+.form-select[aria-readonly=true] {
+  pointer-events: none;
+}
+.form-select option {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  border-radius: 4px;
 }
 
 /* Tables

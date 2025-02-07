@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectbox</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../../assets/css/index.css">
+    <!-- script -->
+    <script type="module" src="../../../assets/js/common.js"></script>
+    <style>
+        /*the container must be positioned relative:*/
+        .custom-select {
+          position: relative;
+          font-family: Arial;
+        }
+        
+        .custom-select select {
+          display: none; /*hide original SELECT element:*/
+        }
+        
+        .select-selected {
+          background-color: DodgerBlue;
+        }
+        
+        /*style the arrow inside the select element:*/
+        .select-selected:after {
+          position: absolute;
+          content: "";
+          top: 14px;
+          right: 10px;
+          width: 0;
+          height: 0;
+          border: 6px solid transparent;
+          border-color: #fff transparent transparent transparent;
+        }
+        
+        /*point the arrow upwards when the select box is open (active):*/
+        .select-selected.select-arrow-active:after {
+          border-color: transparent transparent #fff transparent;
+          top: 7px;
+        }
+        
+        /*style the items (options), including the selected item:*/
+        .select-items div,.select-selected {
+          color: #ffffff;
+          padding: 8px 16px;
+          border: 1px solid transparent;
+          border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+          cursor: pointer;
+          user-select: none;
+        }
+        
+        /*style items (options):*/
+        .select-items {
+          position: absolute;
+          background-color: DodgerBlue;
+          top: 100%;
+          left: 0;
+          right: 0;
+          z-index: 99;
+        }
+        
+        /*hide the items when the select box is closed:*/
+        .select-hide {
+          display: none;
+        }
+        
+        .select-items div:hover, .same-as-selected {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+        </style>
+</head>
+<body>
+    <article class="guide-contents">
+        <div class="title">
+			<h3>Selectbox</h3>
+		</div>
+        <div class="tbl-wrap">
+             <table class="tbl">
+                <caption>입력 필드</caption>
+                <colgroup>
+                    <col width="10%" />
+                    <col width="15%" />
+                    <col width="15%" />
+                    <col width="15%" />
+                    <col width="15%" />
+                    <col width="15%" />
+                    <col width="15%" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>구분</th>
+                        <th>placeholder</th>
+                        <th>normal</th>
+                        <th>focus/hover</th>
+                        <th>disable</th>
+                        <th>readonly</th>
+                        <th>error</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Select</th>
+                        <td>
+                            <select class="form-select" aria-label="Default select example" required>
+                                <option value="" disabled selected>선택하세요</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example" required>
+                                <option value="" disabled>선택하세요</option>
+                                <option value="1" selected>One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select active" aria-label="Default select example" required>
+                                <option value="" disabled>선택하세요</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example" aria-disabled="true" disabled required>
+                                <option value="" disabled>선택하세요</option>
+                                <option value="1" selected>One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example" aria-readonly="true" required>
+                                <option value="" disabled>선택하세요</option>
+                                <option value="1" selected>One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select error" aria-label="Default select example" required>
+                                <option value="" disabled selected>선택하세요</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+             </table>
+        </div>
+        <div class="custom-select" style="width:200px;">
+            <select>
+                <option value="0">Select car:</option>
+                <option value="1">Audi</option>
+                <option value="2">BMW</option>
+                <option value="3">Citroen</option>
+                <option value="4">Ford</option>
+                <option value="5">Honda</option>
+                <option value="6">Jaguar</option>
+                <option value="7">Land Rover</option>
+                <option value="8">Mercedes</option>
+                <option value="9">Mini</option>
+                <option value="10">Nissan</option>
+                <option value="11">Toyota</option>
+                <option value="12">Volvo</option>
+            </select>
+        </div>
+    </article>
+</body>
+</html>
