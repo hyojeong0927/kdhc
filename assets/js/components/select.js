@@ -19,14 +19,19 @@ multiCheckboxes.forEach(checkbox => {
 });
 
 function updateMultiDropdown() {
-    let selected = Array.from(multiCheckboxes).filter(c => c.checked).map(c => c.value);
-    multiSelectBox.textContent = selected.length > 0 ? selected.join(", ") : "Select options";
+    let selected = Array.from(multiCheckboxes)
+        .filter(c => c.checked)
+        .map(c => c.value);
+
+    let displayText = selected.length > 0 ? selected.join(", ") : "Select options";
+
     // 길이 제한: 20자 이상이면 말줄임 처리
     multiSelectBox.textContent = displayText.length > 20 ? displayText.substring(0, 20) + "..." : displayText;
     
     // 마우스 오버 시 전체 선택값을 툴팁으로 표시
     multiSelectBox.setAttribute("title", displayText);
     
+    // "전체 선택" 체크박스 상태 업데이트
     selectAllCheckbox.checked = selected.length === multiCheckboxes.length;
 }
 
