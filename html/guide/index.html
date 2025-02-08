@@ -7,14 +7,33 @@
     <!-- css -->
     <link rel="stylesheet" href="../../assets/css/index.css">
 	<style>
-		.lnbList {
-			padding: 0 18px;
-			background-color: white;
-			max-height: 0;
-			overflow: hidden;
-			transition: max-height 0.2s ease-out;
-		}
-	</style>
+        .lnbList {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+        }
+        .lnbList.active {
+            max-height: 1000px;
+            opacity: 1;
+            background-color: transparent;
+        }
+        .lnbList.active li a {
+            background-color: #fff;
+        }
+        .guide-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .guide-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
 	<section class="guide-container">
@@ -34,35 +53,35 @@
 				</ul>
 				<h2 class="lnb-dropdown">Components</h2>
 				<ul class="lnbList">
-					<li><a href="./components/accordion.html">Accordion</a></li>
+					<!-- <li><a href="./components/accordion.html">Accordion</a></li> -->
 					<li><a href="./components/ag-grid.html">AG Grid</a></li>
-					<li><a href="./components/alert.html">Alert</a></li>
+					<!-- <li><a href="./components/alert.html">Alert</a></li> -->
 					<li><a href="./components/badge.html">Badge</a></li>
-					<li><a href="./components/breadcrumbs&title.html">Breadcrumbs & Title</a></li>
+					<!-- <li><a href="./components/breadcrumbs&title.html">Breadcrumbs & Title</a></li> -->
 					<li><a href="./components/button.html">Button</a></li>
-					<li><a href="./components/calendar.html">Calendar</a></li>
-					<li><a href="./components/chart.html">Chart</a></li>
+					<!-- <li><a href="./components/calendar.html">Calendar</a></li> -->
+					<!-- <li><a href="./components/chart.html">Chart</a></li> -->
 					<li><a href="./components/checkbox.html">Checkbox/Radio</a></li>
 					<!-- <li><a href="./components/combobox.html">Combobox</a></li> -->
-					<li><a href="./components/dropdown.html">Dropdown</a></li>
+					<!-- <li><a href="./components/dropdown.html">Dropdown</a></li> -->
 					<li><a href="./components/footer.html">Footer</a></li>
 					<li><a href="./components/form.html">Form</a></li>
 					<li><a href="./components/header.html">Header</a></li>
 					<li><a href="./components/icons.html">Icons</a></li>
-					<li><a href="./components/images.html">Images</a></li>
-					<li><a href="./components/info.html">Info</a></li>
-					<li><a href="./components/input.html">Input/Textarea/Select</a></li>
+					<!-- <li><a href="./components/images.html">Images</a></li> -->
+					<!-- <li><a href="./components/info.html">Info</a></li> -->
+					<li><a href="./components/input.html">Input/Textarea</a></li>
 					<li><a href="./components/lnb.html">Lnb</a></li>
-					<li><a href="./components/list.html">List</a></li>
-					<li><a href="./components/loader.html">Loader</a></li>
+					<!-- <li><a href="./components/list.html">List</a></li> -->
+					<!-- <li><a href="./components/loader.html">Loader</a></li> -->
 					<li><a href="./components/modal.html">Modal</a></li>
 					<li><a href="./components/pagination.html">Pagination</a></li>
-					<li><a href="./components/search.html">Search</a></li>
+					<!-- <li><a href="./components/search.html">Search</a></li> -->
 					<li><a href="./components/selectbox.html">Selectbox</a></li>
 					<li><a href="./components/step.html">Step</a></li>
-					<li><a href="./components/tabs.html">Tabs</a></li>
-					<li><a href="./components/table.html">Table</a></li>
-					<li><a href="./components/tooltip.html">Tooltip</a></li>
+					<!-- <li><a href="./components/tabs.html">Tabs</a></li> -->
+					<!-- <li><a href="./components/table.html">Table</a></li> -->
+					<!-- <li><a href="./components/tooltip.html">Tooltip</a></li> -->
 				</ul>
 			</nav>
 		</aside>
@@ -71,27 +90,37 @@
 		</main>
 	</section>
 	<script>
-		document.querySelectorAll('nav ul li a').forEach(link => {
-			link.addEventListener('click', (e) => {
-				e.preventDefault();
-				const iframe = document.querySelector('.guide-frame');
-				iframe.src = link.getAttribute('href');
-			});
-		});
-		
-		const acc = document.getElementsByClassName("lnb-dropdown");
-
-        for (let i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", () => {
-                acc[i].classList.toggle("active");
-                const lnbList = acc[i].nextElementSibling;
-                if (lnbList.style.maxHeight) {
-                    lnbList.style.maxHeight = null;
-                } else {
+        document.querySelectorAll(".lnb-dropdown").forEach(dropdown => {
+            dropdown.addEventListener("click", () => {
+                const lnbList = dropdown.nextElementSibling;
+                document.querySelectorAll(".lnbList").forEach(list => {
+                    if (list !== lnbList) {
+                        list.classList.remove("active");
+                        list.style.maxHeight = "0";
+                        list.style.opacity = "0";
+                    }
+                });
+                if (!lnbList.classList.contains("active")) {
+                    lnbList.classList.add("active");
                     lnbList.style.maxHeight = `${lnbList.scrollHeight}px`;
+                    lnbList.style.opacity = "1";
+                } else {
+                    lnbList.classList.remove("active");
+                    lnbList.style.maxHeight = "0";
+                    lnbList.style.opacity = "0";
                 }
             });
-        }
-	</script>
+        });
+
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const iframe = document.querySelector('.guide-frame');
+				
+                const src = link.getAttribute('href'); 
+                iframe.src = src;
+            });
+        });
+    </script>
 </body>
 </html>
