@@ -1,4 +1,4 @@
-// 다중 선택 콤보박스 기능
+// 다중 선택 콤보박스
 const multiSelectBox = document.getElementById("multiSelectBox");
 const multiOptions = document.getElementById("multiOptions");
 const multiCheckboxes = document.querySelectorAll("input[name='multi-options']");
@@ -30,7 +30,7 @@ function updateMultiDropdown() {
     selectAllCheckbox.checked = selected.length === multiCheckboxes.length;
 }
 
-// 단일 선택 콤보박스 기능
+// 단일 선택 콤보박스
 const singleSelectBox = document.getElementById("singleSelectBox");
 const singleOptions = document.getElementById("singleOptions");
 
@@ -46,7 +46,7 @@ singleOptions.querySelectorAll("div").forEach(option => {
     });
 });
 
-// 검색 전용 콤보박스 기능
+// 검색 전용 콤보박스 
 const searchSelectBox = document.getElementById("searchSelectBox");
 const searchOptions = document.getElementById("searchOptions");
 const searchInput = document.getElementById("searchInput");
@@ -69,7 +69,7 @@ searchOptions.querySelectorAll("div").forEach(option => {
 
 searchInput.addEventListener("input", () => filterOptions(searchInput, searchOptions));
 
-// 검색 필터링 기능
+// 검색 필터링
 function filterOptions(input, container) {
     let filter = input.value.toLowerCase();
     let items = container.querySelectorAll("div");
