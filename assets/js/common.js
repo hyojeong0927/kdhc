@@ -1,8 +1,8 @@
 'use strict'
 
 // bootstrap
-import "./bootstrap.bundle.min.js";
+import "./vendors/bootstrap.bundle.min.js";
 // ag grid
-import "./ag-grid-community.min.js";
+import "./vendors/ag-grid-community.min.js";
 // select
 import "./components/select.js";
