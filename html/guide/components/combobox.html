@@ -4,126 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combobox</title>
-    <!-- css -->
-    <link rel="stylesheet" href="../../../assets/css/index.css">
-    <!-- script -->
+     <!-- script -->
     <script type="module" src="../../../assets/js/common.js"></script>
-    <style>
-        .multi-selectbox {
-            width: 300px;
-            background-color: #BCC2C1;
-        }
- 
-        .selectbox {
-            position: relative;
-        }
- 
-        .selectbox select {
-            width: 100%;
-            font-weight: bold;
-        }
-        .selectbox select option {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-            white-space: nowrap;
-        }
-        .overSelect {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-        }
- 
-        #checkBoxes {
-            display: none;
-            border: 1px #8DF5E4 solid;
-        }
- 
-        #checkBoxes label {
-            display: block;
-        }
- 
-        #checkBoxes label:hover {
-            background-color: #4F615E;
-            color: white;
-            /* Added text color for better visibility */
-        }
-    </style>
 </head>
 <body>
     <article class="guide-contents">
         <div class="title">
-			<h3>Combobox</h3>
-		</div>
-        <div class="multi-selectbox">
-            <div class="selectbox" onclick="showCheckboxes()">
-                <select id="dropdown">
-                    <option id="result">Select options</option>
-                </select>
-                <div class="overSelect"></div>
-            </div>
+            <h3>Combobox</h3>
+        </div>
 
-            <div id="checkBoxes">
-                <label for="selectAll">
-                    <input type="checkbox" id="selectAll" onclick="toggleAllCheckboxes()" />
-                    Select All
-                </label>
-                <label for="first">
-                    <input type="checkbox" name="first" id="first" value="checkBox1" onclick="updateDropdown()" />
-                    checkBox1
-                </label>
-                <label for="second">
-                    <input type="checkbox" name="second" id="second" value="checkBox2" onclick="updateDropdown()" />
-                    checkBox2
-                </label>
-                <label for="third">
-                    <input type="checkbox" name="third" id="third" value="checkBox3" onclick="updateDropdown()" />
-                    checkBox3
-                </label>
-                <label for="fourth">
-                    <input type="checkbox" name="fourth" id="fourth" value="checkBox4" onclick="updateDropdown()" />
-                    checkBox4
-                </label>
+        <!-- 다중 선택 (체크박스 포함) -->
+        <div class="combo-box">
+            <div class="selectbox" id="multiSelectBox" role="combobox" aria-expanded="false">
+                Select options
+            </div>
+            <div class="options-container" id="multiOptions">
+                <label><input type="checkbox" id="selectAll"> Select All</label>
+                <label><input type="checkbox" name="multi-options" value="Option 1"> Option 1</label>
+                <label><input type="checkbox" name="multi-options" value="Option 2"> Option 2</label>
+                <label><input type="checkbox" name="multi-options" value="Option 3"> Option 3</label>
+                <label><input type="checkbox" name="multi-options" value="Option 4"> Option 4</label>
             </div>
         </div>
-    </article>
-    <script>
-        let show = true;
- 
-        function showCheckboxes() {
-            let checkboxes = document.getElementById("checkBoxes");
-            checkboxes.style.display = show ? "block" : "none";
-            show = !show;
-        }
 
-        function updateDropdown() {
-            let dropdown = document.getElementById("dropdown");
-            let selectedOptions = document.querySelectorAll("#checkBoxes input[type='checkbox']:checked:not(#selectAll)");
-            
-            dropdown.innerHTML = "";
-            
-            let selectedValues = [];
-            selectedOptions.forEach(option => {
-                selectedValues.push(option.value);
-            });
-            
-            let newOption = document.createElement("option");
-            newOption.text = selectedValues.length > 0 ? selectedValues.join(", ") : "Select options";
-            newOption.value = selectedValues.join(", ");
-            dropdown.appendChild(newOption);
-        }
-        function toggleAllCheckboxes() {
-            let selectAll = document.getElementById("selectAll");
-            let checkboxes = document.querySelectorAll("#checkBoxes input[type='checkbox']:not(#selectAll)");
-            checkboxes.forEach(checkbox => {
-                checkbox.checked = selectAll.checked;
-            });
-            updateDropdown();
-        }
-    </script>
+        <!-- 단일 선택 (체크박스 없음) -->
+        <div class="combo-box">
+            <div class="selectbox" id="singleSelectBox" role="combobox" aria-expanded="false">
+                Select an option
+            </div>
+            <div class="options-container" id="singleOptions">
+                <div data-value="Option A">Option A</div>
+                <div data-value="Option B">Option B</div>
+                <div data-value="Option C">Option C</div>
+                <div data-value="Option D">Option D</div>
+            </div>
+        </div>
+
+        <!-- 검색 전용 콤보박스 -->
+        <div class="combo-box">
+            <div class="selectbox" id="searchSelectBox" role="combobox" aria-expanded="false">
+                Search and select
+            </div>
+            <div class="options-container" id="searchOptions">
+                <input type="text" class="search-box" id="searchInput" placeholder="Search...">
+                <div data-value="Search Result 1">Search Result 1</div>
+                <div data-value="Search Result 2">Search Result 2</div>
+                <div data-value="Search Result 3">Search Result 3</div>
+                <div data-value="Search Result 4">Search Result 4</div>
+            </div>
+        </div>
+
+    </article>
 </body>
 </html>

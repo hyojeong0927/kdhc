@@ -62,3 +62,45 @@
     }
 }
 // selectbox end
+// custom select box start
+.combo-box {
+    position: relative;
+    width: 250px;
+    margin-bottom: 20px;
+}
+.selectbox {
+    width: 200px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    cursor: pointer;
+    background: white;
+    user-select: none;
+    white-space: nowrap;   /* 줄바꿈 방지 */
+    overflow: hidden;      /* 넘치는 내용 숨김 */
+    text-overflow: ellipsis; /* 말줄임 적용 */
+}
+.options {
+    display: none;
+    position: absolute;
+    width: 100%;
+    border: 1px solid #ccc;
+    background: white;
+    z-index: 1000;
+    max-height: 150px;
+    overflow-y: auto;
+}
+.search-box {
+    width: calc(100% - 16px);
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+}
+.options label, .options div {
+    display: block;
+    padding: 5px;
+    cursor: pointer;
+}
+.options div:hover, .options label:hover {
+    background-color: #f0f0f0;
+}
+// custom select box end
