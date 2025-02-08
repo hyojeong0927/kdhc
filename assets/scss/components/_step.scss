@@ -5,18 +5,23 @@ $step-status: ("default", "current", "reject", "done");
 
 %step-base {
     .step-list {
-        position: relative;
-        @include flex(true, "around", "center");
-        @include before(true, true, rem(40px), 0, 0, 0);
-        
-        &::before {
-            height: 1px;
-            width: 100%;
-            background-color: $gray-003;
-            z-index: -1;
-        }
+        @include flex(true, "between", "center");
         li {
+            position: relative;
             flex: 1;
+            @include before(true, true, rem(40px), 0, 0, 0);
+            &::before {
+                height: 1px;
+                width: 100%;
+                background-color: $gray-003;
+                z-index: -1;
+            }
+            &:last-of-type {
+                flex: none;
+                &::before {
+                   display: none
+                }
+            }
         }
     }
 }
@@ -35,6 +40,7 @@ $step-status: ("default", "current", "reject", "done");
     @each $size in $step-size {
         &.step-#{$size} {
             @if $size== "lg" {
+                
                 .step-img {
                     width: rem(80px);
                     height: rem(80px);
@@ -48,9 +54,11 @@ $step-status: ("default", "current", "reject", "done");
             }
             @else if $size == "sm" {
                 .step-list {
-                    &::before {
-                        top: rem(14px);
-                    }
+                   li {
+                        &::before {
+                            top: rem(14px);
+                        }
+                   }
                 }
                 .step-img {
                     width: rem(28px);
