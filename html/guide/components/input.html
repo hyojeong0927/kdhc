@@ -7,6 +7,8 @@
     <!-- css -->
     <link rel="stylesheet" href="../../../assets/css/index.css">
     <!-- script -->
+    <script src="../../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
     <script type="module" src="../../../assets/js/common.js"></script>
 </head>
 <body>
@@ -210,36 +212,40 @@
                     <tr>
                         <th>Date</th>
                         <td>
-                            <div class="date-container">
-                                <input type="date" class="form-control placeholder" id="start"
-                                    min="2018-01-01" max="2018-12-31"
-                                    required />
-                                <span id="date-placeholder">날짜를 선택하세요</span>
+                            <div class="input-group">
+                                <input type="text" id="" class="form-control datepicker" value="2025-02-10" placeholder="날짜 선택">
+                                <label class="input-group-text" for="startDate"><i class="icon calendar"></i></label>
                             </div>
                         </td>
                         <td>
-                            <input type="date" class="form-control" id="start" data-placeholder="yyyy-mm-dd" pattern="\d{4}-\d{2}-\d{2}" value="2018-07-22" min="2018-01-01" max="2018-12-31" required />
+                           
                         </td>
                         <td>
-                            <input type="date" class="form-control active" id="start" data-placeholder="yyyy-mm-dd" pattern="\d{4}-\d{2}-\d{2}" value="2018-07-22" min="2018-01-01" max="2018-12-31" required/>
+                          
                         </td>
                         <td>
-                            <input type="date" class="form-control" id="start" data-placeholder="yyyy-mm-dd" pattern="\d{4}-\d{2}-\d{2}" value="2018-07-22" min="2018-01-01" max="2018-12-31" aria-disabled="true" disabled required/>
+                           
                         </td>
                         <td>
-                            <input type="date" class="form-control" id="start" data-placeholder="yyyy-mm-dd" pattern="\d{4}-\d{2}-\d{2}" value="2018-07-22" min="2018-01-01" max="2018-12-31" aria-readonly="true" readonly required/>
+                           
                         </td>
                         <td>
-                            <input type="date" class="form-control error" id="start" data-placeholder="yyyy-mm-dd" pattern="\d{4}-\d{2}-\d{2}"  value="2018-07-22" min="2018-01-01" max="2018-12-31" required/>
+                           
                         </td>
                     </tr>
                     <tr>
-                        <th>Period</th>
+                        <th>Date Range</th>
                         <td>
-                            <div class="input-group">
-                                <input type="date" class="form-control" id="start" value="" min="" max="" required />
-                                <span class="to">-</span>
-                                <input type="date" class="form-control" id="start" value="" min="" max="" required />
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <input type="text" id="startDate" class="form-control datepicker" value="2025-02-10" placeholder="날짜 선택">
+                                    <label class="input-group-text" for="startDate"><i class="icon calendar"></i></label>
+                                </div>
+                                <div class="to">~</div>
+                                <div class="input-group">
+                                    <input type="text" id="endDate" class="form-control datepicker" value="2025-02-10" placeholder="날짜 선택">
+                                    <label class="input-group-text" for="endDate"><i class="icon calendar"></i></label>
+                                </div>
                             </div>
                         </td>
                         <td></td>
