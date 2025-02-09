@@ -6,3 +6,5 @@ import "./vendors/bootstrap.bundle.min.js";
 import "./vendors/ag-grid-community.min.js";
 // select
 import "./components/select.js";
+// datepicker
+import "./components/datepicker.js";
