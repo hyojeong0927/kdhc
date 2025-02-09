@@ -1,3 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treeview and Datepicker</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../../assets/css/index.css">
+    <!-- Load jQuery -->
+    <script src="../../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../../assets/js/vendors/bootstrap-treeview.min.js"></script>
+    <script src="../../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script type="module" src="../../../assets/js/common.js"></script>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Treeview Example</h2>
+    <div id="tree"></div>
+    <button id="addNodeBtn" class="btn btn-primary">Add Node</button>
+    <button id="removeNodeBtn" class="btn btn-danger">Remove Node</button>
+
+    <hr>
+
+    <h2>Datepicker Example</h2>
+    <input type="text" id="startDate" class="datepicker" placeholder="Start Date">
+    <input type="text" id="endDate" class="datepicker" placeholder="End Date">
+</div>
+
+<script>
 $(document).ready(function() {
     // Initialize general datepicker
     $('.datepicker').datepicker({
@@ -29,6 +59,7 @@ $(document).ready(function() {
     });
 });
 
+// Treeview Data
 var selectedNode = null;
 var treeData = [
     {
@@ -84,8 +115,9 @@ $(document).ready(function() {
 
         selectedNode.nodes.push(newNode);
 
-        // Update the tree with new data
-        $('#tree').treeview('update', { data: treeData });
+        // Clear the tree and reinitialize it with updated data
+        $('#tree').treeview('remove');
+        initTree();
     });
 
     $('#removeNodeBtn').click(function() {
@@ -109,7 +141,13 @@ $(document).ready(function() {
         treeData = removeNodeRecursive(treeData, selectedNode);
         selectedNode = null;
 
-        // Update the tree after removing a node
-        $('#tree').treeview('update', { data: treeData });
+        // Clear the tree and reinitialize it with updated data
+        $('#tree').treeview('remove');
+        initTree();
     });
 });
+
+</script>
+
+</body>
+</html>

@@ -1,34 +1,3 @@
-$(document).ready(function() {
-    // Initialize general datepicker
-    $('.datepicker').datepicker({
-        format: 'yyyy-mm-dd',
-        autoclose: true,
-        todayHighlight: true
-    });
-
-    // Initialize startDate datepicker
-    var startDate = $('#startDate').datepicker({
-        format: 'yyyy-mm-dd',
-        autoclose: true,
-        todayHighlight: true
-    }).on('changeDate', function(e) {
-        var startDateVal = e.date;
-        // Set the start date for endDate picker
-        $('#endDate').datepicker('setStartDate', startDateVal);
-    });
-
-    // Initialize endDate datepicker
-    var endDate = $('#endDate').datepicker({
-        format: 'yyyy-mm-dd',
-        autoclose: true,
-        todayHighlight: true
-    }).on('changeDate', function(e) {
-        var endDateVal = e.date;
-        // Set the end date for startDate picker
-        $('#startDate').datepicker('setEndDate', endDateVal);
-    });
-});
-
 var selectedNode = null;
 var treeData = [
     {
@@ -51,8 +20,8 @@ function initTree() {
     var tree = $('#tree').treeview({
         data: treeData,
         showBorder: false,
-        expandIcon: 'glyphicon glyphicon-plus',
-        collapseIcon: 'glyphicon glyphicon-minus',
+        expandIcon: 'glyphicon glyphicon-plus',  
+        collapseIcon: 'glyphicon glyphicon-minus',  
         nodeIcon: 'glyphicon glyphicon-folder-close',
         onNodeSelected: function(event, data) {
             selectedNode = data;
@@ -60,7 +29,6 @@ function initTree() {
         }
     });
 
-    // If there's a selected node, ensure it's selected in the tree
     if (selectedNode) {
         var nodeId = selectedNode.nodeId;
         tree.treeview('selectNode', [nodeId, { silent: true }]);
@@ -84,8 +52,8 @@ $(document).ready(function() {
 
         selectedNode.nodes.push(newNode);
 
-        // Update the tree with new data
-        $('#tree').treeview('update', { data: treeData });
+        $('#tree').treeview('remove');
+        initTree();
     });
 
     $('#removeNodeBtn').click(function() {
@@ -99,17 +67,19 @@ $(document).ready(function() {
                 .map(node => {
                     if (node.nodes) {
                         node.nodes = removeNodeRecursive(node.nodes, target);
+                        if (node.nodes.length === 0) {
+                            delete node.nodes;
+                        }
                     }
-                    return node === target ? null : node;
+                    return node !== target ? node : null;
                 })
                 .filter(node => node !== null);
         }
 
-        // Remove the node from the treeData
         treeData = removeNodeRecursive(treeData, selectedNode);
         selectedNode = null;
-
-        // Update the tree after removing a node
-        $('#tree').treeview('update', { data: treeData });
+        
+        $('#tree').treeview('remove');
+        initTree();
     });
 });

@@ -12617,6 +12617,25 @@ input.is-invalid[type=url]:focus, .was-validated .form-control:invalid:focus, .w
   margin-right: -5px;
 }
 
+.treeview .list-group-item {
+  cursor: pointer;
+}
+
+.treeview span.indent {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.treeview span.icon, .treeview span.form-select, .treeview .step .step-done span.step-img, .step .step-done .treeview span.step-img, .treeview .step .step-reject span.step-img, .step .step-reject .treeview span.step-img, .treeview .step .step-current span.step-img, .step .step-current .treeview span.step-img, .treeview .step .step-default span.step-img, .step .step-default .treeview span.step-img, .treeview nav.page-navigation .pagination .page-item.next span.page-link, nav.page-navigation .pagination .page-item.next .treeview span.page-link, .treeview nav.page-navigation .pagination .page-item.prev span.page-link, nav.page-navigation .pagination .page-item.prev .treeview span.page-link {
+  width: 12px;
+  margin-right: 5px;
+}
+
+.treeview .node-disabled {
+  color: silver;
+  cursor: not-allowed;
+}
+
 /* Variables
 ========================================================================== */
 /* Function
