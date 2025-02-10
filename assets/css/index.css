@@ -12657,7 +12657,7 @@ html:focus-within {
 
 body {
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
   width: 100%;
   height: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -13553,11 +13553,12 @@ nav.page-navigation .pagination .page-item.next .page-link {
 /* Sidebar
 ========================================================================== */
 .sidebar {
+  overflow-y: auto;
   width: 17.5rem;
   height: 100dvh;
-  max-height: 100%;
+  max-height: calc(100dvh - 7rem);
   background-color: #384B5E;
-  transition: width 0.3s;
+  transition: width 0.3s ease;
   overflow-y: auto;
 }
 .sidebar .sidebar-top-btn {
@@ -13721,9 +13722,11 @@ nav.page-navigation .pagination .page-item.next .page-link {
 /* Main
 ========================================================================== */
 .main-contents {
+  overflow-y: auto;
   padding: 1.25rem 2.5rem 6.13rem;
   width: 100%;
   height: 100%;
+  max-height: calc(100dvh - 7rem);
   background-color: #F2F5FA;
 }
 .main-contents .contents {
@@ -14941,7 +14944,7 @@ textarea.form-control {
 }
 
 .combo-box-group {
-  cursor: pointer;
+  cursor: default !important;
   position: relative;
   width: 100%;
 }

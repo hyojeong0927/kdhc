@@ -1,9 +1,11 @@
 /* Main
 ========================================================================== */
 .main-contents {
+    overflow-y: auto;
     padding: rem(20px) rem(40px) rem(98px);
     width: 100%;
     height: 100%;
+    max-height: calc(100dvh - $header-height);
     background-color: $body-bg;
     .contents {
         width: 100%;

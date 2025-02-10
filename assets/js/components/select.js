@@ -40,10 +40,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // 단일 선택 콤보박스 (Single Select Dropdown)
-    const singleSelectBox = document.getElementById("singleSelectBox");
-    const singleOptions = document.getElementById("singleOptions");
+    const singleSelectBoxes = document.querySelectorAll(".form-select");
+    
+    singleSelectBoxes.forEach(singleSelectBox => {
+        const singleOptions = singleSelectBox.nextElementSibling; // 바로 뒤에 있는 .options 목록
 
-    if (singleSelectBox && singleOptions) {
         singleSelectBox.addEventListener("click", (event) => {
             toggleDropdown(singleOptions, singleSelectBox);
             event.stopPropagation();
@@ -51,11 +52,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         singleOptions.querySelectorAll("li").forEach(option => {
             option.addEventListener("click", () => {
-                singleSelectBox.textContent = option.textContent;
+                singleSelectBox.querySelector(".placeholder").textContent = option.textContent;
                 closeDropdown(singleOptions, singleSelectBox);
             });
         });
-    }
+    });
 
     // 검색 전용 콤보박스 (Search Dropdown)
     const searchSelectBox = document.getElementById("searchSelectBox");
@@ -93,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // 공통: 드롭다운 열고 닫기 (Common Dropdown Open/Close Logic)
+    // 공통 드롭다운 열고 닫기 로직
     function toggleDropdown(optionsContainer, selectBox) {
         const isVisible = optionsContainer.style.display === "block";
         closeAllDropdowns();
@@ -106,10 +107,9 @@ document.addEventListener("DOMContentLoaded", function () {
         selectBox.setAttribute("aria-expanded", "false");
     }
 
-    // 외부 클릭 시 닫기 (Close Dropdowns on Outside Click)
     function closeAllDropdowns() {
         document.querySelectorAll(".options").forEach(container => container.style.display = "none");
-        document.querySelectorAll(".selectbox").forEach(box => box.setAttribute("aria-expanded", "false"));
+        document.querySelectorAll(".form-select").forEach(box => box.setAttribute("aria-expanded", "false"));
     }
 
     document.addEventListener("click", closeAllDropdowns);

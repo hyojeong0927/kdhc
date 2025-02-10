@@ -4,7 +4,7 @@ document.getElementById('toggleButton').addEventListener('click', function() {
     var menuIcon = document.getElementById('menuIcon');
 
     sidebar.classList.toggle('collapsed');
-    menu.classList.toggle('collapse');
+    // menu.classList.toggle('collapse');
     
     if (sidebar.classList.contains('collapsed')) {
       menuIcon.classList.remove('arrow-close');

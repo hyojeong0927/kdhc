@@ -65,7 +65,7 @@
 // selectbox end
 // custom select box start
 .combo-box-group {
-    cursor: pointer;
+    cursor: default !important;
     position: relative;
     width: 100%;
     .form-select {

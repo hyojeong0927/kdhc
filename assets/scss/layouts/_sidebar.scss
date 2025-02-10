@@ -1,11 +1,12 @@
 /* Sidebar
 ========================================================================== */
 .sidebar {
+    overflow-y: auto;
     width: rem(280px);
     height: 100dvh;
-    max-height: 100%;
+    max-height: calc(100dvh - $header-height);
     background-color: $primary;
-    transition: width 0.3s;
+    transition: width 0.3s ease;
     overflow-y: auto;
     .sidebar-top-btn {
         @include flex(true, "end", "center");
