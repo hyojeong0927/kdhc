@@ -15,7 +15,7 @@ $gray-005: #18191C; // input focus
 $gray-006: #DCDCDC; // disabled bg
 $gray-007: #C5CDD5;
 $gray-008: #555555;
-$gray-009: null;
+$gray-009: #6C757D;
 $gray-010: null;
 
 // red
@@ -32,6 +32,11 @@ $green-001: #3D6F94;
 $blue-001: #384B5E;
 $blue-002: #0D63D4;
 $blue-003: #D9EAFF; // badge bg
+$blue-004: #F2F5FA; // body bg
+
+// bg color
+$body-bg: $blue-004;
+$header-bg: $white;
 
 // theme
 $primary: $blue-001;
@@ -67,16 +72,27 @@ $font-weight-bolder:          bolder;
 
 $font-weight-base:            $font-weight-normal;
 
-$line-height-base:            1;
+$line-height-base:            normal;
 $line-height-sm:              1.25;
 $line-height-lg:              2;
 
+// letter-spacing
+$letter-spacing-base: -0.48px;
+$letter-spacing-sm:   -0.36px;
+$letter-spacing-xsm:   -0.28px;
+
+// text-decoration
+$text-decoration-none: none;
+// text-indent
+$text-indent: -999999rem;
+
+// font size
 $h1-font-size:                $font-size-base * 2.5;
 $h2-font-size:                $font-size-base * 2;
-$h3-font-size:                $font-size-base * 1.75;
+$h3-font-size:                $font-size-base * 1.625;
 $h4-font-size:                $font-size-base * 1.5;
 $h5-font-size:                $font-size-base * 1.25;
-$h6-font-size:                $font-size-base;
+$h6-font-size:                $font-size-base * 1.125;
 
 $font-sizes: (
   1: $h1-font-size,
@@ -86,10 +102,6 @@ $font-sizes: (
   5: $h5-font-size,
   6: $h6-font-size
 );
-// letter-spacing
-$letter-spacing-base: null;
-
-$text-indent: -999999rem;
 
 // spacer
 $spacer: 1rem;

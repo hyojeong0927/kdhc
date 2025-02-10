@@ -1,20 +1,27 @@
 /* Title & Breadcrumbs
 ========================================================================== */
-$title-types: ('h1', 'h2', 'h3');
+$title-types: ('h3', 'h4', 'h5', 'h6');
 
 %title-base {
   // 공통 스타일
-  height: 20px;
-  padding: 0 6px;
-  font-weight: 700;
-  border-radius: 4px;
+  margin-bottom: 0;
 }
 
-.title {
-    @extend %title-base;
-    @each $bt in $title-types {
-        .title-#{$bt} {
-           
+.title-wrap {
+    @each $tit in $title-types {
+        .title-#{$tit} {
+            @extend %title-base;
+
+            @if $tit == "h3" {
+                @include font-style($h3-font-size, $font-weight-medium, $line-height-base);
+            }
+            @else if $tit == "h4" { 
+            }
+            @else if $tit == "h5" {
+            }
+            @else if $tit == "h6" {
+
+            }
         }
        
     }

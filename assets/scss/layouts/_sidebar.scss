@@ -1,5 +1,58 @@
 /* Sidebar
 ========================================================================== */
 .sidebar {
-    
+    width: rem(280px);
+    height: 100dvh;
+    max-height: calc(100dvh - $header-height);
+    background-color: $primary;
+    transition: width 0.3s;
+    overflow-y: auto;
+    .sidebar-top-btn {
+        @include flex(true, "end", "center");
+        padding: rem(12px);
+    }
+    .lnb {
+        .lnb-item {
+            &--title {
+                border-bottom: 1px solid $gray-009;
+                .title {
+                    @include flex(true, "start", "center");
+                    padding: rem(20px) rem(16px) rem(20px) rem(24px);
+                    width: 100%;
+                    min-height: rem(66px);
+                    color: $white;
+                    @include font-style($h6-font-size, $font-weight-medium, $line-height-base);
+                    letter-spacing: $letter-spacing-sm;
+                    border-radius: 0;
+                    border: 0;
+                }
+                &:hover {
+                    border-color: $secondary;
+                    background-color: $secondary;
+                }
+            }
+            &--sub {
+                padding: rem(20px) rem(16px) rem(20px) rem(24px);
+                ul {
+                    .sub-link {
+                        color: $white;
+                        text-decoration: $text-decoration-none;
+                    }
+                }
+            }
+        }
+    }
+    &.collapsed {
+        width: rem(60px);
+        .sidebar-top-btn {
+            padding: rem(12px) rem(14px);
+            .arrow-close {
+                @extend .arrow-expansion;
+            }
+        }
+        .lnb {
+            display: none;
+            transition: display 0.3s;
+        }
+    }
 }

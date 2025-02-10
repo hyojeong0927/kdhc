@@ -1,6 +1,30 @@
-/* Navigation
+/* breadcrumb, pagination, tabs
 ========================================================================== */
 nav {
+    // breadcrumb
+    .breadcrumb {
+        margin-bottom: rem(20px);
+        .breadcrumb-item {
+            @include flex(true, "start", "center");
+            color: $gray-002;
+            @include font-style($font-size-sm, $font-weight-normal, $line-height-base);
+            letter-spacing: $letter-spacing-xsm;
+            a {
+                color: $gray-002;
+                text-decoration: $text-decoration-none;
+            }
+            &.active {
+                font-weight: $font-weight-medium;
+                background-color: transparent
+            }
+            & + .breadcrumb-item{
+                &::before {
+                    content: '>';
+                    padding-right: rem(6px);
+                }
+            }
+        }
+    }
     // pagination 스타일
     &.page-navigation {
         @include flex(true, "center", "center");

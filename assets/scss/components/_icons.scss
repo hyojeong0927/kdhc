@@ -6,9 +6,10 @@ $icon: 'icon';
 .#{$icon} {
     // header
     @include icon("h1-logo", rem(64px), rem(50px), "/assets/images/svg/logo.svg");
+    @include icon("h1-logo-txt", rem(157px), rem(62px), "/assets/images/svg/logo-txt.svg");
     
     // header util
-    @include icon("top-clipboard", rem(20px), rem(20px), "/assets/images/svg/clipboard.svg");
+    @include icon("clipboard", rem(20px), rem(20px), "/assets/images/svg/clipboard.svg");
     @include icon("calendar-check", rem(20px), rem(20px), "/assets/images/svg/calendar-check.svg");
     @include icon("file-check", rem(20px), rem(20px), "/assets/images/svg/file-check.svg");
     @include icon("user-circle", rem(20px), rem(20px), "/assets/images/svg/user-circle.svg");

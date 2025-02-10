@@ -10,3 +10,5 @@ import "./components/select.js";
 // import "./components/datepicker.js";
 // // tree
 // import "./components/tree.js";
+// sidebar
+import "./components/sidebar.js";

@@ -150,7 +150,7 @@
                     bottom: $bottom;
                     left: $left;
                 } @else {
-                    display: block;
+                    display: inline-block;
                 }
             }
         } @else {
@@ -164,7 +164,7 @@
                     bottom: $bottom;
                     left: $left;
                 } @else {
-                    display: block;
+                    display: inline-block;
                 }
             }
         }
@@ -243,4 +243,10 @@
     }
 }
 
-// border
+// font
+@mixin font-style($size, $weight, $line-height) {
+  font-size: rem($size);
+  font-weight: $weight;
+  letter-spacing: rem(-0.48px);
+  line-height: $line-height;
+}

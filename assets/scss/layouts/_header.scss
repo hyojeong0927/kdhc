@@ -1,5 +1,109 @@
 /* Header
 ========================================================================== */
-.header {
-    
+$utile-type: ("01", "02", "03", "04");
+$header-height: rem(112px);
+
+header {
+    @include flex(true, "start", "center", rem(63px));
+    padding: 0 rem(20px) 0 rem(24px);
+    width: 100%;
+    min-width: rem($device-base-width);
+    height: rem(112px);
+    border-bottom: 1px solid $gray-003;
+    background-color: $header-bg;
+    .logo {
+        @include flex(true, "center", "center");
+        .logo-img {
+            @extend .icon;
+            @extend .h1-logo;
+            text-indent: $text-indent; 
+        }
+        .logo-txt {
+            margin-left: rem(12px);
+            @extend .icon;
+            @extend .h1-logo-txt;
+            text-indent: $text-indent;
+        }
+    }
+    .gnb {
+        @include flex(true, "end", "center");
+        flex-wrap: wrap;
+        flex: 1;
+    }
+    .util {
+        @include flex(true, "end", "center", rem(12px));
+        @each $ut in $utile-type {
+            .util-#{$ut} {
+                position: relative;
+                padding-left: rem(26px) !important;
+                color: $gray-002;
+                @include font-style($font-size-base, $font-weight-normal, $line-height-base);
+                @extend .icon;
+                @include before(true, true, 50%, 0, 0, 0);
+                &::before {
+                    transform: translateY(-50%);
+                    @if $ut == "01" {
+                        @extend .clipboard;
+                    }
+                    @if $ut == "02" {
+                        @extend .calendar-check;
+                    }
+                    @if $ut == "03" {
+                        @extend .file-check; 
+                    }
+                    @if $ut == "04" {
+                        @extend .user-circle;
+                    }
+                }
+                &.user {
+                    color: $orange-001;
+                    font-weight: $font-weight-medium;
+                }
+            }
+        }
+    }
+    .btn-area {
+        margin-left: rem(28px);
+        .btn-link {
+            padding: 0;
+            color: $gray-009;
+            @include font-style($font-size-base, $font-weight-normal, $line-height-base);
+            text-decoration: none;
+            &:not(:first-of-type) {
+                position: relative;
+                padding-left: rem(8px);
+                @include before(true, true, 50%, 0, 0, 0);
+                &::before {
+                    transform: translateY(-50%);
+                    width: 1px;
+                    height: rem(12px);
+                    background-color: $gray-009;
+                }
+            }
+        }
+    }
+    nav {
+        margin-top: rem(18px);
+        width: 100%;
+        .nav {
+            @include flex(true, "start", "center");
+            .nav-item {
+                @include font-style($h4-font-size, $font-weight-bold, $line-height-base);
+                .nav-link {
+                    position: relative;
+                    padding: 0 rem(28px) rem(20px);
+                    color: $primary;
+                    &:hover,
+                    &:focus,
+                    &.active {
+                        @include before(true, true, 0, 0, rem(-9px), 0);
+                        background-color: transparent;
+                        &::before {
+                            border-bottom: 4px solid $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

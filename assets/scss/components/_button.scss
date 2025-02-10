@@ -80,3 +80,8 @@ $button-types: ("primary", "secondary", "outline");
         }
     }
 }
+
+// button area
+.top-btn-area {
+    @include flex(true, "end", "center", rem(8px));
+}
