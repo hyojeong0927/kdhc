@@ -13,7 +13,7 @@
     height: $form-select-height;
     color: $form-select-font-color;
     font-size: rem($form-select-font-size);
-    line-height: rem($form-select-font-line-height);
+    line-height: $form-select-font-line-height;
     font-weight: $form-select-font-weight;
     letter-spacing: $form-select-letter-spacing;
     border-radius: rem($form-select-border-radius);
@@ -54,19 +54,39 @@
     &.error {
         @extend %input-error;
     }
-    option {
-        margin: 0;
-        padding: 0;
-        background-color: $form-select-bg;
-        border-radius: $form-select-border-radius;
+    .placeholder {
+        width: 100%;
+        color: $input-placeholder-color;
+        @include font-style($input-font-size, $input-font-weight, $input-line-height);
+        background-color: transparent;
+        opacity: 1;
     }
 }
 // selectbox end
 // custom select box start
-.combo-box {
+.combo-box-group {
+    cursor: pointer;
     position: relative;
-    width: 250px;
-    margin-bottom: 20px;
+    width: 100%;
+    .form-select {
+        @include flex(true, "start", "center");
+    }
+    .options {
+        margin: rem(8px) 0 0;
+        padding: rem(8px) 0;
+        border: $form-select-border;
+        background-color: $form-select-bg;
+        border-radius: $form-select-border-radius;
+        li {
+            @include flex(true, "start", "center");
+            padding: 0 rem(12px) 0 rem(16px);
+            min-height: rem(34px);
+            @include font-style($input-font-size, $input-font-weight, $input-line-height);
+            &:hover {
+                background-color: $blue-003;
+            }
+        }
+    }
 }
 .selectbox {
     width: 200px;
@@ -75,9 +95,9 @@
     cursor: pointer;
     background: white;
     user-select: none;
-    white-space: nowrap;   /* 줄바꿈 방지 */
-    overflow: hidden;      /* 넘치는 내용 숨김 */
-    text-overflow: ellipsis; /* 말줄임 적용 */
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .options {
     display: none;

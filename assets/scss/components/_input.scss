@@ -9,9 +9,9 @@
     min-height: rem($input-height);
     color: $input-font-color;
     font-size: rem($input-font-size);
-    line-height: rem($input-line-height);
+    line-height: $input-line-height;
     font-weight: $input-font-weight;
-    letter-spacing: $input-letter-spacing;
+    letter-spacing: rem($input-letter-spacing);
     border-radius: rem($input-border-radius);
     border: $input-border-width $input-border-style $input-border-color;
     background-color: $input-bg;
@@ -39,6 +39,14 @@
 %input-error {
     border-color: $input-error-border-color;
 }
+%input-icon {
+    padding-left: rem(8px);
+    padding-right: rem(12px);
+    height: rem($input-height);
+    min-height: rem($input-height);
+    border: 0;
+    background-color: $input-bg;
+}
 // input 공통 스타일 end
 
 // input type style start
@@ -64,6 +72,17 @@
     &.error {
         @extend %input-error;
     }
+    // input icon
+    &.icon {
+        flex: 1;
+        padding-right: 0;
+        border: 0;
+        background-color: transparent;
+        & + .input-group-text {
+            @extend %input-icon;
+            background-color: transparent;
+        }
+    }
 }
 input[type="text"],
 input[type="number"],
@@ -85,9 +104,30 @@ textarea {
 }
 // textarea end
 
-// datepicker
-.datepicker {
-  direction: ltr;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
+// input icon group
+.input-icon-group {
+    @include flex(true, "start", "center");
+    flex-wrap: wrap;
+    @extend %input-base;
+    padding: 0;
+    width: auto;
+    flex: 1;
+    &.active,
+    &:hover,
+    &:active,
+    &:focus-visible,
+    &:focus-within,
+    &:focus {
+        @extend %input-focus;
+        .input-group-text {
+            .icon {
+                &.calendar {
+                    @extend .calendar-on;
+                }
+                &.search {
+                    @extend .search-on;
+                }
+            }
+        }
+    }
 }

@@ -20,8 +20,10 @@ $icon: 'icon';
 
     // components
     @include icon("calendar", rem(20px), rem(20px), "/assets/images/svg/calendar.svg");
+    @include icon("calendar-on", rem(20px), rem(20px), "/assets/images/svg/calendar-on.svg");
     @include icon("arrow-down", rem(20px), rem(20px), "/assets/images/svg/arrow-down.svg");
     @include icon("search", rem(20px), rem(20px), "/assets/images/svg/search.svg");
+    @include icon("search-on", rem(20px), rem(20px), "/assets/images/svg/search-on.svg");
     @include icon("checked", rem(12px), rem(12px), "/assets/images/svg/checked.svg");
     @include icon("checked-disabled", rem(12px), rem(12px), "/assets/images/svg/checked-disabled.svg");
     @include icon("radio-checked", rem(20px), rem(20px), "/assets/images/svg/radio-checked.svg");

@@ -52,6 +52,7 @@ $(document).ready(function() {
 
         selectedNode.nodes.push(newNode);
 
+        // Clear the tree and reinitialize it with updated data
         $('#tree').treeview('remove');
         initTree();
     });
@@ -67,18 +68,17 @@ $(document).ready(function() {
                 .map(node => {
                     if (node.nodes) {
                         node.nodes = removeNodeRecursive(node.nodes, target);
-                        if (node.nodes.length === 0) {
-                            delete node.nodes;
-                        }
                     }
-                    return node !== target ? node : null;
+                    return node === target ? null : node;
                 })
                 .filter(node => node !== null);
         }
 
+        // Remove the node from the treeData
         treeData = removeNodeRecursive(treeData, selectedNode);
         selectedNode = null;
-        
+
+        // Clear the tree and reinitialize it with updated data
         $('#tree').treeview('remove');
         initTree();
     });

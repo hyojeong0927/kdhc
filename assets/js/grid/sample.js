@@ -218,7 +218,7 @@ const sampleGridOptions = {
         mode: "multiRow",
         groupSelects: "descendants",
     },
-    pagination: true,
+    pagination: false,
     // paginationPageSize: 10,
     // paginationPageSizeSelector: [10, 20, 50, 100],
     tooltipShowDelay: 500,

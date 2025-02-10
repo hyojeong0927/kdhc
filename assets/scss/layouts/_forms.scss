@@ -1,13 +1,54 @@
 /* Forms
 ========================================================================== */
 .search-form {
-    border: 1p solid $gray-007;
-    background-color: $body-bg;
+    margin-bottom: rem(40px);
+    border: 1px solid $gray-007;
+    background-color: $white;
+    .form {
+        .form-row {
+            @include flex(true, "start", "normal");
+            &:not(:last-of-type) {
+                border-bottom: 1px solid $gray-007;
+            }
+            .grid-rowspan-1 {
+                display: grid;
+                grid-template-columns: null; 
+            }
+            .col {
+                @include flex(true, "start", "normal");
+            }
+            .form-label {
+                @include flex(true, "center", "center");
+                margin: 0;
+                padding: rem(28px) rem(24px);
+                width: rem(140px);
+                @include font-style($font-size-base, $font-weight-medium, $line-height-base);
+                background-color: $blue-005;
+            }
+            .form-group {
+                @include flex(true, "start", "center", rem(8px));
+                padding: rem(12px) rem(16px);
+                flex-wrap: wrap;
+                flex: 1;
+                .input-group {
+                    position: relative;
+                    @include flex(true, "start", "center");
+                    flex-wrap: wrap;
+                    flex: 1;
+                    width: 100%;
+                }
+            }
+            
+        }
+    }    
 }
+.datepicker-group {
+    @include flex(true, "start", "center", rem(8px));
+    flex-wrap: wrap;
 
-.form {
-    .form-row {
-
+    .datepicker-btn-group {
+        margin-bottom: rem(4px);
+        width: 100%;
     }
 }
 
@@ -19,4 +60,17 @@
     label {
         margin-left: rem($form-check-label-left);
     }
+}
+
+// grid
+.grid-top {
+    @include flex(true, "between", "center", rem(8px));
+    margin-bottom: rem(16px);
+    .grid-btn-area {
+        @include flex(true, "end", "center", rem(8px));
+        margin-left: auto;
+    }
+}
+.grid-wrap {
+    margin-bottom: rem(20px);
 }

@@ -7,8 +7,6 @@ import "./vendors/ag-grid-community.min.js";
 // select
 import "./components/select.js";
 // datepicker
-// import "./components/datepicker.js";
-// // tree
-// import "./components/tree.js";
+import "./components/datepicker.js";
 // sidebar
 import "./components/sidebar.js";

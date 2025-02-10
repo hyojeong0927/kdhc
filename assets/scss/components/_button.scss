@@ -1,46 +1,53 @@
 /* Button
 ========================================================================== */
-$button-size: ("lg", "md", "sm");
-$button-types: ("primary", "secondary", "outline");
+$button-size: ("lg", "md", "sm", "xsm");
+$button-types: ("primary", "secondary", "outline", "outline--round");
 
 %button-base {
     // 공통 스타일
     display: inline-block;
     font-weight: $btn-font-weight;
-    line-height: rem($btn-line-height);
-    letter-spacing: $btn-letter-spacing;
+    line-height: $btn-line-height;
+    letter-spacing: rem($btn-letter-spacing);
     font-family: $btn-font-family;
     border-style: solid;
 }
 %button-disabled {
     opacity: $btn-disabled-opacity;   
 }
-
 .btn {
     @extend %button-base;
-
     @each $bs in $button-size {
         &.btn-#{$bs} {
            @if $bs == "lg" {
                 padding: rem($btn-padding-y-lg) rem($btn-padding-x-lg);
                 min-width: rem(96px);
-                height: rem(38px);
+                height: rem(42px);
                 font-size: rem($btn-font-size-lg);
                 border-radius: $btn-border-radius-lg;
             }
             @else if $bs == "md" {
                 padding:  rem($btn-padding-y) rem($btn-padding-x);
                 min-width: rem(84px);
-                height: rem(34px);
+                height: rem(38px);
                 font-size: rem($btn-font-size);
                 border-radius: $btn-border-radius;
             }
             @else if $bs == "sm" {
                 padding: rem($btn-padding-y-sm) rem($btn-padding-x-sm);
                 min-width: rem(83px);
-                height: rem(29px);
+                height: rem(32px);
                 font-size: rem($btn-font-size-sm);
                 border-radius: $btn-border-radius-sm;
+                border-width: 1px !important;
+            }
+            @else if $bs == "xsm" {
+                padding: rem($btn-padding-y-xsm) rem($btn-padding-x-xsm);
+                min-width: rem(57px);
+                height: rem(28px);
+                font-size: rem($btn-font-size-xsm);
+                border-radius: $btn-border-radius-sm;
+                border-width: 1px !important;
             }
         }
     }
@@ -55,6 +62,13 @@ $button-types: ("primary", "secondary", "outline");
                     background-color: $btn-disabled-bg;
                     @extend %button-disabled;
                 }
+                &.active,
+                &:active,
+                &:focus,
+                &:hover {
+                    background-color: $gray-009;
+                    border-color: $gray-009;
+                }
             }
             @else if $bt == "secondary" {
                 color: $btn-link-color;
@@ -64,6 +78,13 @@ $button-types: ("primary", "secondary", "outline");
                     border-color: $gray-007;
                     background-color: $gray-007;
                     @extend %button-disabled;
+                }
+                &.active,
+                &:active,
+                &:focus,
+                &:hover {
+                    border-color: $gray-009;
+                    background-color: $gray-009;
                 }
             }
             @else if $bt == "outline" {
@@ -76,6 +97,33 @@ $button-types: ("primary", "secondary", "outline");
                     border-color: $btn-disabled;
                     @extend %button-disabled;
                 }
+                &.active,
+                &:active,
+                &:focus,
+                &:hover {
+                    color: $gray-009;
+                    border-color: $gray-009;
+                }
+            }
+            @else if $bt == "outline--round" {
+                color: $gray-002;
+                background-color: $white;
+                border-width: $btn-border-width;
+                border-color: $gray-003;
+                border-radius: $btn-border-radius-xlg;
+                &[disabled] {
+                    color: $btn-disabled;
+                    border-color: $btn-disabled;
+                    @extend %button-disabled;
+                }
+                &.active,
+                &:active,
+                &:focus,
+                &:hover {
+                    color: $white;
+                    background-color: $green-001;
+                    border-color: $green-001;
+                }
             }
         }
     }
@@ -84,4 +132,5 @@ $button-types: ("primary", "secondary", "outline");
 // button area
 .top-btn-area {
     @include flex(true, "end", "center", rem(8px));
+    margin-bottom: rem(18px);
 }

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../assets/css/index.css">
     <!-- script -->
     <script src="../../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
     <script type="module" src="../../assets/js/common.js"></script>
 </head>
 <body>
@@ -173,54 +174,172 @@
                 <!-- top button area start -->
                 <article class="top-btn-area">
                     <button type="button" class="btn btn-primary lg">출력</button>
-                    <button type="button" class="btn btn-primary lg">조회</button>
+                    <button type="submit" class="btn btn-primary lg">조회</button>
                 </article>
                 <!--// top button area end -->
-
                 <!-- search start-->
                 <article class="search-form">
                     <form class="form needs-validation">
                         <!--  -->
-                        <div class="form-row grid-rowspan-2">
-                            <div class="col rowspan">
+                        <div class="form-row">
+                            <div class="col">
                                 <div class="form-label">기안일자</div>
-                                <div class="form-group"></div>
+                                <div class="form-group">
+                                    <!-- datepicker-group start -->
+                                    <div class="datepicker-group">
+                                        <div class="datepicker-btn-group">
+                                            <button class="btn btn-outline--round btn-xsm">1개월</button>
+                                            <button class="btn btn-outline--round btn-xsm">3개월</button>
+                                            <button class="btn btn-outline--round btn-xsm">6개월</button>
+                                            <button class="btn btn-outline--round btn-xsm" disabled>12개월</button>
+                                        </div>
+                                        <div class="input-icon-group">
+                                            <input type="text" id="startDate" class="form-control icon" value="" placeholder="YYYY-MM-DD">
+                                            <label class="input-group-text" for="startDate"><i class="icon calendar"></i></label>
+                                        </div>
+                                        <div class="to">-</div>
+                                        <div class="input-icon-group">
+                                            <input type="text" id="endDate" class="form-control icon" value="" placeholder="YYYY-MM-DD">
+                                            <label class="input-group-text" for="endDate"><i class="icon calendar"></i></label>
+                                        </div>
+                                    </div>
+                                    <!--// datepicker-group end -->
+                                </div>
                             </div>
                             <div class="col">
-                                <div class="form-label">기안자</div>
-                                <div class="form-group"></div>
+                                <div class="form-label">자산관리번호</div>
+                                <div class="form-group">
+                                    <!-- input icon group start -->
+                                    <div class="input-icon-group">
+                                        <input type="text" class="form-control icon" value="" placeholder="자산관리번호 입력">
+                                        <label class="input-group-text" for="startDate"><i class="icon search"></i></label>
+                                    </div>
+                                    <!--// input icon group end -->
+                                </div>
                             </div>
                             <div class="col">
-                                <div class="form-label">기안부서</div>
-                                <div class="form-group"></div>
-                            </div>
-                            <div class="col">
-                                <div class="form-label">점검 월</div>
-                                <div class="form-group"></div>
-                            </div>
-                            <div class="col">
-                                <div class="form-label">결재상태</div>
-                                <div class="form-group"></div>
+                                <div class="form-label">요청부서 </div>
+                                <div class="form-group">
+                                    <!-- combo box start -->
+                                    <div class="combo-box-group">
+                                        <div class="form-select" id="singleSelectBox" role="combobox" aria-expanded="false">
+                                            <span class="placeholder">선택</span>
+                                        </div>
+                                        <ul class="options" id="singleOptions">
+                                            <li data-value="Option A">Option A</li>
+                                            <li data-value="Option B">Option B</li>
+                                            <li data-value="Option C">Option C</li>
+                                            <li data-value="Option D">Option D</li>
+                                        </ul>
+                                    </div>
+                                    <!--// combo box end -->
+                                </div>
                             </div>
                         </div>
                         <!--  -->
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-label">기안자</div>
+                                <div class="form-group">
+                                    <!-- input icon group start -->
+                                    <div class="input-icon-group">
+                                        <input type="text" class="form-control icon" value="" placeholder="기안자 입력">
+                                        <label class="input-group-text" for="startDate"><i class="icon search"></i></label>
+                                    </div>
+                                    <!--// input icon group end -->
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-label">반입/반출</div>
+                                <div class="form-group">
+                                    <!-- combo box start -->
+                                    <div class="combo-box-group">
+                                        <div class="form-select" id="singleSelectBox" role="combobox" aria-expanded="false">
+                                            <span class="placeholder">선택</span>
+                                        </div>
+                                        <ul class="options" id="singleOptions">
+                                            <li data-value="Option A" aria-selected="true">Option A</li>
+                                            <li data-value="Option B">Option B</li>
+                                            <li data-value="Option C">Option C</li>
+                                            <li data-value="Option D">Option D</li>
+                                        </ul>
+                                    </div>
+                                    <!--// combo box end -->
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-label">결재상태</div>
+                                <div class="form-group">
+                                    <!-- combo box start -->
+                                    <div class="combo-box-group">
+                                        <div class="form-select" id="singleSelectBox" role="combobox" aria-expanded="false">
+                                            <span class="placeholder">선택</span>
+                                        </div>
+                                        <ul class="options" id="singleOptions">
+                                            <li data-value="Option A">Option A</li>
+                                            <li data-value="Option B">Option B</li>
+                                            <li data-value="Option C">Option C</li>
+                                            <li data-value="Option D">Option D</li>
+                                        </ul>
+                                    </div>
+                                    <!--// combo box end -->
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </article>
                 <!--// search end-->
 
                 <!-- grid top start -->
                 <article class="grid-top">
-                    <div class=""></div>
-                    <div class="grid-btn-area"></div>
+                    <div class="">
+                        <!-- combo box start -->
+                        <div class="combo-box-group">
+                            <div class="form-select" id="singleSelectBox" role="combobox" aria-expanded="false">
+                                <span class="placeholder">선택</span>
+                            </div>
+                            <ul class="options" id="singleOptions">
+                                <li data-value="Option A">10개씩 보기</li>
+                                <li data-value="Option B">20개씩 보기</li>
+                                <li data-value="Option C">Option C</li>
+                                <li data-value="Option D">Option D</li>
+                            </ul>
+                        </div>
+                        <!--// combo box end -->
+                    </div>
+                    <div class="grid-btn-area">
+                        <button type="button" class="btn btn-outline btn-sm">반출기안</button>
+                        <button type="button" class="btn btn-outline btn-sm">반입기안</button>
+                    </div>
                 </article>
                 <!--// grid top end -->
                 
                 <!-- grid wrap start -->
-                <article class="grid-wrap"></article>
+                <article class="grid-wrap">
+                    <div id="sampleGrid" class="colspan" style="width: 100%; height: 400px;"></div>
+                    <script type="module" src="../../../assets/js/grid/sample.js"></script>
+                </article>
                 <!-- grid wrap end -->
 
                  <!-- grid bottom start -->
-                <article class="grid-bottom"></article>
+                <article class="grid-bottom">
+                    <nav class="page-navigation" aria-label="page navigation">
+                        <ul class="pagination">
+                          <li class="page-item prev"><a class="page-link" href="#">이전</a></li>
+                          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item"><a class="page-link" href="#">4</a></li>
+                          <li class="page-item"><a class="page-link" href="#">5</a></li>
+                          <li class="page-item"><a class="page-link" href="#">6</a></li>
+                          <li class="page-item"><a class="page-link" href="#">7</a></li>
+                          <li class="page-item"><a class="page-link" href="#">8</a></li>
+                          <li class="page-item"><a class="page-link" href="#">9</a></li>
+                          <li class="page-item disabled"><a class="page-link" href="#">10</a></li>
+                          <li class="page-item next disabled"><a class="page-link" href="#">다음</a></li>
+                        </ul>
+                    </nav>
+                </article>
                 <!--// grid bottom end -->
             
             </section>

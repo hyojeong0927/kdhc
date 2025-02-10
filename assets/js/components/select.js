@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
             event.stopPropagation();
         });
 
-        singleOptions.querySelectorAll("div").forEach(option => {
+        singleOptions.querySelectorAll("li").forEach(option => {
             option.addEventListener("click", () => {
                 singleSelectBox.textContent = option.textContent;
                 closeDropdown(singleOptions, singleSelectBox);

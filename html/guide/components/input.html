@@ -212,8 +212,8 @@
                     <tr>
                         <th>Date</th>
                         <td>
-                            <div class="input-group">
-                                <input type="text" id="" class="form-control datepicker" value="2025-02-10" placeholder="날짜 선택">
+                            <div class="datepicker-input-group">
+                                <input type="text" id="startDate" class="form-control datepicker" value="" placeholder="YYYY-MM-DD">
                                 <label class="input-group-text" for="startDate"><i class="icon calendar"></i></label>
                             </div>
                         </td>
@@ -236,14 +236,20 @@
                     <tr>
                         <th>Date Range</th>
                         <td>
-                            <div class="form-row">
-                                <div class="input-group">
-                                    <input type="text" id="startDate" class="form-control datepicker" value="2025-02-10" placeholder="날짜 선택">
+                            <div class="datepicker-group">
+                                <div class="datepicker-btn-group">
+                                    <button class="btn btn-outline--round btn-xsm">1개월</button>
+                                    <button class="btn btn-outline--round btn-xsm">3개월</button>
+                                    <button class="btn btn-outline--round btn-xsm">6개월</button>
+                                    <button class="btn btn-outline--round btn-xsm" disabled>12개월</button>
+                                </div>
+                                <div class="datepicker-input-group">
+                                    <input type="text" id="startDate" class="form-control datepicker" value="" placeholder="YYYY-MM-DD">
                                     <label class="input-group-text" for="startDate"><i class="icon calendar"></i></label>
                                 </div>
-                                <div class="to">~</div>
-                                <div class="input-group">
-                                    <input type="text" id="endDate" class="form-control datepicker" value="2025-02-10" placeholder="날짜 선택">
+                                <div class="to">-</div>
+                                <div class="datepicker-input-group">
+                                    <input type="text" id="endDate" class="form-control datepicker" value="" placeholder="YYYY-MM-DD">
                                     <label class="input-group-text" for="endDate"><i class="icon calendar"></i></label>
                                 </div>
                             </div>

@@ -33,6 +33,7 @@ $blue-001: #384B5E;
 $blue-002: #0D63D4;
 $blue-003: #D9EAFF; // badge bg
 $blue-004: #F2F5FA; // body bg
+$blue-005: #E3E8ED;
 
 // bg color
 $body-bg: $blue-004;
@@ -122,8 +123,8 @@ $input-font-family:             $font-family-base;
 $input-font-color:              $gray-002;
 $input-font-size:               $font-size-base;
 $input-font-weight:             $font-weight-base;
-$input-line-height:             19.2px;
-$input-letter-spacing:          -3%;
+$input-line-height:             $line-height-base;
+$input-letter-spacing:          -0.48px;
 
 $input-border-color:            $gray-003;
 $input-border-width:            1px;
@@ -133,7 +134,7 @@ $input-border-style:            solid;
 $input-bg: $white;
 
 $input-focus-bg:                $input-bg;
-$input-focus-border-color:      $gray-005;
+$input-focus-border-color:      $blue-002;
 $input-focus-color:             $input-font-color;
 
 $input-placeholder-color:       $gray-004;
@@ -230,9 +231,13 @@ $btn-padding-y: 6px;
 $btn-padding-x: 12px;
 $btn-font-family: $font-family-base;
 $btn-font-size: 18px;
-$btn-line-height: 21.6px;
-$btn-letter-spacing: -2%;
+$btn-line-height: $line-height-base;
+$btn-letter-spacing: -0.42px;
 $btn-white-space: null;
+
+$btn-padding-y-xsm: 4px;
+$btn-padding-x-xsm: 12px;
+$btn-font-size-xsm: 14px;
 
 $btn-padding-y-sm: 6px;
 $btn-padding-x-sm: 16px;
@@ -242,7 +247,7 @@ $btn-padding-y-lg: 8px;
 $btn-padding-x-lg: 16px;
 $btn-font-size-lg: 18px;
 
-$btn-border-width: 1px;
+$btn-border-width: 2px;
 
 $btn-font-weight: $font-weight-medium;
 $btn-box-shadow: none;
@@ -259,6 +264,7 @@ $btn-link-disabled-color: $btn-link-color;
 $btn-border-radius: 6px;
 $btn-border-radius-sm: 4px;
 $btn-border-radius-lg: 6px;
+$btn-border-radius-xlg: 40px;
 
 $btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 // button end
