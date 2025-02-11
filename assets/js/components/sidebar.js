@@ -6,8 +6,14 @@ $(document).ready(function () {
         $sidebar.toggleClass('collapsed');
 
         if ($sidebar.hasClass('collapsed')) {
+            $sidebar.stop(true, true).animate({
+                width: 'rem(60px)'
+            }, 300);
             $menuIcon.removeClass('arrow-close').addClass('arrow-expansion');
         } else {
+            $sidebar.stop(true, true).animate({
+                width: '$sidebar-width'
+            }, 300);
             $menuIcon.removeClass('arrow-expansion').addClass('arrow-close');
         }
     });

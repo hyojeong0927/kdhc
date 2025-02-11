@@ -1,12 +1,14 @@
 /* Sidebar
 ========================================================================== */
+#sidebar {
+    width: $sidebar-width;
+    transition: width 0.3s ease;
+}
 .sidebar {
     overflow-y: auto;
-    width: $sidebar-width;
     height: 100dvh;
     max-height: calc(100dvh - $header-height);
     background-color: $primary;
-    transition: width 0.3s ease;
     overflow-y: auto;
     .sidebar-top-btn {
         @include flex(true, "end", "center");
@@ -48,13 +50,6 @@
         width: rem(60px);
         .sidebar-top-btn {
             padding: rem(12px) rem(14px);
-            .arrow-close {
-                @extend .arrow-expansion;
-            }
-        }
-        .lnb-list {
-            display: none;
-            transition: display 0.3s;
         }
     }
 }
