@@ -1,5 +1,29 @@
 /* Grid
 ========================================================================== */
-.grid {
-    
+:root {
+    --ag-header-column-resize-handle-color: $gray-007;
+}
+.ag-root-wrapper {
+    color: $gray-002;
+    color-scheme: light;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    border: {
+        width: 1px;
+        color: $blue-001 $gray-007 $gray-007 $gray-007;
+        style: solid;
+    };
+    border-radius: 0;
+    background-color: $white;
+    .ag-header {
+        color: $blue-001;
+        .ag-header-cell-resize {
+            &:after {
+                top: 1px;
+                width: 1px;
+                height: rem(39px);
+                background-color: var(--ag-header-column-resize-handle-color);
+            }
+        }
+    }
 }

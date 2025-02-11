@@ -14197,6 +14197,31 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 
 /* Grid
 ========================================================================== */
+:root {
+  --ag-header-column-resize-handle-color: $gray-007;
+}
+
+.ag-root-wrapper {
+  color: #18191C;
+  color-scheme: light;
+  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans KR", Roboto, "Helvetica Neue", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px;
+  border-width: 1px;
+  border-color: #384B5E #C5CDD5 #C5CDD5 #C5CDD5;
+  border-style: solid;
+  border-radius: 0;
+  background-color: #fff;
+}
+.ag-root-wrapper .ag-header {
+  color: #384B5E;
+}
+.ag-root-wrapper .ag-header .ag-header-cell-resize:after {
+  top: 1px;
+  width: 1px;
+  height: 2.44rem;
+  background-color: var(--ag-header-column-resize-handle-color);
+}
+
 /* Icons
 //@include icon($icon-name, $width, $height, $url)
 ========================================================================== */
