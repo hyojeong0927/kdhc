@@ -1,12 +1,12 @@
 /* Main
 ========================================================================== */
 .main-contents {
-    overflow-y: auto;
+    overflow: auto;
     padding: rem(20px) rem(40px) rem(98px);
     width: 100%;
+    min-width: calc(rem($device-base-width) - rem($sidebar-width));
     height: 100%;
     max-height: calc(100dvh - $header-height);
-    background-color: $body-bg;
     .contents {
         width: 100%;
         height: 100%;

@@ -1,5 +1,117 @@
-/* Calendar
+/* Datepicker Calendar, Calendar
 ========================================================================== */
-.calendar {
-    
+// datepicker calendar start
+.datepicker {
+    &.datepicker-dropdown {
+        &::after,
+        &::before {
+            content: none;
+        }
+    }
+    &.dropdown-menu {
+        padding: rem(14px) rem(20px) rem(20px);
+        color: $gray-002;
+        @include font-style($font-size-xsm, $font-weight-normal, $line-height-base);
+        letter-spacing: $letter-spacing-sm;
+        font-family: $font-family-base;
+        border: none;
+        border-radius: 0;
+        background: $white;
+        box-shadow: 0px 0px rem(12px) 0px rgba($black, 0.08);
+    }
+    .datepicker-days {
+        .table-condensed {
+            thead {
+                th {
+                    border-radius: 0;
+                    &.prev {
+                        display: none;
+                        width: 0;
+                    }
+                    &.datepicker-switch {
+                        padding-left: rem(5px);
+                        padding-bottom: rem(19px);
+                        height: rem(26px);
+                        color: $black;
+                        @include font-style($font-size-md, $font-weight-normal, $line-height-base);
+                        text-align: left;
+                    }
+                    &.next {
+                        display: none;
+                    }
+                    &.dow {
+                        width: rem(20px);
+                        height: rem(20px);
+                        &:first-of-type {
+                            color: $red-001;
+                        }
+                        &:last-of-type {
+                            color: $green-001;
+                        }
+                        font-weight: $font-weight-medium;
+                    }
+                }
+            }
+            tbody {
+                td {
+                    width: rem(20px);
+                    height: rem(20px);
+                    &.day {
+                        &:first-of-type {
+                            color: $red-001;
+                        }
+                        &:last-of-type {
+                            color: $green-001;
+                        }
+                        &.old {
+                            color: $gray-003;
+                            &:hover,
+                            &:focus-visible {
+                                color: $white;
+                            }
+                        }
+                        &:hover,
+                        &:focus-visible,
+                        &.today,
+                        &.active {
+                            position: relative;
+                            border: none;
+                            outline: none;
+                            background-color: transparent;
+                            background-image: none;
+                            @include before(true, true, 50%, 0, 0, 50%);
+                            &::before {
+                                width: rem(20px);
+                                height: rem(20px);
+                                border-radius: 100%;
+                                transform: translate(-50%, -50%);
+                                z-index: -1;
+                            }
+                        }
+                        &.today {
+                            &::before {
+                                background-color: $blue-003;
+                            }
+                        }
+                        &:hover,
+                        &:focus-visible,
+                        &.active {
+                            color: $white;
+                            &::before {
+                                background-color: $blue-002;
+                            }
+                        }
+                        &.new {
+                            color: $gray-003;
+                            &:hover,
+                            &:focus-visible {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
+// datepicker calendar end

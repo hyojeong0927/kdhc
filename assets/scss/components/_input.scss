@@ -47,6 +47,12 @@
     border: 0;
     background-color: $input-bg;
 }
+%input-icon-group {
+    flex: 1;
+    padding-right: 0;
+    border: 0;
+    background-color: transparent;
+}
 // input 공통 스타일 end
 
 // input type style start
@@ -69,19 +75,8 @@
     &[disabled] {
         @extend %input-disabled;
     }
-    &.error {
+    &.is-error {
         @extend %input-error;
-    }
-    // input icon
-    &.icon {
-        flex: 1;
-        padding-right: 0;
-        border: 0;
-        background-color: transparent;
-        & + .input-group-text {
-            @extend %input-icon;
-            background-color: transparent;
-        }
     }
 }
 input[type="text"],
@@ -104,14 +99,23 @@ textarea {
 }
 // textarea end
 
-// input icon group
-.input-icon-group {
+// input group
+.input-search-group,
+.input-date-group {
     @include flex(true, "start", "center");
     flex-wrap: wrap;
     @extend %input-base;
     padding: 0;
     width: auto;
     flex: 1;
+    // input icon
+    .form-control {
+        @extend %input-icon-group;
+        & + .input-group-text {
+            @extend %input-icon;
+            background-color: transparent;
+        }
+    }
     &.active,
     &:hover,
     &:active,
@@ -129,5 +133,17 @@ textarea {
                 }
             }
         }
+    }
+    &.active {
+        @extend %input-focus;
+    }
+    &.disabled {
+        @extend %input-disabled;
+    }
+    &.readonly {
+        @extend %input-read-only;
+    }
+    &.is-error {
+        @extend %input-error;
     }
 }

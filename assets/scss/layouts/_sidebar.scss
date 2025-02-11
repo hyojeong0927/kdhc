@@ -2,7 +2,7 @@
 ========================================================================== */
 .sidebar {
     overflow-y: auto;
-    width: rem(280px);
+    width: $sidebar-width;
     height: 100dvh;
     max-height: calc(100dvh - $header-height);
     background-color: $primary;
@@ -11,35 +11,36 @@
     .sidebar-top-btn {
         @include flex(true, "end", "center");
         padding: rem(12px);
+        i {
+            text-indent: $text-indent;
+        }
     }
-    .lnb {
+    .lnb-tit {
+        visibility: hidden;
+        width: 1px;
+        height: 1px;
+    }
+    .lnb-list {
         .lnb-item {
-            &--title {
-                border-bottom: 1px solid $gray-009;
-                .title {
-                    @include flex(true, "start", "center");
-                    padding: rem(20px) rem(16px) rem(20px) rem(24px);
-                    width: 100%;
-                    min-height: rem(66px);
-                    color: $white;
-                    @include font-style($h6-font-size, $font-weight-medium, $line-height-base);
-                    letter-spacing: $letter-spacing-sm;
-                    border-radius: 0;
-                    border: 0;
-                }
-                &:hover {
-                    border-color: $secondary;
-                    background-color: $secondary;
-                }
-            }
-            &--sub {
+            border-bottom: 1px solid $gray-009;
+            .lnb-btn {
+                @include flex(true, "start", "center");
                 padding: rem(20px) rem(16px) rem(20px) rem(24px);
-                ul {
-                    .sub-link {
-                        color: $white;
-                        text-decoration: $text-decoration-none;
-                    }
-                }
+                width: 100%;
+                min-height: rem(66px);
+                color: $white;
+                @include font-style($h6-font-size, $font-weight-medium, $line-height-base);
+                letter-spacing: rem($letter-spacing-sm);
+                border-radius: 0;
+                border: 0;
+            }
+            .lnb-link {
+                text-decoration: $text-decoration-none;
+            }
+            &.active,
+            &:hover {
+                border-color: $secondary;
+                background-color: $secondary;
             }
         }
     }
@@ -51,7 +52,7 @@
                 @extend .arrow-expansion;
             }
         }
-        .lnb {
+        .lnb-list {
             display: none;
             transition: display 0.3s;
         }

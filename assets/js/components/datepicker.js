@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('.datepicker').datepicker({
+    $('#singleDate').datepicker({
         format: 'yyyy-mm-dd',
         autoclose: true,
         todayHighlight: true

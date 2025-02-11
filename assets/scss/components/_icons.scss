@@ -7,6 +7,7 @@ $icon: 'icon';
     // header
     @include icon("h1-logo", rem(64px), rem(50px), "/assets/images/svg/logo.svg");
     @include icon("h1-logo-txt", rem(157px), rem(62px), "/assets/images/svg/logo-txt.svg");
+    @include icon("flag", rem(24px), rem(16px), "/assets/images/svg/flag.svg");
     
     // header util
     @include icon("clipboard", rem(20px), rem(20px), "/assets/images/svg/clipboard.svg");
@@ -36,5 +37,11 @@ $icon: 'icon';
 
     // pagination arrow
     @include icon("arrow-left", rem(20px), rem(20px), "/assets/images/svg/arrow-left.svg");
+    @include icon("arrow-left-off", rem(20px), rem(20px), "/assets/images/svg/arrow-left-off.svg");
     @include icon("arrow-right", rem(20px), rem(20px), "/assets/images/svg/arrow-right.svg");
+    @include icon("arrow-right-off", rem(20px), rem(20px), "/assets/images/svg/arrow-right-off.svg");
+    @include icon("arrow-first", rem(20px), rem(20px), "/assets/images/svg/arrow-first.svg");
+    @include icon("arrow-first-off", rem(20px), rem(20px), "/assets/images/svg/arrow-first-off.svg");
+    @include icon("arrow-last", rem(20px), rem(20px), "/assets/images/svg/arrow-last.svg");
+    @include icon("arrow-last-off", rem(20px), rem(20px), "/assets/images/svg/arrow-last-off.svg");
 }

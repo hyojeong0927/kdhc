@@ -1,10 +1,15 @@
 /* Forms
 ========================================================================== */
-.search-form {
-    margin-bottom: rem(40px);
-    border: 1px solid $gray-007;
-    background-color: $white;
-    .form {
+// 검색 폼
+.search-area {
+    &.top-sch {
+        .form-wrap {
+            margin-bottom: rem(40px);
+            border: 1px solid $gray-007;
+            background-color: $white;
+        }
+    }
+    .form-wrap {
         .form-row {
             @include flex(true, "start", "normal");
             &:not(:last-of-type) {
@@ -20,8 +25,8 @@
             .form-label {
                 @include flex(true, "center", "center");
                 margin: 0;
-                padding: rem(28px) rem(24px);
-                width: rem(140px);
+                padding: rem(18px) rem(24px);
+                width: rem(145px);
                 @include font-style($font-size-base, $font-weight-medium, $line-height-base);
                 background-color: $blue-005;
             }
@@ -42,6 +47,7 @@
         }
     }    
 }
+
 .datepicker-group {
     @include flex(true, "start", "center", rem(8px));
     flex-wrap: wrap;
@@ -51,6 +57,16 @@
         width: 100%;
     }
 }
+// 검색 폼 end
+
+// validation
+.form-hint-invalid {
+    margin-top: rem(12px);
+    color: $red-001;
+    @include font-style($font-size-sm, $font-weight-normal, $line-height-base);
+    letter-spacing: rem(-0.42px);
+}
+// validation end
 
 .form-check {
     padding: rem($form-check-padding);
@@ -62,12 +78,20 @@
     }
 }
 
+
 // grid
-.grid-top {
+.grid-top-area {
     @include flex(true, "between", "center", rem(8px));
     margin-bottom: rem(16px);
-    .grid-btn-area {
+    .grid-top-left {
+        flex: 1;
+        .combo-box-group {
+            width: rem(142px);
+        }
+    }
+    .grid-top-btn {
         @include flex(true, "end", "center", rem(8px));
+        flex: 1;
         margin-left: auto;
     }
 }

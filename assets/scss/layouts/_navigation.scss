@@ -46,6 +46,10 @@ nav {
                     border: none;
                     border-radius: rem(6px);
                     background-color: $white;
+                    &:hover {
+                        color: $white;
+                        background-color: $secondary;
+                    }
                 }
                 &.active {
                     background-color: transparent;
@@ -59,27 +63,85 @@ nav {
                         color: $gray-008;
                     }
                 }
+                &.first,
+                &.last,
                 &.next,
                 &.prev {
+                    width: rem(28px);
+                    min-width: rem(28px);
                     .page-link {
-                        @extend .icon;
-                        min-width: rem(61px);
-                        width: rem(61px) !important;
-                        height: rem(36px) !important;
-                        background-repeat: no-repeat;
-                        background-size: rem(20px);
+                        position: relative;
+                        padding: rem(6px) rem(4px);
+                        text-indent: $text-indent;
+                        width: rem(28px);
+                        min-width: rem(28px);
+                        @include before(true, true, 50%, 0, 0, 50%);
+                        &::before {
+                            transform: translate(-50%, -50%);
+                            @extend .icon;
+                        }
+                    }
+                    &:hover,
+                    &:focus {
+                        .page-link {
+                            background-color: $white;
+                        }
+                    }
+                }
+                &.first {
+                    .page-link {
+                        &::before {
+                            @extend .arrow-first;
+                        }
+                    }
+                    &.disabled {
+                        .page-link {
+                            &::before {
+                                @extend .arrow-first-off;
+                            }
+                        }
                     }
                 }
                 &.prev {
                     .page-link {
-                        background-position: left center;
-                        @extend .arrow-left;
+                        &::before {
+                            @extend .arrow-left;
+                        }
+                    }
+                    &.disabled {
+                        .page-link {
+                            &::before {
+                                @extend .arrow-first-off;
+                            }
+                        }
                     }
                 }
                 &.next {
                     .page-link {
-                        @extend .arrow-right;
-                        background-position: right center;
+                        &::before {
+                            @extend .arrow-right;   
+                        }
+                    }
+                    &.disabled {
+                        .page-link {
+                            &::before {
+                                @extend .arrow-right-off;
+                            }
+                        }
+                    }
+                }
+                &.last {
+                    .page-link {
+                        &::before {
+                            @extend .arrow-last;   
+                        }
+                    }
+                    &.disabled {
+                        .page-link {
+                            &::before {
+                                @extend .arrow-last-off;
+                            }
+                        }
                     }
                 }
             }

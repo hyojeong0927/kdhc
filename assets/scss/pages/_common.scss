@@ -1,2 +1,53 @@
-/* About
+/* Common
 ========================================================================== */
+// 웹접근성
+#kdhc-skip-link {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: $black;
+    z-index: $zindex-skip;
+    a { 
+        color: $white;
+        @include font-style($font-size-xsm, $font-weight-normal, $line-height-base);
+        &:not(:focus) {
+            position: absolute;
+            margin: -1px;
+            padding: 0;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    }
+}
+#kdhc-masthead {
+    display: block;
+    width: 100%;
+    height: rem(24px);
+    background-color: $gray-010;
+    .nuri-txt {
+        position: relative;
+        padding-left: rem(26px);
+        color: $black;
+        @include font-style($font-size-xsm, $font-weight-normal, $line-height-base);
+        @include before(true, true, 50%, 0, 0, 0);
+        &::before {
+            border-radius: 100%;
+            transform: translateY(-50%);
+            @extend .icon;
+            @extend .flag;
+            background-position: left center;
+        }
+    }
+}
+* {
+    &:focus-visible {
+        box-shadow: var(--bs-btn-focus-box-shadow);;
+    }
+}
+// 웹접근성 end

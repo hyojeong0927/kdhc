@@ -1,7 +1,7 @@
 /* Header
 ========================================================================== */
 $utile-type: ("01", "02", "03", "04");
-$header-height: rem(112px);
+$header-height: calc(rem(112px) + rem(24px));
 
 header {
     @include flex(true, "start", "center", rem(63px));
@@ -24,6 +24,9 @@ header {
             @extend .h1-logo-txt;
             text-indent: $text-indent;
         }
+        &:focus-visible {
+            box-shadow: var(--bs-btn-focus-box-shadow);
+        }
     }
     .gnb {
         @include flex(true, "end", "center");
@@ -36,8 +39,11 @@ header {
             .util-#{$ut} {
                 position: relative;
                 padding-left: rem(26px) !important;
-                color: $gray-002;
-                @include font-style($font-size-base, $font-weight-normal, $line-height-base);
+                a {
+                    color: $gray-002;
+                    @include font-style($font-size-base, $font-weight-normal, $line-height-base);
+                    text-decoration: $text-decoration-none;
+                }
                 @extend .icon;
                 @include before(true, true, 50%, 0, 0, 0);
                 &::before {
@@ -88,7 +94,7 @@ header {
         .nav {
             @include flex(true, "start", "center");
             .nav-item {
-                @include font-style($h4-font-size, $font-weight-bold, $line-height-base);
+                @include font-style($h2-font-size, $font-weight-bold, $line-height-base);
                 .nav-link {
                     position: relative;
                     padding: 0 rem(28px) rem(20px);
