@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    
+
     // 다중 선택 콤보박스 (Multi-Select Dropdown)
     const multiSelectBox = document.getElementById("multiSelectBox");
     const multiOptions = document.getElementById("multiOptions");
@@ -39,23 +39,29 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // 단일 선택 콤보박스 (Single Select Dropdown)
+    // 단일 선택 콤보박스 (Single Select Dropdown) - Multiple Dropdowns Handling
     const singleSelectBoxes = document.querySelectorAll(".form-select");
-    
+
     singleSelectBoxes.forEach(singleSelectBox => {
-        const singleOptions = singleSelectBox.nextElementSibling; // 바로 뒤에 있는 .options 목록
+        const singleOptions = singleSelectBox.nextElementSibling;
+        const placeholder = singleSelectBox.querySelector(".placeholder");
 
-        singleSelectBox.addEventListener("click", (event) => {
-            toggleDropdown(singleOptions, singleSelectBox);
-            event.stopPropagation();
-        });
-
-        singleOptions.querySelectorAll("li").forEach(option => {
-            option.addEventListener("click", () => {
-                singleSelectBox.querySelector(".placeholder").textContent = option.textContent;
-                closeDropdown(singleOptions, singleSelectBox);
+        // Check if the dropdown elements exist before applying the logic
+        if (singleSelectBox && singleOptions && placeholder) {
+            singleSelectBox.addEventListener("click", (event) => {
+                toggleDropdown(singleOptions, singleSelectBox);
+                event.stopPropagation();
             });
-        });
+
+            // Handle option click
+            singleOptions.querySelectorAll("li").forEach(option => {
+                option.addEventListener("click", () => {
+                    // Update the text of the select box, not the placeholder
+                    singleSelectBox.textContent = option.textContent;
+                    closeDropdown(singleOptions, singleSelectBox);
+                });
+            });
+        }
     });
 
     // 검색 전용 콤보박스 (Search Dropdown)
@@ -84,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // 검색 필터링 (Search Filtering)
         function filterOptions(input, container) {
-            let filter = input.value.toLowerCase();
+            let filter = input.value.toLowerCase().trim();
             let items = container.querySelectorAll("div");
 
             items.forEach(item => {
