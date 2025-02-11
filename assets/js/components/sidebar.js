@@ -7,7 +7,7 @@ $(document).ready(function () {
 
         if ($sidebar.hasClass('collapsed')) {
             $sidebar.stop(true, true).animate({
-                width: 'rem(60px)'
+                width: '$sidebar-close-width'
             }, 300);
             $menuIcon.removeClass('arrow-close').addClass('arrow-expansion');
         } else {
