@@ -120,6 +120,8 @@ textarea {
     // input icon
     .form-control {
         @extend %input-icon-group;
+        height: rem(32px) !important;
+        min-height: rem(32px) !important;
         & + .input-group-text {
             @extend %input-icon;
             background-color: transparent;
@@ -133,6 +135,7 @@ textarea {
     &:focus {
         @extend %input-focus;
         .input-group-text {
+            cursor: pointer;
             .icon {
                 &.calendar {
                     @extend .calendar-on;

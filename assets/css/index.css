@@ -27969,6 +27969,22 @@ textarea.form-control {
   width: auto;
   flex: 1;
 }
+.input-search-group .form-control, .input-search-group input[type=text],
+.input-search-group input[type=number],
+.input-search-group input[type=email],
+.input-search-group input[type=password],
+.input-search-group input[type=tel],
+.input-search-group input[type=url],
+.input-date-group .form-control,
+.input-date-group input[type=text],
+.input-date-group input[type=number],
+.input-date-group input[type=email],
+.input-date-group input[type=password],
+.input-date-group input[type=tel],
+.input-date-group input[type=url] {
+  height: 2rem !important;
+  min-height: 2rem !important;
+}
 .input-search-group .form-control + .input-group-text, .input-search-group input[type=text] + .input-group-text,
 .input-search-group input[type=number] + .input-group-text,
 .input-search-group input[type=email] + .input-group-text,
@@ -27983,6 +27999,15 @@ textarea.form-control {
 .input-date-group input[type=tel] + .input-group-text,
 .input-date-group input[type=url] + .input-group-text {
   background-color: transparent;
+}
+.input-search-group.active .input-group-text, .input-search-group:hover .input-group-text, .input-search-group:active .input-group-text, .input-search-group:focus-visible .input-group-text, .input-search-group:focus-within .input-group-text, .input-search-group:focus .input-group-text,
+.input-date-group.active .input-group-text,
+.input-date-group:hover .input-group-text,
+.input-date-group:active .input-group-text,
+.input-date-group:focus-visible .input-group-text,
+.input-date-group:focus-within .input-group-text,
+.input-date-group:focus .input-group-text {
+  cursor: pointer;
 }
 .input-time-group {
   display: flex;
