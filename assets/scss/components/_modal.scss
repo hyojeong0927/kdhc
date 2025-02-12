@@ -1,5 +1,87 @@
 /* Modal
 ========================================================================== */
+$modal-size: ('lg', 'md', 'sm');
+
+%modal-base {
+    .modal-content {
+        border-radius: rem(20px);
+        border: none;
+        background-color: $body-bg;
+    }
+    .modal-header {
+        border-top-right-radius: rem(20px);
+        border-top-left-radius: rem(20px);
+        background-color: $primary;
+        .modal-title {
+            color: $white;
+        }
+        .btn-close {
+            @extend .icon;
+            @extend .close;
+            opacity: 1;
+            &:focus,
+            &:focus-visible,
+            &:focus-within {
+                box-shadow: none;
+            }
+        }
+    }
+    .modal-body {
+        .inner {
+           .breadcrumb-wrap {
+                margin-bottom: rem(20px);
+           }
+           .title-wrap {
+                margin-bottom: rem(16px);
+           }
+           .section {
+                &:not(:last-of-type) {
+                    padding: 0 0 rem(40px);
+                }
+           }
+           .section-sub {
+                padding: rem(28px) rem(40px);
+                border-radius: rem(12px);
+                background-color: $white;
+                box-shadow:0 0 rem(12px) 0 rgba($black, 0.08);
+            }
+        }
+    } 
+    .modal-footer {
+        border: none;
+        border-bottom-right-radius: rem(20px);
+        border-bottom-left-radius: rem(20px);
+        background-color: $body-bg;
+    }
+}
 .modal {
+    @extend %modal-base;
     
+    @each $ms in $modal-size {
+        .#{$ms} {
+            @if $ms == "lg" {
+                &.modal-dialog {
+                    width: rem(1440px);
+                    min-width: rem(1440px);
+                    max-width: rem(1440px);
+                }
+                .modal-header {
+                    padding: rem(32px) rem(40px) rem(24px);
+                    min-height: rem(102px);
+                    .modal-title {
+                        @include font-style($font-size-xlg, $font-weight-bold, rem(38.4px));
+                    }
+                }
+                .modal-body {
+                    padding: rem(20px) rem(40px) rem(16px);
+                }
+            }
+            @else if $ms == "md" {
+
+            }
+            @else if $ms == "sm" {
+
+            }
+        }   
+    }
 }

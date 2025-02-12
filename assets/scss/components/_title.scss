@@ -25,13 +25,16 @@ $title-types: ('h1', 'h2', 'h3', 'h4', 'h5', 'h6');
                 }
             }
             @else if $tit == "h4" {
-
+                
             }
             @else if $tit == "h5" {
 
             }
             @else if $tit == "h6" {
-
+                .tit {
+                    @include font-style($h6-font-size, $font-weight-medium, rem(21.6px));
+                    letter-spacing: -2%;
+                }
             }
         }
        

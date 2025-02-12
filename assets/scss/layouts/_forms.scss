@@ -1,32 +1,25 @@
 /* Forms
 ========================================================================== */
-// 검색 폼
-.search-area {
-    &.top-sch {
-        .form-wrap {
-            margin-bottom: rem(16px);
-            border: 1px solid $gray-007;
-            background-color: $white;
-        }
-    }
+// form base
+%form-base {
     .form-wrap {
+        margin-bottom: rem(16px);
+        border: 1px solid $gray-007;
+        background-color: $white;
         .form-row {
             @include flex(true, "start", "normal");
             &:not(:last-of-type) {
                 border-bottom: 1px solid $gray-007;
             }
-            .grid-rowspan-1 {
-                display: grid;
-                grid-template-columns: null; 
-            }
             .col {
                 @include flex(true, "start", "normal");
-            }
+            } 
             .form-label {
-                @include flex(true, "center", "center");
+                @include flex(true, "start", "center");
                 margin: 0;
                 padding: rem(18px) rem(24px);
                 width: rem(145px);
+                color: $primary;
                 @include font-style($font-size-base, $font-weight-medium, $line-height-base);
                 background-color: $blue-005;
             }
@@ -42,10 +35,48 @@
                     flex: 1;
                     width: 100%;
                 }
+                & + .form-group {
+                    border-left: 1px solid $gray-007;
+                }
+                .input-txt {
+                    flex: 1;
+                    color: $gray-002;
+                    @include font-style($font-size-base, $font-weight-normal, $line-height-base);
+                    letter-spacing: -3%;
+                    &.center {
+                        @include flex(true, "center", "center");
+                        text-align: center;
+                    }
+                }
+                .input-badge-group {
+                    flex: 1;
+                    &.center {
+                        @include flex(true, "center", "center");
+                    }
+                }
             }
             
         }
-    }    
+        &.type01 {
+            .form-label {
+                width: rem(160px);
+            }
+        }
+        &.type02 {
+            .col {
+                &:first-of-type {
+                    .form-label {
+                        width: rem(200px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 검색 폼
+.search-form-area {
+   @extend %form-base;
 }
 
 .datepicker-group {
@@ -77,8 +108,11 @@
         margin-left: rem($form-check-label-left);
     }
 }
-
-
+// 입력 폼
+.input-form-area {
+    @extend %form-base;
+    width: 100%;
+}
 // grid
 .grid-top-area {
     @include flex(true, "between", "center", rem(8px));
@@ -97,4 +131,4 @@
 }
 .grid-wrap {
     margin-bottom: rem(20px);
-}
+} 

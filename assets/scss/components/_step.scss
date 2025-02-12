@@ -14,13 +14,17 @@ $step-status: ("default", "current", "reject", "done");
                 height: 1px;
                 width: 100%;
                 background-color: $gray-003;
-                z-index: -1;
+                z-index: 1;
             }
             &:last-of-type {
                 flex: none;
                 &::before {
                    display: none
                 }
+            }
+            dl {
+                position: relative;
+                z-index: 2;
             }
         }
     }
@@ -34,14 +38,34 @@ $step-status: ("default", "current", "reject", "done");
 %step-txt {
     font-weight: $font-weight-medium;
 }
+.process-status {
+    @include flex(true, "center", "center");
+    margin-bottom: rem(32px);
+    .step {
+        width: rem(975px);
+    }
+}
 .step {
     @extend %step-base;
     
     @each $size in $step-size {
         &.step-#{$size} {
             @if $size== "lg" {
-                
+                .step-list {
+                    li {
+                        &:nth-of-type(2) {
+                           &.step-default {
+                                .txt {
+                                    color: $gray-002;
+                                    @include font-style($h3-font-size, $font-weight-bold, rem(26.4px));
+                                    letter-spacing: -2%;
+                                }
+                           } 
+                        }
+                    }
+                }
                 .step-img {
+                    margin-bottom: rem(12px);
                     width: rem(80px);
                     height: rem(80px);
                 }

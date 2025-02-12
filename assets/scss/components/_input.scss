@@ -86,6 +86,9 @@ input[type="password"],
 input[type="tel"],
 input[type="url"] {
     @extend .form-control;
+    & + label.hidden {
+        @include hidden;
+    }
 }
 // input type style end
 
@@ -100,6 +103,12 @@ textarea {
 // textarea end
 
 // input group
+.input-group {
+    .form-control {
+        border-top-right-radius: $input-border-radius !important;
+        border-bottom-right-radius: $input-border-radius !important;
+    }
+}
 .input-search-group,
 .input-date-group {
     @include flex(true, "start", "center");
@@ -145,5 +154,11 @@ textarea {
     }
     &.is-error {
         @extend %input-error;
+    }
+}
+.input-time-group {
+    @include flex(true, "start", "center", rem(8px));
+    .combo-box-group {
+        flex: 1;
     }
 }

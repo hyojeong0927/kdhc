@@ -121,8 +121,8 @@ $button-types: ("primary", "secondary", "outline", "outline--round");
                 &:focus,
                 &:hover {
                     color: $white;
-                    background-color: $green-001;
-                    border-color: $green-001;
+                    background-color: $secondary;
+                    border-color: $secondary;
                 }
             }
         }
@@ -133,4 +133,8 @@ $button-types: ("primary", "secondary", "outline", "outline--round");
 .top-btn-area {
     @include flex(true, "end", "center", rem(8px));
     margin-bottom: rem(18px);
+}
+.bottom-btn-area {
+    @include flex(true, "end", "center", rem(8px));
+    margin-top: rem(16px);
 }

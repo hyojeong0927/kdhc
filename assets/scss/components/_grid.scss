@@ -7,7 +7,7 @@
     font-size: $font-size-base;
     border: {
         width: 1px;
-        color: $blue-001 $gray-007 $gray-007 $gray-007;
+        color: $primary $gray-007 $gray-007 $gray-007;
         style: solid;
     };
     border-radius: 0;
@@ -41,7 +41,7 @@
             }
         }
         .ag-header-cell-text {
-            color: $blue-001;
+            color: $primary;
             font-size: $font-size-sm;
             line-height: rem(16.8px);
             font-weight: $font-weight-medium;

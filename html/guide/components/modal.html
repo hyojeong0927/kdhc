@@ -7,6 +7,8 @@
     <!-- css -->
     <link rel="stylesheet" href="../../../assets/css/index.css">
     <!-- script -->
+    <script src="../../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
     <script type="module" src="../../../assets/js/common.js"></script>
 </head>
 <body>
@@ -16,19 +18,52 @@
 		</div>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Launch static backdrop modal
+            modal lg
         </button>
         
         <!-- Modal start -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade lg" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                        <h1 class="modal-title" id="staticBackdropLabel">Modal Title : size lg</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    ...
+                        <div class="inner">
+                            <!-- breadcrumbs start -->
+                            <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">depth 01</a></li>
+                                    <li class="breadcrumb-item"><a href="#">depth 02</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">depth 03</li>
+                                </ol>
+                            </nav>
+                            <!--// breadcrumbs end -->
+
+                            <!-- 기본정보 -->
+                            <article class="section">
+                                <!-- section tit start -->
+                                <div class="title-wrap">
+                                    <h3 class="sec-tit">section title</h3>
+                                </div>
+                                <!--// section tit end -->
+
+                            </article>
+                            <!--// 기본정보 -->
+
+                            <!-- 결재정보 -->
+                            <article class="section">
+
+                                <!-- section tit start -->
+                                <div class="title-wrap">
+                                    <h3 class="sec-tit">section title</h3>
+                                </div>
+                                <!--// section tit end -->
+
+                            </article>
+                            <!--// 결재정보 -->
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

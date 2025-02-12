@@ -1,7 +1,6 @@
 /* Utilities
 ========================================================================== */
 
-
 // Spacing start
 .mt-0 {
     margin-top: 0 !important;
@@ -20,3 +19,9 @@
     padding: $spacer !important;
   }
 // Spacing end
+
+// width
+.w-348 {
+  flex: none !important;
+  width: rem(348px) !important;
+}

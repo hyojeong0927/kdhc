@@ -115,8 +115,20 @@ const menu06Projects = [
         type: "",
         folder: "usr",
         file: "SB-USR-083.html",
-        status: "진행대기",
-        start: "",
+        status: "진행중",
+        start: "2025-02-10",
+        end: ""
+    },
+    {
+        id: "SB-USR-083_02",
+        depth1: "정보자산관리",
+        depth2: "정보자산반출입내역",
+        depth3: "정보자산반출입내역 반입 등록",
+        type: "pop",
+        folder: "usr",
+        file: "SB-USR-083_02.html",
+        status: "진행중",
+        start: "2025-02-10",
         end: ""
     },
     {
