@@ -51,19 +51,6 @@ $step-status: ("default", "current", "reject", "done");
     @each $size in $step-size {
         &.step-#{$size} {
             @if $size== "lg" {
-                .step-list {
-                    li {
-                        &:nth-of-type(2) {
-                           &.step-default {
-                                .txt {
-                                    color: $gray-002;
-                                    @include font-style($h3-font-size, $font-weight-bold, rem(26.4px));
-                                    letter-spacing: -2%;
-                                }
-                           } 
-                        }
-                    }
-                }
                 .step-img {
                     margin-bottom: rem(12px);
                     width: rem(80px);
@@ -145,6 +132,13 @@ $step-status: ("default", "current", "reject", "done");
                 }
                 .txt {
                     color: $orange-001;
+                }
+                + .step-default {
+                    .txt {
+                        color: $gray-002;
+                        @include font-style($h3-font-size, $font-weight-bold, rem(26.4px));
+                        letter-spacing: -2%;
+                    }
                 }
             }
             @else if $status == "reject" {

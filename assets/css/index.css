@@ -28259,14 +28259,6 @@ textarea.form-control {
   width: 60.94rem;
 }
 
-.step.step-lg .step-list li:nth-of-type(2).step-default .txt {
-  color: #18191C;
-  font-size: 1.38rem;
-  font-weight: 700;
-  letter-spacing: -0.03rem;
-  line-height: 1.65rem;
-  letter-spacing: -2%;
-}
 .step.step-lg .step-img {
   margin-bottom: 0.75rem;
   width: 5rem;
@@ -28331,6 +28323,14 @@ textarea.form-control {
 }
 .step .step-current .txt {
   color: #FF8C14;
+}
+.step .step-current + .step-default .txt {
+  color: #18191C;
+  font-size: 1.38rem;
+  font-weight: 700;
+  letter-spacing: -0.03rem;
+  line-height: 1.65rem;
+  letter-spacing: -2%;
 }
 .step .step-reject .step-img {
   background-color: #DC3545;
