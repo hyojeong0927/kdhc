@@ -25,7 +25,7 @@
             <div class="toggle-wrap">
                 <div class="toggle-head">
                     <div class="inner">
-                        <span class="nuri-txt">이 누리집은 한국지역난방공사 공식 누리집입니다.</span>
+                        <span class="nuri-txt">이 누리집은 한국지역난방공사 제어망 스마트 보안관리 플랫폼 누리집입니다.</span>
                     </div>
                 </div>
             </div>
@@ -279,8 +279,7 @@
                         
                         <!-- grid wrap start -->
                         <article class="grid-wrap">
-                            <div id="sampleGrid" class="colspan" style="width: 100%; height: 287px;"></div>
-                            <script type="module" src="../../../assets/js/grid/sample-01.js"></script>
+                            <div id="sampleGrid" class="normal" style="width: 100%; height: 548px;"></div>
                         </article>
                         <!--// grid wrap end -->
 
@@ -323,9 +322,257 @@
             </div>
         </footer>
         <!--// 푸터 영역 -->
-
+ 
     </div>
+    <!-- script wrap -->
+     <script type="module">
+        const rowData = [
+            {
+                field01: "판교-25-0001",
+                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
+                field03: "노트북-판교-0002",
+                field04: "계전부",
+                field05: "임찬규",
+                field06: "불용반출",
+                field07: "2024.12.10 12:20:33",
+                field08: "2024.12.12 12:24:30",
+                field09: "",
+                field10: "2024.12.12 12:24:30",
+                field11: "done",
+            },
+            {
+                field01: "판교-25-0001",
+                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
+                field03: "노트북-판교-0002",
+                field04: "계전부",
+                field05: "임찬규",
+                field06: "불용반출",
+                field07: "2024.12.10 12:20:33",
+                field08: "2024.12.12 12:24:30",
+                field09: "",
+                field10: "2024.12.12 12:24:30",
+                field11: "step01",
+            },
+            {
+                field01: "판교-25-0001",
+                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
+                field03: "노트북-판교-0002",
+                field04: "계전부",
+                field05: "임찬규",
+                field06: "불용반출",
+                field07: "2024.12.10 12:20:33",
+                field08: "2024.12.12 12:24:30",
+                field09: "",
+                field10: "2024.12.12 12:24:30",
+                field11: "step03",
+            },
+            {
+                field01: "판교-25-0001",
+                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
+                field03: "노트북-판교-0002",
+                field04: "계전부",
+                field05: "임찬규",
+                field06: "불용반출",
+                field07: "2024.12.10 12:20:33",
+                field08: "2024.12.12 12:24:30",
+                field09: "",
+                field10: "2024.12.12 12:24:30",
+                field11: "step02",
+            },
+            {
+                field01: "판교-25-0001",
+                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
+                field03: "노트북-판교-0002",
+                field04: "계전부",
+                field05: "임찬규",
+                field06: "불용반출",
+                field07: "2024.12.10 12:20:33",
+                field08: "2024.12.12 12:24:30",
+                field09: "",
+                field10: "2024.12.12 12:24:30",
+                field11: "step01",
+            },
+            {
+                field01: "판교-25-0001",
+                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
+                field03: "노트북-판교-0002",
+                field04: "계전부",
+                field05: "임찬규",
+                field06: "불용반출",
+                field07: "2024.12.10 12:20:33",
+                field08: "2024.12.12 12:24:30",
+                field09: "",
+                field10: "2024.12.12 12:24:30",
+                field11: "done",
+            },
+            {
+                field01: "판교-25-0001",
+                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
+                field03: "노트북-판교-0002",
+                field04: "계전부",
+                field05: "임찬규",
+                field06: "불용반출",
+                field07: "2024.12.10 12:20:33",
+                field08: "2024.12.12 12:24:30",
+                field09: "",
+                field10: "2024.12.12 12:24:30",
+                field11: "done",
+            },
+            {
+                field01: "판교-25-0001",
+                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
+                field03: "노트북-판교-0002",
+                field04: "계전부",
+                field05: "임찬규",
+                field06: "불용반출",
+                field07: "2024.12.10 12:20:33",
+                field08: "2024.12.12 12:24:30",
+                field09: "",
+                field10: "2024.12.12 12:24:30",
+                field11: "done",
+            },
+        ];
+        const columnDefs = [
+            {
+                headerName: "문서번호",
+                headerClass: "center",
+                field: "field01",
+                width: 88,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "결재명",
+                headerClass: "center",
+                field: "field02",
+                width: 181,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "자산관리번호",
+                headerClass: "center",
+                field: "field03",
+                width: 120,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "기안부서",
+                headerClass: "center",
+                field: "field04",
+                width: 92,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "기안자",
+                headerClass: "center",
+                field: "field05",
+                width: 76,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "등록/불용반출",
+                headerClass: "center",
+                field: "field06",
+                width: 125,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "기안일자",
+                headerClass: "center",
+                field: "field07",
+                width: 100,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "결재일자",
+                headerClass: "center",
+                field: "field08",
+                width: 100,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "등록일자",
+                headerClass: "center",
+                field: "field09",
+                width: 100,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "불용반출일자",
+                headerClass: "center",
+                field: "field10",
+                width: 120,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "결재/승인 상태",
+                headerClass: "center",
+                field: "field11",
+                minWidth: 435,
+                flex: 1,
+                cellClass: "cell-normal",
+                cellRenderer: (params) => {
+                    const rowIndex = params.node.rowIndex;
+                    if (rowIndex === 0) { 
+                        const values = params.value ? params.value.split(",") : [];
+                        return `
+                            <!-- step start -->
+                            <div class="step step-sm">
+                                <ul class="step-list">
+                                    <li  class="step-current">
+                                        <dl>
+                                            <dt><i class="step-img"></i></dt>
+                                            <dd class="txt">기안자</dd>
+                                            <dd class="txt">박동원</dd>
+                                        </dl>
+                                    </li>
+                                    <li class="step-reject">
+                                        <dl>
+                                            <dt><i class="step-img"></i></dt>
+                                            <dd class="txt">제어보호담당자</dd>
+                                            <dd class="txt">오승환</dd>
+                                        </dl>
+                                    </li>
+                                    <li class="step-default">
+                                        <dl>
+                                            <dt><i class="step-img"></i></dt>
+                                            <dd class="txt">제어보호담당관</dd>
+                                            <dd class="txt">김현수</dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- step end -->
+                        `;
+                    } else {
+                        return params.value || "";
+                    }
+                }
+            },
+        ];
 
+        let sampleGridApi;
+
+        const sampleGridOptions = {
+            defaultColDef: {
+                editable: false, // edit 사용 유무
+                autoHeight: true,
+                sortable: true, // sort 사용 유무
+            },
+            columnDefs,
+            headerHeight: 41, // header height
+            rowData: rowData,
+            rowHeight: 63, // row height
+            rowSelection: { // row checkbox
+                mode: "multiRow",
+                groupSelects: "descendants",
+                selectAll: 'filtered',
+                width: 52,
+            },
+        };
+        const sampleGridDiv = document.querySelector("#sampleGrid");
+        sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
+     </script>
+    <!--// script wrap -->
     <!-- modal wrap -->
     <!--// modal wrap -->
 </body>

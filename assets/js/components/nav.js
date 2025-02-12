@@ -7,12 +7,12 @@ $(document).ready(function () {
 
         if ($sidebar.hasClass('collapsed')) {
             $sidebar.stop(true, true).animate({
-                width: '$sidebar-close-width'
+                width: '60px'
             }, 300);
             $menuIcon.removeClass('arrow-close').addClass('arrow-expansion');
         } else {
             $sidebar.stop(true, true).animate({
-                width: '$sidebar-width'
+                width: '280px'
             }, 300);
             $menuIcon.removeClass('arrow-expansion').addClass('arrow-close');
         }

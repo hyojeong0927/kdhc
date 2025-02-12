@@ -32,7 +32,7 @@
     background-color: $gray-010;
     .nuri-txt {
         position: relative;
-        padding-left: rem(26px);
+        padding-left: rem(18px);
         color: $black;
         @include font-style($font-size-xsm, $font-weight-normal, $line-height-base);
         @include before(true, true, 50%, 0, 0, 0);
@@ -40,7 +40,8 @@
             border-radius: 100%;
             transform: translateY(-50%);
             @extend .icon;
-            @extend .flag;
+            @extend .h1-logo;
+            background-size: rem(16px);
             background-position: left center;
         }
     }

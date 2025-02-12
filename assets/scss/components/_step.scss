@@ -54,11 +54,37 @@ $step-status: ("default", "current", "reject", "done");
             }
             @else if $size == "sm" {
                 .step-list {
-                   li {
+                    min-width: rem(390px);
+                    li {
                         &::before {
-                            top: rem(14px);
+                            top: 50%;
+                            transform: translateY(-50%);
                         }
-                   }
+                        dl {
+                            display: grid;
+                            grid-template-columns: rem(28px) 1fr;
+                            grid-template-areas: 
+                            "dt txt01"
+                            "dt txt02";
+                            min-height: rem(38px);
+                            dt {
+                                grid-area: dt;
+                                @include flex(true, "center", "center");
+                            }
+                            dd {
+                                height: rem(17px);
+                                text-align: left;
+                                &:nth-of-type(1) {
+                                    grid-area: txt01;
+                                    margin-bottom: rem(4px);
+                                }
+                                &:nth-of-type(2) {
+                                    grid-area: txt02;
+                                }
+                                padding: 0 rem(8px);
+                            }
+                        }
+                    }
                 }
                 .step-img {
                     width: rem(28px);

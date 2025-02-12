@@ -1,6 +1,8 @@
 /* Sidebar
 ========================================================================== */
 $sidebar-close-width: rem(60px);
+$sidebar-width: 280px;
+
 #sidebar {
     width: $sidebar-width;
     transition: width 0.3s ease;
@@ -51,6 +53,10 @@ $sidebar-close-width: rem(60px);
         width: rem(60px);
         .sidebar-top-btn {
             padding: rem(12px) rem(14px);
+        }
+        #subMenu {
+            display: none;
+            transition: display 0.3s ease;
         }
     }
 }

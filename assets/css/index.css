@@ -13261,7 +13261,7 @@ header {
   padding: 0 1.25rem 0 1.5rem;
   width: 100%;
   min-width: 120rem;
-  height: 7rem;
+  height: 6.44rem;
   border-bottom: 1px solid #A5A5A5;
   background-color: #fff;
 }
@@ -13582,13 +13582,16 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 ========================================================================== */
 /* Sidebar
 ========================================================================== */
+#sidebar {
+  width: 280px;
+  transition: width 0.3s ease;
+}
+
 .sidebar {
   overflow-y: auto;
-  width: 280px;
   height: 100dvh;
-  max-height: calc(100dvh - 8.5rem);
+  max-height: calc(100dvh - 7.94rem);
   background-color: #384B5E;
-  transition: width 0.3s ease;
   overflow-y: auto;
 }
 .sidebar .sidebar-top-btn {
@@ -13641,15 +13644,15 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 .sidebar.collapsed .sidebar-top-btn {
   padding: 0.75rem 0.88rem;
 }
-.sidebar.collapsed .lnb-list {
+.sidebar.collapsed #subMenu {
   display: none;
-  transition: display 0.3s;
+  transition: display 0.3s ease;
 }
 
 /* Forms
 ========================================================================== */
 .search-area.top-sch .form-wrap {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
   border: 1px solid #C5CDD5;
   background-color: #fff;
 }
@@ -13748,7 +13751,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 .grid-top-area .grid-top-left {
   flex: 1;
@@ -13778,7 +13781,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   width: 100%;
   min-width: 102.5rem;
   height: 100%;
-  max-height: calc(100dvh - 8.5rem);
+  max-height: calc(100dvh - 7.94rem);
 }
 .main-contents .contents {
   width: 100%;
@@ -14197,10 +14200,6 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 
 /* Grid
 ========================================================================== */
-:root {
-  --ag-header-column-resize-handle-color: $gray-007;
-}
-
 .ag-root-wrapper {
   color: #18191C;
   color-scheme: light;
@@ -14212,14 +14211,107 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   border-radius: 0;
   background-color: #fff;
 }
-.ag-root-wrapper .ag-header {
-  color: #384B5E;
+.ag-root-wrapper .left {
+  text-align: left;
 }
-.ag-root-wrapper .ag-header .ag-header-cell-resize:after {
+.ag-root-wrapper .left .ag-header-cell-label {
+  justify-content: flex-start;
+}
+.ag-root-wrapper .center {
+  text-align: center;
+}
+.ag-root-wrapper .center .ag-header-cell-label {
+  justify-content: center;
+}
+.ag-root-wrapper .right {
+  text-align: right;
+}
+.ag-root-wrapper .right .ag-header-cell-label {
+  justify-content: flex-end;
+}
+.ag-root-wrapper .ag-header {
+  border-bottom: 1px solid #C5CDD5;
+  background-color: #E3E8ED;
+}
+.ag-root-wrapper .ag-header .ag-header-cell:not(:last-of-type)::after {
+  border-right: 1px solid #C5CDD5;
+}
+.ag-root-wrapper .ag-header .ag-header-cell-text {
+  color: #384B5E;
+  font-size: 14px;
+  line-height: 1.05rem;
+  font-weight: 500;
+}
+.ag-root-wrapper .ag-row:not(:last-of-type) {
+  border-bottom: 1px solid #C5CDD5;
+}
+.ag-root-wrapper .ag-row.ag-row-hover::before, .ag-root-wrapper .ag-row.ag-row-focus::before, .ag-root-wrapper .ag-row.ag-row-selected::before {
+  background-color: transparent;
+}
+.ag-root-wrapper .ag-row.ag-row-selected:active::before, .ag-root-wrapper .ag-row.ag-row-selected:focus::before, .ag-root-wrapper .ag-row.ag-row-selected:hover::before {
+  background-color: transparent;
+  background-image: none;
+}
+.ag-root-wrapper .ag-cell:not(:last-of-type) {
+  border-right: 1px solid #C5CDD5;
+}
+.ag-root-wrapper .ag-cell.ag-cell-focus:focus-within {
+  border-color: transparent;
+  border-right-color: #C5CDD5;
+}
+.ag-root-wrapper .ag-cell .ag-cell-value {
+  color: #18191C;
+  font-size: system-ui, -apple-system, "Segoe UI", "Noto Sans KR", Roboto, "Helvetica Neue", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 1.2rem;
+  font-weight: 400;
+}
+
+.ag-checkbox-input-wrapper {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #A5A5A5;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.ag-checkbox-input-wrapper.ag-checked {
+  border-color: #3D6F94;
+  background-color: #3D6F94;
+}
+.ag-checkbox-input-wrapper.ag-checked::after {
+  -webkit-mask-image: url(/assets/images/svg/checked.svg);
+          mask-image: url(/assets/images/svg/checked.svg);
+  background-color: #fff;
+}
+.ag-checkbox-input-wrapper .ag-checkbox-input {
+  width: 1rem;
+  height: 1rem;
+}
+.ag-checkbox-input-wrapper:where(:focus-within, :active) {
+  box-shadow: none;
+}
+
+.normal .ag-header .ag-header-cell::after {
+  height: 41px;
+}
+.normal .ag-header .ag-header-cell-resize:after {
   top: 1px;
   width: 1px;
   height: 2.44rem;
-  background-color: var(--ag-header-column-resize-handle-color);
+  background-color: transparent;
+}
+.normal .ag-selection-checkbox {
+  margin-right: 0;
+  min-height: 62px;
+}
+.normal .cell-normal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.63rem 0.75rem;
+  line-height: 1.19rem;
+  text-align: center;
+  white-space: normal;
+  word-break: keep-all;
 }
 
 /* Icons
@@ -14401,7 +14493,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   background-repeat: no-repeat;
   box-sizing: content-box;
 }
-.icon.h1-logo, #kdhc-masthead .h1-logo.nuri-txt::before, .h1-logo.form-select, .step .step-done .h1-logo.step-img, .step .step-reject .h1-logo.step-img, .step .step-current .h1-logo.step-img, .step .step-default .h1-logo.step-img, header .logo .h1-logo.logo-txt, header .util .h1-logo.util-01, header .util .h1-logo.util-02, header .util .h1-logo.util-03, header .util .h1-logo.util-04, nav.page-navigation .pagination .page-item.first .h1-logo.page-link::before, nav.page-navigation .pagination .page-item.last .h1-logo.page-link::before, nav.page-navigation .pagination .page-item.next .h1-logo.page-link::before, nav.page-navigation .pagination .page-item.prev .h1-logo.page-link::before, header .logo .logo-img, nav.page-navigation .pagination .page-item.first header .logo .page-link.logo-img::before, header .logo nav.page-navigation .pagination .page-item.first .page-link.logo-img::before, nav.page-navigation .pagination .page-item.last header .logo .page-link.logo-img::before, header .logo nav.page-navigation .pagination .page-item.last .page-link.logo-img::before, nav.page-navigation .pagination .page-item.next header .logo .page-link.logo-img::before, header .logo nav.page-navigation .pagination .page-item.next .page-link.logo-img::before, nav.page-navigation .pagination .page-item.prev header .logo .page-link.logo-img::before, header .logo nav.page-navigation .pagination .page-item.prev .page-link.logo-img::before {
+.icon.h1-logo, #kdhc-masthead .nuri-txt::before, .h1-logo.form-select, .step .step-done .h1-logo.step-img, .step .step-reject .h1-logo.step-img, .step .step-current .h1-logo.step-img, .step .step-default .h1-logo.step-img, header .logo .h1-logo.logo-txt, header .util .h1-logo.util-01, header .util .h1-logo.util-02, header .util .h1-logo.util-03, header .util .h1-logo.util-04, nav.page-navigation .pagination .page-item.first .h1-logo.page-link::before, nav.page-navigation .pagination .page-item.last .h1-logo.page-link::before, nav.page-navigation .pagination .page-item.next .h1-logo.page-link::before, nav.page-navigation .pagination .page-item.prev .h1-logo.page-link::before, header .logo .logo-img, nav.page-navigation .pagination .page-item.first header .logo .page-link.logo-img::before, header .logo nav.page-navigation .pagination .page-item.first .page-link.logo-img::before, nav.page-navigation .pagination .page-item.last header .logo .page-link.logo-img::before, header .logo nav.page-navigation .pagination .page-item.last .page-link.logo-img::before, nav.page-navigation .pagination .page-item.next header .logo .page-link.logo-img::before, header .logo nav.page-navigation .pagination .page-item.next .page-link.logo-img::before, nav.page-navigation .pagination .page-item.prev header .logo .page-link.logo-img::before, header .logo nav.page-navigation .pagination .page-item.prev .page-link.logo-img::before {
   width: 4rem;
   height: 3.13rem;
   background-image: url("/assets/images/svg/logo.svg");
@@ -14411,7 +14503,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   height: 3.88rem;
   background-image: url("/assets/images/svg/logo-txt.svg");
 }
-.icon.flag, #kdhc-masthead .nuri-txt::before, .flag.form-select, .step .step-done .flag.step-img, .step .step-reject .flag.step-img, .step .step-current .flag.step-img, .step .step-default .flag.step-img, header .logo .flag.logo-img, header .logo .flag.logo-txt, header .util .flag.util-01, header .util .flag.util-02, header .util .flag.util-03, header .util .flag.util-04, nav.page-navigation .pagination .page-item.first .flag.page-link::before, nav.page-navigation .pagination .page-item.last .flag.page-link::before, nav.page-navigation .pagination .page-item.next .flag.page-link::before, nav.page-navigation .pagination .page-item.prev .flag.page-link::before {
+.icon.flag, #kdhc-masthead .flag.nuri-txt::before, .flag.form-select, .step .step-done .flag.step-img, .step .step-reject .flag.step-img, .step .step-current .flag.step-img, .step .step-default .flag.step-img, header .logo .flag.logo-img, header .logo .flag.logo-txt, header .util .flag.util-01, header .util .flag.util-02, header .util .flag.util-03, header .util .flag.util-04, nav.page-navigation .pagination .page-item.first .flag.page-link::before, nav.page-navigation .pagination .page-item.last .flag.page-link::before, nav.page-navigation .pagination .page-item.next .flag.page-link::before, nav.page-navigation .pagination .page-item.prev .flag.page-link::before {
   width: 1.5rem;
   height: 1rem;
   background-image: url("/assets/images/svg/flag.svg");
@@ -14436,7 +14528,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   height: 1.25rem;
   background-image: url("/assets/images/svg/user-circle.svg");
 }
-.icon.arrow-expansion, #kdhc-masthead .arrow-expansion.nuri-txt::before, .arrow-expansion.form-select, .step .step-done .arrow-expansion.step-img, .step .step-reject .arrow-expansion.step-img, .step .step-current .arrow-expansion.step-img, .step .step-default .arrow-expansion.step-img, header .logo .arrow-expansion.logo-img, header .logo .arrow-expansion.logo-txt, header .util .arrow-expansion.util-01, header .util .arrow-expansion.util-02, header .util .arrow-expansion.util-03, header .util .arrow-expansion.util-04, nav.page-navigation .pagination .page-item.first .arrow-expansion.page-link::before, nav.page-navigation .pagination .page-item.last .arrow-expansion.page-link::before, nav.page-navigation .pagination .page-item.next .arrow-expansion.page-link::before, nav.page-navigation .pagination .page-item.prev .arrow-expansion.page-link::before, .sidebar.collapsed .sidebar-top-btn .icon.arrow-close, .sidebar.collapsed .sidebar-top-btn #kdhc-masthead .arrow-close.nuri-txt::before, #kdhc-masthead .sidebar.collapsed .sidebar-top-btn .arrow-close.nuri-txt::before, .sidebar.collapsed .sidebar-top-btn .arrow-close.form-select, .sidebar.collapsed .sidebar-top-btn .step .step-done .arrow-close.step-img, .step .step-done .sidebar.collapsed .sidebar-top-btn .arrow-close.step-img, .sidebar.collapsed .sidebar-top-btn .step .step-reject .arrow-close.step-img, .step .step-reject .sidebar.collapsed .sidebar-top-btn .arrow-close.step-img, .sidebar.collapsed .sidebar-top-btn .step .step-current .arrow-close.step-img, .step .step-current .sidebar.collapsed .sidebar-top-btn .arrow-close.step-img, .sidebar.collapsed .sidebar-top-btn .step .step-default .arrow-close.step-img, .step .step-default .sidebar.collapsed .sidebar-top-btn .arrow-close.step-img, header .logo .sidebar.collapsed .sidebar-top-btn .logo-img.arrow-close, .sidebar.collapsed .sidebar-top-btn header .logo .logo-img.arrow-close, header .logo .sidebar.collapsed .sidebar-top-btn .logo-txt.arrow-close, .sidebar.collapsed .sidebar-top-btn header .logo .logo-txt.arrow-close, header .util .sidebar.collapsed .sidebar-top-btn .util-01.arrow-close, .sidebar.collapsed .sidebar-top-btn header .util .util-01.arrow-close, header .util .sidebar.collapsed .sidebar-top-btn .util-02.arrow-close, .sidebar.collapsed .sidebar-top-btn header .util .util-02.arrow-close, header .util .sidebar.collapsed .sidebar-top-btn .util-03.arrow-close, .sidebar.collapsed .sidebar-top-btn header .util .util-03.arrow-close, header .util .sidebar.collapsed .sidebar-top-btn .util-04.arrow-close, .sidebar.collapsed .sidebar-top-btn header .util .util-04.arrow-close, nav.page-navigation .pagination .page-item.first .sidebar.collapsed .sidebar-top-btn .page-link.arrow-close::before, .sidebar.collapsed .sidebar-top-btn nav.page-navigation .pagination .page-item.first .page-link.arrow-close::before, nav.page-navigation .pagination .page-item.last .sidebar.collapsed .sidebar-top-btn .page-link.arrow-close::before, .sidebar.collapsed .sidebar-top-btn nav.page-navigation .pagination .page-item.last .page-link.arrow-close::before, nav.page-navigation .pagination .page-item.next .sidebar.collapsed .sidebar-top-btn .page-link.arrow-close::before, .sidebar.collapsed .sidebar-top-btn nav.page-navigation .pagination .page-item.next .page-link.arrow-close::before, nav.page-navigation .pagination .page-item.prev .sidebar.collapsed .sidebar-top-btn .page-link.arrow-close::before, .sidebar.collapsed .sidebar-top-btn nav.page-navigation .pagination .page-item.prev .page-link.arrow-close::before {
+.icon.arrow-expansion, #kdhc-masthead .arrow-expansion.nuri-txt::before, .arrow-expansion.form-select, .step .step-done .arrow-expansion.step-img, .step .step-reject .arrow-expansion.step-img, .step .step-current .arrow-expansion.step-img, .step .step-default .arrow-expansion.step-img, header .logo .arrow-expansion.logo-img, header .logo .arrow-expansion.logo-txt, header .util .arrow-expansion.util-01, header .util .arrow-expansion.util-02, header .util .arrow-expansion.util-03, header .util .arrow-expansion.util-04, nav.page-navigation .pagination .page-item.first .arrow-expansion.page-link::before, nav.page-navigation .pagination .page-item.last .arrow-expansion.page-link::before, nav.page-navigation .pagination .page-item.next .arrow-expansion.page-link::before, nav.page-navigation .pagination .page-item.prev .arrow-expansion.page-link::before {
   width: 2rem;
   height: 2rem;
   background-image: url("/assets/images/svg/arrow-expansion.svg");
@@ -27033,8 +27125,38 @@ textarea.form-control {
   line-height: 1.35rem;
   letter-spacing: -2%;
 }
+.step.step-sm .step-list {
+  min-width: 24.38rem;
+}
 .step.step-sm .step-list li::before {
-  top: 0.88rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.step.step-sm .step-list li dl {
+  display: grid;
+  grid-template-columns: 1.75rem 1fr;
+  grid-template-areas: "dt txt01" "dt txt02";
+  min-height: 2.38rem;
+}
+.step.step-sm .step-list li dl dt {
+  grid-area: dt;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+.step.step-sm .step-list li dl dd {
+  height: 1.06rem;
+  text-align: left;
+  padding: 0 0.5rem;
+}
+.step.step-sm .step-list li dl dd:nth-of-type(1) {
+  grid-area: txt01;
+  margin-bottom: 0.25rem;
+}
+.step.step-sm .step-list li dl dd:nth-of-type(2) {
+  grid-area: txt02;
 }
 .step.step-sm .step-img {
   width: 1.75rem;
@@ -27312,7 +27434,7 @@ textarea.form-control {
 }
 #kdhc-masthead .nuri-txt {
   position: relative;
-  padding-left: 1.63rem;
+  padding-left: 1.13rem;
   color: #000;
   font-size: 0.75rem;
   font-weight: 400;
@@ -27330,6 +27452,7 @@ textarea.form-control {
 #kdhc-masthead .nuri-txt::before {
   border-radius: 100%;
   transform: translateY(-50%);
+  background-size: 1rem;
   background-position: left center;
 }
 
@@ -27557,8 +27680,3 @@ textarea.form-control {
 .guide-contents .tbl-wrap .tbl.icon-tbl td {
   text-align: center;
 }
-
-/* Admin
-========================================================================== */
-/* Theme
-========================================================================== */

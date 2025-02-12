@@ -4,7 +4,7 @@
 .search-area {
     &.top-sch {
         .form-wrap {
-            margin-bottom: rem(40px);
+            margin-bottom: rem(16px);
             border: 1px solid $gray-007;
             background-color: $white;
         }
@@ -82,7 +82,7 @@
 // grid
 .grid-top-area {
     @include flex(true, "between", "center", rem(8px));
-    margin-bottom: rem(16px);
+    margin-bottom: rem(12px);
     .grid-top-left {
         flex: 1;
         .combo-box-group {

@@ -1,14 +1,14 @@
 /* Header
 ========================================================================== */
 $utile-type: ("01", "02", "03", "04");
-$header-height: calc(rem(112px) + rem(24px));
+$header-height: calc(rem(103px) + rem(24px));
 
 header {
     @include flex(true, "start", "center", rem(63px));
     padding: 0 rem(20px) 0 rem(24px);
     width: 100%;
     min-width: rem($device-base-width);
-    height: rem(112px);
+    height: rem(103px);
     border-bottom: 1px solid $gray-003;
     background-color: $header-bg;
     .logo {
