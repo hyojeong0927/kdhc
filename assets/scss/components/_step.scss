@@ -62,6 +62,15 @@ $step-status: ("default", "current", "reject", "done");
                     letter-spacing: -2%;
                     @extend %step-txt;
                 }
+                .step-current {
+                    & + .step-default {
+                        .txt {
+                            color: $gray-002;
+                            @include font-style($h3-font-size, $font-weight-bold, rem(26.4px));
+                            letter-spacing: -2%;
+                        }
+                    }
+                }
             }
             @else if $size == "sm" {
                 .step-list {
@@ -132,13 +141,6 @@ $step-status: ("default", "current", "reject", "done");
                 }
                 .txt {
                     color: $orange-001;
-                }
-                + .step-default {
-                    .txt {
-                        color: $gray-002;
-                        @include font-style($h3-font-size, $font-weight-bold, rem(26.4px));
-                        letter-spacing: -2%;
-                    }
                 }
             }
             @else if $status == "reject" {
