@@ -327,7 +327,7 @@
  
     </div>
     <!-- script wrap -->
-     <script type="module">
+    <script type="module">
         const rowData = [
             {
                 field01: "판교-25-0001",
@@ -366,7 +366,7 @@
                 field08: "2024.12.12 12:24:30",
                 field09: "",
                 field10: "2024.12.12 12:24:30",
-                field11: "step03",
+                field11: "done",
             },
             {
                 field01: "판교-25-0001",
@@ -513,21 +513,19 @@
                 flex: 1,
                 cellClass: "cell-normal",
                 cellRenderer: (params) => {
-                    const rowIndex = params.node.rowIndex;
-                    if (rowIndex === 0) { 
-                        const values = params.value ? params.value.split(",") : [];
+                    const status = params.value;
+                    if (status === "step01") {
                         return `
-                            <!-- step start -->
                             <div class="step step-sm">
                                 <ul class="step-list">
-                                    <li  class="step-current">
+                                    <li class="step-current">
                                         <dl>
                                             <dt><i class="step-img"></i></dt>
                                             <dd class="txt">기안자</dd>
                                             <dd class="txt">박동원</dd>
                                         </dl>
                                     </li>
-                                    <li class="step-reject">
+                                    <li class="step-default">
                                         <dl>
                                             <dt><i class="step-img"></i></dt>
                                             <dd class="txt">제어보호담당자</dd>
@@ -543,7 +541,62 @@
                                     </li>
                                 </ul>
                             </div>
-                            <!-- step end -->
+                        `;
+                    } else if (status === "step02") {
+                        return `
+                            <div class="step step-sm">
+                                <ul class="step-list">
+                                    <li class="step-done">
+                                        <dl>
+                                            <dt><i class="step-img"></i></dt>
+                                            <dd class="txt">기안자</dd>
+                                            <dd class="txt">박동원</dd>
+                                        </dl>
+                                    </li>
+                                    <li class="step-current">
+                                        <dl>
+                                            <dt><i class="step-img"></i></dt>
+                                            <dd class="txt">제어보호담당자</dd>
+                                            <dd class="txt">오승환</dd>
+                                        </dl>
+                                    </li>
+                                    <li class="step-default">
+                                        <dl>
+                                            <dt><i class="step-img"></i></dt>
+                                            <dd class="txt">제어보호담당관</dd>
+                                            <dd class="txt">김현수</dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </div>
+                        `;
+                    } else if (status === "done") {
+                        return `
+                            <div class="step step-sm">
+                                <ul class="step-list">
+                                    <li class="step-done">
+                                        <dl>
+                                            <dt><i class="step-img"></i></dt>
+                                            <dd class="txt">기안자</dd>
+                                            <dd class="txt">박동원</dd>
+                                        </dl>
+                                    </li>
+                                    <li class="step-done">
+                                        <dl>
+                                            <dt><i class="step-img"></i></dt>
+                                            <dd class="txt">제어보호담당자</dd>
+                                            <dd class="txt">오승환</dd>
+                                        </dl>
+                                    </li>
+                                    <li class="step-done">
+                                        <dl>
+                                            <dt><i class="step-img"></i></dt>
+                                            <dd class="txt">제어보호담당관</dd>
+                                            <dd class="txt">김현수</dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </div>
                         `;
                     } else {
                         return params.value || "";
