@@ -13584,7 +13584,11 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 ========================================================================== */
 #sidebar {
   width: 280px;
-  transition: width 0.3s ease;
+  transition: width 0.5s ease-in-out;
+}
+
+#sidebar.collapsed {
+  width: 60px;
 }
 
 .sidebar {
@@ -13643,10 +13647,6 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 }
 .sidebar.collapsed .sidebar-top-btn {
   padding: 0.75rem 0.88rem;
-}
-.sidebar.collapsed #subMenu {
-  display: none;
-  transition: display 0.3s ease;
 }
 
 /* Forms

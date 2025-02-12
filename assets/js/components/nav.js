@@ -2,19 +2,15 @@ $(document).ready(function () {
     $('#toggleButton').on('click', function () {
         var $sidebar = $('#sidebar');
         var $menuIcon = $('#menuIcon');
+        var $subMenu = $('#subMenu');
 
         $sidebar.toggleClass('collapsed');
+        $menuIcon.toggleClass('arrow-expansion arrow-close');
 
         if ($sidebar.hasClass('collapsed')) {
-            $sidebar.stop(true, true).animate({
-                width: '60px'
-            }, 300);
-            $menuIcon.removeClass('arrow-close').addClass('arrow-expansion');
+            $subMenu.stop(true, true).slideUp(300);
         } else {
-            $sidebar.stop(true, true).animate({
-                width: '280px'
-            }, 300);
-            $menuIcon.removeClass('arrow-expansion').addClass('arrow-close');
+            $subMenu.stop(true, true).slideDown(300);
         }
     });
 
