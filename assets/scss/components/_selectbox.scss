@@ -62,6 +62,7 @@
         opacity: 1;
     }
     &.sm {
+        width: rem(142px);
         height: rem(32px);
         @include font-style($input-font-size-sm, $input-font-weight, $input-line-height);
     }
