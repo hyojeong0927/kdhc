@@ -50,7 +50,7 @@ const menu00Projects = [
     {
         id: "SB-USR-005",
         depth1: "홈",
-        depth2: "보고서그룹관리",
+        depth2: "지침및메뉴얼",
         depth3: "",
         type: "",
         folder: "home",
@@ -110,7 +110,7 @@ const menu00Projects = [
     {
         id: "SB-USR-010",
         depth1: "홈",
-        depth2: "Todo 관리",
+        depth2: "정기점검",
         depth3: "",
         type: "",
         folder: "home",
@@ -122,7 +122,7 @@ const menu00Projects = [
     {
         id: "SB-USR-011",
         depth1: "홈",
-        depth2: "Todo 관리",
+        depth2: "정기점검",
         depth3: "상세",
         type: "",
         folder: "home",

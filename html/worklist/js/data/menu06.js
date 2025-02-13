@@ -1,7 +1,7 @@
 const menu06Projects = [
     {
         id: "SB-USR-074",
-        depth1: "정보자산관리",
+        depth1: "정보자산",
         depth2: "자산정보관리",
         depth3: "",
         type: "",
@@ -13,7 +13,7 @@ const menu06Projects = [
     },
     {
         id: "SB-USR-075",
-        depth1: "정보자산관리",
+        depth1: "정보자산",
         depth2: "자산정보관리",
         depth3: "등록",
         type: "",
@@ -25,7 +25,7 @@ const menu06Projects = [
     },
     {
         id: "SB-USR-076",
-        depth1: "정보자산관리",
+        depth1: "정보자산",
         depth2: "자산정보관리",
         depth3: "상세",
         type: "",
@@ -37,7 +37,7 @@ const menu06Projects = [
     },
     {
         id: "SB-USR-077",
-        depth1: "정보자산관리",
+        depth1: "정보자산",
         depth2: "노트북사용",
         depth3: "",
         type: "",
@@ -49,7 +49,7 @@ const menu06Projects = [
     },
     {
         id: "SB-USR-078",
-        depth1: "정보자산관리",
+        depth1: "정보자산",
         depth2: "노트북사용",
         depth3: "등록",
         type: "",
@@ -61,7 +61,7 @@ const menu06Projects = [
     },
     {
         id: "SB-USR-079",
-        depth1: "정보자산관리",
+        depth1: "정보자산",
         depth2: "노트북사용",
         depth3: "상세",
         type: "",
@@ -73,7 +73,7 @@ const menu06Projects = [
     },
     {
         id: "SB-USR-080",
-        depth1: "정보자산관리",
+        depth1: "정보자산",
         depth2: "노트북사용내역",
         depth3: "",
         type: "",
@@ -85,7 +85,7 @@ const menu06Projects = [
     },
     {
         id: "SB-USR-081",
-        depth1: "정보자산관리",
+        depth1: "정보자산",
         depth2: "노트북사용내역",
         depth3: "등록",
         type: "",
@@ -97,7 +97,7 @@ const menu06Projects = [
     },
     {
         id: "SB-USR-082",
-        depth1: "정보자산관리",
+        depth1: "정보자산",
         depth2: "노트북사용내역",
         depth3: "상세",
         type: "",
@@ -109,7 +109,7 @@ const menu06Projects = [
     },
     {
         id: "SB-USR-083",
-        depth1: "정보자산관리",
+        depth1: "정보자산",
         depth2: "정보자산반출입내역",
         depth3: "",
         type: "",
@@ -121,7 +121,7 @@ const menu06Projects = [
     },
     {
         id: "SB-USR-083_02",
-        depth1: "정보자산관리",
+        depth1: "정보자산",
         depth2: "정보자산반출입내역",
         depth3: "정보자산반출입내역 반입 등록 : type01",
         type: "pop",
@@ -133,7 +133,7 @@ const menu06Projects = [
     },
     {
         id: "SB-USR-083_03",
-        depth1: "정보자산관리",
+        depth1: "정보자산",
         depth2: "정보자산반출입내역",
         depth3: "정보자산반출입내역 반입 등록 : type02",
         type: "pop",
@@ -145,7 +145,7 @@ const menu06Projects = [
     },
     {
         id: "SB-USR-083_04",
-        depth1: "정보자산관리",
+        depth1: "정보자산",
         depth2: "정보자산반출입내역",
         depth3: "정보자산반출입내역 반입 등록 : type03",
         type: "pop",
@@ -157,7 +157,7 @@ const menu06Projects = [
     },
     {
         id: "SB-USR-084",
-        depth1: "정보자산관리",
+        depth1: "정보자산",
         depth2: "정보자산반출입내역",
         depth3: "등록",
         type: "",
@@ -169,7 +169,7 @@ const menu06Projects = [
     },
     {
         id: "SB-USR-085",
-        depth1: "정보자산관리",
+        depth1: "정보자산",
         depth2: "정보자산반출입내역",
         depth3: "상세",
         type: "",

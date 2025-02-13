@@ -50,7 +50,7 @@ const menu04Projects = [
     {
         id: "SB-USR-046",
         depth1: "보안정책",
-        depth2: "운영체제별내역",
+        depth2: "운영체제보안패치업데이트현황",
         depth3: "",
         type: "",
         folder: "usr",
@@ -62,7 +62,7 @@ const menu04Projects = [
     {
         id: "SB-USR-047",
         depth1: "보안정책",
-        depth2: "운영체제보안패치업데이트현황",
+        depth2: "운영체제소프트웨어업데이트현황",
         depth3: "",
         type: "",
         folder: "usr",
@@ -74,7 +74,7 @@ const menu04Projects = [
     {
         id: "SB-USR-048",
         depth1: "보안정책",
-        depth2: "운영체제소프트웨어업데이트현황",
+        depth2: "공정제어설비운영체제현황",
         depth3: "",
         type: "",
         folder: "usr",
@@ -86,7 +86,7 @@ const menu04Projects = [
     {
         id: "SB-USR-049",
         depth1: "보안정책",
-        depth2: "공정제어설비운영체제현황",
+        depth2: "네트워크장비소프트웨어현황",
         depth3: "",
         type: "",
         folder: "usr",

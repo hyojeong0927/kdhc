@@ -143,41 +143,41 @@ const menu05Projects = [
         start: "",
         end: ""
     },
-    {
-        id: "SB-USR-071",
-        depth1: "클린PC",
-        depth2: "클린PC반출입내역",
-        depth3: "",
-        type: "",
-        folder: "usr",
-        file: "SB-USR-071.html",
-        status: "진행대기",
-        start: "",
-        end: ""
-    },
-    {
-        id: "SB-USR-072",
-        depth1: "클린PC",
-        depth2: "클린PC반출입내역",
-        depth3: "등록",
-        type: "",
-        folder: "usr",
-        file: "SB-USR-072.html",
-        status: "진행대기",
-        start: "",
-        end: ""
-    },
-    {
-        id: "SB-USR-073",
-        depth1: "클린PC",
-        depth2: "클린PC반출입내역",
-        depth3: "상세",
-        type: "",
-        folder: "usr",
-        file: "SB-USR-073.html",
-        status: "진행대기",
-        start: "",
-        end: ""
-    },
+    // {
+    //     id: "SB-USR-071",
+    //     depth1: "클린PC",
+    //     depth2: "클린PC반출입내역",
+    //     depth3: "",
+    //     type: "",
+    //     folder: "usr",
+    //     file: "SB-USR-071.html",
+    //     status: "진행대기",
+    //     start: "",
+    //     end: ""
+    // },
+    // {
+    //     id: "SB-USR-072",
+    //     depth1: "클린PC",
+    //     depth2: "클린PC반출입내역",
+    //     depth3: "등록",
+    //     type: "",
+    //     folder: "usr",
+    //     file: "SB-USR-072.html",
+    //     status: "진행대기",
+    //     start: "",
+    //     end: ""
+    // },
+    // {
+    //     id: "SB-USR-073",
+    //     depth1: "클린PC",
+    //     depth2: "클린PC반출입내역",
+    //     depth3: "상세",
+    //     type: "",
+    //     folder: "usr",
+    //     file: "SB-USR-073.html",
+    //     status: "진행대기",
+    //     start: "",
+    //     end: ""
+    // },
 ];
 export default menu05Projects;

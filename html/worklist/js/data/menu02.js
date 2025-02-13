@@ -2,7 +2,7 @@ const menu02Projects = [
     {
         id: "SB-USR-018",
         depth1: "물리보안",
-        depth2: "영상정보장치점검관리",
+        depth2: "영상정보장치점검",
         depth3: "",
         type: "",
         folder: "usr",
@@ -14,7 +14,7 @@ const menu02Projects = [
     {
         id: "SB-USR-019",
         depth1: "물리보안",
-        depth2: "영상정보장치점검관리",
+        depth2: "영상정보장치점검",
         depth3: "등록",
         type: "",
         folder: "usr",
@@ -26,7 +26,7 @@ const menu02Projects = [
     {
         id: "SB-USR-020",
         depth1: "물리보안",
-        depth2: "영상정보장치점검관리",
+        depth2: "영상정보장치점검",
         depth3: "상세",
         type: "",
         folder: "usr",

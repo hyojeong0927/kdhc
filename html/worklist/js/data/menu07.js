@@ -38,7 +38,7 @@ const menu07Projects = [
     {
         id: "SB-GMR-004",
         depth1: "관리자",
-        depth2: "보고서일정관리",
+        depth2: "정기점검관리",
         depth3: "",
         type: "",
         folder: "gmr",
@@ -50,7 +50,7 @@ const menu07Projects = [
     {
         id: "SB-GMR-005",
         depth1: "관리자",
-        depth2: "보고서일정관리",
+        depth2: "정기점검관리",
         depth3: "등록",
         type: "",
         folder: "gmr",
@@ -62,7 +62,7 @@ const menu07Projects = [
     {
         id: "SB-GMR-006",
         depth1: "관리자",
-        depth2: "보고서일정관리",
+        depth2: "정기점검관리",
         depth3: "상세",
         type: "",
         folder: "gmr",
@@ -74,7 +74,7 @@ const menu07Projects = [
     {
         id: "SB-GMR-007",
         depth1: "관리자",
-        depth2: "보고서그룹관리",
+        depth2: "지침및메뉴얼관리",
         depth3: "",
         type: "",
         folder: "gmr",
@@ -86,7 +86,7 @@ const menu07Projects = [
     {
         id: "SB-GMR-008",
         depth1: "관리자",
-        depth2: "보고서그룹관리",
+        depth2: "지침및메뉴얼관리",
         depth3: "등록",
         type: "",
         folder: "gmr",
@@ -98,7 +98,7 @@ const menu07Projects = [
     {
         id: "SB-GMR-009",
         depth1: "관리자",
-        depth2: "보고서그룹관리",
+        depth2: "지침및메뉴얼관리",
         depth3: "상세",
         type: "",
         folder: "gmr",
@@ -146,7 +146,7 @@ const menu07Projects = [
     {
         id: "SB-GMR-013",
         depth1: "관리자",
-        depth2: "권한 관리",
+        depth2: "권한별 메뉴 관리",
         depth3: "",
         type: "",
         folder: "gmr",
@@ -158,7 +158,7 @@ const menu07Projects = [
     {
         id: "SB-GMR-014",
         depth1: "관리자",
-        depth2: "권한 관리",
+        depth2: "권한별 메뉴 관리",
         depth3: "등록",
         type: "",
         folder: "gmr",
@@ -170,7 +170,7 @@ const menu07Projects = [
     {
         id: "SB-GMR-015",
         depth1: "관리자",
-        depth2: "권한 관리",
+        depth2: "권한별 메뉴 관리",
         depth3: "상세",
         type: "",
         folder: "gmr",
@@ -182,7 +182,7 @@ const menu07Projects = [
     {
         id: "SB-GMR-016",
         depth1: "관리자",
-        depth2: "프로그램 관리",
+        depth2: "페이지관리",
         depth3: "",
         type: "",
         folder: "gmr",
@@ -194,7 +194,7 @@ const menu07Projects = [
     {
         id: "SB-GMR-017",
         depth1: "관리자",
-        depth2: "프로그램 관리",
+        depth2: "페이지관리",
         depth3: "등록",
         type: "",
         folder: "gmr",
@@ -206,7 +206,7 @@ const menu07Projects = [
     {
         id: "SB-GMR-018",
         depth1: "관리자",
-        depth2: "프로그램 관리",
+        depth2: "페이지관리",
         depth3: "상세",
         type: "",
         folder: "gmr",
