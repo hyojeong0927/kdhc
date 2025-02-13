@@ -34,32 +34,7 @@
 
         <!-- 헤더 영역 -->
         <header id="kdhc-header">
-            <h2 class="logo">
-                <a href="../home/SB-USR-001.html" class="logo-img" data-title="한국지역난방공사">한국지역난방공사</a>
-                <a href="../home/SB-USR-001.html" class="logo-txt" data-title="제어망 스마트 보안관리 플랫폼">제어망 스마트 보안관리 플랫폼</a>
-            </h2>
-            <div class="gnb">
-                <ul class="util">
-                    <li class="util-01"><a href="#" data-title="결재관리">결재관리</a></li>
-                    <li class="util-02"><a href="#" data-title="정기점검">정기점검</a></li>
-                    <li class="util-03"><a href="#" data-title="지침 및 매뉴얼">지침 및 매뉴얼</a></li>
-                    <li class="util-04 user"><a href="#" data-title="홍길동 과장">홍길동 과장</a></li>
-                </ul>
-                <div class="header-action">
-                    <button type="button" class="btn btn-link">비밀번호변경</button>
-                    <button type="button" class="btn btn-link">로그아웃</button>
-                </div>
-                <nav>
-                    <ul class="nav">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#" data-title="관리보안">관리보안</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" data-title="물리보안">물리보안</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" data-title="기술보안">기술보안</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" data-title="보안정책">보안정책</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" data-title="클린PC">클린PC</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" data-title="정보자산">정보자산</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <script type="module" src="../../assets/js/layouts/header.js"></script>
         </header>
         <!--// 헤더 영역 -->
 
@@ -68,36 +43,7 @@
             <div class="inner">
                 <!-- 사이드 영역 -->
                 <aside id="sidebar" class="sidebar">
-
-                    <!-- 사이드바 열고 닫기 -->
-                    <div class="sidebar-top-btn">
-                        <button id="toggleButton" class="btn-toggle" aria-label="사이드바 열고 닫기">
-                            <i id="menuIcon" class="icon arrow-close"></i> 
-                        </button>
-                    </div>
-                    <!--// 사이드바 열고 닫기 -->
-
-                    <!-- 좌측 메뉴 영역 -->
-                    <nav id="subMenu">
-
-                        <!-- lnb title : 웹접근성으로 인해 넣고 숨김 처리 되어 있음 -->
-                        <h2 class="lnb-tit" data-main-title="정보자산">정보자산</h2>
-                        <!--// lnb title  -->
-
-                        <ul class="lnb-list">
-                            <li class="lnb-item">
-                                <a href="#" class="lnb-btn lnb-link" data-sub-title="노트북 사용">노트북 사용</a>
-                            </li>
-                            <li class="lnb-item">
-                                <a href="#" class="lnb-btn lnb-link" data-sub-title="노트북 사용내역">노트북 사용내역</a>
-                            </li>
-                            <li class="lnb-item">
-                                <a href="#" class="lnb-btn lnb-link" data-sub-title="정보자산 반출입 내역">정보자산 반출입 내역</a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    <!--// 좌측 메뉴 영역 -->
+                    <script type="module" src="../../assets/js/layouts/sidebar-06.js"></script>
                 </aside>
                 <!--// 사이드 영역 -->
 
@@ -316,9 +262,7 @@
 
         <!-- 푸터 영역 -->
         <footer id="kdhc-footer">
-            <div class="foot-quick">
-                <div class="inner"></div>
-            </div>
+            <script type="module" src="../../assets/js/layouts/footer.js"></script>
         </footer>
         <!--// 푸터 영역 -->
  
@@ -619,7 +563,7 @@
                 selectAll: 'filtered',
                 width: 52,
             },
-            
+
             // data empty style
             overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
         };

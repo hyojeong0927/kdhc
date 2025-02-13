@@ -1,6 +1,6 @@
 const footer = document.querySelector("footer");
 footer.innerHTML = `
-    <address>
-        footer
-    </address>
+    <div class="foot-quick">
+        <div class="inner">footer</div>
+    </div>
 `
