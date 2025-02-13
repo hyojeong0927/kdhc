@@ -13584,7 +13584,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 ========================================================================== */
 #sidebar {
   width: 280px;
-  transition: width 0.5s ease-in-out;
+  transition: width 0.3s ease-in-out;
 }
 
 #sidebar.collapsed {
@@ -13613,6 +13613,9 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   visibility: hidden;
   width: 1px;
   height: 1px;
+}
+.sidebar .lnb-list {
+  transition: opacity 0.2s ease-in-out;
 }
 .sidebar .lnb-list .lnb-item {
   border-bottom: 1px solid #6C757D;
@@ -13647,6 +13650,9 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 }
 .sidebar.collapsed .sidebar-top-btn {
   padding: 0.75rem 0.88rem;
+}
+.sidebar.collapsed .lnb-link {
+  opacity: 0;
 }
 
 /* Forms
@@ -13691,12 +13697,11 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 }
 .input-form-area .form-wrap .form-row .form-group, .search-form-area .form-wrap .form-row .form-group {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   gap: 0.5rem;
   padding: 0.75rem 1rem;
-  flex-wrap: wrap;
   flex: 1;
 }
 .input-form-area .form-wrap .form-row .form-group .input-group, .search-form-area .form-wrap .form-row .form-group .input-group {
@@ -13714,7 +13719,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   border-left: 1px solid #C5CDD5;
 }
 .input-form-area .form-wrap .form-row .form-group .input-txt, .search-form-area .form-wrap .form-row .form-group .input-txt {
-  flex: 1;
+  width: 100%;
   color: #18191C;
   font-size: 1rem;
   font-weight: 400;
@@ -13731,6 +13736,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   text-align: center;
 }
 .input-form-area .form-wrap .form-row .form-group .input-badge-group, .search-form-area .form-wrap .form-row .form-group .input-badge-group {
+  width: 100%;
   flex: 1;
 }
 .input-form-area .form-wrap .form-row .form-group .input-badge-group.center, .search-form-area .form-wrap .form-row .form-group .input-badge-group.center {
@@ -13761,13 +13767,17 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 }
 
 .form-hint-invalid {
-  margin-top: 0.75rem;
+  width: 100%;
   color: #DC3545;
   font-size: 0.88rem;
   font-weight: 400;
   letter-spacing: -0.03rem;
   line-height: normal;
-  letter-spacing: -0.03rem;
+}
+.form-hint-invalid.hidden {
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
 }
 
 .form-check {
@@ -27881,8 +27891,13 @@ input[type=url]:read-only {
   background-color: #DCDCDC;
 }
 
-.form-select.error, .input-search-group.is-error,
-.input-date-group.is-error, .form-control.is-error, input.is-error[type=text],
+.select-group.is-error .form-select, .form-select.is-error, .input-time-group.is-error .form-select, .input-search-group.is-error,
+.input-date-group.is-error, .input-group.is-error .form-control, .input-group.is-error input[type=text],
+.input-group.is-error input[type=number],
+.input-group.is-error input[type=email],
+.input-group.is-error input[type=password],
+.input-group.is-error input[type=tel],
+.input-group.is-error input[type=url], .form-control.is-error, input.is-error[type=text],
 input.is-error[type=number],
 input.is-error[type=email],
 input.is-error[type=password],
@@ -27956,7 +27971,6 @@ textarea.form-control {
   border-top-right-radius: 4px !important;
   border-bottom-right-radius: 4px !important;
 }
-
 .input-search-group,
 .input-date-group {
   display: flex;
@@ -28009,6 +28023,11 @@ textarea.form-control {
 .input-date-group:focus .input-group-text {
   cursor: pointer;
 }
+.input-search-group {
+  flex: none;
+  width: 100%;
+}
+
 .input-time-group {
   display: flex;
   flex-direction: row;
@@ -28019,7 +28038,6 @@ textarea.form-control {
 .input-time-group .combo-box-group {
   flex: 1;
 }
-
 /* List
 ========================================================================== */
 /* Modal
@@ -28424,6 +28442,9 @@ textarea.form-control {
   line-height: normal;
 }
 
+.select-group {
+  width: 100%;
+}
 .combo-box-group {
   cursor: default !important;
   position: relative;

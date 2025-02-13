@@ -148,7 +148,7 @@
                                                             <button class="btn btn-outline--round btn-xsm">6개월</button>
                                                             <button class="btn btn-outline--round btn-xsm" disabled>12개월</button>
                                                         </div>
-                                                        <div class="input-date-group">
+                                                        <div class="input-date-group is-error">
                                                             <input type="text" id="startDate" class="form-control" value="" placeholder="YYYY-MM-DD" readonly>
                                                             <label class="input-group-text" for="startDate"><i class="icon calendar"></i></label>
                                                         </div>
@@ -159,28 +159,40 @@
                                                         </div>
                                                     </div>
                                                     <!--// datepicker-group end -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-label">자산관리번호</div>
                                                 <div class="form-group">
                                                     <!-- input search group start -->
-                                                    <div class="input-search-group">
+                                                    <div class="input-search-group is-error">
                                                         <input type="search" class="form-control" id="search1" value="" placeholder="자산관리번호 입력">
                                                         <label class="input-group-text" for="search1"><i class="icon search"></i></label>
                                                     </div>
                                                     <!--// input search group end -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-label">요청부서 </div>
                                                 <div class="form-group">
-                                                    <select class="form-select" aria-label="Default select" required>
-                                                        <option value="" selected>선택하세요</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
-                                                    </select>
+                                                    <!-- form select group-->
+                                                    <div class="select-group is-error">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택하세요</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
                                                 </div>
                                             </div>
                                         </div>
@@ -195,28 +207,41 @@
                                                         <label class="input-group-text" for="search2"><i class="icon search"></i></label>
                                                     </div>
                                                     <!--// input search group end -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-label">반입/반출</div>
                                                 <div class="form-group">
-                                                    <select class="form-select" aria-label="Default select" required>
-                                                        <option value="" selected>선택하세요</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
-                                                    </select>
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택하세요</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-label">결재상태</div>
                                                 <div class="form-group">
-                                                    <select class="form-select" aria-label="Default select" required>
-                                                        <option value="" selected>선택하세요</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
-                                                    </select>
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택하세요</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
                                                 </div>
                                             </div>
                                         </div>

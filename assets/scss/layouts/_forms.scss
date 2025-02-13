@@ -24,9 +24,9 @@
                 background-color: $blue-005;
             }
             .form-group {
-                @include flex(true, "start", "center", rem(8px));
+                @include flex(false, "center", "start", rem(8px));
                 padding: rem(12px) rem(16px);
-                flex-wrap: wrap;
+                // flex-wrap: wrap;
                 flex: 1;
                 .input-group {
                     position: relative;
@@ -39,7 +39,7 @@
                     border-left: 1px solid $gray-007;
                 }
                 .input-txt {
-                    flex: 1;
+                    width: 100%;
                     color: $gray-002;
                     @include font-style($font-size-base, $font-weight-normal, $line-height-base);
                     letter-spacing: -3%;
@@ -49,6 +49,7 @@
                     }
                 }
                 .input-badge-group {
+                    width: 100%;
                     flex: 1;
                     &.center {
                         @include flex(true, "center", "center");
@@ -78,7 +79,6 @@
 .search-form-area {
    @extend %form-base;
 }
-
 .datepicker-group {
     @include flex(true, "start", "center", rem(8px));
     flex-wrap: wrap;
@@ -92,10 +92,12 @@
 
 // validation
 .form-hint-invalid {
-    margin-top: rem(12px);
+    width: 100%;
     color: $red-001;
     @include font-style($font-size-sm, $font-weight-normal, $line-height-base);
-    letter-spacing: rem(-0.42px);
+    &.hidden {
+        @include hidden;
+    }
 }
 // validation end
 

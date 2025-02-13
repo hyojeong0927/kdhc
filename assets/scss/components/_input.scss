@@ -108,6 +108,11 @@ textarea {
         border-top-right-radius: $input-border-radius !important;
         border-bottom-right-radius: $input-border-radius !important;
     }
+    &.is-error {
+        .form-control {
+            @extend %input-error;
+        }
+    }
 }
 .input-search-group,
 .input-date-group {
@@ -159,9 +164,18 @@ textarea {
         @extend %input-error;
     }
 }
+.input-search-group {
+    flex: none;
+    width: 100%;
+}
 .input-time-group {
     @include flex(true, "start", "center", rem(8px));
     .combo-box-group {
         flex: 1;
+    }
+    &.is-error {
+        .form-select {
+            @extend %input-error;
+        }
     }
 }

@@ -5,7 +5,7 @@ $sidebar-width: 280px;
 
 #sidebar {
     width: $sidebar-width;
-    transition: width 0.5s ease-in-out;
+    transition: width 0.3s ease-in-out;
 }
 #sidebar.collapsed {
     width: $sidebar-close-width;
@@ -29,6 +29,7 @@ $sidebar-width: 280px;
         height: 1px;
     }
     .lnb-list {
+        transition: opacity 0.2s ease-in-out;
         .lnb-item {
             border-bottom: 1px solid $gray-009;
             .lnb-btn {
@@ -57,9 +58,8 @@ $sidebar-width: 280px;
         .sidebar-top-btn {
             padding: rem(12px) rem(14px);
         }
-        // #subMenu {
-        //     display: none;
-        //     transition: display 0.3s ease;
-        // }
+        .lnb-link {
+            opacity: 0;
+        }
     }
 }
