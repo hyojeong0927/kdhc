@@ -12,21 +12,15 @@ aside.innerHTML = `
 <nav id="subMenu">
 
     <!-- lnb title : 웹접근성으로 인해 넣고 숨김 처리 되어 있음 -->
-    <h2 class="lnb-tit" data-main-title="정보자산">정보자산</h2>
+    <h2 class="lnb-tit" data-main-title="관리보안">관리보안</h2>
     <!--// lnb title  -->
 
     <ul class="lnb-list">
         <li class="lnb-item">
-            <a href="#" class="lnb-btn lnb-link" data-sub-title="자산정보관리">자산정보관리</a>
+            <a href="#" class="lnb-btn lnb-link" data-sub-title="월간사이버보안점검">월간사이버보안점검</a>
         </li>
         <li class="lnb-item">
-            <a href="#" class="lnb-btn lnb-link" data-sub-title="노트북사용">노트북사용</a>
-        </li>
-        <li class="lnb-item">
-            <a href="#" class="lnb-btn lnb-link" data-sub-title="노트북사용내역">노트북사용내역</a>
-        </li>
-        <li class="lnb-item">
-            <a href="#" class="lnb-btn lnb-link" data-sub-title="정보자산반출입내역">정보자산반출입내역</a>
+            <a href="#" class="lnb-btn lnb-link" data-sub-title="클린 PC 점검">클린 PC 점검</a>
         </li>
     </ul>
 </nav>

@@ -18,12 +18,12 @@ header.innerHTML = `
         </div>
         <nav>
             <ul class="nav">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#" data-title="관리보안">관리보안</a></li>
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="#" data-title="관리보안">관리보안</a></li>
                 <li class="nav-item"><a class="nav-link" href="#" data-title="물리보안">물리보안</a></li>
                 <li class="nav-item"><a class="nav-link" href="#" data-title="기술보안">기술보안</a></li>
                 <li class="nav-item"><a class="nav-link" href="#" data-title="보안정책">보안정책</a></li>
                 <li class="nav-item"><a class="nav-link" href="#" data-title="클린PC">클린PC</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" data-title="정보자산">정보자산</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#" data-title="정보자산">정보자산</a></li>
             </ul>
         </nav>
     </div>

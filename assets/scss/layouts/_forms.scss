@@ -18,15 +18,15 @@
                 @include flex(true, "start", "center");
                 margin: 0;
                 padding: rem(18px) rem(24px);
-                width: rem(145px);
+                width: rem(140px);
                 color: $primary;
                 @include font-style($font-size-base, $font-weight-medium, $line-height-base);
+                letter-spacing: rem(-1.5px);
                 background-color: $blue-005;
             }
             .form-group {
                 @include flex(false, "center", "start", rem(8px));
                 padding: rem(12px) rem(16px);
-                // flex-wrap: wrap;
                 flex: 1;
                 .input-group {
                     position: relative;
@@ -42,7 +42,7 @@
                     width: 100%;
                     color: $gray-002;
                     @include font-style($font-size-base, $font-weight-normal, $line-height-base);
-                    letter-spacing: -3%;
+                    letter-spacing: rem(-1.5px);
                     &.center {
                         @include flex(true, "center", "center");
                         text-align: center;
@@ -133,4 +133,4 @@
 }
 .grid-wrap {
     margin-bottom: rem(20px);
-} 
+}

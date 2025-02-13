@@ -13687,12 +13687,13 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   gap: 0px;
   margin: 0;
   padding: 1.13rem 1.5rem;
-  width: 9.06rem;
+  width: 8.75rem;
   color: #384B5E;
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: -0.03rem;
   line-height: normal;
+  letter-spacing: -0.09rem;
   background-color: #E3E8ED;
 }
 .input-form-area .form-wrap .form-row .form-group, .search-form-area .form-wrap .form-row .form-group {
@@ -13725,7 +13726,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   font-weight: 400;
   letter-spacing: -0.03rem;
   line-height: normal;
-  letter-spacing: -3%;
+  letter-spacing: -0.09rem;
 }
 .input-form-area .form-wrap .form-row .form-group .input-txt.center, .search-form-area .form-wrap .form-row .form-group .input-txt.center {
   display: flex;

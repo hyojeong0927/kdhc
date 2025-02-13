@@ -43,7 +43,7 @@
             <div class="inner">
                 <!-- 사이드 영역 -->
                 <aside id="sidebar" class="sidebar">
-                    <script type="module" src="../../assets/js/layouts/sidebar-06.js"></script>
+                    <script type="module" src="../../assets/js/layouts/sidebar-05.js"></script>
                 </aside>
                 <!--// 사이드 영역 -->
 
@@ -55,15 +55,15 @@
                         <!-- breadcrumbs start -->
                         <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">정보자산</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">정보자산반출입내역</li>
+                                <li class="breadcrumb-item"><a href="#">클린PC</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">휴대용저장매체 등록 관리</li>
                             </ol>
                         </nav>
                         <!--// breadcrumbs end -->
 
                         <!-- page title start -->
                         <div class="page-title-wrap">
-                            <h1 class="h-tit">정보자산반출입내역</h1>
+                            <h1 class="h-tit">휴대용저장매체 등록 관리</h1>
                         </div>
                         <!--// page title end -->
 
@@ -125,7 +125,7 @@
                                                 </div>
                                             </div>
                                             <div class="col">
-                                                <div class="form-label">요청부서 </div>
+                                                <div class="form-label">기안부서</div>
                                                 <div class="form-group">
                                                     <!-- form select group-->
                                                     <div class="select-group is-error">
@@ -159,12 +159,12 @@
                                                 </div>
                                             </div>
                                             <div class="col">
-                                                <div class="form-label">반입/반출</div>
+                                                <div class="form-label">등록 불용반출</div>
                                                 <div class="form-group">
                                                     <div class="select-group">
                                                         <select class="form-select" aria-label="Default select" required>
-                                                            <option value="" selected>선택하세요</option>
-                                                            <option value="1">One</option>
+                                                            <option value="">선택하세요</option>
+                                                            <option value="전체" selected>전체</option>
                                                             <option value="2">Two</option>
                                                             <option value="3">Three</option>
                                                         </select>
@@ -199,37 +199,38 @@
                             <!--// form end -->
                         </article>
                         <!--// search end-->
-                        
+
                         <!-- grid top start -->
                         <article class="grid-top-area">
                             <!-- grid top left start -->
                             <div class="grid-top-left">
                                <select class="form-select sm" aria-label="Default select" required>
-                                <option value="">선택하세요</option>
-                                <option value="10" selected>10개씩 보기</option>
-                                <option value="20">20개씩 보기</option>
-                                <option value="30">30개씩 보기</option>
-                            </select>
+                                    <option value="">선택하세요</option>
+                                    <option value="10" selected>10개씩 보기</option>
+                                    <option value="20">20개씩 보기</option>
+                                    <option value="30">30개씩 보기</option>
+                                </select>
                             </div>
                             <!--// grid top left end -->
 
                             <!-- grid top button start -->
                             <div class="grid-top-btn">
-                                <button type="button" class="btn btn-outline btn-sm">반출기안</button>
-                                <button type="button" class="btn btn-outline btn-sm">반입기안</button>
+                                <button type="button" class="btn btn-outline btn-sm">불용반출기안</button>
+                                <button type="button" class="btn btn-outline btn-sm">등록기안</button>
                             </div>
                             <!--// grid top button end -->
+
                         </article>
                         <!--// grid top end -->
-                        
+
                         <!-- grid wrap start -->
                         <article class="grid-wrap">
                             <div id="sampleGrid" class="normal" style="width: 100%; height: 548px;"></div>
                         </article>
                         <!--// grid wrap end -->
-
-                        <!-- grid bottom start -->
-                        <article class="grid-bottom-area">
+                        
+                         <!-- grid bottom start -->
+                         <article class="grid-bottom-area">
                             <!-- 페이징 -->
                             <nav class="page-navigation" aria-label="page navigation">
                                 <script type="module" src="../../assets/js/layouts/pagination.js"></script>
@@ -237,7 +238,7 @@
                             <!--// 페이징 -->
                         </article>
                         <!--// grid bottom end -->
-                    
+                        
                     </div>
                     <!--// 컨텐츠 영역 -->
 
@@ -363,7 +364,7 @@
             },
         ];
         const columnDefs = [
-            {
+            { 
                 headerName: "문서번호",
                 headerClass: "center",
                 field: "field01",
@@ -558,7 +559,6 @@
         sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
     </script>
     <!--// script wrap -->
-    
     <!-- modal wrap -->
     <!--// modal wrap -->
 </body>

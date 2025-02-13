@@ -7,8 +7,8 @@ const menu05Projects = [
         type: "",
         folder: "usr",
         file: "SB-USR-059.html",
-        status: "진행대기",
-        start: "",
+        status: "진행중",
+        start: "2025-02-13",
         end: ""
     },
     {
