@@ -117,7 +117,7 @@ const menu06Projects = [
         file: "SB-USR-083.html",
         status: "완료",
         start: "2025-02-10",
-        end: ""
+        end: "2025-02-13"
     },
     {
         id: "SB-USR-083_02",
@@ -129,7 +129,7 @@ const menu06Projects = [
         file: "SB-USR-083_02.html",
         status: "완료",
         start: "2025-02-10",
-        end: ""
+        end: "2025-02-13"
     },
     {
         id: "SB-USR-083_03",
@@ -141,7 +141,7 @@ const menu06Projects = [
         file: "SB-USR-083_03.html",
         status: "완료",
         start: "2025-02-10",
-        end: ""
+        end: "2025-02-13"
     },
     {
         id: "SB-USR-083_04",
@@ -153,7 +153,7 @@ const menu06Projects = [
         file: "SB-USR-083_04.html",
         status: "완료",
         start: "2025-02-10",
-        end: ""
+        end: "2025-02-13"
     },
     {
         id: "SB-USR-084",
