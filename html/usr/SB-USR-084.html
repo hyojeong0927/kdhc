@@ -1,77 +1,103 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-kdhc-mode="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KDHC</title>
     <!-- css -->
-    <link rel="stylesheet" href="../../assets/css/index.css">
+    <link rel="stylesheet" href="../../css/index.css">
+    <!-- script -->
+    <script src="../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script type="module" src="../../assets/js/common.js"></script>
 </head>
 <body>
-    <!-- container -->
-    <section class="container">
-        <!-- header -->
-        <header>
-            <script src="../../assets/js/layouts/header.js" type="module"></script>
+    <div id="wrap" class="kdhc-wrap">
+
+        <!-- 본문 바로가기 영역 -->
+        <div id="kdhc-skip-link">
+            <a href="#breadcrumb">본문 바로가기</a>
+        </div>
+        <!--// 본문 바로가기 영역  -->
+
+        <!-- 상단 배너영역 -->
+        <div id="kdhc-masthead">
+            <div class="toggle-wrap">
+                <div class="toggle-head">
+                    <div class="inner">
+                        <span class="nuri-txt">이 누리집은 한국지역난방공사 제어망 스마트 보안관리 플랫폼 누리집입니다.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // 상단 배너영역 -->
+
+        <!-- 헤더 영역 -->
+        <header id="kdhc-header">
+            <script type="module" src="../../assets/js/layouts/header.js"></script>
         </header>
-        <!--// header -->
-        <!-- aside -->
-        <aside>
-            <script src="../../assets/js/layouts/lnb.js" type="module"></script>
-        </aside>
-        <!--// aside -->
-        <!-- main -->
-        <main class="main">
-            <article class="contents"><!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KDHC</title>
-    <!-- css -->
-    <link rel="stylesheet" href="../../assets/css/index.css">
-</head>
-<body>
-    <!-- container -->
-    <section class="container">
-        <!-- header -->
-        <header>
-            <script src="../../assets/js/layouts/header.js" type="module"></script>
-        </header>
-        <!--// header -->
-        <!-- aside -->
-        <aside>
-            <script src="../../assets/js/layouts/lnb.js" type="module"></script>
-        </aside>
-        <!--// aside -->
-        <!-- main -->
-        <main class="main">
-            <article class="contents">
-                <div class="search">search</div>
-                <div class="data-tbl">data</div>
-            </article>
-        </main>
-        <!--// main -->
-        <!-- footer -->
-        <footer>
-            <script src="../../assets/js/layouts/footer.js" type="module"></script>
+        <!--// 헤더 영역 -->
+
+        <!-- 컨테이너 영역 -->
+        <section id="kdhc-container">
+            <div class="inner">
+                <!-- 사이드 영역 -->
+                <aside id="sidebar" class="sidebar">
+                    <script type="module" src="../../assets/js/layouts/sidebar-06.js"></script>
+                </aside>
+                <!--// 사이드 영역 -->
+
+                <main class="main-contents">
+                
+                    <!-- 컨텐츠 영역 -->
+                    <div class="contents">
+
+                        <!-- breadcrumbs start -->
+                        <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">정보자산</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">정보자산반출입내역</li>
+                            </ol>
+                        </nav>
+                        <!--// breadcrumbs end -->
+
+                        <!-- page title start -->
+                        <div class="page-title-wrap">
+                            <h1 class="h-tit">정보자산반출입내역</h1>
+                        </div>
+                        <!--// page title end -->
+
+                        <!-- search start-->
+                        <!--// search end-->
+
+                        <!-- grid top start -->
+                        <!--// grid top end -->
+
+                        <!-- grid wrap start -->
+                        <!--// grid wrap end -->
+                        
+                        <!-- grid bottom start -->
+                        <!--// grid bottom end -->
+                        
+                    </div>
+                    <!--// 컨텐츠 영역 -->
+
+                </main>
+
+            </div>
+        </section>
+        <!--// 컨테이너 영역 -->
+
+        <!-- 푸터 영역 -->
+        <footer id="kdhc-footer">
+            <script type="module" src="../../assets/js/layouts/footer.js"></script>
         </footer>
-        <!--// footer -->
-    </section>
-    <!--// container -->
-</body>
-</html>
-                <div class="search">search</div>
-                <div class="data-tbl">data</div>
-            </article>
-        </main>
-        <!--// main -->
-        <!-- footer -->
-        <footer>
-            <script src="../../assets/js/layouts/footer.js" type="module"></script>
-        </footer>
-        <!--// footer -->
-    </section>
-    <!--// container -->
+        <!--// 푸터 영역 -->
+ 
+    </div>
+    <!-- script wrap -->
+    <!--// script wrap -->
+    <!-- modal wrap -->
+    <!--// modal wrap -->
 </body>
 </html>
