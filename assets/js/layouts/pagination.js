@@ -1,0 +1,20 @@
+const nav = document.querySelector("nav.page-navigation");
+
+nav.innerHTML = ` 
+    <ul class="pagination">
+        <li class="page-item first disabled"><a class="page-link" href="#" data-title="첫 페이지로 이동">첫 페이지로 이동</a></li>
+        <li class="page-item prev"><a class="page-link" href="#" data-title="이전 페이지로 이동">이전 페이지로 이동</a></li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">5</a></li>
+        <li class="page-item"><a class="page-link" href="#">6</a></li>
+        <li class="page-item"><a class="page-link" href="#">7</a></li>
+        <li class="page-item"><a class="page-link" href="#">8</a></li>
+        <li class="page-item"><a class="page-link" href="#">9</a></li>
+        <li class="page-item"><a class="page-link" href="#">10</a></li>
+        <li class="page-item next disabled"><a class="page-link" href="#" data-title="다음 페이지로 이동">다음 페이지로 이동</a></li>
+        <li class="page-item last disabled"><a class="page-link" href="#" data-title="마지막 페이지로 이동">마지막 페이지로 이동</a></li>
+    </ul>
+`
