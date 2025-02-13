@@ -30543,6 +30543,10 @@ textarea.form-control {
   box-shadow: var(--bs-btn-focus-box-shadow);
 }
 
+.approve .title-wrap {
+  margin-bottom: 1rem;
+}
+
 /* Contact
 ========================================================================== */
 /* Guide
