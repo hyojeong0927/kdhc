@@ -115,7 +115,7 @@ const menu06Projects = [
         type: "",
         folder: "usr",
         file: "SB-USR-083.html",
-        status: "진행중",
+        status: "완료",
         start: "2025-02-10",
         end: ""
     },
@@ -127,7 +127,7 @@ const menu06Projects = [
         type: "pop",
         folder: "usr",
         file: "SB-USR-083_02.html",
-        status: "진행중",
+        status: "완료",
         start: "2025-02-10",
         end: ""
     },
@@ -139,7 +139,7 @@ const menu06Projects = [
         type: "pop",
         folder: "usr",
         file: "SB-USR-083_03.html",
-        status: "진행중",
+        status: "완료",
         start: "2025-02-10",
         end: ""
     },
@@ -151,7 +151,7 @@ const menu06Projects = [
         type: "pop",
         folder: "usr",
         file: "SB-USR-083_04.html",
-        status: "진행중",
+        status: "완료",
         start: "2025-02-10",
         end: ""
     },

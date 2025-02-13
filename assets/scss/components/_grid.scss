@@ -146,3 +146,17 @@
         word-break: keep-all;
     }
 }
+
+// empty
+.empty {
+    @include flex(false, "center", "center", rem(16px));
+    width: 100%;
+    .empty-img {
+        @extend .icon;
+        @extend .empty;
+    }
+    .empty-txt {
+        color: $gray-004;
+        @include font-style($input-font-size, $input-font-weight, $input-line-height);
+    }
+}

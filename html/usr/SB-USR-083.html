@@ -601,7 +601,6 @@
                 }
             },
         ];
-
         let sampleGridApi;
 
         const sampleGridOptions = {
@@ -620,6 +619,9 @@
                 selectAll: 'filtered',
                 width: 52,
             },
+            
+            // data empty style
+            overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
         };
         const sampleGridDiv = document.querySelector("#sampleGrid");
         sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
