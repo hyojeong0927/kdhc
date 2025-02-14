@@ -29,7 +29,7 @@ export function openPopupWindow(url, width, height, popupName = 'Popup') {
     const left = window.screenX + (window.innerWidth - width) / 2;
     const top = window.screenY + (window.innerHeight - height) / 2;
 
-    const features = `width=${width},height=${height},top=${top},left=${left},scrollbars=yes,resizable=yes`;
+    const features = `width=${width},height=${height},top=${top},left=${left},scrollbars=yes,resizable=yes,toolbar=no,location=no,titlebar=no`;
     const popup = window.open(url, popupName, features);
 
     if (popup) {
