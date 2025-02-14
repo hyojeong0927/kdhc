@@ -10,15 +10,20 @@ const layerPopup = document.getElementById("layerPopup");
 const popupIframe = document.querySelector(".popup-iframe");
 const closeButton = document.querySelector(".popup-close");
 const popupOverlay = document.querySelector(".popup-overlay");
+const projDesignTurnSelect = document.getElementById("projDesignTurn");
+const projDevStartSelect = document.getElementById("projDevStart");
 
 // filter work list
-function renderTable(filterState = "전체", filterCategory = "전체") {
+function renderTable(filterState = "전체", filterCategory = "전체", filterDevStart = "전체", filterDesignTurn = "전체") {
     console.log(projects); 
 
     const filteredProjects = projects.filter(project => {
         const stateMatch = filterState === "전체" || project.status === filterState;
         const categoryMatch = filterCategory === "전체" || project.depth1 === filterCategory;
-        return stateMatch && categoryMatch;
+        const devStartMatch = filterDevStart === "전체" || project.dev === filterDevStart;
+        const designTurnMatch = filterDesignTurn === "전체" || project.dev === filterDesignTurn;
+
+        return stateMatch && categoryMatch && devStartMatch && designTurnMatch;
     });
     
     tableBody.innerHTML = filteredProjects.map((project, index) => {
@@ -56,6 +61,16 @@ projStateSelect.addEventListener("change", () => {
 // category select
 projCategorySelect.addEventListener("change", () => {
     renderTable(projStateSelect.value, projCategorySelect.value);
+});
+
+// 디자인 우선순위
+projDesignTurnSelect.addEventListener("change", () => {
+    renderTable(projStateSelect.value, projCategorySelect.value, projDesignTurnSelect.value);
+});
+
+// 개발 시작일
+projDevStartSelect.addEventListener("change", () => {
+    renderTable(projStateSelect.value, projCategorySelect.value, projDevStartSelect.value);
 });
 
 // top button

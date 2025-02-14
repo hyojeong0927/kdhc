@@ -50,6 +50,29 @@
                         <option value="관리자">관리자</option>
                     </select>
                 </div>
+                <div class="ul-select">
+                    <label for="projDesignTurn">디자인 우선순위</label>
+                    <!-- 개발시작일 기준 필터 -->
+                    <select id="projDesignTurn">
+                        <option value="전체">전체</option>
+                        <option value="1순위">1순위</option>
+                        <option value="2순위">2순위</option>
+                    </select>
+                </div>
+                <div class="ul-select">
+                    <label for="projDevStart">개발시작일</label>
+                    <!-- 개발시작일 기준 필터 -->
+                    <select id="projDevStart">
+                        <option value="전체">전체</option>
+                        <option value="2025-02-17">2025-02-17</option>
+                        <option value="2025-02-24">2025-02-24</option>
+                        <option value="2025-03-04">2025-03-04</option>
+                        <option value="2025-03-10">2025-03-10</option>
+                        <option value="2025-03-17">2025-03-17</option>
+                        <option value="2025-03-24">2025-03-24</option>
+                        <option value="2025-04-07">2025-04-07</option>
+                    </select>
+                </div>
                 <div class="projCount"><!-- 퍼블리싱 전체 현황 Counter 나오는 곳 --></div>
             </div>
             <div class="pub-tbl">
@@ -57,8 +80,8 @@
                     <caption>퍼블리싱 작업 리스트</caption>
                     <colgroup>
                         <col width="50px" />
-                        <col />
-                        <col />
+                        <col width="130px" />
+                        <col width="100px" />
                         <col />
                         <col />
                         <col width="100px" />

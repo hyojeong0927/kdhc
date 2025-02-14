@@ -1,6 +1,16 @@
-// -------------------------------------------------------- //
-// window popup
-//-------------------------------------------------------- //
+export function setupPopupListeners(urlList) {
+    document.addEventListener('DOMContentLoaded', () => {
+        const sizes = ['small', 'medium', 'large'];
+
+        sizes.forEach(size => {
+            const button = document.getElementById(`${size}-btn`);
+            if (button) {
+                button.addEventListener('click', () => openPopup(size, urlList));
+            }
+        });
+    });
+}
+
 export function openPopup(size, urlList) {
     const url = urlList[size];
 
@@ -9,7 +19,7 @@ export function openPopup(size, urlList) {
         return;
     }
 
-    let width, height;
+    let width = 1440, height = 1080;
 
     if (size === 'small') {
         width = 300;
@@ -17,9 +27,6 @@ export function openPopup(size, urlList) {
     } else if (size === 'medium') {
         width = 600;
         height = 400;
-    } else if (size === 'large') {
-        width = 1440;
-        height = 1080;
     }
 
     openPopupWindow(url, width, height, `Popup${size}`);
@@ -33,15 +40,11 @@ export function openPopupWindow(url, width, height, popupName = 'Popup') {
     const popup = window.open(url, popupName, features);
 
     if (popup) {
+        popup.onload = () => {
+            popup.resizeTo(width, height);
+        };
         console.log(`${popupName} 팝업 창이 성공적으로 열렸습니다.`);
     } else {
         console.error('팝업이 차단되었습니다.');
     }
 }
-
-export function setupPopupListeners(urlList) {
-    document.addEventListener('DOMContentLoaded', () => {
-        document.getElementById('large-btn').addEventListener('click', () => openPopup('large', urlList));
-    });
-}
-// window popup end
