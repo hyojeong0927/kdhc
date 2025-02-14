@@ -9,7 +9,9 @@ const menu07Projects = [
         file: "SB-GMR-001.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-04-07",
     },
     {
         id: "SB-GMR-002",
@@ -21,7 +23,9 @@ const menu07Projects = [
         file: "SB-GMR-002.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-04-07",
     },
     {
         id: "SB-GMR-003",
@@ -33,7 +37,9 @@ const menu07Projects = [
         file: "SB-GMR-003.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-04-07",
     },
     {
         id: "SB-GMR-004",
@@ -45,7 +51,9 @@ const menu07Projects = [
         file: "SB-GMR-004.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-10",
     },
     {
         id: "SB-GMR-005",
@@ -57,7 +65,9 @@ const menu07Projects = [
         file: "SB-GMR-005.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-10",
     },
     {
         id: "SB-GMR-006",
@@ -69,7 +79,9 @@ const menu07Projects = [
         file: "SB-GMR-006.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-10",
     },
     {
         id: "SB-GMR-007",
@@ -81,7 +93,9 @@ const menu07Projects = [
         file: "SB-GMR-007.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-24",
     },
     {
         id: "SB-GMR-008",
@@ -93,7 +107,9 @@ const menu07Projects = [
         file: "SB-GMR-008.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-24",
     },
     {
         id: "SB-GMR-009",
@@ -105,7 +121,9 @@ const menu07Projects = [
         file: "SB-GMR-009.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-24",
     },
     {
         id: "SB-GMR-010",
@@ -117,7 +135,9 @@ const menu07Projects = [
         file: "SB-GMR-010.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-02-24",
     },
     {
         id: "SB-GMR-011",
@@ -129,7 +149,9 @@ const menu07Projects = [
         file: "SB-GMR-011.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-02-24",
     },
     {
         id: "SB-GMR-012",
@@ -141,7 +163,9 @@ const menu07Projects = [
         file: "SB-GMR-012.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-02-24",
     },
     {
         id: "SB-GMR-013",
@@ -153,7 +177,9 @@ const menu07Projects = [
         file: "SB-GMR-013.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-02-24",
     },
     {
         id: "SB-GMR-014",
@@ -165,7 +191,9 @@ const menu07Projects = [
         file: "SB-GMR-014.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-02-24",
     },
     {
         id: "SB-GMR-015",
@@ -177,7 +205,9 @@ const menu07Projects = [
         file: "SB-GMR-015.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-02-24",
     },
     {
         id: "SB-GMR-016",
@@ -189,7 +219,9 @@ const menu07Projects = [
         file: "SB-GMR-016.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-04",
     },
     {
         id: "SB-GMR-017",
@@ -201,7 +233,9 @@ const menu07Projects = [
         file: "SB-GMR-017.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-04",
     },
     {
         id: "SB-GMR-018",
@@ -213,7 +247,9 @@ const menu07Projects = [
         file: "SB-GMR-018.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-04",
     },
     {
         id: "SB-GMR-019",
@@ -225,7 +261,9 @@ const menu07Projects = [
         file: "SB-GMR-019.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-04-07",
     },
     {
         id: "SB-GMR-020",
@@ -237,7 +275,9 @@ const menu07Projects = [
         file: "SB-GMR-020.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-04-07",
     },
     {
         id: "SB-GMR-021",
@@ -249,7 +289,9 @@ const menu07Projects = [
         file: "SB-GMR-021.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-04-07",
     },
     {
         id: "SB-GMR-022",
@@ -261,7 +303,9 @@ const menu07Projects = [
         file: "SB-GMR-022.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-02-17",
     },
     {
         id: "SB-GMR-023",
@@ -273,7 +317,9 @@ const menu07Projects = [
         file: "SB-GMR-023.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-02-17",
     },
     {
         id: "SB-GMR-024",
@@ -285,7 +331,9 @@ const menu07Projects = [
         file: "SB-GMR-024.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-02-17",
     },
     {
         id: "SB-GMR-025",
@@ -297,7 +345,9 @@ const menu07Projects = [
         file: "SB-GMR-025.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-24",
     },
     {
         id: "SB-GMR-026",
@@ -309,7 +359,9 @@ const menu07Projects = [
         file: "SB-GMR-026.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-24",
     },
     {
         id: "SB-GMR-027",
@@ -321,7 +373,9 @@ const menu07Projects = [
         file: "SB-GMR-027.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-24",
     },
     {
         id: "SB-GMR-028",
@@ -333,7 +387,9 @@ const menu07Projects = [
         file: "SB-GMR-028.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-04-14",
     },
     {
         id: "SB-GMR-029",
@@ -345,7 +401,9 @@ const menu07Projects = [
         file: "SB-GMR-029.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-04-14",
     },
 ];
 export default menu07Projects;

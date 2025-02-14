@@ -9,7 +9,9 @@ const menu04Projects = [
         file: "SB-USR-042.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-17",
     },
     {
         id: "SB-USR-043",
@@ -21,7 +23,9 @@ const menu04Projects = [
         file: "SB-USR-043.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-17",
     },
     {
         id: "SB-USR-044",
@@ -33,7 +37,9 @@ const menu04Projects = [
         file: "SB-USR-044.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-17",
     },
     {
         id: "SB-USR-045",
@@ -45,7 +51,9 @@ const menu04Projects = [
         file: "SB-USR-045.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-24",
     },
     {
         id: "SB-USR-046",
@@ -57,7 +65,9 @@ const menu04Projects = [
         file: "SB-USR-046.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-24",
     },
     {
         id: "SB-USR-047",
@@ -69,7 +79,9 @@ const menu04Projects = [
         file: "SB-USR-047.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-24",
     },
     {
         id: "SB-USR-048",
@@ -81,7 +93,9 @@ const menu04Projects = [
         file: "SB-USR-048.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-24",
     },
     {
         id: "SB-USR-049",
@@ -93,7 +107,9 @@ const menu04Projects = [
         file: "SB-USR-049.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-24",
     },
     {
         id: "SB-USR-050",
@@ -105,7 +121,9 @@ const menu04Projects = [
         file: "SB-USR-050.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "",
     },
     {
         id: "SB-USR-051",
@@ -117,7 +135,9 @@ const menu04Projects = [
         file: "SB-USR-051.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "",
     },
     {
         id: "SB-USR-052",
@@ -129,7 +149,9 @@ const menu04Projects = [
         file: "SB-USR-052.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "",
     },
     {
         id: "SB-USR-053",
@@ -141,7 +163,9 @@ const menu04Projects = [
         file: "SB-USR-053.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "",
     },
     {
         id: "SB-USR-054",
@@ -153,7 +177,9 @@ const menu04Projects = [
         file: "SB-USR-054.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "",
     },
     {
         id: "SB-USR-055",
@@ -165,7 +191,9 @@ const menu04Projects = [
         file: "SB-USR-055.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "",
     },
     {
         id: "SB-USR-056",
@@ -177,7 +205,9 @@ const menu04Projects = [
         file: "SB-USR-056.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "",
     },
     {
         id: "SB-USR-057",
@@ -189,7 +219,9 @@ const menu04Projects = [
         file: "SB-USR-057.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "",
     },
     {
         id: "SB-USR-058",
@@ -201,7 +233,9 @@ const menu04Projects = [
         file: "SB-USR-058.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "",
     },
 ];
 export default menu04Projects;

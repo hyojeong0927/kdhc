@@ -38,6 +38,8 @@ function renderTable(filterState = "전체", filterCategory = "전체") {
                     .filter(Boolean) .join(' ')}">${project.status}</td>
                 <td class="center">${project.start}</td>
                 <td class="center">${project.end}</td>
+                <td class="center">${project.design}</td>
+                <td class="center">${project.dev}</td>
                 <td class="center"><button class="history-btn">View</button></td>
             </tr>
         `;

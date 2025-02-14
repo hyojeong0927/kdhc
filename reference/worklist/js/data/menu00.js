@@ -9,7 +9,9 @@ const menu00Projects = [
         file: "SB-USR-001.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "",
     },
     {
         id: "SB-USR-002",
@@ -21,7 +23,9 @@ const menu00Projects = [
         file: "SB-USR-002.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "",
     },
     {
         id: "SB-USR-003",
@@ -33,7 +37,9 @@ const menu00Projects = [
         file: "SB-USR-003.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-04",
     },
     {
         id: "SB-USR-004",
@@ -45,7 +51,9 @@ const menu00Projects = [
         file: "SB-USR-004.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-10",
     },
     {
         id: "SB-USR-005",
@@ -57,7 +65,9 @@ const menu00Projects = [
         file: "SB-USR-005.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "",
     },
     {
         id: "SB-USR-006",
@@ -69,7 +79,9 @@ const menu00Projects = [
         file: "SB-USR-006.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "",
     },
     {
         id: "SB-USR-007",
@@ -81,7 +93,9 @@ const menu00Projects = [
         file: "SB-USR-007.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "",
     },
     {
         id: "SB-USR-008",
@@ -93,7 +107,9 @@ const menu00Projects = [
         file: "SB-USR-008.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "",
     },
     {
         id: "SB-USR-009",
@@ -105,7 +121,9 @@ const menu00Projects = [
         file: "SB-USR-009.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "",
     },
     {
         id: "SB-USR-010",
@@ -117,7 +135,9 @@ const menu00Projects = [
         file: "SB-USR-010.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-17",
     },
     {
         id: "SB-USR-011",
@@ -129,7 +149,9 @@ const menu00Projects = [
         file: "SB-USR-011.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-17",
     },
 ];
 export default menu00Projects;

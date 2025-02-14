@@ -9,7 +9,9 @@ const menu06Projects = [
         file: "SB-USR-074.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-04",
     },
     {
         id: "SB-USR-075",
@@ -21,7 +23,9 @@ const menu06Projects = [
         file: "SB-USR-075.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-04",
     },
     {
         id: "SB-USR-076",
@@ -33,7 +37,9 @@ const menu06Projects = [
         file: "SB-USR-076.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-03-10",
     },
     {
         id: "SB-USR-077",
@@ -45,7 +51,9 @@ const menu06Projects = [
         file: "SB-USR-077.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-02-24",
     },
     {
         id: "SB-USR-078",
@@ -57,7 +65,9 @@ const menu06Projects = [
         file: "SB-USR-078.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-02-24",
     },
     {
         id: "SB-USR-079",
@@ -69,7 +79,9 @@ const menu06Projects = [
         file: "SB-USR-079.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-02-24",
     },
     {
         id: "SB-USR-080",
@@ -81,7 +93,9 @@ const menu06Projects = [
         file: "SB-USR-080.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-02-24",
     },
     {
         id: "SB-USR-081",
@@ -93,7 +107,9 @@ const menu06Projects = [
         file: "SB-USR-081.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-02-24",
     },
     {
         id: "SB-USR-082",
@@ -105,7 +121,9 @@ const menu06Projects = [
         file: "SB-USR-082.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-02-24",
     },
     {
         id: "SB-USR-083",
@@ -117,7 +135,9 @@ const menu06Projects = [
         file: "SB-USR-083.html",
         status: "완료",
         start: "2025-02-10",
-        end: "2025-02-13"
+        end: "2025-02-13",
+        design: "",
+        dev: "2025-02-17",
     },
     {
         id: "SB-USR-083_02",
@@ -129,7 +149,9 @@ const menu06Projects = [
         file: "SB-USR-083_02.html",
         status: "완료",
         start: "2025-02-10",
-        end: "2025-02-13"
+        end: "2025-02-13",
+        design: "",
+        dev: "2025-02-17",
     },
     {
         id: "SB-USR-083_03",
@@ -141,7 +163,9 @@ const menu06Projects = [
         file: "SB-USR-083_03.html",
         status: "완료",
         start: "2025-02-10",
-        end: "2025-02-13"
+        end: "2025-02-13",
+        design: "",
+        dev: "2025-02-17",
     },
     {
         id: "SB-USR-083_04",
@@ -153,7 +177,9 @@ const menu06Projects = [
         file: "SB-USR-083_04.html",
         status: "완료",
         start: "2025-02-10",
-        end: "2025-02-13"
+        end: "2025-02-13",
+        design: "",
+        dev: "2025-02-17",
     },
     {
         id: "SB-USR-084",
@@ -165,7 +191,9 @@ const menu06Projects = [
         file: "SB-USR-084.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-02-17",
     },
     {
         id: "SB-USR-085",
@@ -177,7 +205,9 @@ const menu06Projects = [
         file: "SB-USR-085.html",
         status: "진행대기",
         start: "",
-        end: ""
+        end: "",
+        design: "",
+        dev: "2025-02-17",
     },
 ];
 export default menu06Projects;
