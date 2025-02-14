@@ -35,7 +35,7 @@ $button-types: ("primary", "secondary", "outline", "outline--round");
             }
             @else if $bs == "sm" {
                 padding: rem($btn-padding-y-sm) rem($btn-padding-x-sm);
-                min-width: rem(83px);
+                min-width: rem(53px);
                 height: rem(32px);
                 font-size: rem($btn-font-size-sm);
                 border-radius: $btn-border-radius-sm;
@@ -43,7 +43,7 @@ $button-types: ("primary", "secondary", "outline", "outline--round");
             }
             @else if $bs == "xsm" {
                 padding: rem($btn-padding-y-xsm) rem($btn-padding-x-xsm);
-                min-width: rem(57px);
+                min-width: rem(49px);
                 height: rem(28px);
                 font-size: rem($btn-font-size-xsm);
                 border-radius: $btn-border-radius-sm;

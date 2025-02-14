@@ -16,7 +16,7 @@
 
         <!-- 본문 바로가기 영역 -->
         <div id="kdhc-skip-link">
-            <a href="#breadcrumb">본문 바로가기</a>
+            <a href="#contents">본문 바로가기</a>
         </div>
         <!--// 본문 바로가기 영역  -->
 
@@ -50,20 +50,12 @@
                 <main class="main-contents">
                 
                     <!-- 컨텐츠 영역 -->
-                    <div class="contents">
-
-                        <!-- breadcrumbs start -->
-                        <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">정보자산</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">정보자산반출입내역</li>
-                            </ol>
-                        </nav>
-                        <!--// breadcrumbs end -->
+                    <div id="contents" class="contents">
 
                         <!-- page title start -->
                         <div class="page-title-wrap">
                             <h1 class="h-tit">정보자산반출입내역</h1>
+                            <span class="badge-text">정보자산 반·출입대장</span>
                         </div>
                         <!--// page title end -->
 
@@ -72,15 +64,10 @@
                             <!-- form start -->
                             <form>
                                 <fieldset>
-                                    <!-- top button area start -->
-                                    <div class="top-btn-area">
-                                        <button type="button" class="btn btn-primary lg">출력</button>
-                                        <button type="button" class="btn btn-primary lg">조회</button>
-                                    </div>
-                                    <!--// top button area end -->
 
                                     <!-- form-wrap start -->
-                                    <div class="form-wrap">
+                                    <!-- 2025-02-14 : type01 추가 -->
+                                    <div class="form-wrap type01">
                                         <!-- row -->
                                         <div class="form-row">
                                             <div class="col">
@@ -111,16 +98,16 @@
                                                 </div>
                                             </div>
                                             <div class="col">
-                                                <div class="form-label">자산관리번호</div>
+                                                <div class="form-label">기안자</div>
                                                 <div class="form-group">
                                                     <!-- input search group start -->
-                                                    <div class="input-search-group is-error">
-                                                        <input type="search" class="form-control" id="search1" value="" placeholder="자산관리번호 입력">
-                                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search2" value="" placeholder="기안자 입력">
+                                                        <label class="input-group-text hidden" for="search2"><i class="icon search"></i></label>
                                                     </div>
                                                     <!--// input search group end -->
-                                                    <!-- 에러 문구 -->
-                                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
@@ -137,7 +124,7 @@
                                                         </select>
                                                     </div>
                                                     <!-- 에러 문구 -->
-                                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
@@ -145,15 +132,15 @@
                                         <!-- row -->
                                         <div class="form-row">
                                             <div class="col">
-                                                <div class="form-label">기안자</div>
+                                                <div class="form-label">자산관리번호</div>
                                                 <div class="form-group">
                                                     <!-- input search group start -->
-                                                    <div class="input-search-group">
-                                                        <input type="search" class="form-control" id="search2" value="" placeholder="기안자 입력">
-                                                        <label class="input-group-text" for="search2"><i class="icon search"></i></label>
+                                                    <div class="input-search-group is-error">
+                                                        <input type="search" class="form-control" id="search1" value="" placeholder="자산관리번호 입력">
+                                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
                                                     </div>
                                                     <!--// input search group end -->
-                                                    <!-- 에러 문구 : hidden -->
+                                                    <!-- 에러 문구 -->
                                                     <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
                                                 </div>
@@ -191,9 +178,13 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="form-row search-btn">
+                                            <button type="button" class="btn btn-primary lg">조회</button>
+                                        </div>
                                         <!--// row end -->
                                     </div>
                                     <!--// form-wrap end -->
+
                                 </fieldset>
                             </form>
                             <!--// form end -->
@@ -215,8 +206,9 @@
 
                             <!-- grid top button start -->
                             <div class="grid-top-btn">
-                                <button type="button" class="btn btn-outline btn-sm">반출기안</button>
-                                <button type="button" class="btn btn-outline btn-sm">반입기안</button>
+                                <button type="button" class="btn btn-outline btn-sm">불용반출기안</button>
+                                <button type="button" class="btn btn-outline btn-sm">등록기안</button>
+                                <button type="button" class="btn btn-secondary btn-sm">출력</button>
                             </div>
                             <!--// grid top button end -->
                         </article>

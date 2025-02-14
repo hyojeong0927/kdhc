@@ -36,11 +36,11 @@ $modal-size: ('lg', 'md', 'sm');
            }
            .section {
                 &:not(:last-of-type) {
-                    padding: 0 0 rem(40px);
+                    padding: 0 0 rem($modal-section-btm);
                 }
            }
            .section-sub {
-                padding: rem(28px) rem(40px);
+                padding: rem(28px) rem($modal-section-btm);
                 border-radius: rem(12px);
                 background-color: $white;
                 box-shadow:0 0 rem(12px) 0 rgba($black, 0.08);
@@ -73,7 +73,9 @@ $modal-size: ('lg', 'md', 'sm');
                     }
                 }
                 .modal-body {
-                    padding: rem(20px) rem(40px) rem(16px);
+                    .inner {
+                        padding: rem(20px) rem(40px) rem(16px);
+                    }
                 }
             }
             @else if $ms == "md" {

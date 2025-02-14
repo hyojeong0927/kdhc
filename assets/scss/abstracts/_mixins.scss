@@ -40,6 +40,8 @@
         align-items: center;
     } @else if $alignItems == 'end' {
         align-items: flex-end;
+    } @else if $alignItems == 'baseline' {
+      align-items: baseline;
     } @else {
         align-items: normal;
     }

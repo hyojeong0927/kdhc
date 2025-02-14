@@ -164,6 +164,9 @@ textarea {
         @extend %input-error;
     }
 }
+.input-date-group {
+    min-width: rem(144px);
+}
 .input-search-group {
     flex: none;
     width: 100%;

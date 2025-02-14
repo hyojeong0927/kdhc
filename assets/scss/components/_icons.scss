@@ -5,44 +5,44 @@ $icon: 'icon';
 
 .#{$icon} {
     // header
-    @include icon("h1-logo", rem(64px), rem(50px), "/assets/images/svg/logo.svg");
-    @include icon("h1-logo-txt", rem(157px), rem(62px), "/assets/images/svg/logo-txt.svg");
-    @include icon("flag", rem(24px), rem(16px), "/assets/images/svg/flag.svg");
+    @include icon("h1-logo", rem(64px), rem(50px), "#{$img-root}/images/svg/logo.svg");
+    @include icon("h1-logo-txt", rem(157px), rem(62px), "#{$img-root}/images/svg/logo-txt.svg");
+    @include icon("flag", rem(24px), rem(16px), "#{$img-root}/images/svg/flag.svg");
     
     // header util
-    @include icon("clipboard", rem(20px), rem(20px), "/assets/images/svg/clipboard.svg");
-    @include icon("calendar-check", rem(20px), rem(20px), "/assets/images/svg/calendar-check.svg");
-    @include icon("file-check", rem(20px), rem(20px), "/assets/images/svg/file-check.svg");
-    @include icon("user-circle", rem(20px), rem(20px), "/assets/images/svg/user-circle.svg");
+    @include icon("clipboard", rem(20px), rem(20px), "#{$img-root}/images/svg/clipboard.svg");
+    @include icon("calendar-check", rem(20px), rem(20px), "#{$img-root}/images/svg/calendar-check.svg");
+    @include icon("file-check", rem(20px), rem(20px), "#{$img-root}/images/svg/file-check.svg");
+    @include icon("user-circle", rem(20px), rem(20px), "#{$img-root}/images/svg/user-circle.svg");
     
     // lnb
-    @include icon("arrow-expansion", rem(32px), rem(32px), "/assets/images/svg/arrow-expansion.svg");
-    @include icon("arrow-close", rem(32px), rem(32px), "/assets/images/svg/arrow-close.svg");
+    @include icon("arrow-expansion", rem(32px), rem(32px), "#{$img-root}/images/svg/arrow-expansion.svg");
+    @include icon("arrow-close", rem(32px), rem(32px), "#{$img-root}/images/svg/arrow-close.svg");
 
     // components
-    @include icon("calendar", rem(20px), rem(20px), "/assets/images/svg/calendar.svg");
-    @include icon("calendar-on", rem(20px), rem(20px), "/assets/images/svg/calendar-on.svg");
-    @include icon("arrow-down", rem(20px), rem(20px), "/assets/images/svg/arrow-down.svg");
-    @include icon("search", rem(20px), rem(20px), "/assets/images/svg/search.svg");
-    @include icon("search-on", rem(20px), rem(20px), "/assets/images/svg/search-on.svg");
-    @include icon("checked", rem(12px), rem(12px), "/assets/images/svg/checked.svg");
-    @include icon("checked-disabled", rem(12px), rem(12px), "/assets/images/svg/checked-disabled.svg");
-    @include icon("radio-checked", rem(20px), rem(20px), "/assets/images/svg/radio-checked.svg");
-    @include icon("close", rem(32px), rem(32px), "/assets/images/svg/close.svg");
-    @include icon("empty", rem(40px), rem(40px), "/assets/images/svg/ag-grid-empty.svg");
+    @include icon("calendar", rem(20px), rem(20px), "#{$img-root}/images/svg/calendar.svg");
+    @include icon("calendar-on", rem(20px), rem(20px), "#{$img-root}/images/svg/calendar-on.svg");
+    @include icon("arrow-down", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-down.svg");
+    @include icon("search", rem(20px), rem(20px), "#{$img-root}/images/svg/search.svg");
+    @include icon("search-on", rem(20px), rem(20px), "#{$img-root}/images/svg/search-on.svg");
+    @include icon("checked", rem(12px), rem(12px), "#{$img-root}/images/svg/checked.svg");
+    @include icon("checked-disabled", rem(12px), rem(12px), "#{$img-root}/images/svg/checked-disabled.svg");
+    @include icon("radio-checked", rem(20px), rem(20px), "#{$img-root}/images/svg/radio-checked.svg");
+    @include icon("close", rem(32px), rem(32px), "#{$img-root}/images/svg/close.svg");
+    @include icon("empty", rem(40px), rem(40px), "#{$img-root}/images/svg/ag-grid-empty.svg");
     
     // step
-    @include icon("step-doc", rem(48px), rem(48px), "/assets/images/svg/step-doc.svg");
-    @include icon("step-reject", rem(48px), rem(48px), "/assets/images/svg/step-reject.svg");
-    @include icon("step-check", rem(48px), rem(48px), "/assets/images/svg/step-check.svg");
+    @include icon("step-doc", rem(48px), rem(48px), "#{$img-root}/images/svg/step-doc.svg");
+    @include icon("step-reject", rem(48px), rem(48px), "#{$img-root}/images/svg/step-reject.svg");
+    @include icon("step-check", rem(48px), rem(48px), "#{$img-root}/images/svg/step-check.svg");
 
     // pagination arrow
-    @include icon("arrow-left", rem(20px), rem(20px), "/assets/images/svg/arrow-left.svg");
-    @include icon("arrow-left-off", rem(20px), rem(20px), "/assets/images/svg/arrow-left-off.svg");
-    @include icon("arrow-right", rem(20px), rem(20px), "/assets/images/svg/arrow-right.svg");
-    @include icon("arrow-right-off", rem(20px), rem(20px), "/assets/images/svg/arrow-right-off.svg");
-    @include icon("arrow-first", rem(20px), rem(20px), "/assets/images/svg/arrow-first.svg");
-    @include icon("arrow-first-off", rem(20px), rem(20px), "/assets/images/svg/arrow-first-off.svg");
-    @include icon("arrow-last", rem(20px), rem(20px), "/assets/images/svg/arrow-last.svg");
-    @include icon("arrow-last-off", rem(20px), rem(20px), "/assets/images/svg/arrow-last-off.svg");
+    @include icon("arrow-left", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-left.svg");
+    @include icon("arrow-left-off", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-left-off.svg");
+    @include icon("arrow-right", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-right.svg");
+    @include icon("arrow-right-off", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-right-off.svg");
+    @include icon("arrow-first", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-first.svg");
+    @include icon("arrow-first-off", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-first-off.svg");
+    @include icon("arrow-last", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-last.svg");
+    @include icon("arrow-last-off", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-last-off.svg");
 }

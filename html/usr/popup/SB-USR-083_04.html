@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko" data-kdhc-mode="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDHC</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../../css/index.css">
+    <!-- script -->
+    <script src="../../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script type="module" src="../../../assets/js/common.js"></script>
+</head>
+<body>
+    <div id="pop-wrap" class="kdhc-pop-wrap">
+        <header class="kdhc-pop-header">
+            <h1 class="pop-title" id="staticBackdropLabel">정보자산반출입내역 반입 등록</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </header>
+        <!-- 팝업 컨테이너 영역 -->
+        <section class="kdhc-pop-container">
+            <div class="inner">
+                <!-- 팝업 컨텐츠 영역 -->
+                <div class="contents">
+                    <!-- breadcrumbs start -->
+                    <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">정보자산</a></li>
+                            <li class="breadcrumb-item"><a href="#">정보자산반출입내역</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">정보자산반출입내역 반입 등록</li>
+                        </ol>
+                    </nav>
+                    <!--// breadcrumbs end -->
+
+                    <!-- 기본정보 -->
+                    <article class="section">
+                        <!-- section tit start -->
+                        <div class="title-wrap">
+                            <h3 class="sec-tit">기본정보</h3>
+                        </div>
+                        <!--// section tit end -->
+
+                        <!-- input form -->
+                        <div class="input-form-area">
+                            <!-- form start -->
+                             <form>
+                                <fieldset>
+                                    <!-- form-wrap start -->
+                                    <div class="form-wrap type01">
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-label">자산관리번호</div>
+                                                <div class="form-group">
+                                                    <!-- input search group start -->
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search1" value="화성-ST-노트북 001" placeholder="자산관리번호 입력">
+                                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                                    </div>
+                                                    <!--// input search group end -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-label">시스템 명</div>
+                                                <div class="form-group">
+                                                    <div class="input-txt">네트워크설비 유지보수</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-label">업체 명</div>
+                                                <div class="form-group">
+                                                    <!-- input group -->
+                                                    <div class="input-group is-error">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="업체 명 입력" value="(주)업체명">
+                                                        <label for="input-text" class="hidden">업체 명</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-label">일자</div>
+                                                <div class="form-group">
+                                                    <!-- datepicker -->
+                                                    <div class="input-date-group is-error">
+                                                        <input type="text" id="singleDate0" class="form-control datepicker" value="" placeholder="YYYY-MM-DD">
+                                                        <label class="input-group-text" for="singleDate0"><i class="icon calendar"></i></label>
+                                                    </div>
+                                                    <!--// datepicker -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-label">보안대책</div>
+                                                <div class="form-group">
+                                                    <!-- input group -->
+                                                    <div class="input-group is-error">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="보안대책 입력" value="">
+                                                        <label for="input-text" class="hidden">보안대책</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-label">시간</div>
+                                                <div class="form-group">
+                                                    <!-- input time group -->
+                                                    <div class="input-time-group is-error">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>HH</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                        </select>
+                                                        <div class="to">:</div>
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>MM</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// input time group -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-label">사유</div>
+                                                <div class="form-group">
+                                                    <!-- input group -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="사유 내용 입력" value="">
+                                                        <label for="input-text" class="hidden">사유</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--// row end -->
+                                    </div>
+                                    <!--// form-wrap end -->
+                                </fieldset>
+                             </form>
+                            <!-- form end -->
+                        </div>
+                        <!--// input form -->
+                    </article>
+                    <!--// 기본정보 -->
+
+                    <!-- 결재정보 -->
+                    <article class="section">
+
+                        <!-- section tit start -->
+                        <div class="title-wrap">
+                            <h3 class="sec-tit">결재정보</h3>
+                        </div>
+                        <!--// section tit end -->
+
+                        <div class="section-sub">
+                            <!-- 결재 컴퍼넌트 영역 -->
+                            <div class="approve">
+
+                                <div class="approve-sec">
+                                    <div class="title-wrap">
+                                        <h6 class="tit">결재정보</h4>
+                                    </div>
+                                    <!-- input form -->
+                                    <div class="input-form-area">
+                                        <!-- form start -->
+                                        <form>
+                                            <fieldset>
+                                                <!-- form-wrap start -->
+                                                <div class="form-wrap type02">
+                                                    <!-- row -->
+                                                    <div class="form-row">
+                                                        <div class="col">
+                                                            <div class="form-label">기안일</div>
+                                                            <div class="form-group">
+                                                                <div class="input-txt"><!-- 텍스트 영역 --></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-label">결재 명</div>
+                                                            <div class="form-group">
+                                                                <div class="input-txt"><!-- 텍스트 영역 --></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--// row end-->
+                                                </div>
+                                                <!--// form-wrap end -->
+                                            </fieldset>
+                                        </form>
+                                        <!-- form end -->
+                                    </div>
+                                    <!--// input form -->
+                                </div>
+
+                                <div class="approve-sec">
+                                    <div class="title-wrap">
+                                        <h6 class="tit">결재상태</h4>
+                                    </div>
+                                    <!-- 결재상태 -->
+                                    <!-- step start -->
+                                    <div class="process-status">
+                                        <!-- step start -->
+                                        <div class="step step-lg">
+                                            <ul class="step-list">
+                                                <li class="step-done">
+                                                    <dl>
+                                                        <dt><i class="step-img"></i></dt>
+                                                        <dd class="txt">기안자</dd>
+                                                        <dd class="txt">계전보안부 이현경</dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="step-done">
+                                                    <dl>
+                                                        <dt><i class="step-img"></i></dt>
+                                                        <dd class="txt">관리부서 차(팀)장</dd>
+                                                        <dd class="txt">계전보안부 최원태</dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="step-done">
+                                                    <dl>
+                                                        <dt><i class="step-img"></i></dt>
+                                                        <dd class="txt">제어보호담당자</dd>
+                                                        <dd class="txt">계전보안부 오승환</dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="step-reject">
+                                                    <dl>
+                                                        <dt><i class="step-img"></i></dt>
+                                                        <dd class="txt">제어보호담당관</dd>
+                                                        <dd class="txt">계전보안부 김현수</dd>
+                                                    </dl>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- step end -->
+                                    </div>
+                                    <!-- step end -->
+                                <!--// 결재상태 -->
+                                </div>
+
+                                <div class="approve-sec type01">
+                                    <div class="title-wrap">
+                                        <h6 class="tit">결재진행</h4>
+                                    </div>
+                                    <!-- input form -->
+                                    <div class="input-form-area">
+                                        <!-- form start -->
+                                        <form>
+                                            <fieldset>
+                                                <!-- form-wrap start -->
+                                                <div class="form-wrap type02">
+                                                    <!-- row -->
+                                                    <div class="form-row">
+                                                        <div class="col">
+                                                            <div class="form-label">제어보호담당관</div>
+                                                            <div class="form-group">
+                                                                <div class="input-txt">김현수</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-label">결재일자</div>
+                                                            <div class="form-group">
+                                                                <div class="input-txt center">2024.12.12 11:30:24</div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="input-badge-group center">
+                                                                    <span class="badge badge-type01">결재완료</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- row -->
+                                                    <div class="form-row">
+                                                        <div class="col">
+                                                            <div class="form-label">제어보호담당자</div>
+                                                            <div class="form-group">
+                                                                <div class="input-txt">오승환</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-label">결재일자</div>
+                                                            <div class="form-group">
+                                                                <div class="input-txt center">2024.12.12 11:30:24</div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="input-badge-group center">
+                                                                    <span class="badge badge-type01">결재완료</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- row -->
+                                                    <div class="form-row">
+                                                        <div class="col">
+                                                            <div class="form-label">관리부서 차(팀)장</div>
+                                                            <div class="form-group">
+                                                                <div class="input-txt">최원태</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-label">결재일자</div>
+                                                            <div class="form-group">
+                                                                <div class="input-txt center">2024.12.12 11:30:24</div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="input-badge-group center">
+                                                                    <span class="badge badge-type01">결재완료</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- row -->
+                                                    <div class="form-row">
+                                                        <div class="col">
+                                                            <div class="form-label">기안자</div>
+                                                            <div class="form-group">
+                                                                <div class="input-txt">홍창기</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-label">기안일자</div>
+                                                            <div class="form-group">
+                                                                <div class="input-txt center">2024.12.12 11:30:24</div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="input-badge-group center">
+                                                                    <span class="badge badge-type01">기완완료</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--// row end-->
+                                                </div>
+                                                <!--// form-wrap end -->
+                                            </fieldset>
+                                        </form>
+                                        <!-- form end -->
+                                    </div>
+                                    <!--// input form -->
+                                </div>
+
+                            </div>
+                            <!--// 결재 컴퍼넌트 영역 -->
+                            <!-- bottom button area start -->
+                            <div class="bottom-btn-area">
+                                <button type="button" class="btn btn-secondary btn-md">회수</button>
+                                <button type="button" class="btn btn-secondary btn-md">결재</button>
+                            </div>
+                            <!--// bottom button area end -->
+                        </div>
+                    </article>
+                    <!--// 결재정보 -->
+                </div>
+                <!--// 팝업 컨텐츠 영역 -->
+            </div>
+        </section>
+        <!--// 팝업 컨테이너 영역 -->
+    </div>
+</body>
+</html>

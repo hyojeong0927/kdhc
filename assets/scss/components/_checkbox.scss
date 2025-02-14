@@ -45,13 +45,13 @@
     }
     &:checked {
         @extend %checkbox-checked;
-        --bs-form-check-bg-image: url(/assets/images/svg/checked.svg);
+        --bs-form-check-bg-image: url(#{$img-root}/images/svg/checked.svg);
         background-size: rem(12px) rem(12px);
 
         &[disabled] {
             @extend %checkbox-disabled;
             @extend %checkbox-checked-disabled;
-            --bs-form-check-bg-image: url(/assets/images/svg/checked-disabled.svg);
+            --bs-form-check-bg-image: url(#{$img-root}/images/svg/checked-disabled.svg);
         }
     }
     &[disabled] {
@@ -75,11 +75,11 @@
     &:checked {
         border: $form-check-input-checked-border-color;
         background-color: $form-check-input-checked-bg-color;
-        --bs-form-check-bg-image: url(/assets/images/svg/radio-checked.svg);
+        --bs-form-check-bg-image: url(#{$img-root}/images/svg/radio-checked.svg);
 
         &[disabled] {
             @extend %checkbox-disabled;
-            --bs-form-check-bg-image: url(/assets/images/svg/radio-checked-disabled.svg);
+            --bs-form-check-bg-image: url(#{$img-root}/images/svg/radio-checked-disabled.svg);
             background-size: rem(10px);
             background-position: center;
         }
@@ -94,7 +94,7 @@
     .form-check-input[type="checkbox"] {
         width: rem(40px);
         height: rem(24px);
-        background-image: url(/assets/images/svg/switch-default.svg);
+        background-image: url(#{$img-root}/images/svg/switch-default.svg);
         background-size: rem(20px);
         background-color: $input-border-color;
         background-position: left rem(3px) center;

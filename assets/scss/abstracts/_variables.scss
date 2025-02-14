@@ -226,22 +226,22 @@ $form-text-color: null;
 $btn-padding-y: 6px;
 $btn-padding-x: 12px;
 $btn-font-family: $font-family-base;
-$btn-font-size: 18px;
+$btn-font-size: $font-size-md;
 $btn-line-height: $line-height-base;
 $btn-letter-spacing: -0.42px;
 $btn-white-space: null;
 
 $btn-padding-y-xsm: 4px;
-$btn-padding-x-xsm: 12px;
-$btn-font-size-xsm: 14px;
+$btn-padding-x-xsm: 8px;
+$btn-font-size-xsm: $font-size-sm;
 
 $btn-padding-y-sm: 6px;
 $btn-padding-x-sm: 16px;
-$btn-font-size-sm: 14px;
+$btn-font-size-sm: $font-size-sm;
 
 $btn-padding-y-lg: 8px;
 $btn-padding-x-lg: 16px;
-$btn-font-size-lg: 18px;
+$btn-font-size-lg: $font-size-md;
 
 $btn-border-width: 2px;
 
@@ -266,7 +266,7 @@ $btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, bord
 // button end
 
 // badge start
-$badge-font-size:                   14px;
+$badge-font-size:                   $font-size-sm;
 $badge-font-weight:                 $font-weight-normal;
 $badge-color:                       $white;
 $badge-line-height:                 16.8px;
@@ -275,9 +275,15 @@ $badge-padding-x:                   8px;
 $badge-border-radius:               4px;
 // badge end
 
-// pagination start
+// modal start
 
-// pagination end
+$modal-section-btm: 40px;
+
+// modal end
+
+// image root
+// $img-root: '/static/assets'; //개발 이미지 경로
+$img-root: '../../assets';
 
 // z-index
 $zindex-levels: (
@@ -298,4 +304,4 @@ $zindex-modal:                      1055;
 $zindex-popover:                    1070;
 $zindex-tooltip:                    1080;
 $zindex-toast:                      1090;
-$zindex-skip: 10000;
+$zindex-skip:                       10000;
