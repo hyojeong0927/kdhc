@@ -170,8 +170,8 @@ const menu06Projects = [
     {
         id: "SB-USR-085_02",
         depth1: "정보자산",
-        depth2: "정보자산반출입내역 : type02",
-        depth3: "상세",
+        depth2: "정보자산반출입내역",
+        depth3: "상세 : 반려",
         type: "pop",
         folder: "usr",
         file: "SB-USR-085_02.html",

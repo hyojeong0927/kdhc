@@ -53,12 +53,15 @@
                     <div class="contents">
 
                         <!-- breadcrumbs start -->
-                        <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">정보자산</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">정보자산반출입내역</li>
-                            </ol>
+                        <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
+                            data-breadcrumb='[
+                            { "name": "정보자산", "url": "#" },
+                            { "name": "정보자산반출입내역", "url": "#" },
+                            { "name": "정보자산반출입내역 반입 등록", "url": "", "active": true }
+                            ]'
+                            data-visible="false">
                         </nav>
+                        <script type="module" src="../../assets/js/layouts/breadcrumb.js"></script>
                         <!--// breadcrumbs end -->
 
                         <!-- page title start -->
@@ -75,7 +78,7 @@
                             import { setupPopupListeners } from '../../assets/js/components/popup.js';
                         
                             const urlList = {
-                                large: './popup/SB-USR-083_03.html',
+                                large: './popup/SB-USR-085.html',
                             };
                             setupPopupListeners(urlList);
                         </script>

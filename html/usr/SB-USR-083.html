@@ -49,9 +49,15 @@
 
                 <main class="main-contents">
                     <!-- breadcrumbs start -->
-                    <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb">
-                        <script type="module" src="../../assets/js/layouts/breadcrumb.js"></script>
+                    <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
+                        data-breadcrumb='[
+                        { "name": "Home", "url": "../home/SB-USR-001.html" },
+                        { "name": "Category", "url": "#" },
+                        { "name": "Product", "url": "", "active": true }
+                        ]'
+                        data-visible="false">
                     </nav>
+                    <script type="module" src="../../assets/js/layouts/breadcrumb.js"></script>
                     <!--// breadcrumbs end -->
                     <!-- 컨텐츠 영역 -->
                     <div id="contents" class="contents">

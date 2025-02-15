@@ -23,13 +23,15 @@
                 <!-- 팝업 컨텐츠 영역 -->
                 <div class="contents">
                     <!-- breadcrumbs start -->
-                    <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">정보자산</a></li>
-                            <li class="breadcrumb-item"><a href="#">정보자산반출입내역</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">정보자산반출입내역 반입 등록</li>
-                        </ol>
+                    <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
+                        data-breadcrumb='[
+                        { "name": "정보자산", "url": "#" },
+                        { "name": "정보자산반출입내역", "url": "#" },
+                        { "name": "정보자산반출입내역 반입 등록", "url": "", "active": true }
+                        ]'
+                        data-visible="true">
                     </nav>
+                    <script type="module" src="../../../assets/js/layouts/breadcrumb.js"></script>
                     <!--// breadcrumbs end -->
 
                     <!-- 기본정보 -->
@@ -230,28 +232,28 @@
                                         <!-- step start -->
                                         <div class="step step-lg">
                                             <ul class="step-list">
-                                                <li class="step-done">
+                                                <li class="step-current">
                                                     <dl>
                                                         <dt><i class="step-img"></i></dt>
                                                         <dd class="txt">기안자</dd>
                                                         <dd class="txt">계전보안부 이현경</dd>
                                                     </dl>
                                                 </li>
-                                                <li class="step-done">
+                                                <li class="step-default">
                                                     <dl>
                                                         <dt><i class="step-img"></i></dt>
                                                         <dd class="txt">관리부서 차(팀)장</dd>
                                                         <dd class="txt">계전보안부 최원태</dd>
                                                     </dl>
                                                 </li>
-                                                <li class="step-done">
+                                                <li class="step-default">
                                                     <dl>
                                                         <dt><i class="step-img"></i></dt>
                                                         <dd class="txt">제어보호담당자</dd>
                                                         <dd class="txt">계전보안부 오승환</dd>
                                                     </dl>
                                                 </li>
-                                                <li class="step-reject">
+                                                <li class="step-default">
                                                     <dl>
                                                         <dt><i class="step-img"></i></dt>
                                                         <dd class="txt">제어보호담당관</dd>
@@ -282,7 +284,15 @@
                                                         <div class="col">
                                                             <div class="form-label">제어보호담당관</div>
                                                             <div class="form-group">
-                                                                <div class="input-txt">김현수</div>
+                                                                <!-- input search group start -->
+                                                                <div class="input-search-group is-error">
+                                                                    <input type="search" class="form-control" id="search1" value="김현수" placeholder="제어보호담당관 입력">
+                                                                    <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                                                </div>
+                                                                <!--// input search group end -->
+                                                                <!-- 에러 문구 -->
+                                                                <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                                                <!--// 에러 문구 -->
                                                             </div>
                                                         </div>
                                                         <div class="col">
@@ -291,9 +301,7 @@
                                                                 <div class="input-txt center">2024.12.12 11:30:24</div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <div class="input-badge-group center">
-                                                                    <span class="badge badge-type01">결재완료</span>
-                                                                </div>
+                                                                <!-- badge 영역 -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -302,18 +310,24 @@
                                                         <div class="col">
                                                             <div class="form-label">제어보호담당자</div>
                                                             <div class="form-group">
-                                                                <div class="input-txt">오승환</div>
+                                                                <!-- input search group start -->
+                                                                <div class="input-search-group">
+                                                                    <input type="search" class="form-control" id="search1" value="오승환" placeholder="제어보호담당자 입력">
+                                                                    <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                                                </div>
+                                                                <!--// input search group end -->
+                                                                <!-- 에러 문구 -->
+                                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                                <!--// 에러 문구 -->
                                                             </div>
                                                         </div>
                                                         <div class="col">
                                                             <div class="form-label">결재일자</div>
                                                             <div class="form-group">
-                                                                <div class="input-txt center">2024.12.12 11:30:24</div>
+                                                                <div class="input-txt  center">2024.12.12 11:30:24</div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <div class="input-badge-group center">
-                                                                    <span class="badge badge-type01">결재완료</span>
-                                                                </div>
+                                                                <!-- badge 영역 -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -322,7 +336,15 @@
                                                         <div class="col">
                                                             <div class="form-label">관리부서 차(팀)장</div>
                                                             <div class="form-group">
-                                                                <div class="input-txt">최원태</div>
+                                                                <!-- input search group start -->
+                                                                <div class="input-search-group">
+                                                                    <input type="search" class="form-control" id="search1" value="최원태" placeholder="관리부서 차(팀)장 입력">
+                                                                    <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                                                </div>
+                                                                <!--// input search group end -->
+                                                                <!-- 에러 문구 -->
+                                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                                <!--// 에러 문구 -->
                                                             </div>
                                                         </div>
                                                         <div class="col">
@@ -331,9 +353,7 @@
                                                                 <div class="input-txt center">2024.12.12 11:30:24</div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <div class="input-badge-group center">
-                                                                    <span class="badge badge-type01">결재완료</span>
-                                                                </div>
+                                                                <!-- badge 영역 -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -342,7 +362,15 @@
                                                         <div class="col">
                                                             <div class="form-label">기안자</div>
                                                             <div class="form-group">
-                                                                <div class="input-txt">홍창기</div>
+                                                                <!-- input search group start -->
+                                                                <div class="input-search-group">
+                                                                    <input type="search" class="form-control" id="search1" value="이현경" placeholder="관리부서 차(팀)장 입력">
+                                                                    <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                                                </div>
+                                                                <!--// input search group end -->
+                                                                <!-- 에러 문구 -->
+                                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                                <!--// 에러 문구 -->
                                                             </div>
                                                         </div>
                                                         <div class="col">
