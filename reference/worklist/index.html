@@ -51,12 +51,25 @@
                     </select>
                 </div>
                 <div class="ul-select">
-                    <label for="projDesignTurn">디자인 우선순위</label>
+                    <label for="projPubStart">퍼블 시작일</label>
+                    <!-- 퍼블시작일 기준 필터 -->
+                    <select id="projPubStart">
+                        <option value="전체">전체</option>
+                        <option value="2025-02-10">2025-02-10</option>
+                        <option value="2025-02-17">2025-02-17</option>
+                        <option value="2025-02-24">2025-02-24</option>
+                        <option value="2025-03-04">2025-03-04</option>
+                        <option value="2025-03-10">2025-03-10</option>
+                    </select>
+                </div>
+                <div class="ul-select">
+                    <label for="projDesignTurn">디자인 유무</label>
                     <!-- 개발시작일 기준 필터 -->
                     <select id="projDesignTurn">
                         <option value="전체">전체</option>
-                        <option value="1순위">1순위</option>
-                        <option value="2순위">2순위</option>
+                        <option value="O">O</option>
+                        <option value="△">△ : 확인사항</option>
+                        <option value="X">X</option>
                     </select>
                 </div>
                 <div class="ul-select">
@@ -107,7 +120,7 @@
                             <th scope="col">진행상태</th>
                             <th scope="col">시작</th>
                             <th scope="col">완료</th>
-                            <th scope="col">디자인 우선순위</th>
+                            <th scope="col">디자인 유무</th>
                             <th scope="col">개발시작일</th>
                             <th scope="col">History</th>
                         </tr>

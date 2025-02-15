@@ -68,7 +68,7 @@
     gap: 20px;
 }
 .pub-srch .ul-select select {
-    width: 150px;
+    width: 100px;
 }
 .pub-srch .projCount {
     display: flex;

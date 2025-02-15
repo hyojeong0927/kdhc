@@ -67,18 +67,23 @@
                         </div>
                         <!--// page title end -->
 
-                        <!-- search start-->
-                        <!--// search end-->
+                        <!-- 팝업 호출 버튼 -->
+                        <button type="button" id="large-btn" class="btn btn-primary btn-lg">
+                            정보자산반출입내역 반입 등록
+                        </button>
+                        <!--// 팝업 호출 버튼 -->
 
-                        <!-- grid top start -->
-                        <!--// grid top end -->
+                        <!-- popup script -->
+                        <script type="module">
+                            import { setupPopupListeners } from '../../assets/js/components/popup.js';
 
-                        <!-- grid wrap start -->
-                        <!--// grid wrap end -->
-                        
-                        <!-- grid bottom start -->
-                        <!--// grid bottom end -->
-                        
+                            const urlList = {
+                                large: './popup/SB-USR-083_02.html',
+                            };
+
+                            setupPopupListeners(urlList);
+                        </script>
+                        <!--// popup script -->
                     </div>
                     <!--// 컨텐츠 영역 -->
 
@@ -93,11 +98,6 @@
             <script type="module" src="../../assets/js/layouts/footer.js"></script>
         </footer>
         <!--// 푸터 영역 -->
- 
     </div>
-    <!-- script wrap -->
-    <!--// script wrap -->
-    <!-- modal wrap -->
-    <!--// modal wrap -->
 </body>
 </html>
