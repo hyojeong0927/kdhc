@@ -13783,6 +13783,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   justify-content: flex-start;
   align-items: center;
   gap: 0.5rem;
+  width: 100%;
 }
 .datepicker-group .datepicker-btn-group {
   display: flex;

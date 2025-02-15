@@ -10,3 +10,7 @@ import "./vendors/ag-grid-community.min.js";
 import "./components/datepicker.js";
 // nav
 import "./components/nav.js";
+// breadcrumb
+import "./components/breadcrumb.js"
+// title
+import "./components/title.js"
