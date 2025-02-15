@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('.datepicker').datepicker({
         format: 'yyyy-mm-dd',
         autoclose: true,
-        language : "ko",
+        language: 'ko',
         todayHighlight: true,
         minViewMode: 1,
     });
