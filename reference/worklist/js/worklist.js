@@ -109,7 +109,9 @@ popupOverlay.addEventListener("click", closePopup);
 
 // counter
 function updateCounts(filteredProjects) {
-    const total = projects.length;
+    const excludedCount = projects.filter(p => p.status === "제외").length;
+    const total = projects.length - excludedCount;
+
     const modiCount = projects.filter(p => p.modDate).length;
     
     const counts = {
@@ -121,6 +123,7 @@ function updateCounts(filteredProjects) {
         보류: projects.filter(p => p.status === "보류").length,
         제외: projects.filter(p => p.status === "제외").length,
         수정: modiCount,
+        제외: excludedCount,
     };
 
     const modiProjects = projects.filter(p => p.modDate);
