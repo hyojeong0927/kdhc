@@ -2,27 +2,27 @@ $(document).ready(function() {
     $('.datepicker').datepicker({
         format: 'yyyy-mm-dd',
         autoclose: true,
-        language: "ko",
+        language : "ko",
         todayHighlight: true,
         minViewMode: 1,
     });
 
-    var startDate = $('#startDate').datepicker({
+    $('#startDate').datepicker({
         format: 'yyyy-mm-dd',
         autoclose: true,
-        todayHighlight: true
+        todayHighlight: true,
+        language: 'ko'
     }).on('changeDate', function(e) {
-        var startDateVal = e.date;
-        $('#endDate').datepicker('setStartDate', startDateVal);
+        $('#endDate').datepicker('setStartDate', e.date);
     });
-
-    var endDate = $('#endDate').datepicker({
+    
+    $('#endDate').datepicker({
         format: 'yyyy-mm-dd',
         autoclose: true,
-        todayHighlight: true
+        todayHighlight: true,
+        language: 'ko'
     }).on('changeDate', function(e) {
-        var endDateVal = e.date;
-        $('#startDate').datepicker('setEndDate', endDateVal);
+        $('#startDate').datepicker('setEndDate', e.date);
     });
      
 });
