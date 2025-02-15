@@ -29,7 +29,7 @@
                         <option value="진행대기">진행대기</option>
                         <option value="진행중">진행중</option>
                         <option value="완료">완료</option>
-                        <option value="수정">수정</option>
+                        <!-- <option value="수정">수정</option> -->
                         <option value="보류">보류</option>
                         <option value="제외">제외</option>
                     </select>
@@ -60,6 +60,16 @@
                         <option value="2025-02-24">2025-02-24</option>
                         <option value="2025-03-04">2025-03-04</option>
                         <option value="2025-03-10">2025-03-10</option>
+                    </select>
+                </div>
+                <div class="ul-select">
+                    <label for="projModDate">수정일</label>
+                    <!-- 수정일 필터 -->
+                    <select id="projModDate">
+                        <option value="전체">전체</option>
+                        <option value="2025-02-14">2025-02-14</option>
+                        <option value="2025-02-15">2025-02-15</option>
+                        <option value="2025-02-16">2025-02-16</option>
                     </select>
                 </div>
                 <div class="ul-select">
@@ -120,6 +130,7 @@
                             <th scope="col">진행상태</th>
                             <th scope="col">시작</th>
                             <th scope="col">완료</th>
+                            <th scope="col">수정일</th>
                             <th scope="col">디자인 유무</th>
                             <th scope="col">개발시작일</th>
                             <th scope="col">History</th>

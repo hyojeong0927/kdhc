@@ -74,9 +74,13 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 15px;
     flex: 1;
     margin-left: auto;
+}
+.pub-srch .projCount span {
+    padding: 10px;
+    text-align: right;
 }
 .pub-tbl table {
     width: 100%;
@@ -117,6 +121,9 @@
     cursor: pointer;
 }
 /* 진행 상태에 따라 색상 지정 */
+.projCount span {
+    text-align: left;
+}
 .projCount i {
     font-weight: bold;
 }
