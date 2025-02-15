@@ -1,7 +1,6 @@
 // work data
 import { projects } from './data/index.js';
 
-// 
 const projStateSelect = document.getElementById("projState");
 const projCategorySelect = document.getElementById("projCategory");
 const tableBody = document.querySelector("tbody");
