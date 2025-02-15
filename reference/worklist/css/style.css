@@ -46,6 +46,11 @@
     font-size: 13px;
     font-weight: normal;
 }
+.pub-container header h1 small a {
+    color: #ddd;
+    font-size: 13px;
+    font-weight: normal;
+}
 .pub-container header nav ul {
     display: flex;
     align-items: center;
