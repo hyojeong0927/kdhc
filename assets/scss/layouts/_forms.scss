@@ -116,7 +116,7 @@
 }
 .datepicker-group {
     @include flex(true, "start", "center", rem(8px));
-
+    width: 100%;
     .datepicker-btn-group {
         @include flex(true, "start", "center", rem(4px));
     }
