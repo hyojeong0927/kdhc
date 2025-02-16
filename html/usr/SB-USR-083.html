@@ -443,95 +443,44 @@
                 cellClass: "cell-normal",
                 cellRenderer: (params) => {
                     const status = params.value;
+                    let stepsData = [];
+                    
                     if (status === "step01") {
-                        return `
-                            <div class="step step-sm">
-                                <ul class="step-list">
-                                    <li class="step-current">
-                                        <dl>
-                                            <dt><i class="step-img"></i></dt>
-                                            <dd class="txt">기안자</dd>
-                                            <dd class="txt">박동원</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="step-default">
-                                        <dl>
-                                            <dt><i class="step-img"></i></dt>
-                                            <dd class="txt">제어보호담당자</dd>
-                                            <dd class="txt">오승환</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="step-default">
-                                        <dl>
-                                            <dt><i class="step-img"></i></dt>
-                                            <dd class="txt">제어보호담당관</dd>
-                                            <dd class="txt">김현수</dd>
-                                        </dl>
-                                    </li>
-                                </ul>
-                            </div>
-                        `;
+                        stepsData = [
+                            { "status": "step-current", "title": "기안자", "name": "박동원" },
+                            { "status": "step-default", "title": "제어보호담당자", "name": "오승환" },
+                            { "status": "step-default", "title": "제어보호담당자", "name": "김현수" }
+                        ];
                     } else if (status === "step02") {
-                        return `
-                            <div class="step step-sm">
-                                <ul class="step-list">
-                                    <li class="step-done">
-                                        <dl>
-                                            <dt><i class="step-img"></i></dt>
-                                            <dd class="txt">기안자</dd>
-                                            <dd class="txt">박동원</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="step-current">
-                                        <dl>
-                                            <dt><i class="step-img"></i></dt>
-                                            <dd class="txt">제어보호담당자</dd>
-                                            <dd class="txt">오승환</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="step-default">
-                                        <dl>
-                                            <dt><i class="step-img"></i></dt>
-                                            <dd class="txt">제어보호담당관</dd>
-                                            <dd class="txt">김현수</dd>
-                                        </dl>
-                                    </li>
-                                </ul>
-                            </div>
-                        `;
+                        stepsData = [
+                            { "status": "step-done", "title": "기안자", "name": "박동원" },
+                            { "status": "step-current", "title": "제어보호담당자", "name": "오승환" },
+                            { "status": "step-default", "title": "제어보호담당관", "name": "김현수" }
+                        ];
                     } else if (status === "done") {
-                        return `
-                            <div class="step step-sm">
-                                <ul class="step-list">
-                                    <li class="step-done">
-                                        <dl>
-                                            <dt><i class="step-img"></i></dt>
-                                            <dd class="txt">기안자</dd>
-                                            <dd class="txt">박동원</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="step-done">
-                                        <dl>
-                                            <dt><i class="step-img"></i></dt>
-                                            <dd class="txt">제어보호담당자</dd>
-                                            <dd class="txt">오승환</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="step-done">
-                                        <dl>
-                                            <dt><i class="step-img"></i></dt>
-                                            <dd class="txt">제어보호담당관</dd>
-                                            <dd class="txt">김현수</dd>
-                                        </dl>
-                                    </li>
-                                </ul>
-                            </div>
-                        `;
-                    } else {
-                        return params.value || "";
+                        stepsData = [
+                            { "status": "step-done", "title": "기안자", "name": "박동원" },
+                            { "status": "step-done", "title": "제어보호담당자", "name": "오승환" },
+                            { "status": "step-done", "title": "제어보호담당관", "name": "김현수" }
+                        ];
                     }
+                    let stepListHtml = '<ul class="step-list">';
+                    stepsData.forEach(step => {
+                        stepListHtml += `
+                            <li class="${step.status}">
+                                <dl>
+                                    <dt><i class="step-img"></i></dt>
+                                    <dd class="txt">${step.title}</dd>
+                                    <dd class="txt">${step.name}</dd>
+                                </dl>
+                            </li>
+                        `;
+                    });
+                    stepListHtml += '</ul>';
+                    return `<div class="step step-sm">${stepListHtml}</div>`;
                 }
-            },
+
+            }
         ];
         let sampleGridApi;
 

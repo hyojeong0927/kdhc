@@ -14,3 +14,5 @@ import "./components/nav.js";
 import "./components/breadcrumb.js"
 // title
 import "./components/title.js"
+// bottom button
+import "./components/btmbutton.js"
