@@ -1,4 +1,4 @@
-export class BottomButtonArea {
+class GridButtonArea {
     constructor(selector) {
         this.elements = document.querySelectorAll(selector);
         if (this.elements.length) {
@@ -11,8 +11,8 @@ export class BottomButtonArea {
             const buttonsData = element.getAttribute("data-buttons");
 
             let buttons = [
-                { text: "", class: "btn btn-secondary btn-md" },
-                { text: "", class: "btn btn-secondary btn-md" }
+                { text: "", class: "btn btn-outline btn-sm" },
+                { text: "", class: "btn btn-outline btn-sm" }
             ];
 
             try {
@@ -20,10 +20,9 @@ export class BottomButtonArea {
                     const parsedButtons = JSON.parse(buttonsData);
                     buttons = parsedButtons.map(button => ({
                         text: button.text && button.text.trim() ? button.text : "기본 버튼",
-                        class: button.class || "btn btn-secondary btn-md"
+                        class: button.class || "btn btn-outline btn-sm"
                     }));
                 } else {
-                  
                     buttons = buttons.map(button => ({
                         ...button,
                         text: "기본 버튼"
@@ -41,10 +40,10 @@ export class BottomButtonArea {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    new BottomButtonArea(".bottom-btn-area");
+    new GridButtonArea(".grid-top-btn");
 
     // 버튼 클릭 이벤트 처리
-    document.querySelectorAll(".bottom-btn-area button").forEach(button => {
+    document.querySelectorAll(".grid-top-btn button").forEach(button => {
         button.addEventListener("click", function() {
             alert(`Clicked button: ${this.innerText}`);
         });
