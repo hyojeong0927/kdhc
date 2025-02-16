@@ -43,5 +43,5 @@ export class TitleSection {
 
 document.addEventListener("DOMContentLoaded", () => {
     new PageTitle(".page-title-wrap");
-    new TitleSection(".title-wrap"); // 여러 개의 요소를 처리할 수 있음
+    new TitleSection(".title-wrap");
 });

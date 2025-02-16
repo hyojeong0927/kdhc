@@ -23,7 +23,7 @@ export class BottomButtonArea {
                         class: button.class || "btn btn-secondary btn-md"
                     }));
                 } else {
-                    // 기본 버튼의 text가 비어 있다면 "기본 버튼"으로 설정
+                  
                     buttons = buttons.map(button => ({
                         ...button,
                         text: "기본 버튼"
