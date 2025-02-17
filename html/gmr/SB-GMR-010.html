@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KDHC</title>
     <!-- css -->
-    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/index.css" />
     <!-- script -->
     <script src="../../assets/js/vendors/jquery-3.7.1.min.js"></script>
     <script src="../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
-    <script src="../../assets/js/vendors/bootstrap-treeview.min.js"></script>
+    <script src="../../assets/js/vendors/bootstrap-treeview.js"></script>
     <script type="module" src="../../assets/js/common.js"></script>
+
+
 </head>
 <body>
     <div id="wrap" class="kdhc-wrap">
@@ -91,7 +93,8 @@
                         <div class="flex-form">
                             <div class="flex-form-left tree-view">
                                 <!-- tree -->
-                                <div id="tree" class="treeview"></div>
+                                <div id="treeview"></div>
+
                                 <script type="module" src="../../assets/js/components/treeView.js"></script>
                                 <!--// tree -->
                             </div>
@@ -234,7 +237,40 @@
  
     </div>
     <!-- script wrap -->
-   
+     <script>
+        $(document).ready(function() {
+    var treeData = [
+        {
+            text: "Root 1",
+            href: "#root1",
+            nodes: [
+                {
+                    text: "Child 1",
+                    href: "#child1"
+                },
+                {
+                    text: "Child 2",
+                    href: "#child2"
+                }
+            ]
+        },
+        {
+            text: "Root 2",
+            href: "#root2",
+            nodes: [
+                {
+                    text: "Child 3",
+                    href: "#child3"
+                }
+            ]
+        }
+    ];
+
+    $('#treeview').treeview({
+        data: treeData
+    });
+});
+     </script>
     <!--// script wrap -->
     
     <!-- modal wrap -->

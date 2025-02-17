@@ -1,20 +1,65 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Treeview</title>
-    <!-- css -->
-    <link rel="stylesheet" href="../../../css/index.css">
-    <!-- script -->
-    <script src="../../../assets/js/vendors/jquery-3.7.1.min.js"></script>
-    <script src="../../../assets/js/vendors/bootstrap-treeview.min.js"></script>
-    <script type="module" src="../../../assets/js/common.js"></script>
+    <title>Bootstrap Treeview Example</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-treeview@1.2.0/dist/bootstrap-treeview.min.css" rel="stylesheet">
 </head>
 <body>
-    <div id="tree"></div>
-    <button id="addNodeBtn">노드 추가</button>
-    <button id="removeNodeBtn">노드 삭제</button>
-    <script src="../../../assets/js/components/treeView.js"></script>
+
+<div class="container mt-5">
+    <h3>Bootstrap Treeview Example</h3>
+    <div id="treeview"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-treeview@1.2.0/dist/bootstrap-treeview.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    var treeData = [
+        {
+            text: "Root 1",
+            href: "#root1",
+            selectable: false,
+            nodes: [
+                {
+                    text: "Child 1",
+                    href: "#child1"
+                },
+                {
+                    text: "Child 2",
+                    href: "#child2"
+                }
+            ]
+        },
+        {
+            text: "Root 2",
+            href: "#root2",
+            selectable: false,
+            nodes: [
+                {
+                    text: "Child 3",
+                    href: "#child3"
+                }
+            ]
+        }
+    ];
+
+    $('#treeview').treeview({
+        data: treeData,
+        expandIcon: 'fa fa-plus',  // 펼침 아이콘 설정
+        collapseIcon: 'fa fa-minus',  // 접힘 아이콘 설정
+        nodeIcon: 'fa fa-folder', // 기본 아이콘 설정
+        levels: 1,  // 트리 깊이를 설정 (디폴트: 2)
+        showBorder: false, // 경계선 안 보이도록
+        highlightSelected: true, // 선택된 노드를 강조
+        enableLinks: true // 링크를 클릭할 수 있도록 설정
+    });
+});
+</script>
+
 </body>
 </html>
