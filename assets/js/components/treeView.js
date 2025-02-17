@@ -1,85 +1,37 @@
-var selectedNode = null;
-var treeData = [
-    {
-        text: "부모 노드 1",
-        nodes: [
-            { text: "자식 노드 1-1" },
-            { text: "자식 노드 1-2" }
-        ]
-    },
-    {
-        text: "부모 노드 2",
-        nodes: [
-            { text: "자식 노드 2-1" },
-            { text: "자식 노드 2-2" }
-        ]
-    }
-];
-
-function initTree() {
-    var tree = $('#tree').treeview({
-        data: treeData,
-        showBorder: false,
-        expandIcon: 'glyphicon glyphicon-plus',  
-        collapseIcon: 'glyphicon glyphicon-minus',  
-        nodeIcon: 'glyphicon glyphicon-folder-close',
-        onNodeSelected: function(event, data) {
-            selectedNode = data;
-            console.log("선택한 노드:", data.text);
+$(document).ready(function () {
+    var treeData = [
+        {
+            text: "루트 노드",
+            nodes: [
+                {
+                    text: "자식 노드 1",
+                    nodes: [
+                        { text: "손자 노드 1" },
+                        { text: "손자 노드 2" }
+                    ]
+                },
+                { text: "자식 노드 2" }
+            ]
         }
+    ];
+
+    $('#tree').treeview({
+        data: treeData,  // 트리 데이터
+        expandIcon: "glyphicon glyphicon-plus",  // 확장 아이콘
+        collapseIcon: "glyphicon glyphicon-minus",  // 축소 아이콘
+        nodeIcon: "glyphicon glyphicon-folder-open",  // 기본 노드 아이콘
+        enableLinks: true,
+        highlightSelected: true
     });
 
-    if (selectedNode) {
-        var nodeId = selectedNode.nodeId;
-        tree.treeview('selectNode', [nodeId, { silent: true }]);
-    }
-}
+    // 트리뷰 확장: 2단계까지 확장 (levels: 2)
+    $('#tree').treeview('expandAll', { levels: 2 });
 
-$(document).ready(function() {
-    initTree();
+    // 트리뷰 축소
+    $('#tree').treeview('collapseAll');
 
-    $('#addNodeBtn').click(function() {
-        if (!selectedNode) {
-            alert("추가할 부모 노드를 선택하세요!");
-            return;
-        }
-
-        var newNode = { text: "새로운 노드" };
-
-        if (!selectedNode.nodes) {
-            selectedNode.nodes = [];
-        }
-
-        selectedNode.nodes.push(newNode);
-
-        // Clear the tree and reinitialize it with updated data
-        $('#tree').treeview('remove');
-        initTree();
-    });
-
-    $('#removeNodeBtn').click(function() {
-        if (!selectedNode) {
-            alert("삭제할 노드를 선택하세요!");
-            return;
-        }
-
-        function removeNodeRecursive(nodes, target) {
-            return nodes
-                .map(node => {
-                    if (node.nodes) {
-                        node.nodes = removeNodeRecursive(node.nodes, target);
-                    }
-                    return node === target ? null : node;
-                })
-                .filter(node => node !== null);
-        }
-
-        // Remove the node from the treeData
-        treeData = removeNodeRecursive(treeData, selectedNode);
-        selectedNode = null;
-
-        // Clear the tree and reinitialize it with updated data
-        $('#tree').treeview('remove');
-        initTree();
+    // 선택된 노드 이벤트 (주석 해제 시 동작)
+    $('#tree').on('nodeSelected', function(event, data) {
+        alert("선택한 노드: " + data.text);
     });
 });

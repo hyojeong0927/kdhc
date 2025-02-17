@@ -7,26 +7,13 @@ export default class PageTitle {
     }
     
     init() {
-        
         const title = this.element.getAttribute("data-title") || "기본 제목";
         const badge = this.element.getAttribute("data-badge") || "";
+        const isVisible = this.element.getAttribute("data-badge-visible") === "true";
 
-        // const isVisible = badge.getAttribute("data-badge-visible") === "true";
-
-        // if (!isVisible) {
-        //     return `
-        //         <h1 class="h-tit">${title}</h1>
-        //     `;
-        //   } else if (isVisible) {
-        //     return `
-        //         <h1 class="h-tit">${title}</h1>
-        //         <span class="badge-text">${badge}</span>
-        //     `;
-        //   }
-          
         this.element.innerHTML = `
             <h1 class="h-tit">${title}</h1>
-            <span class="badge-text">${badge}</span>
+            ${isVisible ? `<span class="badge-text">${badge}</span>` : ""}
         `;
     }
 }

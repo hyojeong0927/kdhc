@@ -11,11 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
             { title: "기술보안", url: "#" },
             { title: "보안정책", url: "#" },
             { title: "클린PC", url: "#" },
-            { title: "정보자산", url: "#", active: true},
+            { title: "정보자산", url: "#"},
             { title: "관리자", url: "#"}
         ];
     }
-
     const navItems = menuData
         .map(item => 
             `<li class="nav-item">
