@@ -13641,6 +13641,9 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 .sidebar .lnb-list .lnb-item .lnb-link {
   text-decoration: none;
 }
+.sidebar .lnb-list .lnb-item .lnb-link.active, .sidebar .lnb-list .lnb-item .lnb-link:hover {
+  background-color: #3D6F94;
+}
 .sidebar .lnb-list .lnb-item.active, .sidebar .lnb-list .lnb-item:hover {
   border-color: #3D6F94;
   background-color: #3D6F94;
@@ -31342,58 +31345,19 @@ textarea.form-control {
 /* List
 ========================================================================== */
 .dlist.type01 {
-  display: grid;
-  grid-template-columns: 15rem 1fr;
-  grid-template-rows: repeat(2, 3rem);
-  grid-template-areas: "tit area1" "tit area2" "tit area3" "tit area4" "tit area5" "tit area6" "tit area7" "tit area8" "tit area9" "tit area10" "tit area11" "tit area12" "tit area13" "tit area14" "tit area15";
+  display: flex;
+  flex-direction: row;
 }
 .dlist.type01 dt {
-  grid-area: tit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.dlist.type01 dd.area1 {
-  grid-area: "area1";
-}
-.dlist.type01 dd.area2 {
-  grid-area: "area2";
-}
-.dlist.type01 dd.area3 {
-  grid-area: "area3";
-}
-.dlist.type01 dd.area4 {
-  grid-area: "area4";
-}
-.dlist.type01 dd.area5 {
-  grid-area: "area5";
-}
-.dlist.type01 dd.area6 {
-  grid-area: "area6";
-}
-.dlist.type01 dd.area7 {
-  grid-area: "area7";
-}
-.dlist.type01 dd.area8 {
-  grid-area: "area8";
-}
-.dlist.type01 dd.area9 {
-  grid-area: "area9";
-}
-.dlist.type01 dd.area10 {
-  grid-area: "area10";
-}
-.dlist.type01 dd.area11 {
-  grid-area: "area11";
-}
-.dlist.type01 dd.area12 {
-  grid-area: "area12";
-}
-.dlist.type01 dd.area13 {
-  grid-area: "area13";
-}
-.dlist.type01 dd.area14 {
-  grid-area: "area14";
-}
-.dlist.type01 dd.area15 {
-  grid-area: "area15";
+.dlist.type01 dd {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
 }
 .dlist.type01 .tit {
   padding: 0.63rem 0.75rem;
@@ -31402,11 +31366,6 @@ textarea.form-control {
   background-color: #fff;
 }
 .dlist.type01 .item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0px;
   width: 100%;
   border-width: 1px 1px 1px 0;
   border-style: solid;
@@ -31428,6 +31387,26 @@ textarea.form-control {
   width: 7.5rem;
   border-left: 1px solid #C5CDD5;
 }
+.container1 {
+  display: flex;
+  flex-direction: row;
+}
+.container1 .item {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 0;
+  border: 1px solid #ddd;
+}
+.container1 .rowspan {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  background-color: lightblue;
+  padding: 20px;
+  align-items: center;
+}
+
 /* Modal
 ========================================================================== */
 .modal .modal-content {

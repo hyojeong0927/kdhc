@@ -16,35 +16,18 @@ $grid-areas: ("area1", "area2", "area3", "area4", "area5", "area6", "area7", "ar
     @each $dt in $dlist-types {
         &.#{$dt} {
             @if $dt == "type01" {
-                display: grid;
-                grid-template-columns: rem(240px) 1fr;
-                grid-template-rows: repeat(2, rem(48px));
-                grid-template-areas: 
-                    "tit area1"
-                    "tit area2"
-                    "tit area3"
-                    "tit area4"
-                    "tit area5"
-                    "tit area6"
-                    "tit area7"
-                    "tit area8"
-                    "tit area9"
-                    "tit area10"
-                    "tit area11"
-                    "tit area12"
-                    "tit area13"
-                    "tit area14"
-                    "tit area15";
+                display: flex;
+                flex-direction: row;
                 dt {
-                    grid-area: tit;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
                 }
                 dd {
-                    @each $area in $grid-areas {
-                        &.#{'area' + index($grid-areas, $area)} {
-                            grid-area: $area;
-                        }
-                    }
-
+                    display: flex;
+                    flex-direction: column;
+                    flex-grow: 2;
                 }
                 .tit {
                     padding: rem(10px) rem(12px);
@@ -53,7 +36,6 @@ $grid-areas: ("area1", "area2", "area3", "area4", "area5", "area6", "area7", "ar
                     background-color: $white;
                 }
                 .item {
-                    @include flex(true, "between", "center");
                     width: 100%;
                     border: {
                         width: 1px 1px 1px 0;
@@ -83,4 +65,26 @@ $grid-areas: ("area1", "area2", "area3", "area4", "area5", "area6", "area7", "ar
             
         }
     }
+}
+
+.container1 {
+  display: flex;
+  flex-direction: row; // Align items horizontally
+
+  .item {
+    display: flex;
+    flex-direction: column; // Align children vertically
+    margin: 10px;
+    padding: 0;
+    border: 1px solid #ddd;
+  }
+
+  .rowspan {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2; // Makes the item take more space in its column, mimicking rowspan
+    background-color: lightblue;
+    padding: 20px;
+    align-items: center;
+  }
 }
