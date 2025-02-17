@@ -1,7 +1,7 @@
 /* Button
 ========================================================================== */
-$button-size: ("lg", "md", "sm", "xsm");
-$button-types: ("primary", "secondary", "outline", "outline--round");
+$button-size: ("lg", "md", "sm", "xsm", "xxsm");
+$button-types: ("primary", "secondary", "outline", "outline--round", "grid", "icon");
 
 %button-base {
     // 공통 스타일
@@ -48,6 +48,13 @@ $button-types: ("primary", "secondary", "outline", "outline--round");
                 font-size: rem($btn-font-size-xsm);
                 border-radius: $btn-border-radius-sm;
                 border-width: 1px !important;
+            }
+            @else if $bs == "xxsm" {
+                padding: rem($btn-padding-y-xxsm) rem($btn-padding-x-xxsm);
+                min-width: rem(50px);
+                height: rem(26px);
+                font-size: rem($btn-font-size-xxsm);
+                border-radius: $btn-border-radius-xxsm;
             }
         }
     }
@@ -123,6 +130,40 @@ $button-types: ("primary", "secondary", "outline", "outline--round");
                     color: $white;
                     background-color: $secondary;
                     border-color: $secondary;
+                }
+            }
+            @else if $bt == "grid" {
+                color: $gray-009;
+                background-color: $blue-005;
+                border-color: $gray-009;
+                &[disabled] {
+                    color: $btn-disabled;
+                    border-color: $btn-disabled;
+                    @extend %button-disabled;
+                }
+                &.active,
+                &:active,
+                &:focus,
+                &:hover {
+                    color: $gray-002;
+                    background-color: $blue-005;
+                    border-color: $gray-002;
+                }
+            }
+            @else if $bt == "icon" {
+                padding: 0;
+                border: 0;
+                border-radius: 0;
+                background-color: transparent;
+                &[disabled] {
+                    border-color: transparent;
+                }
+                &.active,
+                &:active,
+                &:focus,
+                &:hover {
+                    background-color: transparent;
+                    border-color: transparent;
                 }
             }
         }

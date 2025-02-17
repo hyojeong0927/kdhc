@@ -1,21 +1,26 @@
 /* Modal
 ========================================================================== */
-$modal-size: ('lg', 'md', 'sm');
+$modal-size: ('lg', 'md', 'smd', 'sm');
 
 %modal-base {
     .modal-content {
-        border-radius: rem(20px);
+        border-radius: 0;
         border: none;
         background-color: $body-bg;
     }
     .modal-header {
-        border-top-right-radius: rem(20px);
-        border-top-left-radius: rem(20px);
+        padding: rem(20px) rem(24px) rem(16px);
+        min-height: rem(68px);
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
         background-color: $primary;
         .modal-title {
             color: $white;
+            @include font-style($h3-font-size, $font-weight-bold, rem(32px));
         }
         .btn-close {
+            width: rem(32px);
+            height: rem(32px);
             @extend .icon;
             @extend .close;
             opacity: 1;
@@ -27,30 +32,17 @@ $modal-size: ('lg', 'md', 'sm');
         }
     }
     .modal-body {
+        padding: rem(20px) rem(24px) rem(20px);
         .inner {
-           .breadcrumb-wrap {
-                margin-bottom: rem(20px);
-           }
-           .title-wrap {
-                margin-bottom: rem(16px);
-           }
-           .section {
-                &:not(:last-of-type) {
-                    padding: 0 0 rem($modal-section-btm);
-                }
-           }
-           .section-sub {
-                padding: rem(28px) rem($modal-section-btm);
-                border-radius: rem(12px);
-                background-color: $white;
-                box-shadow:0 0 rem(12px) 0 rgba($black, 0.08);
-            }
+            
         }
     } 
     .modal-footer {
+        gap: rem(8px);
+        padding: 0 rem(24px) rem(24px);
         border: none;
-        border-bottom-right-radius: rem(20px);
-        border-bottom-left-radius: rem(20px);
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
         background-color: $body-bg;
     }
 }
@@ -61,28 +53,24 @@ $modal-size: ('lg', 'md', 'sm');
         .#{$ms} {
             @if $ms == "lg" {
                 &.modal-dialog {
-                    width: rem(1440px);
-                    min-width: rem(1440px);
-                    max-width: rem(1440px);
-                }
-                .modal-header {
-                    padding: rem(32px) rem(40px) rem(24px);
-                    min-height: rem(102px);
-                    .modal-title {
-                        @include font-style($font-size-xlg, $font-weight-bold, rem(38.4px));
-                    }
-                }
-                .modal-body {
-                    .inner {
-                        padding: rem(20px) rem(40px) rem(16px);
-                    }
+                    width: rem(1400px);
+                    min-width: rem(1400px);
+                    max-width: rem(1400px);
                 }
             }
             @else if $ms == "md" {
-
+                &.modal-dialog {
+                    width: rem(800px);
+                    min-width: rem(800px);
+                    max-width: rem(800px);
+                }
             }
-            @else if $ms == "sm" {
-
+            @else if $ms == "smd" {
+                &.modal-dialog {
+                    width: rem(600px);
+                    min-width: rem(600px);
+                    max-width: rem(600px);
+                }
             }
         }   
     }

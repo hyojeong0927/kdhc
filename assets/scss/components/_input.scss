@@ -90,12 +90,24 @@ input[type="url"] {
         @include hidden;
     }
 }
+input[type="number"] {
+    &.form-control {
+        text-align: right;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -moz-appearance: textfield;
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+}
 // input type style end
 
 // textarea satart
 textarea {
     &.form-control {
         @extend .form-control;
+        width: 100%;
         height: auto;
         min-height: rem($input-textarea-height);
     }

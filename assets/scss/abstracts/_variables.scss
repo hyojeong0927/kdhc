@@ -26,10 +26,10 @@ $red-002: #FFE9D9; // badge bg
 $orange-001: #FF8C14;
 
 // green
-$green-001: #3D6F94;
+$green-001: #3D6F94; // secondary
 
 // blue
-$blue-001: #384B5E;
+$blue-001: #384B5E; // primary
 $blue-002: #0D63D4;
 $blue-003: #D9EAFF; // badge bg
 $blue-004: #F2F5FA; // body bg
@@ -231,6 +231,10 @@ $btn-line-height: $line-height-base;
 $btn-letter-spacing: -0.42px;
 $btn-white-space: null;
 
+$btn-padding-y-xxsm: 3px;
+$btn-padding-x-xxsm: 12px;
+$btn-font-size-xxsm: $font-size-sm;
+
 $btn-padding-y-xsm: 4px;
 $btn-padding-x-xsm: 8px;
 $btn-font-size-xsm: $font-size-sm;
@@ -258,6 +262,7 @@ $btn-link-hover-color: $btn-link-color;
 $btn-link-disabled-color: $btn-link-color;
 
 $btn-border-radius: 6px;
+$btn-border-radius-xxsm: 2px;
 $btn-border-radius-sm: 4px;
 $btn-border-radius-lg: 6px;
 $btn-border-radius-xlg: 40px;

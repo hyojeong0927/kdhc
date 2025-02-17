@@ -1,5 +1,7 @@
 /* Forms
 ========================================================================== */
+$form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
+
 // form base
 %form-base {
     .form-wrap {
@@ -21,6 +23,15 @@
                 color: $primary;
                 @include font-style($font-size-base, $font-weight-medium, $line-height-base);
                 letter-spacing: rem(-1.5px);
+                &[aria-required="true"] {
+                    &::after {
+                        content: '*';
+                        display: inline-block;
+                        margin-left: rem(4px);
+                        color: $error;
+                        letter-spacing: inherit;
+                    }
+                }
             }
             .form-group {
                 @include flex(false, "center", "start");
@@ -55,31 +66,6 @@
                 }
             }
         }
-        &.type01 {
-            .form-row {
-                .col {
-                    &:not(:first-of-type) {
-                        @extend .col-3;
-                    }
-                    &:first-of-type {
-                        @extend .col-6;
-                        .form-label {
-                            flex: 0 0 rem(88px);
-                            min-width: rem(88px);
-                        }
-                    }
-                }
-            }
-        }
-        &.type02 {
-            .col {
-                &:first-of-type {
-                    .form-label {
-                        width: rem(200px);
-                    }
-                }
-            }
-        }
     }
 }
 
@@ -87,63 +73,81 @@
 .search-form-area {
    @extend %form-base;
    .form-wrap {
-        display: grid;
-        grid-template-columns: 1fr rem(176px);
-        grid-template-areas: 
-        "row-01 btn"
-        "row-02 btn";
-        padding-right: 0;
-        .form-row {
-            &:nth-of-type(1) {
-                grid-area: row-01;
-            }
-            &:nth-of-type(2) {
-                grid-area: row-02;
-            }
-            &:nth-of-type(3) {
-                grid-area: row-03;
-            }
-            &.search-btn {
-                align-items: center;
-                justify-content: center;
-                grid-area: btn;
-                .btn {
-                    min-width: rem(96px);
+        @each $ft in $form-types {
+            &.#{$ft} {
+                @if $ft == "type01" {
+                    display: grid;
+                    grid-template-columns: 1fr rem(176px);
+                    grid-template-areas: 
+                    "row-01 btn"
+                    "row-02 btn";
+                    padding-right: 0;
+
+                    .form-row {
+                        &:nth-of-type(1) {
+                            grid-area: row-01;
+                        }
+                        &:nth-of-type(2) {
+                            grid-area: row-02;
+                        }
+                        &:nth-of-type(3) {
+                            grid-area: row-03;
+                        }
+                        &.search-btn {
+                            align-items: center;
+                            justify-content: center;
+                            grid-area: btn;
+                            .btn {
+                                min-width: rem(96px);
+                            }
+                        }
+                        .col {
+                            &:not(:first-of-type) {
+                                @extend .col-3;
+                            }
+                            &:first-of-type {
+                                @extend .col-6;
+                                .form-label {
+                                    flex: 0 0 rem(88px);
+                                    min-width: rem(88px);
+                                }
+                            }
+                        }
+                    }
                 }
-            }
+                @else if $ft == "type02"  {
+                    @include flex(true, "start", "normal");
+                    padding: rem(9px) 0;
+                    .form-row {
+                        flex: 1;
+                        .col {
+                            padding: rem(5px) rem(20px);
+                            &:last-of-type {
+                                padding-right: 0;
+                            }
+                            .form-label {
+                                flex: none;
+                                max-width: rem(115px);
+                            }
+                        }
+                        &.search-btn {
+                            justify-content: center;
+                            align-items: normal;
+                            flex: none;
+                            padding-top: rem(4px);
+                            width: rem(176px);
+                            .btn {
+                                height: rem(42px);
+                            }
+                        }
+                    }
+                }
+            }  
         }
    }
 }
-.datepicker-group {
-    @include flex(true, "start", "center", rem(8px));
-    width: 100%;
-    .datepicker-btn-group {
-        @include flex(true, "start", "center", rem(4px));
-    }
-}
 // 검색 폼 end
 
-// validation
-.form-hint-invalid {
-    width: 100%;
-    color: $red-001;
-    @include font-style($font-size-sm, $font-weight-normal, $line-height-base);
-    &.hidden {
-        @include hidden;
-    }
-}
-// validation end
-
-// checkbox
-.form-check {
-    padding: rem($form-check-padding);
-    min-height: rem($form-check-min-height);
-    margin: rem($form-check-margin-bottom);
-
-    label {
-        margin-left: rem($form-check-label-left);
-    }
-}
 // 입력 폼
 .input-form-area {
     @extend %form-base;
@@ -186,13 +190,15 @@
                     padding: 0;
                 }
                 .form-label {
-                    padding: rem(18px) rem(24px);
+                    padding: rem(10px) rem(16px);
                     width: rem(160px);
                     min-width: rem(160px);
+                    min-height: rem(60px);
                     background-color: $blue-005;
                 }
                 .form-group {
-                    padding: rem(16px);
+                    padding: rem(10px) rem(16px);
+                    min-height: rem(60px);
                     background-color: transparent
                 }
             }
@@ -218,7 +224,11 @@
 .grid-wrap {
     margin-bottom: rem(20px);
 }
-
+.modal-dialog {
+    .grid-wrap {
+        margin-bottom: 0 !important;
+    }
+}
 // 결재 컴퍼넌트
 .approve {
     .approve-sec {
@@ -239,3 +249,68 @@
     }
 }
 // 결재 컴퍼넌트 end
+
+
+// form component group start
+// datepicer
+.datepicker-group {
+    @include flex(true, "start", "center", rem(8px));
+    width: 100%;
+    .datepicker-btn-group {
+        @include flex(true, "start", "center", rem(4px));
+    }
+}
+
+// validation
+.form-hint-invalid {
+    width: 100%;
+    color: $red-001;
+    @include font-style($font-size-sm, $font-weight-normal, $line-height-base);
+    &.hidden {
+        @include hidden;
+    }
+}
+
+// textarea
+.textarea-group {
+    width: 100%;
+    &.w-65 {
+        width: calc(100% - rem(47px));
+        height: rem(124px);
+        .form-control {
+            height: 100%;
+        }
+    }
+}
+
+// checkbox
+.form-check-group {
+    @include flex(true, "start", "center", rem(24px));
+}
+.form-check {
+    padding: rem($form-check-padding);
+    min-height: rem($form-check-min-height);
+    margin: rem($form-check-margin-bottom);
+
+    label {
+        margin-left: rem($form-check-label-left);
+        &.hidden {
+           visibility: hidden;
+        }
+    }
+}
+// component group end
+
+// form flex
+.flex-form {
+    @include flex(true, "between", "normal", rem(40px));
+    min-height: rem(560px);
+    .flex-form-left {
+        &.tree-view {
+            width: rem(382px);
+        }
+    }
+    .flex-form-right {
+        flex: 1;
+    }
+}

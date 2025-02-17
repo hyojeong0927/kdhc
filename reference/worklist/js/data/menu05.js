@@ -57,7 +57,7 @@ const menu05Projects = [
         end: "",
         modDate: "",
         design: "O",
-        dev: "",
+        dev: "2025-03-31",
     },
     {
         id: "SB-USR-063",
@@ -72,7 +72,7 @@ const menu05Projects = [
         end: "",
         modDate: "",
         design: "O",
-        dev: "",
+        dev: "2025-03-31",
     },
     {
         id: "SB-USR-064",
@@ -87,7 +87,7 @@ const menu05Projects = [
         end: "",
         modDate: "",
         design: "O",
-        dev: "",
+        dev: "2025-03-31",
     },
     {
         id: "SB-USR-065",

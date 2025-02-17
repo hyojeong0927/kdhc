@@ -22,11 +22,11 @@ export function openPopup(size, urlList) {
     let width = 1440, height = 1080;
 
     if (size === 'small') {
-        width = 300;
-        height = 200;
-    } else if (size === 'medium') {
         width = 600;
-        height = 400;
+        height = 434;
+    } else if (size === 'medium') {
+        width = 800;
+        height = 200;
     }
 
     openPopupWindow(url, width, height, `Popup${size}`);

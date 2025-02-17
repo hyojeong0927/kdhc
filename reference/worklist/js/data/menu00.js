@@ -12,7 +12,7 @@ const menu00Projects = [
         end: "",
         modDate: "",
         design: "O",
-        dev: "",
+        dev: "2025-04-07",
     },
     {
         id: "SB-USR-002",
@@ -27,7 +27,7 @@ const menu00Projects = [
         end: "",
         modDate: "",
         design: "△",
-        dev: "",
+        dev: "2025-04-14",
     },
     {
         id: "SB-USR-003",
@@ -72,7 +72,7 @@ const menu00Projects = [
         end: "",
         modDate: "",
         design: "X",
-        dev: "",
+        dev: "2025-03-31",
     },
     {
         id: "SB-USR-006",
@@ -87,7 +87,7 @@ const menu00Projects = [
         end: "",
         modDate: "",
         design: "X",
-        dev: "",
+        dev: "2025-04-14",
     },
     {
         id: "SB-USR-007",
@@ -102,7 +102,7 @@ const menu00Projects = [
         end: "",
         modDate: "",
         design: "X",
-        dev: "",
+        dev: "2025-04-14",
     },
     {
         id: "SB-USR-008",
@@ -117,7 +117,7 @@ const menu00Projects = [
         end: "",
         modDate: "",
         design: "O",
-        dev: "",
+        dev: "2025-03-31",
     },
     {
         id: "SB-USR-009",
@@ -132,7 +132,7 @@ const menu00Projects = [
         end: "",
         modDate: "",
         design: "O",
-        dev: "",
+        dev: "2025-03-31",
     },
     {
         id: "SB-USR-010",

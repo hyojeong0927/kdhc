@@ -832,7 +832,7 @@ progress {
   width: 16.66666667%;
 }
 
-.col-3, .input-form-area .form-wrap.type01 .form-row .col:not(:first-of-type), .search-form-area .form-wrap.type01 .form-row .col:not(:first-of-type) {
+.col-3, .search-form-area .form-wrap.type01 .form-row .col:not(:first-of-type) {
   flex: 0 0 auto;
   width: 25%;
 }
@@ -847,7 +847,7 @@ progress {
   width: 41.66666667%;
 }
 
-.col-6, .input-form-area .form-wrap.type01 .form-row .col:first-of-type, .search-form-area .form-wrap.type01 .form-row .col:first-of-type {
+.col-6, .search-form-area .form-wrap.type01 .form-row .col:first-of-type {
   flex: 0 0 auto;
   width: 50%;
 }
@@ -13466,7 +13466,7 @@ header nav .nav .nav-item .nav-link:hover::before, header nav .nav .nav-item .na
   position: absolute;
   top: 0;
   right: 0;
-  bottom: -0.56rem;
+  bottom: -0.25rem;
   left: 0;
 }
 header nav .nav .nav-item .nav-link:hover::before, header nav .nav .nav-item .nav-link:focus::before, header nav .nav .nav-item .nav-link.active::before {
@@ -13694,6 +13694,13 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   line-height: normal;
   letter-spacing: -0.09rem;
 }
+.input-form-area .form-wrap .form-row .form-label[aria-required=true]::after, .search-form-area .form-wrap .form-row .form-label[aria-required=true]::after {
+  content: "*";
+  display: inline-block;
+  margin-left: 0.25rem;
+  color: #DC3545;
+  letter-spacing: inherit;
+}
 .input-form-area .form-wrap .form-row .form-group, .search-form-area .form-wrap .form-row .form-group {
   display: flex;
   flex-direction: column;
@@ -13745,77 +13752,65 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   align-items: center;
   gap: 0px;
 }
-.input-form-area .form-wrap.type01 .form-row .col:first-of-type .form-label, .search-form-area .form-wrap.type01 .form-row .col:first-of-type .form-label {
-  flex: 0 0 5.5rem;
-  min-width: 5.5rem;
-}
-.input-form-area .form-wrap.type02 .col:first-of-type .form-label, .search-form-area .form-wrap.type02 .col:first-of-type .form-label {
-  width: 12.5rem;
-}
 
-.search-form-area .form-wrap {
+.search-form-area .form-wrap.type01 {
   display: grid;
   grid-template-columns: 1fr 11rem;
   grid-template-areas: "row-01 btn" "row-02 btn";
   padding-right: 0;
 }
-.search-form-area .form-wrap .form-row:nth-of-type(1) {
+.search-form-area .form-wrap.type01 .form-row:nth-of-type(1) {
   grid-area: row-01;
 }
-.search-form-area .form-wrap .form-row:nth-of-type(2) {
+.search-form-area .form-wrap.type01 .form-row:nth-of-type(2) {
   grid-area: row-02;
 }
-.search-form-area .form-wrap .form-row:nth-of-type(3) {
+.search-form-area .form-wrap.type01 .form-row:nth-of-type(3) {
   grid-area: row-03;
 }
-.search-form-area .form-wrap .form-row.search-btn {
+.search-form-area .form-wrap.type01 .form-row.search-btn {
   align-items: center;
   justify-content: center;
   grid-area: btn;
 }
-.search-form-area .form-wrap .form-row.search-btn .btn {
+.search-form-area .form-wrap.type01 .form-row.search-btn .btn {
   min-width: 6rem;
 }
-
-.datepicker-group {
+.search-form-area .form-wrap.type01 .form-row .col:first-of-type .form-label {
+  flex: 0 0 5.5rem;
+  min-width: 5.5rem;
+}
+.search-form-area .form-wrap.type02 {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
-  gap: 0.5rem;
-  width: 100%;
+  align-items: normal;
+  gap: 0px;
+  padding: 0.56rem 0;
 }
-.datepicker-group .datepicker-btn-group {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 0.25rem;
+.search-form-area .form-wrap.type02 .form-row {
+  flex: 1;
 }
-
-.form-hint-invalid {
-  width: 100%;
-  color: #DC3545;
-  font-size: 0.88rem;
-  font-weight: 400;
-  letter-spacing: -0.03rem;
-  line-height: normal;
+.search-form-area .form-wrap.type02 .form-row .col {
+  padding: 0.31rem 1.25rem;
 }
-.form-hint-invalid.hidden {
-  visibility: hidden;
-  width: 1px;
-  height: 1px;
+.search-form-area .form-wrap.type02 .form-row .col:last-of-type {
+  padding-right: 0;
 }
-
-.form-check {
-  padding: 0rem;
-  min-height: 1.25rem;
-  margin: 0rem;
+.search-form-area .form-wrap.type02 .form-row .col .form-label {
+  flex: none;
+  max-width: 7.19rem;
 }
-.form-check label {
-  margin-left: 0.25rem;
+.search-form-area .form-wrap.type02 .form-row.search-btn {
+  justify-content: center;
+  align-items: normal;
+  flex: none;
+  padding-top: 0.25rem;
+  width: 11rem;
 }
-
+.search-form-area .form-wrap.type02 .form-row.search-btn .btn {
+  height: 2.63rem;
+}
 .input-form-area {
   width: 100%;
 }
@@ -13856,13 +13851,15 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   padding: 0;
 }
 .input-form-area .form-wrap.type02 .form-row .form-label {
-  padding: 1.13rem 1.5rem;
+  padding: 0.63rem 1rem;
   width: 10rem;
   min-width: 10rem;
+  min-height: 3.75rem;
   background-color: #E3E8ED;
 }
 .input-form-area .form-wrap.type02 .form-row .form-group {
-  padding: 1rem;
+  padding: 0.63rem 1rem;
+  min-height: 3.75rem;
   background-color: transparent;
 }
 
@@ -13894,9 +13891,94 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   margin-bottom: 1.25rem;
 }
 
+.modal-dialog .grid-wrap {
+  margin-bottom: 0 !important;
+}
+
 .approve .approve-sec.type01 .form-wrap .form-row .col:first-of-type .form-label {
   width: 12.5rem;
   min-width: 12.5rem;
+}
+
+.datepicker-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+.datepicker-group .datepicker-btn-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.form-hint-invalid {
+  width: 100%;
+  color: #DC3545;
+  font-size: 0.88rem;
+  font-weight: 400;
+  letter-spacing: -0.03rem;
+  line-height: normal;
+}
+.form-hint-invalid.hidden {
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+.textarea-group {
+  width: 100%;
+}
+.textarea-group.w-65 {
+  width: calc(100% - 2.94rem);
+  height: 7.75rem;
+}
+.textarea-group.w-65 .form-control, .textarea-group.w-65 input[type=text],
+.textarea-group.w-65 input[type=number],
+.textarea-group.w-65 input[type=email],
+.textarea-group.w-65 input[type=password],
+.textarea-group.w-65 input[type=tel],
+.textarea-group.w-65 input[type=url] {
+  height: 100%;
+}
+
+.form-check-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.form-check {
+  padding: 0rem;
+  min-height: 1.25rem;
+  margin: 0rem;
+}
+.form-check label {
+  margin-left: 0.25rem;
+}
+.form-check label.hidden {
+  visibility: hidden;
+}
+
+.flex-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: normal;
+  gap: 2.5rem;
+  min-height: 35rem;
+}
+.flex-form .flex-form-left.tree-view {
+  width: 23.88rem;
+}
+.flex-form .flex-form-right {
+  flex: 1;
 }
 
 /* Main
@@ -13995,6 +14077,61 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 
 /* Box
 ========================================================================== */
+.box-wrap.type01 {
+  min-width: 15rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #384B5E #C5CDD5 #C5CDD5 #C5CDD5;
+}
+.box-wrap.type01 .head {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: -0.03rem;
+  line-height: normal;
+  min-height: 2.56rem;
+  color: #384B5E;
+  border-bottom: 1px solid #C5CDD5;
+  background-color: #E3E8ED;
+}
+.box-wrap.type01 .cont {
+  background-color: #fff;
+}
+.box-wrap.type01 .cont .ulist .item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  padding: 0.63rem 0.75rem;
+  min-height: 2.44rem;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: -0.03rem;
+  line-height: normal;
+}
+.box-wrap.type01 .cont .ulist .item:not(:last-of-type) {
+  border-bottom: 1px solid #C5CDD5;
+}
+.box-wrap.type01 .cont .ulist .item a {
+  color: #18191C;
+  text-decoration: none;
+}
+.box-wrap.type01 .cont .ulist .item.active {
+  font-weight: 700;
+  background-color: #fff;
+}
+.box-wrap.type01 .cont .ulist .item.active a {
+  color: #FF8C14;
+}
+.box-wrap-detail .dlist {
+  width: 100%;
+}
+
 /* Button
 ========================================================================== */
 .btn {
@@ -14006,7 +14143,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   border-style: solid;
 }
 
-.btn.btn-outline--round[disabled], .btn.btn-outline[disabled], .btn.btn-secondary[disabled], .btn.btn-primary[disabled] {
+.btn.btn-grid[disabled], .btn.btn-outline--round[disabled], .btn.btn-outline[disabled], .btn.btn-secondary[disabled], .btn.btn-primary[disabled] {
   opacity: 1;
 }
 
@@ -14039,6 +14176,13 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   font-size: 0.88rem;
   border-radius: 4px;
   border-width: 1px !important;
+}
+.btn.btn-xxsm {
+  padding: 0.19rem 0.75rem;
+  min-width: 3.13rem;
+  height: 1.63rem;
+  font-size: 0.88rem;
+  border-radius: 2px;
 }
 .btn.btn-primary {
   color: #fff;
@@ -14095,6 +14239,33 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   color: #fff;
   background-color: #3D6F94;
   border-color: #3D6F94;
+}
+.btn.btn-grid {
+  color: #6C757D;
+  background-color: #E3E8ED;
+  border-color: #6C757D;
+}
+.btn.btn-grid[disabled] {
+  color: #C8C8C8;
+  border-color: #C8C8C8;
+}
+.btn.btn-grid.active, .btn.btn-grid:active, .btn.btn-grid:focus, .btn.btn-grid:hover {
+  color: #18191C;
+  background-color: #E3E8ED;
+  border-color: #18191C;
+}
+.btn.btn-icon {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+}
+.btn.btn-icon[disabled] {
+  border-color: transparent;
+}
+.btn.btn-icon.active, .btn.btn-icon:active, .btn.btn-icon:focus, .btn.btn-icon:hover {
+  background-color: transparent;
+  border-color: transparent;
 }
 
 .top-btn-area {
@@ -14382,6 +14553,9 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   line-height: 1.05rem;
   font-weight: 500;
 }
+.ag-root-wrapper .ag-body-viewport {
+  height: auto !important;
+}
 .ag-root-wrapper .ag-row:not(:last-of-type) {
   border-bottom: 1px solid #C5CDD5;
 }
@@ -14447,7 +14621,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.63rem 0.75rem;
+  padding: 0.56rem 0.75rem;
   line-height: 1.19rem;
   text-align: center;
   white-space: normal;
@@ -14474,6 +14648,48 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 //@include icon($icon-name, $width, $height, $url)
 ========================================================================== */
 .icon, #kdhc-masthead .nuri-txt::before, .form-select, .step .step-done .step-img, .step .step-reject .step-img, .step .step-current .step-img, .step .step-default .step-img, .kdhc-pop-header .btn-close, .modal .modal-header .btn-close, header .logo .logo-img, header .logo .logo-txt, header .util .util-01, header .util .util-02, header .util .util-03, header .util .util-04, nav.page-navigation .pagination .page-item.first .page-link::before, nav.page-navigation .pagination .page-item.last .page-link::before, nav.page-navigation .pagination .page-item.next .page-link::before, nav.page-navigation .pagination .page-item.prev .page-link::before, .empty .empty-img {
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
   display: inline-block;
   padding: 0;
   background-size: 100%;
@@ -30813,6 +31029,41 @@ nav.page-navigation .pagination .page-item.prev .input-date-group:focus .input-g
   height: 1.25rem;
   background-image: url("../../assets/images/svg/arrow-last-off.svg");
 }
+.icon.tree-root, #kdhc-masthead .tree-root.nuri-txt::before, .tree-root.form-select, .step .step-done .tree-root.step-img, .step .step-reject .tree-root.step-img, .step .step-current .tree-root.step-img, .step .step-default .tree-root.step-img, .kdhc-pop-header .tree-root.btn-close, .modal .modal-header .tree-root.btn-close, header .logo .tree-root.logo-img, header .logo .tree-root.logo-txt, header .util .tree-root.util-01, header .util .tree-root.util-02, header .util .tree-root.util-03, header .util .tree-root.util-04, nav.page-navigation .pagination .page-item.first .tree-root.page-link::before, nav.page-navigation .pagination .page-item.last .tree-root.page-link::before, nav.page-navigation .pagination .page-item.next .tree-root.page-link::before, nav.page-navigation .pagination .page-item.prev .tree-root.page-link::before, .empty .tree-root.empty-img {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url("../../assets/images/svg/tree-root.svg");
+}
+.icon.tree-folder-open, #kdhc-masthead .tree-folder-open.nuri-txt::before, .tree-folder-open.form-select, .step .step-done .tree-folder-open.step-img, .step .step-reject .tree-folder-open.step-img, .step .step-current .tree-folder-open.step-img, .step .step-default .tree-folder-open.step-img, .kdhc-pop-header .tree-folder-open.btn-close, .modal .modal-header .tree-folder-open.btn-close, header .logo .tree-folder-open.logo-img, header .logo .tree-folder-open.logo-txt, header .util .tree-folder-open.util-01, header .util .tree-folder-open.util-02, header .util .tree-folder-open.util-03, header .util .tree-folder-open.util-04, nav.page-navigation .pagination .page-item.first .tree-folder-open.page-link::before, nav.page-navigation .pagination .page-item.last .tree-folder-open.page-link::before, nav.page-navigation .pagination .page-item.next .tree-folder-open.page-link::before, nav.page-navigation .pagination .page-item.prev .tree-folder-open.page-link::before, .empty .tree-folder-open.empty-img {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url("../../assets/images/svg/tree-folder-open.svg");
+}
+.icon.tree-folder-close, #kdhc-masthead .tree-folder-close.nuri-txt::before, .tree-folder-close.form-select, .step .step-done .tree-folder-close.step-img, .step .step-reject .tree-folder-close.step-img, .step .step-current .tree-folder-close.step-img, .step .step-default .tree-folder-close.step-img, .kdhc-pop-header .tree-folder-close.btn-close, .modal .modal-header .tree-folder-close.btn-close, header .logo .tree-folder-close.logo-img, header .logo .tree-folder-close.logo-txt, header .util .tree-folder-close.util-01, header .util .tree-folder-close.util-02, header .util .tree-folder-close.util-03, header .util .tree-folder-close.util-04, nav.page-navigation .pagination .page-item.first .tree-folder-close.page-link::before, nav.page-navigation .pagination .page-item.last .tree-folder-close.page-link::before, nav.page-navigation .pagination .page-item.next .tree-folder-close.page-link::before, nav.page-navigation .pagination .page-item.prev .tree-folder-close.page-link::before, .empty .tree-folder-close.empty-img {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url("../../assets/images/svg/tree-folder-close.svg");
+}
+.icon.tree-doc, #kdhc-masthead .tree-doc.nuri-txt::before, .tree-doc.form-select, .step .step-done .tree-doc.step-img, .step .step-reject .tree-doc.step-img, .step .step-current .tree-doc.step-img, .step .step-default .tree-doc.step-img, .kdhc-pop-header .tree-doc.btn-close, .modal .modal-header .tree-doc.btn-close, header .logo .tree-doc.logo-img, header .logo .tree-doc.logo-txt, header .util .tree-doc.util-01, header .util .tree-doc.util-02, header .util .tree-doc.util-03, header .util .tree-doc.util-04, nav.page-navigation .pagination .page-item.first .tree-doc.page-link::before, nav.page-navigation .pagination .page-item.last .tree-doc.page-link::before, nav.page-navigation .pagination .page-item.next .tree-doc.page-link::before, nav.page-navigation .pagination .page-item.prev .tree-doc.page-link::before, .empty .tree-doc.empty-img {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url("../../assets/images/svg/tree-folder-doc.svg");
+}
+.icon.tree-folder-minus, #kdhc-masthead .tree-folder-minus.nuri-txt::before, .tree-folder-minus.form-select, .step .step-done .tree-folder-minus.step-img, .step .step-reject .tree-folder-minus.step-img, .step .step-current .tree-folder-minus.step-img, .step .step-default .tree-folder-minus.step-img, .kdhc-pop-header .tree-folder-minus.btn-close, .modal .modal-header .tree-folder-minus.btn-close, header .logo .tree-folder-minus.logo-img, header .logo .tree-folder-minus.logo-txt, header .util .tree-folder-minus.util-01, header .util .tree-folder-minus.util-02, header .util .tree-folder-minus.util-03, header .util .tree-folder-minus.util-04, nav.page-navigation .pagination .page-item.first .tree-folder-minus.page-link::before, nav.page-navigation .pagination .page-item.last .tree-folder-minus.page-link::before, nav.page-navigation .pagination .page-item.next .tree-folder-minus.page-link::before, nav.page-navigation .pagination .page-item.prev .tree-folder-minus.page-link::before, .empty .tree-folder-minus.empty-img {
+  width: 1rem;
+  height: 1rem;
+  background-image: url("../../assets/images/svg/tree-folder-minus.svg");
+}
+.icon.tree-folder-plus, #kdhc-masthead .tree-folder-plus.nuri-txt::before, .tree-folder-plus.form-select, .step .step-done .tree-folder-plus.step-img, .step .step-reject .tree-folder-plus.step-img, .step .step-current .tree-folder-plus.step-img, .step .step-default .tree-folder-plus.step-img, .kdhc-pop-header .tree-folder-plus.btn-close, .modal .modal-header .tree-folder-plus.btn-close, header .logo .tree-folder-plus.logo-img, header .logo .tree-folder-plus.logo-txt, header .util .tree-folder-plus.util-01, header .util .tree-folder-plus.util-02, header .util .tree-folder-plus.util-03, header .util .tree-folder-plus.util-04, nav.page-navigation .pagination .page-item.first .tree-folder-plus.page-link::before, nav.page-navigation .pagination .page-item.last .tree-folder-plus.page-link::before, nav.page-navigation .pagination .page-item.next .tree-folder-plus.page-link::before, nav.page-navigation .pagination .page-item.prev .tree-folder-plus.page-link::before, .empty .tree-folder-plus.empty-img {
+  width: 1rem;
+  height: 1rem;
+  background-image: url("../../assets/images/svg/tree-folder-plus.svg");
+}
+.icon.del-trash, #kdhc-masthead .del-trash.nuri-txt::before, .del-trash.form-select, .step .step-done .del-trash.step-img, .step .step-reject .del-trash.step-img, .step .step-current .del-trash.step-img, .step .step-default .del-trash.step-img, .kdhc-pop-header .del-trash.btn-close, .modal .modal-header .del-trash.btn-close, header .logo .del-trash.logo-img, header .logo .del-trash.logo-txt, header .util .del-trash.util-01, header .util .del-trash.util-02, header .util .del-trash.util-03, header .util .del-trash.util-04, nav.page-navigation .pagination .page-item.first .del-trash.page-link::before, nav.page-navigation .pagination .page-item.last .del-trash.page-link::before, nav.page-navigation .pagination .page-item.next .del-trash.page-link::before, nav.page-navigation .pagination .page-item.prev .del-trash.page-link::before, .empty .del-trash.empty-img {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url("../../assets/images/svg/trash-01.svg");
+}
 
 /* Input, Textarea, Date Picker
 ========================================================================== */
@@ -30990,7 +31241,20 @@ input[type=url] + label.hidden {
   height: 1px;
 }
 
+input[type=number].form-control,
+input[type=number] {
+  text-align: right;
+}
+input[type=number].form-control::-webkit-outer-spin-button,
+input[type=number]::-webkit-outer-spin-button, input[type=number].form-control::-webkit-inner-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 textarea.form-control {
+  width: 100%;
   height: auto;
   min-height: 3.13rem;
 }
@@ -31077,66 +31341,148 @@ textarea.form-control {
 }
 /* List
 ========================================================================== */
+.dlist.type01 {
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  grid-template-rows: repeat(2, 3rem);
+  grid-template-areas: "tit area1" "tit area2" "tit area3" "tit area4" "tit area5" "tit area6" "tit area7" "tit area8" "tit area9" "tit area10" "tit area11" "tit area12" "tit area13" "tit area14" "tit area15";
+}
+.dlist.type01 dt {
+  grid-area: tit;
+}
+.dlist.type01 dd.area1 {
+  grid-area: "area1";
+}
+.dlist.type01 dd.area2 {
+  grid-area: "area2";
+}
+.dlist.type01 dd.area3 {
+  grid-area: "area3";
+}
+.dlist.type01 dd.area4 {
+  grid-area: "area4";
+}
+.dlist.type01 dd.area5 {
+  grid-area: "area5";
+}
+.dlist.type01 dd.area6 {
+  grid-area: "area6";
+}
+.dlist.type01 dd.area7 {
+  grid-area: "area7";
+}
+.dlist.type01 dd.area8 {
+  grid-area: "area8";
+}
+.dlist.type01 dd.area9 {
+  grid-area: "area9";
+}
+.dlist.type01 dd.area10 {
+  grid-area: "area10";
+}
+.dlist.type01 dd.area11 {
+  grid-area: "area11";
+}
+.dlist.type01 dd.area12 {
+  grid-area: "area12";
+}
+.dlist.type01 dd.area13 {
+  grid-area: "area13";
+}
+.dlist.type01 dd.area14 {
+  grid-area: "area14";
+}
+.dlist.type01 dd.area15 {
+  grid-area: "area15";
+}
+.dlist.type01 .tit {
+  padding: 0.63rem 0.75rem;
+  width: 15rem;
+  border: 1px solid #C5CDD5;
+  background-color: #fff;
+}
+.dlist.type01 .item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+  width: 100%;
+  border-width: 1px 1px 1px 0;
+  border-style: solid;
+  border-color: #C5CDD5;
+  background-color: #fff;
+}
+.dlist.type01 .item .txt {
+  padding: 0.63rem 0.75rem;
+  flex: 1;
+}
+.dlist.type01 .item .action {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0px;
+  margin-left: auto;
+  padding: 0.63rem 0.75rem;
+  width: 7.5rem;
+  border-left: 1px solid #C5CDD5;
+}
 /* Modal
 ========================================================================== */
 .modal .modal-content {
-  border-radius: 1.25rem;
+  border-radius: 0;
   border: none;
   background-color: #F2F5FA;
 }
 .modal .modal-header {
-  border-top-right-radius: 1.25rem;
-  border-top-left-radius: 1.25rem;
+  padding: 1.25rem 1.5rem 1rem;
+  min-height: 4.25rem;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
   background-color: #384B5E;
 }
 .modal .modal-header .modal-title {
   color: #fff;
+  font-size: 1.38rem;
+  font-weight: 700;
+  letter-spacing: -0.03rem;
+  line-height: 2rem;
 }
 .modal .modal-header .btn-close {
+  width: 2rem;
+  height: 2rem;
   opacity: 1;
 }
 .modal .modal-header .btn-close:focus, .modal .modal-header .btn-close:focus-visible, .modal .modal-header .btn-close:focus-within {
   box-shadow: none;
 }
-.modal .modal-body .inner .breadcrumb-wrap {
-  margin-bottom: 1.25rem;
-}
-.modal .modal-body .inner .title-wrap {
-  margin-bottom: 1rem;
-}
-.modal .modal-body .inner .section:not(:last-of-type) {
-  padding: 0 0 2.5rem;
-}
-.modal .modal-body .inner .section-sub {
-  padding: 1.75rem 2.5rem;
-  border-radius: 0.75rem;
-  background-color: #fff;
-  box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.08);
+.modal .modal-body {
+  padding: 1.25rem 1.5rem 1.25rem;
 }
 .modal .modal-footer {
+  gap: 0.5rem;
+  padding: 0 1.5rem 1.5rem;
   border: none;
-  border-bottom-right-radius: 1.25rem;
-  border-bottom-left-radius: 1.25rem;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
   background-color: #F2F5FA;
 }
 
 .modal .lg.modal-dialog {
-  width: 90rem;
-  min-width: 90rem;
-  max-width: 90rem;
+  width: 87.5rem;
+  min-width: 87.5rem;
+  max-width: 87.5rem;
 }
-.modal .lg .modal-header {
-  padding: 2rem 2.5rem 1.5rem;
-  min-height: 6.38rem;
+.modal .md.modal-dialog {
+  width: 50rem;
+  min-width: 50rem;
+  max-width: 50rem;
 }
-.modal .lg .modal-header .modal-title {
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: -0.03rem;
-  line-height: 2.4rem;
-}
-.modal .lg .modal-body .inner {
-  padding: 1.25rem 2.5rem 1rem;
+.modal .smd.modal-dialog {
+  width: 37.5rem;
+  min-width: 37.5rem;
+  max-width: 37.5rem;
 }
 /* Popup
 ========================================================================== */
@@ -31731,6 +32077,29 @@ textarea.form-control {
   letter-spacing: -0.03rem;
   line-height: 1.35rem;
   letter-spacing: -2%;
+}
+
+.treeview .list-group-item {
+  cursor: pointer;
+}
+
+.treeview span.indent {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.treeview span.icon, .treeview #kdhc-masthead span.nuri-txt::before, #kdhc-masthead .treeview span.nuri-txt::before, .treeview header .logo span.logo-img, header .logo .treeview span.logo-img, .treeview header .logo span.logo-txt, header .logo .treeview span.logo-txt, .treeview header .util span.util-01, header .util .treeview span.util-01, .treeview header .util span.util-02, header .util .treeview span.util-02, .treeview header .util span.util-03, header .util .treeview span.util-03, .treeview header .util span.util-04, header .util .treeview span.util-04, .treeview nav.page-navigation .pagination .page-item.first span.page-link::before, nav.page-navigation .pagination .page-item.first .treeview span.page-link::before, .treeview nav.page-navigation .pagination .page-item.last span.page-link::before, nav.page-navigation .pagination .page-item.last .treeview span.page-link::before, .treeview nav.page-navigation .pagination .page-item.next span.page-link::before, nav.page-navigation .pagination .page-item.next .treeview span.page-link::before, .treeview nav.page-navigation .pagination .page-item.prev span.page-link::before, nav.page-navigation .pagination .page-item.prev .treeview span.page-link::before, .treeview .empty span.empty-img, .empty .treeview span.empty-img, .treeview .modal .modal-header span.btn-close, .modal .modal-header .treeview span.btn-close, .treeview .kdhc-pop-header span.btn-close, .kdhc-pop-header .treeview span.btn-close, .treeview .step .step-default span.step-img, .step .step-default .treeview span.step-img, .treeview .step .step-current span.step-img, .step .step-current .treeview span.step-img, .treeview .step .step-reject span.step-img, .step .step-reject .treeview span.step-img, .treeview .step .step-done span.step-img, .step .step-done .treeview span.step-img, .treeview span.form-select {
+  width: 12px;
+  margin-right: 5px;
+}
+
+.treeview .node-disabled {
+  color: silver;
+  cursor: not-allowed;
+}
+
+.node-treeview1:not(.node-disabled):hover {
+  background-color: #F5F5F5;
 }
 
 /* Common

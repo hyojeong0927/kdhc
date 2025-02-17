@@ -102,7 +102,7 @@ header {
                     &:hover,
                     &:focus,
                     &.active {
-                        @include before(true, true, 0, 0, rem(-9px), 0);
+                        @include before(true, true, 0, 0, rem(-4px), 0);
                         background-color: transparent;
                         &::before {
                             border-bottom: 4px solid $primary;

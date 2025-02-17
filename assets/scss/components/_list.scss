@@ -1,8 +1,9 @@
 /* List
 ========================================================================== */
-$ulist-types: ('01', '02', '03');
-$dlist-types: ('01', '02', '03');
-$olist-types: ('01', '02', '03');
+$ulist-types: ('type01', 'type02', 'type03');
+$dlist-types: ('type01', 'type02', 'type03');
+$olist-types: ('type01', 'type02', 'type03');
+$grid-areas: ("area1", "area2", "area3", "area4", "area5", "area6", "area7", "area8", "area9", "area10", "area11", "area12", "area13", "area14", "area15");
 
 .ulist {
     @each $ut in $ulist-types {
@@ -13,8 +14,66 @@ $olist-types: ('01', '02', '03');
 }
 .dlist {
     @each $dt in $dlist-types {
-        .dlist-#{$dt} {
-            
+        &.#{$dt} {
+            @if $dt == "type01" {
+                display: grid;
+                grid-template-columns: rem(240px) 1fr;
+                grid-template-rows: repeat(2, rem(48px));
+                grid-template-areas: 
+                    "tit area1"
+                    "tit area2"
+                    "tit area3"
+                    "tit area4"
+                    "tit area5"
+                    "tit area6"
+                    "tit area7"
+                    "tit area8"
+                    "tit area9"
+                    "tit area10"
+                    "tit area11"
+                    "tit area12"
+                    "tit area13"
+                    "tit area14"
+                    "tit area15";
+                dt {
+                    grid-area: tit;
+                }
+                dd {
+                    @each $area in $grid-areas {
+                        &.#{'area' + index($grid-areas, $area)} {
+                            grid-area: $area;
+                        }
+                    }
+
+                }
+                .tit {
+                    padding: rem(10px) rem(12px);
+                    width: rem(240px);
+                    border: 1px solid $gray-007;
+                    background-color: $white;
+                }
+                .item {
+                    @include flex(true, "between", "center");
+                    width: 100%;
+                    border: {
+                        width: 1px 1px 1px 0;
+                        style: solid;
+                        color: $gray-007;
+                    }
+                    background-color: $white;
+                    .txt {
+                        padding: rem(10px) rem(12px);
+                        flex: 1;
+                    }
+                    .action {
+                        @include flex(true, "end", "center");
+                        margin-left: auto;
+                        padding: rem(10px) rem(12px);
+                        width: rem(120px);
+                        border-left: 1px solid $gray-007;
+                    }
+                }
+            }
         }
     }
 }

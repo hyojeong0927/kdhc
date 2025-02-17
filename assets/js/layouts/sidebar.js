@@ -8,9 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     menuData.forEach(item => {
         const isActive = item.active ? "active" : "";
+        
         menuHTML += `
-            <li class="lnb-item">
-                <a href="${item.url}" class="lnb-btn lnb-link ${isActive}" data-name="${item.name}">
+            <li class="lnb-item ${isActive}">
+                <a href="${item.url}" class="lnb-btn lnb-link" data-name="${item.name}">
                     ${item.name}
                 </a>
             </li>

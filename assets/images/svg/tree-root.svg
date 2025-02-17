@@ -1,0 +1,9 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Devices / desktop">
+<g id="Icon">
+<path d="M2.5 4.9C2.5 4.1268 3.1268 3.5 3.9 3.5H16.1C16.8732 3.5 17.5 4.1268 17.5 4.9V11.5V12.9333C17.5 13.7065 16.8732 14.3333 16.1 14.3333H10H3.9C3.1268 14.3333 2.5 13.7065 2.5 12.9333V11.5V4.9Z" fill="#FFE9D9"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.5 17H10H13.5" fill="#FFE9D9"/>
+<path d="M6.5 17H10M13.5 17H10M10 17V14.3333M10 14.3333H16.1C16.8732 14.3333 17.5 13.7065 17.5 12.9333V11.5M10 14.3333H3.9C3.1268 14.3333 2.5 13.7065 2.5 12.9333V11.5M2.5 11.5V4.9C2.5 4.1268 3.1268 3.5 3.9 3.5H16.1C16.8732 3.5 17.5 4.1268 17.5 4.9V11.5M2.5 11.5H17.5" stroke="#384B5E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>

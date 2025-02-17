@@ -1,15 +1,56 @@
 /* Box
 ========================================================================== */
-@use 'sass:list';
+$box-types: ('type01', 'type02', 'type03');
 
-$box-types: ('lg', 'mid', 'sm');
-
-.box {
-    $i: 1;
+.box-wrap {
     @each $bt in $box-types {
-        .box-#{$bt} {
-           
+        &.#{$bt} {
+           @if $bt == "type01" {
+                min-width: rem(240px);
+                border: {
+                    width: 1px;
+                    style: solid;
+                    color: $primary $gray-007 $gray-007 $gray-007;
+                }
+                .head {
+                    @include flex(true, "center", "center");
+                    @include font-style($font-size-sm, $font-weight-medium, $input-line-height);
+                    min-height: rem(41px);
+                    color: $primary;
+                    border-bottom: 1px solid $gray-007;
+                    background-color: $blue-005;
+                }
+                .cont {
+                    background-color: $white;
+                    .ulist {
+                        .item {
+                            @include flex(true, "center", "center");
+                            padding: rem(10px) rem(12px);
+                            min-height: rem(39px);
+                            @include font-style($font-size-base, $font-weight-normal, $input-line-height);
+                            &:not(:last-of-type) {
+                                border-bottom: 1px solid $gray-007;
+                            }
+                            a {
+                                color: $gray-002;
+                                text-decoration: none;
+                            }
+                            &.active {
+                                font-weight: $font-weight-bold;
+                                background-color:  $white;
+                                a {
+                                    color: $orange-001;
+                                }
+                            }
+                        }
+                    }
+                }
+           }
         }
-        $i: $i + 1;
+    }
+}
+.box-wrap-detail{
+    .dlist {
+        width: 100%;
     }
 }

@@ -45,4 +45,15 @@ $icon: 'icon';
     @include icon("arrow-first-off", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-first-off.svg");
     @include icon("arrow-last", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-last.svg");
     @include icon("arrow-last-off", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-last-off.svg");
+
+    // tree view
+    @include icon("tree-root", rem(20px), rem(20px), "#{$img-root}/images/svg/tree-root.svg");
+    @include icon("tree-folder-open", rem(20px), rem(20px), "#{$img-root}/images/svg/tree-folder-open.svg");
+    @include icon("tree-folder-close", rem(20px), rem(20px), "#{$img-root}/images/svg/tree-folder-close.svg");
+    @include icon("tree-doc", rem(20px), rem(20px), "#{$img-root}/images/svg/tree-folder-doc.svg");
+    @include icon("tree-folder-minus", rem(16px), rem(16px), "#{$img-root}/images/svg/tree-folder-minus.svg");
+    @include icon("tree-folder-plus", rem(16px), rem(16px), "#{$img-root}/images/svg/tree-folder-plus.svg");
+    
+    // grid
+    @include icon("del-trash", rem(24px), rem(24px), "#{$img-root}/images/svg/trash-01.svg");
 }

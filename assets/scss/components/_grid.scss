@@ -47,6 +47,9 @@
             font-weight: $font-weight-medium;
         }
     }
+    .ag-body-viewport {
+        height: auto !important;
+    }
     // row
     .ag-row {
         &:not(:last-of-type) {
@@ -139,7 +142,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: rem(10px) rem(12px);
+        padding: rem(9px) rem(12px);
         line-height: rem(19px);
         text-align: center;
         white-space: normal;
