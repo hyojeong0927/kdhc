@@ -1,20 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector("header#kdhc-header");
+    if (!header) return;
 
     let menuData = [];
-   
-
-    if (!menuData.length) {
-        menuData = [
-            { title: "관리보안", url: "#" },
-            { title: "물리보안", url: "#" },
-            { title: "기술보안", url: "#" },
-            { title: "보안정책", url: "#" },
-            { title: "클린PC", url: "#" },
-            { title: "정보자산", url: "#"},
-            { title: "관리자", url: "#"}
-        ];
+    
+    try {
+        const menuAttr = header.getAttribute("data-menu");
+        menuData = menuAttr ? JSON.parse(menuAttr) : [];
+    } catch (error) {
+        console.error("Error parsing menu data:", error);
     }
+
     const navItems = menuData
         .map(item => 
             `<li class="nav-item">
@@ -25,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         )
         .join("");
 
-    header.innerHTML = `
+    header.innerHTML += `
         <h2 class="logo">
             <a href="../home/SB-USR-001.html" class="logo-img" data-title="한국지역난방공사">한국지역난방공사</a>
             <a href="../home/SB-USR-001.html" class="logo-txt" data-title="제어망 스마트 보안관리 플랫폼">제어망 스마트 보안관리 플랫폼</a>
