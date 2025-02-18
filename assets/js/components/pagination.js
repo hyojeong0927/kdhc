@@ -3,7 +3,7 @@ const nav = document.querySelector("nav.page-navigation");
 nav.innerHTML = ` 
     <ul class="pagination">
         <li class="page-item first disabled"><a class="page-link" href="#" data-title="첫 페이지로 이동">첫 페이지로 이동</a></li>
-        <li class="page-item prev"><a class="page-link" href="#" data-title="이전 페이지로 이동">이전 페이지로 이동</a></li>
+        <li class="page-item prev disabled"><a class="page-link" href="#" data-title="이전 페이지로 이동">이전 페이지로 이동</a></li>
         <li class="page-item active"><a class="page-link" href="#">1</a></li>
         <li class="page-item"><a class="page-link" href="#">2</a></li>
         <li class="page-item"><a class="page-link" href="#">3</a></li>

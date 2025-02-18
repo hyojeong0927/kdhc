@@ -13688,8 +13688,8 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   align-items: center;
   gap: 0px;
   margin: 0;
-  flex: 0 0 4rem;
-  min-width: 4rem;
+  flex: 0 0 6.25rem;
+  min-width: 6.25rem;
   color: #384B5E;
   font-size: 1rem;
   font-weight: 500;
@@ -13814,6 +13814,27 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 .search-form-area .form-wrap.type02 .form-row.search-btn .btn {
   height: 2.63rem;
 }
+.search-form-area .form-wrap.type03 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0px;
+}
+.search-form-area .form-wrap.type03 .form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0px;
+}
+.search-form-area .form-wrap.type03 .form-row .col-row-span:not(:first-of-type) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0px;
+}
 .input-form-area {
   width: 100%;
 }
@@ -13822,18 +13843,18 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 }
 .input-form-area .form-wrap.type01 .form-row {
   align-items: baseline;
+  gap: 2.5rem;
 }
 .input-form-area .form-wrap.type01 .form-row .col {
   gap: 1.25rem;
   padding: 0.31rem 1.25rem;
-  width: 50%;
-}
-.input-form-area .form-wrap.type01 .form-row .col + .col {
-  margin-left: 2.5rem;
-  width: calc(50% - 2.5rem);
+  flex: 1;
 }
 .input-form-area .form-wrap.type01 .form-row .col:only-child {
   width: 100%;
+}
+.input-form-area .form-wrap.type01 .form-row .col .form-label {
+  min-width: 5.63rem;
 }
 .input-form-area .form-wrap.type01 .form-row .col .inputgroup,
 .input-form-area .form-wrap.type01 .form-row .col .input-time-group,
@@ -13865,7 +13886,12 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   min-height: 3.75rem;
   background-color: transparent;
 }
-
+.input-form-area .form-wrap.type03 .form-label {
+  min-width: 8.13rem;
+}
+.input-form-area .form-wrap.type03 .input-date-group {
+  min-width: 50%;
+}
 .grid-top-area {
   display: flex;
   flex-direction: row;
@@ -13896,11 +13922,6 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 
 .modal-dialog .grid-wrap {
   margin-bottom: 0 !important;
-}
-
-.approve .approve-sec.type01 .form-wrap .form-row .col:first-of-type .form-label {
-  width: 12.5rem;
-  min-width: 12.5rem;
 }
 
 .datepicker-group {
@@ -30997,7 +31018,7 @@ nav.page-navigation .pagination .page-item.prev .input-date-group:focus .input-g
   height: 1.25rem;
   background-image: url("../../assets/images/svg/arrow-left.svg");
 }
-.icon.arrow-left-off, #kdhc-masthead .arrow-left-off.nuri-txt::before, .arrow-left-off.form-select, .step .step-done .arrow-left-off.step-img, .step .step-reject .arrow-left-off.step-img, .step .step-current .arrow-left-off.step-img, .step .step-default .arrow-left-off.step-img, .kdhc-pop-header .arrow-left-off.btn-close, .modal .modal-header .arrow-left-off.btn-close, header .logo .arrow-left-off.logo-img, header .logo .arrow-left-off.logo-txt, header .util .arrow-left-off.util-01, header .util .arrow-left-off.util-02, header .util .arrow-left-off.util-03, header .util .arrow-left-off.util-04, nav.page-navigation .pagination .page-item.first .arrow-left-off.page-link::before, nav.page-navigation .pagination .page-item.last .arrow-left-off.page-link::before, nav.page-navigation .pagination .page-item.next .arrow-left-off.page-link::before, nav.page-navigation .pagination .page-item.prev .arrow-left-off.page-link::before, .empty .arrow-left-off.empty-img {
+.icon.arrow-left-off, #kdhc-masthead .arrow-left-off.nuri-txt::before, .arrow-left-off.form-select, .step .step-done .arrow-left-off.step-img, .step .step-reject .arrow-left-off.step-img, .step .step-current .arrow-left-off.step-img, .step .step-default .arrow-left-off.step-img, .kdhc-pop-header .arrow-left-off.btn-close, .modal .modal-header .arrow-left-off.btn-close, header .logo .arrow-left-off.logo-img, header .logo .arrow-left-off.logo-txt, header .util .arrow-left-off.util-01, header .util .arrow-left-off.util-02, header .util .arrow-left-off.util-03, header .util .arrow-left-off.util-04, nav.page-navigation .pagination .page-item.first .arrow-left-off.page-link::before, nav.page-navigation .pagination .page-item.last .arrow-left-off.page-link::before, nav.page-navigation .pagination .page-item.next .arrow-left-off.page-link::before, nav.page-navigation .pagination .page-item.prev .arrow-left-off.page-link::before, .empty .arrow-left-off.empty-img, nav.page-navigation .pagination .page-item.prev.disabled .page-link::before {
   width: 1.25rem;
   height: 1.25rem;
   background-image: url("../../assets/images/svg/arrow-left-off.svg");
@@ -31017,7 +31038,7 @@ nav.page-navigation .pagination .page-item.prev .input-date-group:focus .input-g
   height: 1.25rem;
   background-image: url("../../assets/images/svg/arrow-first.svg");
 }
-.icon.arrow-first-off, #kdhc-masthead .arrow-first-off.nuri-txt::before, .arrow-first-off.form-select, .step .step-done .arrow-first-off.step-img, .step .step-reject .arrow-first-off.step-img, .step .step-current .arrow-first-off.step-img, .step .step-default .arrow-first-off.step-img, .kdhc-pop-header .arrow-first-off.btn-close, .modal .modal-header .arrow-first-off.btn-close, header .logo .arrow-first-off.logo-img, header .logo .arrow-first-off.logo-txt, header .util .arrow-first-off.util-01, header .util .arrow-first-off.util-02, header .util .arrow-first-off.util-03, header .util .arrow-first-off.util-04, nav.page-navigation .pagination .page-item.first .arrow-first-off.page-link::before, nav.page-navigation .pagination .page-item.last .arrow-first-off.page-link::before, nav.page-navigation .pagination .page-item.next .arrow-first-off.page-link::before, nav.page-navigation .pagination .page-item.prev .arrow-first-off.page-link::before, .empty .arrow-first-off.empty-img, nav.page-navigation .pagination .page-item.first.disabled .page-link::before, nav.page-navigation .pagination .page-item.prev.disabled .page-link::before {
+.icon.arrow-first-off, #kdhc-masthead .arrow-first-off.nuri-txt::before, .arrow-first-off.form-select, .step .step-done .arrow-first-off.step-img, .step .step-reject .arrow-first-off.step-img, .step .step-current .arrow-first-off.step-img, .step .step-default .arrow-first-off.step-img, .kdhc-pop-header .arrow-first-off.btn-close, .modal .modal-header .arrow-first-off.btn-close, header .logo .arrow-first-off.logo-img, header .logo .arrow-first-off.logo-txt, header .util .arrow-first-off.util-01, header .util .arrow-first-off.util-02, header .util .arrow-first-off.util-03, header .util .arrow-first-off.util-04, nav.page-navigation .pagination .page-item.first .arrow-first-off.page-link::before, nav.page-navigation .pagination .page-item.last .arrow-first-off.page-link::before, nav.page-navigation .pagination .page-item.next .arrow-first-off.page-link::before, nav.page-navigation .pagination .page-item.prev .arrow-first-off.page-link::before, .empty .arrow-first-off.empty-img, nav.page-navigation .pagination .page-item.first.disabled .page-link::before {
   width: 1.25rem;
   height: 1.25rem;
   background-image: url("../../assets/images/svg/arrow-first-off.svg");

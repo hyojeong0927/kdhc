@@ -18,8 +18,8 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
             .form-label {
                 @include flex(true, "start", "center");
                 margin: 0;
-                flex: 0 0 rem(64px);
-                min-width: rem(64px);
+                flex: 0 0 rem(100px);
+                min-width: rem(100px);
                 color: $primary;
                 @include font-style($font-size-base, $font-weight-medium, $line-height-base);
                 letter-spacing: rem(-1.5px);
@@ -142,6 +142,17 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
                         }
                     }
                 }
+                @else if $ft == "type03"  {
+                    @include flex(true, "start", "center");
+                    .form-row {
+                        @include flex(true, "start", "center");
+                        .col-row-span {
+                            &:not(:first-of-type) {
+                                @include flex(false, "start", "center");
+                            }
+                        }
+                    }
+                }
             }  
         }
    }
@@ -153,53 +164,65 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
     @extend %form-base;
     width: 100%;
     .form-wrap {
-        &.type01 {
-            margin-bottom: 0;
-            .form-row {
-                align-items: baseline;
-                .col {
-                    gap: rem(20px);
-                    padding: rem(5px) rem(20px);
-                    width: 50%;
-                    & + .col {
-                        margin-left: rem(40px);
-                        width: calc(50% - rem(40px));
-                    }
-                    &:only-child {
-                        width: 100%;
-                    }
-                    .inputgroup,
-                    .input-time-group,
-                    .input-date-group {
-                        width: 100%;
+        @each $ft in $form-types {
+            &.#{$ft} {
+                @if $ft == "type01" {
+                    margin-bottom: 0;
+                    .form-row {
+                        align-items: baseline;
+                        gap: rem(40px);
+                        .col {
+                            gap: rem(20px);
+                            padding: rem(5px) rem(20px);
+                            flex: 1;
+                            &:only-child {
+                                width: 100%;
+                            }
+                            .form-label {
+                                min-width: rem(90px);
+                            }
+                            .inputgroup,
+                            .input-time-group,
+                            .input-date-group {
+                                width: 100%;
+                            }
+                        }
                     }
                 }
-            }
-        }
-        &.type02 {
-            margin-bottom: 0;
-            padding: 0;
-            background-color: $white;
-            .form-row {
-                &:not(:last-of-type) {
-                    border-bottom: 1px solid $gray-007;
-                }
-                .col {
-                    align-items: normal;
-                    gap: 0;
+                @else if $ft == "type02" {
+                    margin-bottom: 0;
                     padding: 0;
+                    background-color: $white;
+                    .form-row {
+                        &:not(:last-of-type) {
+                            border-bottom: 1px solid $gray-007;
+                        }
+                        .col {
+                            align-items: normal;
+                            gap: 0;
+                            padding: 0;
+                        }
+                        .form-label {
+                            padding: rem(10px) rem(16px);
+                            width: rem(160px);
+                            min-width: rem(160px);
+                            min-height: rem(60px);
+                            background-color: $blue-005;
+                        }
+                        .form-group {
+                            padding: rem(10px) rem(16px);
+                            min-height: rem(60px);
+                            background-color: transparent
+                        }
+                    }
                 }
-                .form-label {
-                    padding: rem(10px) rem(16px);
-                    width: rem(160px);
-                    min-width: rem(160px);
-                    min-height: rem(60px);
-                    background-color: $blue-005;
-                }
-                .form-group {
-                    padding: rem(10px) rem(16px);
-                    min-height: rem(60px);
-                    background-color: transparent
+                @else if $ft == "type03" {
+                    .form-label {
+                        min-width: rem(130px);
+                    }
+                    .input-date-group {
+                        min-width: 50%;
+                    }
                 }
             }
         }
@@ -229,25 +252,8 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
         margin-bottom: 0 !important;
     }
 }
+
 // 결재 컴퍼넌트
-.approve {
-    .approve-sec {
-        &.type01 {
-            .form-wrap {
-                .form-row {
-                    .col {
-                        &:first-of-type {
-                            .form-label {
-                                width: rem(200px);
-                                min-width: rem(200px);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
 // 결재 컴퍼넌트 end
 
 

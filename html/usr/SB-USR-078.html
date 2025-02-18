@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko" data-kdhc-mode="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDHC</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../css/index.css">
+    <!-- script -->
+    <script src="../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script type="module" src="../../assets/js/common.js"></script>
+</head>
+<body>
+    <div id="wrap" class="kdhc-wrap">
+
+        <!-- 본문 바로가기 영역 -->
+        <div id="kdhc-skip-link">
+            <a href="#breadcrumb">본문 바로가기</a>
+        </div>
+        <!--// 본문 바로가기 영역  -->
+
+        <!-- 상단 배너영역 -->
+        <div id="kdhc-masthead">
+            <div class="toggle-wrap">
+                <div class="toggle-head">
+                    <div class="inner">
+                        <span class="nuri-txt">이 누리집은 한국지역난방공사 제어망 스마트 보안관리 플랫폼 누리집입니다.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // 상단 배너영역 -->
+
+        <!-- 헤더 영역 -->
+        <header id="kdhc-header">
+            <script type="module" src="../../assets/js/layouts/header.js"></script>
+        </header>
+        <!--// 헤더 영역 -->
+
+        <!-- 컨테이너 영역 -->
+        <section id="kdhc-container">
+            <div class="inner">
+                <!-- 사이드 영역 -->
+                <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
+                <aside id="sidebar" class="sidebar" data-menu='[
+                        { "name": "자산정보관리", "url": "#" },
+                        { "name": "노트북사용", "url": "#", "active": true },
+                        { "name": "노트북사용내역", "url": "#" },
+                        { "name": "정보자산반출입내역", "url": "#" }
+                        ]'></aside>
+                <!--// 사이드 영역 -->
+
+                <main class="main-contents">
+                
+                    <!-- 컨텐츠 영역 -->
+                    <div class="contents">
+
+                        <!-- breadcrumbs start -->
+                        <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
+                            data-breadcrumb='[
+                            { "name": "정보자산", "url": "#" },
+                            { "name": "노트북 사용", "url": "#" },
+                            { "name": "노트북 사용 등록", "url": "", "active": true }
+                            ]'
+                            data-visible="false">
+                        </nav>
+                        <!--// breadcrumbs end -->
+
+                        <!-- page title start -->
+                        <div class="page-title-wrap" 
+                            data-title="노트북 사용 등록" 
+                            data-badge="노트북 사용 등록 대장" data-badge-visible="true">
+                        </div>
+                        <!--// page title end -->
+
+                        <!-- 팝업 호출 버튼 -->
+                        <button type="button" id="large-btn" class="btn btn-primary btn-lg">
+                            노트북 사용 등록
+                        </button>
+                        <!--// 팝업 호출 버튼 -->
+
+                        <!-- popup script -->
+                        <script type="module">
+                            import { setupPopupListeners } from '../../assets/js/components/popup.js';
+
+                            const urlList = {
+                                large: './popup/SB-USR-078.html',
+                            };
+
+                            setupPopupListeners(urlList);
+                        </script>
+                        <!--// popup script -->
+                    </div>
+                    <!--// 컨텐츠 영역 -->
+
+                </main>
+
+            </div>
+        </section>
+        <!--// 컨테이너 영역 -->
+
+        <!-- 푸터 영역 -->
+        <footer id="kdhc-footer">
+            <script type="module" src="../../assets/js/layouts/footer.js"></script>
+        </footer>
+        <!--// 푸터 영역 -->
+    </div>
+</body>
+</html>
