@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko" data-kdhc-mode="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDHC</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../../css/index.css">
+    <!-- script -->
+    <script src="../../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script type="module" src="../../../assets/js/common.js"></script>
+</head>
+<body>
+    <div id="pop-wrap" class="kdhc-pop-wrap medium">
+        <header class="kdhc-pop-header">
+            <h1 class="pop-title" id="staticBackdropLabel">서브코드 팝업</h1>
+            <button type="button" class="btn-close" aria-label="Close" onclick="window.close()"></button>
+        </header>
+        <!-- 팝업 컨테이너 영역 -->
+        <section class="kdhc-pop-container">
+            <div class="inner">
+                <!-- 팝업 컨텐츠 영역 -->
+                <div class="contents">
+                    <!-- grid wrap start -->
+                    <article class="grid-wrap">
+                        <div id="sampleGrid" class="normal" style="width: 100%; height: 92px;"></div>
+                    </article>
+                    <!--// grid wrap end -->
+                </div>
+                <!--// 팝업 컨텐츠 영역 -->
+            </div>
+        </section>
+        <!--// 팝업 컨테이너 영역 -->
+        <footer class="kdhc-pop-footer">
+            <div class="inner">
+                <button type="button" class="btn btn-outline btn-md" data-bs-dismiss="modal">추가</button>
+                <button type="button" class="btn btn-primary btn-md">저장</button>
+            </div>
+        </footer>
+    </div>
+    <!-- script wrap -->
+    <script type="module">
+        const rowData = [
+            {
+                field01: "관리자",
+                field02: "",
+                field03: "페이지 명",
+                field04: "홍길동",
+                field05: "",
+            },
+        ];
+        const columnDefs = [
+            {
+                headerName: "그룹코드",
+                headerClass: "center",
+                field: "field01",
+                width: 160,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "정렬순서",
+                headerClass: "center",
+                field: "field02",
+                width: 80,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "코드",
+                headerClass: "center",
+                field: "field03",
+                width: 160,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "코드명",
+                headerClass: "center",
+                field: "field04",
+                minWidth: 220,
+                flex: 1,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "삭제",
+                headerClass: "center",
+                field: "field05",
+                width: 112,
+                cellClass: "cell-normal",
+                cellRenderer: params => {
+                    return '<button type="button" class="btn btn-icon"><i class="icon del-trash" /></button>';
+                }
+            }
+        ];
+        let sampleGridApi;
+
+        const sampleGridOptions = {
+            defaultColDef: {
+                editable: false, // edit 사용 유무
+                autoHeight: true,
+                sortable: true, // sort 사용 유무
+            },
+            columnDefs,
+            headerHeight: 41, // header height
+            rowData: rowData,
+            rowHeight: 40, // row height
+
+            // data empty style
+            overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
+        };
+        const sampleGridDiv = document.querySelector("#sampleGrid");
+        sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
+    </script>
+    <!--// script wrap -->
+</body>
+</html>

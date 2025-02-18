@@ -69,7 +69,7 @@
                     </nav> 
                     <!--// breadcrumbs end -->
                     
-                <!-- 컨텐츠 영역 -->
+                    <!-- 컨텐츠 영역 -->
                     <div id="contents" class="contents">
 
                         <!-- page title start -->
@@ -79,9 +79,23 @@
                             data-badge-visible="false">
                         </div>
                         <!--// page title end -->
-                        <button type="button" id="medium-btn" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            공통코드 수정 팝업
+                        <!-- 팝업 호출 버튼 -->
+                        <button type="button" id="medium-btn" class="btn btn-primary btn-lg">
+                            서브코드 팝업
                         </button>
+                        <!--// 팝업 호출 버튼 -->
+
+                        <!-- popup script -->
+                        <script type="module">
+                            import { setupPopupListeners } from '../../assets/js/components/popup.js';
+
+                            const urlList = {
+                                medium: './popup/SB-GMR-024.html',
+                            };
+
+                            setupPopupListeners(urlList);
+                        </script>
+                        <!--// popup script -->
                     </div>
                     <!--// 컨텐츠 영역 -->
 
@@ -97,110 +111,6 @@
         </footer>
         <!--// 푸터 영역 -->
  
-    </div>
-    <!-- script wrap -->
-    <!--// script wrap -->
-    
-    <!-- modal wrap -->
-     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog md">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title" id="staticBackdropLabel">서브코드 팝업</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="inner">
-                        <!-- content start -->
-
-                        <!-- grid wrap start -->
-                        <article class="grid-wrap">
-                            <div id="sampleGrid" class="normal" style="width: 100%; height: 94px;"></div>
-                        </article>
-                        <!--// grid wrap end -->
-
-                        <!--// content start -->
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline btn-md" data-bs-dismiss="modal">추가</button>
-                    <button type="button" class="btn btn-primary btn-md">저장</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--// modal wrap -->
-    <!-- script wrap -->
-    <script type="module">
-        const rowData = [
-            {
-                field01: "관리자",
-                field02: "",
-                field03: "페이지 명",
-                field04: "홍길동",
-                field05: "",
-            },
-        ];
-        const columnDefs = [
-            {
-                headerName: "그룹코드",
-                headerClass: "center",
-                field: "field01",
-                width: 160,
-                cellClass: "cell-normal",
-            },
-            {
-                headerName: "정렬순서",
-                headerClass: "center",
-                field: "field02",
-                width: 80,
-                cellClass: "cell-normal",
-            },
-            {
-                headerName: "코드",
-                headerClass: "center",
-                field: "field03",
-                width: 160,
-                cellClass: "cell-normal",
-            },
-            {
-                headerName: "코드명",
-                headerClass: "center",
-                field: "field04",
-                minWidth: 230,
-                flex: 1,
-                cellClass: "cell-normal",
-            },
-            {
-                headerName: "삭제",
-                headerClass: "center",
-                field: "field05",
-                width: 112,
-                cellClass: "cell-normal",
-                cellRenderer: params => {
-                    return '<button type="button" class="btn btn-icon"><i class="icon del-trash" /></button>';
-                }
-            }
-        ];
-        let sampleGridApi;
-
-        const sampleGridOptions = {
-            defaultColDef: {
-                editable: false, // edit 사용 유무
-                autoHeight: true,
-                sortable: true, // sort 사용 유무
-            },
-            columnDefs,
-            headerHeight: 41, // header height
-            rowData: rowData,
-            rowHeight: 40, // row height
-
-            // data empty style
-            overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
-        };
-        const sampleGridDiv = document.querySelector("#sampleGrid");
-        sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
-    </script>
-    <!--// script wrap -->
+    </div>    
 </body>
 </html>

@@ -31032,12 +31032,12 @@ nav.page-navigation .pagination .page-item.prev .input-date-group:focus .input-g
   height: 1.25rem;
   background-image: url("../../assets/images/svg/arrow-last-off.svg");
 }
-.icon.tree-root, #kdhc-masthead .tree-root.nuri-txt::before, .tree-root.form-select, .step .step-done .tree-root.step-img, .step .step-reject .tree-root.step-img, .step .step-current .tree-root.step-img, .step .step-default .tree-root.step-img, .kdhc-pop-header .tree-root.btn-close, .modal .modal-header .tree-root.btn-close, header .logo .tree-root.logo-img, header .logo .tree-root.logo-txt, header .util .tree-root.util-01, header .util .tree-root.util-02, header .util .tree-root.util-03, header .util .tree-root.util-04, nav.page-navigation .pagination .page-item.first .tree-root.page-link::before, nav.page-navigation .pagination .page-item.last .tree-root.page-link::before, nav.page-navigation .pagination .page-item.next .tree-root.page-link::before, nav.page-navigation .pagination .page-item.prev .tree-root.page-link::before, .empty .tree-root.empty-img {
+.icon.tree-root, #kdhc-masthead .tree-root.nuri-txt::before, .tree-view .list-group .list-group-item[data-nodeid="0"] .icon.glyphicon, .tree-view .list-group .list-group-item[data-nodeid="0"] #kdhc-masthead .glyphicon.nuri-txt::before, #kdhc-masthead .tree-view .list-group .list-group-item[data-nodeid="0"] .glyphicon.nuri-txt::before, .tree-root.form-select, .tree-view .list-group .list-group-item[data-nodeid="0"] .form-select.glyphicon, .step .step-done .tree-root.step-img, .step .step-done .tree-view .list-group .list-group-item[data-nodeid="0"] .step-img.glyphicon, .tree-view .list-group .list-group-item[data-nodeid="0"] .step .step-done .step-img.glyphicon, .step .step-reject .tree-root.step-img, .step .step-reject .tree-view .list-group .list-group-item[data-nodeid="0"] .step-img.glyphicon, .tree-view .list-group .list-group-item[data-nodeid="0"] .step .step-reject .step-img.glyphicon, .step .step-current .tree-root.step-img, .step .step-current .tree-view .list-group .list-group-item[data-nodeid="0"] .step-img.glyphicon, .tree-view .list-group .list-group-item[data-nodeid="0"] .step .step-current .step-img.glyphicon, .step .step-default .tree-root.step-img, .step .step-default .tree-view .list-group .list-group-item[data-nodeid="0"] .step-img.glyphicon, .tree-view .list-group .list-group-item[data-nodeid="0"] .step .step-default .step-img.glyphicon, .kdhc-pop-header .tree-root.btn-close, .kdhc-pop-header .tree-view .list-group .list-group-item[data-nodeid="0"] .btn-close.glyphicon, .tree-view .list-group .list-group-item[data-nodeid="0"] .kdhc-pop-header .btn-close.glyphicon, .modal .modal-header .tree-root.btn-close, .modal .modal-header .tree-view .list-group .list-group-item[data-nodeid="0"] .btn-close.glyphicon, .tree-view .list-group .list-group-item[data-nodeid="0"] .modal .modal-header .btn-close.glyphicon, header .logo .tree-root.logo-img, header .logo .tree-view .list-group .list-group-item[data-nodeid="0"] .logo-img.glyphicon, .tree-view .list-group .list-group-item[data-nodeid="0"] header .logo .logo-img.glyphicon, header .logo .tree-root.logo-txt, header .logo .tree-view .list-group .list-group-item[data-nodeid="0"] .logo-txt.glyphicon, .tree-view .list-group .list-group-item[data-nodeid="0"] header .logo .logo-txt.glyphicon, header .util .tree-root.util-01, header .util .tree-view .list-group .list-group-item[data-nodeid="0"] .util-01.glyphicon, .tree-view .list-group .list-group-item[data-nodeid="0"] header .util .util-01.glyphicon, header .util .tree-root.util-02, header .util .tree-view .list-group .list-group-item[data-nodeid="0"] .util-02.glyphicon, .tree-view .list-group .list-group-item[data-nodeid="0"] header .util .util-02.glyphicon, header .util .tree-root.util-03, header .util .tree-view .list-group .list-group-item[data-nodeid="0"] .util-03.glyphicon, .tree-view .list-group .list-group-item[data-nodeid="0"] header .util .util-03.glyphicon, header .util .tree-root.util-04, header .util .tree-view .list-group .list-group-item[data-nodeid="0"] .util-04.glyphicon, .tree-view .list-group .list-group-item[data-nodeid="0"] header .util .util-04.glyphicon, nav.page-navigation .pagination .page-item.first .tree-root.page-link::before, nav.page-navigation .pagination .page-item.first .tree-view .list-group .list-group-item[data-nodeid="0"] .page-link.glyphicon::before, .tree-view .list-group .list-group-item[data-nodeid="0"] nav.page-navigation .pagination .page-item.first .page-link.glyphicon::before, nav.page-navigation .pagination .page-item.last .tree-root.page-link::before, nav.page-navigation .pagination .page-item.last .tree-view .list-group .list-group-item[data-nodeid="0"] .page-link.glyphicon::before, .tree-view .list-group .list-group-item[data-nodeid="0"] nav.page-navigation .pagination .page-item.last .page-link.glyphicon::before, nav.page-navigation .pagination .page-item.next .tree-root.page-link::before, nav.page-navigation .pagination .page-item.next .tree-view .list-group .list-group-item[data-nodeid="0"] .page-link.glyphicon::before, .tree-view .list-group .list-group-item[data-nodeid="0"] nav.page-navigation .pagination .page-item.next .page-link.glyphicon::before, nav.page-navigation .pagination .page-item.prev .tree-root.page-link::before, nav.page-navigation .pagination .page-item.prev .tree-view .list-group .list-group-item[data-nodeid="0"] .page-link.glyphicon::before, .tree-view .list-group .list-group-item[data-nodeid="0"] nav.page-navigation .pagination .page-item.prev .page-link.glyphicon::before, .empty .tree-root.empty-img, .empty .tree-view .list-group .list-group-item[data-nodeid="0"] .empty-img.glyphicon, .tree-view .list-group .list-group-item[data-nodeid="0"] .empty .empty-img.glyphicon {
   width: 1.25rem;
   height: 1.25rem;
   background-image: url("../../assets/images/svg/tree-root.svg");
 }
-.icon.tree-folder-open, #kdhc-masthead .tree-folder-open.nuri-txt::before, .tree-folder-open.form-select, .step .step-done .tree-folder-open.step-img, .step .step-reject .tree-folder-open.step-img, .step .step-current .tree-folder-open.step-img, .step .step-default .tree-folder-open.step-img, .kdhc-pop-header .tree-folder-open.btn-close, .modal .modal-header .tree-folder-open.btn-close, header .logo .tree-folder-open.logo-img, header .logo .tree-folder-open.logo-txt, header .util .tree-folder-open.util-01, header .util .tree-folder-open.util-02, header .util .tree-folder-open.util-03, header .util .tree-folder-open.util-04, nav.page-navigation .pagination .page-item.first .tree-folder-open.page-link::before, nav.page-navigation .pagination .page-item.last .tree-folder-open.page-link::before, nav.page-navigation .pagination .page-item.next .tree-folder-open.page-link::before, nav.page-navigation .pagination .page-item.prev .tree-folder-open.page-link::before, .empty .tree-folder-open.empty-img {
+.icon.tree-folder-open, #kdhc-masthead .tree-folder-open.nuri-txt::before, .tree-view .list-group .list-group-item .tree-minus + .icon.tree-folder-close, .tree-view .list-group .list-group-item #kdhc-masthead .tree-minus + .tree-folder-close.nuri-txt::before, #kdhc-masthead .tree-view .list-group .list-group-item .tree-minus + .tree-folder-close.nuri-txt::before, .tree-folder-open.form-select, .tree-view .list-group .list-group-item .tree-minus + .form-select.tree-folder-close, .step .step-done .tree-folder-open.step-img, .step .step-done .tree-view .list-group .list-group-item .tree-minus + .step-img.tree-folder-close, .tree-view .list-group .list-group-item .step .step-done .tree-minus + .step-img.tree-folder-close, .step .step-reject .tree-folder-open.step-img, .step .step-reject .tree-view .list-group .list-group-item .tree-minus + .step-img.tree-folder-close, .tree-view .list-group .list-group-item .step .step-reject .tree-minus + .step-img.tree-folder-close, .step .step-current .tree-folder-open.step-img, .step .step-current .tree-view .list-group .list-group-item .tree-minus + .step-img.tree-folder-close, .tree-view .list-group .list-group-item .step .step-current .tree-minus + .step-img.tree-folder-close, .step .step-default .tree-folder-open.step-img, .step .step-default .tree-view .list-group .list-group-item .tree-minus + .step-img.tree-folder-close, .tree-view .list-group .list-group-item .step .step-default .tree-minus + .step-img.tree-folder-close, .kdhc-pop-header .tree-folder-open.btn-close, .kdhc-pop-header .tree-view .list-group .list-group-item .tree-minus + .btn-close.tree-folder-close, .tree-view .list-group .list-group-item .kdhc-pop-header .tree-minus + .btn-close.tree-folder-close, .modal .modal-header .tree-folder-open.btn-close, .modal .modal-header .tree-view .list-group .list-group-item .tree-minus + .btn-close.tree-folder-close, .tree-view .list-group .list-group-item .modal .modal-header .tree-minus + .btn-close.tree-folder-close, header .logo .tree-folder-open.logo-img, header .logo .tree-view .list-group .list-group-item .tree-minus + .logo-img.tree-folder-close, .tree-view .list-group .list-group-item header .logo .tree-minus + .logo-img.tree-folder-close, header .logo .tree-folder-open.logo-txt, header .logo .tree-view .list-group .list-group-item .tree-minus + .logo-txt.tree-folder-close, .tree-view .list-group .list-group-item header .logo .tree-minus + .logo-txt.tree-folder-close, header .util .tree-folder-open.util-01, header .util .tree-view .list-group .list-group-item .tree-minus + .util-01.tree-folder-close, .tree-view .list-group .list-group-item header .util .tree-minus + .util-01.tree-folder-close, header .util .tree-folder-open.util-02, header .util .tree-view .list-group .list-group-item .tree-minus + .util-02.tree-folder-close, .tree-view .list-group .list-group-item header .util .tree-minus + .util-02.tree-folder-close, header .util .tree-folder-open.util-03, header .util .tree-view .list-group .list-group-item .tree-minus + .util-03.tree-folder-close, .tree-view .list-group .list-group-item header .util .tree-minus + .util-03.tree-folder-close, header .util .tree-folder-open.util-04, header .util .tree-view .list-group .list-group-item .tree-minus + .util-04.tree-folder-close, .tree-view .list-group .list-group-item header .util .tree-minus + .util-04.tree-folder-close, nav.page-navigation .pagination .page-item.first .tree-folder-open.page-link::before, nav.page-navigation .pagination .page-item.first .tree-view .list-group .list-group-item .tree-minus + .page-link.tree-folder-close::before, .tree-view .list-group .list-group-item nav.page-navigation .pagination .page-item.first .tree-minus + .page-link.tree-folder-close::before, nav.page-navigation .pagination .page-item.last .tree-folder-open.page-link::before, nav.page-navigation .pagination .page-item.last .tree-view .list-group .list-group-item .tree-minus + .page-link.tree-folder-close::before, .tree-view .list-group .list-group-item nav.page-navigation .pagination .page-item.last .tree-minus + .page-link.tree-folder-close::before, nav.page-navigation .pagination .page-item.next .tree-folder-open.page-link::before, nav.page-navigation .pagination .page-item.next .tree-view .list-group .list-group-item .tree-minus + .page-link.tree-folder-close::before, .tree-view .list-group .list-group-item nav.page-navigation .pagination .page-item.next .tree-minus + .page-link.tree-folder-close::before, nav.page-navigation .pagination .page-item.prev .tree-folder-open.page-link::before, nav.page-navigation .pagination .page-item.prev .tree-view .list-group .list-group-item .tree-minus + .page-link.tree-folder-close::before, .tree-view .list-group .list-group-item nav.page-navigation .pagination .page-item.prev .tree-minus + .page-link.tree-folder-close::before, .empty .tree-folder-open.empty-img, .empty .tree-view .list-group .list-group-item .tree-minus + .empty-img.tree-folder-close, .tree-view .list-group .list-group-item .empty .tree-minus + .empty-img.tree-folder-close {
   width: 1.25rem;
   height: 1.25rem;
   background-image: url("../../assets/images/svg/tree-folder-open.svg");
@@ -31050,17 +31050,17 @@ nav.page-navigation .pagination .page-item.prev .input-date-group:focus .input-g
 .icon.tree-doc, #kdhc-masthead .tree-doc.nuri-txt::before, .tree-doc.form-select, .step .step-done .tree-doc.step-img, .step .step-reject .tree-doc.step-img, .step .step-current .tree-doc.step-img, .step .step-default .tree-doc.step-img, .kdhc-pop-header .tree-doc.btn-close, .modal .modal-header .tree-doc.btn-close, header .logo .tree-doc.logo-img, header .logo .tree-doc.logo-txt, header .util .tree-doc.util-01, header .util .tree-doc.util-02, header .util .tree-doc.util-03, header .util .tree-doc.util-04, nav.page-navigation .pagination .page-item.first .tree-doc.page-link::before, nav.page-navigation .pagination .page-item.last .tree-doc.page-link::before, nav.page-navigation .pagination .page-item.next .tree-doc.page-link::before, nav.page-navigation .pagination .page-item.prev .tree-doc.page-link::before, .empty .tree-doc.empty-img {
   width: 1.25rem;
   height: 1.25rem;
-  background-image: url("../../assets/images/svg/tree-folder-doc.svg");
+  background-image: url("../../assets/images/svg/tree-doc.svg");
 }
-.icon.tree-folder-minus, #kdhc-masthead .tree-folder-minus.nuri-txt::before, .tree-folder-minus.form-select, .step .step-done .tree-folder-minus.step-img, .step .step-reject .tree-folder-minus.step-img, .step .step-current .tree-folder-minus.step-img, .step .step-default .tree-folder-minus.step-img, .kdhc-pop-header .tree-folder-minus.btn-close, .modal .modal-header .tree-folder-minus.btn-close, header .logo .tree-folder-minus.logo-img, header .logo .tree-folder-minus.logo-txt, header .util .tree-folder-minus.util-01, header .util .tree-folder-minus.util-02, header .util .tree-folder-minus.util-03, header .util .tree-folder-minus.util-04, nav.page-navigation .pagination .page-item.first .tree-folder-minus.page-link::before, nav.page-navigation .pagination .page-item.last .tree-folder-minus.page-link::before, nav.page-navigation .pagination .page-item.next .tree-folder-minus.page-link::before, nav.page-navigation .pagination .page-item.prev .tree-folder-minus.page-link::before, .empty .tree-folder-minus.empty-img {
+.icon.tree-minus, #kdhc-masthead .tree-minus.nuri-txt::before, .tree-minus.form-select, .step .step-done .tree-minus.step-img, .step .step-reject .tree-minus.step-img, .step .step-current .tree-minus.step-img, .step .step-default .tree-minus.step-img, .kdhc-pop-header .tree-minus.btn-close, .modal .modal-header .tree-minus.btn-close, header .logo .tree-minus.logo-img, header .logo .tree-minus.logo-txt, header .util .tree-minus.util-01, header .util .tree-minus.util-02, header .util .tree-minus.util-03, header .util .tree-minus.util-04, nav.page-navigation .pagination .page-item.first .tree-minus.page-link::before, nav.page-navigation .pagination .page-item.last .tree-minus.page-link::before, nav.page-navigation .pagination .page-item.next .tree-minus.page-link::before, nav.page-navigation .pagination .page-item.prev .tree-minus.page-link::before, .empty .tree-minus.empty-img {
   width: 1rem;
   height: 1rem;
-  background-image: url("../../assets/images/svg/tree-folder-minus.svg");
+  background-image: url("../../assets/images/svg/tree-minus.svg");
 }
-.icon.tree-folder-plus, #kdhc-masthead .tree-folder-plus.nuri-txt::before, .tree-folder-plus.form-select, .step .step-done .tree-folder-plus.step-img, .step .step-reject .tree-folder-plus.step-img, .step .step-current .tree-folder-plus.step-img, .step .step-default .tree-folder-plus.step-img, .kdhc-pop-header .tree-folder-plus.btn-close, .modal .modal-header .tree-folder-plus.btn-close, header .logo .tree-folder-plus.logo-img, header .logo .tree-folder-plus.logo-txt, header .util .tree-folder-plus.util-01, header .util .tree-folder-plus.util-02, header .util .tree-folder-plus.util-03, header .util .tree-folder-plus.util-04, nav.page-navigation .pagination .page-item.first .tree-folder-plus.page-link::before, nav.page-navigation .pagination .page-item.last .tree-folder-plus.page-link::before, nav.page-navigation .pagination .page-item.next .tree-folder-plus.page-link::before, nav.page-navigation .pagination .page-item.prev .tree-folder-plus.page-link::before, .empty .tree-folder-plus.empty-img {
+.icon.tree-plus, #kdhc-masthead .tree-plus.nuri-txt::before, .tree-plus.form-select, .step .step-done .tree-plus.step-img, .step .step-reject .tree-plus.step-img, .step .step-current .tree-plus.step-img, .step .step-default .tree-plus.step-img, .kdhc-pop-header .tree-plus.btn-close, .modal .modal-header .tree-plus.btn-close, header .logo .tree-plus.logo-img, header .logo .tree-plus.logo-txt, header .util .tree-plus.util-01, header .util .tree-plus.util-02, header .util .tree-plus.util-03, header .util .tree-plus.util-04, nav.page-navigation .pagination .page-item.first .tree-plus.page-link::before, nav.page-navigation .pagination .page-item.last .tree-plus.page-link::before, nav.page-navigation .pagination .page-item.next .tree-plus.page-link::before, nav.page-navigation .pagination .page-item.prev .tree-plus.page-link::before, .empty .tree-plus.empty-img {
   width: 1rem;
   height: 1rem;
-  background-image: url("../../assets/images/svg/tree-folder-plus.svg");
+  background-image: url("../../assets/images/svg/tree-plus.svg");
 }
 .icon.del-trash, #kdhc-masthead .del-trash.nuri-txt::before, .del-trash.form-select, .step .step-done .del-trash.step-img, .step .step-reject .del-trash.step-img, .step .step-current .del-trash.step-img, .step .step-default .del-trash.step-img, .kdhc-pop-header .del-trash.btn-close, .modal .modal-header .del-trash.btn-close, header .logo .del-trash.logo-img, header .logo .del-trash.logo-txt, header .util .del-trash.util-01, header .util .del-trash.util-02, header .util .del-trash.util-03, header .util .del-trash.util-04, nav.page-navigation .pagination .page-item.first .del-trash.page-link::before, nav.page-navigation .pagination .page-item.last .del-trash.page-link::before, nav.page-navigation .pagination .page-item.next .del-trash.page-link::before, nav.page-navigation .pagination .page-item.prev .del-trash.page-link::before, .empty .del-trash.empty-img {
   width: 1.5rem;
@@ -31347,6 +31347,13 @@ textarea.form-control {
 .dlist.type01 {
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  align-items: normal;
+  gap: 0px;
+  border: 1px solid #C5CDD5;
+}
+.dlist.type01 + dl {
+  border-top: 0;
 }
 .dlist.type01 dt {
   display: flex;
@@ -31362,17 +31369,29 @@ textarea.form-control {
 .dlist.type01 .tit {
   padding: 0.63rem 0.75rem;
   width: 15rem;
-  border: 1px solid #C5CDD5;
+  border-right: 1px solid #C5CDD5;
   background-color: #fff;
 }
 .dlist.type01 .item {
   width: 100%;
-  border-width: 1px 1px 1px 0;
-  border-style: solid;
-  border-color: #C5CDD5;
   background-color: #fff;
 }
+.dlist.type01 .item .item-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0px;
+}
+.dlist.type01 .item .item-cont:not(:last-of-type) {
+  border-bottom: 1px solid #C5CDD5;
+}
 .dlist.type01 .item .txt {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
   padding: 0.63rem 0.75rem;
   flex: 1;
 }
@@ -31387,26 +31406,9 @@ textarea.form-control {
   width: 7.5rem;
   border-left: 1px solid #C5CDD5;
 }
-.container1 {
-  display: flex;
-  flex-direction: row;
+.dlist.type01 .item .action .form-check label.hidden {
+  display: none;
 }
-.container1 .item {
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-  padding: 0;
-  border: 1px solid #ddd;
-}
-.container1 .rowspan {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 2;
-  background-color: lightblue;
-  padding: 20px;
-  align-items: center;
-}
-
 /* Modal
 ========================================================================== */
 .modal .modal-content {
@@ -31469,10 +31471,24 @@ textarea.form-control {
   overflow-x: hidden;
   overflow-y: auto;
   width: 100%;
-  max-width: 90rem;
   height: 100%;
   max-height: 100dvh;
   background-color: #F2F5FA;
+}
+.kdhc-pop-wrap.medium, .kdhc-pop-wrap.small {
+  overflow: hidden;
+  max-height: 100%;
+}
+.kdhc-pop-wrap.medium .kdhc-pop-header, .kdhc-pop-wrap.small .kdhc-pop-header {
+  padding: 1.25rem 1.5rem 1rem;
+  min-height: 4.25rem;
+  height: 4.25rem;
+}
+.kdhc-pop-wrap.medium .kdhc-pop-header .pop-title, .kdhc-pop-wrap.small .kdhc-pop-header .pop-title {
+  font-size: 1.38rem;
+}
+.kdhc-pop-wrap.medium .kdhc-pop-container .inner, .kdhc-pop-wrap.small .kdhc-pop-container .inner {
+  padding: 1.5rem;
 }
 
 .kdhc-pop-header {
@@ -31482,8 +31498,10 @@ textarea.form-control {
   align-items: center;
   gap: 0px;
   padding: 2rem 2.5rem 1.5rem;
-  min-width: 90rem;
+  width: 100%;
+  min-width: 100%;
   min-height: 6.38rem;
+  border: none;
   background-color: #384B5E;
 }
 .kdhc-pop-header .pop-title {
@@ -31494,6 +31512,8 @@ textarea.form-control {
   line-height: 2.4rem;
 }
 .kdhc-pop-header .btn-close {
+  width: 2rem;
+  height: 2rem;
   opacity: 1;
 }
 .kdhc-pop-header .btn-close:focus, .kdhc-pop-header .btn-close:focus-visible, .kdhc-pop-header .btn-close:focus-within {
@@ -31501,7 +31521,7 @@ textarea.form-control {
 }
 
 .kdhc-pop-container .inner {
-  padding: 1.25rem 2.5rem 1rem;
+  padding: 1.25rem 2.5rem 2.5rem;
   height: 100%;
 }
 .kdhc-pop-container .inner .breadcrumb-wrap {
@@ -31525,6 +31545,15 @@ textarea.form-control {
   justify-content: flex-start;
   align-items: normal;
   gap: 2rem;
+}
+
+.kdhc-pop-footer .inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1.5rem 1.5rem;
 }
 
 /* Slideshow
@@ -32056,6 +32085,143 @@ textarea.form-control {
   letter-spacing: -0.03rem;
   line-height: 1.35rem;
   letter-spacing: -2%;
+}
+
+/* Tree
+========================================================================== */
+.tree-view {
+  padding: 1.25rem;
+  min-height: 35rem;
+  border: 1px solid #DCDCDC;
+  background-color: #fff;
+}
+.tree-view .list-group {
+  color: #384B5E;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.03rem;
+  line-height: normal;
+  border-radius: 0;
+  border: 0;
+  background-color: transparent;
+}
+.tree-view .list-group-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0px;
+  border: 0;
+}
+.tree-view a {
+  color: inherit;
+  font-size: inherit;
+  text-decoration: none;
+}
+.tree-view .node-treeview:not(.node-disabled):hover {
+  background-color: transparent;
+}
+.tree-view .node-treeview.node-selected {
+  color: #384B5E !important;
+  background-color: transparent !important;
+}
+.tree-view .node-treeview.node-selected a {
+  color: #384B5E !important;
+}
+
+.tree-view .list-group .list-group-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0;
+  background-color: transparent;
+  z-index: 1;
+}
+.tree-view .list-group .list-group-item:not(:last-of-type) {
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+.tree-view .list-group .list-group-item:not(:last-of-type)::before {
+  content: "";
+  position: absolute;
+  top: 0.31rem;
+  right: 0;
+  bottom: 1.25rem;
+  left: 0.59rem;
+}
+.tree-view .list-group .list-group-item:not(:last-of-type)::before {
+  width: 1px;
+  height: 100%;
+  border-left: 1px dashed #A5A5A5;
+  z-index: -1;
+}
+.tree-view .list-group .list-group-item .node-icon {
+  position: relative;
+}
+.tree-view .list-group .list-group-item .node-icon::after {
+  content: "";
+  position: absolute;
+  top: 0.63rem;
+  right: 0;
+  bottom: 0;
+  left: -0.75rem;
+}
+.tree-view .list-group .list-group-item .node-icon::after {
+  width: 1.31rem;
+  height: 1px;
+  border-top: 1px dashed #A5A5A5;
+  z-index: -1;
+}
+.tree-view .list-group .list-group-item .tree-folder-close {
+  position: relative;
+}
+.tree-view .list-group .list-group-item .tree-folder-close::before {
+  content: "";
+  position: absolute;
+  top: 0.63rem;
+  right: 0;
+  bottom: 0;
+  left: 0.63rem;
+}
+.tree-view .list-group .list-group-item .tree-folder-close::before {
+  width: 1px;
+  height: 100%;
+  border-left: 1px dashed #A5A5A5;
+  z-index: -1;
+}
+.tree-view .list-group .list-group-item .icon, .tree-view .list-group .list-group-item #kdhc-masthead .nuri-txt::before, #kdhc-masthead .tree-view .list-group .list-group-item .nuri-txt::before, .tree-view .list-group .list-group-item header .logo .logo-img, header .logo .tree-view .list-group .list-group-item .logo-img, .tree-view .list-group .list-group-item header .logo .logo-txt, header .logo .tree-view .list-group .list-group-item .logo-txt, .tree-view .list-group .list-group-item header .util .util-01, header .util .tree-view .list-group .list-group-item .util-01, .tree-view .list-group .list-group-item header .util .util-02, header .util .tree-view .list-group .list-group-item .util-02, .tree-view .list-group .list-group-item header .util .util-03, header .util .tree-view .list-group .list-group-item .util-03, .tree-view .list-group .list-group-item header .util .util-04, header .util .tree-view .list-group .list-group-item .util-04, .tree-view .list-group .list-group-item nav.page-navigation .pagination .page-item.first .page-link::before, nav.page-navigation .pagination .page-item.first .tree-view .list-group .list-group-item .page-link::before, .tree-view .list-group .list-group-item nav.page-navigation .pagination .page-item.last .page-link::before, nav.page-navigation .pagination .page-item.last .tree-view .list-group .list-group-item .page-link::before, .tree-view .list-group .list-group-item nav.page-navigation .pagination .page-item.next .page-link::before, nav.page-navigation .pagination .page-item.next .tree-view .list-group .list-group-item .page-link::before, .tree-view .list-group .list-group-item nav.page-navigation .pagination .page-item.prev .page-link::before, nav.page-navigation .pagination .page-item.prev .tree-view .list-group .list-group-item .page-link::before, .tree-view .list-group .list-group-item .empty .empty-img, .empty .tree-view .list-group .list-group-item .empty-img, .tree-view .list-group .list-group-item .modal .modal-header .btn-close, .modal .modal-header .tree-view .list-group .list-group-item .btn-close, .tree-view .list-group .list-group-item .kdhc-pop-header .btn-close, .kdhc-pop-header .tree-view .list-group .list-group-item .btn-close, .tree-view .list-group .list-group-item .step .step-default .step-img, .step .step-default .tree-view .list-group .list-group-item .step-img, .tree-view .list-group .list-group-item .step .step-current .step-img, .step .step-current .tree-view .list-group .list-group-item .step-img, .tree-view .list-group .list-group-item .step .step-reject .step-img, .step .step-reject .tree-view .list-group .list-group-item .step-img, .tree-view .list-group .list-group-item .step .step-done .step-img, .step .step-done .tree-view .list-group .list-group-item .step-img, .tree-view .list-group .list-group-item .form-select {
+  margin-right: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.tree-view .list-group .list-group-item .tree-plus,
+.tree-view .list-group .list-group-item .tree-minus {
+  margin-left: 0.13rem;
+  width: 1rem;
+  height: 1rem;
+  background-size: 1rem;
+}
+.tree-view .list-group .list-group-item[data-nodeid="0"]::after {
+  content: none;
+}
+.tree-view .list-group .list-group-item[data-nodeid="0"] .tree-folder-close {
+  display: none;
+}
+.tree-view .list-group .list-group-item .indent + .glyphicon + .tree-doc::before {
+  content: "";
+  position: absolute;
+  top: -0.63rem;
+  right: 0;
+  bottom: 0;
+  left: -1rem;
+}
+.tree-view .list-group .list-group-item .indent + .glyphicon + .tree-doc::before {
+  width: 1px;
+  height: 100%;
+  border-left: 1px dashed #A5A5A5;
+  z-index: -1;
 }
 
 /* Common

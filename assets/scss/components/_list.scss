@@ -3,7 +3,6 @@
 $ulist-types: ('type01', 'type02', 'type03');
 $dlist-types: ('type01', 'type02', 'type03');
 $olist-types: ('type01', 'type02', 'type03');
-$grid-areas: ("area1", "area2", "area3", "area4", "area5", "area6", "area7", "area8", "area9", "area10", "area11", "area12", "area13", "area14", "area15");
 
 .ulist {
     @each $ut in $ulist-types {
@@ -16,8 +15,11 @@ $grid-areas: ("area1", "area2", "area3", "area4", "area5", "area6", "area7", "ar
     @each $dt in $dlist-types {
         &.#{$dt} {
             @if $dt == "type01" {
-                display: flex;
-                flex-direction: row;
+                @include flex(true, "start", "normal");
+                border: 1px solid $gray-007;
+                & + dl {
+                    border-top: 0;
+                }
                 dt {
                     display: flex;
                     flex-direction: column;
@@ -32,18 +34,20 @@ $grid-areas: ("area1", "area2", "area3", "area4", "area5", "area6", "area7", "ar
                 .tit {
                     padding: rem(10px) rem(12px);
                     width: rem(240px);
-                    border: 1px solid $gray-007;
+                    border-right: 1px solid $gray-007;
                     background-color: $white;
                 }
                 .item {
                     width: 100%;
-                    border: {
-                        width: 1px 1px 1px 0;
-                        style: solid;
-                        color: $gray-007;
-                    }
                     background-color: $white;
+                    .item-cont {
+                        @include flex(true, "start", "center");
+                        &:not(:last-of-type) {
+                            border-bottom: 1px solid $gray-007;
+                        }
+                    }
                     .txt {
+                        @include flex(true, "center", "center");
                         padding: rem(10px) rem(12px);
                         flex: 1;
                     }
@@ -53,6 +57,9 @@ $grid-areas: ("area1", "area2", "area3", "area4", "area5", "area6", "area7", "ar
                         padding: rem(10px) rem(12px);
                         width: rem(120px);
                         border-left: 1px solid $gray-007;
+                        .form-check label.hidden {
+                            display: none;
+                        }
                     }
                 }
             }
@@ -65,26 +72,4 @@ $grid-areas: ("area1", "area2", "area3", "area4", "area5", "area6", "area7", "ar
             
         }
     }
-}
-
-.container1 {
-  display: flex;
-  flex-direction: row; // Align items horizontally
-
-  .item {
-    display: flex;
-    flex-direction: column; // Align children vertically
-    margin: 10px;
-    padding: 0;
-    border: 1px solid #ddd;
-  }
-
-  .rowspan {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 2; // Makes the item take more space in its column, mimicking rowspan
-    background-color: lightblue;
-    padding: 20px;
-    align-items: center;
-  }
 }

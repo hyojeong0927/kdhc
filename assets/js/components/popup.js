@@ -23,10 +23,11 @@ export function openPopup(size, urlList) {
 
     if (size === 'small') {
         width = 600;
-        height = 434;
-    } else if (size === 'medium') {
+        height = 590;
+    } 
+    else if (size === 'medium') {
         width = 800;
-        height = 200;
+        height = 362;
     }
 
     openPopupWindow(url, width, height, `Popup${size}`);

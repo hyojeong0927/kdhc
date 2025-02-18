@@ -1,0 +1,120 @@
+/* Tree
+========================================================================== */
+%tree-view-base {
+    padding: rem(20px);
+    min-height: rem(560px);
+    border: 1px solid $gray-001;
+    background-color: $white;
+    .list-group {
+        color: $primary;
+        @include font-style($font-size-base, $font-weight-medium, $line-height-base);
+        border-radius: 0;
+        border: 0;
+        background-color: transparent;
+    }
+    .list-group-item {
+        @include flex(true, "start", "center");
+        border: 0;
+    }
+    a {
+        color: inherit;
+        font-size: inherit;
+        text-decoration: none;
+    }
+    .node-treeview {
+        &:not(.node-disabled):hover {
+            background-color: transparent;
+        }
+        &.node-selected {
+            color: $primary !important;
+            background-color: transparent !important;
+            a {
+                color: $primary !important;
+            }
+        }
+    }
+}
+.tree-view {
+    @extend %tree-view-base;
+    .list-group {
+        .list-group-item {
+            @include flex(true, 'start', 'center', rem(12px));
+            padding: 0;
+            background-color: transparent;
+            z-index: 1;
+            &:not(:last-of-type) {
+                position: relative;
+                padding-bottom: rem(12px);
+                @include before(true, true, rem(5px), 0, rem(20px), rem(9.5px));
+                &::before {
+                    width: 1px;
+                    height: 100%;
+                    border-left: 1px dashed $gray-003;
+                    z-index: -1;
+                }
+            }
+            .node-icon {
+                position: relative;
+                @include before(false, true, rem(10px), 0, 0, rem(-12px));
+                &::after {
+                    width: rem(21px);
+                    height: 1px;
+                    border-top: 1px dashed $gray-003;
+                    z-index: -1;
+                }
+            }
+            .tree-folder-close {
+                position: relative;
+                @include before(true, true, rem(10px), 0, 0, rem(10px));
+                &::before {
+                    width: 1px;
+                    height: 100%;
+                    border-left: 1px dashed $gray-003;
+                    z-index: -1;
+                }
+            }
+            .icon {
+                margin-right: 0;
+                width: rem(20px);
+                height: rem(20px);
+            }
+            .tree-plus,
+            .tree-minus {
+                margin-left: rem(2px);
+                width: rem(16px);
+                height: rem(16px);
+                background-size: rem(16px);
+            }
+            &[data-nodeid="0"] {
+                &::after {
+                    content: none;
+                }
+                .glyphicon {
+                    @extend .tree-root;
+                }
+                .tree-folder-close {
+                    display: none;
+                }
+            }
+            .tree-minus {
+                & + .tree-folder-close {
+                    @extend .tree-folder-open;
+                }
+            }
+            .indent {
+                & + .glyphicon {
+                    & + .tree-doc {
+                        @include before(true, true, rem(-10px), 0, 0, rem(-16px));
+                        &::before {
+                            width: 1px;
+                            height: 100%;
+                            border-left: 1px dashed $gray-003;
+                            z-index: -1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
