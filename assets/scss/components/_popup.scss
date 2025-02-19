@@ -21,7 +21,11 @@
         }
         .kdhc-pop-container {
             .inner {
+                overflow-y: auto;
                 padding: rem(24px);
+                height: 100%;
+                max-height: calc(100dvh - rem(68px));
+                min-height:calc(100dvh - rem(68px));
             }
         }
     }

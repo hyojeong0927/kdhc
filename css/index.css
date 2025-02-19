@@ -31564,7 +31564,11 @@ textarea.form-control {
   font-size: 1.38rem;
 }
 .kdhc-pop-wrap.medium .kdhc-pop-container .inner, .kdhc-pop-wrap.small .kdhc-pop-container .inner {
+  overflow-y: auto;
   padding: 1.5rem;
+  height: 100%;
+  max-height: calc(100dvh - 4.25rem);
+  min-height: calc(100dvh - 4.25rem);
 }
 
 .kdhc-pop-header {

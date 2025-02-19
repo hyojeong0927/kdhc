@@ -27,7 +27,7 @@ export function openPopup(size, urlList) {
     } 
     else if (size === 'medium') {
         width = 800;
-        height = 362;
+        height = 438;
     }
 
     openPopupWindow(url, width, height, `Popup${size}`);
