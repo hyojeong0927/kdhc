@@ -343,6 +343,7 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
 .flex-form {
     @include flex(true, "between", "normal", rem(40px));
     min-height: rem(560px);
+    
     .flex-form-left {
         &.tree-view {
             width: rem(382px);
