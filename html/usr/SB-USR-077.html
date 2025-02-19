@@ -233,7 +233,7 @@
                         
                         <!-- grid wrap start -->
                         <article class="grid-wrap">
-                            <div id="sampleGrid" class="normal" style="width: 100%; height: 674px;"></div>
+                            <div id="sampleGrid" class="normal" style="width: 100%;"></div>
                         </article>
                         <!--// grid wrap end -->
 
@@ -517,6 +517,8 @@
                 selectAll: 'filtered',
                 width: 52,
             },
+            domLayout: "autoHeight", // 2025-02-19 추가 옵션
+            columnSize: "sizeToFit", // 2025-02-19 추가 옵션
 
             // data empty style
             overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
