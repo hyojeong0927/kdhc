@@ -35,9 +35,19 @@
     .ag-header {
         border-bottom: 1px solid $gray-007;
         background-color: $blue-005;
-        .ag-header-cell:not(:last-of-type) {
+        .ag-header-cell-resize {
             &::after {
-                border-right: 1px solid $gray-007;
+                height: 100% !important;
+                background-color: $gray-007 !important;
+                margin-left: 2px;
+            }
+        }
+        .ag-header-cell {
+            white-space: pre;
+            &:not(:last-of-type) {
+                &::after {
+                    border-right: 1px solid $gray-007;
+                }
             }
         }
         .ag-header-cell-text {
@@ -45,6 +55,13 @@
             font-size: $font-size-sm;
             line-height: rem(16.8px);
             font-weight: $font-weight-medium;
+        }
+        .ag-header-group-cell {
+            &.center {
+                .ag-header-cell-comp-wrapper {
+                    justify-content: center;
+                }
+            }
         }
     }
     .ag-body-viewport {
@@ -116,6 +133,22 @@
         box-shadow: none;
     }
 }
+.ag-text-field-input-wrapper {
+    input[type="text"] {
+        @extend .form-control;
+    }
+}
+.ag-date-field-input-wrapper {
+    input[type="date"] {
+        @extend .form-control;
+        &::-webkit-calendar-picker-indicator {
+            position: absolute;
+            right: rem(12px);
+            background: url(#{$img-root}/images/svg/calendar.svg);
+            background-repeat: no-repeat;
+        }
+    }
+}
 
 // grid type style
 .normal {
@@ -149,7 +182,10 @@
         word-break: keep-all;
     }
 }
-
+.ag-center-cols-viewport,
+.ag-center-cols-container {
+    min-height: rem(56px) !important;
+}  
 // empty
 .empty {
     @include flex(false, "center", "center", rem(16px));

@@ -49,3 +49,16 @@ export function openPopupWindow(url, width, height, popupName = 'Popup') {
         console.error('팝업이 차단되었습니다.');
     }
 }
+
+// 팝업 사이즈 외부에서 지정
+export function openCenteredPopup(url, width, height) {
+    const screenWidth = window.screen.width;
+    const screenHeight = window.screen.height;
+   
+    const left = (screenWidth - width) / 2;
+    const top = (screenHeight - height) / 2;
+   
+    const features = `width=${width},height=${height},left=${left},top=${top}`;
+    
+    window.open(url, '_blank', features);
+}

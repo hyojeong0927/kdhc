@@ -114,6 +114,13 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
                             }
                         }
                     }
+                    &.form-col-2 {
+                        .form-row {
+                            .col {
+                                width: 50%;
+                            }
+                        }
+                    }
                 }
                 @else if $ft == "type02"  {
                     @include flex(true, "start", "normal");
@@ -143,12 +150,37 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
                     }
                 }
                 @else if $ft == "type03"  {
-                    @include flex(true, "start", "center");
+                    display: grid;
+                    grid-template-columns: 1fr 1fr rem(176px);
+                    grid-template-areas: 
+                    "row-01 row-02 btn"
+                    "row-01 row-03 btn";
+                    padding-right: 0;
                     .form-row {
-                        @include flex(true, "start", "center");
-                        .col-row-span {
-                            &:not(:first-of-type) {
-                                @include flex(false, "start", "center");
+                        &:nth-of-type(1) {
+                            grid-area: row-01;
+                        }
+                        &:nth-of-type(2) {
+                            grid-area: row-02;
+                        }
+                        &:nth-of-type(3) {
+                            grid-area: row-03;
+                        }
+                        &.search-btn {
+                            align-items: center;
+                            justify-content: center;
+                            grid-area: btn;
+                            .btn {
+                                min-width: rem(96px);
+                            }
+                        }
+                        .col {
+                            &:first-of-type {
+                                @include flex(true, "start", "center");
+                                .form-label {
+                                    flex: 0 0 rem(88px);
+                                    min-width: rem(88px);
+                                }
                             }
                         }
                     }
@@ -179,7 +211,7 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
                                 width: 100%;
                             }
                             .form-label {
-                                min-width: rem(90px);
+                                word-break: keep-all;
                             }
                             .inputgroup,
                             .input-time-group,

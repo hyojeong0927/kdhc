@@ -3,7 +3,7 @@ $(document).ready(function() {
         {
             text: "Root",
             class: "root",
-            href: "#root0",
+            href: "",
             selectable: false,
         },
         {
@@ -14,7 +14,7 @@ $(document).ready(function() {
             state: { expanded: true },
             nodes: [
                 { text: "자산정보세부현황", href: "#", icon: "tree-doc", class: "depth2" },
-                { text: "월간사이버보안점검", href: "#", icon: "tree-doc", class: "depth2" }
+                { text: "월간사이버보안점검", href: "#", icon: "tree-doc", class: "depth2 last-child" }
             ]
         },
         {
@@ -24,7 +24,7 @@ $(document).ready(function() {
             selectable: false,
             nodes: [
                 { text: "봉인장치사용내역", href: "#", icon: "tree-doc", class: "depth2" },
-                { text: "영상정보장치점검관리", href: "#", icon: "tree-doc", class: "depth2" }
+                { text: "영상정보장치점검관리", href: "#", icon: "tree-doc", class: "depth2 last-child" }
             ]
         },
         {
@@ -38,7 +38,7 @@ $(document).ready(function() {
                 { text: "공개취약점내역", href: "#", icon: "tree-doc", class: "depth2" },
                 { text: "공개취약점조치유예", href: "#", icon: "tree-doc", class: "depth2" },
                 { text: "로그분석결과", href: "#", icon: "tree-doc", class: "depth2" },
-                { text: "원격접속내역", href: "#", icon: "tree-doc", class: "depth2" }
+                { text: "원격접속내역", href: "#", icon: "tree-doc", class: "depth2 last-child" }
             ]
         },
         {
@@ -57,7 +57,7 @@ $(document).ready(function() {
                 { text: "보안패치미운영월간점검", href: "#", icon: "tree-doc", class: "depth2" },
                 { text: "비밀번호정책운영", href: "#", icon: "tree-doc", class: "depth2" },
                 { text: "비밀번호변경불가월간점검", href: "#", icon: "tree-doc", class: "depth2" },
-                { text: "계정 로그일일점검내역", href: "#", icon: "tree-doc", class: "depth2" }
+                { text: "계정 로그일일점검내역", href: "#", icon: "tree-doc", class: "depth2 last-child" }
             ]
         },
         {
@@ -81,7 +81,7 @@ $(document).ready(function() {
             nodes: [
                 { text: "자산정보관리", href: "#", icon: "tree-doc", class: "depth2" },
                 { text: "노트북사용", href: "#", icon: "tree-doc", class: "depth2" },
-                { text: "정보자산반출입내역", href: "#", icon: "tree-doc", class: "depth2" }
+                { text: "정보자산반출입내역", href: "#", icon: "tree-doc", class: "depth2 last-child" }
             ]
         },
         {
@@ -92,7 +92,7 @@ $(document).ready(function() {
             nodes: [
                 { text: "관리자1", href: "#", icon: "tree-doc", class: "depth2" },
                 { text: "관리자2", href: "#", icon: "tree-doc", class: "depth2" },
-                { text: "관리자3", href: "#", icon: "tree-doc", class: "last-child" }
+                { text: "관리자3", href: "#", icon: "tree-doc", class: "depth2 last-child" }
             ]
         }
     ];

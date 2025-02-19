@@ -14,7 +14,7 @@
 <body>
     <div id="pop-wrap" class="kdhc-pop-wrap">
         <header class="kdhc-pop-header">
-            <h1 class="pop-title">노트북 사용 등록</h1>
+            <h1 class="pop-title">노트북 사용내역 등록</h1>
             <button type="button" class="btn-close" aria-label="Close" onclick="window.close()"></button>
         </header>
         <!-- 팝업 컨테이너 영역 -->
@@ -26,8 +26,8 @@
                     <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
                         data-breadcrumb='[
                         { "name": "정보자산", "url": "#" },
-                        { "name": "노트북 사용", "url": "#" },
-                        { "name": "노트북 사용 등록", "url": "", "active": true }
+                        { "name": "노트북 사용내역", "url": "#" },
+                        { "name": "노트북 사용내역 등록", "url": "", "active": true }
                         ]'
                         data-visible="true">
                     </nav>
@@ -48,20 +48,7 @@
                                     <div class="form-wrap type01">
                                         <!-- row -->
                                         <div class="form-row">
-                                            <div class="col">
-                                                <div class="form-label">사용등록일자</div>
-                                                <div class="form-group">
-                                                    <!-- datepicker -->
-                                                    <div class="input-date-group is-error">
-                                                        <input type="text" id="singleDate0" class="form-control datepicker" value="" placeholder="YYYY-MM-DD">
-                                                        <label class="input-group-text" for="singleDate0"><i class="icon calendar"></i></label>
-                                                    </div>
-                                                    <!--// datepicker -->
-                                                    <!-- 에러 문구 -->
-                                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
-                                                    <!--// 에러 문구 -->
-                                                </div>
-                                            </div>
+                                            <!--  -->
                                             <div class="col">
                                                 <div class="form-label">자산관리번호</div>
                                                 <div class="form-group">
@@ -76,22 +63,168 @@
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">사용일자</div>
+                                                <div class="form-group">
+                                                    <!-- datepicker -->
+                                                    <div class="input-date-group is-error">
+                                                        <input type="text" id="singleDate0" class="form-control datepicker" value="" placeholder="YYYY-MM-DD">
+                                                        <label class="input-group-text" for="singleDate0"><i class="icon calendar"></i></label>
+                                                    </div>
+                                                    <!--// datepicker -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--  -->
                                         </div>
                                         <!-- row -->
                                         <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">사용처 자산관리번호</div>
+                                                <div class="form-group">
+                                                    <!-- input search group start -->
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search1" value="화성-ST-노트북 001" placeholder="사용처 관리번호">
+                                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                                    </div>
+                                                    <!--// input search group end -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">사용시간</div>
+                                                <div class="form-group">
+                                                    <!-- input time group -->
+                                                    <div class="input-time-group is-error">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>HH</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                        </select>
+                                                        <div class="to">:</div>
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>MM</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// input time group -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
                                             <div class="col">
                                                 <div class="form-label">시스템 명</div>
                                                 <div class="form-group">
                                                     <div class="input-txt">네트워크설비 유지보수</div>
                                                 </div>
                                             </div>
+                                            <!--//  -->
+                                            <!--  -->
                                             <div class="col">
-                                                <div class="form-label">용도</div>
+                                                <div class="form-label">사용종료 일자</div>
+                                                <div class="form-group">
+                                                    <!-- datepicker -->
+                                                    <div class="input-date-group is-error">
+                                                        <input type="text" id="singleDate0" class="form-control datepicker" value="" placeholder="YYYY-MM-DD">
+                                                        <label class="input-group-text" for="singleDate0"><i class="icon calendar"></i></label>
+                                                    </div>
+                                                    <!--// datepicker -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">노트북 봉인장치 번호</div>
+                                                <div class="form-group">
+                                                    <!-- input search group start -->
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search1" value="화성-ST-노트북 001" placeholder="자산관리번호 입력">
+                                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                                    </div>
+                                                    <!--// input search group end -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">사용종료 시간</div>
+                                                <div class="form-group">
+                                                    <!-- input time group -->
+                                                    <div class="input-time-group is-error">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>HH</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                        </select>
+                                                        <div class="to">:</div>
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>MM</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// input time group -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">사용처 봉인장치 번호</div>
+                                                <div class="form-group">
+                                                    <!-- input search group start -->
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search1" value="화성-ST-노트북 001" placeholder="자산관리번호 입력">
+                                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                                    </div>
+                                                    <!--// input search group end -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">사유</div>
                                                 <div class="form-group">
                                                     <!-- input group -->
                                                     <div class="input-group">
-                                                        <input type="text" id="input-text" class="form-control" placeholder="용도 내용 입력" value="">
-                                                        <label for="input-text" class="hidden">용도</label>
+                                                        <input type="text" id="input-text" class="form-control" placeholder="사유 내용 입력" value="">
+                                                        <label for="input-text" class="hidden">사유</label>
                                                     </div>
                                                     <!--// input group -->
                                                     <!-- 에러 문구 -->
@@ -99,6 +232,7 @@
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
+                                            <!--//  -->
                                         </div>
                                         <!--// row end -->
                                     </div>
@@ -170,7 +304,7 @@
                                     </div>
                                     <!--// 결재상태 -->
                                 </div>
-                                
+
                                 <div class="approve-sec type01">
                                     <div class="title-wrap" data-title="결재진행" data-heading="h6"></div>
                                     <!-- input form -->
@@ -185,7 +319,7 @@
                                                         <div class="col">
                                                             <div class="form-label">제어보호담당관</div>
                                                             <div class="form-group">
-                                                                <div class="input-txt">김현수</div>
+                                                                <div class="input-txt center">김현수</div>
                                                             </div>
                                                         </div>
                                                         <div class="col">
@@ -194,8 +328,9 @@
                                                                 <div class="input-txt center">2024.12.12 11:30:24</div>
                                                             </div>
                                                             <div class="form-group">
+                                                                <!-- badge 영역 -->
                                                                 <div class="input-badge-group center">
-                                                                    <span class="badge badge-type01">기안완료</span>
+                                                                    <span class="badge badge-type01">결재완료</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -205,17 +340,20 @@
                                                         <div class="col">
                                                             <div class="form-label">제어보호담당자</div>
                                                             <div class="form-group">
-                                                                <div class="input-txt">오승환</div>
+                                                                <div class="input-txt center">오승환</div>
                                                             </div>
                                                         </div>
                                                         <div class="col">
                                                             <div class="form-label">결재일자</div>
                                                             <div class="form-group">
-                                                                <div class="input-txt center">2024.12.12 11:30:24</div>
+                                                                <div class="input-txt center">
+                                                                    <div class="input-txt center">2024.12.12 11:30:24</div>
+                                                                </div>
                                                             </div>
                                                             <div class="form-group">
+                                                                <!-- badge 영역 -->
                                                                 <div class="input-badge-group center">
-                                                                    <span class="badge badge-type01">기안완료</span>
+                                                                    <span class="badge badge-type01">결재완료</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -225,7 +363,7 @@
                                                         <div class="col">
                                                             <div class="form-label">기안자</div>
                                                             <div class="form-group">
-                                                                <div class="input-txt">홍창기</div>
+                                                                <div class="input-txt center">이현경</div>
                                                             </div>
                                                         </div>
                                                         <div class="col">
@@ -234,6 +372,7 @@
                                                                 <div class="input-txt center">2024.12.12 11:30:24</div>
                                                             </div>
                                                             <div class="form-group">
+                                                                <!-- badge 영역 -->
                                                                 <div class="input-badge-group center">
                                                                     <span class="badge badge-type01">기완완료</span>
                                                                 </div>
