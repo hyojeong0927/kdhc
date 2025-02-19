@@ -25,9 +25,9 @@
                     <!-- breadcrumbs start -->
                     <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
                         data-breadcrumb='[
-                        { "name": "정보자산", "url": "#" },
-                        { "name": "정보보자산관리", "url": "#" },
-                        { "name": "자산관리 상세 등록/수정", "url": "", "active": true }
+                            { "name": "정보자산", "url": "#" },
+                            { "name": "정보보자산관리", "url": "#" },
+                            { "name": "자산관리 상세 등록/수정", "url": "", "active": true }
                         ]'
                         data-visible="true">
                     </nav>
@@ -218,12 +218,12 @@
                 field02: "시스템 명",
                 field03: "",
                 field04: "",
-                field05: "",
+                field05: "2025-01-20",
                 field06: "",
-                field07: "",
+                field07: "2025-01-20",
                 field08: "",
                 field09: "",
-                field10: "",
+                field10: "2025-01-20",
                 field11: "",
                 field12: "step01",
             },
@@ -241,34 +241,6 @@
                 field11: "",
                 field12: "done",
             },
-            // {
-            //     field01: "",
-            //     field02: "시스템 명",
-            //     field03: "",
-            //     field04: "",
-            //     field05: "",
-            //     field06: "",
-            //     field07: "",
-            //     field08: "",
-            //     field09: "",
-            //     field10: "",
-            //     field11: "",
-            //     field12: "done",
-            // },
-            // {
-            //     field01: "",
-            //     field02: "시스템 명",
-            //     field03: "",
-            //     field04: "",
-            //     field05: "",
-            //     field06: "",
-            //     field07: "",
-            //     field08: "",
-            //     field09: "",
-            //     field10: "",
-            //     field11: "",
-            //     field12: "done",
-            // }
         ];
         const columnDefs = [
             {
@@ -277,20 +249,7 @@
                 field: "field01",
                 width: 238,
                 cellClass: "cell-normal",
-                cellRenderer: (params) => {
-                    const rowIndex = params.node.rowIndex;
-                    if (rowIndex === 0) {
-                        const values = params.value ? params.value.split(",") : [];
-                        return `
-                            <div class="input-search-group">
-                                <input type="search" class="form-control" id="search1" value="" placeholder="자산관리번호 입력">
-                                <label class="input-group-text" for="search1"><i class="icon search"></i></label>
-                            </div>
-                        `;
-                    } else {
-                        return params.value || "";
-                    }
-                }
+                cellEditor: 'customInputSearchEditor',
             },
             {
                 headerName: "시스템 명",
@@ -319,10 +278,10 @@
                 field: "field05",
                 width: 180,
                 cellClass: "cell-normal",
-                cellEditor: 'agDateCellEditor',
-                cellEditorParams: {
-                    min: '2000-01-01',
-                    min: '2019-12-31',
+                cellEditorSelector: function(params) {
+                    return {
+                        component: 'bootstrapDatePickerEditor'
+                    };
                 }
             },
             {
@@ -342,7 +301,11 @@
                 field: "field07",
                 width: 180,
                 cellClass: "cell-normal",
-                cellEditor: 'agDateCellEditor',
+                cellEditorSelector: function(params) {
+                    return {
+                        component: 'bootstrapDatePickerEditor'
+                    };
+                }
             },
             {
                 headerName: "계정 공유",
@@ -364,10 +327,10 @@
                 field: "field10",
                 width: 180,
                 cellClass: "cell-normal",
-                cellEditor: 'agDateCellEditor',
-                cellEditorParams: {
-                    min: '2000-01-01',
-                    min: '2019-12-31',
+                cellEditorSelector: function(params) {
+                    return {
+                        component: 'bootstrapDatePickerEditor'
+                    };
                 }
             },
             {
@@ -376,20 +339,7 @@
                 field: "field11",
                 width: 180,
                 cellClass: "cell-normal",
-                cellRenderer: (params) => {
-                    const rowIndex = params.node.rowIndex;
-                    if (rowIndex === 0) {
-                        const values = params.value ? params.value.split(",") : [];
-                        return `
-                            <div class="input-search-group is-error">
-                                <input type="search" class="form-control" id="search1" value="" placeholder="점검자 입력">
-                                <label class="input-group-text" for="search1"><i class="icon search"></i></label>
-                            </div>
-                        `;
-                    } else {
-                        return params.value || "";
-                    }
-                }
+                cellEditor: 'customInputSearchEditor',
             },
             {
                 headerName: "결재 상태",
@@ -400,6 +350,7 @@
                 cellClass: "cell-normal",
                 cellRenderer: (params) => {
                     const status = params.value;
+
                     let stepsData = [];
                     
                     if (status === "step01") {
@@ -421,7 +372,9 @@
                             { "status": "step-done", "title": "제어보호담당관", "name": "김현수" }
                         ];
                     }
+
                     let stepListHtml = '<ul class="step-list">';
+                        
                     stepsData.forEach(step => {
                         stepListHtml += `
                             <li class="${step.status}">
@@ -436,7 +389,6 @@
                     stepListHtml += '</ul>';
                     return `<div class="step step-sm">${stepListHtml}</div>`;
                 }
-
             }
         ];
         let sampleGridApi;
@@ -459,6 +411,69 @@
             },
             domLayout: "autoHeight",
             columnSize: "sizeToFit",
+            components: {
+                bootstrapDatePickerEditor: function() {
+                    return {
+                        init: function(params) {
+                            const input = document.createElement('input');
+                            $(input).datepicker({
+                                format: 'mm/dd/yyyy',
+                                autoclose: true
+                            });
+                            input.value = params.value;
+
+                            input.addEventListener('change', function() {
+                                params.api.stopEditing();
+                            });
+
+                            this.eInput = input;
+                        },
+                        getValue: function() {
+                            return this.eInput.value;
+                        },
+                        getGui: function() {
+                            return this.eInput;
+                        }
+                    };
+                },
+                customInputSearchEditor: function() {
+                    return {
+                        init: function(params) {
+                            
+                            const input = document.createElement('input');
+                            input.type = 'search';
+                            input.className = 'form-control';
+                            input.value = params.value || '';
+                            input.placeholder = "입력";
+
+                            const label = document.createElement('label');
+                            label.className = 'input-group-text';
+                            label.innerHTML = '<i class="icon search"></i>';
+
+                           
+                            input.addEventListener('input', function() {
+                                params.api.stopEditing();
+                            });
+
+                            this.eInput = input;
+                            this.eLabel = label;
+
+                            const wrapper = document.createElement('div');
+                            wrapper.className = 'input-search-group';
+                            wrapper.appendChild(input);
+                            wrapper.appendChild(label);
+                            this.eWrapper = wrapper;
+                        },
+                        getValue: function() {
+                            return this.eInput.value;
+                        },
+                        getGui: function() {
+                            return this.eWrapper;
+                        }
+                    };
+                },
+            },
+
             // data empty style
             overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
         };
