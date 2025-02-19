@@ -54,7 +54,7 @@
                         { "name": "자산정보세부현황", "url": "#" },
                         { "name": "공개취약점 내역", "url": "#" },
                         { "name": "공개취약점 조치유예", "url": "#" },
-                        { "name": "로그분석결과", "url": "#" }
+                        { "name": "로그분석결과", "url": "#" },
                         { "name": "원격접속 내역", "url": "#" }
                         ]'></aside>
                 <!--// 사이드 영역 -->
@@ -80,24 +80,18 @@
                         </div>
                         <!--// page title end -->
                         <!-- 팝업 호출 버튼 -->
-                        <button type="button" id="large-btn" class="btn btn-primary btn-lg">
+                        <button type="button" id="popupButton" class="btn btn-primary btn-lg">
                             계정관리관리 상세/등록/수정
                         </button>
                         <!--// 팝업 호출 버튼 -->
 
                         <!-- popup script -->
                         <script type="module">
-                            import { setupPopupListeners } from '../../assets/js/components/popup.js';
-
-                            const urlList = {
-                                large: './popup/SB-USR-025.html',
-                            };
-
-                            setupPopupListeners(urlList);
-
                             import { openCenteredPopup } from '../../assets/js/components/popup.js';
 
-                            openCenteredPopup('./popup/SB-USR-025.html', 1400, 1080);
+                            document.getElementById('popupButton').addEventListener('click', () => {
+                                openCenteredPopup('./popup/SB-USR-025.html', 1400, 1080);
+                            });
                         </script>
                         <!--// popup script -->
                     </div>

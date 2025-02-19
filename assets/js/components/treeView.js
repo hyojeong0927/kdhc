@@ -1,11 +1,11 @@
 $(document).ready(function() {
     var treeData = [
-        {
-            text: "Root",
-            class: "root",
-            href: "",
-            selectable: false,
-        },
+        // {
+        //     text: "Root",
+        //     class: "root",
+        //     href: "",
+        //     selectable: false,
+        // },
         {
             text: "관리보안",
             class: "depth1",
@@ -113,6 +113,15 @@ $(document).ready(function() {
         },
         onNodeCollapsed: function(event, node) {
             setTimeout(applyClasses, 50);
+        },
+        onNodeSelected: function(event, node) {
+            setTimeout(function() {
+                applyClasses();
+                restoreNodeClass(node);
+            }, 50);
+        },
+        onNodeUnselected: function(event, node) {
+            setTimeout(applyClasses, 50);
         }
     });
 
@@ -124,11 +133,23 @@ $(document).ready(function() {
                 if (nodeData.class) {
                     $(this).addClass(nodeData.class);
                 }
+                // if (nodeData.text === "Root") {
+                //     $(this).addClass("root");
+                // }
             }
         });
     }
-    setTimeout(applyClasses, 100);
-    
+
+    function restoreNodeClass(node) {
+        var $nodeElement = $tree.find('li[data-nodeid="' + node.nodeId + '"]');
+        if (node.class) {
+            $nodeElement.addClass(node.class);
+        }
+    }
+    setTimeout(function() {
+        applyClasses();
+    }, 100);
+
     $tree.on('rendered', function() {
         setTimeout(applyClasses, 50);
     });
