@@ -253,8 +253,7 @@
                 editable: true,
                 cellClass: "cell-normal",
                 cellRenderer: (params) => {
-                    const link = `<a href="http://${params.value}" target="_blank">${params.value}</a>(수정가능)`;
-                    return link;
+                    return `<a href="http://${params.value}" target="_blank">${params.value}</a>(수정가능)`;
                 }
             },
             {
