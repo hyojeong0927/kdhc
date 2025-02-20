@@ -82,6 +82,26 @@
 }
 .tree-view {
     @extend %tree-view-base;
+    .treeview {
+        position: relative;
+        padding-top: rem(21px);
+        @include before(true, true, 0, 0, 0, 0);
+        @include before(false, true, rem(-2px), 0, 0, 0);
+        &::before {
+            width: 100%;
+            height: rem(26px);
+            @extend .icon;
+            @extend .tree-root;
+            background-size: rem(20px);
+            background-position: left top;
+        }
+        &::after {
+            content: 'Root';
+            padding-left: rem(27px);
+            color: inherit;
+            font-size: inherit;
+        }
+    }
     .list-group {
         .list-group-item {
             @include flex(true, 'start', 'center', rem(12px));
@@ -89,7 +109,7 @@
             padding: rem(6px) 0;
             background-color: transparent;
             z-index: 1;
-            @include before(true, true, rem(10px), 0, rem(20px), rem(9.5px));
+            @include before(true, true, 0, 0, rem(20px), rem(9.5px));
             &::before {
                 height: 100%;
                 @extend .dot-line;
@@ -108,7 +128,7 @@
             &.depth1 {
                 &.last-child {
                     &::before {
-                        content: none;
+                        height: 50%;
                     }
                     &~.depth2 {
                         &::before {
@@ -119,10 +139,10 @@
             }
             &.depth2 {
                 .tree-doc {
-                    @include before(true, true, rem(-12px), 0, 0, rem(-26px));
+                    @include before(true, true, rem(-14px), 0, 0, rem(-26px));
                     @include before(false, true, rem(10px), 0, 0, rem(-24px));
                     &::before {
-                        height: calc(100% + rem(14px));
+                        height: calc(100% + rem(18px));
                         @extend .dot-line;
                         z-index: -1;
                     }
