@@ -56,9 +56,9 @@
                         { "name": "지침 및 매뉴얼 관리", "url": "#" },
                         { "name": "메뉴 관리", "url": "#" },
                         { "name": "권한별 메뉴 관리", "url": "#" },
-                        { "name": "페이지 관리", "url": "#" },
+                        { "name": "페이지 관리", "url": "#", "active": true },
                         { "name": "사용자 관리", "url": "#" },
-                        { "name": "공통코드 관리", "url": "#", "active": true },
+                        { "name": "공통코드 관리", "url": "#" },
                         { "name": "인사이동 관리", "url": "#" },
                         { "name": "USB 저장매체 사용현황", "url": "#" },
                         { "name": "스티커 이용내역", "url": "#" }
@@ -70,7 +70,7 @@
                     <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
                         data-breadcrumb='[
                             { "name": "관리자", "url": "#" },
-                            { "name": "공통코드 관리", "url": "", "active": true }
+                            { "name": "페이지 관리", "url": "", "active": true }
                         ]'
                         data-visible="false">
                     </nav> 
@@ -81,7 +81,7 @@
 
                         <!-- page title start -->
                         <div class="page-title-wrap" 
-                            data-title="공통코드 관리" 
+                            data-title="페이지 관리" 
                             data-badge=""
                             data-badge-visible="false">
                         </div>
@@ -99,27 +99,32 @@
                                         <div class="form-row">
                                             <!-- col -->
                                             <div class="col">
-                                                <div class="form-label">그룹코드</div>
+                                                <div class="form-label">메뉴</div>
+                                                <div class="form-group">
+                                                    <!-- form select group-->
+                                                    <!-- error : select-group is-error 추가가 -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="">선택하세요</option>
+                                                            <option value="1" selected>전체</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!-- 에러 문구 -->
+                                                    <!-- error : hidden 삭제 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label">페이지 명</div>
                                                 <div class="form-group">
                                                     <!-- input group -->
-                                                    <div class="input-group is-error">
-                                                        <input type="text" id="input-text" class="form-control" placeholder="그룹코드 입력" value="">
-                                                        <label for="input-text" class="hidden">그룹코드</label>
-                                                    </div>
-                                                    <!--// input group -->
-                                                    <!-- 에러 문구 -->
-                                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
-                                                    <!--// 에러 문구 -->
-                                                </div>
-                                            </div>
-                                            <!-- col -->
-                                            <div class="col">
-                                                <div class="form-label">그룹코드 명</div>
-                                                <div class="form-group">
-                                                   <!-- input group -->
-                                                   <div class="input-group">
-                                                        <input type="text" id="input-text" class="form-control" placeholder="그룹코드 명 입력" value="">
-                                                        <label for="input-text" class="hidden">그룹코드</label>
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="페이지 명 입력" value="">
+                                                        <label for="input-text" class="hidden">페이지 명</label>
                                                     </div>
                                                     <!--// input group -->
                                                     <!-- 에러 문구 -->
@@ -127,36 +132,7 @@
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
-                                            <!-- col -->
-                                            <div class="col">
-                                                <div class="form-label">코드</div>
-                                                <div class="form-group">
-                                                   <!-- input group -->
-                                                   <div class="input-group">
-                                                        <input type="text" id="input-text" class="form-control" placeholder="코드 입력" value="">
-                                                        <label for="input-text" class="hidden">코드</label>
-                                                    </div>
-                                                    <!--// input group -->
-                                                    <!-- 에러 문구 -->
-                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                    <!--// 에러 문구 -->
-                                                </div>
-                                            </div>
-                                            <!-- col -->
-                                            <div class="col">
-                                                <div class="form-label">코드 명</div>
-                                                <div class="form-group">
-                                                   <!-- input group -->
-                                                   <div class="input-group">
-                                                        <input type="text" id="input-text" class="form-control" placeholder="코드 명 입력" value="">
-                                                        <label for="input-text" class="hidden">코드 명</label>
-                                                    </div>
-                                                    <!--// input group -->
-                                                    <!-- 에러 문구 -->
-                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                    <!--// 에러 문구 -->
-                                                </div>
-                                            </div>
+                                            <!--//  -->
                                         </div>
                                         <!-- row -->
                                         <div class="form-row search-btn">
@@ -171,7 +147,28 @@
                             <!--// form end -->
                         </article>
                         <!--// search end-->
-                        
+
+                        <!-- grid top start -->
+                        <article class="grid-top-area">
+                            <!-- grid top left start -->
+                            <div class="grid-top-left">
+                               <select class="form-select sm" aria-label="Default select" required>
+                                <option value="">선택하세요</option>
+                                <option value="10" selected>10개씩 보기</option>
+                                <option value="20">20개씩 보기</option>
+                                <option value="30">30개씩 보기</option>
+                            </select>
+                            </div>
+                            <!--// grid top left end -->
+
+                            <!-- grid top button start -->
+                            <div class="grid-top-btn" 
+                                data-buttons='[{"text": "추가"}]'>
+                            </div>
+                            <!--// grid top button end -->
+                        </article>
+                        <!--// grid top end -->
+
                         <!-- grid wrap start -->
                         <article class="grid-wrap">
                             <div id="sampleGrid" class="normal admin" style="width: 100%;"></div>
@@ -208,181 +205,64 @@
     <script type="module">
         const rowData = [
             {
-                field01: "",
-                field02: "ddd",
-                field03: "ddd",
-                field04: "dd",
-                field05: "dd",
-                field06: "dd",
-                field07: "홍길동",
-                field08: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "",
-                field04: "",
-                field05: "",
-                field06: "",
-                field07: "홍길동",
-                field08: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "",
-                field04: "",
-                field05: "",
-                field06: "",
-                field07: "홍길동",
-                field08: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "",
-                field04: "",
-                field05: "",
-                field06: "",
-                field07: "홍길동",
-                field08: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "",
-                field04: "",
-                field05: "",
-                field06: "",
-                field07: "홍길동",
-                field08: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "",
-                field04: "",
-                field05: "",
-                field06: "",
-                field07: "홍길동",
-                field08: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "",
-                field04: "",
-                field05: "",
-                field06: "",
-                field07: "홍길동",
-                field08: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "",
-                field04: "",
-                field05: "",
-                field06: "",
-                field07: "홍길동",
-                field08: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "",
-                field04: "",
-                field05: "",
-                field06: "",
-                field07: "홍길동",
-                field08: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "",
-                field04: "",
-                field05: "",
-                field06: "",
-                field07: "홍길동",
-                field08: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "",
-                field04: "",
-                field05: "",
-                field06: "",
-                field07: "홍길동",
-                field08: "",
-            },
+                field01: "관리자",
+                field02: "공통코드 관리",
+                field03: "공통코드 관리페이지 (수정가능)",
+                field04: "www.smartplatform.com (수정가능)",
+                field05: "홍길동",
+                field06: "2024.12.10 12:20:33",
+            }
         ];
         const columnDefs = [
             {
-                headerName: "번호",
+                headerName: "메뉴 1",
                 headerClass: "center",
                 field: "field01",
-                width: 60,
+                width: 240,
                 cellClass: "cell-normal",
-                valueGetter: "node.rowIndex + 1"
             },
             {
-                headerName: "그룹코드",
+                headerName: "메뉴 2",
                 headerClass: "center",
                 field: "field02",
-                width: 160,
+                width: 240,
                 cellClass: "cell-normal",
             },
             {
-                headerName: "그룹코드 명",
+                headerName: "페이지 명",
                 headerClass: "center",
                 field: "field03",
                 width: 280,
+                editable: true,
                 cellClass: "cell-normal",
             },
             {
-                headerName: "그룹코드 설명",
+                headerName: "URL",
                 headerClass: "center",
                 field: "field04",
-                minWidth: 600,
+                minWidth: 480,
                 flex: 1,
+                editable: true,
                 cellClass: "cell-normal",
+                CompanyRenderer: (params) => {
+                    const link = `<a href="${params.value}" target="_blank">${new URL(params.value).hostname}</a>`;
+                    return link;
+                }
             },
             {
-                headerName: "사용여부",
+                headerName: "등록자",
                 headerClass: "center",
                 field: "field05",
                 width: 120,
                 cellClass: "cell-normal",
             },
             {
-                headerName: "서브관리",
+                headerName: "등록일자",
                 headerClass: "center",
                 field: "field06",
-                width: 120,
-                cellClass: "cell-normal",
-                cellRenderer: params => {
-                    return '<button type="button" class="btn btn-grid btn-xxsm">코드</button>';
-                }
-            },
-            {
-                headerName: "등록자",
-                headerClass: "center",
-                field: "field07",
-                width: 120,
+                width: 200,
                 cellClass: "cell-normal",
             },
-            {
-                headerName: "삭제",
-                headerClass: "center",
-                field: "field08",
-                width: 112,
-                cellClass: "cell-normal",
-                cellRenderer: params => {
-                    return '<button type="button" class="btn btn-icon"><i class="icon del-trash" /></button>';
-                }
-            }
         ];
         let sampleGridApi;
 
@@ -391,7 +271,7 @@
                 editable: false, // edit 사용 유무
                 autoHeight: true,
                 sortable: true, // sort 사용 유무
-            },
+            }, 
             columnDefs,
             headerHeight: 39, // header height
             rowData: rowData,

@@ -199,7 +199,14 @@
 .ag-center-cols-viewport,
 .ag-center-cols-container {
     min-height: rem(56px) !important;
-}  
+}
+.admin {
+    .ag-center-cols-viewport,
+    .ag-center-cols-container {
+        min-height: rem(47px) !important;
+    }
+}
+
 // empty
 .empty {
     @include flex(false, "center", "center", rem(16px));

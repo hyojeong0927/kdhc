@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko" data-kdhc-mode="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDHC</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../../css/index.css">
+    <!-- script -->
+    <script src="../../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script type="module" src="../../../assets/js/common.js"></script>
+</head>
+<body>
+    <div id="pop-wrap" class="kdhc-pop-wrap small">
+        <header class="kdhc-pop-header">
+            <h1 class="pop-title" id="staticBackdropLabel">페이지관리 삭제</h1>
+            <button type="button" class="btn-close" aria-label="Close" onclick="window.close()"></button>
+        </header>
+        <!-- 팝업 컨테이너 영역 -->
+        <section class="kdhc-pop-container">
+            <div class="inner">
+                <!-- 팝업 컨텐츠 영역 -->
+                <div class="contents">
+
+                    <!-- grid wrap start -->
+                    <article class="grid-wrap">
+                        <div id="sampleGrid" class="normal admin" style="width: 100%;"></div>
+                    </article>
+                    <!--// grid wrap end -->
+
+                </div>
+                <!--// 팝업 컨텐츠 영역 -->
+            </div>
+        </section>
+        <!--// 팝업 컨테이너 영역 -->
+        <footer class="kdhc-pop-footer">
+            <div class="inner">
+                <button type="button" class="btn btn-primary btn-md">삭제</button>
+                <button type="button" class="btn btn-primary btn-md">저장</button>
+            </div>
+        </footer>
+    </div>
+     <!-- script wrap -->
+     <script type="module">
+        const rowData = [
+            {
+                field01: "관리자",
+                field02: "공통코드 관리",
+                field03: "공통코드 관리페이지 (수정가능)",
+                field04: "www.smartplatform.com",
+                field05: "홍길동",
+                field06: "2024.12.10 12:20:33",
+            }
+        ];
+        const columnDefs = [
+            {
+                headerName: "메뉴 1",
+                headerClass: "center",
+                field: "field01",
+                width: 240,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "메뉴 2",
+                headerClass: "center",
+                field: "field02",
+                width: 240,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "페이지 명",
+                headerClass: "center",
+                field: "field03",
+                width: 280,
+                editable: true,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "URL",
+                headerClass: "center",
+                field: "field04",
+                minWidth: 280,
+                flex: 1,
+                editable: true,
+                cellClass: "cell-normal",
+                cellRenderer: CompanyRenderer,
+            },
+            {
+                headerName: "등록자",
+                headerClass: "center",
+                field: "field05",
+                width: 120,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "등록일자",
+                headerClass: "center",
+                field: "field06",
+                width: 200,
+                cellClass: "cell-normal",
+            },
+        ];
+        function CompanyRenderer(params) {
+            const link = `<a href="${params.value}" target="_blank">${new URL(params.value).hostname}</a>`;
+            return link;
+        }
+
+        let sampleGridApi;
+
+        const sampleGridOptions = {
+            defaultColDef: {
+                editable: false, // edit 사용 유무
+                autoHeight: true,
+                sortable: true, // sort 사용 유무
+            }, 
+            columnDefs,
+            headerHeight: 39, // header height
+            rowData: rowData,
+            rowHeight: 47, // row height
+            domLayout: "autoHeight", // 2025-02-19 추가 옵션
+            suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
+            // data empty style
+            overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
+        };
+        const sampleGridDiv = document.querySelector("#sampleGrid");
+        sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
+    </script>
+    <!--// script wrap -->
+</body>
+</html>

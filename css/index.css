@@ -14722,6 +14722,11 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   min-height: 3.5rem !important;
 }
 
+.admin .ag-center-cols-viewport,
+.admin .ag-center-cols-container {
+  min-height: 2.94rem !important;
+}
+
 .empty, .empty .empty-img {
   display: flex;
   flex-direction: column;
