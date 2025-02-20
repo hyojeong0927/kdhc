@@ -207,8 +207,16 @@
             {
                 field01: "관리자",
                 field02: "공통코드 관리",
-                field03: "공통코드 관리페이지 (수정가능)",
-                field04: "www.smartplatform.com (수정가능)",
+                field03: "공통코드 관리페이지(수정가능)",
+                field04: "www.google.com",
+                field05: "홍길동",
+                field06: "2024.12.10 12:20:33",
+            },
+            {
+                field01: "관리자",
+                field02: "공통코드 관리",
+                field03: "공통코드 관리페이지(수정가능)",
+                field04: "www.naver.com",
                 field05: "홍길동",
                 field06: "2024.12.10 12:20:33",
             }
@@ -244,8 +252,8 @@
                 flex: 1,
                 editable: true,
                 cellClass: "cell-normal",
-                CompanyRenderer: (params) => {
-                    const link = `<a href="${params.value}" target="_blank">${new URL(params.value).hostname}</a>`;
+                cellRenderer: (params) => {
+                    const link = `<a href="http://${params.value}" target="_blank">${params.value}</a>(수정가능)`;
                     return link;
                 }
             },
