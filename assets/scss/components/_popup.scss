@@ -10,7 +10,7 @@
     &.medium,
     &.small {
         overflow: hidden;
-        max-height: 100%;
+        max-height: 100dvh;
         .kdhc-pop-header {
             padding: rem(20px) rem(24px) rem(16px);
             min-height: rem(68px);
@@ -24,8 +24,9 @@
                 overflow-y: auto;
                 padding: rem(24px);
                 height: 100%;
-                max-height: calc(100dvh - rem(130px));
-                min-height:calc(100dvh - rem(130px));
+                max-height: 400px;
+                // max-height: calc(100dvh - rem(130px));
+                // min-height:calc(100dvh - rem(130px));
             }
         }
     }
@@ -61,7 +62,7 @@
     .inner {
         padding: rem(20px) rem(40px) rem(40px);
         height: 100%;
-        min-height: 100dvh;
+        // min-height: 100dvh;
         .breadcrumb-wrap {
             margin-bottom: rem(20px);
        }
