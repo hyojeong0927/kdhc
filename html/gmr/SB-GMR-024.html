@@ -87,27 +87,24 @@
                         </div>
                         <!--// page title end -->
                         <!-- 팝업 호출 버튼 -->
-                        <button type="button" id="medium-btn" class="btn btn-primary btn-lg">
+                        <button type="button" id="openAutoPopup" class="btn btn-primary btn-lg">
                             서브코드 팝업
                         </button>
                         <!--// 팝업 호출 버튼 -->
 
                         <!-- popup script -->
                         <script type="module">
-                            import { setupPopupListeners } from '../../assets/js/components/popup.js';
+                            import { openAutoPopup } from '../../assets/js/components/popup.js';
 
-                            const urlList = {
-                                medium: './popup/SB-GMR-024.html',
-                            };
-
-                            setupPopupListeners(urlList);
+                            document.getElementById('popupButton').addEventListener('click', () => {
+                                openAutoPopup('./popup/SB-USR-024.html', 800);
+                            });
                         </script>
                         <!--// popup script -->
                     </div>
                     <!--// 컨텐츠 영역 -->
 
                 </main>
-
             </div>
         </section>
         <!--// 컨테이너 영역 -->

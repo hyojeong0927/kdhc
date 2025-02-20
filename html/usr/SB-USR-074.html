@@ -105,12 +105,12 @@
                                             <!--//  -->
                                             <!--  -->
                                             <div class="col">
-                                                <div class="form-label">자산종류 코드</div>
+                                                <div class="form-label">열원구분</div>
                                                 <div class="form-group">
                                                     <div class="select-group">
                                                         <select class="form-select" aria-label="Default select" required>
-                                                            <option value="" selected>선택하세요</option>
-                                                            <option value="1">One</option>
+                                                            <option value="">선택하세요</option>
+                                                            <option value="1" selected>가락 CES</option>
                                                             <option value="2">Two</option>
                                                             <option value="3">Three</option>
                                                         </select>
@@ -592,7 +592,7 @@
                 ]
             },
             {
-                headerName: "사용목적",
+                headerName: "긴급도",
                 headerClass: "center",
                 field: "field15",
                 width: 120,
@@ -671,7 +671,7 @@
             rowData: rowData,
             rowHeight: 48, // row height
             domLayout: "autoHeight", // 2025-02-19 추가 옵션
-            columnSize: "sizeToFit", // 2025-02-19 추가 옵션
+            suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
             // data empty style
             overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
         };

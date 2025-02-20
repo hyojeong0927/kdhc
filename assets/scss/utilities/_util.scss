@@ -31,3 +31,13 @@
 .w-50 {
   width: 50% !important;
 }
+.w-140 {
+  flex: 0 0 rem(140px)  !important;
+  width: rem(140px) !important;
+  min-width: rem(140px) !important;
+}
+.w-190 {
+  flex: 0 0 rem(190px)  !important;
+  width: rem(190px) !important;
+  min-width: rem(190px) !important;
+}

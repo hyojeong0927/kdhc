@@ -214,12 +214,12 @@
     <script type="module">
         const rowData = [
             {
-                field01: "",
+                field01: "클릭하면 수정 가능",
                 field02: "시스템 명",
-                field03: "",
-                field04: "",
+                field03: "클릭하면 수정 가능",
+                field04: "클릭하면 수정 가능",
                 field05: "2025-01-20",
-                field06: "",
+                field06: "클릭하면 수정 가능",
                 field07: "2025-01-20",
                 field08: "",
                 field09: "",
@@ -228,9 +228,9 @@
                 field12: "step01",
             },
             {
-                field01: "",
+                field01: "클릭하면 수정 가능",
                 field02: "시스템 명",
-                field03: "",
+                field03: "클릭하면 수정 가능",
                 field04: "",
                 field05: "",
                 field06: "",
@@ -416,6 +416,25 @@
                     return {
                         init: function(params) {
                             const input = document.createElement('input');
+                            input.type = 'text';
+                            input.className = 'form-control datepicker';
+                            input.value = params.value || '';
+                            input.placeholder = "YYYY-MM-DD";
+
+                            const label = document.createElement('label');
+                            label.className = 'input-group-text';
+                            label.innerHTML = '<i class="icon calendar"></i>';
+
+                            input.addEventListener('input', function() {
+                                params.api.stopEditing();
+                            });
+                            
+                            const wrapper = document.createElement('div');
+                            wrapper.className = 'input-date-group';
+                            wrapper.appendChild(input);
+                            wrapper.appendChild(label);
+                            this.eWrapper = wrapper;
+
                             $(input).datepicker({
                                 format: 'mm/dd/yyyy',
                                 autoclose: true

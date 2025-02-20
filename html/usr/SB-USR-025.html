@@ -80,18 +80,19 @@
                         </div>
                         <!--// page title end -->
                         <!-- 팝업 호출 버튼 -->
-                        <button type="button" id="popupButton" class="btn btn-primary btn-lg">
+                        <button type="button" id="large-btn" class="btn btn-primary btn-lg">
                             계정관리관리 상세/등록/수정
                         </button>
                         <!--// 팝업 호출 버튼 -->
 
                         <!-- popup script -->
                         <script type="module">
-                            import { openCenteredPopup } from '../../assets/js/components/popup.js';
-
-                            document.getElementById('popupButton').addEventListener('click', () => {
-                                openCenteredPopup('./popup/SB-USR-025.html', 1400, 1080);
-                            });
+                           import { setupPopupListeners } from '../../assets/js/components/popup.js';
+                        
+                            const urlList = {
+                                large: './popup/SB-USR-025.html',
+                            };
+                            setupPopupListeners(urlList);
                         </script>
                         <!--// popup script -->
                     </div>

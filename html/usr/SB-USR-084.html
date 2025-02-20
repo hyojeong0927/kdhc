@@ -81,16 +81,20 @@
                         <!--// page title end -->
 
                         <!-- 팝업 호출 버튼 -->
-                        <button type="button" class="btn btn-primary btn-lg" onclick="window.open()">
+                        <button type="button" id="large-btn" class="btn btn-primary btn-lg">
                             정보자산반출입내역 반입 등록
                         </button>
                         <!--// 팝업 호출 버튼 -->
 
                         <!-- popup script -->
                         <script type="module">
-                            import { openCenteredPopup } from '../../assets/js/components/popup.js';
+                            import { setupPopupListeners } from '../../assets/js/components/popup.js';
 
-                            openCenteredPopup('./popup/SB-USR-084.html', 1400, 1080);
+                            const urlList = {
+                                large: './popup/SB-USR-084.html',
+                            };
+
+                            setupPopupListeners(urlList);
                         </script>
                         <!--// popup script -->
                     </div>

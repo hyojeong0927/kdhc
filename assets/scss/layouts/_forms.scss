@@ -23,6 +23,7 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
                 color: $primary;
                 @include font-style($font-size-base, $font-weight-medium, $line-height-base);
                 letter-spacing: rem(-1.5px);
+                word-break: keep-all;
                 &[aria-required="true"] {
                     &::after {
                         content: '*';
@@ -236,6 +237,7 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
                         }
                         .form-label {
                             padding: rem(10px) rem(16px);
+                            flex: 0 0 rem(160px);
                             width: rem(160px);
                             min-width: rem(160px);
                             min-height: rem(60px);

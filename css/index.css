@@ -13696,6 +13696,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   letter-spacing: -0.03rem;
   line-height: normal;
   letter-spacing: -0.09rem;
+  word-break: keep-all;
 }
 .input-form-area .form-wrap .form-row .form-label[aria-required=true]::after, .search-form-area .form-wrap .form-row .form-label[aria-required=true]::after {
   content: "*";
@@ -13892,6 +13893,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 }
 .input-form-area .form-wrap.type02 .form-row .form-label {
   padding: 0.63rem 1rem;
+  flex: 0 0 10rem;
   width: 10rem;
   min-width: 10rem;
   min-height: 3.75rem;
@@ -14097,6 +14099,18 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 
 .w-50 {
   width: 50% !important;
+}
+
+.w-140 {
+  flex: 0 0 8.75rem !important;
+  width: 8.75rem !important;
+  min-width: 8.75rem !important;
+}
+
+.w-190 {
+  flex: 0 0 11.88rem !important;
+  width: 11.88rem !important;
+  min-width: 11.88rem !important;
 }
 
 /* Accodian
@@ -14609,6 +14623,9 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   line-height: 1.05rem;
   font-weight: 500;
 }
+.ag-root-wrapper .ag-header .ag-header-group-cell::after {
+  border-right: 1px solid #C5CDD5;
+}
 .ag-root-wrapper .ag-header .ag-header-group-cell.center .ag-header-cell-comp-wrapper {
   justify-content: center;
 }
@@ -14637,6 +14654,12 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   font-size: system-ui, -apple-system, "Segoe UI", "Noto Sans KR", Roboto, "Helvetica Neue", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   line-height: 1.2rem;
   font-weight: 400;
+}
+.ag-root-wrapper .ag-cell-inline-editing {
+  border-width: 0 1px 0 0 !important;
+  border-color: #C5CDD5 !important;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .ag-checkbox-input-wrapper {
@@ -32234,7 +32257,7 @@ input[type=url], .ag-text-field-input-wrapper input[type=text], .ag-date-field-i
   font-size: 1rem;
   line-height: normal;
   font-weight: 400;
-  letter-spacing: -0.03rem;
+  letter-spacing: -0.11rem;
   border-radius: 0.25rem;
   border: 1px solid #A5A5A5;
   background-color: #fff;
@@ -33016,7 +33039,7 @@ textarea.form-control {
   font-size: 1rem;
   line-height: normal;
   font-weight: 400;
-  letter-spacing: -0.48px;
+  letter-spacing: -1.7px;
   border-radius: 0.25rem;
   border: 1px solid #A5A5A5;
   background-color: #fff;

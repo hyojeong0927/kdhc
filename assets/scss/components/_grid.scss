@@ -57,6 +57,9 @@
             font-weight: $font-weight-medium;
         }
         .ag-header-group-cell {
+            &::after {
+                border-right: 1px solid $gray-007;
+            }
             &.center {
                 .ag-header-cell-comp-wrapper {
                     justify-content: center;
@@ -109,8 +112,16 @@
             font-weight: $font-weight-normal;
         }
     }
+    .ag-cell-inline-editing {
+        border: {
+            width: 0 1px 0 0 !important;
+            color: $gray-007 !important;
+        }
+        border-radius: 0;
+        box-shadow: none;
+    }
 }
-// component
+// component : checkbox
 .ag-checkbox-input-wrapper {
     width: rem(16px);
     height: rem(16px);
@@ -133,11 +144,13 @@
         box-shadow: none;
     }
 }
+// component : input
 .ag-text-field-input-wrapper {
     input[type="text"] {
         @extend .form-control;
     }
 }
+// component : input date
 .ag-date-field-input-wrapper {
     input[type="date"] {
         @extend .form-control;
@@ -149,6 +162,7 @@
         }
     }
 }
+// component : bootstrap datepicker
 
 // grid type style
 .normal {

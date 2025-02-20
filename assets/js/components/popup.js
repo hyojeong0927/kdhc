@@ -52,13 +52,41 @@ export function openPopupWindow(url, width, height, popupName = 'Popup') {
 
 // 팝업 사이즈 외부에서 지정
 export function openCenteredPopup(url, width, height) {
+    
     const screenWidth = window.screen.width;
     const screenHeight = window.screen.height;
    
-    const left = (screenWidth - width) / 2;
-    const top = (screenHeight - height) / 2;
+    const left = window.screenX + (window.innerWidth - width) / 2;
+    const top = window.screenY + (window.innerHeight - height) / 2;
    
     const features = `width=${width},height=${height},left=${left},top=${top}`;
     
     window.open(url, '_blank', features);
+}
+
+// 팝업 세로 사이즈 유동적
+export function openAutoPopup(url, width=800) {
+    // let url = 'https://example.com';
+
+    // let width = 800;
+    let initialHeight = 263;
+    let maxHeight = 502;
+
+    const screenWidth = window.screen.width;
+    const screenHeight = window.screen.height;
+
+    const left = (screenWidth - width) / 2;
+    const top = (screenHeight - height) / 2;
+
+    const features = window.open(url, 'popupWindow', `width=${width},height=${initialHeight},left=${left},top=${top}, scrollbars=auto`);
+
+    if (popup) {
+        popup.onload = function () {
+            const contentHeight = popup.document.body.scrollHeight;
+            const calculatedHeight = Math.min(contentHeight + 50, maxHeight);
+            popup.resizeTo(width, calculatedHeight);
+        };
+    } else {
+        console.error('팝업이 차단되었습니다.');
+    }
 }
