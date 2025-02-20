@@ -116,7 +116,7 @@
                                                         <div class="col">
                                                             <div class="form-label">제어보호담당관</div>
                                                             <div class="form-group">
-                                                                <div class="input-txt center">김현수</div>
+                                                                <div class="input-txt">김현수</div>
                                                             </div>
                                                         </div>
                                                         <div class="col">
@@ -222,9 +222,9 @@
                 field06: "클릭하면 수정 가능",
                 field07: "2025-01-20",
                 field08: "",
-                field09: "",
+                field09: "111.111.111",
                 field10: "2025-01-20",
-                field11: "",
+                field11: "홍길동",
                 field12: "step01",
             },
             {
@@ -238,7 +238,7 @@
                 field08: "",
                 field09: "",
                 field10: "",
-                field11: "",
+                field11: "홍길동",
                 field12: "done",
             },
         ];
@@ -416,6 +416,7 @@
                     return {
                         init: function(params) {
                             const input = document.createElement('input');
+                            input.id = 'date';
                             input.type = 'text';
                             input.className = 'form-control datepicker';
                             input.value = params.value || '';
@@ -423,12 +424,16 @@
 
                             const label = document.createElement('label');
                             label.className = 'input-group-text';
+                            label.htmlFor = 'date';
                             label.innerHTML = '<i class="icon calendar"></i>';
 
                             input.addEventListener('input', function() {
                                 params.api.stopEditing();
                             });
-                            
+
+                            this.eInput = input;
+                            this.eLabel = label;
+
                             const wrapper = document.createElement('div');
                             wrapper.className = 'input-date-group';
                             wrapper.appendChild(input);
@@ -436,7 +441,7 @@
                             this.eWrapper = wrapper;
 
                             $(input).datepicker({
-                                format: 'mm/dd/yyyy',
+                                format: 'yyyy-mm-dd',
                                 autoclose: true
                             });
                             input.value = params.value;
@@ -444,14 +449,12 @@
                             input.addEventListener('change', function() {
                                 params.api.stopEditing();
                             });
-
-                            this.eInput = input;
                         },
                         getValue: function() {
                             return this.eInput.value;
                         },
                         getGui: function() {
-                            return this.eInput;
+                            return this.eWrapper;
                         }
                     };
                 },
@@ -460,12 +463,14 @@
                         init: function(params) {
                             
                             const input = document.createElement('input');
+                            input.id = 'searchId';
                             input.type = 'search';
                             input.className = 'form-control';
                             input.value = params.value || '';
                             input.placeholder = "입력";
 
                             const label = document.createElement('label');
+                            label.htmlFor = 'searchId';
                             label.className = 'input-group-text';
                             label.innerHTML = '<i class="icon search"></i>';
 
