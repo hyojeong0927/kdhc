@@ -307,7 +307,7 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
     color: $red-001;
     @include font-style($font-size-sm, $font-weight-normal, $line-height-base);
     &.hidden {
-        @include hidden;
+        display: none;
     }
 }
 
@@ -353,5 +353,8 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
     }
     .flex-form-right {
         flex: 1;
+        .bottom-btn-area {
+            margin-top: rem(32px);
+        }
     }
 }

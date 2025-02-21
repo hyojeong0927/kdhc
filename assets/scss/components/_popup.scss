@@ -1,94 +1,116 @@
 /* Popup
 ========================================================================== */
-.kdhc-pop-wrap {
-    overflow-x: hidden;
-    overflow-y: auto;
+$popup-size: ('medium', 'small');
+$popup-header-height: rem(102px);
+$popup-md-header-height: rem(68px);
+$popup-md-footer-height: rem(86px);
+
+%popup-base {
+    @include flex(false, "between", "normal");
     width: 100%;
     height: 100%;
-    max-height: 100dvh;
+    min-height: 100dvh;
     background-color: $body-bg;
-    &.medium,
-    &.small {
-        overflow: hidden;
-        max-height: 100dvh;
-        .kdhc-pop-header {
-            padding: rem(20px) rem(24px) rem(16px);
-            min-height: rem(68px);
-            height: rem(68px);
-            .pop-title {
-                font-size: rem($h3-font-size);
+
+    .kdhc-pop-header {
+        @include flex(true, "between", "center");
+        padding: rem(32px) rem(40px) rem(24px);
+        min-height: $popup-header-height;
+        background-color: $primary;
+
+        .pop-title {
+            color: $white;
+            @include font-style($font-size-xlg, $font-weight-bold, rem(38.4px));
+        }
+        .btn-close {
+            margin-left: auto;
+            width: rem(32px);
+            height: rem(32px);
+            @extend .icon;
+            @extend .close;
+            opacity: 1;
+
+            &:focus,
+            &:focus-visible,
+            &:focus-within {
+                box-shadow: none;
             }
         }
-        .kdhc-pop-container {
-            .inner {
-                overflow-y: auto;
-                padding: rem(24px);
-                height: 100%;
-                max-height: 400px;
-                // max-height: calc(100dvh - rem(130px));
-                // min-height:calc(100dvh - rem(130px));
-            }
-        }
     }
-}
-// header
-.kdhc-pop-header {
-    @include flex(true, "between", "center");
-    padding: rem(32px) rem(40px) rem(24px);
-    width: 100%;
-    min-width: 100%;
-    min-height: rem(102px);
-    border: none;
-    background-color: $primary;
-    .pop-title {
-        color: $white;
-        @include font-style($font-size-xlg, $font-weight-bold, rem(38.4px));
-    }
-    .btn-close {
-        width: rem(32px);
-        height: rem(32px);
-        @extend .icon;
-        @extend .close;
-        opacity: 1;
-        &:focus,
-        &:focus-visible,
-        &:focus-within {
-            box-shadow: none;
-        }
-    }
-}
-// container
-.kdhc-pop-container {
-    .inner {
-        padding: rem(20px) rem(40px) rem(40px);
+    .kdhc-pop-container {
+        flex: 1;
+        width: 100%;
         height: 100%;
-        // min-height: 100dvh;
-        .breadcrumb-wrap {
-            margin-bottom: rem(20px);
-       }
-       .title-wrap {
-            margin-bottom: rem(16px);
-       }
-       .section {
-            &:not(:last-of-type) {
-                padding: 0 0 rem($modal-section-btm);
+        .inner {
+            overflow-y: auto;
+            padding: rem(20px) rem(40px) rem(40px);
+            height: 100%;
+            max-height: calc(100dvh - $popup-header-height);
+            .breadcrumb-wrap {
+                margin-bottom: rem(20px);
             }
-       }
-       .section-sub {
-            padding: rem(28px) rem($modal-section-btm);
-            border-radius: rem(12px);
-            background-color: $white;
-            box-shadow:0 0 rem(12px) 0 rgba($black, 0.08);
-            .approve {
-                @include flex(false, "start", "normal", rem(32px));
+            .title-wrap {
+                margin-bottom: rem(16px);
+            }
+            .section {
+                &:not(:last-of-type) {
+                    padding: 0 0 rem($modal-section-btm);
+                }
+            }
+            .section-sub {
+                padding: rem(28px) rem($modal-section-btm);
+                border-radius: rem(12px);
+                background-color: $white;
+                box-shadow:0 0 rem(12px) 0 rgba($black, 0.08);
+                .approve {
+                    @include flex(false, "start", "normal", rem(32px));
+                }
             }
         }
     }
 }
-// footer
-.kdhc-pop-footer {
-    .inner {
-        @include flex(true, "end", "center", rem(8px));
-        padding: 0 rem(24px) rem(24px);
+%popup-base-md-sm {
+    .kdhc-pop-header {
+        padding: rem(20px) rem(24px) rem(16px);
+        min-height: rem(68px);
+        .pop-title {
+            font-size: rem($h3-font-size);
+        }
+    }
+    .kdhc-pop-container {
+        max-height: calc(100dvh - $popup-md-header-height - $popup-md-footer-height);
+        .inner {
+            overflow-y: auto;
+            padding: rem(24px) rem(24px) 0;
+            max-height: calc(100dvh - $popup-md-header-height - $popup-md-footer-height);
+        }
+        &.not-footer {
+            max-height: calc(100dvh - $popup-md-header-height);
+            .inner {
+                padding: rem(24px);
+                max-height: calc(100dvh - $popup-md-header-height);
+            }
+        }
+    }
+    .kdhc-pop-footer {
+        height: $popup-md-footer-height;
+        .inner {
+            @include flex(true, "end", "center", rem(8px));
+            padding: rem(24px);
+        }
+    }
+}
+.kdhc-pop-wrap {
+    @extend %popup-base;
+
+    @each $ps in $popup-size {
+        &.#{$ps} {
+            @if $ps == "medium" {
+                @extend %popup-base-md-sm;   
+            }
+            @else if $ps == "small" {
+                @extend %popup-base-md-sm;
+            }
+        }
     }
 }

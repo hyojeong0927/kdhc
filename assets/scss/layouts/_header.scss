@@ -3,7 +3,7 @@
 $utile-type: ("01", "02", "03", "04");
 $header-height: calc(rem(103px) + rem(24px));
 
-header {
+header#kdhc-header {
     @include flex(true, "start", "center", rem(63px));
     padding: 0 rem(20px) 0 rem(24px);
     width: 100%;

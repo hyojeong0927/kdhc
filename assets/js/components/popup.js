@@ -15,8 +15,8 @@ export function openPopup(size, urlList) {
     const url = urlList[size];
 
     const dimensions = {
-        small: { width: 600, height: 590 },
-        medium: { width: 800, height: 438 },
+        small: { width: 600, height: 500 },
+        medium: { width: 800, height: 500 },
         large: { width: 1440, height: 1080 }
     };
     const { width, height } = dimensions[size] || dimensions.large;
