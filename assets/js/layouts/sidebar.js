@@ -4,7 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!menuData || !Array.isArray(menuData)) return;
 
-    let menuHTML = `<nav class="sidebar-menu"><ul class="lnb-list">`;
+    let menuHTML = `
+        <div class="sidebar-top-btn">
+            <button id="toggleButton" class="btn-toggle" aria-label="사이드바 열고 닫기">
+                <i id="menuIcon" class="icon arrow-close"></i>
+            </button>
+        </div>
+        <nav class="sidebar-menu"><ul class="lnb-list">`;
 
     menuData.forEach(item => {
         const isActive = item.active ? "active" : "";

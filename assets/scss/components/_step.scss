@@ -164,3 +164,11 @@ $step-status: ("default", "current", "reject", "done");
         }
     }
 }
+
+// 결재 컴퍼넌트
+.approve {
+    @include flex(false, "start", "normal", rem(32px));
+    .title-wrap {
+        margin-bottom: rem(16px);
+    }
+}

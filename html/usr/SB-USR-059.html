@@ -16,7 +16,7 @@
 
         <!-- 본문 바로가기 영역 -->
         <div id="kdhc-skip-link">
-            <a href="#breadcrumb">본문 바로가기</a>
+            <a href="#contents">본문 바로가기</a>
         </div>
         <!--// 본문 바로가기 영역  -->
 
@@ -27,7 +27,13 @@
         <!-- // 상단 배너영역 -->
 
         <!-- 헤더 영역 -->
-        <header id="kdhc-header">
+        <header id="kdhc-header" data-menu='[
+            { "title": "관리보안", "url": "#" },
+            { "title": "물리보안", "url": "#" },
+            { "title": "기술보안", "url": "#"  },
+            { "title": "보안정책", "url": "#" },
+            { "title": "클린PC", "url": "#", "active": true },
+            { "title": "정보자산", "url": "#"}]'>
             <script type="module" src="../../assets/js/layouts/header.js"></script>
         </header>
         <!--// 헤더 영역 -->
@@ -36,48 +42,40 @@
         <section id="kdhc-container">
             <div class="inner">
                 <!-- 사이드 영역 -->
-                <aside id="sidebar" class="sidebar">
-                    <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
+                <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
+                <aside id="sidebar" class="sidebar" data-menu='[
+                        { "name": "휴대용 저장매체 사용등록", "url": "#", "active": true },
+                        { "name": "휴대용 저장매체 사용내역", "url": "#" },
+                        { "name": "휴대용 저장매체 점검내역", "url": "#" },
+                        { "name": "클린PC 사용내역", "url": "#" },
+                        { "name": "클린PC  반출입 내역", "url": "#" }]'>
                 </aside>
                 <!--// 사이드 영역 -->
 
                 <main class="main-contents">
-                
+                    <!-- breadcrumbs start : 현재 히든 처리 추후 변경 가능 -->
+                    <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
+                        data-breadcrumb='[
+                            { "name": "기술보안", "url": "#" },
+                            { "name": "계정관리", "url": "", "active": true }
+                        ]'
+                        data-visible="false">
+                    </nav> 
+                    <!--// breadcrumbs end -->
+                    
                     <!-- 컨텐츠 영역 -->
-                    <div class="contents">
-
-                        <!-- breadcrumbs start -->
-                        <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">정보자산</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">정보자산반출입내역</li>
-                            </ol>
-                        </nav>
-                        <!--// breadcrumbs end -->
+                    <div id="contents" class="contents">
 
                         <!-- page title start -->
-                        <div class="page-title-wrap">
-                            <h1 class="h-tit">정보자산반출입내역</h1>
+                        <div class="page-title-wrap" 
+                            data-title="휴대용저장매체 등록 관리" 
+                            data-badge="휴대용 저장매체 및 봉인장치 사용 관리대장" data-badge-visible="true">
                         </div>
                         <!--// page title end -->
-
-                        <!-- search start-->
-                        <!--// search end-->
-
-                        <!-- grid top start -->
-                        <!--// grid top end -->
-
-                        <!-- grid wrap start -->
-                        <!--// grid wrap end -->
-                        
-                        <!-- grid bottom start -->
-                        <!--// grid bottom end -->
-                        
                     </div>
                     <!--// 컨텐츠 영역 -->
 
                 </main>
-
             </div>
         </section>
         <!--// 컨테이너 영역 -->
@@ -91,6 +89,7 @@
     </div>
     <!-- script wrap -->
     <!--// script wrap -->
+    
     <!-- modal wrap -->
     <!--// modal wrap -->
 </body>

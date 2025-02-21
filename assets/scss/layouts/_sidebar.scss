@@ -4,18 +4,23 @@ $sidebar-close-width: 60px;
 $sidebar-width: 280px;
 
 #sidebar {
-    width: $sidebar-width;
+    width: rem($sidebar-width);
     transition: width 0.3s ease-in-out;
+    .sidebar-menu {
+        display: block;
+    }
 }
 #sidebar.collapsed {
-    width: $sidebar-close-width;
+    width: rem($sidebar-close-width);
+    .sidebar-menu {
+        display: none;
+    }
 }
 .sidebar {
     overflow-y: auto;
     height: 100dvh;
     max-height: calc(100dvh - $header-height);
     background-color: $primary;
-    overflow-y: auto;
     .sidebar-top-btn {
         @include flex(true, "end", "center");
         padding: rem(12px);

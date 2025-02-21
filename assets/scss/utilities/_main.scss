@@ -3,7 +3,7 @@
 .main-contents {
     overflow: auto;
     padding: rem(48px) rem(40px) rem(90px);
-    width: 100%;
+    width: calc(100% - rem($sidebar-width));
     min-width: calc(rem($device-base-width) - rem($sidebar-width));
     height: 100%;
     max-height: calc(100dvh - $header-height);

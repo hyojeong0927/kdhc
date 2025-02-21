@@ -13583,12 +13583,18 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 /* Sidebar
 ========================================================================== */
 #sidebar {
-  width: 280px;
+  width: 17.5rem;
   transition: width 0.3s ease-in-out;
+}
+#sidebar .sidebar-menu {
+  display: block;
 }
 
 #sidebar.collapsed {
-  width: 60px;
+  width: 3.75rem;
+}
+#sidebar.collapsed .sidebar-menu {
+  display: none;
 }
 
 .sidebar {
@@ -13596,7 +13602,6 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   height: 100dvh;
   max-height: calc(100dvh - 7.94rem);
   background-color: #384B5E;
-  overflow-y: auto;
 }
 .sidebar .sidebar-top-btn {
   display: flex;
@@ -14029,7 +14034,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 .main-contents {
   overflow: auto;
   padding: 3rem 2.5rem 5.63rem;
-  width: 100%;
+  width: calc(100% - 17.5rem);
   min-width: 102.5rem;
   height: 100%;
   max-height: calc(100dvh - 7.94rem);
@@ -32715,13 +32720,6 @@ textarea.form-control {
   background-color: #fff;
   box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.08);
 }
-.kdhc-pop-wrap .kdhc-pop-container .inner .section-sub .approve {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: normal;
-  gap: 2rem;
-}
 
 .kdhc-pop-wrap.small .kdhc-pop-header, .kdhc-pop-wrap.medium .kdhc-pop-header {
   padding: 1.25rem 1.5rem 1rem;
@@ -33042,6 +33040,17 @@ textarea.form-control {
   color: #0D63D4;
 }
 
+.approve {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: normal;
+  gap: 2rem;
+}
+.approve .title-wrap {
+  margin-bottom: 1rem;
+}
+
 /* selectbox
 ========================================================================== */
 .form-select {
@@ -33253,7 +33262,7 @@ textarea.form-control {
 .page-title-wrap .badge-text {
   position: relative;
   padding-left: 1.25rem;
-  color: #384B5E;
+  color: #3D6F94;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: -0.03rem;
