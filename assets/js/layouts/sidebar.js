@@ -1,8 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
     const sidebar = document.getElementById("sidebar");
-    const menuData = JSON.parse(sidebar.getAttribute("data-menu"));
+    if (!sidebar) return;
 
-    if (!menuData || !Array.isArray(menuData)) return;
+    let menuData = [];
+
+    try {
+        menuData = JSON.parse(sidebar.getAttribute("data-menu")) || [];
+    } catch (error) {
+        console.error("Error parsing menu data:", error);
+        return;
+    }
+
+    if (!Array.isArray(menuData) || menuData.length === 0) return;
 
     let menuHTML = `
         <div class="sidebar-top-btn">
@@ -10,18 +19,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 <i id="menuIcon" class="icon arrow-close"></i>
             </button>
         </div>
-        <nav class="sidebar-menu"><ul class="lnb-list">`;
+        <nav class="sidebar-menu">
+            <ul class="lnb-list">`;
 
     menuData.forEach(item => {
         const isActive = item.active ? "active" : "";
-        
         menuHTML += `
             <li class="lnb-item ${isActive}">
                 <a href="${item.url}" class="lnb-btn lnb-link" data-name="${item.name}">
                     ${item.name}
                 </a>
-            </li>
-        `;
+            </li>`;
     });
 
     menuHTML += `</ul></nav>`;
@@ -34,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
 
             menuItems.forEach(el => el.classList.remove("active"));
-
             this.classList.add("active");
 
             console.log(`선택한 메뉴: ${this.dataset.name}`);

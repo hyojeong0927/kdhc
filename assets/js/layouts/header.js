@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!header) return;
 
     let menuData = [];
-    
+
     try {
         const menuAttr = header.getAttribute("data-menu");
         menuData = menuAttr ? JSON.parse(menuAttr) : [];
@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <li class="util-04 user"><a href="#" data-title="홍길동 과장">홍길동 과장</a></li>
             </ul>
             <div class="header-action">
-                <button type="button" class="btn btn-link">비밀번호변경</button>
-                <button type="button" class="btn btn-link">로그아웃</button>
+                <button type="button" class="btn btn-link" id="btn-change-password">비밀번호변경</button>
+                <button type="button" class="btn btn-link" id="btn-logout">로그아웃</button>
             </div>
             <nav>
                 <ul class="nav">
@@ -44,4 +44,31 @@ document.addEventListener("DOMContentLoaded", () => {
             </nav>
         </div>
     `;
+
+    // 이벤트 추가
+    header.addEventListener("click", (event) => {
+        const target = event.target;
+
+        // 네비게이션 메뉴 클릭 이벤트
+        if (target.classList.contains("nav-link")) {
+            event.preventDefault(); 
+            console.log(`메뉴 클릭: ${target.getAttribute("data-title")}`);
+        }
+
+        // 유틸 메뉴 클릭 이벤트
+        if (target.closest(".util li a")) {
+            event.preventDefault();
+            console.log(`유틸 메뉴 클릭: ${target.getAttribute("data-title")}`);
+        }
+
+        // 비밀번호 변경 버튼 클릭 이벤트
+        if (target.id === "btn-change-password") {
+            alert("비밀번호 변경 페이지로 이동합니다.");
+        }
+
+        // 로그아웃 버튼 클릭 이벤트
+        if (target.id === "btn-logout") {
+            alert("로그아웃 되었습니다.");
+        }
+    });
 });

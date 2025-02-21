@@ -474,6 +474,10 @@
                             label.className = 'input-group-text';
                             label.innerHTML = '<i class="icon search"></i>';
 
+                            // 클릭 이벤트 추가
+                            label.addEventListener('click', function() {
+                                alert('검색 버튼이 클릭되었습니다!');
+                            });
                            
                             input.addEventListener('input', function() {
                                 params.api.stopEditing();
