@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     sidebar.innerHTML = menuHTML;
 
     const menuItems = sidebar.querySelectorAll(".lnb-link");
+    
     menuItems.forEach(item => {
         item.addEventListener("click", function (event) {
             event.preventDefault();
