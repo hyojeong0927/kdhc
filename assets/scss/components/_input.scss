@@ -178,6 +178,19 @@ textarea {
 }
 .input-date-group {
     min-width: rem(144px);
+
+    &:hover {
+        .form-control {
+            & + .input-group-text {
+                .icon {
+                    &.calendar {
+                        @extend .calendar-on;
+                    }
+                }
+            }
+        }
+        
+    }
 }
 .input-search-group {
     flex: none;
