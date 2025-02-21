@@ -1,10 +1,12 @@
 /* Main
 ========================================================================== */
 .main-contents {
+    flex: 1;
     overflow: auto;
     padding: rem(48px) rem(40px) rem(90px);
-    width: calc(100% - rem($sidebar-width));
-    min-width: calc(rem($device-base-width) - rem($sidebar-width));
+    width: 100%;
+    // max-width: calc(100% - rem($sidebar-close-width));;
+    // min-width: calc(rem($device-base-width) - rem($sidebar-width));
     height: 100%;
     max-height: calc(100dvh - $header-height);
     .contents {
