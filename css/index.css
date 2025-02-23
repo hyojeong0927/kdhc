@@ -14020,7 +14020,9 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   min-height: 35rem;
 }
 .flex-form .flex-form-left.tree-view {
+  overflow-y: auto;
   width: 23.88rem;
+  max-height: 35rem;
 }
 .flex-form .flex-form-right {
   flex: 1;

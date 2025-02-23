@@ -343,7 +343,9 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
     
     .flex-form-left {
         &.tree-view {
+            overflow-y: auto;
             width: rem(382px);
+            max-height: rem(560px);
         }
     }
     .flex-form-right {
