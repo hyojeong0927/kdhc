@@ -258,6 +258,66 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
                         min-width: 50%;
                     }
                 }
+                @else if $ft =="type04" {
+
+                }
+            }
+        }
+    }
+}
+// table 입력 폼
+.tbl-input-form {
+    width: 100%;
+    border-top: 1px solid $primary;
+    border: {
+        width: 1px;
+        style: solid;
+        color: $primary $gray-007 $gray-007;
+    }
+    caption {
+        display: none;
+    }
+    thead {
+        th {
+            padding: rem(10px) rem(12px);
+            color: $primary;
+            @include font-style($font-size-sm, $font-weight-medium, $line-height-base);
+            text-align: center;
+            &:not(:last-of-type) {
+                border-right: 1px solid $gray-007; 
+            }
+            border-bottom: 1px solid $gray-007;
+            background: $blue-005;
+        }
+    }
+    tbody {
+        th {
+            padding: rem(10px) rem(12px);
+            color: $gray-002;
+            @include font-style($font-size-base, $font-weight-normal, $line-height-base);
+            text-align: center;
+            vertical-align: middle;
+            border-right: 1px solid $gray-007;
+            border-bottom: 1px solid $gray-007;
+            background-color: $white;
+            &.center {
+                text-align: center;
+                vertical-align: middle;
+            }
+        }
+        td {
+            padding: rem(10px) rem(12px);
+            color: $gray-002;
+            @include font-style($font-size-base, $font-weight-normal, $line-height-base);
+            vertical-align: middle;
+            border-bottom: 1px solid $gray-007;
+            background-color: $white;
+            &:not(:last-of-type) {
+                border-right: 1px solid $gray-007;
+            }
+            &.center {
+                text-align: center;
+                vertical-align: middle;
             }
         }
     }
@@ -270,6 +330,9 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
         flex: 1;
         .combo-box-group {
             width: rem(142px);
+        }
+        .title-wrap {
+            margin-bottom: 0 !important;
         }
     }
     .grid-top-btn {

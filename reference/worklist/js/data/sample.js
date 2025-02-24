@@ -14,5 +14,20 @@ const sample = [
         design: "",
         dev: "",
     },
+    {
+        id: "common",
+        depth1: "step",
+        depth2: "",
+        depth3: "",
+        type: "",
+        folder: "sample",
+        file: "step.html",
+        status: "",
+        start: "",
+        end: "",
+        modDate: "",
+        design: "",
+        dev: "",
+    },
 ];
 export default sample;

@@ -35,11 +35,11 @@
         <!-- 헤더 영역 -->
         <header id="kdhc-header" data-menu='[
             { "title": "관리보안", "url": "#" },
-            { "title": "물리보안", "url": "#" },
+            { "title": "물리보안", "url": "#", "active": true },
             { "title": "기술보안", "url": "#" },
             { "title": "보안정책", "url": "#" },
             { "title": "클린PC", "url": "#" },
-            { "title": "정보자산", "url": "#", "active": true }]'>
+            { "title": "정보자산", "url": "#" }]'>
             <script type="module" src="../../assets/js/layouts/header.js"></script>
         </header>
         <!--// 헤더 영역 -->
@@ -50,19 +50,16 @@
                 <!-- 사이드 영역 -->
                 <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
                 <aside id="sidebar" class="sidebar" data-menu='[
-                        { "name": "자산정보관리", "url": "#" },
-                        { "name": "노트북사용", "url": "#" },
-                        { "name": "노트북사용내역", "url": "#", "active": true },
-                        { "name": "정보자산반출입내역", "url": "#" }
-                        ]'></aside>
+                        { "name": "봉인장치 사용내역", "url": "#", "active": true },
+                        { "name": "영상정보장치 점검", "url": "#" }]'></aside>
                 <!--// 사이드 영역 -->
 
                 <main class="main-contents">
                     <!-- breadcrumbs start : 현재 히든 처리 추후 변경 가능 -->
                     <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
                         data-breadcrumb='[
-                            { "name": "정보자산", "url": "#" },
-                            { "name": "노트북사용내역", "url": "", "active": true }
+                            { "name": "물리보안", "url": "#" },
+                            { "name": "봉인장치 사용내역", "url": "", "active": true }
                         ]'
                         data-visible="false">
                     </nav> 
@@ -73,8 +70,8 @@
 
                         <!-- page title start -->
                         <div class="page-title-wrap" 
-                            data-title="노트북사용내역" 
-                            data-badge="노트북사용내역 반·출입대장" data-badge-visible="true">
+                            data-title="봉인장치 사용내역" 
+                            data-badge="" data-badge-visible="false">
                         </div>
                         <!--// page title end -->
 
@@ -85,9 +82,10 @@
                                 <fieldset>
 
                                     <!-- form-wrap start -->
-                                    <div class="form-wrap type03">
+                                    <div class="form-wrap type01 form-col-2">
                                         <!-- row -->
                                         <div class="form-row">
+                                            <!--  -->
                                             <div class="col">
                                                 <div class="form-label">기안일자</div>
                                                 <div class="form-group">
@@ -115,8 +113,7 @@
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="form-row">
+                                            <!--  -->
                                             <div class="col">
                                                 <!--  -->
                                                 <div class="form-label">기안자</div>
@@ -133,38 +130,8 @@
                                                 </div>
                                                 <!--  -->
                                             </div>
-                                            <div class="col">
-                                                <div class="form-label">자산관리번호</div>
-                                                <div class="form-group">
-                                                    <!-- input group -->
-                                                    <div class="input-group">
-                                                        <input type="text" id="input-text" class="form-control" placeholder="자산관리번호 입력" value="">
-                                                        <label for="input-text" class="hidden">자산관리번호</label>
-                                                    </div>
-                                                    <!--// input group -->
-                                                    <!-- 에러 문구 -->
-                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                    <!--// 에러 문구 -->
-                                                </div>
-                                            </div>
                                         </div>
                                         <div class="form-row">
-                                            <div class="col">
-                                                <div class="form-label">결재상태</div>
-                                                <div class="form-group">
-                                                    <div class="select-group">
-                                                        <select class="form-select" aria-label="Default select" required>
-                                                            <option value="" selected>선택하세요</option>
-                                                            <option value="1">One</option>
-                                                            <option value="2">Two</option>
-                                                            <option value="3">Three</option>
-                                                        </select>
-                                                    </div>
-                                                    <!-- 에러 문구 : hidden -->
-                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                    <!--// 에러 문구 -->
-                                                </div>
-                                            </div>
                                             <div class="col">
                                                 <div class="form-label">기안부서</div>
                                                 <div class="form-group">
@@ -178,6 +145,22 @@
                                                         </select>
                                                     </div>
                                                     <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-label">결재상태</div>
+                                                <div class="form-group">
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택하세요</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!-- 에러 문구 : hidden -->
                                                     <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
                                                 </div>
@@ -220,7 +203,7 @@
                         
                         <!-- grid wrap start -->
                         <article class="grid-wrap">
-                            <div id="sampleGrid" class="normal" style="width: 100%;"></div>
+                            <div id="sampleGrid" class="normal"></div>
                         </article>
                         <!--// grid wrap end -->
 
@@ -255,159 +238,160 @@
         const rowData = [
             {
                 field01: "판교-25-0001",
-                field02: "노트북-판교-0002",
-                field03: "네트워크설비 유지보수",
-                field04: "계전부",
-                field05: "홍창기",
-                field06: "2024.12.10 12:20:33",
-                field07: "2024.12.12 12:24:30",
-                field08: "done",
+                field02: "감시 시스템 봉인장치 관리대장",
+                field03: "계전부",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "step01",
             },
             {
                 field01: "판교-25-0001",
-                field02: "노트북-판교-0002",
-                field03: "네트워크설비 유지보수",
-                field04: "계전부",
-                field05: "홍창기",
-                field06: "2024.12.10 12:20:33",
-                field07: "2024.12.12 12:24:30",
-                field08: "done",
+                field02: "월간사이버보안진단의날 보안점검 체크리스트",
+                field03: "계전부",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "step01 reject",
             },
             {
                 field01: "판교-25-0001",
-                field02: "노트북-판교-0002",
-                field03: "네트워크설비 유지보수",
-                field04: "계전부",
-                field05: "홍창기",
-                field06: "2024.12.10 12:20:33",
-                field07: "2024.12.12 12:24:30",
-                field08: "done",
+                field02: "월간사이버보안진단의날 보안점검 체크리스트",
+                field03: "계전부",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "step02",
             },
             {
                 field01: "판교-25-0001",
-                field02: "노트북-판교-0002",
-                field03: "네트워크설비 유지보수",
-                field04: "계전부",
-                field05: "홍창기",
-                field06: "2024.12.10 12:20:33",
-                field07: "2024.12.12 12:24:30",
-                field08: "step01",
+                field02: "월간사이버보안진단의날 보안점검 체크리스트",
+                field03: "계전부",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "step02 reject",
             },
             {
                 field01: "판교-25-0001",
-                field02: "노트북-판교-0002",
-                field03: "네트워크설비 유지보수",
-                field04: "계전부",
-                field05: "홍창기",
-                field06: "2024.12.10 12:20:33",
-                field07: "2024.12.12 12:24:30",
-                field08: "step02",
+                field02: "월간사이버보안진단의날 보안점검 체크리스트",
+                field03: "계전부",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "done",
             },
             {
                 field01: "판교-25-0001",
-                field02: "노트북-판교-0002",
-                field03: "네트워크설비 유지보수",
-                field04: "계전부",
-                field05: "홍창기",
-                field06: "2024.12.10 12:20:33",
-                field07: "2024.12.12 12:24:30",
-                field08: "done",
+                field02: "월간사이버보안진단의날 보안점검 체크리스트",
+                field03: "계전부",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "step03",
             },
             {
                 field01: "판교-25-0001",
-                field02: "노트북-판교-0002",
-                field03: "네트워크설비 유지보수",
-                field04: "계전부",
-                field05: "홍창기",
-                field06: "2024.12.10 12:20:33",
-                field07: "2024.12.12 12:24:30",
-                field08: "done",
+                field02: "월간사이버보안진단의날 보안점검 체크리스트",
+                field03: "계전부",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "step03 reject",
             },
             {
                 field01: "판교-25-0001",
-                field02: "노트북-판교-0002",
-                field03: "네트워크설비 유지보수",
-                field04: "계전부",
-                field05: "홍창기",
-                field06: "2024.12.10 12:20:33",
-                field07: "2024.12.12 12:24:30",
-                field08: "done",
+                field02: "월간사이버보안진단의날 보안점검 체크리스트",
+                field03: "계전부",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "done",
             },
             {
                 field01: "판교-25-0001",
-                field02: "노트북-판교-0002",
-                field03: "네트워크설비 유지보수",
-                field04: "계전부",
-                field05: "홍창기",
-                field06: "2024.12.10 12:20:33",
-                field07: "2024.12.12 12:24:30",
-                field08: "step02",
+                field02: "월간사이버보안진단의날 보안점검 체크리스트",
+                field03: "계전부",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "done",
             },
             {
                 field01: "판교-25-0001",
-                field02: "노트북-판교-0002",
-                field03: "네트워크설비 유지보수",
-                field04: "계전부",
-                field05: "홍창기",
-                field06: "2024.12.10 12:20:33",
-                field07: "2024.12.12 12:24:30",
-                field08: "done",
-            }
+                field02: "월간사이버보안진단의날 보안점검 체크리스트",
+                field03: "계전부",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "done",
+            },
+            {
+                field01: "판교-25-0001",
+                field02: "월간사이버보안진단의날 보안점검 체크리스트",
+                field03: "계전부",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "done",
+            },
+            {
+                field01: "판교-25-0001",
+                field02: "월간사이버보안진단의날 보안점검 체크리스트",
+                field03: "계전부",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "done",
+            },
         ];
         const columnDefs = [
             {
                 headerName: "문서번호",
                 headerClass: "center",
                 field: "field01",
-                width: 88,
+                width: 150,
                 cellClass: "cell-normal",
             },
             {
-                headerName: "자산관리번호",
+                headerName: "결재 명",
                 headerClass: "center",
                 field: "field02",
-                width: 120,
-                cellClass: "cell-normal",
-            },
-            {
-                headerName: "시스템명",
-                headerClass: "center",
-                field: "field03",
-                width: 181,
+                width: 200,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "기안부서",
                 headerClass: "center",
-                field: "field04",
-                width: 92,
+                field: "field03",
+                width: 100,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "기안자",
                 headerClass: "center",
-                field: "field05",
-                width: 76,
+                field: "field04",
+                width: 100,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "기안일자",
                 headerClass: "center",
-                field: "field06",
-                width: 100,
+                field: "field05",
+                width: 150,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "결재일자",
                 headerClass: "center",
-                field: "field07",
-                width: 100,
+                field: "field06",
+                width: 150,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "결재/승인 상태",
                 headerClass: "center",
-                field: "field08",
+                field: "field07",
                 minWidth: 435,
                 flex: 1,
                 cellClass: "cell-normal",
@@ -445,7 +429,7 @@
                             { "status": "step-done", "title": "제어보호담당자", "name": "오승환" },
                             { "status": "step-current", "title": "제어보호담당관", "name": "김현수" }
                         ];
-                    } else if (status === "step03 reject") {
+                     } else if (status === "step03 reject") {
                         stepsData = [
                             { "status": "step-done", "title": "기안자", "name": "박동원" },
                             { "status": "step-done", "title": "제어보호담당자", "name": "오승환" },

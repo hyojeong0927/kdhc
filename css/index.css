@@ -13915,6 +13915,66 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 .input-form-area .form-wrap.type03 .input-date-group {
   min-width: 50%;
 }
+.tbl-input-form {
+  width: 100%;
+  border-top: 1px solid #384B5E;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #384B5E #C5CDD5 #C5CDD5;
+}
+.tbl-input-form caption {
+  display: none;
+}
+.tbl-input-form thead th {
+  padding: 0.63rem 0.75rem;
+  color: #384B5E;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: -0.03rem;
+  line-height: normal;
+  text-align: center;
+  border-bottom: 1px solid #C5CDD5;
+  background: #E3E8ED;
+}
+.tbl-input-form thead th:not(:last-of-type) {
+  border-right: 1px solid #C5CDD5;
+}
+.tbl-input-form tbody th {
+  padding: 0.63rem 0.75rem;
+  color: #18191C;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: -0.03rem;
+  line-height: normal;
+  text-align: center;
+  vertical-align: middle;
+  border-right: 1px solid #C5CDD5;
+  border-bottom: 1px solid #C5CDD5;
+  background-color: #fff;
+}
+.tbl-input-form tbody th.center {
+  text-align: center;
+  vertical-align: middle;
+}
+.tbl-input-form tbody td {
+  padding: 0.63rem 0.75rem;
+  color: #18191C;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: -0.03rem;
+  line-height: normal;
+  vertical-align: middle;
+  border-bottom: 1px solid #C5CDD5;
+  background-color: #fff;
+}
+.tbl-input-form tbody td:not(:last-of-type) {
+  border-right: 1px solid #C5CDD5;
+}
+.tbl-input-form tbody td.center {
+  text-align: center;
+  vertical-align: middle;
+}
+
 .grid-top-area {
   display: flex;
   flex-direction: row;
@@ -13928,6 +13988,9 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 }
 .grid-top-area .grid-top-left .combo-box-group {
   width: 8.88rem;
+}
+.grid-top-area .grid-top-left .title-wrap {
+  margin-bottom: 0 !important;
 }
 .grid-top-area .grid-top-btn {
   display: flex;
@@ -14723,6 +14786,9 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   text-align: center;
   white-space: normal;
   word-break: keep-all;
+}
+.normal .cell-normal.input .ag-cell-wrapper {
+  width: 100%;
 }
 
 .ag-center-cols-viewport,
@@ -40139,6 +40205,7 @@ textarea.form-control {
 }
 .step .step-current .txt {
   color: #FF8C14;
+  font-weight: 700;
 }
 .step .step-reject .step-img {
   background-color: #DC3545;

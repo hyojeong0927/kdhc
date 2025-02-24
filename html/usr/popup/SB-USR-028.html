@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ko" data-kdhc-mode="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDHC</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../../css/index.css">
+    <!-- script -->
+    <script src="../../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script type="module" src="../../../assets/js/common.js"></script>
+</head>
+
+<body>
+    <div id="pop-wrap" class="kdhc-pop-wrap">
+        <header class="kdhc-pop-header">
+            <h1 class="pop-title">자산정보세부현황 등록 </h1>
+            <button type="button" class="btn-close" aria-label="Close" onclick="window.close()"></button>
+        </header>
+        <!-- 팝업 컨테이너 영역 -->
+        <section class="kdhc-pop-container">
+            <div class="inner">
+                <!-- 팝업 컨텐츠 영역 -->
+                <div class="contents">
+                    <!-- breadcrumbs start -->
+                    <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" data-breadcrumb='[
+                        { "name": "기술보안", "url": "#" },
+                        { "name": "자산 정보세부현황", "url": "#" },
+                        { "name": "자산정보세부현황 등록", "url": "", "active": true }
+                        ]' data-visible="true">
+                    </nav>
+                    <!--// breadcrumbs end -->
+
+                    <!-- 기본정보 -->
+                    <article class="section">
+                        
+                        <!-- input form -->
+                        <div class="input-form-area">
+                            <!-- form start -->
+                            <form>
+                                <fieldset>
+                                    <!-- form-wrap start -->
+                                    <div class="form-wrap type02">
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">자산관리번호</div>
+                                                <div class="form-group">
+                                                    <!-- input search group start -->
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search2" value="화성-노트북-001" placeholder="자산관리번호 입력">
+                                                        <label class="input-group-text hidden" for="search2"><i class="icon search"></i></label>
+                                                    </div>
+                                                    <!--// input search group end -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">제조사</div>
+                                                <div class="form-group">
+                                                    <div class="input-text">제조사</div>
+                                                </div>
+                                            </div>
+                                            <!--  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">장비명</div>
+                                                <div class="form-group">
+                                                    <div class="input-text">장비</div>
+                                                </div>
+                                            </div>
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">관리자</div>
+                                                <div class="form-group">
+                                                    <div class="input-text">유지보수 담당관</div>
+                                                </div>
+                                            </div>
+                                            <!--  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">설치위치</div>
+                                                <div class="form-group">
+                                                    <!-- input group -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="설치위치" value="판교지사 9월">
+                                                        <label for="input-text" class="hidden">설치위치</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">도임 연월</div>
+                                                <div class="form-group">
+                                                    <div class="input-text">2024.12.12</div>
+                                                </div>
+                                            </div>
+                                            <!--  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">IP</div>
+                                                <div class="form-group">
+                                                    <div class="input-text">191.168.001</div>
+                                                </div>
+                                            </div>
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">유지보수 담당</div>
+                                                <div class="form-group">
+                                                    <div class="input-text">유지보수 담당자</div>
+                                                </div>
+                                            </div>
+                                            <!--  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">MAC 주소</div>
+                                                <div class="form-group">
+                                                    <div class="input-text">00:11:22:AA:BB:CC</div>
+                                                </div>
+                                            </div>
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">규격</div>
+                                                <div class="form-group">
+                                                    <!-- input group -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="규격" value="(CPU,RAM,HDD)">
+                                                        <label for="input-text" class="hidden">규격</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">모델명</div>
+                                                <div class="form-group">
+                                                    <div class="input-text">191.168.001</div>
+                                                </div>
+                                            </div>
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">OS버전/설치날짜</div>
+                                                <div class="form-group">
+                                                    <div class="input-text">2024.12.12</div>
+                                                </div>
+                                            </div>
+                                            <!--  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">백신 설치여부</div>
+                                                <div class="form-group">
+                                                    <!-- input group -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="백신 설치여부" value="백신 설치여부">
+                                                        <label for="input-text" class="hidden">백신 설치여부</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--  -->
+                                        </div>
+                                        <!--// row end -->
+                                    </div>
+                                    <!--// form-wrap end -->
+                                </fieldset>
+                            </form>
+                            <!-- form end -->
+                        </div>
+                        <!--// input form -->
+                    </article>
+                    <!--// 기본정보 -->
+
+                    <!-- 설치 프로그램 -->
+                    <div class="section">
+                        <!-- grid top start -->
+                        <article class="grid-top-area">
+                            <!-- grid top left start -->
+                            <div class="grid-top-left">
+                                <!-- section tit start -->
+                                <div class="title-wrap" data-title="설치 프로그램" data-heading="h3"></div>
+                                <!--// section tit end -->
+                            </div>
+                            <!--// grid top left end -->
+
+                            <!-- grid top button start -->
+                            <div class="grid-top-btn" data-buttons='[{"text": "행추가"}]'>
+                            </div>
+                            <!--// grid top button end -->
+                        </article>
+                        <!--// grid top end -->
+                        
+                        <!-- grid wrap start -->
+                        <article class="grid-wrap">
+                            <div id="sampleGrid01" class="normal"></div>
+                        </article>
+                        <!--// grid wrap end -->
+                    </div>
+                    <!--// 설치 프로그램 -->
+
+                    <!-- 운영시 실행되는 프로세스 리스트 -->
+                    <div class="section">
+                        <!-- grid top start -->
+                        <article class="grid-top-area">
+                            <!-- grid top left start -->
+                            <div class="grid-top-left">
+                                <!-- section tit start -->
+                                <div class="title-wrap" data-title="운영시 실행되는 프로세스 리스트" data-heading="h3"></div>
+                                <!--// section tit end -->
+                            </div>
+                            <!--// grid top left end -->
+                            <!-- grid top button start -->
+                            <div class="grid-top-btn" data-buttons='[{"text": "행추가"}]'>
+                            </div>
+                            <!--// grid top button end -->
+                        </article>
+                        <!--// grid top end -->
+                        
+                        <!-- grid wrap start -->
+                        <article class="grid-wrap">
+                            <div id="sampleGrid02" class="normal"></div>
+                        </article>
+                        <!--// grid wrap end -->
+                    </div>
+                    <!--// 운영시 실행되는 프로세스 리스트 -->
+
+                    <!-- 외부 제공 서비스 리스트 -->
+                    <div class="section">
+                        <!-- grid top start -->
+                        <article class="grid-top-area">
+                            <!-- grid top left start -->
+                            <div class="grid-top-left">
+                                <!-- section tit start -->
+                                <div class="title-wrap" data-title="외부 제공 서비스 리스트" data-heading="h3"></div>
+                                <!--// section tit end -->
+                            </div>
+                            <!--// grid top left end -->
+                            <!-- grid top button start -->
+                            <div class="grid-top-btn" data-buttons='[{"text": "행추가"}]'>
+                            </div>
+                            <!--// grid top button end -->
+                        </article>
+                        <!--// grid top end -->
+                        
+                        <!-- grid wrap start -->
+                        <article class="grid-wrap">
+                            <div id="sampleGrid03" class="normal"></div>
+                        </article>
+                        <!--// grid wrap end -->
+                    </div>
+                    <!--// 외부 제공 서비스 리스트 -->
+
+                    <!-- 결재정보 -->
+                    <article class="section">
+
+                        <!-- section tit start -->
+                        <div class="title-wrap" data-title="결재정보" data-heading="h3"></div>
+                        <!--// section tit end -->
+
+                        <div class="section-sub">
+                            <!-- 결재 컴퍼넌트 영역 -->
+                            <div class="approve">
+
+                                <div class="approve-sec">
+                                    <div class="title-wrap" data-title="결재정보" data-heading="h6"></div>
+                                    <!-- input form -->
+                                    <div class="input-form-area">
+                                        <!-- form start -->
+                                        <form>
+                                            <fieldset>
+                                                <!-- form-wrap start -->
+                                                <div class="form-wrap type02">
+                                                    <!-- row -->
+                                                    <div class="form-row">
+                                                        <div class="col">
+                                                            <div class="form-label">기안일</div>
+                                                            <div class="form-group">
+                                                                <div class="input-txt"><!-- 텍스트 영역 --></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-label">결재 명</div>
+                                                            <div class="form-group">
+                                                                <div class="input-txt"><!-- 텍스트 영역 --></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--// row end-->
+                                                </div>
+                                                <!--// form-wrap end -->
+                                            </fieldset>
+                                        </form>
+                                        <!-- form end -->
+                                    </div>
+                                    <!--// input form -->
+                                </div>
+
+                                <div class="approve-sec">
+                                    <div class="title-wrap" data-title="결재상태" data-heading="h6"></div>
+                                    <!-- 결재상태 -->
+                                    <div class="process-status">
+                                        <!-- step start -->
+                                        <div id="step-container" class="step step-lg" data-step='[
+                                            { "status": "step-done", "title": "기안자", "name": "계전보안부 이현경" },
+                                            { "status": "step-current", "title": "제어보호담당자", "name": "계전보안부 오승환" },
+                                            { "status": "step-default", "title": "제어보호담당관", "name": "계전보안부 김현수" },
+                                            { "status": "step-reject", "title": "제어보호담당관", "name": "계전보안부 김현수" }]'>
+                                            
+                                        </div>
+                                        <script type="module" src="../../../assets/js/components/step.js"></script>
+                                        <!-- step end -->
+                                    </div>
+                                    <!--// 결재상태 -->
+                                </div>
+
+                                <div class="approve-sec type01">
+                                    <div class="title-wrap" data-title="결재진행" data-heading="h6"></div>
+                                    <!-- input form -->
+                                    <div class="input-form-area">
+                                        <!-- form start -->
+                                        <form>
+                                            <fieldset>
+                                                <!-- form-wrap start -->
+                                                <div class="form-wrap type02">
+                                                    <!-- row -->
+                                                    <div class="form-row">
+                                                        <div class="col">
+                                                            <div class="form-label">제어보호담당관</div>
+                                                            <div class="form-group">
+                                                                <div class="input-txt">김현수</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-label">결재일자</div>
+                                                            <div class="form-group">
+                                                                <!-- <div class="input-txt center">2024.12.12 11:30:24</div> -->
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <!-- badge 영역 -->
+                                                                <!-- <div class="input-badge-group center">
+                                                                    <span class="badge badge-type01">기완완료</span>
+                                                                </div> -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- row -->
+                                                    <div class="form-row">
+                                                        <div class="col">
+                                                            <div class="form-label">제어보호담당자</div>
+                                                            <div class="form-group">
+                                                                <!-- input search group start -->
+                                                                <div class="input-search-group">
+                                                                    <input type="search" class="form-control"
+                                                                        id="search1" value="오승환"
+                                                                        placeholder="제어보호담당자 입력">
+                                                                    <label class="input-group-text" for="search1"><i
+                                                                            class="icon search"></i></label>
+                                                                </div>
+                                                                <!--// input search group end -->
+                                                                <!-- 에러 문구 -->
+                                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                                <!--// 에러 문구 -->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-label">결재일자</div>
+                                                            <div class="form-group">
+                                                                <div class="input-txt center"><!--  --></div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <!-- badge 영역 -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- row -->
+                                                    <div class="form-row">
+                                                        <div class="col">
+                                                            <div class="form-label">기안자</div>
+                                                            <div class="form-group">
+                                                                <!-- input search group start -->
+                                                                <div class="input-search-group">
+                                                                    <input type="search" class="form-control"
+                                                                        id="search1" value="이현경"
+                                                                        placeholder="관리부서 차(팀)장 입력">
+                                                                    <label class="input-group-text" for="search1"><i
+                                                                            class="icon search"></i></label>
+                                                                </div>
+                                                                <!--// input search group end -->
+                                                                <!-- 에러 문구 -->
+                                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                                <!--// 에러 문구 -->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-label">기안일자</div>
+                                                            <div class="form-group">
+                                                                <div class="input-txt center">2024.12.12 11:30:24</div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <!-- badge 영역 -->
+                                                                <div class="input-badge-group center">
+                                                                    <span class="badge badge-type01">기완완료</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--// row end-->
+                                                </div>
+                                                <!--// form-wrap end -->
+                                            </fieldset>
+                                        </form>
+                                        <!-- form end -->
+                                    </div>
+                                    <!--// input form -->
+                                </div>
+
+                            </div>
+                            <!--// 결재 컴퍼넌트 영역 -->
+                            <!-- bottom button area start -->
+                            <div class="bottom-btn-area" data-buttons='[{"text": "회수"}, {"text": "결재"}]'>
+                            </div>
+                            <!--// bottom button area end -->
+                        </div>
+                    </article>
+                    <!--// 결재정보 -->
+                </div>
+                <!--// 팝업 컨텐츠 영역 -->
+            </div>
+        </section>
+        <!--// 팝업 컨테이너 영역 -->
+    </div>
+    <!-- script wrap -->
+    <script type="module">
+        const rowData01 = [
+            {
+                field01: "",
+                field02: "",
+                field03: "",
+            },
+        ];
+        const columnDefs01 = [
+            {
+                headerName: "설치프로그램 명",
+                headerClass: "center",
+                field: "field01",
+                minWidth: 350,
+                flex: 1,
+                cellClass: "cell-normal input",
+                cellRenderer: (params) => {
+                    const rowIndex = params.node.rowIndex;
+                    if (rowIndex === 0) {
+                        const values = params.value ? params.value.split(",") : [];
+                        return `
+                            <!-- input group -->
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="설치프로그램 명" value="${values.includes("1") ? "1" : ""}">
+                                <label for="input-text" class="hidden">설치프로그램 명</label>
+                            </div>
+                            <!--// input group -->
+                        `;
+                    } else {
+                        return params.value || "";
+                    }
+                }
+            },
+            {
+                headerName: "설명",
+                headerClass: "center",
+                field: "field01",
+                minWidth: 800,
+                flex: 1,
+                cellClass: "cell-normal input",
+                cellRenderer: (params) => {
+                    const rowIndex = params.node.rowIndex;
+                    if (rowIndex === 0) {
+                        const values = params.value ? params.value.split(",") : [];
+                        return `
+                            <!-- input group -->
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="설명" value="${values.includes("1") ? "1" : ""}">
+                                <label for="input-text" class="hidden">설명</label>
+                            </div>
+                            <!--// input group -->
+                        `;
+                    } else {
+                        return params.value || "";
+                    }
+                }
+            },
+            {
+                headerName: "삭제",
+                headerClass: "center",
+                field: "field01",
+                width: 160,
+                cellClass: "cell-normal",
+                cellRenderer: params => {
+                    return '<button type="button" class="btn btn-icon"><i class="icon del-trash" /></button>';
+                }
+            },
+        ];
+        
+        let sampleGrid01Api;
+
+        const sampleGrid01Options = {
+            defaultColDef: {
+                editable: true, // edit 사용 유무
+                autoHeight: true,
+                sortable: true, // sort 사용 유무
+            },
+            columnDefs: columnDefs01,
+            headerHeight: 41, // header height
+            rowData: rowData01,
+            rowHeight: 63, // row height
+            domLayout: "autoHeight", // 2025-02-19 추가 옵션
+            suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
+
+            // data empty style
+            overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
+        };
+        
+        const sampleGrid01Div = document.querySelector("#sampleGrid01");
+        
+        sampleGrid01Api = agGrid.createGrid(sampleGrid01Div, sampleGrid01Options);
+       
+    </script>
+    <script type="module">
+        const rowData02 = [
+            {
+                field01: "판교-25-0001",
+                field02: "설명",
+                field03: "",
+            },
+        ];
+        const columnDefs02 = [
+            {
+                headerName: "프로세스 명",
+                headerClass: "center",
+                field: "field01",
+                minWidth: 350,
+                flex: 1,
+                cellClass: "cell-normal input",
+                cellRenderer: (params) => {
+                    const rowIndex = params.node.rowIndex;
+                    if (rowIndex === 0) {
+                        const values = params.value ? params.value.split(",") : [];
+                        return `
+                            <!-- input group -->
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="프로세스 명" value="${values.includes("1") ? "1" : ""}">
+                                <label for="input-text" class="hidden">프로세스 명</label>
+                            </div>
+                            <!--// input group -->
+                        `;
+                    } else {
+                        return params.value || "";
+                    }
+                }
+            },
+            {
+                headerName: "설명",
+                headerClass: "center",
+                field: "field01",
+                minWidth: 800,
+                flex: 1,
+                cellClass: "cell-normal input",
+                cellRenderer: (params) => {
+                    const rowIndex = params.node.rowIndex;
+                    if (rowIndex === 0) {
+                        const values = params.value ? params.value.split(",") : [];
+                        return `
+                            <!-- input group -->
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="설명" value="${values.includes("1") ? "1" : ""}">
+                                <label for="input-text" class="hidden">설명</label>
+                            </div>
+                            <!--// input group -->
+                        `;
+                    } else {
+                        return params.value || "";
+                    }
+                }
+            },
+            {
+                headerName: "삭제",
+                headerClass: "center",
+                field: "field01",
+                width: 160,
+                cellClass: "cell-normal",
+                cellRenderer: params => {
+                    return '<button type="button" class="btn btn-icon"><i class="icon del-trash" /></button>';
+                }
+            },
+        ];
+        
+        let sampleGrid02Api;
+        
+        const sampleGrid02Options = {
+            defaultColDef: {
+                editable: true, // edit 사용 유무
+                autoHeight: true,
+                sortable: true, // sort 사용 유무
+            },
+            columnDefs: columnDefs02,
+            headerHeight: 41, // header height
+            rowData: rowData02,
+            rowHeight: 63, // row height
+            domLayout: "autoHeight", // 2025-02-19 추가 옵션
+            suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
+
+            // data empty style
+            overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
+        };
+        const sampleGrid02Div = document.querySelector("#sampleGrid02");
+        sampleGrid02Api = agGrid.createGrid(sampleGrid02Div, sampleGrid02Options);
+    </script>
+    <script type="module">
+        const rowData03 = [
+            {
+                field01: "판교-25-0001",
+                field02: "포트명",
+                field03: "설명",
+                field04: "",
+            },
+        ];
+        const columnDefs03 = [
+            {
+                headerName: "서비스 명",
+                headerClass: "center",
+                field: "field01",
+                width: 200,
+                cellClass: "cell-normal input",
+                cellRenderer: (params) => {
+                    const rowIndex = params.node.rowIndex;
+                    if (rowIndex === 0) {
+                        const values = params.value ? params.value.split(",") : [];
+                        return `
+                            <!-- input group -->
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="서비스 명" value="${values.includes("1") ? "1" : ""}">
+                                <label for="input-text" class="hidden">서비스 명</label>
+                            </div>
+                            <!--// input group -->
+                        `;
+                    } else {
+                        return params.value || "";
+                    }
+                }
+            },
+            {
+                headerName: "포트 명",
+                headerClass: "center",
+                field: "field02",
+                width: 200,
+                cellClass: "cell-normal input",
+                cellRenderer: (params) => {
+                    const rowIndex = params.node.rowIndex;
+                    if (rowIndex === 0) {
+                        const values = params.value ? params.value.split(",") : [];
+                        return `
+                            <!-- input group -->
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="포트 명" value="${values.includes("1") ? "1" : ""}">
+                                <label for="input-text" class="hidden">포트 명</label>
+                            </div>
+                            <!--// input group -->
+                        `;
+                    } else {
+                        return params.value || "";
+                    }
+                }
+            },
+            {
+                headerName: "설명",
+                headerClass: "center",
+                field: "field03",
+                minWidth: 750,
+                flex: 1,
+                cellClass: "cell-normal input",
+                cellRenderer: (params) => {
+                    const rowIndex = params.node.rowIndex;
+                    if (rowIndex === 0) {
+                        const values = params.value ? params.value.split(",") : [];
+                        return `
+                            <!-- input group -->
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="설명" value="${values.includes("1") ? "1" : ""}">
+                                <label for="input-text" class="hidden">설명</label>
+                            </div>
+                            <!--// input group -->
+                        `;
+                    } else {
+                        return params.value || "";
+                    }
+                }
+            },
+            {
+                headerName: "삭제",
+                headerClass: "center",
+                field: "field04",
+                width: 160,
+                cellClass: "cell-normal",
+                cellRenderer: params => {
+                    return '<button type="button" class="btn btn-icon"><i class="icon del-trash" /></button>';
+                }
+            },
+        ];
+        
+        let sampleGrid03Api;
+
+        const sampleGrid03Options = {
+            defaultColDef: {
+                editable: true, // edit 사용 유무
+                autoHeight: true,
+                sortable: true, // sort 사용 유무
+            },
+            columnDefs: columnDefs03,
+            headerHeight: 41, // header height
+            rowData: rowData03,
+            rowHeight: 63, // row height
+            domLayout: "autoHeight", // 2025-02-19 추가 옵션
+            suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
+
+            // data empty style
+            overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
+        };
+
+        const sampleGrid03Div = document.querySelector("#sampleGrid03");
+
+        sampleGrid03Api = agGrid.createGrid(sampleGrid03Div, sampleGrid03Options);
+    </script>
+    <!--// script wrap -->
+</body>
+
+</html>

@@ -141,6 +141,7 @@ $step-status: ("default", "current", "reject", "done");
                 }
                 .txt {
                     color: $orange-001;
+                    font-weight: $font-weight-bold;
                 }
             }
             @else if $status == "reject" {
