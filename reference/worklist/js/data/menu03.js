@@ -232,7 +232,7 @@ const menu03Projects = [
         type: "",
         folder: "usr",
         file: "SB-USR-039.html",
-        status: "진행대기",
+        status: "진행중",
         start: "2025-02-24",
         end: "2025-02-28",
         modDate: "",

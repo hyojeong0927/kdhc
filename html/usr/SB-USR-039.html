@@ -22,7 +22,13 @@
 
         <!-- 상단 배너영역 -->
         <div id="kdhc-masthead">
-            <script type="module" src="../../assets/js/layouts/top-banner.js"></script>
+            <div class="toggle-wrap">
+                <div class="toggle-head">
+                    <div class="inner">
+                        <span class="nuri-txt">이 누리집은 한국지역난방공사 제어망 스마트 보안관리 플랫폼 누리집입니다.</span>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- // 상단 배너영역 -->
 
@@ -30,10 +36,10 @@
         <header id="kdhc-header" data-menu='[
             { "title": "관리보안", "url": "#" },
             { "title": "물리보안", "url": "#" },
-            { "title": "기술보안", "url": "#"  },
+            { "title": "기술보안", "url": "#", "active": true },
             { "title": "보안정책", "url": "#" },
-            { "title": "클린PC", "url": "#", "active": true },
-            { "title": "정보자산", "url": "#"}]'>
+            { "title": "클린PC", "url": "#" },
+            { "title": "정보자산", "url": "#" }]'>
             <script type="module" src="../../assets/js/layouts/header.js"></script>
         </header>
         <!--// 헤더 영역 -->
@@ -44,20 +50,20 @@
                 <!-- 사이드 영역 -->
                 <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
                 <aside id="sidebar" class="sidebar" data-menu='[
-                        { "name": "휴대용 저장매체 사용등록", "url": "#", "active": true },
-                        { "name": "휴대용 저장매체 사용내역", "url": "#" },
-                        { "name": "휴대용 저장매체 점검내역", "url": "#" },
-                        { "name": "클린PC 사용내역", "url": "#" },
-                        { "name": "클린PC  반출입 내역", "url": "#" }]'>
-                </aside>
+                        { "name": "계정관리", "url": "#" },
+                        { "name": "자산정보세부현황", "url": "#" },
+                        { "name": "공개취약점 내역", "url": "#" },
+                        { "name": "공개취약점 조치유예", "url": "#" },
+                        { "name": "로그분석결과", "url": "#", "active": true },
+                        { "name": "원격접속 내역", "url": "#" }]'></aside>
                 <!--// 사이드 영역 -->
 
                 <main class="main-contents">
                     <!-- breadcrumbs start : 현재 히든 처리 추후 변경 가능 -->
                     <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
                         data-breadcrumb='[
-                            { "name": "클린PC", "url": "#" },
-                            { "name": "휴대용저장매체 등록 관리", "url": "", "active": true }
+                            { "name": "기술보안", "url": "#" },
+                            { "name": "원격접속 내역", "url": "", "active": true }
                         ]'
                         data-visible="false">
                     </nav> 
@@ -68,8 +74,8 @@
 
                         <!-- page title start -->
                         <div class="page-title-wrap" 
-                            data-title="휴대용저장매체 등록 관리" 
-                            data-badge="휴대용 저장매체 및 봉인장치 사용 관리대장" data-badge-visible="true">
+                            data-title="원격접속 내역" 
+                            data-badge="" data-badge-visible="false">
                         </div>
                         <!--// page title end -->
 
@@ -80,8 +86,7 @@
                                 <fieldset>
                         
                                     <!-- form-wrap start -->
-                                    <!-- 2025-02-14 : type01 추가 -->
-                                    <div class="form-wrap type01">
+                                    <div class="form-wrap type01 form-col-2">
                                         <!-- row -->
                                         <div class="form-row">
                                             <div class="col">
@@ -96,15 +101,13 @@
                                                             <button class="btn btn-outline--round btn-xsm" disabled>12개월</button>
                                                         </div>
                                                         <div class="input-date-group is-error">
-                                                            <input type="text" id="startDate" class="form-control" value=""
-                                                                placeholder="YYYY-MM-DD" readonly>
-                                                            <label class="input-group-text" for="startDate"><i
-                                                                    class="icon calendar"></i></label>
+                                                            <input type="text" id="startDate" class="form-control" value="" placeholder="YYYY-MM-DD"
+                                                                readonly>
+                                                            <label class="input-group-text" for="startDate"><i class="icon calendar"></i></label>
                                                         </div>
                                                         <div class="to">-</div>
                                                         <div class="input-date-group">
-                                                            <input type="text" id="endDate" class="form-control" value=""
-                                                                placeholder="YYYY-MM-DD" readonly>
+                                                            <input type="text" id="endDate" class="form-control" value="" placeholder="YYYY-MM-DD" readonly>
                                                             <label class="input-group-text" for="endDate"><i class="icon calendar"></i></label>
                                                         </div>
                                                     </div>
@@ -128,42 +131,11 @@
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
-                                            <div class="col">
-                                                <div class="form-label">기안부서 </div>
-                                                <div class="form-group">
-                                                    <!-- form select group-->
-                                                    <div class="select-group is-error">
-                                                        <select class="form-select" aria-label="Default select" required>
-                                                            <option value="" selected>선택하세요</option>
-                                                            <option value="1">One</option>
-                                                            <option value="2">Two</option>
-                                                            <option value="3">Three</option>
-                                                        </select>
-                                                    </div>
-                                                    <!-- 에러 문구 -->
-                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                    <!--// 에러 문구 -->
-                                                </div>
-                                            </div>
                                         </div>
                                         <!-- row -->
                                         <div class="form-row">
                                             <div class="col">
-                                                <div class="form-label">자산관리번호</div>
-                                                <div class="form-group">
-                                                    <!-- input search group start -->
-                                                    <div class="input-search-group is-error">
-                                                        <input type="search" class="form-control" id="search1" value="" placeholder="자산관리번호 입력">
-                                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
-                                                    </div>
-                                                    <!--// input search group end -->
-                                                    <!-- 에러 문구 -->
-                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                    <!--// 에러 문구 -->
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-label">등록 불용반출</div>
+                                                <div class="form-label">결재상태</div>
                                                 <div class="form-group">
                                                     <div class="select-group">
                                                         <select class="form-select" aria-label="Default select" required>
@@ -179,7 +151,7 @@
                                                 </div>
                                             </div>
                                             <div class="col">
-                                                <div class="form-label">결재상태</div>
+                                                <div class="form-label">기안부서</div>
                                                 <div class="form-group">
                                                     <div class="select-group">
                                                         <select class="form-select" aria-label="Default select" required>
@@ -207,33 +179,34 @@
                             <!--// form end -->
                         </article>
                         <!--// search end-->
-
+                        
                         <!-- grid top start -->
                         <article class="grid-top-area">
                             <!-- grid top left start -->
                             <div class="grid-top-left">
-                                <select class="form-select sm" aria-label="Default select" required>
-                                    <option value="">선택하세요</option>
-                                    <option value="10" selected>10개씩 보기</option>
-                                    <option value="20">20개씩 보기</option>
-                                    <option value="30">30개씩 보기</option>
-                                </select>
+                               <select class="form-select sm" aria-label="Default select" required>
+                                <option value="">선택하세요</option>
+                                <option value="10" selected>10개씩 보기</option>
+                                <option value="20">20개씩 보기</option>
+                                <option value="30">30개씩 보기</option>
+                            </select>
                             </div>
                             <!--// grid top left end -->
-                        
-                            <!-- grid top button start -->
-                            <div class="grid-top-btn" data-buttons='[{"text": "불용반출기안"}, {"text": "등록기안"}, {"text": "출력", "class": "btn btn-secondary btn-sm"}]'></div>
-                            <!--// grid top button end -->
 
+                            <!-- grid top button start -->
+                            <div class="grid-top-btn" 
+                                data-buttons='[{"text": "결재기안"}, {"text": "출력", "class": "btn btn-secondary btn-sm"}]'>
+                            </div>
+                            <!--// grid top button end -->
                         </article>
                         <!--// grid top end -->
-
+                        
                         <!-- grid wrap start -->
                         <article class="grid-wrap">
-                            <div id="sampleGrid" class="normal" style="width: 100%;"></div>
+                            <div id="sampleGrid" class="normal"></div>
                         </article>
                         <!--// grid wrap end -->
-                        
+
                         <!-- grid bottom start -->
                         <article class="grid-bottom-area">
                             <!-- 페이징 -->
@@ -243,10 +216,12 @@
                             <!--// 페이징 -->
                         </article>
                         <!--// grid bottom end -->
+                    
                     </div>
                     <!--// 컨텐츠 영역 -->
 
                 </main>
+
             </div>
         </section>
         <!--// 컨테이너 영역 -->
@@ -263,200 +238,149 @@
         const rowData = [
             {
                 field01: "판교-25-0001",
-                field02: "화성-제어-HDD-001",
+                field02: "제어·감시시스템 공개취약점 관리대장",
                 field03: "계전부",
-                field04: "임찬규",
-                field05: "불용반출",
-                field06: "2024.12.10 12:20:33",
-                field07: "2024.12.12 12:24:30",
-                field08: "2024.12.12 12:24:30",
-                field09: "2024.12.12 12:24:30",
-                field10: "step01",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "step01",
             },
             {
                 field01: "판교-25-0001",
-                field02: "화성-제어-HDD-001",
+                field02: "제어·감시시스템 공개취약점 관리대장",
                 field03: "계전부",
-                field04: "임찬규",
-                field05: "불용반출",
-                field06: "2024.12.10 12:20:33",
-                field07: "2024.12.12 12:24:30",
-                field08: "2024.12.12 12:24:30",
-                field09: "2024.12.12 12:24:30",
-                field10: "step01 reject",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "step01 reject",
             },
             {
                 field01: "판교-25-0001",
-                field02: "화성-제어-HDD-001",
+                field02: "제어·감시시스템 공개취약점 관리대장",
                 field03: "계전부",
-                field04: "임찬규",
-                field05: "불용반출",
-                field06: "2024.12.10 12:20:33",
-                field07: "2024.12.12 12:24:30",
-                field08: "2024.12.12 12:24:30",
-                field09: "2024.12.12 12:24:30",
-                field10: "step02",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "step02",
             },
             {
                 field01: "판교-25-0001",
-                field02: "화성-제어-HDD-001",
+                field02: "제어·감시시스템 공개취약점 관리대장",
                 field03: "계전부",
-                field04: "임찬규",
-                field05: "불용반출",
-                field06: "2024.12.10 12:20:33",
-                field07: "2024.12.12 12:24:30",
-                field08: "2024.12.12 12:24:30",
-                field09: "2024.12.12 12:24:30",
-                field10: "step02 reject",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "step02 reject",
             },
             {
                 field01: "판교-25-0001",
-                field02: "화성-제어-HDD-001",
+                field02: "제어·감시시스템 공개취약점 관리대장",
                 field03: "계전부",
-                field04: "임찬규",
-                field05: "불용반출",
-                field06: "2024.12.10 12:20:33",
-                field07: "2024.12.12 12:24:30",
-                field08: "2024.12.12 12:24:30",
-                field09: "2024.12.12 12:24:30",
-                field10: "step03",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "step03",
             },
             {
                 field01: "판교-25-0001",
-                field02: "화성-제어-HDD-001",
+                field02: "제어·감시시스템 공개취약점 관리대장",
                 field03: "계전부",
-                field04: "임찬규",
-                field05: "불용반출",
-                field06: "2024.12.10 12:20:33",
-                field07: "2024.12.12 12:24:30",
-                field08: "2024.12.12 12:24:30",
-                field09: "2024.12.12 12:24:30",
-                field10: "step03 reject",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "step03 reject",
             },
             {
                 field01: "판교-25-0001",
-                field02: "화성-제어-HDD-001",
+                field02: "제어·감시시스템 공개취약점 관리대장",
                 field03: "계전부",
-                field04: "임찬규",
-                field05: "불용반출",
-                field06: "2024.12.10 12:20:33",
-                field07: "2024.12.12 12:24:30",
-                field08: "2024.12.12 12:24:30",
-                field09: "2024.12.12 12:24:30",
-                field10: "done",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "done",
             },
             {
                 field01: "판교-25-0001",
-                field02: "화성-제어-HDD-001",
+                field02: "제어·감시시스템 공개취약점 관리대장",
                 field03: "계전부",
-                field04: "임찬규",
-                field05: "불용반출",
-                field06: "2024.12.10 12:20:33",
-                field07: "2024.12.12 12:24:30",
-                field08: "2024.12.12 12:24:30",
-                field09: "2024.12.12 12:24:30",
-                field10: "done",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "done",
             },
             {
                 field01: "판교-25-0001",
-                field02: "화성-제어-HDD-001",
+                field02: "제어·감시시스템 공개취약점 관리대장",
                 field03: "계전부",
-                field04: "임찬규",
-                field05: "불용반출",
-                field06: "2024.12.10 12:20:33",
-                field07: "2024.12.12 12:24:30",
-                field08: "2024.12.12 12:24:30",
-                field09: "2024.12.12 12:24:30",
-                field10: "step01",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "done",
             },
             {
                 field01: "판교-25-0001",
-                field02: "화성-제어-HDD-001",
+                field02: "제어·감시시스템 공개취약점 관리대장",
                 field03: "계전부",
-                field04: "임찬규",
-                field05: "불용반출",
-                field06: "2024.12.10 12:20:33",
-                field07: "2024.12.12 12:24:30",
-                field08: "2024.12.12 12:24:30",
-                field09: "2024.12.12 12:24:30",
-                field10: "done",
+                field04: "홍창기",
+                field05: "2024.12.12 12:24:30",
+                field06: "2024.12.12 12:24:30",
+                field07: "done",
             },
         ];
-        const columnDefs = [
+         const columnDefs = [
             {
                 headerName: "문서번호",
                 headerClass: "center",
                 field: "field01",
-                width: 132,
+                width: 180,
                 cellClass: "cell-normal",
             },
-            {
-                headerName: "자산관리번호",
+             {
+                headerName: "결재 명",
                 headerClass: "center",
                 field: "field02",
-                width: 157,
+                width: 200,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "기안부서",
                 headerClass: "center",
                 field: "field03",
-                width: 92,
+                width: 180,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "기안자",
                 headerClass: "center",
                 field: "field04",
-                width: 76,
-                cellClass: "cell-normal",
-            },
-             {
-                headerName: "등록/불용반출",
-                headerClass: "center",
-                field: "field05",
-                width: 125,
+                width: 100,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "기안일자",
                 headerClass: "center",
-                field: "field06",
-                width: 172,
+                field: "field05",
+                width: 180,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "결재일자",
                 headerClass: "center",
-                field: "field07",
-                width: 172,
-                cellClass: "cell-normal",
-            },
-            {
-                headerName: "등록일자",
-                headerClass: "center",
-                field: "field08",
-                width: 172,
-                cellClass: "cell-normal",
-            },
-            {
-                headerName: "불용반출일자",
-                headerClass: "center",
-                field: "field09",
-                width: 172,
+                field: "field06",
+                width: 180,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "결재/승인 상태",
                 headerClass: "center",
-                field: "field10",
-                minWidth: 400,
+                field: "field07",
+                minWidth: 435,
                 flex: 1,
                 cellClass: "cell-normal",
                 cellRenderer: (params) => {
                     const status = params.value;
                     let stepsData = [];
-
+                    
                     if (status === "step01") {
                         stepsData = [
                             { "status": "step-current", "title": "기안자", "name": "박동원" },
@@ -464,11 +388,11 @@
                             { "status": "step-default", "title": "제어보호담당자", "name": "김현수" }
                         ];
                     } else if (status === "step01 reject") {
-                        stepsData = [
-                            { "status": "step-reject", "title": "기안자", "name": "박동원" },
-                            { "status": "step-default", "title": "제어보호담당자", "name": "오승환" },
-                            { "status": "step-default", "title": "제어보호담당관", "name": "김현수" }
-                        ];
+                    stepsData = [
+                        { "status": "step-reject", "title": "기안자", "name": "박동원" },
+                        { "status": "step-default", "title": "제어보호담당자", "name": "오승환" },
+                        { "status": "step-default", "title": "제어보호담당관", "name": "김현수" }
+                    ];
                     } else if (status === "step02") {
                         stepsData = [
                             { "status": "step-done", "title": "기안자", "name": "박동원" },
@@ -487,7 +411,7 @@
                             { "status": "step-done", "title": "제어보호담당자", "name": "오승환" },
                             { "status": "step-current", "title": "제어보호담당관", "name": "김현수" }
                         ];
-                    } else if (status === "step03 reject") {
+                     } else if (status === "step03 reject") {
                         stepsData = [
                             { "status": "step-done", "title": "기안자", "name": "박동원" },
                             { "status": "step-done", "title": "제어보호담당자", "name": "오승환" },
@@ -503,14 +427,14 @@
                     let stepListHtml = '<ul class="step-list">';
                     stepsData.forEach(step => {
                         stepListHtml += `
-                                <li class="${step.status}">
-                                    <dl>
-                                        <dt><i class="step-img"></i></dt>
-                                        <dd class="txt">${step.title}</dd>
-                                        <dd class="txt">${step.name}</dd>
-                                    </dl>
-                                </li>
-                            `;
+                            <li class="${step.status}">
+                                <dl>
+                                    <dt><i class="step-img"></i></dt>
+                                    <dd class="txt">${step.title}</dd>
+                                    <dd class="txt">${step.name}</dd>
+                                </dl>
+                            </li>
+                        `;
                     });
                     stepListHtml += '</ul>';
                     return `<div class="step step-sm">${stepListHtml}</div>`;
@@ -536,8 +460,8 @@
                 selectAll: 'filtered',
                 width: 52,
             },
-            domLayout: "autoHeight", // grid 스크롤 없이 auto height 옵션
-            suppressColumnVirtualisation: true, // grid 스크롤 없이 auto height 옵션
+            domLayout: "autoHeight", // 2025-02-19 추가 옵션
+            suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
             // data empty style
             overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
         };

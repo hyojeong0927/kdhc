@@ -14172,6 +14172,12 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   width: 50% !important;
 }
 
+.w-120 {
+  flex: 0 0 7.5rem !important;
+  width: 7.5rem !important;
+  min-width: 7.5rem !important;
+}
+
 .w-140 {
   flex: 0 0 8.75rem !important;
   width: 8.75rem !important;

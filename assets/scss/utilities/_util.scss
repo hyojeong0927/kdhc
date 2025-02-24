@@ -31,6 +31,11 @@
 .w-50 {
   width: 50% !important;
 }
+.w-120 {
+  flex: 0 0 rem(120px) !important;
+  width: rem(120px) !important;
+  min-width: rem(120px) !important;
+}
 .w-140 {
   flex: 0 0 rem(140px)  !important;
   width: rem(140px) !important;
