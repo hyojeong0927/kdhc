@@ -31,7 +31,37 @@
 .w-50 {
   width: 50% !important;
 }
-.w-120 {
+.w-50r {
+  flex: 0 0 rem(50px) !important;
+  width: rem(50px) !important;
+  min-width: rem(50px) !important;
+}
+.w-60r {
+  flex: 0 0 rem(60px) !important;
+  width: rem(60px) !important;
+  min-width: rem(60px) !important;
+}
+.w-80r {
+  flex: 0 0 rem(80px) !important;
+  width: rem(80px) !important;
+  min-width: rem(80px) !important;
+}
+.w-90r {
+  flex: 0 0 rem(90px) !important;
+  width: rem(90px) !important;
+  min-width: rem(90px) !important;
+}
+.w-100r {
+  flex: 0 0 rem(100px) !important;
+  width: rem(100px) !important;
+  min-width: rem(100px) !important;
+}
+.w-110r {
+  flex: 0 0 rem(110px) !important;
+  width: rem(110px) !important;
+  min-width: rem(110px) !important;
+}
+.w-120r {
   flex: 0 0 rem(120px) !important;
   width: rem(120px) !important;
   min-width: rem(120px) !important;

@@ -225,3 +225,29 @@
         @include font-style($input-font-size, $input-font-weight, $input-line-height);
     }
 }
+// cell merge
+.row-merge-grid {
+    .ag-root-wrapper {
+        border-bottom: 0;
+        .ag-row {
+            border-bottom: 0;
+        }
+    }
+    .cell-normal,
+    .ag-cell-inline-editing {
+        border-bottom: 1px solid $gray-007 !important;
+    }
+    .ag-cell {
+        &.merge-cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // padding: rem(9px) rem(12px);
+            // line-height: rem(19px);
+            text-align: center;
+            white-space: normal;
+            word-break: keep-all;
+            border-bottom: 1px solid $gray-007 !important;
+        }
+    }
+}

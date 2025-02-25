@@ -2,6 +2,10 @@
 ========================================================================== */
 $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
 
+$form-label-width: rem(100px);
+$form-btn-width: rem(136px);
+
+
 // form base
 %form-base {
     .form-wrap {
@@ -66,10 +70,36 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
                     }
                 }
             }
+            &.search-btn {
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                grid-area: btn !important;
+                .btn {
+                    min-width: rem(96px);
+                }
+            }
         }
     }
 }
 
+// $form-layouts: (
+//     type01: (grid-template: "row-01 btn" "row-02 btn", columns: 1fr rem(136px)),
+//     type02: (display: flex, padding: rem(9px) 0),
+//     type03: (grid-template: "row-01 row-02 btn" "row-01 row-03 btn", columns: 1fr 1fr rem(136px))
+// );
+// @each $ft, $values in $form-layouts {
+//     &.#{$ft} {
+//         @if map-has-key($values, grid-template) {
+//             display: grid;
+//             grid-template-areas: map-get($values, grid-template);
+//             grid-template-columns: map-get($values, columns);
+//         } @else if map-has-key($values, display) {
+//             display: map-get($values, display);
+//             padding: map-get($values, padding);
+//         }
+//     }
+// }
 // 검색 폼
 .search-form-area {
    @extend %form-base;
@@ -78,11 +108,10 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
             &.#{$ft} {
                 @if $ft == "type01" {
                     display: grid;
-                    grid-template-columns: 1fr rem(176px);
+                    grid-template-columns: 1fr rem(136px);
                     grid-template-areas: 
                     "row-01 btn"
                     "row-02 btn";
-                    padding-right: 0;
 
                     .form-row {
                         &:nth-of-type(1) {
@@ -93,14 +122,6 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
                         }
                         &:nth-of-type(3) {
                             grid-area: row-03;
-                        }
-                        &.search-btn {
-                            align-items: center;
-                            justify-content: center;
-                            grid-area: btn;
-                            .btn {
-                                min-width: rem(96px);
-                            }
                         }
                         .col {
                             &:not(:first-of-type) {
@@ -138,25 +159,14 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
                                 max-width: rem(115px);
                             }
                         }
-                        &.search-btn {
-                            justify-content: center;
-                            align-items: normal;
-                            flex: none;
-                            padding-top: rem(4px);
-                            width: rem(176px);
-                            .btn {
-                                height: rem(42px);
-                            }
-                        }
                     }
                 }
                 @else if $ft == "type03"  {
                     display: grid;
-                    grid-template-columns: 1fr 1fr rem(176px);
+                    grid-template-columns: 1fr 1fr rem(136px);
                     grid-template-areas: 
                     "row-01 row-02 btn"
                     "row-01 row-03 btn";
-                    padding-right: 0;
                     .form-row {
                         &:nth-of-type(1) {
                             grid-area: row-01;
@@ -167,21 +177,68 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
                         &:nth-of-type(3) {
                             grid-area: row-03;
                         }
-                        &.search-btn {
-                            align-items: center;
-                            justify-content: center;
-                            grid-area: btn;
-                            .btn {
-                                min-width: rem(96px);
-                            }
-                        }
                         .col {
                             &:first-of-type {
-                                @include flex(true, "start", "center");
+                                @include flex(true, "start", "center", rem(20px));
                                 .form-label {
                                     flex: 0 0 rem(88px);
                                     min-width: rem(88px);
                                 }
+                            }
+                        }
+                    }
+                }
+                @else if $ft == "type04" {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr rem(136px);
+                    grid-template-areas: 
+                    "row-01 row-02 row-03 btn";
+                    .form-row {
+                        flex-direction: column;
+                        &:nth-of-type(1) {
+                            grid-area: row-01;
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            .col {
+                                &:first-of-type {
+                                    width: 100%;
+                                    .datepicker-btn-group {
+                                        width: rem(207px);
+                                    }
+                                }
+                                 &:nth-of-type(2) {
+                                    align-items: center;
+                                    width: rem(255px);
+                                    flex: 0 0 rem(255px);
+                                    .form-group {
+                                        align-items: center;
+                                        flex-direction: row;
+                                        justify-content: flex-start;
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-of-type(2) {
+                            grid-area: row-02;
+                        }
+                        &:nth-of-type(3) {
+                            grid-area: row-03;
+                        }
+                        
+                    }
+                }
+                @else if $ft == "type05" {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr rem(136px);
+                    grid-template-areas:
+                    "row-01 row-02 row-03 btn";
+
+                    .form-row {
+                        flex-direction: column;
+                        &:nth-last-child(2) {
+                            .col {
+                                 align-items: center;
                             }
                         }
                     }
@@ -393,7 +450,7 @@ $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
     label {
         margin-left: rem($form-check-label-left);
         &.hidden {
-           visibility: hidden;
+           display: none;
         }
     }
 }

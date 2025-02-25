@@ -151,14 +151,14 @@ const columnDefs = [
         },
         valueFormatter: function (params) {
             if (!params.node || !params.column || !params.api) {
-                return params.value || "선택하세요";
+                return params.value || "선택";
             }
             const editingCells = params.api.getEditingCells();
             const isEditing = editingCells.some(cell => 
                 cell.rowIndex === params.node.rowIndex && cell.column.getId() === params.column.getId()
             );
             return !isEditing && (!params.value || params.value.trim() === "")
-                ? "선택하세요"
+                ? "선택"
                 : params.value;
         },
     },

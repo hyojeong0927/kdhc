@@ -44,7 +44,7 @@
                     <!--// grid top end -->
                     <!-- grid wrap start -->
                     <article class="grid-wrap">
-                        <div id="sampleGrid" class="normal"></div>
+                        <div id="sampleGrid" class="normal row-merge-grid"></div>
                     </article>
                     <!--// grid wrap end -->
                     <!--// 봉인장치사용내역 등록 -->
@@ -274,6 +274,36 @@
                 field07: "봉인 관리번호",
                 field08: "비고",
             },
+            {
+                field01: "2",
+                field02: "화성-화성-노트북-011",
+                field03: "네트워크설비 유지보수01",
+                field04: "USB 4",
+                field05: "용도",
+                field06: "화성-001",
+                field07: "봉인 관리번호",
+                field08: "비고",
+            },
+            {
+                field01: "2",
+                field02: "화성-화성-노트북-011",
+                field03: "네트워크설비 유지보수01",
+                field04: "USB 4",
+                field05: "용도",
+                field06: "화성-001",
+                field07: "봉인 관리번호",
+                field08: "비고",
+            },
+             {
+                field01: "2",
+                field02: "화성-화성-노트북-011",
+                field03: "네트워크설비 유지보수01",
+                field04: "USB 4",
+                field05: "용도",
+                field06: "화성-001",
+                field07: "봉인 관리번호",
+                field08: "비고",
+            },
         ];
         const columnDefs = [ 
             {
@@ -282,8 +312,9 @@
                 field: "field01",
                 width: 64,
                 cellClass: "cell-normal",
-                // valueGetter: "node.rowIndex + 1",
-                spanRows: true,
+                rowSpan: (params) => params.data.field01 === '자산관리번호' ? 2 : 1,
+                // rowSpan: (params) => shouldMergeRows(params, ["field01", "field02", "field03"]),
+                // cellClass: getMergeCellClass,
             },
             {
                 headerName: "자산관리번호",
@@ -293,7 +324,8 @@
                 cellClass: "cell-normal",
                 editable: true,
                 cellEditor: 'customInputSearchEditor',
-                spanRows: true,
+                // rowSpan: (params) => shouldMergeRows(params, ["field01", "field02", "field03"]),
+                // cellClass: getMergeCellClass,
             },
             {
                 headerName: "시스템명",
@@ -301,7 +333,8 @@
                 field: "field03",
                 width: 320,
                 cellClass: "cell-normal",
-                spanRows: true,
+                // rowSpan: (params) => shouldMergeRows(params, ["field01", "field02", "field03"]),
+                // cellClass: getMergeCellClass,
             },
             {
                 headerName: "구분",
@@ -358,27 +391,80 @@
                 cellClass: "cell-normal",
             },
         ];
+
+        // let rowspanMap = {};
+
+        // function calculateRowspanMap(data, fields) {
+        //     const mapKey = fields.join(",");
+        //     rowspanMap[mapKey] = {};
+
+        //     let rowIndex = 0;
+
+        //     while (rowIndex < data.length) {
+        //         let mergeCount = 1;
+        //         const key = fields.map(field => data[rowIndex][field]).join(",");
+
+        //         for (let i = rowIndex + 1; i < data.length; i++) {
+        //             const nextKey = fields.map(field => data[i][field]).join(",");
+        //             if (nextKey === key) {
+        //                 mergeCount++;
+        //             } else {
+        //                 break;
+        //             }
+        //         }
+
+        //         for (let i = 0; i < mergeCount; i++) {
+        //             if (i > 0) {
+        //                 fields.forEach(field => {
+        //                     data[rowIndex + i][field] = "";
+        //                 });
+        //             }
+        //             rowspanMap[mapKey][rowIndex + i] = i === 0 ? mergeCount : 1;
+        //         }
+
+        //         rowIndex += mergeCount;
+        //     }
+        // }
+
+        // function shouldMergeRows(params, fields) {
+        //     const mapKey = fields.join(",");
+        //     const rowIndex = params.node.rowIndex;
+        //     return rowspanMap[mapKey]?.[rowIndex] || 1;
+        // }
+
+        // function getMergeCellClass(params) {
+        //     const mapKey = ["field01", "field02", "field03"].join(",");
+        //     const rowIndex = params.node.rowIndex;
+        //     return rowspanMap[mapKey]?.[rowIndex] > 1 ? "merge-cell" : "";
+        // }
+
         let sampleGridApi;
         
         const sampleGridOptions = {
             defaultColDef: {
                 editable: false, // edit 사용 유무
                 autoHeight: true,
-                sortable: true, // sort 사용 유무
+                sortable: false, // sort 사용 유무
             },
             columnDefs,
             headerHeight: 41, // header height
             rowData: rowData,
             rowHeight: 63, // row height
+            // onGridReady: (params) => { // merge option
+            //     calculateRowspanMap(rowData, ["field01", "field02", "field03"]);
+            //     params.api.refreshCells({ force: true });
+            //     params.api.redrawRows();
+            // },
+            // onSortChanged: (params) => {
+            //     calculateRowspanMap(rowData, ["field01", "field02", "field03"]);
+            //     params.api.refreshCells({ force: true });
+            //     params.api.redrawRows();
+            // },
+            // getRowHeight: (params) => 63,
             domLayout: "autoHeight", // 2025-02-19 추가 옵션
-            suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
-            enableCellSpan: true, // cell rowspan 옵션
-            getRowSpan: (params) => {
-                if (params.data.field01 === '1' || params.data.field02 === '화성-화성-노트북-001' || params.data.field03 === '네트워크설비 유지보수') {
-                    return 4;
-                }
-                return 1;
-            },
+            suppressColumnVirtualisation: true, // merge에서 false 변경
+            suppressRowTransform: true, // merge option 추가
+            
             components: {
                 customInputSearchEditor: function () {
                     return {
