@@ -16,7 +16,7 @@
 <body>
     <div id="pop-wrap" class="kdhc-pop-wrap">
         <header class="kdhc-pop-header">
-            <h1 class="pop-title">자산정보세부현황 등록 </h1>
+            <h1 class="pop-title">자산정보세부현황 등록</h1>
             <button type="button" class="btn-close" aria-label="Close" onclick="window.close()"></button>
         </header>
         <!-- 팝업 컨테이너 영역 -->
@@ -482,18 +482,19 @@
                 cellClass: "cell-normal input",
                 cellRenderer: (params) => {
                     const rowIndex = params.node.rowIndex;
-                    if (rowIndex === 0) {
-                        const values = params.value ? params.value.split(",") : [];
+                    const value = params.value ? params.value.trim() : "";
+
+                    if (rowIndex === 0 && !value) {
                         return `
                             <!-- input group -->
                             <div class="input-group">
-                                <input type="text" id="input-text" class="form-control" placeholder="설치프로그램 명" value="${values.includes("1") ? "1" : ""}">
-                                <label for="input-text" class="hidden">설치프로그램 명</label>
+                                <input type="text" class="form-control" placeholder="설치프로그램 명">
+                                <label class="hidden">설치프로그램 명</label>
                             </div>
                             <!--// input group -->
                         `;
                     } else {
-                        return params.value || "";
+                        return value;
                     }
                 }
             },
@@ -506,18 +507,19 @@
                 cellClass: "cell-normal input",
                 cellRenderer: (params) => {
                     const rowIndex = params.node.rowIndex;
-                    if (rowIndex === 0) {
-                        const values = params.value ? params.value.split(",") : [];
+                    const value = params.value ? params.value.trim() : "";
+
+                    if (rowIndex === 0 && !value) {
                         return `
                             <!-- input group -->
                             <div class="input-group">
-                                <input type="text" id="input-text" class="form-control" placeholder="설명" value="${values.includes("1") ? "1" : ""}">
-                                <label for="input-text" class="hidden">설명</label>
+                                <input type="text" class="form-control" placeholder="설명">
+                                <label class="hidden">설명</label>
                             </div>
                             <!--// input group -->
                         `;
                     } else {
-                        return params.value || "";
+                        return value;
                     }
                 }
             },
@@ -560,8 +562,8 @@
     <script type="module">
         const rowData02 = [
             {
-                field01: "판교-25-0001",
-                field02: "설명",
+                field01: "",
+                field02: "",
                 field03: "",
             },
         ];
@@ -651,8 +653,8 @@
         const rowData03 = [
             {
                 field01: "판교-25-0001",
-                field02: "포트명",
-                field03: "설명",
+                field02: "",
+                field03: "",
                 field04: "",
             },
         ];
@@ -665,18 +667,19 @@
                 cellClass: "cell-normal input",
                 cellRenderer: (params) => {
                     const rowIndex = params.node.rowIndex;
-                    if (rowIndex === 0) {
-                        const values = params.value ? params.value.split(",") : [];
+                    const value = params.value ? params.value.trim() : "";
+
+                    if (rowIndex === 0 && !value) {
                         return `
                             <!-- input group -->
                             <div class="input-group">
-                                <input type="text" id="input-text" class="form-control" placeholder="서비스 명" value="${values.includes("1") ? "1" : ""}">
-                                <label for="input-text" class="hidden">서비스 명</label>
+                                <input type="text" class="form-control" placeholder="서비스 명">
+                                <label class="hidden">서비스 명</label>
                             </div>
                             <!--// input group -->
                         `;
                     } else {
-                        return params.value || "";
+                        return value;
                     }
                 }
             },
@@ -688,18 +691,19 @@
                 cellClass: "cell-normal input",
                 cellRenderer: (params) => {
                     const rowIndex = params.node.rowIndex;
-                    if (rowIndex === 0) {
-                        const values = params.value ? params.value.split(",") : [];
+                    const value = params.value ? params.value.trim() : "";
+
+                    if (rowIndex === 0 && !value) {
                         return `
                             <!-- input group -->
                             <div class="input-group">
-                                <input type="text" id="input-text" class="form-control" placeholder="포트 명" value="${values.includes("1") ? "1" : ""}">
-                                <label for="input-text" class="hidden">포트 명</label>
+                                <input type="text" class="form-control" placeholder="포트 명">
+                                <label class="hidden">포트 명</label>
                             </div>
                             <!--// input group -->
                         `;
                     } else {
-                        return params.value || "";
+                        return value;
                     }
                 }
             },
@@ -712,18 +716,19 @@
                 cellClass: "cell-normal input",
                 cellRenderer: (params) => {
                     const rowIndex = params.node.rowIndex;
-                    if (rowIndex === 0) {
-                        const values = params.value ? params.value.split(",") : [];
+                    const value = params.value ? params.value.trim() : "";
+
+                    if (rowIndex === 0 && !value) {
                         return `
                             <!-- input group -->
                             <div class="input-group">
-                                <input type="text" id="input-text" class="form-control" placeholder="설명" value="${values.includes("1") ? "1" : ""}">
-                                <label for="input-text" class="hidden">설명</label>
+                                <input type="text" class="form-control" placeholder="설명">
+                                <label class="hidden">설명</label>
                             </div>
                             <!--// input group -->
                         `;
                     } else {
-                        return params.value || "";
+                        return value;
                     }
                 }
             },
@@ -764,5 +769,4 @@
     </script>
     <!--// script wrap -->
 </body>
-
 </html>
