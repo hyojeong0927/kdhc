@@ -311,30 +311,29 @@
                 headerClass: "center",
                 field: "field01",
                 width: 64,
-                cellClass: "cell-normal",
-                rowSpan: (params) => params.data.field01 === '자산관리번호' ? 2 : 1,
-                // rowSpan: (params) => shouldMergeRows(params, ["field01", "field02", "field03"]),
-                // cellClass: getMergeCellClass,
+                cellClass: "",
+                rowSpan: (params) => shouldMergeRows(params, ["field01", "field02", "field03"]),
+                cellClass: getMergeCellClass,
             },
             {
                 headerName: "자산관리번호",
                 headerClass: "center",
                 field: "field02",
                 width: 238,
-                cellClass: "cell-normal",
+                cellClass: "",
                 editable: true,
                 cellEditor: 'customInputSearchEditor',
-                // rowSpan: (params) => shouldMergeRows(params, ["field01", "field02", "field03"]),
-                // cellClass: getMergeCellClass,
+                rowSpan: (params) => shouldMergeRows(params, ["field01", "field02", "field03"]),
+                cellClass: getMergeCellClass,
             },
             {
                 headerName: "시스템명",
                 headerClass: "center",
                 field: "field03",
                 width: 320,
-                cellClass: "cell-normal",
-                // rowSpan: (params) => shouldMergeRows(params, ["field01", "field02", "field03"]),
-                // cellClass: getMergeCellClass,
+                cellClass: "",
+                rowSpan: (params) => shouldMergeRows(params, ["field01", "field02", "field03"]),
+                cellClass: getMergeCellClass,
             },
             {
                 headerName: "구분",
@@ -392,51 +391,51 @@
             },
         ];
 
-        // let rowspanMap = {};
+        let rowspanMap = {};
 
-        // function calculateRowspanMap(data, fields) {
-        //     const mapKey = fields.join(",");
-        //     rowspanMap[mapKey] = {};
+        function calculateRowspanMap(data, fields) {
+            const mapKey = fields.join(",");
+            rowspanMap[mapKey] = {};
 
-        //     let rowIndex = 0;
+            let rowIndex = 0;
 
-        //     while (rowIndex < data.length) {
-        //         let mergeCount = 1;
-        //         const key = fields.map(field => data[rowIndex][field]).join(",");
+            while (rowIndex < data.length) {
+                let mergeCount = 1;
+                const key = fields.map(field => data[rowIndex][field]).join(",");
 
-        //         for (let i = rowIndex + 1; i < data.length; i++) {
-        //             const nextKey = fields.map(field => data[i][field]).join(",");
-        //             if (nextKey === key) {
-        //                 mergeCount++;
-        //             } else {
-        //                 break;
-        //             }
-        //         }
+                for (let i = rowIndex + 1; i < data.length; i++) {
+                    const nextKey = fields.map(field => data[i][field]).join(",");
+                    if (nextKey === key) {
+                        mergeCount++;
+                    } else {
+                        break;
+                    }
+                }
 
-        //         for (let i = 0; i < mergeCount; i++) {
-        //             if (i > 0) {
-        //                 fields.forEach(field => {
-        //                     data[rowIndex + i][field] = "";
-        //                 });
-        //             }
-        //             rowspanMap[mapKey][rowIndex + i] = i === 0 ? mergeCount : 1;
-        //         }
+                for (let i = 0; i < mergeCount; i++) {
+                    if (i > 0) {
+                        fields.forEach(field => {
+                            data[rowIndex + i][field] = "";
+                        });
+                    }
+                    rowspanMap[mapKey][rowIndex + i] = i === 0 ? mergeCount : 1;
+                }
 
-        //         rowIndex += mergeCount;
-        //     }
-        // }
+                rowIndex += mergeCount;
+            }
+        }
 
-        // function shouldMergeRows(params, fields) {
-        //     const mapKey = fields.join(",");
-        //     const rowIndex = params.node.rowIndex;
-        //     return rowspanMap[mapKey]?.[rowIndex] || 1;
-        // }
+        function shouldMergeRows(params, fields) {
+            const mapKey = fields.join(",");
+            const rowIndex = params.node.rowIndex;
+            return rowspanMap[mapKey]?.[rowIndex] || 1;
+        }
 
-        // function getMergeCellClass(params) {
-        //     const mapKey = ["field01", "field02", "field03"].join(",");
-        //     const rowIndex = params.node.rowIndex;
-        //     return rowspanMap[mapKey]?.[rowIndex] > 1 ? "merge-cell" : "";
-        // }
+        function getMergeCellClass(params) {
+            const mapKey = ["field01", "field02", "field03"].join(",");
+            const rowIndex = params.node.rowIndex;
+            return rowspanMap[mapKey]?.[rowIndex] > 1 ? "merge-cell" : "";
+        }
 
         let sampleGridApi;
         
@@ -450,17 +449,12 @@
             headerHeight: 41, // header height
             rowData: rowData,
             rowHeight: 63, // row height
-            // onGridReady: (params) => { // merge option
-            //     calculateRowspanMap(rowData, ["field01", "field02", "field03"]);
-            //     params.api.refreshCells({ force: true });
-            //     params.api.redrawRows();
-            // },
-            // onSortChanged: (params) => {
-            //     calculateRowspanMap(rowData, ["field01", "field02", "field03"]);
-            //     params.api.refreshCells({ force: true });
-            //     params.api.redrawRows();
-            // },
-            // getRowHeight: (params) => 63,
+            onGridReady: (params) => { // merge option
+                calculateRowspanMap(rowData, ["field01", "field02", "field03"]);
+                params.api.refreshCells({ force: true });
+                params.api.redrawRows();
+            },
+            getRowHeight: (params) => 63,
             domLayout: "autoHeight", // 2025-02-19 추가 옵션
             suppressColumnVirtualisation: true, // merge에서 false 변경
             suppressRowTransform: true, // merge option 추가
