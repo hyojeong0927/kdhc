@@ -82,7 +82,7 @@ const menu02Projects = [
         type: "pop",
         folder: "usr",
         file: "SB-USR-023.html",
-        status: "진행중",
+        status: "진행대기",
         start: "2025-03-04",
         end: "2025-03-07",
         modDate: "",
