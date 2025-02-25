@@ -14892,6 +14892,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 }
 .row-merge-grid .ag-root-wrapper .ag-row {
   border-bottom: 0;
+  background-color: transparent !important;
 }
 .row-merge-grid .cell-normal,
 .row-merge-grid .ag-cell-inline-editing {
