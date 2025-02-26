@@ -56,4 +56,11 @@ $icon: 'icon';
     
     // grid
     @include icon("del-trash", rem(24px), rem(24px), "#{$img-root}/images/svg/trash-01.svg");
+
+    // login
+    @include icon("login-user", rem(80px), rem(80px), "#{$img-root}/images/svg/login-user.svg");
+    @include icon("login-logo", rem(48px), rem(38px), "#{$img-root}/images/svg/login-logo.svg");
+    @include icon("login-brand-name", rem(337px), rem(24px), "#{$img-root}/images/svg/login-brand-name.svg");
+    @include icon("login-id", rem(24px), rem(24px), "#{$img-root}/images/svg/login-id.svg");
+    @include icon("login-pw", rem(24px), rem(24px), "#{$img-root}/images/svg/login-pw.svg");
 }

@@ -67,13 +67,13 @@
                                             <div class="col">
                                                 <div class="form-label">일자</div>
                                                 <div class="form-group">
-                                                    <!-- datepicker -->
+                                                    <!-- datepicker : class="input-date-group is-error" -->
                                                     <div class="input-date-group">
                                                         <input type="text" id="singleDate0" class="form-control datepicker" value="" placeholder="YYYY-MM-DD">
                                                         <label class="input-group-text" for="singleDate0"><i class="icon calendar"></i></label>
                                                     </div>
                                                     <!--// datepicker -->
-                                                    <!-- 에러 문구 -->
+                                                    <!-- 에러 문구 : hidden 제거 -->
                                                     <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
                                                 </div>
@@ -86,7 +86,15 @@
                                             <div class="col">
                                                 <div class="form-label">등급</div>
                                                 <div class="form-group">
-                                                   
+                                                    <!-- input group : class="input-group is-error" -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="외장 HDD">
+                                                        <label for="input-text" class="hidden">등급</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
                                                 </div>
                                             </div>
                                             <!--// col -->
@@ -94,12 +102,66 @@
                                             <div class="col">
                                                 <div class="form-label">시간</div>
                                                 <div class="form-group">
-                                                
+                                                    <!-- input time group : class="input-time-group is-error" -->
+                                                    <div class="input-time-group w-100">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>HH</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                        </select>
+                                                        <div class="to">:</div>
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>MM</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// input time group -->
+                                                    <!-- 에러 문구 : hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
                                                 </div>
                                             </div>
                                             <!--// col -->
                                         </div>
                                         <div class="form-row">
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label">사유</div>
+                                                <div class="form-group">
+                                                    <!-- input group : class="input-group is-error" -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">사유</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--// col -->
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label">매체형태</div>
+                                                <div class="form-group">
+                                                    <!-- select-group :  class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="">선택</option>
+                                                            <option value="1" selected>일반</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!-- 에러 문구 : hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--// col -->
                                         </div>
                                         <!--// row end -->
                                     </div>
@@ -164,8 +226,9 @@
                                         <!-- step start -->
                                         <div id="step-container" class="step step-lg" data-step='[
                                             { "status": "step-current", "title": "기안자", "name": "계전보안부 이현경" },
+                                            { "status": "step-reject", "title": "제어보호담당자", "name": "계전보안부 오승환" },
                                             { "status": "step-default", "title": "제어보호담당자", "name": "계전보안부 오승환" },
-                                            { "status": "step-default", "title": "제어보호담당관", "name": "계전보안부 김현수" }]'></div>
+                                            { "status": "step-done", "title": "제어보호담당관", "name": "계전보안부 김현수" }]'></div>
                                         <script type="module" src="../../../assets/js/components/step.js"></script>
                                         <!-- step end -->
                                     </div>
@@ -221,10 +284,13 @@
                                                         <div class="col">
                                                             <div class="form-label">결재일자</div>
                                                             <div class="form-group">
-                                                                <div class="input-txt center"><!--  --></div>
+                                                                <div class="input-txt center">2024.12.12 11:30:24</div>
                                                             </div>
                                                             <div class="form-group">
                                                                 <!-- badge 영역 -->
+                                                                <div class="input-badge-group center">
+                                                                    <span class="badge badge-type02">결재반려</span>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>

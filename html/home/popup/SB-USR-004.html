@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko" data-kdhc-mode="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDHC</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../../css/index.css">
+    <!-- script -->
+    <script src="../../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script type="module" src="../../../assets/js/common.js"></script>
+</head>
+
+<body>
+    <div id="pop-wrap" class="kdhc-pop-wrap small">
+        <header class="kdhc-pop-header">
+            <h1 class="pop-title" id="staticBackdropLabel">자산 검색</h1>
+            <button type="button" class="btn-close" aria-label="Close" onclick="window.close()"></button>
+        </header>
+        <!-- 팝업 컨테이너 영역 -->
+        <section class="kdhc-pop-container">
+            <div class="inner">
+                <!-- 팝업 컨텐츠 영역 -->
+                <div class="contents">
+                <!-- 기본정보 -->
+                <article class="section">
+                
+                    <!-- input form -->
+                    <div class="input-form-area">
+                        <!-- form start -->
+                        <form>
+                            <fieldset>
+                                <!-- form-wrap start -->
+                                <div class="form-wrap type02">
+                                    <!-- row -->
+                                    <div class="form-row">
+                                        <!-- col -->
+                                        <div class="col">
+                                            <div class="form-label w-190">사번</div>
+                                            <div class="form-group">
+                                                <!-- input group : class="input-group is-error" -->
+                                                <div class="input-group">
+                                                    <input type="text" id="input-text" class="form-control" placeholder="입력" value="123456" readonly>
+                                                    <label for="input-text" class="hidden">사번</label>
+                                                </div>
+                                                <!--// input group -->
+                                                <!-- 에러 문구 -->
+                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                <!--// 에러 문구 -->
+                                            </div>
+                                        </div>
+                                        <!--// col  -->
+                                    </div>
+                                    <!-- row -->
+                                    <div class="form-row">
+                                        <!-- col -->
+                                        <div class="col">
+                                            <div class="form-label w-190">이름</div>
+                                            <div class="form-group">
+                                                <!-- input group : class="input-group is-error" -->
+                                                <div class="input-group">
+                                                    <input type="text" id="input-text" class="form-control" placeholder="입력" value="홍길동" readonly>
+                                                    <label for="input-text" class="hidden">이름</label>
+                                                </div>
+                                                <!--// input group -->
+                                                <!-- 에러 문구 -->
+                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                <!--// 에러 문구 -->
+                                            </div>
+                                        </div>
+                                        <!--// col  -->
+                                    </div>
+                                    <!-- row -->
+                                    <div class="form-row">
+                                        <!-- col -->
+                                        <div class="col">
+                                            <div class="form-label w-190">지사</div>
+                                            <div class="form-group">
+                                                <!-- input group : class="input-group is-error" -->
+                                                <div class="input-group">
+                                                    <input type="text" id="input-text" class="form-control" placeholder="입력" value="퍈교지사" readonly>
+                                                    <label for="input-text" class="hidden">지사</label>
+                                                </div>
+                                                <!--// input group -->
+                                                <!-- 에러 문구 -->
+                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                <!--// 에러 문구 -->
+                                            </div>
+                                        </div>
+                                        <!--// col  -->
+                                    </div>
+                                    <!-- row -->
+                                    <div class="form-row">
+                                        <!-- col -->
+                                        <div class="col">
+                                            <div class="form-label w-190">부서</div>
+                                            <div class="form-group">
+                                                <!-- input group : class="input-group is-error" -->
+                                                <div class="input-group">
+                                                    <input type="text" id="input-text" class="form-control" placeholder="입력" value="사이버보안센터" readonly>
+                                                    <label for="input-text" class="hidden">부서</label>
+                                                </div>
+                                                <!--// input group -->
+                                                <!-- 에러 문구 -->
+                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                <!--// 에러 문구 -->
+                                            </div>
+                                        </div>
+                                        <!--// col  -->
+                                    </div>
+                                    <!-- row -->
+                                    <div class="form-row">
+                                        <!-- col -->
+                                        <div class="col">
+                                            <div class="form-label w-190">현재 비밀번호</div>
+                                            <div class="form-group">
+                                                <!-- input group : class="input-group is-error" -->
+                                                <div class="input-group">
+                                                    <input type="text" id="input-text" class="form-control" placeholder="현재 비밀번호" value="">
+                                                    <label for="input-text" class="hidden">현재 비밀번호</label>
+                                                </div>
+                                                <!--// input group -->
+                                                <!-- 에러 문구 -->
+                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                <!--// 에러 문구 -->
+                                            </div>
+                                        </div>
+                                        <!--// col  -->
+                                    </div>
+                                    <!-- row -->
+                                    <div class="form-row">
+                                        <!-- col -->
+                                        <div class="col">
+                                            <div class="form-label w-190">새로운 비밀번호</div>
+                                            <div class="form-group">
+                                                <!-- input group : class="input-group is-error" -->
+                                                <div class="input-group">
+                                                    <input type="text" id="input-text" class="form-control" placeholder="새로운 비밀번호" value="">
+                                                    <label for="input-text" class="hidden">새로운 비밀번호</label>
+                                                </div>
+                                                <!--// input group -->
+                                                <!-- 에러 문구 -->
+                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                <!--// 에러 문구 -->
+                                            </div>
+                                        </div>
+                                        <!--// col  -->
+                                    </div>
+                                    <!-- row -->
+                                    <div class="form-row">
+                                        <!-- col -->
+                                        <div class="col">
+                                            <div class="form-label w-190">새로운 비밀번호 확인</div>
+                                            <div class="form-group">
+                                                <!-- input group : class="input-group is-error" -->
+                                                <div class="input-group">
+                                                    <input type="text" id="input-text" class="form-control" placeholder="새로운 비밀번호 확인" value="">
+                                                    <label for="input-text" class="hidden">새로운 비밀번호 확인</label>
+                                                </div>
+                                                <!--// input group -->
+                                                <!-- 에러 문구 -->
+                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                <!--// 에러 문구 -->
+                                            </div>
+                                        </div>
+                                        <!--// col  -->
+                                    </div>
+                                    <!--// row end -->
+                                </div>
+                                <!--// form-wrap end -->
+                            </fieldset>
+                        </form>
+                        <!-- form end -->
+                    </div>
+                    <!--// input form -->
+                </article>
+                <!--// 기본정보 -->
+                </div>
+                <!--// 팝업 컨텐츠 영역 -->
+            </div>
+        </section>
+        <!--// 팝업 컨테이너 영역 -->
+        <footer class="kdhc-pop-footer">
+            <div class="inner">
+                <button type="button" class="btn btn-secondary btn-md" data-bs-dismiss="modal">저장</button>
+            </div>
+        </footer>
+    </div>
+    <!-- script wrap -->
+   
+    <!--// script wrap -->
+</body>
+
+</html>

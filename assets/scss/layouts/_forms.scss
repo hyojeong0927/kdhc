@@ -279,6 +279,19 @@ $form-btn-width: rem(136px);
                             }
                         }
                     }
+                    &.only-child {
+                        @include flex(true, "center", "center", rem(20px));
+                        .form-row {
+                           flex: 0 0 50%;
+                            .form-label {
+                                flex: 0 0 rem(140px);
+                                width: rem(140px);
+                            }
+                           &.search-btn {
+                                flex: 0;
+                           }
+                        }
+                    }
                 }
                 @else if $ft == "type02" {
                     margin-bottom: 0;

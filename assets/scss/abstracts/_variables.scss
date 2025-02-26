@@ -18,6 +18,7 @@ $gray-008: #555555;
 $gray-009: #6C757D;
 $gray-010: #EEF2F7; // masthead color
 $gray-011: #828E98;
+$gray-012: #F7F8F9;
 
 // red
 $red-001: #DC3545; // error
@@ -35,6 +36,7 @@ $blue-002: #0D63D4;
 $blue-003: #D9EAFF; // badge bg
 $blue-004: #F2F5FA; // body bg
 $blue-005: #E3E8ED;
+$blue-006: #383D5E;
 
 // bg color
 $body-bg: $blue-004;
@@ -66,6 +68,7 @@ $font-size-sm:                $font-size-base * .875; // 14px
 $font-size-md:                $font-size-base * .888; // 18px
 $font-size-lg:                $font-size-base * 1.25; // 20px
 $font-size-xlg:               $font-size-base * 2; // 32px
+$font-size-xxlg:              $font-size-base * 3; // 48px
 
 $font-weight-lighter:         lighter;
 $font-weight-light:           300;

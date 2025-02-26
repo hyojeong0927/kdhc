@@ -1,39 +1,65 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-kdhc-mode="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KDHC</title>
     <!-- css -->
-    <link rel="stylesheet" href="../../assets/css/index.css">
+    <link rel="stylesheet" href="../../css/index.css">
+    <!-- script -->
+    <script src="../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script type="module" src="../../assets/js/common.js"></script>
 </head>
+
 <body>
-    <!-- container -->
-    <section class="container">
-        <!-- header -->
-        <header>
-            <script src="../../assets/js/layouts/header.js" type="module"></script>
-        </header>
-        <!--// header -->
-        <!-- aside -->
-        <aside>
-            <script src="../../assets/js/layouts/lnb.js" type="module"></script>
-        </aside>
-        <!--// aside -->
-        <!-- main -->
-        <main class="main">
-            <article class="contents">
-                <div class="search">search</div>
-                <div class="data-tbl">data</div>
-            </article>
-        </main>
-        <!--// main -->
-        <!-- footer -->
-        <footer>
-            <script src="../../assets/js/layouts/footer.js" type="module"></script>
-        </footer>
-        <!--// footer -->
-    </section>
-    <!--// container -->
+    <div class="kdhc-login-wrap">
+
+        <!-- 본문 바로가기 영역 -->
+        <div id="kdhc-skip-link">
+            <a href="#logins">로그인 바로가기</a>
+        </div>
+        <!--// 본문 바로가기 영역  -->
+
+        <!-- 페이지 타이틀 -->
+        <div class="login-page-title">
+            <h2 class="title">Log in</h2>
+        </div>
+        <!--// 페이지 타이틀 -->
+
+        <!-- 컨테이너 영역 -->
+        <section id="logins" class="kdhc-login-container">
+            <div class="inner">
+                <!-- 팝업 호출 버튼 -->
+                <button type="button" id="popup-btn" class="btn btn-primary btn-lg">
+                    비밀번호 변경
+                </button>
+                <!--// 팝업 호출 버튼 -->
+                
+                <!-- popup script -->
+                <script type="module">
+                    import { openCenteredPopup } from '../../assets/js/components/popup.js';
+
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.getElementById('popup-btn').addEventListener('click', () => {
+                            const url = './popup/SB-USR-004.html';
+                            openCenteredPopup(url, 600, 610);
+                        });
+                    });
+                </script>
+
+            </div>
+        </section>
+        <!--// 컨테이너 영역 -->
+
+    </div>
+
+    <!-- script wrap -->
+    <!--// script wrap -->
+
+    <!-- modal wrap -->
+    <!--// modal wrap -->
 </body>
+
 </html>

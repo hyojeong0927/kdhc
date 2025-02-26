@@ -87,7 +87,7 @@ input[type="tel"],
 input[type="url"] {
     @extend .form-control;
     & + label.hidden {
-        @include hidden;
+        display: none;
     }
 }
 input[type="number"] {
