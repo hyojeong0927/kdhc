@@ -13943,66 +13943,6 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 .input-form-area .form-wrap.type03 .input-date-group {
   min-width: 50%;
 }
-.tbl-input-form {
-  width: 100%;
-  border-top: 1px solid #384B5E;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #384B5E #C5CDD5 #C5CDD5;
-}
-.tbl-input-form caption {
-  display: none;
-}
-.tbl-input-form thead th {
-  padding: 0.63rem 0.75rem;
-  color: #384B5E;
-  font-size: 0.88rem;
-  font-weight: 500;
-  letter-spacing: -0.03rem;
-  line-height: normal;
-  text-align: center;
-  border-bottom: 1px solid #C5CDD5;
-  background: #E3E8ED;
-}
-.tbl-input-form thead th:not(:last-of-type) {
-  border-right: 1px solid #C5CDD5;
-}
-.tbl-input-form tbody th {
-  padding: 0.63rem 0.75rem;
-  color: #18191C;
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: -0.03rem;
-  line-height: normal;
-  text-align: center;
-  vertical-align: middle;
-  border-right: 1px solid #C5CDD5;
-  border-bottom: 1px solid #C5CDD5;
-  background-color: #fff;
-}
-.tbl-input-form tbody th.center {
-  text-align: center;
-  vertical-align: middle;
-}
-.tbl-input-form tbody td {
-  padding: 0.63rem 0.75rem;
-  color: #18191C;
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: -0.03rem;
-  line-height: normal;
-  vertical-align: middle;
-  border-bottom: 1px solid #C5CDD5;
-  background-color: #fff;
-}
-.tbl-input-form tbody td:not(:last-of-type) {
-  border-right: 1px solid #C5CDD5;
-}
-.tbl-input-form tbody td.center {
-  text-align: center;
-  vertical-align: middle;
-}
-
 .grid-top-area {
   display: flex;
   flex-direction: row;
@@ -14080,6 +14020,14 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 .textarea-group.w-65 input[type=tel],
 .textarea-group.w-65 input[type=url], .textarea-group.w-65 .ag-date-field-input-wrapper input[type=date], .ag-date-field-input-wrapper .textarea-group.w-65 input[type=date] {
   height: 100%;
+}
+.textarea-group.h-100 .form-control, .textarea-group.h-100 input[type=text],
+.textarea-group.h-100 input[type=number],
+.textarea-group.h-100 input[type=email],
+.textarea-group.h-100 input[type=password],
+.textarea-group.h-100 input[type=tel],
+.textarea-group.h-100 input[type=url], .textarea-group.h-100 .ag-date-field-input-wrapper input[type=date], .ag-date-field-input-wrapper .textarea-group.h-100 input[type=date] {
+  height: 6.25rem;
 }
 
 .form-check-group {
@@ -39720,8 +39668,13 @@ input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+input[type=number].form-control.number,
+input[type=number].number {
+  text-align: center;
+}
 
 textarea.form-control {
+  padding: 1rem;
   width: 100%;
   height: auto;
   min-height: 3.13rem;
@@ -40459,6 +40412,78 @@ textarea.form-control {
 
 /* Tables
 ========================================================================== */
+.tbl-input-form {
+  width: 100%;
+  border-top: 1px solid #384B5E;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #384B5E #C5CDD5 #C5CDD5;
+}
+.tbl-input-form caption {
+  display: none;
+}
+.tbl-input-form thead th {
+  padding: 0.63rem 0.75rem;
+  color: #384B5E;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: -0.03rem;
+  line-height: normal;
+  text-align: center;
+  border-bottom: 1px solid #C5CDD5;
+  background: #E3E8ED;
+}
+.tbl-input-form thead th:not(:last-of-type) {
+  border-right: 1px solid #C5CDD5;
+}
+.tbl-input-form tbody th {
+  padding: 0.63rem 0.75rem;
+  color: #18191C;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: -0.03rem;
+  line-height: normal;
+  text-align: center;
+  vertical-align: middle;
+  border-right: 1px solid #C5CDD5;
+  border-bottom: 1px solid #C5CDD5;
+  background-color: #fff;
+}
+.tbl-input-form tbody th.center {
+  text-align: center;
+  vertical-align: middle;
+}
+.tbl-input-form tbody td {
+  padding: 0.63rem 0.75rem;
+  min-height: 3.75rem;
+  color: #18191C;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: -0.03rem;
+  line-height: normal;
+  vertical-align: middle;
+  border-bottom: 1px solid #C5CDD5;
+  background-color: #fff;
+}
+.tbl-input-form tbody td:not(:last-of-type) {
+  border-right: 1px solid #C5CDD5;
+}
+.tbl-input-form tbody td.center {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.tbl-input-form + .tbl-input-form {
+  margin-top: 1rem;
+}
+.tbl-input-form.type-row {
+  border-top-color: #C5CDD5;
+}
+.tbl-input-form.type-row tbody th {
+  color: #384B5E;
+  background-color: #E3E8ED;
+}
+
 /* Tabs
 ========================================================================== */
 /* Style the tab */

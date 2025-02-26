@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="ko" data-kdhc-mode="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDHC</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../../css/index.css">
+    <!-- script -->
+    <script src="../../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script type="module" src="../../../assets/js/common.js"></script>
+</head>
+
+<body>
+    <div id="pop-wrap" class="kdhc-pop-wrap">
+        <header class="kdhc-pop-header">
+            <h1 class="pop-title">공개취약점 조치유예 등록</h1>
+            <button type="button" class="btn-close" aria-label="Close" onclick="window.close()"></button>
+        </header>
+        <!-- 팝업 컨테이너 영역 -->
+        <section class="kdhc-pop-container">
+            <div class="inner">
+                <!-- 팝업 컨텐츠 영역 -->
+                <div class="contents">
+                    <!-- breadcrumbs start -->
+                    <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" data-breadcrumb='[
+                        { "name": "기술보안", "url": "#" },
+                        { "name": "공개취약점 조치유예", "url": "#" },
+                        { "name": "공개취약점 조치유예 등록", "url": "", "active": true }
+                        ]' data-visible="true">
+                    </nav>
+                    <!--// breadcrumbs end -->
+
+                    <!-- 기본정보 -->
+                    <article class="section">
+
+                        <!-- input form -->
+                        <div class="input-form-area">
+                            <!-- form start -->
+                            <form>
+                                <fieldset>
+                                    <!-- form-wrap start -->
+                                    <div class="form-wrap type01">
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label w-80r">취약점 번호</div>
+                                                <div class="form-group">
+                                                    <div class="input-text">00001</div>
+                                                </div>
+                                            </div>
+                                            <!--// col -->
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label w-80r">분야</div>
+                                                <div class="form-group">
+                                                    <!-- select-group is-error : 에러일 경우 -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--// col  -->
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label w-80r">점검일자</div>
+                                                <div class="form-group">
+                                                    <!-- input-date-group -->
+                                                    <div class="input-date-group">
+                                                        <input type="text" id="Date" class="form-control datepicker" value="" placeholder="YYYY-MM-DD" readonly>
+                                                        <label class="input-group-text" for="Date"><i class="icon calendar"></i></label>
+                                                    </div>
+                                                    <!--// input-date-group -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--// col  -->
+                                        </div>
+                                        <!--// row end -->
+                                    </div>
+                                    <!--// form-wrap end -->
+                                </fieldset>
+                            </form>
+                            <!-- form end -->
+                        </div>
+                        <!--// input form -->
+                    </article>
+                    <!--// 기본정보 -->
+
+                    <!-- 점검항목 입력 -->
+                    <article class="section">
+                        <div class="input-form-area">
+                            <!-- form start -->
+                            <form>
+                                <fieldset>
+                                    <table class="tbl-input-form">
+                                        <caption>점검항목</caption>
+                                        <colgroup>
+                                            <col width="10%" />
+                                            <col width="40%" />
+                                            <col width="50%" />
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">번호</th>
+                                                <th scope="col">점검항목</th>
+                                                <th scope="col">내용</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">
+                                                    <!-- input group : class="input-group is-error" 추가 -->
+                                                    <div class="input-group">
+                                                        <input type="number" id="input-text" class="form-control number" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </th>
+                                                <td>
+                                                    <!-- input group : class="input-group is-error" 추가 -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- input group : class="input-group is-error" 추가 -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    <!-- input group : class="input-group is-error" 추가 -->
+                                                    <div class="input-group">
+                                                        <input type="number" id="input-text" class="form-control number" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </th>
+                                                <td>
+                                                    <!-- input group : class="input-group is-error" 추가 -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- input group : class="input-group is-error" 추가 -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    <!-- input group : class="input-group is-error" 추가 -->
+                                                    <div class="input-group">
+                                                        <input type="number" id="input-text" class="form-control number" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </th>
+                                                <td>
+                                                    <!-- input group : class="input-group is-error" 추가 -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- input group : class="input-group is-error" 추가 -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    <!-- input group : class="input-group is-error" 추가 -->
+                                                    <div class="input-group">
+                                                        <input type="number" id="input-text" class="form-control number" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </th>
+                                                <td>
+                                                    <!-- input group : class="input-group is-error" 추가 -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- input group : class="input-group is-error" 추가 -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    <!-- input group : class="input-group is-error" 추가 -->
+                                                    <div class="input-group">
+                                                        <input type="number" id="input-text" class="form-control number" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </th>
+                                                <td>
+                                                    <!-- input group : class="input-group is-error" 추가 -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- input group : class="input-group is-error" 추가 -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    <!-- input group : class="input-group is-error" 추가 -->
+                                                    <div class="input-group">
+                                                        <input type="number" id="input-text" class="form-control number" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </th>
+                                                <td>
+                                                    <!-- input group : class="input-group is-error" 추가 -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- input group : class="input-group is-error" 추가 -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </fieldset>
+                            </form>
+                            <!--// form end -->
+                        </div>
+                    </article>
+                    <!--// 점검항목 입력 -->
+
+                    <!-- 자산 등록 -->
+                    <article class="section">
+                        <div class="input-form-area">
+                            <!-- form start -->
+                            <form>
+                                <fieldset>
+                                    <table class="tbl-input-form">
+                                        <caption>자산 입력 폼</caption>
+                                        <colgroup>
+                                            <col width="225px" />
+                                            <col width="160px" />
+                                            <col width="132px" />
+                                            <col width="132px" />
+                                            <col width="132px" />
+                                            <col width="132px" />
+                                            <col width="132px" />
+                                            <col width="132px" />
+                                            <col width="*" />
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">자산 관리번호</th>
+                                                <th scope="col">시스템명</th>
+                                                <th scope="col">1</th>
+                                                <th scope="col">2</th>
+                                                <th scope="col">3</th>
+                                                <th scope="col">4</th>
+                                                <th scope="col">5</th>
+                                                <th scope="col">6</th>
+                                                <th scope="col">비고</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <!-- input search group start : class="input-search-group is-error" -->
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search1" value="화성-ST-노트북-001" placeholder="입력">
+                                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                                    </div>
+                                                    <!--// input search group end -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <div class="input-txt">시스템 1</div>
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- input group : class="input-group is-error"  -->
+                                                    <div class="input-group">
+                                                        <input type="number" id="input-text" class="form-control number" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <!-- input search group start : class="input-search-group is-error" -->
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search1" value="화성-ST-노트북-001" placeholder="입력">
+                                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                                    </div>
+                                                    <!--// input search group end -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <div class="input-txt">시스템 1</div>
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- input group : class="input-group is-error"  -->
+                                                    <div class="input-group">
+                                                        <input type="number" id="input-text" class="form-control number" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <!-- input search group start : class="input-search-group is-error" -->
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search1" value="화성-ST-노트북-001" placeholder="입력">
+                                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                                    </div>
+                                                    <!--// input search group end -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <div class="input-txt">시스템 1</div>
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- input group : class="input-group is-error"  -->
+                                                    <div class="input-group">
+                                                        <input type="number" id="input-text" class="form-control number" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <!-- input search group start : class="input-search-group is-error" -->
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search1" value="화성-ST-노트북-001" placeholder="입력">
+                                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                                    </div>
+                                                    <!--// input search group end -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <div class="input-txt">시스템 1</div>
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- input group : class="input-group is-error"  -->
+                                                    <div class="input-group">
+                                                        <input type="number" id="input-text" class="form-control number" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <!-- input search group start : class="input-search-group is-error" -->
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search1" value="화성-ST-노트북-001" placeholder="입력">
+                                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                                    </div>
+                                                    <!--// input search group end -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <div class="input-txt">시스템 1</div>
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- input group : class="input-group is-error"  -->
+                                                    <div class="input-group">
+                                                        <input type="number" id="input-text" class="form-control number" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <!-- input search group start : class="input-search-group is-error" -->
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search1" value="화성-ST-노트북-001" placeholder="입력">
+                                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                                    </div>
+                                                    <!--// input search group end -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <div class="input-txt">시스템 1</div>
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                                <td>
+                                                    <!-- input group : class="input-group is-error"  -->
+                                                    <div class="input-group">
+                                                        <input type="number" id="input-text" class="form-control number" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">입력</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거-->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- 특이사항 -->
+                                    <table class="tbl-input-form type-row">
+                                        <caption>특이사항 입력 폼</caption>
+                                        <colgroup>
+                                            <col width="160px" />
+                                            <col width="*" />
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">특이사항</th>
+                                                <td>
+                                                    <!-- textarea : class="textarea-group is-error"-->
+                                                    <div class="textarea-group h-100">
+                                                        <textarea class="form-control" id="comment" placeholder="특이사항 내용"></textarea>
+                                                    </div>
+                                                    <!--// textarea -->
+                                                    <!-- 에러 문구 : hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!--// 특이사항 -->
+                                </fieldset>
+                            </form>
+                            <!--// form end -->
+                        </div>
+                    </article>
+                    <!--// 자산 등록 -->
+
+                    <!-- bottom button area start -->
+                    <div class="bottom-btn-area" data-buttons='[ {"text": "저장"}]'>
+                    </div>
+                    <!--// bottom button area end -->
+                </div>
+                <!--// 팝업 컨텐츠 영역 -->
+            </div>
+        </section>
+        <!--// 팝업 컨테이너 영역 -->
+    </div>
+    <!-- script wrap -->
+    
+    <!--// script wrap -->
+</body>
+
+</html>

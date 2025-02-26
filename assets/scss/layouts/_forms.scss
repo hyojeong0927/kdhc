@@ -100,6 +100,7 @@ $form-btn-width: rem(136px);
 //         }
 //     }
 // }
+
 // 검색 폼
 .search-form-area {
    @extend %form-base;
@@ -322,63 +323,7 @@ $form-btn-width: rem(136px);
         }
     }
 }
-// table 입력 폼
-.tbl-input-form {
-    width: 100%;
-    border-top: 1px solid $primary;
-    border: {
-        width: 1px;
-        style: solid;
-        color: $primary $gray-007 $gray-007;
-    }
-    caption {
-        display: none;
-    }
-    thead {
-        th {
-            padding: rem(10px) rem(12px);
-            color: $primary;
-            @include font-style($font-size-sm, $font-weight-medium, $line-height-base);
-            text-align: center;
-            &:not(:last-of-type) {
-                border-right: 1px solid $gray-007; 
-            }
-            border-bottom: 1px solid $gray-007;
-            background: $blue-005;
-        }
-    }
-    tbody {
-        th {
-            padding: rem(10px) rem(12px);
-            color: $gray-002;
-            @include font-style($font-size-base, $font-weight-normal, $line-height-base);
-            text-align: center;
-            vertical-align: middle;
-            border-right: 1px solid $gray-007;
-            border-bottom: 1px solid $gray-007;
-            background-color: $white;
-            &.center {
-                text-align: center;
-                vertical-align: middle;
-            }
-        }
-        td {
-            padding: rem(10px) rem(12px);
-            color: $gray-002;
-            @include font-style($font-size-base, $font-weight-normal, $line-height-base);
-            vertical-align: middle;
-            border-bottom: 1px solid $gray-007;
-            background-color: $white;
-            &:not(:last-of-type) {
-                border-right: 1px solid $gray-007;
-            }
-            &.center {
-                text-align: center;
-                vertical-align: middle;
-            }
-        }
-    }
-}
+
 // grid
 .grid-top-area {
     @include flex(true, "between", "center", rem(8px));
@@ -435,6 +380,12 @@ $form-btn-width: rem(136px);
         .form-control {
             height: 100%;
         }
+    }
+    &.h-100 {
+        .form-control {
+            height: rem(100px);
+        }
+        
     }
 }
 

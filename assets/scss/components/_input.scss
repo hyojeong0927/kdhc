@@ -99,6 +99,9 @@ input[type="number"] {
             -webkit-appearance: none;
             margin: 0;
         }
+        &.number {
+            text-align: center;
+        }
     }
 }
 // input type style end
@@ -107,6 +110,7 @@ input[type="number"] {
 textarea {
     &.form-control {
         @extend .form-control;
+        padding: rem(16px);
         width: 100%;
         height: auto;
         min-height: rem($input-textarea-height);
