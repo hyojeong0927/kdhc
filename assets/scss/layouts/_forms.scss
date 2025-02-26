@@ -149,8 +149,11 @@ $form-btn-width: rem(136px);
                     }
                 }
                 @else if $ft == "type02"  {
-                    @include flex(true, "start", "normal");
-                    padding: rem(9px) 0;
+                    display: grid;
+                    grid-template-columns: 1fr rem(136px);
+                    grid-template-areas:
+                    "row-01 btn"
+                    "row-02 btn";
                     .form-row {
                         flex: 1;
                         .col {

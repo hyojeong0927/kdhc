@@ -99,6 +99,23 @@ $popup-md-footer-height: rem(86px);
         .inner {
             @include flex(true, "end", "center", rem(8px));
             padding: rem(24px);
+            &.between {
+                justify-content: space-between;
+                .btn {
+                    margin-left: auto;
+                }
+                .form-switch {
+                    @include flex(true, "start", "center", rem(20px));
+                    .form-check-input {
+                        float: none;
+                    }
+                    .form-check-label {
+                        margin-left: 0;
+                        color: $primary;
+                        @include font-style($font-size-base, $font-weight-medium, rem(23px));
+                    }
+                }
+            }
         }
     }
 }
