@@ -7,7 +7,7 @@
     height: 100dvh;
     background-color: $secondary;
     .login-page-title {
-        margin-top: rem(48px);
+        margin-top: vh(48px);
         padding-top: rem(92px);
         width: auto;
         height: auto;
@@ -104,3 +104,13 @@
         }
     }
 } 
+.login-id-label, .login-pw-label {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden-label {
+    opacity: 0;
+    transform: translateY(-5px);
+}

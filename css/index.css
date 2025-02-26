@@ -55754,7 +55754,7 @@ textarea.form-control {
   background-color: #3D6F94;
 }
 .kdhc-login-wrap .login-page-title {
-  margin-top: 3rem;
+  margin-top: 4.44vh;
   padding-top: 5.75rem;
   width: auto;
   height: auto;
@@ -55868,4 +55868,15 @@ textarea.form-control {
   line-height: 2rem;
   border-radius: 1.88rem;
   background: linear-gradient(283deg, #383D5E 18.73%, #3D6F94 77.87%);
+}
+
+.login-id-label, .login-pw-label {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hidden-label {
+  opacity: 0;
+  transform: translateY(-5px);
 }
