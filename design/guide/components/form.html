@@ -12,91 +12,347 @@
 <body>
     <article class="guide-contents">
         <div class="title">
-			<h3>Form</h3>
-		</div>
-        <!-- form -->
-        <form class="row g-3 needs-validation" novalidate>
-            <div class="col-md-4">
-              <label for="validationCustom01" class="form-label">First name</label>
-              <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-              <div class="valid-feedback">
-                Looks good!
-              </div>
-            </div>
-            <div class="col-md-4">
-              <label for="validationCustom02" class="form-label">Last name</label>
-              <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-              <div class="valid-feedback">
-                Looks good!
-              </div>
-            </div>
-            <div class="col-md-4">
-              <label for="validationCustomUsername" class="form-label">Username</label>
-              <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">
-                  Please choose a username.
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <label for="validationCustom03" class="form-label">City</label>
-              <input type="text" class="form-control" id="validationCustom03" required>
-              <div class="invalid-feedback">
-                Please provide a valid city.
-              </div>
-            </div>
-            <div class="col-md-3">
-              <label for="validationCustom04" class="form-label">State</label>
-              <select class="form-select" id="validationCustom04" required>
-                <option selected disabled value="">Choose...</option>
-                <option>...</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid state.
-              </div>
-            </div>
-            <div class="col-md-3">
-              <label for="validationCustom05" class="form-label">Zip</label>
-              <input type="text" class="form-control" id="validationCustom05" required>
-              <div class="invalid-feedback">
-                Please provide a valid zip.
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                <label class="form-check-label" for="invalidCheck">
-                  Agree to terms and conditions
-                </label>
-                <div class="invalid-feedback">
-                  You must agree before submitting.
-                </div>
-              </div>
-            </div>
-            <div class="col-12">
-              <button class="btn btn-primary" type="submit">Submit form</button>
-            </div>
-          </form>
-        <!--// form -->
+          <h3>Form</h3>
+        </div>
+        <h4>type01</h4>
+        <!-- input form -->
+        <div class="input-form-area">
+            <!-- form start -->
+            <form>
+                <fieldset>
+                    <!-- form-wrap start -->
+                    <div class="form-wrap type01">
+                        <!-- row -->
+                        <div class="form-row">
+                            <!--  -->
+                            <div class="col">
+                                <div class="form-label">점검날짜</div>
+                                <div class="form-group">
+                                    <!-- datepicker -->
+                                    <div class="input-date-group is-error">
+                                        <input type="text" id="singleDate0" class="form-control datepicker" value=""
+                                            placeholder="YYYY-MM-DD">
+                                        <label class="input-group-text" for="singleDate0"><i class="icon calendar"></i></label>
+                                    </div>
+                                    <!--// datepicker -->
+                                    <!-- 에러 문구 -->
+                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                    <!--// 에러 문구 -->
+                                </div>
+                            </div>
+                            <!--  -->
+                            <div class="col">
+                                <div class="form-label">점검 월</div>
+                                <div class="form-group">
+                                    <div class="select-group">
+                                        <select class="form-select" aria-label="Default select" required>
+                                            <option value="" selected>선택</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <!-- 에러 문구 : hidden -->
+                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                    <!--// 에러 문구 -->
+                                </div>
+                            </div>
+                            <!--  -->
+                        </div>
+                        <!--// row end -->
+                    </div>
+                    <!--// form-wrap end -->
+                </fieldset>
+            </form>
+            <!-- form end -->
+        </div>
+        <!--// input form -->
+        <h4>type01: only-child</h4>
+        <!-- input form -->
+        <div class="input-form-area">
+            <!-- form start -->
+            <form>
+                <fieldset>
+                    <!-- form-wrap start -->
+                    <div class="form-wrap type01 only-child">
+                        <!-- row -->
+                        <div class="form-row">
+                            <!-- col -->
+                            <div class="col">
+                                <div class="form-label">휴대용 자산관리번호</div>
+                                <div class="form-group">
+                                    <!-- input search group start : class="input-search-group is-error"-->
+                                    <div class="input-search-group">
+                                        <input type="search" class="form-control" id="search1" value="" placeholder="입력">
+                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                    </div>
+                                    <!--// input search group end -->
+                                    <!-- 에러 문구 : hidden 제거-->
+                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                    <!--// 에러 문구 -->
+                                </div>
+                            </div>
+                            <!--// col -->
+                        </div>
+                        <!-- row -->
+                        <div class="form-row search-btn">
+                            <button type="button" class="btn btn-primary lg">조회</button>
+                        </div>
+                        <!--// row end -->
+                    </div>
+                    <!--// form-wrap end -->
+                </fieldset>
+            </form>
+            <!-- form end -->
+        </div>
+        <!--// input form -->
+        <h4>type02</h4>
+        <!-- input form -->
+        <div class="input-form-area">
+            <!-- form start -->
+            <form>
+                <fieldset>
+                    <!-- form-wrap start -->
+                    <div class="form-wrap type02">
+                        <!-- row -->
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-label" aria-required="true">메뉴 명</div>
+                                <div class="form-group">
+                                    <!-- input group -->
+                                    <div class="input-group w-50 is-error">
+                                        <input type="text" id="input-text" class="form-control" placeholder="메뉴 명 입력" value="">
+                                        <label for="input-text" class="hidden">메뉴 명</label>
+                                    </div>
+                                    <!--// input group -->
+                                    <!-- 에러 문구 -->
+                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                    <!--// 에러 문구 -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row -->
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-label" aria-required="true">페이지명</div>
+                                <div class="form-group">
+                                    <!-- select-group -->
+                                    <div class="select-group w-50">
+                                        <select class="form-select" aria-label="Default select" required>
+                                            <option value="" selected>선택</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <!--// select-group -->
+                                    <!-- 에러 문구 : hidden -->
+                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                    <!--// 에러 문구 -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row -->
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-label">메뉴 설명</div>
+                                <div class="form-group">
+                                    <!-- input group -->
+                                    <div class="input-group is-error">
+                                        <input type="text" id="input-text" class="form-control" placeholder="메뉴 설명 입력" value="">
+                                        <label for="input-text" class="hidden">그룹코드</label>
+                                    </div>
+                                    <!--// input group -->
+                                    <!-- 에러 문구 -->
+                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                    <!--// 에러 문구 -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row -->
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-label">노출 순위</div>
+                                <div class="form-group">
+                                    <!-- input group -->
+                                    <div class="input-group w-50 is-error">
+                                        <input type="number" id="input-text" class="form-control" placeholder="노출 순위 입력"
+                                            value="">
+                                        <label for="input-text" class="hidden">노출 순위</label>
+                                    </div>
+                                    <!--// input group -->
+                                    <!-- 에러 문구 -->
+                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                    <!--// 에러 문구 -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row -->
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-label">활성화 여부</div>
+                                <div class="form-group">
+                                    <div class="form-check-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="radio01" name="drone1"
+                                                value="radio01" checked />
+                                            <label for="radio01">YES</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="radio02" name="drone1"
+                                                value="radio02" />
+                                            <label for="radio02">NO</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row -->
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-label">등록자</div>
+                                <div class="form-group">
+                                    <!-- input-txt -->
+                                    <div class="input-txt">
+                                        홍길동
+                                    </div>
+                                    <!--// input-txt -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row -->
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-label">최종 변경 일시</div>
+                                <div class="form-group">
+                                    <!-- input-txt -->
+                                    <div class="input-txt">
+                                        2024.12.10 12:20:33
+                                    </div>
+                                    <!--// input-txt -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--// row end-->
+                    </div>
+                    <!--// form-wrap end -->
+                </fieldset>
+            </form>
+            <!-- form end -->
+        </div>
+        <!--// input form -->
+        
+        <h4>type03</h4>
+        <!-- input form -->
+        <div class="input-form-area">
+            <!-- form start -->
+            <form>
+                <fieldset>
+                    <!-- form-wrap start -->
+                    <div class="form-wrap type03">
+                        <!-- row -->
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-label">불용 반출 등록일자</div>
+                                <div class="form-group">
+                                    <!-- datepicker -->
+                                    <div class="input-date-group is-error">
+                                        <input type="text" id="singleDate0" class="form-control datepicker" value=""
+                                            placeholder="YYYY-MM-DD">
+                                        <label class="input-group-text" for="singleDate0"><i class="icon calendar"></i></label>
+                                    </div>
+                                    <!--// datepicker -->
+                                    <!-- 에러 문구 -->
+                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                    <!--// 에러 문구 -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row -->
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-label">자산관리번호</div>
+                                <div class="form-group">
+                                    <!-- input search group start -->
+                                    <div class="input-search-group">
+                                        <input type="search" class="form-control" id="search1" value="화성-ST-노트북 001"
+                                            placeholder="자산관리번호 입력">
+                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                    </div>
+                                    <!--// input search group end -->
+                                    <!-- 에러 문구 -->
+                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                    <!--// 에러 문구 -->
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-label">시스템 명</div>
+                                <div class="form-group">
+                                    <div class="input-txt">네트워크설비 유지보수</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row -->
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-label">데이터</div>
+                                <div class="form-group">
+                                    <!-- form select group-->
+                                    <div class="select-group is-error">
+                                        <select class="form-select" aria-label="Default select" required>
+                                            <option value="" selected>선택</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <!-- 에러 문구 -->
+                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                    <!--// 에러 문구 -->
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-label">시스템용도</div>
+                                <div class="form-group">
+                                    <!-- input group -->
+                                    <div class="input-group">
+                                        <input type="text" id="input-text" class="form-control" placeholder="시스템용도 내용 입력"
+                                            value="">
+                                        <label for="input-text" class="hidden">시스템용도</label>
+                                    </div>
+                                    <!--// input group -->
+                                    <!-- 에러 문구 -->
+                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                    <!--// 에러 문구 -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row -->
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-label">사유</div>
+                                <div class="form-group">
+                                    <!-- input group -->
+                                    <div class="input-group">
+                                        <input type="text" id="input-text" class="form-control" placeholder="사유 내용 입력" value="">
+                                        <label for="input-text" class="hidden">사유</label>
+                                    </div>
+                                    <!--// input group -->
+                                    <!-- 에러 문구 -->
+                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                    <!--// 에러 문구 -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--// row end -->
+                    </div>
+                    <!--// form-wrap end -->
+                </fieldset>
+            </form>
+            <!-- form end -->
+        </div>
+        <!--// input form -->
+        
     </article>
-    <script>
-        (() => {
-            'use strict'
-            const forms = document.querySelectorAll('.needs-validation')
-
-            Array.from(forms).forEach(form => {
-                form.addEventListener('submit', event => {
-                    if (!form.checkValidity()) {
-                        event.preventDefault()
-                        event.stopPropagation()
-                    }
-
-                    form.classList.add('was-validated')
-                }, false)
-            })
-        })()
-    </script>
 </body>
 </html>

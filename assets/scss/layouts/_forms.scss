@@ -136,6 +136,9 @@ $form-btn-width: rem(136px);
                                 }
                             }
                         }
+                        .col:only-of-type {
+                            width: 100% !important;
+                        }
                     }
                     &.form-col-2 {
                         .form-row {
@@ -328,9 +331,6 @@ $form-btn-width: rem(136px);
                     .input-date-group {
                         min-width: 50%;
                     }
-                }
-                @else if $ft =="type04" {
-
                 }
             }
         }

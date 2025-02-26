@@ -13795,6 +13795,9 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   flex: 0 0 5.5rem;
   min-width: 5.5rem;
 }
+.search-form-area .form-wrap.type01 .form-row .col:only-of-type {
+  width: 100% !important;
+}
 .search-form-area .form-wrap.type01.form-col-2 .form-row .col {
   width: 50%;
 }
