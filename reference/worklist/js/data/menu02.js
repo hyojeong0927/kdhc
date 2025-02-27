@@ -63,7 +63,7 @@ const menu02Projects = [
         id: "SB-USR-022",
         depth1: "물리보안",
         depth2: "봉인장치사용내역 등록",
-        depth3: "등록",
+        depth3: "등록 : 팝업 안에 구분 추가 팝업 클릭 이벤트 되어 있음",
         type: "pop",
         folder: "usr",
         file: "SB-USR-022.html",
