@@ -55521,8 +55521,197 @@ textarea.form-control {
   box-shadow: var(--bs-btn-focus-box-shadow);
 }
 
-/* Contact
+/* Contents
 ========================================================================== */
+.kdhc-login-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  height: 100dvh;
+  background-color: #3D6F94;
+}
+.kdhc-login-wrap .login-page-title {
+  margin-top: 4.44vh;
+  padding-top: 5.75rem;
+  width: auto;
+  height: auto;
+  background-size: 5rem;
+  background-position: center top;
+  mix-blend-mode: screen;
+}
+.kdhc-login-wrap .login-page-title h2.title {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.03rem;
+  line-height: normal;
+  letter-spacing: -0.06rem;
+}
+.kdhc-login-wrap .login-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0px;
+  padding: 3.75rem 2.5rem 3rem;
+  width: 30rem;
+  height: 25.88rem;
+  border-radius: 1.25rem;
+  background-color: #fff;
+  box-shadow: 0 0 1.25rem 0.75rem rgba(42, 89, 125, 0.4);
+}
+.kdhc-login-wrap .login-header .login-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.94rem;
+}
+.kdhc-login-wrap .login-header .login-logo .brand-name {
+  text-indent: -999999rem;
+}
+.kdhc-login-wrap .login-content {
+  width: 100%;
+}
+.kdhc-login-wrap .login-content .form-row:first-of-type {
+  margin-top: 3.25rem;
+}
+.kdhc-login-wrap .login-content .form-row:not(:last-of-type) {
+  margin-bottom: 1.25rem;
+}
+.kdhc-login-wrap .login-content .form-row .form-id-group,
+.kdhc-login-wrap .login-content .form-row .form-pw-group {
+  position: relative;
+}
+.kdhc-login-wrap .login-content .form-row .form-id-group .form-control, .kdhc-login-wrap .login-content .form-row .form-id-group .ag-date-field-input-wrapper input[type=date], .ag-date-field-input-wrapper .kdhc-login-wrap .login-content .form-row .form-id-group input[type=date], .kdhc-login-wrap .login-content .form-row .form-id-group input[type=text],
+.kdhc-login-wrap .login-content .form-row .form-id-group input[type=number],
+.kdhc-login-wrap .login-content .form-row .form-id-group input[type=email],
+.kdhc-login-wrap .login-content .form-row .form-id-group input[type=password],
+.kdhc-login-wrap .login-content .form-row .form-id-group input[type=tel],
+.kdhc-login-wrap .login-content .form-row .form-id-group input[type=url],
+.kdhc-login-wrap .login-content .form-row .form-pw-group .form-control,
+.kdhc-login-wrap .login-content .form-row .form-pw-group .ag-date-field-input-wrapper input[type=date],
+.ag-date-field-input-wrapper .kdhc-login-wrap .login-content .form-row .form-pw-group input[type=date],
+.kdhc-login-wrap .login-content .form-row .form-pw-group input[type=text],
+.kdhc-login-wrap .login-content .form-row .form-pw-group input[type=number],
+.kdhc-login-wrap .login-content .form-row .form-pw-group input[type=email],
+.kdhc-login-wrap .login-content .form-row .form-pw-group input[type=password],
+.kdhc-login-wrap .login-content .form-row .form-pw-group input[type=tel],
+.kdhc-login-wrap .login-content .form-row .form-pw-group input[type=url] {
+  height: 3.25rem;
+  color: #18191C;
+  font-size: 0.89rem;
+  font-weight: 400;
+  letter-spacing: -0.03rem;
+  line-height: normal;
+  letter-spacing: -0.03rem;
+}
+.kdhc-login-wrap .login-content .form-row .form-id-group .login-id-label,
+.kdhc-login-wrap .login-content .form-row .form-id-group .login-pw-label,
+.kdhc-login-wrap .login-content .form-row .form-pw-group .login-id-label,
+.kdhc-login-wrap .login-content .form-row .form-pw-group .login-pw-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0px;
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  padding-left: 2rem;
+  width: 100%;
+  height: 100%;
+  color: #828E98;
+  font-size: 0.89rem;
+  font-weight: 400;
+  letter-spacing: -0.03rem;
+  line-height: normal;
+  letter-spacing: -0.03rem;
+  background-size: 1.5rem;
+  background-position: left center;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+.kdhc-login-wrap .login-content .form-btn {
+  margin-top: 2rem;
+}
+.kdhc-login-wrap .login-content .form-btn .login-btn {
+  width: 100%;
+  height: 3.75rem;
+  color: #fff;
+  font-size: 1.38rem;
+  font-weight: 700;
+  letter-spacing: -0.03rem;
+  line-height: 2rem;
+  border-radius: 1.88rem;
+  background: linear-gradient(283deg, #383D5E 18.73%, #3D6F94 77.87%);
+}
+.kdhc-login-wrap .login-id-label,
+.kdhc-login-wrap .login-pw-label {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+.kdhc-login-wrap .hidden-label {
+  opacity: 0;
+  transform: translateY(-5px);
+}
+
+.manual-box-wrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+.manual-box-wrap .manual-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 1.5rem 0.5rem;
+  min-width: 23.25rem;
+  height: 42.5rem;
+  color: #18191C;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: -0.03rem;
+  line-height: 1.44rem;
+  background-color: #DCDCDC;
+}
+.manual-box-wrap .manual-box .link {
+  color: inherit;
+  text-decoration: none;
+  word-break: keep-all;
+}
+.manual-box-wrap .manual-box .bold {
+  font-weight: 700;
+}
+.manual-box-wrap .manual-box .manual-box-head {
+  padding: 0 1rem;
+  width: 100%;
+}
+.manual-box-wrap .manual-box .manual-box-head .title {
+  font-size: 22px;
+  line-height: 2rem;
+  font-weight: 700;
+}
+.manual-box-wrap .manual-box .manual-box-cont {
+  overflow-y: auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+.manual-box-wrap .manual-box .manual-box-cont .ulist {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
 /* Guide
 ========================================================================== */
 ::-webkit-scrollbar {
@@ -55531,17 +55720,17 @@ textarea.form-control {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: transparent;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #C8C8C8;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #C8C8C8;
 }
 
 .guide-container {
@@ -55740,145 +55929,4 @@ textarea.form-control {
 }
 .guide-contents .tbl-wrap .tbl.icon-tbl td {
   text-align: center;
-}
-
-/* Login
-========================================================================== */
-.kdhc-login-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 2.5rem;
-  width: 100%;
-  height: 100dvh;
-  background-color: #3D6F94;
-}
-.kdhc-login-wrap .login-page-title {
-  margin-top: 4.44vh;
-  padding-top: 5.75rem;
-  width: auto;
-  height: auto;
-  background-size: 5rem;
-  background-position: center top;
-  mix-blend-mode: screen;
-}
-.kdhc-login-wrap .login-page-title h2.title {
-  color: #fff;
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: -0.03rem;
-  line-height: normal;
-  letter-spacing: -0.06rem;
-}
-.kdhc-login-wrap .login-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 0px;
-  padding: 3.75rem 2.5rem 3rem;
-  width: 30rem;
-  height: 25.88rem;
-  border-radius: 1.25rem;
-  background-color: #fff;
-  box-shadow: 0 0 1.25rem 0.75rem rgba(42, 89, 125, 0.4);
-}
-.kdhc-login-wrap .login-header .login-logo {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 0.94rem;
-}
-.kdhc-login-wrap .login-header .login-logo .brand-name {
-  text-indent: -999999rem;
-}
-.kdhc-login-wrap .login-content {
-  width: 100%;
-}
-.kdhc-login-wrap .login-content .form-row:first-of-type {
-  margin-top: 3.25rem;
-}
-.kdhc-login-wrap .login-content .form-row:not(:last-of-type) {
-  margin-bottom: 1.25rem;
-}
-.kdhc-login-wrap .login-content .form-row .form-id-group,
-.kdhc-login-wrap .login-content .form-row .form-pw-group {
-  position: relative;
-}
-.kdhc-login-wrap .login-content .form-row .form-id-group .form-control, .kdhc-login-wrap .login-content .form-row .form-id-group .ag-date-field-input-wrapper input[type=date], .ag-date-field-input-wrapper .kdhc-login-wrap .login-content .form-row .form-id-group input[type=date], .kdhc-login-wrap .login-content .form-row .form-id-group input[type=text],
-.kdhc-login-wrap .login-content .form-row .form-id-group input[type=number],
-.kdhc-login-wrap .login-content .form-row .form-id-group input[type=email],
-.kdhc-login-wrap .login-content .form-row .form-id-group input[type=password],
-.kdhc-login-wrap .login-content .form-row .form-id-group input[type=tel],
-.kdhc-login-wrap .login-content .form-row .form-id-group input[type=url],
-.kdhc-login-wrap .login-content .form-row .form-pw-group .form-control,
-.kdhc-login-wrap .login-content .form-row .form-pw-group .ag-date-field-input-wrapper input[type=date],
-.ag-date-field-input-wrapper .kdhc-login-wrap .login-content .form-row .form-pw-group input[type=date],
-.kdhc-login-wrap .login-content .form-row .form-pw-group input[type=text],
-.kdhc-login-wrap .login-content .form-row .form-pw-group input[type=number],
-.kdhc-login-wrap .login-content .form-row .form-pw-group input[type=email],
-.kdhc-login-wrap .login-content .form-row .form-pw-group input[type=password],
-.kdhc-login-wrap .login-content .form-row .form-pw-group input[type=tel],
-.kdhc-login-wrap .login-content .form-row .form-pw-group input[type=url] {
-  height: 3.25rem;
-  color: #18191C;
-  font-size: 0.89rem;
-  font-weight: 400;
-  letter-spacing: -0.03rem;
-  line-height: normal;
-  letter-spacing: -0.03rem;
-}
-.kdhc-login-wrap .login-content .form-row .form-id-group .login-id-label,
-.kdhc-login-wrap .login-content .form-row .form-id-group .login-pw-label,
-.kdhc-login-wrap .login-content .form-row .form-pw-group .login-id-label,
-.kdhc-login-wrap .login-content .form-row .form-pw-group .login-pw-label {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 0px;
-  position: absolute;
-  top: 50%;
-  left: 1rem;
-  padding-left: 2rem;
-  width: 100%;
-  height: 100%;
-  color: #828E98;
-  font-size: 0.89rem;
-  font-weight: 400;
-  letter-spacing: -0.03rem;
-  line-height: normal;
-  letter-spacing: -0.03rem;
-  background-size: 1.5rem;
-  background-position: left center;
-  transform: translateY(-50%);
-  z-index: 2;
-}
-.kdhc-login-wrap .login-content .form-btn {
-  margin-top: 2rem;
-}
-.kdhc-login-wrap .login-content .form-btn .login-btn {
-  width: 100%;
-  height: 3.75rem;
-  color: #fff;
-  font-size: 1.38rem;
-  font-weight: 700;
-  letter-spacing: -0.03rem;
-  line-height: 2rem;
-  border-radius: 1.88rem;
-  background: linear-gradient(283deg, #383D5E 18.73%, #3D6F94 77.87%);
-}
-
-.login-id-label,
-.login-pw-label {
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.hidden-label {
-  opacity: 0;
-  transform: translateY(-5px);
 }

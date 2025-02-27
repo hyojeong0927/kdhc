@@ -92,7 +92,7 @@ const menu07Projects = [
     {
         id: "SB-GMR-007",
         depth1: "관리자",
-        depth2: "지침및메뉴얼관리",
+        depth2: "지침 및 매뉴얼관리",
         depth3: "",
         type: "",
         folder: "gmr",
@@ -107,7 +107,7 @@ const menu07Projects = [
     {
         id: "SB-GMR-008",
         depth1: "관리자",
-        depth2: "지침및메뉴얼관리",
+        depth2: "지침 및 매뉴얼관리",
         depth3: "등록",
         type: "",
         folder: "gmr",
@@ -122,7 +122,7 @@ const menu07Projects = [
     {
         id: "SB-GMR-009",
         depth1: "관리자",
-        depth2: "지침및메뉴얼관리",
+        depth2: "지침 및 매뉴얼관리",
         depth3: "상세",
         type: "",
         folder: "gmr",

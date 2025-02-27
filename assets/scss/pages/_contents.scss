@@ -1,11 +1,14 @@
-/* Login
+/* Contents
 ========================================================================== */
+
+// Login
 .kdhc-login-wrap {
     @include flex(false, "start", "center", rem(40px));
 
     width: 100%;
     height: 100dvh;
     background-color: $secondary;
+
     .login-page-title {
         margin-top: vh(48px);
         padding-top: rem(92px);
@@ -16,6 +19,7 @@
         background-size: rem(80px);
         background-position: center top;
         mix-blend-mode: screen;
+
         h2 {
             &.title {
                 color: $white;
@@ -24,7 +28,7 @@
             }
         }
     }
-    
+
     .login-box {
         @include flex(false, "start", "center");
         padding: rem(60px) rem(40px) rem(48px);
@@ -46,25 +50,30 @@
             }
         }
     }
+
     .login-content {
         width: 100%;
+
         .form-row {
             &:first-of-type {
                 margin-top: rem(52px);
             }
+
             &:not(:last-of-type) {
                 margin-bottom: rem(20px);
             }
+
             .form-id-group,
             .form-pw-group {
                 position: relative;
+
                 .form-control {
                     height: rem(52px);
                     color: $gray-002;
                     @include font-style($font-size-md, $font-weight-normal, $line-height-base);
                     letter-spacing: rem(-0.54px);
                 }
-            
+
                 .login-id-label,
                 .login-pw-label {
                     @include flex(true, "start", "center");
@@ -83,16 +92,20 @@
                     transform: translateY(-50%);
                     z-index: 2;
                 }
+
                 .login-id-label {
                     @extend .login-id;
                 }
+
                 .login-pw-label {
                     @extend .login-pw;
                 }
             }
         }
+
         .form-btn {
             margin-top: rem(32px);
+
             .login-btn {
                 width: 100%;
                 height: rem(60px);
@@ -103,15 +116,60 @@
             }
         }
     }
-} 
-.login-id-label, 
-.login-pw-label {
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 1;
-    transform: translateY(0);
+    .login-id-label,
+    .login-pw-label {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .hidden-label {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+}
+// Login end
+
+// Manual
+.manual-box-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: rem(24px);
+    margin-top: rem(8px);
+    .manual-box {
+        @include flex(false, "start", "baseline", rem(24px));
+        padding: rem(24px) rem(8px);
+        min-width: rem(372px);
+        height: rem(680px);
+        color: $gray-005;
+        @include font-style($font-size-base, $font-weight-normal, rem(23px));
+        background-color: $gray-001;
+
+        .link {
+            color: inherit;
+            text-decoration: none;
+            word-break: keep-all;
+        }
+        .bold {
+            font-weight: $font-weight-bold;
+        }
+        .manual-box-head {
+            padding: 0 rem(16px);
+            width: 100%;
+            .title {
+                font-size: $h3-font-size;
+                line-height: rem(32px);
+                font-weight: $font-weight-bold;
+            }
+        }
+        .manual-box-cont {
+            overflow-y: auto;
+            padding: 0 rem(16px);
+            width: 100%;
+            .ulist {
+                @include flex(false, "start", "start", rem(24px));
+            }
+        }
+    }
 }
 
-.hidden-label {
-    opacity: 0;
-    transform: translateY(-5px);
-}
+// Manual end

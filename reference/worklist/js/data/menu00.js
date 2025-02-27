@@ -62,7 +62,7 @@ const menu00Projects = [
     {
         id: "SB-USR-005",
         depth1: "홈",
-        depth2: "지침및메뉴얼",
+        depth2: "지침 및 매뉴얼",
         depth3: "",
         type: "",
         folder: "home",
