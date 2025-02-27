@@ -1,5 +1,38 @@
 /* Alert
 ========================================================================== */
 .alert {
-    
+    &.modal-dialog {
+        padding: 0;
+        width: rem(300px);
+        max-width: rem(300px);
+        .modal-content {
+            border-radius: rem(12px);
+            .modal-body {
+                padding: rem(32px) rem(24px) 0;
+                .inner {
+                    color: $gray-002;
+                    @include font-style($font-size-base, $font-weight-normal, rem(23px));
+                    letter-spacing: -0.48px;
+                    .text-box {
+                        @include flex(false, "center", "center", rem(16px));
+                        text-align: center;
+                        word-break: keep-all;
+                    }
+                    .is-error {
+                        color: $error;
+                        font-weight: $font-weight-medium;
+                    }
+                }
+            }
+        }
+        .modal-footer {
+            justify-content: center;
+            gap: rem(8px);
+            padding: rem(24px);
+            border-radius: rem(12px);
+            .btn {
+                margin: 0;
+            }
+        }
+    }
 }

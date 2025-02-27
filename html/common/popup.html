@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko" data-kdhc-mode="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDHC</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../css/index.css">
+    <!-- script -->
+    <script src="../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script type="module" src="../../assets/js/common.js"></script>
+</head>
+
+<body>
+    <div id="wrap" class="kdhc-wrap">
+
+        <!-- 본문 바로가기 영역 -->
+        <div id="kdhc-skip-link">
+            <a href="#contents">본문 바로가기</a>
+        </div>
+        <!--// 본문 바로가기 영역  -->
+
+        <!-- 상단 배너영역 -->
+        <div id="kdhc-masthead">
+            <div class="toggle-wrap">
+                <div class="toggle-head">
+                    <div class="inner">
+                        <span class="nuri-txt">이 누리집은 한국지역난방공사 제어망 스마트 보안관리 플랫폼 누리집입니다.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // 상단 배너영역 -->
+
+        <!-- 헤더 영역 -->
+        <header id="kdhc-header" data-menu='[
+            { "title": "관리보안", "url": "#" },
+            { "title": "물리보안", "url": "#" },
+            { "title": "기술보안", "url": "#" },
+            { "title": "보안정책", "url": "#" },
+            { "title": "클린PC", "url": "#" },
+            { "title": "정보자산", "url": "#" }]'>
+            <script type="module" src="../../assets/js/layouts/header.js"></script>
+        </header>
+        <!--// 헤더 영역 -->
+
+        <!-- 컨테이너 영역 -->
+        <section id="kdhc-container">
+            <div class="inner">
+                <!-- 사이드 영역 -->
+                <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
+                <aside id="sidebar" class="sidebar" data-menu='[
+                        { "name": "popup", "url": "#" },
+                        { "name": "alert", "url": "#" }]'></aside>
+                <!--// 사이드 영역 -->
+
+                <main class="main-contents">
+                    <!-- breadcrumbs start : 현재 히든 처리 추후 변경 가능 -->
+                    <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" data-breadcrumb='[
+                            { "name": "물리보안", "url": "#" },
+                            { "name": "영상정보장치 점검", "url": "", "active": true }
+                        ]' data-visible="false">
+                    </nav>
+                    <!--// breadcrumbs end -->
+
+                    <!-- 컨텐츠 영역 -->
+                    <div id="contents" class="contents">
+
+                        <!-- page title start -->
+                        <div class="page-title-wrap" data-title="popup" data-badge="" data-badge-visible="false">
+                        </div>
+                        <!--// page title end -->
+                        
+                        <!-- 팝업 호출 버튼 -->
+                        <button type="button" id="popup01" class="btn btn-primary btn-lg">
+                            사용자 검색
+                        </button>
+                        <button type="button" id="popup02" class="btn btn-primary btn-lg">
+                            자산 검색
+                        </button>
+                        <button type="button" id="popup03" class="btn btn-primary btn-lg">
+                            봉인관리번호
+                        </button>
+                        <button type="button" id="popup04" class="btn btn-primary btn-lg">
+                            관리규정
+                        </button>
+                        <button type="button" id="popup05" class="btn btn-primary btn-lg">
+                            지침 및 매뉴얼 상세
+                        </button>
+                        <!--// 팝업 호출 버튼 -->
+                        
+                        <!-- popup script -->
+                        <script type="module">
+                            import { openCenteredPopup } from '../../assets/js/components/popup.js';
+
+                            document.addEventListener('DOMContentLoaded', () => {
+                                document.getElementById('popup01').addEventListener('click', () => {
+                                    const url = './popup/popup-001.html';
+                                    openCenteredPopup(url, 800, 438);
+                                });
+                                document.getElementById('popup02').addEventListener('click', () => {
+                                    const url = './popup/popup-002.html';
+                                    openCenteredPopup(url, 600, 438);
+                                });
+                                document.getElementById('popup03').addEventListener('click', () => {
+                                    const url = './popup/popup-003.html';
+                                    openCenteredPopup(url, 800, 438);
+                                });
+                                document.getElementById('popup04').addEventListener('click', () => {
+                                    const url = './popup/popup-004.html';
+                                    openCenteredPopup(url, 600, 438);
+                                });
+                                document.getElementById('popup05').addEventListener('click', () => {
+                                    const url = './popup/popup-005.html';
+                                    openCenteredPopup(url, 600, 438);
+                                });
+                            });
+                        </script>
+                        <!--// popup script -->
+
+                    </div>
+                    <!--// 컨텐츠 영역 -->
+
+                </main>
+
+            </div>
+        </section>
+        <!--// 컨테이너 영역 -->
+
+        <!-- 푸터 영역 -->
+        <footer id="kdhc-footer">
+            <script type="module" src="../../assets/js/layouts/footer.js"></script>
+        </footer>
+        <!--// 푸터 영역 -->
+
+    </div>
+    <!-- script wrap -->
+    <!--// script wrap -->
+
+    <!-- modal wrap -->
+    <!--// modal wrap -->
+</body>
+
+</html>

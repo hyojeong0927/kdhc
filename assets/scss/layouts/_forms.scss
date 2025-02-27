@@ -250,6 +250,26 @@ $form-btn-width: rem(136px);
                         }
                     }
                 }
+                @else if $ft =="type06" {
+                    display: flex;
+                    align-items: normal;
+                    justify-content: flex-start;
+                    padding: rem(14px) rem(20px);
+
+                    .form-row {
+                        gap: rem(8px);
+                        &:not(.search-btn) {
+                            flex: 1;
+                            margin-right: auto;
+                        }
+                        .col {
+                            padding: 0;
+                            &:last-of-type {
+                                padding-right: rem(20px);
+                            }
+                        }
+                    }
+                }
             }  
         }
    }

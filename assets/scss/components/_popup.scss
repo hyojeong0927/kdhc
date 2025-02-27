@@ -93,12 +93,15 @@ $popup-md-footer-height: rem(86px);
                 max-height: calc(100dvh - $popup-md-header-height);
             }
         }
+        .grid-wrap {
+            margin-bottom: 0;
+        }
     }
     .kdhc-pop-footer {
         height: $popup-md-footer-height;
         .inner {
             @include flex(true, "end", "center", rem(8px));
-            padding: rem(24px);
+            padding: rem(20px) rem(24px) rem(24px);
            
             .form-switch {
                 @include flex(true, "start", "center", rem(20px));
@@ -122,7 +125,8 @@ $popup-md-footer-height: rem(86px);
     @each $ps in $popup-size {
         &.#{$ps} {
             @if $ps == "medium" {
-                @extend %popup-base-md-sm;   
+                @extend %popup-base-md-sm;
+                
             }
             @else if $ps == "small" {
                 @extend %popup-base-md-sm;
