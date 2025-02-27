@@ -67,7 +67,7 @@ const menu00Projects = [
         type: "",
         folder: "home",
         file: "SB-USR-005.html",
-        status: "진행대기",
+        status: "진행중",
         start: "2025-02-24",
         end: "2025-02-28",
         modDate: "",
