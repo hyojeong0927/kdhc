@@ -254,6 +254,22 @@
                 editable: true,
                 cellClass: "cell-normal",
                 cellEditor: 'customInputSearchEditor',
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                            <!-- input search group start -->
+                            <div class="input-search-group">
+                                <input type="search" class="form-control" id="search1" placeholder="자산관리번호" value="">
+                                <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                            </div>
+                            <!--// input search group end -->
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
             },
             {
                 headerName: "시스템 명",
@@ -269,6 +285,22 @@
                 width: 180,
                 editable: true,
                 cellClass: "cell-normal",
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                            <!-- input group -->
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                <label for="input-text" class="hidden">입력</label>
+                            </div>
+                            <!--// input group -->
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
             },
             {
                 headerName: "시스템 용도",
@@ -277,6 +309,22 @@
                 width: 180,
                 editable: true,
                 cellClass: "cell-normal",
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                            <!-- input group -->
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                <label for="input-text" class="hidden">입력</label>
+                            </div>
+                            <!--// input group -->
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
             },
             {
                 headerName: "제조사",
@@ -310,6 +358,22 @@
                 width: 180,
                 editable: true,
                 cellClass: "cell-normal",
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                            <!-- input group -->
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                <label for="input-text" class="hidden">입력</label>
+                            </div>
+                            <!--// input group -->
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
             },
             {
                 headerName: "기반시설 여부",
@@ -317,10 +381,29 @@
                 field: "field10",
                 width: 180,
                 editable: true,
-                cellClass: "cell-normal",
+                cellClass: "cell-normal input",
                 cellEditor: 'agSelectCellEditor',
                 cellEditorParams: {
                     values: ['Y', 'N'],
+                },
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                           <!-- select-group -->
+                            <div class="select-group">
+                                <select class="form-select" aria-label="Default select" required>
+                                    <option value="" selected>선택</option>
+                                    <option value="Y">Y</option>
+                                    <option value="N">N</option>
+                                </select>
+                            </div>
+                            <!--// select-group -->
+                        `;
+                    } else {
+                        return value;
+                    }
                 }
             },
             {
@@ -329,10 +412,29 @@
                 field: "field11",
                 width: 180,
                 editable: true,
-                cellClass: "cell-normal",
+                cellClass: "cell-normal input",
                 cellEditor: 'agSelectCellEditor',
                 cellEditorParams: {
                     values: ['Y', 'N'],
+                },
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                           <!-- select-group -->
+                            <div class="select-group">
+                                <select class="form-select" aria-label="Default select" required>
+                                    <option value="">선택</option>
+                                    <option value="Y" selected>Y</option>
+                                    <option value="N">N</option>
+                                </select>
+                            </div>
+                            <!--// select-group -->
+                        `;
+                    } else {
+                        return value;
+                    }
                 }
             },
         ];
