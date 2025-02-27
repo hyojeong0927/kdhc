@@ -80,12 +80,11 @@
                             <!-- form start -->
                             <form>
                                 <fieldset>
-
+                        
                                     <!-- form-wrap start -->
-                                    <div class="form-wrap type01 form-col-2">
+                                    <div class="form-wrap type03">
                                         <!-- row -->
                                         <div class="form-row">
-                                            <!--  -->
                                             <div class="col">
                                                 <div class="form-label">기안일자</div>
                                                 <div class="form-group">
@@ -98,12 +97,15 @@
                                                             <button class="btn btn-outline--round btn-xsm" disabled>12개월</button>
                                                         </div>
                                                         <div class="input-date-group is-error">
-                                                            <input type="text" id="startDate" class="form-control" value="" placeholder="YYYY-MM-DD" readonly>
-                                                            <label class="input-group-text" for="startDate"><i class="icon calendar"></i></label>
+                                                            <input type="text" id="startDate" class="form-control" value=""
+                                                                placeholder="YYYY-MM-DD" readonly>
+                                                            <label class="input-group-text" for="startDate"><i
+                                                                    class="icon calendar"></i></label>
                                                         </div>
                                                         <div class="to">-</div>
                                                         <div class="input-date-group">
-                                                            <input type="text" id="endDate" class="form-control" value="" placeholder="YYYY-MM-DD" readonly>
+                                                            <input type="text" id="endDate" class="form-control" value=""
+                                                                placeholder="YYYY-MM-DD" readonly>
                                                             <label class="input-group-text" for="endDate"><i class="icon calendar"></i></label>
                                                         </div>
                                                     </div>
@@ -113,9 +115,10 @@
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
-                                            <!--  -->
+                                        </div>
+                                        <div class="form-row">
+                                            <!-- col -->
                                             <div class="col">
-                                                <!--  -->
                                                 <div class="form-label">기안자</div>
                                                 <div class="form-group">
                                                     <!-- input search group start -->
@@ -128,10 +131,9 @@
                                                     <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
                                                 </div>
-                                                <!--  -->
                                             </div>
-                                        </div>
-                                        <div class="form-row">
+                                            <!--// col  -->
+                                            <!-- col -->
                                             <div class="col">
                                                 <div class="form-label">기안부서</div>
                                                 <div class="form-group">
@@ -149,6 +151,24 @@
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
+                                            <!--// col -->
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-label">결재명</div>
+                                                <div class="form-group">
+                                                    <!-- input-group : class="input-group is-error" 에러-->
+                                                    <div class="input-group w-100">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="장표명 입력" value="">
+                                                        <label for="input-text" class="hidden">장표명</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!-- col -->
                                             <div class="col">
                                                 <div class="form-label">결재상태</div>
                                                 <div class="form-group">
@@ -165,6 +185,7 @@
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
+                                            <!--// col -->
                                         </div>
                                         <!-- row -->
                                         <div class="form-row search-btn">
@@ -173,7 +194,7 @@
                                         <!--// row end -->
                                     </div>
                                     <!--// form-wrap end -->
-
+                        
                                 </fieldset>
                             </form>
                             <!--// form end -->

@@ -72,9 +72,6 @@ $table-types: ("type-row");
 }
 .tbl-input-form {
     @extend %tbl-input-form-base;
-    & + .tbl-input-form {
-        margin-top: rem(16px);
-    }
     @each $ty in $table-types {
         &.#{$ty} {
             @if $ty =="type-row" {
@@ -88,5 +85,8 @@ $table-types: ("type-row");
                     }
                 }
         }
+    }
+    &.type-row {
+        margin-top: rem(16px);
     }
 }
