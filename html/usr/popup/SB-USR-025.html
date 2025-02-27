@@ -214,7 +214,7 @@
     <script type="module">
         const rowData = [
             {
-                field01: "클릭하면 수정 가능",
+                field01: "",
                 field02: "시스템 명",
                 field03: "클릭하면 수정 가능",
                 field04: "클릭하면 수정 가능",
@@ -230,7 +230,7 @@
             {
                 field01: "클릭하면 수정 가능",
                 field02: "시스템 명",
-                field03: "클릭하면 수정 가능",
+                field03: "",
                 field04: "",
                 field05: "",
                 field06: "",
@@ -264,6 +264,22 @@
                 width: 238,
                 cellClass: "cell-normal",
                 cellEditor: 'customInputSearchEditor',
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                            <!-- input search group start -->
+                            <div class="input-search-group">
+                                <input type="search" class="form-control" id="search1" placeholder="자산관리번호" value="">
+                                <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                            </div>
+                            <!--// input search group end -->
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
             },
             {
                 headerName: "시스템 명",
@@ -278,6 +294,22 @@
                 field: "field03",
                 width: 180,
                 cellClass: "cell-normal",
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                            <!-- input group -->
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                <label for="input-text" class="hidden">입력</label>
+                            </div>
+                            <!--// input group -->
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
             },
             {
                 headerName: "비밀번호",
@@ -285,6 +317,22 @@
                 field: "field04",
                 width: 180,
                 cellClass: "cell-normal",
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                            <!-- input group -->
+                            <div class="input-group">
+                                <input type="password" id="input-text" class="form-control" placeholder="입력" value="">
+                                <label for="input-text" class="hidden">입력</label>
+                            </div>
+                            <!--// input group -->
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
             },
             {
                 headerName: "비밀번호 변경일자",
@@ -296,6 +344,22 @@
                     return {
                         component: 'bootstrapDatePickerEditor'
                     };
+                },
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                           <!-- datepicker -->
+                           <div class="input-date-group">
+                                <input type="text" id="singleDate5" class="form-control" value="2025-03-10" placeholder="YYYY-MM-DD">
+                                <label class="input-group-text" for="singleDate5"><i class="icon calendar"></i></label>
+                            </div>
+                            <!--// datepicker -->
+                        `;
+                    } else {
+                        return value;
+                    }
                 }
             },
             {
@@ -308,6 +372,22 @@
                 cellEditorParams: {
                     maxLength: 20
                 },
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                            <!-- input group -->
+                            <div class="input-group">
+                                <input type="password" id="input-text" class="form-control" placeholder="입력" value="">
+                                <label for="input-text" class="hidden">입력</label>
+                            </div>
+                            <!--// input group -->
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
             },
             {
                 headerName: "계정 등록일",
