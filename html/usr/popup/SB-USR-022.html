@@ -330,14 +330,31 @@
                     const value = params.value ? params.value.trim() : "";
 
                     if (rowIndex === 0 && !value) {
-                        return `
-                            <!-- input search group start -->
+                        const htmlContent = `
                             <div class="input-search-group">
                                 <input type="search" class="form-control" id="search1" placeholder="자산관리번호" value="">
                                 <label class="input-group-text" for="search1"><i class="icon search"></i></label>
                             </div>
-                            <!--// input search group end -->
                         `;
+                        
+                        setTimeout(() => {
+                            const label = document.querySelector('#search1 + .input-group-text');
+                            const width = 1400; 
+                            const height = 1080;
+
+                            const left = (window.screenLeft || window.screenX) + (window.innerWidth - width) / 2;
+                            const top = (window.screenTop || window.screenY) + (window.innerHeight - height) / 2;
+
+                            label.addEventListener('click', () => {
+                                window.open(
+                                    "./SB-USR-023.html",
+                                    "SearchPopup",
+                                    `width=${width},height=${height},left=${left},top=${top},scrollbars=yes,resizable=yes`
+                                );
+                            });
+                        }, 0);
+
+                        return htmlContent;
                     } else {
                         return value;
                     }
@@ -387,7 +404,7 @@
                                     <!-- input search group start -->
                                     <div class="input-search-group">
                                         <input type="search" class="form-control" id="search1" placeholder="봉인번호" value="">
-                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                        <label class="input-group-text" for="search1"><i class="icon search" onclick="openSearchPopup()"></i></label>
                                     </div>
                                     <!--// input search group end -->
                                 `;
@@ -475,7 +492,7 @@
             defaultColDef: {
                 editable: false, // edit 사용 유무
                 autoHeight: true,
-                sortable: false, // sort 사용 유무 : rowspan 사용시 false 필수
+                sortable: false // sort 사용 유무 : rowspan 사용시 false 필수
             },
             columnDefs,
             headerHeight: 41, // header height
@@ -497,7 +514,7 @@
                         init: function (params) {
 
                             const input = document.createElement('input');
-                            input.id = 'searchId';
+                            input.id = `search-${params.rowIndex}-${params.column.colId}`;
                             input.type = 'search';
                             input.className = 'form-control';
                             input.value = params.value || '';
@@ -508,10 +525,21 @@
                             label.className = 'input-group-text';
                             label.innerHTML = '<i class="icon search"></i>';
 
-                            // 클릭 이벤트 추가
-                            label.addEventListener('click', function () {
-                                alert('검색 버튼이 클릭되었습니다!');
+                            // 팝업
+                             label.addEventListener("click", function () {
+                                const width = 1400;
+                                const height = 1080;
+
+                                const left = (window.screenLeft || window.screenX) + (window.innerWidth - width) / 2;
+                                const top = (window.screenTop || window.screenY) + (window.innerHeight - height) / 2;
+
+                                window.open(
+                                    "./SB-USR-023.html",
+                                    "SearchPopup",
+                                    `width=${width},height=${height},left=${left},top=${top},scrollbars=yes,resizable=yes`
+                                );
                             });
+
 
                             input.addEventListener('input', function () {
                                 params.api.stopEditing();
@@ -542,17 +570,5 @@
         sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
     </script>
     <!--// script wrap -->
-    <!-- popup script -->
-    <script type="module">
-        import { openCenteredPopup } from '../../assets/js/components/popup.js';
-
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('pop_SB-USR-023').addEventListener('click', () => {
-                const url = './popup/SB-USR-023.html';
-                openCenteredPopup(url, 1400, 808);
-            });
-        });
-    </script>
-    <!--// popup script -->
 </body>
 </html>
