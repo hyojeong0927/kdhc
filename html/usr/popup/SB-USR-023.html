@@ -104,7 +104,15 @@
     <script type="module">
         const rowData = [
             {
-                field01: "USB 1",
+                field01: "",
+                field02: "용도",
+                field03: "",
+                field04: "봉인 관리번호",
+                field05: "비고",
+                field06: "",
+            },
+            {
+                field01: "",
                 field02: "용도",
                 field03: "화성-001",
                 field04: "봉인 관리번호",
@@ -112,7 +120,7 @@
                 field06: "",
             },
             {
-                field01: "USB 2",
+                field01: "",
                 field02: "용도",
                 field03: "화성-001",
                 field04: "봉인 관리번호",
@@ -120,15 +128,7 @@
                 field06: "",
             },
             {
-                field01: "USB 3",
-                field02: "용도",
-                field03: "화성-001",
-                field04: "봉인 관리번호",
-                field05: "비고",
-                field06: "",
-            },
-            {
-                field01: "USB 4",
+                field01: "",
                 field02: "용도",
                 field03: "화성-001",
                 field04: "봉인 관리번호",
@@ -141,11 +141,30 @@
                 headerName: "구분",
                 headerClass: "center",
                 field: "field01",
-                minWidth: 160,
-                flex: 1,
-                cellClass: "cell-normal",
+                width: 160,
+                cellClass: "cell-normal input",
                 editable: true,
-                cellEditor: 'customInputSearchEditor',
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                            <!-- select-group -->
+                            <div class="select-group">
+                                <select class="form-select" aria-label="Default select" required>
+                                    <option value="" selected>선택</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <!--// select-group -->
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
+                
             },
             {
                 headerName: "사용 중 포트 봉인",
@@ -161,13 +180,29 @@
                         cellClass: "cell-normal",
                     },
                     {
-                        headerName: "봉인번호",
+                        headerName: "봉인 관리번호",
                         headerClass: "center",
                         field: "field03",
                         width: 160,
                         cellClass: "cell-normal",
                         editable: true,
                         cellEditor: 'customInputSearchEditor',
+                        cellRenderer: (params) => {
+                            const value = params.value;
+
+                            if (!value) {
+                                return `
+                                    <!-- input search group start -->
+                                    <div class="input-search-group">
+                                        <input type="search" class="form-control" id="search1" placeholder="화성" value="">
+                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                    </div>
+                                    <!--// input search group end -->
+                                `;
+                            } else {
+                                return value;
+                            }
+                        }
                     },
                 ]
             },
@@ -212,7 +247,7 @@
             defaultColDef: {
                 editable: false, // edit 사용 유무
                 autoHeight: true,
-                sortable: true, // sort 사용 유무
+                sortable: false, // sort 사용 유무
             },
             columnDefs,
             headerHeight: 41, // header height

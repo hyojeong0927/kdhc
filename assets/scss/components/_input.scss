@@ -155,17 +155,17 @@ textarea {
     &:focus-within,
     &:focus {
         @extend %input-focus;
-        .input-group-text {
-            cursor: pointer;
-            .icon {
-                &.calendar {
-                    @extend .calendar-on;
-                }
-                &.search {
-                    @extend .search-on;
+        .form-control {
+            & + .input-group-text {
+                cursor: pointer;
+                .icon {
+                    &.search {
+                        @extend .search-on;
+                    }
                 }
             }
         }
+        
     }
     &.active {
         @extend %input-focus;

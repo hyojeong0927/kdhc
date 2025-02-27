@@ -381,10 +381,8 @@
                         editable: true,
                         cellEditor: 'customInputSearchEditor',
                         cellRenderer: (params) => {
-                            const rowIndex = params.node.rowIndex;
-                            const value = params.value ? params.value.trim() : "";
-
-                            if (rowIndex === 0 && !value) {
+                            const value = params.value;
+                            if (!value) {
                                 return `
                                     <!-- input search group start -->
                                     <div class="input-search-group">
@@ -477,7 +475,7 @@
             defaultColDef: {
                 editable: false, // edit 사용 유무
                 autoHeight: true,
-                sortable: false, // sort 사용 유무
+                sortable: false, // sort 사용 유무 : rowspan 사용시 false 필수
             },
             columnDefs,
             headerHeight: 41, // header height
