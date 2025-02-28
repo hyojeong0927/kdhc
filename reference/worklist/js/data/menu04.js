@@ -82,7 +82,7 @@ const menu04Projects = [
         type: "",
         folder: "usr",
         file: "SB-USR-046.html",
-        status: "진행대기",
+        status: "진행중",
         start: "2025-03-04",
         end: "2025-03-07",
         modDate: "",
@@ -101,7 +101,7 @@ const menu04Projects = [
         start: "2025-03-04",
         end: "2025-03-07",
         modDate: "",
-        design: "X",
+        design: "O",
         dev: "2025-03-24",
     },
     {
