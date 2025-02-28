@@ -37,7 +37,7 @@ const sample = [
         type: "",
         folder: "common",
         file: "popup.html",
-        status: "진행중",
+        status: "완료",
         start: "2025-02-24",
         end: "2025-02-28",
         modDate: "",

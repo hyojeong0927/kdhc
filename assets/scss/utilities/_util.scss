@@ -31,6 +31,11 @@
 .w-50 {
   width: 50% !important;
 }
+.w-40r {
+  flex: 0 0 rem(40px) !important;
+  width: rem(40px) !important;
+  min-width: rem(40px) !important;
+}
 .w-50r {
   flex: 0 0 rem(50px) !important;
   width: rem(50px) !important;
@@ -40,6 +45,16 @@
   flex: 0 0 rem(60px) !important;
   width: rem(60px) !important;
   min-width: rem(60px) !important;
+}
+.w-70r {
+  flex: 0 0 rem(70px) !important;
+  width: rem(70px) !important;
+  min-width: rem(70px) !important;
+}
+.w-75r {
+  flex: 0 0 rem(75px) !important;
+  width: rem(75px) !important;
+  min-width: rem(75px) !important;
 }
 .w-80r {
   flex: 0 0 rem(80px) !important;

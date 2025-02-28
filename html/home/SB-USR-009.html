@@ -85,7 +85,7 @@
                                         <div class="form-row">
                                             <!-- col -->
                                             <div class="col">
-                                                <div class="form-label w-90r">기안일자</div>
+                                                <div class="form-label">기안일자</div>
                                                 <div class="form-group">
                                                     <!-- datepicker-group start -->
                                                     <div class="datepicker-group">
@@ -95,13 +95,15 @@
                                                             <button class="btn btn-outline--round btn-xsm">6개월</button>
                                                             <button class="btn btn-outline--round btn-xsm" disabled>12개월</button>
                                                         </div>
-                                                        <div class="input-date-group is-error">
+                                                        <!-- 에러시 : class="input-date-group is-error"  -->
+                                                        <div class="input-date-group">
                                                             <input type="text" id="startDate" class="form-control" value=""
                                                                 placeholder="YYYY-MM-DD" readonly>
                                                             <label class="input-group-text" for="startDate"><i
                                                                     class="icon calendar"></i></label>
                                                         </div>
                                                         <div class="to">-</div>
+                                                        <!-- 에러시 : class="input-date-group is-error"  -->
                                                         <div class="input-date-group">
                                                             <input type="text" id="endDate" class="form-control" value=""
                                                                 placeholder="YYYY-MM-DD" readonly>
@@ -109,15 +111,15 @@
                                                         </div>
                                                     </div>
                                                     <!--// datepicker-group end -->
-                                                    <!-- 에러 문구 -->
-                                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                                    <!-- 에러 문구 : hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
                                             <!--// col  -->
                                             <!-- col -->
                                              <div class="col">
-                                                <div class="form-label w-90r">결재대기</div>
+                                                <div class="form-label">결재대기</div>
                                                 <div class="form-group">
                                                     <!-- form-switch -->
                                                     <div class="form-check form-switch">
@@ -130,7 +132,7 @@
                                             <!--// col -->
                                             <!-- col -->
                                             <div class="col">
-                                                <div class="form-label w-50r">문서명</div>
+                                                <div class="form-label w-40r">문서명</div>
                                                 <div class="form-group">
                                                     <!-- input-group is-error : 에러-->
                                                     <div class="input-group">
@@ -148,10 +150,10 @@
                                         <div class="form-row">
                                             <!-- col -->
                                             <div class="col">
-                                                <div class="form-label w-50r">기안자</div>
+                                                <div class="form-label">기안자</div>
                                                 <div class="form-group">
                                                     <!-- input search group is-error : 에러 -->
-                                                    <div class="input-search-group ">
+                                                    <div class="input-search-group">
                                                         <input type="search" class="form-control" id="search2" value="" placeholder="기안자 명">
                                                         <label class="input-group-text hidden" for="search2"><i class="icon search"></i></label>
                                                     </div>
@@ -164,7 +166,7 @@
                                             <!--// col  -->
                                             <!-- col -->
                                             <div class="col">
-                                                <div class="form-label w-50r">지사</div>
+                                                <div class="form-label">지사</div>
                                                 <div class="form-group">
                                                     <!--  -->
                                                     <div class="input-group">
@@ -181,7 +183,7 @@
                                         <div class="form-row">
                                              <!-- col -->
                                             <div class="col">
-                                                <div class="form-label w-60r">기안부서</div>
+                                                <div class="form-label">기안부서</div>
                                                 <div class="form-group">
                                                     <!-- select-group is-error : 에러 -->
                                                     <div class="select-group">
@@ -201,10 +203,10 @@
                                             <!--// col  -->
                                             <!-- col -->
                                             <div class="col">
-                                                <div class="form-label w-60r">결재상태</div>
+                                                <div class="form-label">결재상태</div>
                                                 <div class="form-group">
-                                                    <!-- form select group-->
-                                                    <div class="select-group is-error">
+                                                    <!-- form select group : class="select-group is-error" -->
+                                                    <div class="select-group">
                                                         <select class="form-select" aria-label="Default select" required>
                                                             <option value="" selected>선택</option>
                                                             <option value="1">One</option>
@@ -212,7 +214,7 @@
                                                             <option value="3">Three</option>
                                                         </select>
                                                     </div>
-                                                    <!-- 에러 문구 -->
+                                                    <!-- 에러 문구 : hidden 제거 -->
                                                     <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
                                                 </div>

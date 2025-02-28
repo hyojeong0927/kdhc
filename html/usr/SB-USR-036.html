@@ -134,6 +134,22 @@
                                         </div>
                                         <!-- row -->
                                         <div class="form-row">
+                                             <div class="col">
+                                                <div class="form-label">기안부서</div>
+                                                <div class="form-group">
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
                                             <div class="col">
                                                 <div class="form-label">결재상태</div>
                                                 <div class="form-group">
@@ -150,22 +166,7 @@
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
-                                            <div class="col">
-                                                <div class="form-label">기안부서</div>
-                                                <div class="form-group">
-                                                    <div class="select-group">
-                                                        <select class="form-select" aria-label="Default select" required>
-                                                            <option value="" selected>선택</option>
-                                                            <option value="1">One</option>
-                                                            <option value="2">Two</option>
-                                                            <option value="3">Three</option>
-                                                        </select>
-                                                    </div>
-                                                    <!-- 에러 문구 : hidden -->
-                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                    <!--// 에러 문구 -->
-                                                </div>
-                                            </div>
+                                           
                                         </div>
                                         <div class="form-row search-btn">
                                             <button type="button" class="btn btn-primary lg">조회</button>
@@ -195,7 +196,7 @@
 
                             <!-- grid top button start -->
                             <div class="grid-top-btn" 
-                                data-buttons='[{"text": "결재기안"}, {"text": "출력", "class": "btn btn-secondary btn-sm"}]'>
+                                data-buttons='[{"text": "관련규정"}, {"text": "결재기안"}, {"text": "출력", "class": "btn btn-secondary btn-sm"}]'>
                             </div>
                             <!--// grid top button end -->
                         </article>
@@ -346,7 +347,7 @@
                 headerName: "기안부서",
                 headerClass: "center",
                 field: "field03",
-                width: 180,
+                width: 100,
                 cellClass: "cell-normal",
             },
             {

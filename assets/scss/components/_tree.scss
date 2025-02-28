@@ -8,10 +8,12 @@
     .node-treeview {
         &:not(.node-disabled):hover {
             background-color: transparent;
-        }
+        } 
         &.node-selected {
-            color: $primary !important;
-            background-color: transparent !important;
+            &.depth2 {
+                color: $primary !important;
+                background-color: transparent !important;
+            } 
             a {
                 color: $primary !important;
             }
