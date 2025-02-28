@@ -75,6 +75,10 @@ $form-btn-width: rem(136px);
                 align-items: center;
                 justify-content: center;
                 grid-area: btn !important;
+                &.base {
+                    align-items: baseline;
+                    padding-top: rem(6px);
+                }
                 .btn {
                     min-width: rem(96px);
                 }

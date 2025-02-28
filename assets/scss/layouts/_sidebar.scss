@@ -50,6 +50,8 @@ $sidebar-width: 280px;
             }
             .lnb-link {
                 text-decoration: $text-decoration-none;
+                white-space: normal;
+                word-break: break-word;
                 &.active,
                 &:hover {
                     background-color: $secondary;

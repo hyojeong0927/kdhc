@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko" data-kdhc-mode="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDHC</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../css/index.css">
+    <!-- script -->
+    <script src="../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script type="module" src="../../assets/js/common.js"></script>
+</head>
+<body>
+    <div id="wrap" class="kdhc-wrap">
+
+        <!-- 본문 바로가기 영역 -->
+        <div id="kdhc-skip-link">
+            <a href="#contents">본문 바로가기</a>
+        </div>
+        <!--// 본문 바로가기 영역  -->
+
+        <!-- 상단 배너영역 -->
+        <div id="kdhc-masthead">
+            <script type="module" src="../../assets/js/layouts/top-banner.js"></script>
+        </div>
+        <!-- // 상단 배너영역 -->
+
+        <!-- 헤더 영역 -->
+        <header id="kdhc-header" data-menu='[
+            { "title": "관리보안", "url": "#" },
+            { "title": "물리보안", "url": "#" },
+            { "title": "기술보안", "url": "#" },
+            { "title": "보안정책", "url": "#", "active": true },
+            { "title": "클린PC", "url": "#" },
+            { "title": "정보자산", "url": "#" }]'>
+            <script type="module" src="../../assets/js/layouts/header.js"></script>
+        </header>
+        <!--// 헤더 영역 -->
+
+        <!-- 컨테이너 영역 -->
+        <section id="kdhc-container">
+            <div class="inner">
+                <!-- 사이드 영역 -->
+                <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
+                <aside id="sidebar" class="sidebar" data-menu='[
+                        { "name": "비밀번호 정책 운영 현황", "url": "#" },
+                        { "name": "비밀번호 변경 불가 월간점검", "url": "#" },
+                        { "name": "백신운영현황", "url": "#", "active": true },
+                        { "name": "백신 미운영현황", "url": "#" },
+                        { "name": "백신 정책세부내역", "url": "#"},
+                        { "name": "백신 미운영 월간점검현황", "url": "#" },
+                        { "name": "운영체제 보안패치\n업데이트 현황", "url": "#" },
+                        { "name": "운영체제 보안패치\n업데이트 주기", "url": "#" },
+                        { "name": "운영소프트웨어\n업데이트 주기", "url": "#" },
+                        { "name": "공정제어 설비 운영 체제 현황", "url": "#" },
+                        { "name": "네트워크 장비 소프트웨어", "url": "#" },
+                        { "name": "보안패치 미운영 월간점검", "url": "#" }]'></aside>
+                <!--// 사이드 영역 -->
+
+                <main class="main-contents">
+                    <!-- breadcrumbs start : 현재 히든 처리 추후 변경 가능 -->
+                    <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
+                        data-breadcrumb='[
+                            { "name": "보안정책", "url": "#" },
+                            { "name": "백신운영현황", "url": "", "active": true }
+                        ]'
+                        data-visible="false">
+                    </nav> 
+                    <!--// breadcrumbs end -->
+                    
+                    <!-- 컨텐츠 영역 -->
+                    <div id="contents" class="contents">
+
+                        <!-- page title start -->
+                        <div class="page-title-wrap" 
+                            data-title="백신운영현황" 
+                            data-badge="" data-badge-visible="false">
+                        </div>
+                        <!--// page title end -->
+
+                        <!-- search start-->
+                        <article class="search-form-area">
+                            <!-- form start -->
+                            <form>
+                                <fieldset>
+                        
+                                    <!-- form-wrap start -->
+                                    <div class="form-wrap type02">
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label">기안일자</div>
+                                                <div class="form-group">
+                                                    <!-- datepicker-group start -->
+                                                    <div class="datepicker-group">
+                                                        <div class="datepicker-btn-group">
+                                                            <button class="btn btn-outline--round btn-xsm active">1개월</button>
+                                                            <button class="btn btn-outline--round btn-xsm">3개월</button>
+                                                            <button class="btn btn-outline--round btn-xsm">6개월</button>
+                                                            <button class="btn btn-outline--round btn-xsm" disabled>12개월</button>
+                                                        </div>
+                                                        <!--  -->
+                                                        <div class="input-date-group is-error">
+                                                            <input type="text" id="startDate" class="form-control" value=""
+                                                                placeholder="YYYY-MM-DD" readonly>
+                                                            <label class="input-group-text" for="startDate"><i
+                                                                    class="icon calendar"></i></label>
+                                                        </div>
+                                                        <div class="to">-</div>
+                                                        <div class="input-date-group">
+                                                            <input type="text" id="endDate" class="form-control" value=""
+                                                                placeholder="YYYY-MM-DD" readonly>
+                                                            <label class="input-group-text" for="endDate"><i class="icon calendar"></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <!--// datepicker-group end -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--// col  -->
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label">방식</div>
+                                                <div class="form-group">
+                                                    <!--  -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="">선택</option>
+                                                            <option value="1" selected>중앙(서버)관리형방식</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--  -->
+                                                    <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row search-btn base">
+                                            <button type="button" class="btn btn-primary lg">조회</button>
+                                        </div>
+                                        <!--// row end -->
+                                    </div>
+                                    <!--// form-wrap end -->
+                        
+                                </fieldset>
+                            </form>
+                            <!--// form end -->
+                        </article>
+                        <!--// search end-->
+
+                    </div>
+                    <!--// 컨텐츠 영역 -->
+
+                </main>
+
+            </div>
+        </section>
+        <!--// 컨테이너 영역 -->
+
+        <!-- 푸터 영역 -->
+        <footer id="kdhc-footer">
+            <script type="module" src="../../assets/js/layouts/footer.js"></script>
+        </footer>
+        <!--// 푸터 영역 -->
+ 
+    </div>
+    <!-- script wrap -->
+   
+    <!--// script wrap -->
+    
+    <!-- modal wrap -->
+    <!--// modal wrap -->
+</body>
+</html>

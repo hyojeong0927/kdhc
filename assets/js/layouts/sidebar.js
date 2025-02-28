@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         menuHTML += `
             <li class="lnb-item ${isActive}">
                 <a href="${item.url}" class="lnb-btn lnb-link" data-name="${item.name}">
-                    ${item.name}
+                    ${item.name.replace(/\n/g, "<br>")}
                 </a>
             </li>`;
     });
