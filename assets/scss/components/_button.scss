@@ -179,3 +179,103 @@ $button-types: ("primary", "secondary", "outline", "outline--round", "grid", "ic
     @include flex(true, "end", "center", rem(8px));
     margin-top: rem(16px);
 }
+
+
+/* Button
+========================================================================== */
+// $button-size: (
+//   "lg": (96px, 42px, $btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg),
+//   "md": (84px, 38px, $btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius),
+//   "sm": (53px, 32px, $btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm),
+//   "xsm": (49px, 28px, $btn-padding-y-xsm, $btn-padding-x-xsm, $btn-font-size-xsm, $btn-border-radius-sm),
+//   "xxsm": (50px, 26px, $btn-padding-y-xxsm, $btn-padding-x-xxsm, $btn-font-size-xxsm, $btn-border-radius-xxsm)
+// );
+
+// $button-types: (
+//   "primary": ($primary, $primary, $gray-009),
+//   "secondary": ($secondary, $secondary, $gray-009),
+//   "outline": ($white, $primary, $gray-009),
+//   "outline--round": ($white, $gray-003, $secondary),
+//   "grid": ($blue-005, $gray-009, $gray-002),
+//   "icon": (transparent, transparent, transparent)
+// );
+
+// %button-base {
+//   display: inline-block;
+//   font-weight: $btn-font-weight;
+//   line-height: $btn-line-height;
+//   letter-spacing: rem($btn-letter-spacing);
+//   font-family: $btn-font-family;
+//   border-style: solid;
+// }
+
+// %button-disabled {
+//   opacity: $btn-disabled-opacity;
+// }
+
+// .btn {
+//   @extend %button-base;
+
+//   @each $bs, $values in $button-size {
+//     &.btn-#{$bs} {
+//       padding: rem(nth($values, 3)) rem(nth($values, 4));
+//       min-width: rem(nth($values, 1));
+//       height: rem(nth($values, 2));
+//       font-size: rem(nth($values, 5));
+//       border-radius: nth($values, 6);
+//     }
+//   }
+
+//   @each $bt, $colors in $button-types {
+//     &.btn-#{$bt} {
+//       background-color: nth($colors, 1);
+//       border-color: nth($colors, 2);
+//       color: if($bt == "outline" or $bt == "outline--round", nth($colors, 2), $btn-link-color);
+
+//       &[disabled] {
+//         border-color: $btn-disabled;
+//         background-color: if($bt == "outline" or $bt == "outline--round", $white, $btn-disabled-bg);
+//         color: $btn-disabled;
+//         @extend %button-disabled;
+//       }
+
+//       &:hover,
+//       &:focus,
+//       &:active,
+//       &.active {
+//         background-color: nth($colors, 3);
+//         border-color: nth($colors, 3);
+//         color: if($bt == "outline--round", $white, $btn-link-color);
+//       }
+
+//       @if $bt == "icon" {
+//         padding: 0;
+//         border: 0;
+//         border-radius: 0;
+//         background-color: transparent;
+
+//         &:hover,
+//         &:focus,
+//         &:active,
+//         &.active {
+//           background-color: transparent;
+//           border-color: transparent;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// // 버튼 영역 스타일
+// .top-btn-area,
+// .bottom-btn-area {
+//   @include flex(true, "end", "center", rem(8px));
+// }
+
+// .top-btn-area {
+//   margin-bottom: rem(18px);
+// }
+
+// .bottom-btn-area {
+//   margin-top: rem(16px);
+// }
