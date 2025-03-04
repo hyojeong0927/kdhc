@@ -258,3 +258,11 @@
     width: 1px;
     height: 1px;
 }
+
+// form style
+@mixin form-label-style {
+    color: $primary;
+    @include font-style($font-size-base, $font-weight-medium, $line-height-base);
+    letter-spacing: rem(-1.5px);
+    word-break: keep-all;
+}
