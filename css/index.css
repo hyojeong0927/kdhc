@@ -13781,8 +13781,34 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 
 .search-form-area .form-wrap.type01 {
   display: grid;
-  grid-template-columns: 1fr 8.5rem;
   grid-template-areas: "row-01 btn" "row-02 btn";
+  grid-template-columns: 1fr 8.5rem;
+}
+.search-form-area .form-wrap.type02 {
+  display: grid;
+  grid-template-areas: "row-01 btn" "row-02 btn";
+  grid-template-columns: 1fr 8.5rem;
+}
+.search-form-area .form-wrap.type03 {
+  display: grid;
+  grid-template-areas: "row-01 row-02 btn" "row-01 row-03 btn";
+  grid-template-columns: 1fr 1fr 8.5rem;
+}
+.search-form-area .form-wrap.type04 {
+  display: grid;
+  grid-template-areas: "row-01 row-02 row-03 btn";
+  grid-template-columns: 1fr 1fr 1fr 8.5rem;
+}
+.search-form-area .form-wrap.type05 {
+  display: grid;
+  grid-template-areas: "row-01 row-02 row-03 btn";
+  grid-template-columns: 1fr 1fr 1fr 8.5rem;
+}
+.search-form-area .form-wrap.type06 {
+  display: flex;
+  align-items: normal;
+  justify-content: flex-start;
+  padding: 0.88rem 1.25rem;
 }
 .search-form-area .form-wrap.type01 .form-row:nth-of-type(1) {
   grid-area: row-01;
@@ -13803,11 +13829,6 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 .search-form-area .form-wrap.type01.form-col-2 .form-row .col {
   width: 50%;
 }
-.search-form-area .form-wrap.type02 {
-  display: grid;
-  grid-template-columns: 1fr 8.5rem;
-  grid-template-areas: "row-01 btn" "row-02 btn";
-}
 .search-form-area .form-wrap.type02 .form-row {
   flex: 1;
 }
@@ -13820,11 +13841,6 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 .search-form-area .form-wrap.type02 .form-row .col .form-label {
   flex: none;
   max-width: 7.19rem;
-}
-.search-form-area .form-wrap.type03 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 8.5rem;
-  grid-template-areas: "row-01 row-02 btn" "row-01 row-03 btn";
 }
 .search-form-area .form-wrap.type03 .form-row:nth-of-type(1) {
   grid-area: row-01;
@@ -13845,11 +13861,6 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 .search-form-area .form-wrap.type03 .form-row .col:first-of-type .form-label {
   flex: 0 0 5.5rem;
   min-width: 5.5rem;
-}
-.search-form-area .form-wrap.type04 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 8.5rem;
-  grid-template-areas: "row-01 row-02 row-03 btn";
 }
 .search-form-area .form-wrap.type04 .form-row {
   flex-direction: column;
@@ -13882,22 +13893,11 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 .search-form-area .form-wrap.type04 .form-row:nth-of-type(3) {
   grid-area: row-03;
 }
-.search-form-area .form-wrap.type05 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 8.5rem;
-  grid-template-areas: "row-01 row-02 row-03 btn";
-}
 .search-form-area .form-wrap.type05 .form-row {
   flex-direction: column;
 }
 .search-form-area .form-wrap.type05 .form-row:nth-last-child(2) .col {
   align-items: center;
-}
-.search-form-area .form-wrap.type06 {
-  display: flex;
-  align-items: normal;
-  justify-content: flex-start;
-  padding: 0.88rem 1.25rem;
 }
 .search-form-area .form-wrap.type06 .form-row {
   gap: 0.5rem;

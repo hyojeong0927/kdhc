@@ -86,11 +86,11 @@ $form-btn-width: rem(136px);
 
 $form-layouts: (
     type01: (grid-template: "row-01 btn" "row-02 btn", columns: 1fr rem(136px)),
-    type02: (display: flex, padding: rem(9px) 0),
+    type02: (grid-template: "row-01 btn" "row-02 btn", columns: 1fr rem(136px)),
     type03: (grid-template: "row-01 row-02 btn" "row-01 row-03 btn", columns: 1fr 1fr rem(136px)),
-    type04: (grid-template: "row-01 row-02 btn" "row-01 row-03 btn", columns: 1fr 1fr rem(136px)),
-    type05: (grid-template: "row-01 row-02 btn" "row-01 row-03 btn", columns: 1fr 1fr rem(136px)),
-    type06: (grid-template: "row-01 row-02 btn" "row-01 row-03 btn", columns: 1fr 1fr rem(136px))
+    type04: (grid-template: "row-01 row-02 row-03 btn", columns: 1fr 1fr 1fr rem(136px)),
+    type05: (grid-template: "row-01 row-02 row-03 btn", columns: 1fr 1fr 1fr rem(136px)),
+    type06: (display: flex, align: normal, justify: flex-start, padding: rem(14px) rem(20px))
  );
 
 
@@ -98,29 +98,25 @@ $form-layouts: (
 .search-form-area {
    @extend %form-base;
    .form-wrap {
-        // @each $ft, $values in $form-layouts {
-        //     &.#{$ft} {
-        //         @if map-has-key($values, grid-template) {
-        //             display: grid;
-        //             grid-template-areas: map-get($values, grid-template);
-        //             grid-template-columns: map-get($values, columns);
-        //         }
+        @each $ft, $values in $form-layouts {
+            &.#{$ft} {
+                @if map-has-key($values, grid-template) {
+                    display: grid;
+                    grid-template-areas: map-get($values, grid-template);
+                    grid-template-columns: map-get($values, columns);
+                }
     
-        //         @else if map-has-key($values, display) {
-        //             display: map-get($values, display);
-        //             padding: map-get($values, padding);
-        //         }
-        //     }
-        // }
+                @else if map-has-key($values, display) {
+                    display: map-get($values, display);
+                    align-items: map-get($values, align);
+                    justify-content: map-get($values, justify);
+                    padding: map-get($values, padding);
+                }
+            }
+        }
         @each $ft in $form-types {
             &.#{$ft} {
                 @if $ft == "type01" {
-                    display: grid;
-                    grid-template-columns: 1fr rem(136px);
-                    grid-template-areas: 
-                    "row-01 btn"
-                    "row-02 btn";
-
                     .form-row {
                         &:nth-of-type(1) {
                             grid-area: row-01;
@@ -156,11 +152,6 @@ $form-layouts: (
                     }
                 }
                 @else if $ft == "type02"  {
-                    display: grid;
-                    grid-template-columns: 1fr rem(136px);
-                    grid-template-areas:
-                    "row-01 btn"
-                    "row-02 btn";
                     .form-row {
                         flex: 1;
                         .col {
@@ -176,11 +167,6 @@ $form-layouts: (
                     }
                 }
                 @else if $ft == "type03"  {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr rem(136px);
-                    grid-template-areas: 
-                    "row-01 row-02 btn"
-                    "row-01 row-03 btn";
                     .form-row {
                         &:nth-of-type(1) {
                             grid-area: row-01;
@@ -203,10 +189,6 @@ $form-layouts: (
                     }
                 }
                 @else if $ft == "type04" {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr 1fr rem(136px);
-                    grid-template-areas: 
-                    "row-01 row-02 row-03 btn";
                     .form-row {
                         flex-direction: column;
                         &:nth-of-type(1) {
@@ -243,11 +225,6 @@ $form-layouts: (
                     }
                 }
                 @else if $ft == "type05" {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr 1fr rem(136px);
-                    grid-template-areas:
-                    "row-01 row-02 row-03 btn";
-
                     .form-row {
                         flex-direction: column;
                         &:nth-last-child(2) {
@@ -258,11 +235,6 @@ $form-layouts: (
                     }
                 }
                 @else if $ft =="type06" {
-                    display: flex;
-                    align-items: normal;
-                    justify-content: flex-start;
-                    padding: rem(14px) rem(20px);
-
                     .form-row {
                         gap: rem(8px);
                         &:not(.search-btn) {
