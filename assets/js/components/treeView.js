@@ -47,7 +47,7 @@ $(document).ready(function() {
             href: "#root3",
             selectable: false,
             nodes: [
-                { text: "백신운영현황", href: "#", icon: "tree-doc", class: "depth2" },
+                { text: "백신 운영현황", href: "#", icon: "tree-doc", class: "depth2" },
                 { text: "백신미운영현황", href: "#", icon: "tree-doc", class: "depth2" },
                 { text: "백신정책세부내역", href: "#", icon: "tree-doc", class: "depth2" },
                 { text: "운영체제보안패치업데이트현황", href: "#", icon: "tree-doc", class: "depth2" },

@@ -46,12 +46,12 @@
                 <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
                 <aside id="sidebar" class="sidebar" data-menu='[
                         { "name": "공지사항 관리", "url": "#" },
-                        { "name": "정기점검 관리", "url": "#" },
+                        { "name": "정기점검 관리", "url": "#", "active": true },
                         { "name": "일반점검 관리", "url": "#" },
                         { "name": "지침 및 매뉴얼 관리", "url": "#" },
                         { "name": "메뉴 관리", "url": "#" },
                         { "name": "권한별 메뉴 관리", "url": "#" },
-                        { "name": "페이지 관리", "url": "#", "active": true },
+                        { "name": "페이지 관리", "url": "#" },
                         { "name": "사용자 관리", "url": "#" },
                         { "name": "공통코드 관리", "url": "#" },
                         { "name": "인사이동 관리", "url": "#" },
@@ -65,18 +65,18 @@
                     <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
                         data-breadcrumb='[
                             { "name": "관리자", "url": "#" },
-                            { "name": "페이지 관리", "url": "", "active": true }
+                            { "name": "정기점검 관리", "url": "", "active": true }
                         ]'
                         data-visible="false">
                     </nav> 
                     <!--// breadcrumbs end -->
                     
-                <!-- 컨텐츠 영역 -->
+                    <!-- 컨텐츠 영역 -->
                     <div id="contents" class="contents">
 
                         <!-- page title start -->
                         <div class="page-title-wrap" 
-                            data-title="페이지 관리" 
+                            data-title="정기점검관리" 
                             data-badge=""
                             data-badge-visible="false">
                         </div>
@@ -87,47 +87,103 @@
                             <!-- form start -->
                             <form>
                                 <fieldset>
-
+                        
                                     <!-- form-wrap start -->
-                                    <div class="form-wrap type02">
+                                    <div class="form-wrap type01 form-col-2">
                                         <!-- row -->
                                         <div class="form-row">
-                                            <!-- col -->
+                                            <!--  -->
                                             <div class="col">
-                                                <div class="form-label">메뉴</div>
+                                                <div class="form-label">점검기간</div>
                                                 <div class="form-group">
-                                                    <!-- form select group-->
-                                                    <!-- error : select-group is-error 추가가 -->
+                                                    <!-- datepicker-group start -->
+                                                    <div class="datepicker-group">
+                                                        <div class="datepicker-btn-group">
+                                                            <button class="btn btn-outline--round btn-xsm active">1개월</button>
+                                                            <button class="btn btn-outline--round btn-xsm">3개월</button>
+                                                            <button class="btn btn-outline--round btn-xsm">6개월</button>
+                                                            <button class="btn btn-outline--round btn-xsm" disabled>12개월</button>
+                                                        </div>
+                                                        <!-- class="input-date-group is-error" -->
+                                                        <div class="input-date-group">
+                                                            <input type="text" id="startDate" class="form-control" value=""
+                                                                placeholder="YYYY-MM-DD" readonly>
+                                                            <label class="input-group-text" for="startDate"><i
+                                                                    class="icon calendar"></i></label>
+                                                        </div>
+                                                        <div class="to">-</div>
+                                                        <!-- class="input-date-group is-error" -->
+                                                        <div class="input-date-group">
+                                                            <input type="text" id="endDate" class="form-control" value=""
+                                                                placeholder="YYYY-MM-DD" readonly>
+                                                            <label class="input-group-text" for="endDate"><i class="icon calendar"></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <!--// datepicker-group end -->
+                                                    <!-- 에러 문구 : hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--  -->
+                                            <div class="col">
+                                                <!--  -->
+                                                <div class="form-label">점검명</div>
+                                                <div class="form-group">
+                                                    <!-- form select group : class="select-group is-error" -->
                                                     <div class="select-group">
                                                         <select class="form-select" aria-label="Default select" required>
-                                                            <option value="">선택</option>
-                                                            <option value="1" selected>전체</option>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
                                                             <option value="2">Two</option>
                                                             <option value="3">Three</option>
                                                         </select>
                                                     </div>
-                                                    <!-- 에러 문구 -->
-                                                    <!-- error : hidden 삭제 -->
+                                                    <!--// form select group -->
+                                                    <!-- 에러 문구 : hidden -->
                                                     <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
                                                 </div>
+                                                <!--  -->
                                             </div>
-                                            <!-- col -->
+                                        </div>
+                                        <div class="form-row">
                                             <div class="col">
-                                                <div class="form-label">페이지 명</div>
+                                                <div class="form-label">대상지사</div>
                                                 <div class="form-group">
-                                                    <!-- input group -->
-                                                    <div class="input-group">
-                                                        <input type="text" id="input-text" class="form-control" placeholder="페이지 명 입력" value="">
-                                                        <label for="input-text" class="hidden">페이지 명</label>
+                                                    <!-- form select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
                                                     </div>
-                                                    <!--// input group -->
+                                                    <!--// form select group -->
                                                     <!-- 에러 문구 -->
                                                     <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
-                                            <!--//  -->
+                                            <div class="col">
+                                                <div class="form-label">주기</div>
+                                                <div class="form-group">
+                                                    <!-- form select group : class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// form select group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
                                         </div>
                                         <!-- row -->
                                         <div class="form-row search-btn">
@@ -136,7 +192,7 @@
                                         <!--// row end -->
                                     </div>
                                     <!--// form-wrap end -->
-
+                        
                                 </fieldset>
                             </form>
                             <!--// form end -->
@@ -145,20 +201,9 @@
 
                         <!-- grid top start -->
                         <article class="grid-top-area">
-                            <!-- grid top left start -->
-                            <div class="grid-top-left">
-                               <select class="form-select sm" aria-label="Default select" required>
-                                <option value="">선택</option>
-                                <option value="10" selected>10개씩 보기</option>
-                                <option value="20">20개씩 보기</option>
-                                <option value="30">30개씩 보기</option>
-                            </select>
-                            </div>
-                            <!--// grid top left end -->
-
                             <!-- grid top button start -->
                             <div class="grid-top-btn" 
-                                data-buttons='[{"text": "추가"}]'>
+                                data-buttons='[{"text": "정기점검 등록"}]'>
                             </div>
                             <!--// grid top button end -->
                         </article>
@@ -166,7 +211,7 @@
 
                         <!-- grid wrap start -->
                         <article class="grid-wrap">
-                            <div id="sampleGrid" class="normal admin" style="width: 100%;"></div>
+                            <div id="sampleGrid" class="normal"></div>
                         </article>
                         <!--// grid wrap end -->
 
@@ -200,69 +245,81 @@
     <script type="module">
         const rowData = [
             {
-                field01: "관리자",
-                field02: "공통코드 관리",
-                field03: "공통코드 관리페이지(수정가능)",
-                field04: "www.google.com",
-                field05: "홍길동",
-                field06: "2024.12.10 12:20:33",
+                field01: "",
+                field02: "판교, 동탄",
+                field03: "사이버보안진단의 날",
+                field04: "2024.12.10 ~ 2024.12.12",
+                field05: "월간",
+                field06: "15일전",
             },
             {
-                field01: "관리자",
-                field02: "공통코드 관리",
-                field03: "공통코드 관리페이지(수정가능)",
-                field04: "www.naver.com",
-                field05: "홍길동",
-                field06: "2024.12.10 12:20:33",
-            }
+                field01: "",
+                field02: "고양",
+                field03: "계정일일 점검",
+                field04: "2024.12.10 ~ 2024.12.12",
+                field05: "월간",
+                field06: "-",
+            },
+            {
+                field01: "",
+                field02: "판교, 동탄",
+                field03: "사이버보안진단의 날",
+                field04: "2024.12.10 ~ 2024.12.12",
+                field05: "월간",
+                field06: "15일전",
+            },
+            {
+                field01: "",
+                field02: "고양",
+                field03: "계정일일 점검",
+                field04: "2024.12.10 ~ 2024.12.12",
+                field05: "월간",
+                field06: "-",
+            },
         ];
         const columnDefs = [
             {
-                headerName: "메뉴 1",
+                headerName: "순번",
                 headerClass: "center",
                 field: "field01",
-                width: 240,
+                width: 88,
                 cellClass: "cell-normal",
+                valueGetter: "node.rowIndex + 1"
             },
             {
-                headerName: "메뉴 2",
+                headerName: "대상지사",
                 headerClass: "center",
                 field: "field02",
                 width: 240,
                 cellClass: "cell-normal",
             },
             {
-                headerName: "페이지 명",
+                headerName: "점검명",
                 headerClass: "center",
                 field: "field03",
-                width: 280,
-                editable: true,
+                minWidth: 280,
+                flex: 1,
                 cellClass: "cell-normal",
             },
             {
-                headerName: "URL",
+                headerName: "점검기간",
                 headerClass: "center",
                 field: "field04",
-                minWidth: 480,
-                flex: 1,
-                editable: true,
+                width: 280,
                 cellClass: "cell-normal",
-                cellRenderer: (params) => {
-                    return `<a href="http://${params.value}" target="_blank">${params.value}</a>(수정가능)`;
-                }
             },
             {
-                headerName: "등록자",
+                headerName: "주기",
                 headerClass: "center",
                 field: "field05",
-                width: 120,
+                width: 280,
                 cellClass: "cell-normal",
             },
             {
-                headerName: "등록일자",
+                headerName: "미리알림",
                 headerClass: "center",
                 field: "field06",
-                width: 200,
+                width: 280,
                 cellClass: "cell-normal",
             },
         ];

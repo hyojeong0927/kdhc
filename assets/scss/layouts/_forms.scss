@@ -84,28 +84,34 @@ $form-btn-width: rem(136px);
     }
 }
 
-// $form-layouts: (
-//     type01: (grid-template: "row-01 btn" "row-02 btn", columns: 1fr rem(136px)),
-//     type02: (display: flex, padding: rem(9px) 0),
-//     type03: (grid-template: "row-01 row-02 btn" "row-01 row-03 btn", columns: 1fr 1fr rem(136px))
-// );
-// @each $ft, $values in $form-layouts {
-//     &.#{$ft} {
-//         @if map-has-key($values, grid-template) {
-//             display: grid;
-//             grid-template-areas: map-get($values, grid-template);
-//             grid-template-columns: map-get($values, columns);
-//         } @else if map-has-key($values, display) {
-//             display: map-get($values, display);
-//             padding: map-get($values, padding);
-//         }
-//     }
-// }
+$form-layouts: (
+    type01: (grid-template: "row-01 btn" "row-02 btn", columns: 1fr rem(136px)),
+    type02: (display: flex, padding: rem(9px) 0),
+    type03: (grid-template: "row-01 row-02 btn" "row-01 row-03 btn", columns: 1fr 1fr rem(136px)),
+    type04: (grid-template: "row-01 row-02 btn" "row-01 row-03 btn", columns: 1fr 1fr rem(136px)),
+    type05: (grid-template: "row-01 row-02 btn" "row-01 row-03 btn", columns: 1fr 1fr rem(136px)),
+    type06: (grid-template: "row-01 row-02 btn" "row-01 row-03 btn", columns: 1fr 1fr rem(136px))
+ );
+
 
 // 검색 폼
 .search-form-area {
    @extend %form-base;
    .form-wrap {
+        // @each $ft, $values in $form-layouts {
+        //     &.#{$ft} {
+        //         @if map-has-key($values, grid-template) {
+        //             display: grid;
+        //             grid-template-areas: map-get($values, grid-template);
+        //             grid-template-columns: map-get($values, columns);
+        //         }
+    
+        //         @else if map-has-key($values, display) {
+        //             display: map-get($values, display);
+        //             padding: map-get($values, padding);
+        //         }
+        //     }
+        // }
         @each $ft in $form-types {
             &.#{$ft} {
                 @if $ft == "type01" {
@@ -424,6 +430,11 @@ $form-btn-width: rem(136px);
         }
         
     }
+}
+
+// multi group
+.multi-group {
+    @include flex(true, "start", "center", rem(24px));
 }
 
 // checkbox

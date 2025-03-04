@@ -10,10 +10,8 @@
             background-color: transparent;
         } 
         &.node-selected {
-            &.depth2 {
-                color: $primary !important;
-                background-color: transparent !important;
-            } 
+            color: $primary !important;
+            background-color: transparent !important;
             a {
                 color: $primary !important;
             }
@@ -30,15 +28,18 @@
         background-image: url(#{$img-root}/images/svg/tree-dot-line.svg);
     }
     .list-group {
-        color: $primary;
-        @include font-style($font-size-base, $font-weight-medium, $line-height-base);
         border-radius: 0;
         border: 0;
         background-color: transparent;
     }
     .list-group-item {
         @include flex(true, "start", "center");
+        color: $primary;
+        @include font-style($font-size-base, $font-weight-medium, $line-height-base);
         border: 0;
+        a {
+            font-weight: $font-weight-medium;
+        }
         .icon {
             position: relative;
             margin-right: 0;
@@ -100,8 +101,9 @@
         &::after {
             content: 'Root';
             padding-left: rem(27px);
-            color: inherit;
-            font-size: inherit;
+            color: $primary;
+            @include font-style($font-size-base, $font-weight-medium, $line-height-base);
+            font-family: $font-family-base;
         }
     }
     .list-group {
@@ -140,6 +142,9 @@
                 }
             }
             &.depth2 {
+                a {
+                    font-weight: $font-weight-normal;
+                }
                 .tree-doc {
                     @include before(true, true, rem(-14px), 0, 0, rem(-26px));
                     @include before(false, true, rem(10px), 0, 0, rem(-24px));

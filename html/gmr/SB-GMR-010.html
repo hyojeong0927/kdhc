@@ -50,7 +50,8 @@
                 <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
                 <aside id="sidebar" class="sidebar" data-menu='[
                         { "name": "공지사항 관리", "url": "#" },
-                        { "name": "보고서 일정 관리", "url": "#" },
+                        { "name": "정기점검 관리", "url": "#" },
+                        { "name": "일반점검 관리", "url": "#" },
                         { "name": "지침 및 매뉴얼 관리", "url": "#" },
                         { "name": "메뉴 관리", "url": "#", "active": true },
                         { "name": "권한별 메뉴 관리", "url": "#" },
@@ -253,37 +254,37 @@
     <!-- script wrap -->
      <script>
         $(document).ready(function() {
-    var treeData = [
-        {
-            text: "Root 1",
-            href: "#root1",
-            nodes: [
+            var treeData = [
                 {
-                    text: "Child 1",
-                    href: "#child1"
+                    text: "Root 1",
+                    href: "#root1",
+                    nodes: [
+                        {
+                            text: "Child 1",
+                            href: "#child1"
+                        },
+                        {
+                            text: "Child 2",
+                            href: "#child2"
+                        }
+                    ]
                 },
                 {
-                    text: "Child 2",
-                    href: "#child2"
+                    text: "Root 2",
+                    href: "#root2",
+                    nodes: [
+                        {
+                            text: "Child 3",
+                            href: "#child3"
+                        }
+                    ]
                 }
-            ]
-        },
-        {
-            text: "Root 2",
-            href: "#root2",
-            nodes: [
-                {
-                    text: "Child 3",
-                    href: "#child3"
-                }
-            ]
-        }
-    ];
+            ];
 
-    $('#treeview').treeview({
-        data: treeData
-    });
-});
+            $('#treeview').treeview({
+                data: treeData
+            });
+        });
      </script>
     <!--// script wrap -->
     

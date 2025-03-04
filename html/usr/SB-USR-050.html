@@ -45,17 +45,17 @@
                 <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
                 <aside id="sidebar" class="sidebar" data-menu='[
                         { "name": "비밀번호 정책 운영 현황", "url": "#" },
-                        { "name": "비밀번호 변경 불가 월간점검", "url": "#" },
-                        { "name": "백신운영현황", "url": "#" },
-                        { "name": "백신 미운영현황", "url": "#" },
-                        { "name": "백신 정책세부내역", "url": "#" },
+                        { "name": "비밀번호 변경 불가 월간 점검", "url": "#" },
+                        { "name": "백신 운영현황", "url": "#" },
+                        { "name": "백신 미운영 현황", "url": "#" },
+                        { "name": "백신 정책 세부내역", "url": "#" },
                         { "name": "백신 미운영 월간점검현황", "url": "#" },
-                        { "name": "운영체제 보안패치\n업데이트 현황", "url": "#", "active": true },
+                        { "name": "운영체제 보안패치\n업데이트 현황", "url": "#" },
                         { "name": "운영체제 보안패치\n업데이트 주기", "url": "#" },
                         { "name": "운영소프트웨어\n업데이트 주기", "url": "#" },
-                        { "name": "공정제어 설비 운영 체제 현황", "url": "#" },
-                        { "name": "네트워크 장비 소프트웨어", "url": "#" },
-                        { "name": "보안패치 미운영 월간점검", "url": "#" }]'></aside>
+                        { "name": "공정제어 설비\n운영 체제 현황", "url": "#" },
+                        { "name": "네트워크 장비 소프트웨어", "url": "#", "active": true },
+                        { "name": "보안패치 미운영 월간 점검", "url": "#" }]'></aside>
                 <!--// 사이드 영역 -->
 
                 <main class="main-contents">
@@ -63,7 +63,7 @@
                     <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
                         data-breadcrumb='[
                             { "name": "보안정책", "url": "#" },
-                            { "name": "운영체제보안패치 업데이트 현황", "url": "", "active": true }
+                            { "name": "네트워크장비 소프트웨어", "url": "", "active": true }
                         ]'
                         data-visible="false">
                     </nav> 
@@ -74,7 +74,7 @@
 
                         <!-- page title start -->
                         <div class="page-title-wrap" 
-                            data-title="운영체제보안패치 업데이트 현황" 
+                            data-title="네트워크장비 소프트웨어" 
                             data-badge="" data-badge-visible="false">
                         </div>
                         <!--// page title end -->
@@ -143,18 +143,14 @@
                                             <!--// col -->
                                             <!-- col -->
                                              <div class="col">
-                                                <div class="form-label">OS 버전</div>
+                                                <div class="form-label">자산관리번호</div>
                                                 <div class="form-group">
-                                                    <!--  -->
-                                                    <div class="select-group">
-                                                        <select class="form-select" aria-label="Default select" required>
-                                                            <option value="" selected>선택</option>
-                                                            <option value="1">One</option>
-                                                            <option value="2">Two</option>
-                                                            <option value="3">Three</option>
-                                                        </select>
+                                                    <!-- input search group start : class="input-search-group is-error" -->
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search2" value="" placeholder="자산관리번호">
+                                                        <label class="input-group-text hidden" for="search2"><i class="icon search"></i></label>
                                                     </div>
-                                                    <!--  -->
+                                                    <!--// input search group end -->
                                                     <!-- 에러 문구 : hidden -->
                                                     <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
@@ -179,11 +175,22 @@
 
                         <!-- grid top start -->
                         <article class="grid-top-area">
-                           
+                            <!-- grid top left start -->
+                            <div class="grid-top-left">
+                                <select class="form-select sm" aria-label="Default select" required>
+                                    <option value="">선택</option>
+                                    <option value="10" selected>10개씩 보기</option>
+                                    <option value="20">20개씩 보기</option>
+                                    <option value="30">30개씩 보기</option>
+                                </select>
+                            </div>
+                            <!--// grid top left end -->
+                        
                             <!-- grid top button start -->
-                            <div class="grid-top-btn" data-buttons='[ {"text": "관련규정"}, {"text": "출력", "class": "btn btn-secondary btn-sm"}]'></div>
+                            <div class="grid-top-btn" data-buttons='[{"text": "관련규정"}, {"text": "출력", "class": "btn btn-secondary btn-sm"}]'>
+                            </div>
                             <!--// grid top button end -->
-
+                        
                         </article>
                         <!--// grid top end -->
 
@@ -193,7 +200,14 @@
                         </article>
                         <!--// grid wrap end -->
 
-                      
+                        <!-- grid bottom start -->
+                        <article class="grid-bottom-area">
+                            <!-- 페이징 -->
+                            <nav class="page-navigation" aria-label="page navigation">
+                                <script type="module" src="../../assets/js/components/pagination.js"></script>
+                            </nav>
+                            <!--// 페이징 -->
+                        </article>
 
                     </div>
                     <!--// 컨텐츠 영역 -->
@@ -215,88 +229,24 @@
     <script type="module">
         const rowData = [
             {
-                field01: "1",
-                field02: "분류",
-                field03: "3대",
-                field04: "불가",
-                field05: "3대",
-                field06: "불가",
-                field07: "3대",
-                field08: "불가",
-                field09: "3대",
-                field10: "불가",
+                field01: "",
+                field02: "발전제어시스템(GTㆍST)",
+                field03: "화성-노트북-001",
+                field04: "시스템 1",
+                field05: "EMERSON",
+                field06: "OVATION",
+                field07: "IOS 15.0.2",
+                field08: "1년",
             },
             {
-                field01: "1",
-                field02: "분류",
-                field03: "3대",
-                field04: "불가",
-                field05: "3대",
-                field06: "불가",
-                field07: "3대",
-                field08: "불가",
-                field09: "3대",
-                field10: "불가",
-            },
-            {
-                field01: "1",
-                field02: "분류",
-                field03: "3대",
-                field04: "불가",
-                field05: "3대",
-                field06: "불가",
-                field07: "3대",
-                field08: "불가",
-                field09: "3대",
-                field10: "불가",
-            },
-            {
-                field01: "1",
-                field02: "분류",
-                field03: "3대",
-                field04: "불가",
-                field05: "3대",
-                field06: "불가",
-                field07: "3대",
-                field08: "불가",
-                field09: "3대",
-                field10: "불가",
-            },
-            {
-                field01: "1",
-                field02: "분류",
-                field03: "3대",
-                field04: "불가",
-                field05: "3대",
-                field06: "불가",
-                field07: "3대",
-                field08: "불가",
-                field09: "3대",
-                field10: "불가",
-            },
-            {
-                field01: "2",
-                field02: "분류",
-                field03: "3대",
-                field04: "불가",
-                field05: "3대",
-                field06: "불가",
-                field07: "3대",
-                field08: "불가",
-                field09: "3대",
-                field10: "불가",
-            },
-            {
-                field01: "2",
-                field02: "분류",
-                field03: "3대",
-                field04: "불가",
-                field05: "3대",
-                field06: "불가",
-                field07: "3대",
-                field08: "불가",
-                field09: "3대",
-                field10: "불가",
+                field01: "",
+                field02: "발전제어시스템(GTㆍST)",
+                field03: "화성-노트북-002",
+                field04: "시스템 1",
+                field05: "EMERSON",
+                field06: "OVATION",
+                field07: "IOS 15.0.2",
+                field08: "6개월",
             },
         ];
         const columnDefs = [
@@ -304,9 +254,10 @@
                 headerName: "순번",
                 headerClass: "center",
                 field: "field01",
-                width: 120,
-                rowSpan: (params) => shouldMergeRows(params, ["field01", "field02"]),
-                cellClass: getMergeCellClass,
+                width: 88,
+                cellClass: "cell-normal",
+                valueGetter: "node.rowIndex + 1"
+
             },
             {
                 headerName: "분류",
@@ -314,144 +265,57 @@
                 field: "field02",
                 minWidth: 180,
                 flex: 1,
-                rowSpan: (params) => shouldMergeRows(params, ["field01", "field02"]),
-                cellClass: getMergeCellClass,
+                cellClass: "cell-normal",
             },
             {
-                headerName: "Win XP",
+                headerName: "자산관리번호",
                 headerClass: "center",
+                field: "field03",
+                minWidth: 120,
+                flex: 1,
                 cellClass: "cell-normal",
-                children: [
-                    {
-                        headerName: "수량",
-                        headerClass: "center",
-                        field: "field03",
-                        width: 120,
-                        cellClass: "cell-normal",
-                    },
-                    {
-                        headerName: "업데이트",
-                        headerClass: "center",
-                        field: "field04",
-                        width: 120,
-                        cellClass: "cell-normal",
-                    },
-                ]
             },
             {
-                headerName: "Win 7",
+                headerName: "시스템명",
                 headerClass: "center",
+                field: "field04",
+                minWidth: 180,
+                flex: 1,
                 cellClass: "cell-normal",
-                children: [
-                    {
-                        headerName: "수량",
-                        headerClass: "center",
-                        field: "field05",
-                        width: 120,
-                        cellClass: "cell-normal",
-                    },
-                    {
-                        headerName: "업데이트",
-                        headerClass: "center",
-                        field: "field06",
-                        width: 120,
-                        cellClass: "cell-normal",
-                    },
-                ]
             },
             {
-                headerName: "Win 2003",
+                headerName: "제조사",
                 headerClass: "center",
+                field: "field05",
+                minWidth: 180,
+                flex: 1,
                 cellClass: "cell-normal",
-                children: [
-                    {
-                        headerName: "수량",
-                        headerClass: "center",
-                        field: "field07",
-                        width: 120,
-                        cellClass: "cell-normal",
-                    },
-                    {
-                        headerName: "업데이트",
-                        headerClass: "center",
-                        field: "field08",
-                        width: 120,
-                        cellClass: "cell-normal",
-                    },
-                ]
             },
-            
             {
-                headerName: "Win 10",
+                headerName: "모델명",
                 headerClass: "center",
+                field: "field06",
+                minWidth: 180,
+                flex: 1,
                 cellClass: "cell-normal",
-                children: [
-                    {
-                        headerName: "수량",
-                        headerClass: "center",
-                        field: "field09",
-                        width: 120,
-                        cellClass: "cell-normal",
-                    },
-                    {
-                        headerName: "업데이트",
-                        headerClass: "center",
-                        field: "field10",
-                        width: 120,
-                        cellClass: "cell-normal",
-                    },
-                ]
+            },
+            {
+                headerName: "운영체제 및 버전",
+                headerClass: "center",
+                field: "field07",
+                minWidth: 180,
+                flex: 1,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "업데이트 주기",
+                headerClass: "center",
+                field: "field08",
+                width: 120,
+                cellClass: "cell-normal",
             },
         ];
         
-        // rowspan start
-        let rowspanMap = {};
-
-        function calculateRowspanMap(data, fields) {
-            const mapKey = fields.join(",");
-            rowspanMap[mapKey] = {};
-
-            let rowIndex = 0;
-
-            while (rowIndex < data.length) {
-                let mergeCount = 1;
-                const key = fields.map(field => data[rowIndex][field]).join(",");
-
-                for (let i = rowIndex + 1; i < data.length; i++) {
-                    const nextKey = fields.map(field => data[i][field]).join(",");
-                    if (nextKey === key) {
-                        mergeCount++;
-                    } else {
-                        break;
-                    }
-                }
-
-                for (let i = 0; i < mergeCount; i++) {
-                    if (i > 0) {
-                        fields.forEach(field => {
-                            data[rowIndex + i][field] = "";
-                        });
-                    }
-                    rowspanMap[mapKey][rowIndex + i] = i === 0 ? mergeCount : 1;
-                }
-
-                rowIndex += mergeCount;
-            }
-        }
-
-        function shouldMergeRows(params, fields) {
-            const mapKey = fields.join(",");
-            const rowIndex = params.node.rowIndex;
-            return rowspanMap[mapKey]?.[rowIndex] || 1;
-        }
-
-        function getMergeCellClass(params) {
-            const mapKey = ["field01", "field02"].join(",");
-            const rowIndex = params.node.rowIndex;
-            return rowspanMap[mapKey]?.[rowIndex] > 1 ? "merge-cell" : "";
-        }
-        // rowspan end
-
         let sampleGridApi;
 
         const sampleGridOptions = {
@@ -464,13 +328,6 @@
             headerHeight: 41, // header height
             rowData: rowData,
             rowHeight: 63, // row height
-           
-            onGridReady: (params) => { // merge option
-                calculateRowspanMap(rowData, ["field01", "field02"]);
-                params.api.refreshCells({ force: true });
-                params.api.redrawRows();
-            },
-            getRowHeight: (params) => 63,  // rowspan
             domLayout: "autoHeight", // 2025-02-19 추가 옵션
             suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
             // data empty style

@@ -46,12 +46,12 @@
                 <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
                 <aside id="sidebar" class="sidebar" data-menu='[
                         { "name": "공지사항 관리", "url": "#" },
-                        { "name": "정기점검 관리", "url": "#" },
+                        { "name": "정기점검 관리", "url": "#", "active": true },
                         { "name": "일반점검 관리", "url": "#" },
                         { "name": "지침 및 매뉴얼 관리", "url": "#" },
                         { "name": "메뉴 관리", "url": "#" },
                         { "name": "권한별 메뉴 관리", "url": "#" },
-                        { "name": "페이지 관리", "url": "#", "active": true },
+                        { "name": "페이지 관리", "url": "#" },
                         { "name": "사용자 관리", "url": "#" },
                         { "name": "공통코드 관리", "url": "#" },
                         { "name": "인사이동 관리", "url": "#" },
@@ -65,7 +65,7 @@
                     <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
                         data-breadcrumb='[
                             { "name": "관리자", "url": "#" },
-                            { "name": "페이지 관리", "url": "", "active": true }
+                            { "name": "정기점검 관리", "url": "", "active": true }
                         ]'
                         data-visible="false">
                     </nav> 
@@ -76,30 +76,31 @@
 
                         <!-- page title start -->
                         <div class="page-title-wrap" 
-                            data-title="페이지 관리" 
+                            data-title="정기점검관리 등록/수정정" 
                             data-badge=""
                             data-badge-visible="false">
                         </div>
                         <!--// page title end -->
-                        
+
                         <!-- 팝업 호출 버튼 -->
                         <button type="button" id="large-btn" class="btn btn-primary btn-lg">
-                            페이지관리 삭제
+                            정기점검 관리 등록/수정
                         </button>
                         <!--// 팝업 호출 버튼 -->
-
+                        
                         <!-- popup script -->
                         <script type="module">
                             import { setupPopupListeners } from '../../assets/js/components/popup.js';
 
                             const urlList = {
-                                large: './popup/SB-GMR-017.html',
+                                large: './popup/SB-GMR-005.html',
                             };
 
                             setupPopupListeners(urlList);
                         </script>
                         <!--// popup script -->
 
+                    
                     </div>
                     <!--// 컨텐츠 영역 -->
 
@@ -117,7 +118,7 @@
  
     </div>
     <!-- script wrap -->
- 
+   
     <!--// script wrap -->
     
     <!-- modal wrap -->

@@ -155,17 +155,6 @@ textarea {
     &:focus-within,
     &:focus {
         @extend %input-focus;
-        .form-control {
-            & + .input-group-text {
-                cursor: pointer;
-                .icon {
-                    &.search {
-                        @extend .search-on;
-                    }
-                }
-            }
-        }
-        
     }
     &.active {
         @extend %input-focus;
@@ -198,6 +187,18 @@ textarea {
 .input-search-group {
     flex: none;
     width: 100%;
+    &:hover {
+        .form-control {
+            &+.input-group-text {
+                cursor: pointer;
+                .icon {
+                    &.search {
+                        @extend .search-on;
+                    }
+                }
+            }
+        }
+    }
 }
 .input-time-group {
     @include flex(true, "start", "center", rem(8px));
