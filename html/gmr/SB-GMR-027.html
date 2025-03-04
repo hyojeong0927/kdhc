@@ -46,7 +46,7 @@
                 <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
                 <aside id="sidebar" class="sidebar" data-menu='[
                         { "name": "공지사항 관리", "url": "#" },
-                        { "name": "정기점검 관리", "url": "#", "active": true },
+                        { "name": "정기점검 관리", "url": "#" },
                         { "name": "일반점검 관리", "url": "#" },
                         { "name": "지침 및 매뉴얼 관리", "url": "#" },
                         { "name": "메뉴 관리", "url": "#" },
@@ -54,7 +54,7 @@
                         { "name": "페이지 관리", "url": "#" },
                         { "name": "사용자 관리", "url": "#" },
                         { "name": "공통코드 관리", "url": "#" },
-                        { "name": "인사이동 관리", "url": "#" },
+                        { "name": "인사이동 관리", "url": "#", "active": true  },
                         { "name": "USB 저장매체 사용현황", "url": "#" },
                         { "name": "스티커 이용내역", "url": "#" }
                         ]'></aside>
@@ -65,7 +65,7 @@
                     <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
                         data-breadcrumb='[
                             { "name": "관리자", "url": "#" },
-                            { "name": "정기점검 관리", "url": "", "active": true }
+                            { "name": "인사이동 관리", "url": "", "active": true }
                         ]'
                         data-visible="false">
                     </nav> 
@@ -76,66 +76,31 @@
 
                         <!-- page title start -->
                         <div class="page-title-wrap" 
-                            data-title="정기점검관리 등록/수정정" 
+                            data-title="인사이동 관리 등록" 
                             data-badge=""
                             data-badge-visible="false">
                         </div>
                         <!--// page title end -->
 
+                       
                         <!-- 팝업 호출 버튼 -->
-                        <button type="button" id="SB-GMR-005" class="btn btn-primary btn-lg">
-                            정기점검 관리 등록/수정 : 일간
-                        </button>
-                        <button type="button" id="SB-GMR-005_01" class="btn btn-primary btn-lg">
-                            정기점검 관리 등록/수정 : 주간
-                        </button>
-                        <button type="button" id="SB-GMR-005_02" class="btn btn-primary btn-lg">
-                            정기점검 관리 등록/수정 : 월간
-                        </button>
-                        <button type="button" id="SB-GMR-005_03" class="btn btn-primary btn-lg">
-                            정기점검 관리 등록/수정 : 분기
-                        </button>
-                        <button type="button" id="SB-GMR-005_04" class="btn btn-primary btn-lg">
-                            정기점검 관리 등록/수정 : 반기
-                        </button>
-                        <button type="button" id="SB-GMR-005_05" class="btn btn-primary btn-lg">
-                            정기점검 관리 등록/수정 : 연간
+                        <button type="button" id="large-btn" class="btn btn-primary btn-lg">
+                            인사이동 관리 등록
                         </button>
                         <!--// 팝업 호출 버튼 -->
                         
                         <!-- popup script -->
                         <script type="module">
-                            import { openCenteredPopup } from '../../assets/js/components/popup.js';
+                            import { setupPopupListeners } from '../../assets/js/components/popup.js';
 
-                            document.addEventListener('DOMContentLoaded', () => {
-                                document.getElementById('SB-GMR-005').addEventListener('click', () => {
-                                    const url = './popup/SB-GMR-005.html';
-                                    openCenteredPopup(url, 1400, 1080);
-                                });
-                                document.getElementById('SB-GMR-005_01').addEventListener('click', () => {
-                                    const url = './popup/SB-GMR-005_01.html';
-                                    openCenteredPopup(url, 1400, 1080);
-                                });
-                                document.getElementById('SB-GMR-005_02').addEventListener('click', () => {
-                                    const url = './popup/SB-GMR-005_02.html';
-                                    openCenteredPopup(url, 1400, 1080);
-                                });
-                                document.getElementById('SB-GMR-005_03').addEventListener('click', () => {
-                                    const url = './popup/SB-GMR-005_03.html';
-                                    openCenteredPopup(url, 1400, 1080);
-                                });
-                                document.getElementById('SB-GMR-005_04').addEventListener('click', () => {
-                                    const url = './popup/SB-GMR-005_04.html';
-                                    openCenteredPopup(url, 1400, 1080);
-                                });
-                                document.getElementById('SB-GMR-005_05').addEventListener('click', () => {
-                                    const url = './popup/SB-GMR-005_05.html';
-                                    openCenteredPopup(url, 1400, 1080);
-                                });
-                            });
+                            const urlList = {
+                                large: './popup/SB-GMR-027.html',
+                            };
+
+                            setupPopupListeners(urlList);
                         </script>
                         <!--// popup script -->
-
+                    
                     </div>
                     <!--// 컨텐츠 영역 -->
 

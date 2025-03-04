@@ -1,11 +1,5 @@
 $(document).ready(function() {
     var treeData = [
-        // {
-        //     text: "Root",
-        //     class: "root",
-        //     href: "",
-        //     selectable: false,
-        // },
         {
             text: "관리보안",
             class: "depth1",

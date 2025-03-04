@@ -39,27 +39,33 @@
                                                 <!-- form check group -->
                                                 <div class="form-check-group">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" id="radio01" name="drone1" value="radio01" checked />
+                                                        <input class="form-check-input" type="radio" id="radio01" name="drone1"
+                                                            value="radio01" />
                                                         <label for="radio01">일간</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" id="radio02" name="drone1" value="radio02" />
+                                                        <input class="form-check-input" type="radio" id="radio02" name="drone1"
+                                                            value="radio02" />
                                                         <label for="radio02">주간</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" id="radio03" name="drone1" value="radio03" />
+                                                        <input class="form-check-input" type="radio" id="radio03" name="drone1"
+                                                            value="radio03" checked />
                                                         <label for="radio03">월간</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" id="radio04" name="drone1" value="radio04" />
+                                                        <input class="form-check-input" type="radio" id="radio04" name="drone1"
+                                                            value="radio04" />
                                                         <label for="radio04">분기</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" id="radio05" name="drone1" value="radio05" />
+                                                        <input class="form-check-input" type="radio" id="radio05" name="drone1"
+                                                            value="radio05" />
                                                         <label for="radio05">반기</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" id="radio06" name="drone1" value="radio06" />
+                                                        <input class="form-check-input" type="radio" id="radio06" name="drone1"
+                                                            value="radio06" />
                                                         <label for="radio06">연간</label>
                                                     </div>
                                                 </div>
@@ -79,18 +85,10 @@
                                             <div class="form-label">점검기간</div>
                                             <div class="form-group">
                                                 <!-- datepicker-group start -->
-                                                <div class="datepicker-group">
-                                                    <!-- class="input-date-group is-error" -->
-                                                    <div class="input-date-group w-190">
-                                                        <input type="text" id="startDate" class="form-control" value="" placeholder="YYYY-MM-DD" readonly>
-                                                        <label class="input-group-text" for="startDate"><i class="icon calendar"></i></label>
-                                                    </div>
-                                                    <div class="to">-</div>
-                                                    <!-- class="input-date-group is-error" -->
-                                                    <div class="input-date-group w-190">
-                                                        <input type="text" id="endDate" class="form-control" value="" placeholder="YYYY-MM-DD" readonly>
-                                                        <label class="input-group-text" for="endDate"><i class="icon calendar"></i></label>
-                                                    </div>
+                                                <div class="datepicker-btn-group">
+                                                    <button class="btn btn-outline--round btn-xsm active">1년</button>
+                                                    <button class="btn btn-outline--round btn-xsm">3년</button>
+                                                    <button class="btn btn-outline--round btn-xsm" disabled>5년</button>
                                                 </div>
                                                 <!--// datepicker-group end -->
                                                 <!-- 에러 문구 -->
@@ -137,60 +135,97 @@
                                     <div class="form-row">
                                         <!-- col  -->
                                         <div class="col">
+                                            <div class="form-label">미리알림</div>
+                                            <div class="form-group">
+                                                <div class="multi-group">
+                                                    <!-- input group : class="input-group is-error" -->
+                                                    <div class="input-group w-190">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력"
+                                                            value="1~15">
+                                                        <label for="input-text" class="hidden">미리알림</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <div class="input-text">일 전부터</div>
+                                                </div>
+                                                <!-- 에러 문구 : hidden 제거 -->
+                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                <!--// 에러 문구 -->
+                                            </div>
+                                        </div>
+                                        <!--// col  -->
+                                    </div>
+                                    <!--// row -->
+                                    <!-- row -->
+                                    <div class="form-row">
+                                        <!-- col  -->
+                                        <div class="col">
                                             <div class="form-label">대상지사</div>
                                             <div class="form-group">
                                                 <!-- form-check-group -->
                                                 <div class="form-check-group">
                                                     <div class="form-check">
-                                                        <input class="form-check-input checkboxes" type="checkbox" id="selectAllCheckbox" name="selectAllCheckbox">
+                                                        <input class="form-check-input checkboxes" type="checkbox" id="selectAllCheckbox"
+                                                            name="selectAllCheckbox">
                                                         <label for="selectAllCheckbox">전체</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox01" name="checkbox01">
+                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox01"
+                                                            name="checkbox01">
                                                         <label for="checkbox01">고양</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox02" name="checkbox02">
+                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox02"
+                                                            name="checkbox02">
                                                         <label for="checkbox02">김해</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox03" name="checkbox03">
+                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox03"
+                                                            name="checkbox03">
                                                         <label for="checkbox03">마포</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox04" name="checkbox04">
+                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox04"
+                                                            name="checkbox04">
                                                         <label for="checkbox04">목동</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox05" name="checkbox05">
+                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox05"
+                                                            name="checkbox05">
                                                         <label for="checkbox05">부천</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox06" name="checkbox06">
+                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox06"
+                                                            name="checkbox06">
                                                         <label for="checkbox06">분당</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox07" name="checkbox07">
+                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox07"
+                                                            name="checkbox07">
                                                         <label for="checkbox07">수원</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox08" name="checkbox08">
+                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox08"
+                                                            name="checkbox08">
                                                         <label for="checkbox08">용인</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox09" name="checkbox09">
+                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox09"
+                                                            name="checkbox09">
                                                         <label for="checkbox09">청주</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox10" name="checkbox10">
+                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox10"
+                                                            name="checkbox10">
                                                         <label for="checkbox10">파주</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox11" name="checkbox11">
+                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox11"
+                                                            name="checkbox11">
                                                         <label for="checkbox11">판교</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox12" name="checkbox12">
+                                                        <input class="form-check-input checkboxes" type="checkbox" id="checkbox12"
+                                                            name="checkbox12">
                                                         <label for="checkbox12">화성</label>
                                                     </div>
                                                 </div>
@@ -211,6 +246,12 @@
                     </div>
                     <!--// input form -->
 
+                    <!-- grid wrap start -->
+                    <article class="grid-wrap">
+                        <div id="sampleGrid" class="normal"></div>
+                    </article>
+                    <!--// grid wrap end -->
+
                     <!-- bottom button area start -->
                     <div class="bottom-btn-area" data-buttons='[{"text": "삭제", "class": "btn btn-outline btn-md"}, {"text": "저장"}]'></div>
                     <!--// bottom button area end -->
@@ -223,6 +264,175 @@
         <!--// 팝업 컨테이너 영역 -->
     </div>
     <!-- script wrap -->
+    <script type="module">
+        const rowData = [
+            {
+                field01: "",
+                field02: "월간",
+                field03: "2005 년",
+                field04: "1월",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "월간",
+                field03: "2005 년",
+                field04: "2월",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "월간",
+                field03: "2005 년",
+                field04: "3월",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "월간",
+                field03: "2005 년",
+                field04: "4월",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "월간",
+                field03: "2005 년",
+                field04: "5월",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "월간",
+                field03: "2005 년",
+                field04: "6월",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "월간",
+                field03: "2005 년",
+                field04: "7월",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "월간",
+                field03: "2005 년",
+                field04: "8월",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "월간",
+                field03: "2005 년",
+                field04: "9월",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "월간",
+                field03: "2005 년",
+                field04: "10월",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "월간",
+                field03: "2005 년",
+                field04: "11월",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "월간",
+                field03: "2025(고정값) 년",
+                field04: "12월",
+                field05: "",
+            },
+        ];
+        const columnDefs = [
+            {
+                headerName: "순번",
+                headerClass: "center",
+                field: "field01",
+                width: 88,
+                cellClass: "cell-normal",
+                valueGetter: "node.rowIndex + 1"
+            },
+            {
+                headerName: "점검주기유형",
+                headerClass: "center",
+                field: "field02",
+                minWidth: 200,
+                flex: 1,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "점검연도",
+                headerClass: "center",
+                field: "field03",
+                minWidth: 200,
+                flex: 1,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "점검월",
+                headerClass: "center",
+                field: "field04",
+                width: 200,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "점검일",
+                headerClass: "center",
+                field: "field05",
+                width: 200,
+                cellClass: "cell-normal input",
+                editable: true,
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                                <!-- select-group -->
+                                <div class="select-group">
+                                    <select class="form-select" aria-label="Default select" required>
+                                        <option value="" selected>선택</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                                <!--// select-group -->
+                            `;
+                    } else {
+                        return value;
+                    }
+                }
+
+            },
+        ];
+        let sampleGridApi;
+
+        const sampleGridOptions = {
+            defaultColDef: {
+                editable: false, // edit 사용 유무
+                autoHeight: true,
+                sortable: false, // sort 사용 유무
+            },
+            columnDefs,
+            headerHeight: 41, // header height
+            rowData: rowData,
+            rowHeight: 63, // row height
+            domLayout: "autoHeight", // 2025-02-19 추가 옵션
+            suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
+            // data empty style
+            overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
+        };
+        const sampleGridDiv = document.querySelector("#sampleGrid");
+        sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
+    </script>
     <!--// script wrap -->
 </body>
 </html>

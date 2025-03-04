@@ -52,8 +52,8 @@
                         { "name": "공지사항 관리", "url": "#" },
                         { "name": "정기점검 관리", "url": "#" },
                         { "name": "일반점검 관리", "url": "#" },
-                        { "name": "지침 및 매뉴얼 관리", "url": "#" },
-                        { "name": "메뉴 관리", "url": "#", "active": true },
+                        { "name": "지침 및 매뉴얼 관리", "url": "#", "active": true },
+                        { "name": "메뉴 관리", "url": "#" },
                         { "name": "권한별 메뉴 관리", "url": "#" },
                         { "name": "페이지 관리", "url": "#" },
                         { "name": "사용자 관리", "url": "#" },
@@ -69,7 +69,7 @@
                     <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
                         data-breadcrumb='[
                             { "name": "관리자", "url": "#" },
-                            { "name": "메뉴 관리", "url": "", "active": true }
+                            { "name": "지침 및 메뉴얼관리", "url": "", "active": true }
                         ]'
                         data-visible="false">
                     </nav> 
@@ -80,16 +80,17 @@
 
                         <!-- page title start -->
                         <div class="page-title-wrap" 
-                            data-title="메뉴 관리" 
+                            data-title="지침 및 메뉴얼관리" 
                             data-badge=""
                             data-badge-visible="false">
                         </div>
                         <!--// page title end -->
-                        <!-- 메뉴관리 start -->
+                        
+                        <!-- 지침 및 메뉴얼관리 start -->
                         <div class="flex-form">
                             <div class="flex-form-left tree-view">
                                 <!-- tree -->
-                                <div id="treeview"></div>
+                                <div id="treeview" class="no-root"></div>
                                 <script type="module" src="../../assets/js/components/treeView.js"></script>
                                 <!--// tree -->
                             </div>
@@ -229,7 +230,8 @@
                             </div>
                             
                         </div>
-                        <!--// 메뉴관리 end -->
+                        <!--// 지침 및 메뉴얼관리 end -->
+
                         <!-- bottom button area start -->
                         <div class="bottom-btn-area" 
                             data-buttons='[{"text": "추가", "class": "btn btn-outline btn-md"}, {"text": "삭제", "class": "btn btn-outline btn-md"}, {"text": "저장"}]'>
@@ -252,7 +254,6 @@
  
     </div>
     <!-- script wrap -->
-     
     <!--// script wrap -->
     
     <!-- modal wrap -->

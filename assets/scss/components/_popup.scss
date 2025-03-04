@@ -56,10 +56,14 @@ $popup-md-footer-height: rem(86px);
                 &:not(:last-of-type) {
                     padding: 0 0 rem($modal-section-btm);
                 }
-                .input-form-area {
-                    & + .input-form-area {
-                        margin-top: rem(24px);
-                    }
+            }
+            .input-form-area {
+                & + .input-form-area {
+                    margin-top: rem(24px);
+                }
+                & + .grid-wrap {
+                    margin-top: rem(24px);
+                    margin-bottom: 0;
                 }
             }
             .section-sub {
@@ -95,6 +99,10 @@ $popup-md-footer-height: rem(86px);
         }
         .grid-wrap {
             margin-bottom: 0;
+
+        }
+        .grid-bottom-area {
+            margin-top: rem(20px);
         }
     }
     .kdhc-pop-footer {

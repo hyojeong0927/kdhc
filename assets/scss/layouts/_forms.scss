@@ -388,6 +388,7 @@ $form-layouts: (
 }
 .grid-wrap {
     margin-bottom: rem(20px);
+    width: 100%;
 }
 .modal-dialog {
     .grid-wrap {
@@ -435,11 +436,19 @@ $form-layouts: (
 // multi group
 .multi-group {
     @include flex(true, "start", "center", rem(24px));
+    width: 100%;
+    .select-group {
+        flex: 1;
+    }
+    .input-group {
+        flex: 1;
+    }
 }
 
 // checkbox
 .form-check-group {
     @include flex(true, "start", "center", rem(24px));
+    flex-wrap: wrap;
 }
 .form-check {
     padding: rem($form-check-padding);

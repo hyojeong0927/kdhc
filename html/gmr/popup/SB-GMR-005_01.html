@@ -39,11 +39,11 @@
                                                 <!-- form check group -->
                                                 <div class="form-check-group">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" id="radio01" name="drone1" value="radio01" checked />
+                                                        <input class="form-check-input" type="radio" id="radio01" name="drone1" value="radio01" />
                                                         <label for="radio01">일간</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" id="radio02" name="drone1" value="radio02" />
+                                                        <input class="form-check-input" type="radio" id="radio02" name="drone1" value="radio02" checked />
                                                         <label for="radio02">주간</label>
                                                     </div>
                                                     <div class="form-check">
@@ -99,6 +99,40 @@
                                             </div>
                                         </div>
                                         <!--// col -->
+                                        <!-- col  -->
+                                        <div class="col">
+                                            <div class="form-label">점검요일</div>
+                                            <div class="form-group">
+                                                <!-- form check group -->
+                                                <div class="form-check-group">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="mon" name="week" value="mon" checked />
+                                                        <label for="mon">월</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="tus" name="week" value="tus" />
+                                                        <label for="tus">화</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="wen" name="week" value="wen" />
+                                                        <label for="wen">수</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="thu" name="week" value="thu" />
+                                                        <label for="thu">목</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="fri" name="week" value="fri" />
+                                                        <label for="fri">금</label>
+                                                    </div>
+                                                </div>
+                                                <!--// form check group -->
+                                                <!-- 에러 문구 : hidden 제거 -->
+                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                <!--// 에러 문구 -->
+                                            </div>
+                                        </div>
+                                        <!--// col  -->
                                     </div>
                                     <!--// row -->
                                     <!-- row -->
@@ -124,6 +158,29 @@
                                                         <label for="input-text" class="hidden">점검명</label>
                                                     </div>
                                                     <!--// input group -->
+                                                </div>
+                                                <!-- 에러 문구 : hidden 제거 -->
+                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                <!--// 에러 문구 -->
+                                            </div>
+                                        </div>
+                                        <!--// col  -->
+                                    </div>
+                                    <!--// row -->
+                                    <!-- row -->
+                                    <div class="form-row">
+                                        <!-- col  -->
+                                        <div class="col">
+                                            <div class="form-label">미리알림</div>
+                                            <div class="form-group">
+                                                <div class="multi-group">
+                                                    <!-- input group : class="input-group is-error" -->
+                                                    <div class="input-group w-190">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="1~3">
+                                                        <label for="input-text" class="hidden">미리알림</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <div class="input-text">일 전부터</div>
                                                 </div>
                                                 <!-- 에러 문구 : hidden 제거 -->
                                                 <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
