@@ -12646,11 +12646,7 @@ input.is-invalid[type=url]:focus, .ag-date-field-input-wrapper input.is-invalid[
 ========================================================================== */
 /* Function
 ========================================================================== */
-/* Colors
-========================================================================== */
 /* Mixin
-========================================================================== */
-/* Media-query
 ========================================================================== */
 /* Reset
 ========================================================================== */
@@ -13758,6 +13754,13 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   gap: 0px;
   text-align: center;
 }
+.input-form-area .form-wrap .form-row .form-group .input-txt.tit, .search-form-area .form-wrap .form-row .form-group .input-txt.tit {
+  padding-right: 2.5rem;
+}
+.input-form-area .form-wrap .form-row .form-group .input-txt.cont, .search-form-area .form-wrap .form-row .form-group .input-txt.cont {
+  padding-right: 2.5rem;
+  min-height: 12.94rem;
+}
 .input-form-area .form-wrap .form-row .form-group .input-badge-group, .search-form-area .form-wrap .form-row .form-group .input-badge-group {
   width: 100%;
   flex: 1;
@@ -14334,7 +14337,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   margin: 0;
 }
 
-/* Tags
+/* Badge
 ========================================================================== */
 .badge {
   padding: 0.25rem 0.5rem;
@@ -14422,7 +14425,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   border-style: solid;
 }
 
-.btn.btn-grid[disabled], .input-file-group label.btn[disabled], .input-file-group label.btn-grid[disabled], .input-file-group label[disabled], .btn.btn-outline--round[disabled], .input-file-group label.btn-outline--round[disabled], .btn.btn-outline[disabled], .input-file-group label.btn-outline[disabled], .btn.btn-secondary[disabled], .input-file-group label.btn-secondary[disabled], .btn.btn-primary[disabled], .input-file-group label.btn-primary[disabled] {
+.btn.btn-icon[disabled], .input-file-group label.btn-icon[disabled], .btn.btn-grid[disabled], .input-file-group label.btn[disabled], .input-file-group label.btn-grid[disabled], .input-file-group label[disabled], .btn.btn-outline--round[disabled], .input-file-group label.btn-outline--round[disabled], .btn.btn-outline[disabled], .input-file-group label.btn-outline[disabled], .btn.btn-secondary[disabled], .input-file-group label.btn-secondary[disabled], .btn.btn-primary[disabled], .input-file-group label.btn-primary[disabled] {
   opacity: 1;
 }
 
@@ -14446,15 +14449,13 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   height: 2rem;
   font-size: 0.88rem;
   border-radius: 4px;
-  border-width: 1px !important;
 }
 .btn.btn-xsm, .input-file-group label.btn-xsm {
   padding: 0.25rem 0.19rem;
   min-width: 3.06rem;
   height: 1.75rem;
   font-size: 0.88rem;
-  border-radius: 4px;
-  border-width: 1px !important;
+  border-radius: 40px;
 }
 .btn.btn-xxsm, .input-file-group label {
   padding: 0.19rem 0.75rem;
@@ -14469,10 +14470,12 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   border-color: #384B5E;
 }
 .btn.btn-primary[disabled], .input-file-group label.btn-primary[disabled] {
+  color: #fff;
   border-color: #C8C8C8;
   background-color: #C8C8C8;
 }
-.btn.btn-primary.active, .input-file-group label.btn-primary.active, .btn.btn-primary:active, .input-file-group label.btn-primary:active, .btn.btn-primary:focus, .input-file-group label.btn-primary:focus, .btn.btn-primary:hover, .input-file-group label.btn-primary:hover {
+.btn.btn-primary:hover, .input-file-group label.btn-primary:hover, .btn.btn-primary:focus, .input-file-group label.btn-primary:focus, .btn.btn-primary:active, .input-file-group label.btn-primary:active, .btn.btn-primary.active, .input-file-group label.btn-primary.active {
+  color: #fff;
   background-color: #6C757D;
   border-color: #6C757D;
 }
@@ -14482,41 +14485,43 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   border-color: #3D6F94;
 }
 .btn.btn-secondary[disabled], .input-file-group label.btn-secondary[disabled] {
-  border-color: #C5CDD5;
-  background-color: #C5CDD5;
+  color: #fff;
+  border-color: #C8C8C8;
+  background-color: #C8C8C8;
 }
-.btn.btn-secondary.active, .input-file-group label.btn-secondary.active, .btn.btn-secondary:active, .input-file-group label.btn-secondary:active, .btn.btn-secondary:focus, .input-file-group label.btn-secondary:focus, .btn.btn-secondary:hover, .input-file-group label.btn-secondary:hover {
-  border-color: #6C757D;
+.btn.btn-secondary:hover, .input-file-group label.btn-secondary:hover, .btn.btn-secondary:focus, .input-file-group label.btn-secondary:focus, .btn.btn-secondary:active, .input-file-group label.btn-secondary:active, .btn.btn-secondary.active, .input-file-group label.btn-secondary.active {
+  color: #fff;
   background-color: #6C757D;
+  border-color: #6C757D;
 }
 .btn.btn-outline, .input-file-group label.btn-outline {
   color: #384B5E;
   background-color: #fff;
-  border-width: 2px;
   border-color: #384B5E;
 }
 .btn.btn-outline[disabled], .input-file-group label.btn-outline[disabled] {
   color: #C8C8C8;
   border-color: #C8C8C8;
+  background-color: #fff;
 }
-.btn.btn-outline.active, .input-file-group label.btn-outline.active, .btn.btn-outline:active, .input-file-group label.btn-outline:active, .btn.btn-outline:focus, .input-file-group label.btn-outline:focus, .btn.btn-outline:hover, .input-file-group label.btn-outline:hover {
+.btn.btn-outline:hover, .input-file-group label.btn-outline:hover, .btn.btn-outline:focus, .input-file-group label.btn-outline:focus, .btn.btn-outline:active, .input-file-group label.btn-outline:active, .btn.btn-outline.active, .input-file-group label.btn-outline.active {
   color: #6C757D;
+  background-color: #fff;
   border-color: #6C757D;
 }
 .btn.btn-outline--round, .input-file-group label.btn-outline--round {
-  color: #18191C;
+  color: #3D6F94;
   background-color: #fff;
-  border-width: 2px;
   border-color: #A5A5A5;
-  border-radius: 40px;
 }
 .btn.btn-outline--round[disabled], .input-file-group label.btn-outline--round[disabled] {
   color: #C8C8C8;
   border-color: #C8C8C8;
+  background-color: #fff;
 }
-.btn.btn-outline--round.active, .input-file-group label.btn-outline--round.active, .btn.btn-outline--round:active, .input-file-group label.btn-outline--round:active, .btn.btn-outline--round:focus, .input-file-group label.btn-outline--round:focus, .btn.btn-outline--round:hover, .input-file-group label.btn-outline--round:hover {
-  color: #fff;
-  background-color: #3D6F94;
+.btn.btn-outline--round:hover, .input-file-group label.btn-outline--round:hover, .btn.btn-outline--round:focus, .input-file-group label.btn-outline--round:focus, .btn.btn-outline--round:active, .input-file-group label.btn-outline--round:active, .btn.btn-outline--round.active, .input-file-group label.btn-outline--round.active {
+  color: #6C757D;
+  background-color: #fff;
   border-color: #3D6F94;
 }
 .btn.btn-grid, .input-file-group label.btn-grid, .input-file-group label {
@@ -14525,26 +14530,39 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   border-color: #6C757D;
 }
 .btn.btn-grid[disabled], .input-file-group label.btn[disabled], .input-file-group label.btn-grid[disabled], .input-file-group label[disabled] {
-  color: #C8C8C8;
+  color: #fff;
   border-color: #C8C8C8;
+  background-color: #C8C8C8;
 }
-.btn.btn-grid.active, .input-file-group label.btn-grid.active, .input-file-group label.active, .btn.btn-grid:active, .input-file-group label.btn-grid:active, .input-file-group label:active, .btn.btn-grid:focus, .input-file-group label.btn-grid:focus, .input-file-group label:focus, .btn.btn-grid:hover, .input-file-group label.btn-grid:hover, .input-file-group label:hover {
-  color: #18191C;
-  background-color: #E3E8ED;
+.btn.btn-grid:hover, .input-file-group label.btn-grid:hover, .input-file-group label:hover, .btn.btn-grid:focus, .input-file-group label.btn-grid:focus, .input-file-group label:focus, .btn.btn-grid:active, .input-file-group label.btn-grid:active, .input-file-group label:active, .btn.btn-grid.active, .input-file-group label.btn-grid.active, .input-file-group label.active {
+  color: #fff;
+  background-color: #18191C;
   border-color: #18191C;
 }
 .btn.btn-icon, .input-file-group label.btn-icon {
+  background-color: transparent;
+  border-color: transparent;
   padding: 0;
   border: 0;
   border-radius: 0;
   background-color: transparent;
 }
 .btn.btn-icon[disabled], .input-file-group label.btn-icon[disabled] {
-  border-color: transparent;
+  color: #fff;
+  border-color: #C8C8C8;
+  background-color: #C8C8C8;
 }
-.btn.btn-icon.active, .input-file-group label.btn-icon.active, .btn.btn-icon:active, .input-file-group label.btn-icon:active, .btn.btn-icon:focus, .input-file-group label.btn-icon:focus, .btn.btn-icon:hover, .input-file-group label.btn-icon:hover {
+.btn.btn-icon:hover, .input-file-group label.btn-icon:hover, .btn.btn-icon:focus, .input-file-group label.btn-icon:focus, .btn.btn-icon:active, .input-file-group label.btn-icon:active, .btn.btn-icon.active, .input-file-group label.btn-icon.active {
+  color: #fff;
   background-color: transparent;
   border-color: transparent;
+}
+.btn.btn-icon:hover, .input-file-group label.btn-icon:hover, .btn.btn-icon:focus, .input-file-group label.btn-icon:focus, .btn.btn-icon:active, .input-file-group label.btn-icon:active, .btn.btn-icon.active, .input-file-group label.btn-icon.active {
+  background-color: transparent;
+  border-color: transparent;
+}
+.btn.btn-icon[disabled], .input-file-group label.btn-icon[disabled] {
+  background-color: transparent;
 }
 
 .top-btn-area {

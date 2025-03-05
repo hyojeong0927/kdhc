@@ -1,10 +1,23 @@
 /* Button
 ========================================================================== */
-$button-size: ("lg", "md", "sm", "xsm", "xxsm");
-$button-types: ("primary", "secondary", "outline", "outline--round", "grid", "icon");
+$button-size: (
+    "lg": (96px, 42px, $btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg),
+    "md": (84px, 38px, $btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius),
+    "sm": (53px, 32px, $btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm),
+    "xsm": (49px, 28px, $btn-padding-y-xsm, $btn-padding-x-xsm, $btn-font-size-xsm, $btn-border-radius-xsm),
+    "xxsm": (50px, 26px, $btn-padding-y-xxsm, $btn-padding-x-xxsm, $btn-font-size-xxsm, $btn-border-radius-xxsm)
+);
+
+$button-types: (
+    "primary": ($primary, $primary, $gray-009),
+    "secondary": ($secondary, $secondary, $gray-009),
+    "outline": ($white, $primary, $gray-009),
+    "outline--round": ($white, $gray-003, $secondary),
+    "grid": ($blue-005, $gray-009, $gray-002),
+    "icon": (transparent, transparent, transparent)
+);
 
 %button-base {
-    // 공통 스타일
     display: inline-block;
     font-weight: $btn-font-weight;
     line-height: $btn-line-height;
@@ -12,163 +25,217 @@ $button-types: ("primary", "secondary", "outline", "outline--round", "grid", "ic
     font-family: $btn-font-family;
     border-style: solid;
 }
+
 %button-disabled {
-    opacity: $btn-disabled-opacity;   
+    opacity: $btn-disabled-opacity;
 }
 .btn {
     @extend %button-base;
-    @each $bs in $button-size {
+
+    @each $bs, $values in $button-size {
         &.btn-#{$bs} {
-           @if $bs == "lg" {
-                padding: rem($btn-padding-y-lg) rem($btn-padding-x-lg);
-                min-width: rem(96px);
-                height: rem(42px);
-                font-size: rem($btn-font-size-lg);
-                border-radius: $btn-border-radius-lg;
-            }
-            @else if $bs == "md" {
-                padding:  rem($btn-padding-y) rem($btn-padding-x);
-                min-width: rem(84px);
-                height: rem(38px);
-                font-size: rem($btn-font-size);
-                border-radius: $btn-border-radius;
-            }
-            @else if $bs == "sm" {
-                padding: rem($btn-padding-y-sm) rem($btn-padding-x-sm);
-                min-width: rem(53px);
-                height: rem(32px);
-                font-size: rem($btn-font-size-sm);
-                border-radius: $btn-border-radius-sm;
-                border-width: 1px !important;
-            }
-            @else if $bs == "xsm" {
-                padding: rem($btn-padding-y-xsm) rem($btn-padding-x-xsm);
-                min-width: rem(49px);
-                height: rem(28px);
-                font-size: rem($btn-font-size-xsm);
-                border-radius: $btn-border-radius-sm;
-                border-width: 1px !important;
-            }
-            @else if $bs == "xxsm" {
-                padding: rem($btn-padding-y-xxsm) rem($btn-padding-x-xxsm);
-                min-width: rem(50px);
-                height: rem(26px);
-                font-size: rem($btn-font-size-xxsm);
-                border-radius: $btn-border-radius-xxsm;
-            }
+            padding: rem(nth($values, 3)) rem(nth($values, 4));
+            min-width: rem(nth($values, 1));
+            height: rem(nth($values, 2));
+            font-size: rem(nth($values, 5));
+            border-radius: nth($values, 6);
         }
     }
-    @each $bt in $button-types {
+    @each $bt, $colors in $button-types {
         &.btn-#{$bt} {
-            @if $bt == "primary" {
-                color: $btn-link-color;
-                background-color: $primary;
-                border-color: $primary;
-                &[disabled] {
-                    border-color: $btn-disabled;
-                    background-color: $btn-disabled-bg;
-                    @extend %button-disabled;
-                }
-                &.active,
-                &:active,
-                &:focus,
-                &:hover {
-                    background-color: $gray-009;
-                    border-color: $gray-009;
-                }
+            color: get-color($bt, $colors);
+            background-color: nth($colors, 1);
+            border-color: nth($colors, 2);            
+
+            &[disabled] {
+                color: if($bt =="outline" or $bt =="outline--round", $btn-disabled, $btn-link-color);
+                border-color: $btn-disabled;
+                background-color: if($bt == "outline" or $bt == "outline--round", $white, $btn-disabled-bg);
+                @extend %button-disabled;
             }
-            @else if $bt == "secondary" {
-                color: $btn-link-color;
-                background-color: $secondary;
-                border-color: $secondary;
-                &[disabled] {
-                    border-color: $gray-007;
-                    background-color: $gray-007;
-                    @extend %button-disabled;
-                }
-                &.active,
-                &:active,
-                &:focus,
-                &:hover {
-                    border-color: $gray-009;
-                    background-color: $gray-009;
-                }
+
+            &:hover,
+            &:focus,
+            &:active,
+            &.active {
+                color: if($bt =="outline" or $bt =="outline--round", $gray-009, $btn-link-color);
+                background-color: if($bt =="outline" or $bt =="outline--round", $white, nth($colors, 3));
+                border-color: nth($colors, 3);
             }
-            @else if $bt == "outline" {
-                color: $primary;
-                background-color: $white;
-                border-width: $btn-border-width;
-                border-color: $primary;
-                &[disabled] {
-                    color: $btn-disabled;
-                    border-color: $btn-disabled;
-                    @extend %button-disabled;
-                }
-                &.active,
-                &:active,
-                &:focus,
-                &:hover {
-                    color: $gray-009;
-                    border-color: $gray-009;
-                }
-            }
-            @else if $bt == "outline--round" {
-                color: $gray-002;
-                background-color: $white;
-                border-width: $btn-border-width;
-                border-color: $gray-003;
-                border-radius: $btn-border-radius-xlg;
-                &[disabled] {
-                    color: $btn-disabled;
-                    border-color: $btn-disabled;
-                    @extend %button-disabled;
-                }
-                &.active,
-                &:active,
-                &:focus,
-                &:hover {
-                    color: $white;
-                    background-color: $secondary;
-                    border-color: $secondary;
-                }
-            }
-            @else if $bt == "grid" {
-                color: $gray-009;
-                background-color: $blue-005;
-                border-color: $gray-009;
-                &[disabled] {
-                    color: $btn-disabled;
-                    border-color: $btn-disabled;
-                    @extend %button-disabled;
-                }
-                &.active,
-                &:active,
-                &:focus,
-                &:hover {
-                    color: $gray-002;
-                    background-color: $blue-005;
-                    border-color: $gray-002;
-                }
-            }
-            @else if $bt == "icon" {
+
+            @if $bt == "icon" {
                 padding: 0;
                 border: 0;
                 border-radius: 0;
                 background-color: transparent;
-                &[disabled] {
-                    border-color: transparent;
-                }
-                &.active,
-                &:active,
+
+                &:hover,
                 &:focus,
-                &:hover {
+                &:active,
+                &.active {
                     background-color: transparent;
                     border-color: transparent;
+                }
+                &[disabled] {
+                    background-color: transparent;
                 }
             }
         }
     }
 }
+
+    // @each $bs in $button-size {
+    //     &.btn-#{$bs} {
+    //        @if $bs == "lg" {
+    //             padding: rem($btn-padding-y-lg) rem($btn-padding-x-lg);
+    //             min-width: rem(96px);
+    //             height: rem(42px);
+    //             font-size: rem($btn-font-size-lg);
+    //             border-radius: $btn-border-radius-lg;
+    //         }
+    //         @else if $bs == "md" {
+    //             padding:  rem($btn-padding-y) rem($btn-padding-x);
+    //             min-width: rem(84px);
+    //             height: rem(38px);
+    //             font-size: rem($btn-font-size);
+    //             border-radius: $btn-border-radius;
+    //         }
+    //         @else if $bs == "sm" {
+    //             padding: rem($btn-padding-y-sm) rem($btn-padding-x-sm);
+    //             min-width: rem(53px);
+    //             height: rem(32px);
+    //             font-size: rem($btn-font-size-sm);
+    //             border-radius: $btn-border-radius-sm;
+    //             border-width: 1px !important;
+    //         }
+    //         @else if $bs == "xsm" {
+    //             padding: rem($btn-padding-y-xsm) rem($btn-padding-x-xsm);
+    //             min-width: rem(49px);
+    //             height: rem(28px);
+    //             font-size: rem($btn-font-size-xsm);
+    //             border-radius: $btn-border-radius-sm;
+    //             border-width: 1px !important;
+    //         }
+    //         @else if $bs == "xxsm" {
+    //             padding: rem($btn-padding-y-xxsm) rem($btn-padding-x-xxsm);
+    //             min-width: rem(50px);
+    //             height: rem(26px);
+    //             font-size: rem($btn-font-size-xxsm);
+    //             border-radius: $btn-border-radius-xxsm;
+    //         }
+    //     }
+    // }
+    // @each $bt in $button-types {
+    //     &.btn-#{$bt} {
+    //         @if $bt == "primary" {
+    //             color: $btn-link-color;
+    //             background-color: $primary;
+    //             border-color: $primary;
+    //             &[disabled] {
+    //                 border-color: $btn-disabled;
+    //                 background-color: $btn-disabled-bg;
+    //                 @extend %button-disabled;
+    //             }
+    //             &.active,
+    //             &:active,
+    //             &:focus,
+    //             &:hover {
+    //                 background-color: $gray-009;
+    //                 border-color: $gray-009;
+    //             }
+    //         }
+    //         @else if $bt == "secondary" {
+    //             color: $btn-link-color;
+    //             background-color: $secondary;
+    //             border-color: $secondary;
+    //             &[disabled] {
+    //                 border-color: $gray-007;
+    //                 background-color: $gray-007;
+    //                 @extend %button-disabled;
+    //             }
+    //             &.active,
+    //             &:active,
+    //             &:focus,
+    //             &:hover {
+    //                 border-color: $gray-009;
+    //                 background-color: $gray-009;
+    //             }
+    //         }
+    //         @else if $bt == "outline" {
+    //             color: $primary;
+    //             background-color: $white;
+    //             border-width: $btn-border-width;
+    //             border-color: $primary;
+    //             &[disabled] {
+    //                 color: $btn-disabled;
+    //                 border-color: $btn-disabled;
+    //                 @extend %button-disabled;
+    //             }
+    //             &.active,
+    //             &:active,
+    //             &:focus,
+    //             &:hover {
+    //                 color: $gray-009;
+    //                 border-color: $gray-009;
+    //             }
+    //         }
+    //         @else if $bt == "outline--round" {
+    //             color: $gray-002;
+    //             background-color: $white;
+    //             border-width: $btn-border-width;
+    //             border-color: $gray-003;
+    //             border-radius: $btn-border-radius-xlg;
+    //             &[disabled] {
+    //                 color: $btn-disabled;
+    //                 border-color: $btn-disabled;
+    //                 @extend %button-disabled;
+    //             }
+    //             &.active,
+    //             &:active,
+    //             &:focus,
+    //             &:hover {
+    //                 color: $white;
+    //                 background-color: $secondary;
+    //                 border-color: $secondary;
+    //             }
+    //         }
+    //         @else if $bt == "grid" {
+    //             color: $gray-009;
+    //             background-color: $blue-005;
+    //             border-color: $gray-009;
+    //             &[disabled] {
+    //                 color: $btn-disabled;
+    //                 border-color: $btn-disabled;
+    //                 @extend %button-disabled;
+    //             }
+    //             &.active,
+    //             &:active,
+    //             &:focus,
+    //             &:hover {
+    //                 color: $gray-002;
+    //                 background-color: $blue-005;
+    //                 border-color: $gray-002;
+    //             }
+    //         }
+    //         @else if $bt == "icon" {
+    //             padding: 0;
+    //             border: 0;
+    //             border-radius: 0;
+    //             background-color: transparent;
+    //             &[disabled] {
+    //                 border-color: transparent;
+    //             }
+    //             &.active,
+    //             &:active,
+    //             &:focus,
+    //             &:hover {
+    //                 background-color: transparent;
+    //                 border-color: transparent;
+    //             }
+    //         }
+    //     }
+    // }
+
 
 // button area
 .top-btn-area {

@@ -18,63 +18,93 @@
              <table class="tbl">
                 <caption>입력 필드</caption>
                 <colgroup>
-                    <col width="10%" />
-                    <col width="45%" />
-                    <col width="45%" />
+                    <col width="15%" />
+                    <col width="28.333%" />
+                    <col width="28.333%" />
+                    <col width="28.333%" />
                 </colgroup>
                 <thead>
                     <tr>
                         <th>구분</th>
                         <th>default</th>
+                        <th>hover</th>
                         <th>disabled</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th>primary</th>
+                        <th>Primary Large</th>
                         <td>
-                            <button type="button" class="btn btn-primary btn-lg">Primary large</button>
-                            <button type="button" class="btn btn-primary btn-md">Primary medium</button>
-                            <button type="button" class="btn btn-primary btn-sm">Primary small</button>
+                            <button type="button" class="btn btn-primary btn-lg">Primary Large</button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-primary btn-lg" disabled>Primary large disabled</button>
-                            <button type="button" class="btn btn-primary btn-md" disabled>Primary medium disabled</button>
-                            <button type="button" class="btn btn-primary btn-sm" disabled>Primary small disabled</button>
+                            <button type="button" class="btn btn-primary btn-lg active">Primary Large hover</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary btn-lg" disabled>Primary Large disabled</button>
+                        </td>
+                    </tr>
+                    <tr> 
+                        <th>Secondary Medium & Small</th>
+                        <td>
+                            <button type="button" class="btn btn-secondary btn-md">Secondary Medium</button>
+                            <button type="button" class="btn btn-secondary btn-sm">Secondary Small</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-secondary btn-md active">Secondary Medium hover</button>
+                            <button type="button" class="btn btn-secondary btn-sm active">Secondary Small hover</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-secondary btn-md" disabled>Secondary Medium disabled</button>
+                            <button type="button" class="btn btn-secondary btn-sm" disabled>Secondary Small disabled</button>
                         </td>
                     </tr>
                     <tr>
-                        <th>secondary</th>
+                        <th>Outline Medium & Small</th>
                         <td>
-                            <button type="button" class="btn btn-secondary btn-lg">Secondary large</button>
-                            <button type="button" class="btn btn-secondary btn-md">Secondary medium</button>
-                            <button type="button" class="btn btn-secondary btn-sm">Secondary small</button>
+                            <button type="button" class="btn btn-outline btn-md">Outline Medium</button>
+                            <button type="button" class="btn btn-outline btn-sm">Outline Small</button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-secondary btn-lg" disabled>Secondary large disabled</button>
-                            <button type="button" class="btn btn-secondary btn-md" disabled>Secondary medium disabled</button>
-                            <button type="button" class="btn btn-secondary btn-sm" disabled>Secondary small disabled</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>outline</th>
-                        <td>
-                            <button type="button" class="btn btn-outline btn-lg">Outline large</button>
-                            <button type="button" class="btn btn-outline btn-md">Outline medium</button>
-                            <button type="button" class="btn btn-outline btn-sm">Outline small</button>
+                            <button type="button" class="btn btn-outline btn-md active">Outline Medium hover</button>
+                            <button type="button" class="btn btn-outline btn-sm active">Outline Small hover</button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-outline btn-lg" disabled>Outline large disabled</button>
-                            <button type="button" class="btn btn-outline btn-md" disabled>Outline medium disabled</button>
-                            <button type="button" class="btn btn-outline btn-sm" disabled>Outline small disabled</button>
+                            <button type="button" class="btn btn-outline btn-md" disabled>Outline Medium disabled</button>
+                            <button type="button" class="btn btn-outline btn-sm" disabled>Outline Small disabled</button>
                         </td>
                     </tr>
                     <tr>
                         <th>Grid</th>
                         <td>
-                            <button type="button" class="btn btn-grid btn-xxsm">Grid</button>
+                            <button type="button" class="btn btn-grid btn-xxsm">Grid</button>    
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-grid btn-xxsm active">Grid</button>
                         </td>
                         <td><button type="button" class="btn btn-grid btn-xxsm" disabled>Grid</button></td>
+                    </tr>
+                    <tr>
+                        <th>Outline Round</th>
+                        <td>
+                            <button class="btn btn-outline--round btn-xsm">1개월</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline--round btn-xsm active">3개월</button>
+                        </td>
+                        <td><button class="btn btn-outline--round btn-xsm" disabled>12개월</button></td>
+                    </tr>
+                    <tr>
+                        <th>Icon</th>
+                        <td>
+                            <button type="button" class="btn btn-icon"><i class="icon del-trash"></i></button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-icon acitve"><i class="icon del-trash"></i></button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-icon" disabled><i class="icon del-trash"></i></button>
+                        </td>
                     </tr>
                 </tbody>
              </table>

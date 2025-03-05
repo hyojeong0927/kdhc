@@ -1,39 +1,304 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-kdhc-mode="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KDHC</title>
     <!-- css -->
-    <link rel="stylesheet" href="../../assets/css/index.css">
+    <link rel="stylesheet" href="../../css/index.css">
+    <!-- script -->
+    <script src="../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script type="module" src="../../assets/js/common.js"></script>
 </head>
+
 <body>
-    <!-- container -->
-    <section class="container">
-        <!-- header -->
-        <header>
-            <script src="../../assets/js/layouts/header.js" type="module"></script>
+    <div id="wrap" class="kdhc-wrap">
+
+        <!-- 본문 바로가기 영역 -->
+        <div id="kdhc-skip-link">
+            <a href="#contents">본문 바로가기</a>
+        </div>
+        <!--// 본문 바로가기 영역  -->
+
+        <!-- 상단 배너영역 -->
+        <div id="kdhc-masthead">
+            <script type="module" src="../../assets/js/layouts/top-banner.js"></script>
+        </div>
+        <!-- // 상단 배너영역 -->
+
+        <!-- 헤더 영역 -->
+        <header id="kdhc-header" data-menu='[
+            { "title": "관리보안", "url": "#" },
+            { "title": "물리보안", "url": "#" },
+            { "title": "기술보안", "url": "#"  },
+            { "title": "보안정책", "url": "#" },
+            { "title": "클린PC", "url": "#" },
+            { "title": "정보자산", "url": "#"}]'>
+            <script type="module" src="../../assets/js/layouts/header.js"></script>
         </header>
-        <!--// header -->
-        <!-- aside -->
-        <aside>
-            <script src="../../assets/js/layouts/lnb.js" type="module"></script>
-        </aside>
-        <!--// aside -->
-        <!-- main -->
-        <main class="main">
-            <article class="contents">
-                <div class="search">search</div>
-                <div class="data-tbl">data</div>
-            </article>
-        </main>
-        <!--// main -->
-        <!-- footer -->
-        <footer>
-            <script src="../../assets/js/layouts/footer.js" type="module"></script>
+        <!--// 헤더 영역 -->
+
+        <!-- 컨테이너 영역 -->
+        <section id="kdhc-container">
+            <div class="inner">
+                <!-- 사이드 영역 -->
+                <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
+                <aside id="sidebar" class="sidebar" data-menu='[
+                        { "name": "지침 및 매뉴얼", "url": "#" },
+                        { "name": "공지게시판", "url": "#", "active": true },
+                        { "name": "결재관리", "url": "#" },
+                        { "name": "정기점검", "url": "#" },
+                        { "name": "전자결재", "url": "#" }]'>
+                </aside>
+                <!--// 사이드 영역 -->
+
+                <main class="main-contents">
+                    <!-- breadcrumbs start : 현재 히든 처리 추후 변경 가능 -->
+                    <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" data-breadcrumb='[
+                            { "name": "홈", "url": "#" },
+                            { "name": "공지게시판", "url": "", "active": true }
+                        ]' data-visible="false">
+                    </nav>
+                    <!--// breadcrumbs end -->
+
+                    <!-- 컨텐츠 영역 -->
+                    <div id="contents" class="contents">
+
+                        <!-- page title start -->
+                        <div class="page-title-wrap" data-title="공지게시판" data-badge="" data-badge-visible="false">
+                        </div>
+                        <!--// page title end -->
+
+                        <!-- search start-->
+                        <article class="search-form-area">
+                            <!-- form start -->
+                            <form>
+                                <fieldset>
+
+                                    <!-- form-wrap start -->
+                                    <div class="form-wrap type02">
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label">게시일자</div>
+                                                <div class="form-group">
+                                                    <!-- datepicker-group start -->
+                                                    <div class="datepicker-group">
+                                                        <div class="datepicker-btn-group">
+                                                            <button class="btn btn-outline--round btn-xsm active">1개월</button>
+                                                            <button class="btn btn-outline--round btn-xsm">3개월</button>
+                                                            <button class="btn btn-outline--round btn-xsm">6개월</button>
+                                                            <button class="btn btn-outline--round btn-xsm" disabled>12개월</button>
+                                                        </div>
+                                                        <!-- class="input-date-group is-error" -->
+                                                        <div class="input-date-group">
+                                                            <input type="text" id="startDate" class="form-control" value="" placeholder="YYYY-MM-DD" readonly>
+                                                            <label class="input-group-text" for="startDate"><i class="icon calendar"></i></label>
+                                                        </div>
+                                                        <div class="to">-</div>
+                                                        <!-- class="input-date-group is-error" -->
+                                                        <div class="input-date-group">
+                                                            <input type="text" id="endDate" class="form-control" value="" placeholder="YYYY-MM-DD" readonly>
+                                                            <label class="input-group-text" for="endDate"><i class="icon calendar"></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <!--// datepicker-group end -->
+                                                    <!-- 에러 문구 : hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--// col  -->
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label">게시물명</div>
+                                                <div class="form-group">
+                                                    <!-- input group : class="input-group is-error" -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="게시물명" value="">
+                                                        <label for="input-text" class="hidden">게시물명</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--// col  -->
+
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row search-btn">
+                                            <button type="button" class="btn btn-primary lg">조회</button>
+                                        </div>
+                                        <!--// row end -->
+                                    </div>
+                                    <!--// form-wrap end -->
+
+                                </fieldset>
+                            </form>
+                            <!--// form end -->
+                        </article>
+                        <!--// search end-->
+
+                        <!-- grid top start -->
+                        <article class="grid-top-area">
+                            <!-- grid top left start -->
+                            <div class="grid-top-left">
+                                <select class="form-select sm" aria-label="Default select" required>
+                                    <option value="">선택</option>
+                                    <option value="10" selected>10개씩 보기</option>
+                                    <option value="20">20개씩 보기</option>
+                                    <option value="30">30개씩 보기</option>
+                                </select>
+                            </div>
+                            <!--// grid top left end -->
+                        </article>
+                        <!--// grid top end -->
+                        
+                        <!-- grid wrap start -->
+                        <article class="grid-wrap">
+                            <div id="sampleGrid" class="normal"></div>
+                        </article>
+                        <!--// grid wrap end -->
+                        
+                        <!-- grid bottom start -->
+                        <article class="grid-bottom-area">
+                            <!-- 페이징 -->
+                            <nav class="page-navigation" aria-label="page navigation">
+                                <script type="module" src="../../assets/js/components/pagination.js"></script>
+                            </nav>
+                            <!--// 페이징 -->
+                        </article>
+                        <!--// grid bottom end -->
+                      
+
+                    </div>
+                    <!--// 컨텐츠 영역 -->
+
+                </main>
+            </div>
+        </section>
+        <!--// 컨테이너 영역 -->
+
+        <!-- 푸터 영역 -->
+        <footer id="kdhc-footer">
+            <script type="module" src="../../assets/js/layouts/footer.js"></script>
         </footer>
-        <!--// footer -->
-    </section>
-    <!--// container -->
+        <!--// 푸터 영역 -->
+
+    </div>
+    <!-- script wrap -->
+    <script type="module">
+        const rowData = [
+            {
+                field01: "",
+                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field03: "2024.12.10",
+            },
+            {
+                field01: "",
+                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field03: "2024.12.10",
+            },
+            {
+                field01: "",
+                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field03: "2024.12.10",
+            },
+            {
+                field01: "",
+                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field03: "2024.12.10",
+            },
+            {
+                field01: "",
+                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field03: "2024.12.10",
+            },
+            {
+                field01: "",
+                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field03: "2024.12.10",
+            },
+            {
+                field01: "",
+                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field03: "2024.12.10",
+            },
+            {
+                field01: "",
+                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field03: "2024.12.10",
+            },
+            {
+                field01: "",
+                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field03: "2024.12.10",
+            },
+            {
+                field01: "",
+                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field03: "2024.12.10",
+            },
+            {
+                field01: "",
+                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field03: "2024.12.10",
+            },
+        ];
+        const columnDefs = [
+            {
+                headerName: "순번",
+                headerClass: "center",
+                field: "field01",
+                width: 180,
+                cellClass: "cell-normal",
+                valueGetter: "node.rowIndex + 1"
+            },
+            {
+                headerName: "게시물명",
+                headerClass: "center",
+                field: "field02",
+                minWidth: 600,
+                flex: 1,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "게시일자",
+                headerClass: "center",
+                field: "field03",
+                width: 181,
+                cellClass: "cell-normal",
+            },
+        ];
+        let sampleGridApi;
+
+        const sampleGridOptions = {
+            defaultColDef: {
+                editable: false, // edit 사용 유무
+                autoHeight: true,
+                sortable: true, // sort 사용 유무
+            },
+            columnDefs,
+            headerHeight: 39, // header height
+            rowData: rowData,
+            rowHeight: 47, // row height
+            domLayout: "autoHeight", // 2025-02-19 추가 옵션
+            suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
+            // data empty style
+            overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
+        };
+        const sampleGridDiv = document.querySelector("#sampleGrid");
+        sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
+    </script>
+    <!--// script wrap -->
+
+    <!-- modal wrap -->
+    <!--// modal wrap -->
 </body>
+
 </html>
