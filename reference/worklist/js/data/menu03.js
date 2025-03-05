@@ -157,7 +157,7 @@ const menu03Projects = [
         type: "",
         folder: "usr",
         file: "SB-USR-034.html",
-        status: "진행대기",
+        status: "진행중",
         start: "2025-03-04",
         end: "2025-03-07",
         modDate: "",

@@ -80,17 +80,17 @@
                                 <fieldset>
                         
                                     <!-- form-wrap start -->
-                                    <div class="form-wrap type05">
+                                    <div class="form-wrap type01 form-col-2">
                                         <!-- row -->
                                         <div class="form-row">
                                             <!-- col -->
                                             <div class="col">
-                                                <div class="form-label">문서코드</div>
+                                                <div class="form-label">지사</div>
                                                 <div class="form-group">
                                                     <!-- input-group is-error : 에러-->
                                                     <div class="input-group">
-                                                        <input type="text" id="input-text" class="form-control" placeholder="문서코드 입력" value="">
-                                                        <label for="input-text" class="hidden">문서코드</label>
+                                                        <input type="text" id="input-text" class="form-control" placeholder="지사 입력" value="판교지사" disabled>
+                                                        <label for="input-text" class="hidden">지사</label>
                                                     </div>
                                                     <!--// input group -->
                                                     <!-- 에러 문구 -->
@@ -104,13 +104,9 @@
                                                 <div class="form-label">주기</div>
                                                 <div class="form-group">
                                                     <!-- input search group is-error : 에러 -->
-                                                    <div class="select-group">
-                                                        <select class="form-select" aria-label="Default select" required>
-                                                            <option value="">선택</option>
-                                                            <option value="1" selected>전체</option>
-                                                            <option value="2">Two</option>
-                                                            <option value="3">Three</option>
-                                                        </select>
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search2" value="" placeholder="기안자 명">
+                                                        <label class="input-group-text hidden" for="search2"><i class="icon search"></i></label>
                                                     </div>
                                                     <!--// input search group end -->
                                                     <!-- 에러 문구 : hidden -->
@@ -125,7 +121,7 @@
                                         <div class="form-row">
                                             <!-- col -->
                                             <div class="col">
-                                                <div class="form-label">기안부서</div>
+                                                <div class="form-label">문서명</div>
                                                 <div class="form-group">
                                                     <!-- select-group is-error : 에러 -->
                                                     <div class="select-group">
@@ -147,8 +143,8 @@
                                             <div class="col">
                                                 <div class="form-label">결재상태</div>
                                                 <div class="form-group">
-                                                    <!-- form select group-->
-                                                    <div class="select-group is-error">
+                                                    <!-- form select group : class="select-group is-error" -->
+                                                    <div class="select-group">
                                                         <select class="form-select" aria-label="Default select" required>
                                                             <option value="">선택</option>
                                                             <option value="1" selected>전체</option>
@@ -156,30 +152,12 @@
                                                             <option value="3">Three</option>
                                                         </select>
                                                     </div>
-                                                    <!-- 에러 문구 -->
+                                                    <!-- 에러 문구 : hidden 제거 -->
                                                     <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
                                             <!--// col -->
-                                        </div>
-                                        <!-- row -->
-                                         <div class="form-row">
-                                           
-                                            <!-- col -->
-                                            <div class="col">
-                                                <div class="form-label">지사</div>
-                                                <div class="form-group">
-                                                    <!--  -->
-                                                    <div class="input-group">
-                                                        <input type="text" id="input-text" class="form-control" placeholder="지사 입력" value="판교지사" disabled>
-                                                        <label for="input-text" class="hidden">지사</label>
-                                                    </div>
-                                                    <!--  -->
-                                                </div>
-                                            </div>
-                                            <!--// col -->
-                                            
                                         </div>
                                         <!-- row -->
                                         <div class="form-row search-btn">
@@ -209,7 +187,7 @@
                             <!--// grid top left end -->
                         
                             <!-- grid top button start -->
-                            <div class="grid-top-btn" data-buttons='[{"text": "일괄결재"}, {"text": "출력", "class": "btn btn-secondary btn-sm"}]'></div>
+                            <!-- <div class="grid-top-btn" data-buttons='[{"text": "일괄결재"}, {"text": "출력", "class": "btn btn-secondary btn-sm"}]'></div> -->
                             <!--// grid top button end -->
 
                         </article>
@@ -253,7 +231,7 @@
                 field02: "판교-25-0001",
                 field03: "사이버보안진단의날 보안점검 체크리스트",
                 field04: "2024.12.12 12:24:30",
-                field05: "1달",
+                field05: "월간",
                 field06: "step01",
             },
             {
@@ -261,7 +239,7 @@
                 field02: "판교-25-0001",
                 field03: "사이버보안진단의날 보안점검 체크리스트",
                 field04: "2024.12.12 12:24:30",
-                field05: "1달",
+                field05: "월간",
                 field06: "step01 reject",
             },
             {
@@ -269,7 +247,7 @@
                 field02: "판교-25-0001",
                 field03: "사이버보안진단의날 보안점검 체크리스트",
                 field04: "2024.12.12 12:24:30",
-                field05: "1달",
+                field05: "월간",
                 field06: "step02",
             },
             {
@@ -277,7 +255,7 @@
                 field02: "판교-25-0001",
                 field03: "사이버보안진단의날 보안점검 체크리스트",
                 field04: "2024.12.12 12:24:30",
-                field05: "1달",
+                field05: "월간",
                 field06: "step02 reject",
             },
             {
@@ -285,7 +263,7 @@
                 field02: "판교-25-0001",
                 field03: "사이버보안진단의날 보안점검 체크리스트",
                 field04: "2024.12.12 12:24:30",
-                field05: "1달",
+                field05: "월간",
                 field06: "step03",
             },
             {
@@ -293,7 +271,7 @@
                 field02: "판교-25-0001",
                 field03: "사이버보안진단의날 보안점검 체크리스트",
                 field04: "2024.12.12 12:24:30",
-                field05: "1달",
+                field05: "월간",
                 field06: "step03 reject",
             },
             {
@@ -301,7 +279,7 @@
                 field02: "판교-25-0001",
                 field03: "사이버보안진단의날 보안점검 체크리스트",
                 field04: "2024.12.12 12:24:30",
-                field05: "1달",
+                field05: "월간",
                 field06: "done",
             },
             {
@@ -309,7 +287,7 @@
                 field02: "판교-25-0001",
                 field03: "사이버보안진단의날 보안점검 체크리스트",
                 field04: "2024.12.12 12:24:30",
-                field05: "1달",
+                field05: "월간",
                 field06: "done",
             },
             {
@@ -317,7 +295,7 @@
                 field02: "판교-25-0001",
                 field03: "사이버보안진단의날 보안점검 체크리스트",
                 field04: "2024.12.12 12:24:30",
-                field05: "1달",
+                field05: "월간",
                 field06: "done",
             },
             {
@@ -325,7 +303,7 @@
                 field02: "판교-25-0001",
                 field03: "사이버보안진단의날 보안점검 체크리스트",
                 field04: "2024.12.12 12:24:30",
-                field05: "1달",
+                field05: "월간",
                 field06: "done",
             },
             {
@@ -333,7 +311,7 @@
                 field02: "판교-25-0001",
                 field03: "사이버보안진단의날 보안점검 체크리스트",
                 field04: "2024.12.12 12:24:30",
-                field05: "1달",
+                field05: "월간",
                 field06: "done",
             },
             {
@@ -341,7 +319,7 @@
                 field02: "판교-25-0001",
                 field03: "사이버보안진단의날 보안점검 체크리스트",
                 field04: "2024.12.12 12:24:30",
-                field05: "1달",
+                field05: "월간",
                 field06: "done",
             },
         ];
@@ -362,7 +340,7 @@
                 cellClass: "cell-normal",
             },
             {
-                headerName: "문서명",
+                headerName: "점검명",
                 headerClass: "center",
                 field: "field03",
                 minWidth: 400,
@@ -370,7 +348,7 @@
                 cellClass: "cell-normal",
             },
             {
-                headerName: "마감일자",
+                headerName: "마감기간",
                 headerClass: "center",
                 field: "field04",
                 width: 220,
