@@ -1,42 +1,56 @@
 document.addEventListener('DOMContentLoaded', () => {
     const selectAllCheckbox = document.getElementById('selectAllCheckbox');
-    const checkboxes = document.querySelectorAll('.checkboxes');
+    const checkboxes = document.querySelectorAll('.checkboxes:not(#selectAllCheckbox)');
 
-    selectAllCheckbox.addEventListener('change', (event) => {
-        checkboxes.forEach(checkbox => checkbox.checked = event.target.checked);
+    if (!selectAllCheckbox || checkboxes.length === 0) {
+        console.warn("체크박스 요소를 찾을 수 없습니다.");
+        return;
+    }
+
+    selectAllCheckbox.addEventListener('change', () => {
+        checkboxes.forEach(checkbox => checkbox.checked = selectAllCheckbox.checked);
     });
 
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', () => {
-            selectAllCheckbox.checked = [...checkboxes].every(cb => cb.checked);
+            const allChecked = [...checkboxes].every(cb => cb.checked);
+            selectAllCheckbox.checked = allChecked;
         });
     });
-});
 
-// 정기점검 관리
-document.addEventListener("DOMContentLoaded", function () {
-    const radioButtons = document.querySelectorAll("input[name='typeValue']"); // 점검 주기 유형
+    const allChecked = [...checkboxes].every(cb => cb.checked);
+    selectAllCheckbox.checked = allChecked;
 
-    const weekSelection = document.querySelector("#valueWeek"); // 주간
-    const monthSelection = document.querySelector("#valueMonth"); // 월간
-    const quarterSelection = document.querySelector("#valueQuarter"); // 분기
-    const halfSelection = document.querySelector("#valueHalf"); // 반기
-    const yearSelection = document.querySelector("#valueYear"); // 연간
+    // 정기점검 관리
+    const sections = {
+        week: document.querySelector("#valueWeek"),
+        month: document.querySelector("#valueMonth"),
+        quarter: document.querySelector("#valueQuarter"),
+        half: document.querySelector("#valueHalf"),
+        year: document.querySelector("#valueYear"),
+    };
 
-    weekSelection.closest("#valueWeek").style.display = "none";
-    monthSelection.closest("#valueMonth").style.display = "none";
-    quarterSelection.closest("#valueQuarter").style.display = "none";
-    halfSelection.closest("#valueHalf").style.display = "none";
-    yearSelection.closest("#valueYear").style.display = "none";
+    // 모든 입력 필드 숨기기 (초기 상태)
+    Object.values(sections).forEach(section => section.style.display = "none");
 
-    radioButtons.forEach((radio) => {
+    // 라디오 버튼 선택 시 필드 표시
+    const radioButtons = document.querySelectorAll("input[name='typeValue']");
+
+    radioButtons.forEach(radio => {
         radio.addEventListener("change", function () {
-            if (this.value === "week") {
-                weekSelection.closest("#valueWeek").style.display = "flex";
-            } else {
-                weekSelection.closest("#valueWeek").style.display = "none";
+            // 모든 입력 필드 숨기기
+            Object.values(sections).forEach(section => section.style.display = "none");
 
+            // 선택된 값에 해당하는 입력 필드만 표시
+            if (sections[this.value]) {
+                sections[this.value].style.display = "flex"; // 또는 "block"
             }
         });
     });
+
+    // ✅ 기본 선택된 값 반영 (초기화)
+    const checkedRadio = document.querySelector("input[name='typeValue']:checked");
+    if (checkedRadio && sections[checkedRadio.value]) {
+        sections[checkedRadio.value].style.display = "flex";
+    }
 });
