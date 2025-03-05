@@ -1,6 +1,11 @@
 /* Modal
 ========================================================================== */
-$modal-size: ('lg', 'md', 'smd', 'sm');
+$modal-sizes: (
+  "lg": 1400px,
+  "md": 800px,
+  "smd": 600px,
+  "sm": 400px
+);
 
 %modal-base {
     .modal-content {
@@ -8,22 +13,26 @@ $modal-size: ('lg', 'md', 'smd', 'sm');
         border: none;
         background-color: $body-bg;
     }
+
     .modal-header {
         padding: rem(20px) rem(24px) rem(16px);
         min-height: rem(68px);
         border-top-right-radius: 0;
         border-top-left-radius: 0;
         background-color: $primary;
+
         .modal-title {
             color: $white;
             @include font-style($h3-font-size, $font-weight-bold, rem(32px));
         }
+
         .btn-close {
             width: rem(32px);
             height: rem(32px);
             @extend .icon;
             @extend .close;
             opacity: 1;
+
             &:focus,
             &:focus-visible,
             &:focus-within {
@@ -31,12 +40,11 @@ $modal-size: ('lg', 'md', 'smd', 'sm');
             }
         }
     }
+
     .modal-body {
         padding: rem(20px) rem(24px) rem(20px);
-        .inner {
-            
-        }
-    } 
+    }
+
     .modal-footer {
         gap: rem(8px);
         padding: 0 rem(24px) rem(24px);
@@ -49,92 +57,11 @@ $modal-size: ('lg', 'md', 'smd', 'sm');
 .modal {
     @extend %modal-base;
     
-    @each $ms in $modal-size {
-        .#{$ms} {
-            @if $ms == "lg" {
-                &.modal-dialog {
-                    width: rem(1400px);
-                    min-width: rem(1400px);
-                    max-width: rem(1400px);
-                }
-            }
-            @else if $ms == "md" {
-                &.modal-dialog {
-                    width: rem(800px);
-                    min-width: rem(800px);
-                    max-width: rem(800px);
-                }
-            }
-            @else if $ms == "smd" {
-                &.modal-dialog {
-                    width: rem(600px);
-                    min-width: rem(600px);
-                    max-width: rem(600px);
-                }
-            }
-        }   
+    @each $size, $width in $modal-sizes {
+        &.modal-#{$size} .modal-dialog {
+            width: rem($width);
+            min-width: rem($width);
+            max-width: rem($width);
+        }
     }
 }
-
-/* Modal
-========================================================================== */
-// $modal-sizes: (
-//   "lg": 1400px,
-//   "md": 800px,
-//   "smd": 600px,
-//   "sm": 400px // 추가 가능
-// );
-
-// %modal-base {
-//   .modal-content {
-//     border-radius: 0;
-//     border: none;
-//     background-color: $body-bg;
-//   }
-
-//   .modal-header {
-//     padding: rem(20px) rem(24px) rem(16px);
-//     min-height: rem(68px);
-//     background-color: $primary;
-    
-//     .modal-title {
-//       color: $white;
-//       @include font-style($h3-font-size, $font-weight-bold, rem(32px));
-//     }
-
-//     .btn-close {
-//       width: rem(32px);
-//       height: rem(32px);
-//       @extend .icon, .close;
-//       opacity: 1;
-
-//       &:focus,
-//       &:focus-visible,
-//       &:focus-within {
-//         box-shadow: none;
-//       }
-//     }
-//   }
-
-//   .modal-body {
-//     padding: rem(20px) rem(24px) rem(20px);
-//   }
-
-//   .modal-footer {
-//     gap: rem(8px);
-//     padding: 0 rem(24px) rem(24px);
-//     background-color: $body-bg;
-//   }
-// }
-
-// .modal {
-//   @extend %modal-base;
-
-//   @each $size, $width in $modal-sizes {
-//     &.modal-#{$size} .modal-dialog {
-//       width: rem($width);
-//       min-width: rem($width);
-//       max-width: rem($width);
-//     }
-//   }
-// }

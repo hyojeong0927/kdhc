@@ -1,4 +1,4 @@
-/* scss folder structure @import
+/* scss structure @import
 ========================================================================== */
 
 // vendors
@@ -31,26 +31,21 @@
 @import 'utilities/util';
 
 // components
-@import 'components/accordian';
 @import 'components/alert';
 @import 'components/badge';
 @import 'components/box';
 @import 'components/button';
 @import 'components/calendar';
 @import 'components/checkbox';
-@import 'components/dropdown';
 @import 'components/grid';
 @import 'components/icons';
 @import 'components/input';
 @import 'components/list';
 @import 'components/modal';
 @import 'components/popup';
-@import 'components/slideshow';
-@import 'components/snackbar';
 @import 'components/step';
 @import 'components/selectbox';
 @import 'components/table';
-@import 'components/tabs';
 @import 'components/title';
 @import 'components/tree';
 

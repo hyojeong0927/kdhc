@@ -75,6 +75,7 @@ $popup-md-footer-height: rem(86px);
         }
     }
 }
+/* Medium & Small Popup 공통 스타일 */
 %popup-base-md-sm {
     .kdhc-pop-header {
         padding: rem(20px) rem(24px) rem(16px);
@@ -128,174 +129,11 @@ $popup-md-footer-height: rem(86px);
     }
 }
 .kdhc-pop-wrap {
-    @extend %popup-base;
+  @extend %popup-base;
 
-    @each $ps in $popup-size {
-        &.#{$ps} {
-            @if $ps == "medium" {
-                @extend %popup-base-md-sm;
-                
-            }
-            @else if $ps == "small" {
-                @extend %popup-base-md-sm;
-            }
-        }
-    }
+  /* Medium & Small Popups 공통 적용 */
+  &.medium,
+  &.small {
+    @extend %popup-base-md-sm;
+  }
 }
-
-
-
-
-/* Popup
-========================================================================== */
-// $popup-header-height: rem(102px);
-// $popup-md-header-height: rem(68px);
-// $popup-md-footer-height: rem(86px);
-
-// %popup-base {
-//   @include flex(false, "between", "normal");
-//   width: 100%;
-//   height: 100%;
-//   min-height: 100dvh;
-//   background-color: $gray-012;
-
-//   .kdhc-pop-header {
-//     @include flex(true, "between", "center");
-//     padding: rem(32px) rem(40px) rem(24px);
-//     min-height: $popup-header-height;
-//     background-color: $primary;
-
-//     .pop-title {
-//       color: $white;
-//       @include font-style($font-size-xlg, $font-weight-bold, rem(38.4px));
-//     }
-
-//     .btn-close {
-//       margin-left: auto;
-//       width: rem(32px);
-//       height: rem(32px);
-//       @extend .icon, .close;
-//       opacity: 1;
-
-//       &:focus,
-//       &:focus-visible,
-//       &:focus-within {
-//         box-shadow: none;
-//       }
-//     }
-//   }
-
-//   .kdhc-pop-container {
-//     flex: 1;
-//     width: 100%;
-//     height: 100%;
-
-//     .inner {
-//       overflow-y: auto;
-//       padding: rem(20px) rem(40px) rem(40px);
-//       height: 100%;
-//       max-height: calc(100dvh - $popup-header-height);
-
-//       .breadcrumb-wrap {
-//         margin-bottom: rem(20px);
-//       }
-
-//       .title-wrap {
-//         margin-bottom: rem(16px);
-//       }
-
-//       .section {
-//         &:not(:last-of-type) {
-//           padding-bottom: rem($modal-section-btm);
-//         }
-//       }
-
-//       .input-form-area {
-//         & + .input-form-area,
-//         & + .grid-wrap {
-//           margin-top: rem(24px);
-//         }
-//       }
-
-//       .section-sub {
-//         padding: rem(28px) rem($modal-section-btm);
-//         border-radius: rem(12px);
-//         background-color: $white;
-//         box-shadow: 0 0 rem(12px) 0 rgba($black, 0.08);
-//       }
-//     }
-//   }
-// }
-
-// /* Medium & Small Popup 공통 스타일 */
-// %popup-md-sm {
-//   .kdhc-pop-header {
-//     padding: rem(20px) rem(24px) rem(16px);
-//     min-height: $popup-md-header-height;
-
-//     .pop-title {
-//       font-size: rem($h3-font-size);
-//     }
-//   }
-
-//   .kdhc-pop-container {
-//     max-height: calc(100dvh - $popup-md-header-height - $popup-md-footer-height);
-
-//     .inner {
-//       overflow-y: auto;
-//       padding: rem(24px);
-//       max-height: inherit;
-//     }
-
-//     &.not-footer {
-//       max-height: calc(100dvh - $popup-md-header-height);
-
-//       .inner {
-//         padding: rem(24px);
-//         max-height: inherit;
-//       }
-//     }
-
-//     .grid-wrap {
-//       margin-bottom: 0;
-//     }
-
-//     .grid-bottom-area {
-//       margin-top: rem(20px);
-//     }
-//   }
-
-//   .kdhc-pop-footer {
-//     height: $popup-md-footer-height;
-
-//     .inner {
-//       @include flex(true, "end", "center", rem(8px));
-//       padding: rem(20px) rem(24px) rem(24px);
-
-//       .form-switch {
-//         @include flex(true, "start", "center", rem(20px));
-//         margin-right: auto;
-
-//         .form-check-input {
-//           float: none;
-//         }
-
-//         .form-check-label {
-//           margin-left: 0;
-//           color: $primary;
-//           @include font-style($font-size-base, $font-weight-medium, rem(23px));
-//         }
-//       }
-//     }
-//   }
-// }
-
-// .kdhc-pop-wrap {
-//   @extend %popup-base;
-
-//   /* Medium & Small Popups 공통 적용 */
-//   &.medium,
-//   &.small {
-//     @extend %popup-md-sm;
-//   }
-// }

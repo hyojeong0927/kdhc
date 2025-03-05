@@ -57,8 +57,10 @@
             font-weight: $font-weight-medium;
         }
         .ag-header-group-cell {
-            &::after {
-                border-right: 1px solid $gray-007;
+            &:not(:last-child) {
+                &::after {
+                    border-right: 1px solid $gray-007;
+                }
             }
             &.center {
                 .ag-header-cell-comp-wrapper {
@@ -181,9 +183,13 @@
             }
         }
     }
-    .ag-selection-checkbox {
-        margin-right: 0;
-        min-height: 62px;
+    .ag-cell {
+        &[col-id="ag-Grid-SelectionColumn"] {
+            display: inline-flex;
+            .ag-selection-checkbox {
+                margin-right: 0;
+            }
+        }
     }
     .cell-normal {
         display: flex;

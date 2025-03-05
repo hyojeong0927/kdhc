@@ -393,7 +393,7 @@ const menu07Projects = [
         id: "SB-GMR-027",
         depth1: "관리자",
         depth2: "인사이동 관리",
-        depth3: "",
+        depth3: "등록/수정",
         type: "pop",
         folder: "gmr",
         file: "SB-GMR-027.html",

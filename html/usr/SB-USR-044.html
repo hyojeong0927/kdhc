@@ -91,7 +91,7 @@
                                         <div class="form-row">
                                             <!-- col -->
                                             <div class="col">
-                                                <div class="form-label">기안일자</div>
+                                                <div class="form-label">기준일</div>
                                                 <div class="form-group">
                                                     <!-- datepicker-group start -->
                                                     <div class="datepicker-group">
@@ -331,7 +331,7 @@
                         cellClass: "cell-normal",
                     },
                     {
-                        headerName: "명칭칭",
+                        headerName: "명칭",
                         headerClass: "center",
                         field: "field05",
                         width: 180,
@@ -444,12 +444,6 @@
             headerHeight: 41, // header height
             rowData: rowData,
             rowHeight: 63, // row height
-            rowSelection: { // row checkbox
-                mode: "multiRow",
-                groupSelects: "descendants",
-                selectAll: 'filtered',
-                width: 52,
-            },
             domLayout: "autoHeight", // grid 스크롤 없이 auto height 옵션
             suppressColumnVirtualisation: true, // grid 스크롤 없이 auto height 옵션
             // data empty style
