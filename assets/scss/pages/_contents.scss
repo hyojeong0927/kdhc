@@ -171,5 +171,9 @@
         }
     }
 }
-
 // Manual end
+
+// 정기점검관리 히든 처리
+.valueWeek:has(.form-group .form-check-group) {
+    display: none;
+}

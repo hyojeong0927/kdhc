@@ -24,7 +24,6 @@ $form-btn-width: rem(136px);
                 margin: 0;
                 flex: 0 0 rem(100px);
                 min-width: rem(100px);
-                // @include form-label-style;
                 color: $primary;
                 @include font-style($font-size-base, $font-weight-medium, $line-height-base);
                 letter-spacing: rem(-1.5px);
@@ -455,8 +454,4 @@ $form-layouts: (
             margin-top: rem(32px);
         }
     }
-}
-
-.col2:has(.form-group .form-check-group) {
-    display: none;
 }

@@ -39,28 +39,28 @@
                                                 <!-- form check group -->
                                                 <div class="form-check-group">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" id="radio01" name="drone1" value="radio01" checked />
-                                                        <label for="radio01">일간</label>
+                                                        <input class="form-check-input" type="radio" id="day" name="typeValue" value="day" checked />
+                                                        <label for="day">일간</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" id="radio02" name="drone1" value="radio02" />
-                                                        <label for="radio02">주간</label>
+                                                        <input class="form-check-input" type="radio" id="week" name="typeValue" value="week" />
+                                                        <label for="week">주간</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" id="radio03" name="drone1" value="radio03" />
-                                                        <label for="radio03">월간</label>
+                                                        <input class="form-check-input" type="radio" id="month" name="typeValue" value="month" />
+                                                        <label for="month">월간</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" id="radio04" name="drone1" value="radio04" />
-                                                        <label for="radio04">분기</label>
+                                                        <input class="form-check-input" type="radio" id="quarter" name="typeValue" value="quarter" />
+                                                        <label for="quarter">분기</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" id="radio05" name="drone1" value="radio05" />
-                                                        <label for="radio05">반기</label>
+                                                        <input class="form-check-input" type="radio" id="half" name="typeValue" value="half" />
+                                                        <label for="half">반기</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" id="radio06" name="drone1" value="radio06" />
-                                                        <label for="radio06">연간</label>
+                                                        <input class="form-check-input" type="radio" id="year" name="typeValue" value="year" />
+                                                        <label for="year">연간</label>
                                                     </div>
                                                 </div>
                                                 <!--// form check group -->
@@ -99,6 +99,40 @@
                                             </div>
                                         </div>
                                         <!--// col -->
+                                        <!-- col -->
+                                        <div class="col" id="valueWeek">
+                                            <div class="form-label">점검요일</div>
+                                            <div class="form-group">
+                                                <!-- form check group -->
+                                                <div class="form-check-group">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="mon" name="week" value="mon" checked />
+                                                        <label for="mon">월</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="tus" name="week" value="tus" />
+                                                        <label for="tus">화</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="wen" name="week" value="wen" />
+                                                        <label for="wen">수</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="thu" name="week" value="thu" />
+                                                        <label for="thu">목</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" id="fri" name="week" value="fri" />
+                                                        <label for="fri">금</label>
+                                                    </div>
+                                                </div>
+                                                <!--// form check group -->
+                                                <!-- 에러 문구 : hidden 제거 -->
+                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                <!--// 에러 문구 -->
+                                            </div>
+                                        </div>
+                                        <!--// col  -->
                                     </div>
                                     <!--// row -->
                                     <!-- row -->
@@ -124,6 +158,33 @@
                                                         <label for="input-text" class="hidden">점검명</label>
                                                     </div>
                                                     <!--// input group -->
+                                                </div>
+                                                <!-- 에러 문구 : hidden 제거 -->
+                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                <!--// 에러 문구 -->
+                                            </div>
+                                        </div>
+                                        <!--// col  -->
+                                    </div>
+                                    <!--// row -->
+                                    <!-- row -->
+                                    <div class="form-row" id="valueUnit">
+                                        <!-- col -->
+                                        <div class="col">
+                                            <div class="form-label">미리알림</div>
+                                            <div class="form-group">
+                                                <div class="multi-group">
+                                                    <!-- input group : class="input-group is-error" -->
+                                                    <div class="input-group w-190">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="1~3" id="valueWeek">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="1~15" id="valueMonth">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="1~45" id="valueQuarter">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="1~60" id="valueHalf">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="1~120" id="valueYear">
+                                                        <label for="input-text" class="hidden">미리알림</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <div class="input-text">일 전부터</div>
                                                 </div>
                                                 <!-- 에러 문구 : hidden 제거 -->
                                                 <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
@@ -210,11 +271,14 @@
                         <!--// form end -->
                     </div>
                     <!--// input form -->
-
+                    <!-- grid wrap start -->
+                    <article class="grid-wrap">
+                        <div id="sampleGrid" class="normal"></div>
+                    </article>
+                    <!--// grid wrap end -->
                     <!-- bottom button area start -->
                     <div class="bottom-btn-area" data-buttons='[{"text": "삭제", "class": "btn btn-outline btn-md"}, {"text": "저장"}]'></div>
                     <!--// bottom button area end -->
-             </div>
 
                 </div>
                 <!--// 팝업 컨텐츠 영역 -->
@@ -223,7 +287,140 @@
         <!--// 팝업 컨테이너 영역 -->
     </div>
     <!-- script wrap -->
-    <script type="module" src="../../../assets/js/components/checkbox.js"></script> 
+    <script src="../../../assets/js/components/checkbox.js"></script>
+    <script type="module">
+        const rowData = [
+            {
+                field01: "",
+                field02: "분기",
+                field03: "2005 년",
+                field04: "",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "분기",
+                field03: "2005 년",
+                field04: "",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "분기",
+                field03: "2005 년",
+                field04: "",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "분기",
+                field03: "2005 년",
+                field04: "",
+                field05: "",
+            },
+        ];
+        const columnDefs = [
+            {
+                headerName: "순번",
+                headerClass: "center",
+                field: "field01",
+                width: 88,
+                cellClass: "cell-normal",
+                valueGetter: "node.rowIndex + 1"
+            },
+            {
+                headerName: "점검주기유형",
+                headerClass: "center",
+                field: "field02",
+                minWidth: 200,
+                flex: 1,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "점검연도",
+                headerClass: "center",
+                field: "field03",
+                minWidth: 200,
+                flex: 1,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "점검월",
+                headerClass: "center",
+                field: "field04",
+                width: 200,
+                cellClass: "cell-normal input",
+                editable: true,
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                            <!-- select-group -->
+                            <div class="select-group">
+                                <select class="form-select" aria-label="Default select" required>
+                                    <option value="" selected>선택</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <!--// select-group -->
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
+            },
+            {
+                headerName: "점검일",
+                headerClass: "center",
+                field: "field05",
+                width: 200,
+                cellClass: "cell-normal input",
+                editable: true,
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                                    <!-- select-group -->
+                                    <div class="select-group">
+                                        <select class="form-select" aria-label="Default select" required>
+                                            <option value="" selected>선택</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <!--// select-group -->
+                                `;
+                    } else {
+                        return value;
+                    }
+                }
+            },
+        ];
+        let sampleGridApi;
+
+        const sampleGridOptions = {
+            defaultColDef: {
+                editable: false, // edit 사용 유무
+                autoHeight: true,
+                sortable: false, // sort 사용 유무
+            },
+            columnDefs,
+            headerHeight: 41, // header height
+            rowData: rowData,
+            rowHeight: 63, // row height
+            domLayout: "autoHeight", // 2025-02-19 추가 옵션
+            suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
+            // data empty style
+            overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
+        };
+        const sampleGridDiv = document.querySelector("#sampleGrid");
+        sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
+    </script>
     <!--// script wrap -->
 </body>
 </html>

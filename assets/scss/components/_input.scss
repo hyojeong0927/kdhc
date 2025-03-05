@@ -202,12 +202,30 @@ textarea {
 }
 .input-time-group {
     @include flex(true, "start", "center", rem(8px));
-    .combo-box-group {
-        flex: 1;
-    }
     &.is-error {
         .form-select {
             @extend %input-error;
         }
+    }
+}
+// 파일 첨부
+.input-file-group {
+    @include flex(true, "start", "center",  rem(8px));
+    width: 100%;
+    input[type="file"] {
+        display: block;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+    }
+    .upload-name {
+        flex: 1;
+        border: none; 
+    }
+    label {
+        cursor: pointer;
+        @extend .btn;
+        @extend .btn-grid;
+        @extend .btn-xxsm;
     }
 }
