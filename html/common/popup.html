@@ -83,6 +83,9 @@
                         <button type="button" id="popup05" class="btn btn-primary btn-lg">
                             지침 및 매뉴얼 상세
                         </button>
+                        <button type="button" id="popup06" class="btn btn-primary btn-lg">
+                            장표 최신화 공지
+                        </button>
                         <!--// 팝업 호출 버튼 -->
                         
                         <!-- popup script -->
@@ -109,6 +112,10 @@
                                 document.getElementById('popup05').addEventListener('click', () => {
                                     const url = './popup/popup-005.html';
                                     openCenteredPopup(url, 600, 263);
+                                });
+                                document.getElementById('popup06').addEventListener('click', () => {
+                                    const url = './popup/popup-006.html';
+                                    openCenteredPopup(url, 600, 285);
                                 });
                             });
                         </script>

@@ -13553,7 +13553,7 @@ nav.page-navigation .pagination .page-item.active .page-link {
   background-color: #3D6F94;
 }
 nav.page-navigation .pagination .page-item.disabled .page-link {
-  color: #555555;
+  color: #030101;
 }
 nav.page-navigation .pagination .page-item.first, nav.page-navigation .pagination .page-item.last, nav.page-navigation .pagination .page-item.next, nav.page-navigation .pagination .page-item.prev {
   width: 1.75rem;
@@ -14433,15 +14433,17 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   padding: 0.5rem 1rem;
   min-width: 6rem;
   height: 2.63rem;
-  font-size: 0.89rem;
+  font-size: 1.13rem;
   border-radius: 6px;
+  border-width: 2px;
 }
 .btn.btn-md, .input-file-group label.btn-md {
   padding: 0.38rem 0.75rem;
   min-width: 5.25rem;
   height: 2.38rem;
-  font-size: 0.89rem;
+  font-size: 1.13rem;
   border-radius: 6px;
+  border-width: 2px;
 }
 .btn.btn-sm, .input-file-group label.btn-sm {
   padding: 0.38rem 1rem;
@@ -14449,6 +14451,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   height: 2rem;
   font-size: 0.88rem;
   border-radius: 4px;
+  border-width: 1px;
 }
 .btn.btn-xsm, .input-file-group label.btn-xsm {
   padding: 0.25rem 0.19rem;
@@ -14456,6 +14459,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   height: 1.75rem;
   font-size: 0.88rem;
   border-radius: 40px;
+  border-width: 1px;
 }
 .btn.btn-xxsm, .input-file-group label {
   padding: 0.19rem 0.75rem;
@@ -14463,6 +14467,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   height: 1.63rem;
   font-size: 0.88rem;
   border-radius: 2px;
+  border-width: 1px;
 }
 .btn.btn-primary, .input-file-group label.btn-primary {
   color: #fff;
@@ -14486,8 +14491,8 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
 }
 .btn.btn-secondary[disabled], .input-file-group label.btn-secondary[disabled] {
   color: #fff;
-  border-color: #C8C8C8;
-  background-color: #C8C8C8;
+  border-color: #C5CDD5;
+  background-color: #C5CDD5;
 }
 .btn.btn-secondary:hover, .input-file-group label.btn-secondary:hover, .btn.btn-secondary:focus, .input-file-group label.btn-secondary:focus, .btn.btn-secondary:active, .input-file-group label.btn-secondary:active, .btn.btn-secondary.active, .input-file-group label.btn-secondary.active {
   color: #fff;
@@ -14510,7 +14515,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   border-color: #6C757D;
 }
 .btn.btn-outline--round, .input-file-group label.btn-outline--round {
-  color: #3D6F94;
+  color: #18191C;
   background-color: #fff;
   border-color: #A5A5A5;
 }
@@ -14520,9 +14525,10 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   background-color: #fff;
 }
 .btn.btn-outline--round:hover, .input-file-group label.btn-outline--round:hover, .btn.btn-outline--round:focus, .input-file-group label.btn-outline--round:focus, .btn.btn-outline--round:active, .input-file-group label.btn-outline--round:active, .btn.btn-outline--round.active, .input-file-group label.btn-outline--round.active {
-  color: #6C757D;
-  background-color: #fff;
+  color: #18191C;
+  background-color: #3D6F94;
   border-color: #3D6F94;
+  color: #fff;
 }
 .btn.btn-grid, .input-file-group label.btn-grid, .input-file-group label {
   color: #6C757D;
@@ -14530,16 +14536,17 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   border-color: #6C757D;
 }
 .btn.btn-grid[disabled], .input-file-group label.btn[disabled], .input-file-group label.btn-grid[disabled], .input-file-group label[disabled] {
-  color: #fff;
-  border-color: #C8C8C8;
-  background-color: #C8C8C8;
+  color: #C5CDD5;
+  border-color: #C5CDD5;
+  background-color: #E3E8ED;
 }
 .btn.btn-grid:hover, .input-file-group label.btn-grid:hover, .input-file-group label:hover, .btn.btn-grid:focus, .input-file-group label.btn-grid:focus, .input-file-group label:focus, .btn.btn-grid:active, .input-file-group label.btn-grid:active, .input-file-group label:active, .btn.btn-grid.active, .input-file-group label.btn-grid.active, .input-file-group label.active {
-  color: #fff;
-  background-color: #18191C;
+  color: #18191C;
+  background-color: #E3E8ED;
   border-color: #18191C;
 }
 .btn.btn-icon, .input-file-group label.btn-icon {
+  color: transparent;
   background-color: transparent;
   border-color: transparent;
   padding: 0;
@@ -14548,12 +14555,12 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   background-color: transparent;
 }
 .btn.btn-icon[disabled], .input-file-group label.btn-icon[disabled] {
-  color: #fff;
-  border-color: #C8C8C8;
-  background-color: #C8C8C8;
+  color: transparent;
+  border-color: transparent;
+  background-color: transparent;
 }
 .btn.btn-icon:hover, .input-file-group label.btn-icon:hover, .btn.btn-icon:focus, .input-file-group label.btn-icon:focus, .btn.btn-icon:active, .input-file-group label.btn-icon:active, .btn.btn-icon.active, .input-file-group label.btn-icon.active {
-  color: #fff;
+  color: transparent;
   background-color: transparent;
   border-color: transparent;
 }
@@ -14583,8 +14590,6 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   margin-top: 1rem;
 }
 
-/* Button
-========================================================================== */
 /* Datepicker Calendar, Calendar
 ========================================================================== */
 .datepicker.datepicker-dropdown::after, .datepicker.datepicker-dropdown::before {
@@ -14616,7 +14621,7 @@ nav.page-navigation .pagination .page-item.first:hover .page-link, nav.page-navi
   padding-bottom: 1.19rem;
   height: 1.63rem;
   color: #000;
-  font-size: 0.89rem;
+  font-size: 1.13rem;
   font-weight: 400;
   letter-spacing: -0.03rem;
   line-height: normal;
@@ -40331,7 +40336,7 @@ textarea.form-control {
   gap: 0px;
   padding: 3.75rem 2.5rem 3rem;
   width: 30rem;
-  height: 25.88rem;
+  min-height: 25.88rem;
   border-radius: 1.25rem;
   background-color: #fff;
   box-shadow: 0 0 1.25rem 0.75rem rgba(42, 89, 125, 0.4);
@@ -40376,7 +40381,7 @@ textarea.form-control {
 .kdhc-login-wrap .login-content .form-row .form-pw-group input[type=url] {
   height: 3.25rem;
   color: #18191C;
-  font-size: 0.89rem;
+  font-size: 1.13rem;
   font-weight: 400;
   letter-spacing: -0.03rem;
   line-height: normal;
@@ -40395,10 +40400,10 @@ textarea.form-control {
   top: 50%;
   left: 1rem;
   padding-left: 2rem;
-  width: 100%;
+  width: calc(100% - 2rem - 1rem);
   height: 100%;
   color: #828E98;
-  font-size: 0.89rem;
+  font-size: 1.13rem;
   font-weight: 400;
   letter-spacing: -0.03rem;
   line-height: normal;
@@ -40421,6 +40426,14 @@ textarea.form-control {
   line-height: 2rem;
   border-radius: 1.88rem;
   background: linear-gradient(283deg, #383D5E 18.73%, #3D6F94 77.87%);
+}
+.kdhc-login-wrap .login-content.no-icon .form-id-group .login-id-label,
+.kdhc-login-wrap .login-content.no-icon .form-id-group .login-pw-label,
+.kdhc-login-wrap .login-content.no-icon .form-pw-group .login-id-label,
+.kdhc-login-wrap .login-content.no-icon .form-pw-group .login-pw-label {
+  padding-left: 0;
+  width: calc(100% - 1rem);
+  background-image: none;
 }
 .kdhc-login-wrap .login-id-label,
 .kdhc-login-wrap .login-pw-label {
@@ -40485,8 +40498,27 @@ textarea.form-control {
   gap: 1.5rem;
 }
 
-.valueWeek:has(.form-group .form-check-group) {
-  display: none;
+.info-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  width: 100%;
+  min-height: 6.63rem;
+  border: 1px solid #E3E8ED;
+}
+.info-box .cont {
+  color: #18191C;
+  font-size: 1.13rem;
+  font-weight: 400;
+  letter-spacing: -0.03rem;
+  line-height: 1.63rem;
+  letter-spacing: -0.02rem;
+}
+.info-box .cont .tags {
+  color: #3D6F94;
+  font-weight: 700;
 }
 
 /* Guide
@@ -40497,8 +40529,9 @@ textarea.form-control {
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #DCDCDC;
   border-radius: 10px;
+  opacity: 0.7;
 }
 
 ::-webkit-scrollbar-thumb {

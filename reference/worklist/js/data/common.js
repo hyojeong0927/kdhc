@@ -26,7 +26,7 @@ const sample = [
         start: "",
         end: "",
         modDate: "",
-        design: "",
+        design: "O",
         dev: "",
     },
     {
@@ -41,7 +41,7 @@ const sample = [
         start: "2025-02-24",
         end: "2025-02-28",
         modDate: "",
-        design: "",
+        design: "O",
         dev: "",
     },
     {
@@ -56,7 +56,7 @@ const sample = [
         start: "2025-03-10",
         end: "2025-03-14",
         modDate: "",
-        design: "",
+        design: "O",
         dev: "",
     },
 ];

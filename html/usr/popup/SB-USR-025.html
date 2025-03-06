@@ -264,12 +264,6 @@
                 width: 238,
                 cellClass: "cell-normal",
                 cellEditor: 'customInputSearchEditor',
-                // cellEditor: "customInputEditor",
-                // cellEditorParams: {
-                //     type: 'search',
-                //     placeholder: '입력',
-                //     icon: '<i class="icon search"></i>'
-                // },
                 cellRenderer: (params) => {
                     const value = params.value;
 
@@ -346,12 +340,6 @@
                 field: "field05",
                 width: 180,
                 cellClass: "cell-normal",
-                // cellEditor: "customInputEditor",
-                // cellEditorParams: {
-                //     type: 'date',
-                //     placeholder: 'YYYY-MM-DD',
-                //     icon: '<i class="icon calendar"></i>'
-                // },
                 cellEditorSelector: (params) => {
                     return {
                         component: 'bootstrapDatePickerEditor'
@@ -542,9 +530,6 @@
             },
             domLayout: "autoHeight",
             suppressColumnVirtualisation: true,
-            // components: {
-            //     customInputEditor: customInputEditor
-            // },
             components: {
                 bootstrapDatePickerEditor: function() {
                     return {

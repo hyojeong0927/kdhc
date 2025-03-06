@@ -131,7 +131,7 @@ const menu04Projects = [
         start: "2025-03-04",
         end: "2025-03-07",
         modDate: "",
-        design: "X",
+        design: "O",
         dev: "2025-03-24",
     },
     {
@@ -146,7 +146,7 @@ const menu04Projects = [
         start: "2025-03-04",
         end: "2025-03-07",
         modDate: "",
-        design: "X",
+        design: "O",
         dev: "2025-03-24",
     },
     {

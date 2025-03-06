@@ -168,7 +168,8 @@
                                     </div>
                                     <!--// row -->
                                     <!-- row -->
-                                    <div class="form-row">
+                                    <!-- 주간 미리알림 -->
+                                    <div class="form-row" id="valueWeek">
                                         <!-- col -->
                                         <div class="col">
                                             <div class="form-label">미리알림</div>
@@ -176,11 +177,55 @@
                                                 <div class="multi-group">
                                                     <!-- input group : class="input-group is-error" -->
                                                     <div class="input-group w-190">
-                                                        <input type="text" class="form-control" placeholder="입력" value="1~3" id="valueWeek">
-                                                        <input type="text" class="form-control" placeholder="입력" value="1~15" id="valueMonth">
+                                                        <input type="text" class="form-control" placeholder="입력" value="1~3">
+                                                        <label for="input-text" class="hidden">미리알림</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <div class="input-text">일 전부터</div>
+                                                </div>
+                                                <!-- 에러 문구 : hidden 제거 -->
+                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                <!--// 에러 문구 -->
+                                            </div>
+                                        </div>
+                                        <!--// col  -->
+                                    </div>
+                                    <!--// row  -->
+                                    <!-- row -->
+                                    <!-- 월간 미리알림 -->
+                                    <div class="form-row" id="valueMonth">
+                                        <!-- col -->
+                                        <div class="col">
+                                            <div class="form-label">미리알림</div>
+                                            <div class="form-group">
+                                                <div class="multi-group">
+                                                    <!-- input group : class="input-group is-error" -->
+                                                    <div class="input-group w-190">
+                                                        <input type="text" class="form-control" placeholder="입력" value="1~15">
+                                                        <label for="input-text" class="hidden">미리알림</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <div class="input-text">일 전부터</div>
+                                                </div>
+                                                <!-- 에러 문구 : hidden 제거 -->
+                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                <!--// 에러 문구 -->
+                                            </div>
+                                        </div>
+                                        <!--// col  -->
+                                    </div>
+                                    <!--// row  -->
+                                    <!-- row -->
+                                    <!-- 분기 미리알림 -->
+                                    <div class="form-row" id="valueQuarter">
+                                        <!-- col -->
+                                        <div class="col">
+                                            <div class="form-label">미리알림</div>
+                                            <div class="form-group">
+                                                <div class="multi-group">
+                                                    <!-- input group : class="input-group is-error" -->
+                                                    <div class="input-group w-190">
                                                         <input type="text" class="form-control" placeholder="입력" value="1~45" id="valueQuarter">
-                                                        <input type="text" class="form-control" placeholder="입력" value="1~60" id="valueHalf">
-                                                        <input type="text" class="form-control" placeholder="입력" value="1~120" id="valueYear">
                                                         <label for="input-text" class="hidden">미리알림</label>
                                                     </div>
                                                     <!--// input group -->
@@ -194,6 +239,54 @@
                                         <!--// col  -->
                                     </div>
                                     <!--// row -->
+                                    <!-- row -->
+                                    <!-- 반기 미리알림 -->
+                                    <div class="form-row" id="valueHalf">
+                                        <!-- col -->
+                                        <div class="col">
+                                            <div class="form-label">미리알림</div>
+                                            <div class="form-group">
+                                                <div class="multi-group">
+                                                    <!-- input group : class="input-group is-error" -->
+                                                    <div class="input-group w-190">
+                                                        <input type="text" class="form-control" placeholder="입력" value="1~60">
+                                                        <label for="input-text" class="hidden">미리알림</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <div class="input-text">일 전부터</div>
+                                                </div>
+                                                <!-- 에러 문구 : hidden 제거 -->
+                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                <!--// 에러 문구 -->
+                                            </div>
+                                        </div>
+                                        <!--// col  -->
+                                    </div>
+                                    <!--// row  -->
+                                    <!-- row -->
+                                    <!-- 연간 미리알림 -->
+                                    <div class="form-row" id="valueYear">
+                                        <!-- col -->
+                                        <div class="col">
+                                            <div class="form-label">미리알림</div>
+                                            <div class="form-group">
+                                                <div class="multi-group">
+                                                    <!-- input group : class="input-group is-error" -->
+                                                    <div class="input-group w-190">
+                                                        <input type="text" class="form-control" placeholder="입력" value="1~120">
+                                                        <label for="input-text" class="hidden">미리알림</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <div class="input-text">일 전부터</div>
+                                                </div>
+                                                <!-- 에러 문구 : hidden 제거 -->
+                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                <!--// 에러 문구 -->
+                                            </div>
+                                        </div>
+                                        <!--// col  -->
+                                    </div>
+                                    <!--// row  -->
                                     <!-- row -->
                                     <div class="form-row">
                                         <!-- col  -->
@@ -272,8 +365,21 @@
                     </div>
                     <!--// input form -->
                     <!-- grid wrap start -->
-                    <article class="grid-wrap">
-                        <div id="sampleGrid" class="normal"></div>
+                    <!-- 월간 -->
+                    <article class="grid-wrap" id="valueMonth">
+                        <div id="sampleGrid1" class="normal"></div>
+                    </article>
+                    <!-- 분기 -->
+                    <article class="grid-wrap" id="valueQuarter">
+                        <div id="sampleGrid2" class="normal"></div>
+                    </article>
+                    <!-- 반기 -->
+                    <article class="grid-wrap" id="valueHalf">
+                        <div id="sampleGrid3" class="normal"></div>
+                    </article>
+                    <!-- 연간 -->
+                    <article class="grid-wrap" id="valueYear">
+                        <div id="sampleGrid4" class="normal"></div>
                     </article>
                     <!--// grid wrap end -->
                     <!-- bottom button area start -->
@@ -288,38 +394,95 @@
     </div>
     <!-- script wrap -->
     <script src="../../../assets/js/components/checkbox.js"></script>
+    <!-- 월간 -->
     <script type="module">
-        const rowData = [
+        const rowData1 = [
             {
                 field01: "",
-                field02: "분기",
+                field02: "월간",
                 field03: "2005 년",
-                field04: "",
+                field04: "1월",
                 field05: "",
             },
             {
                 field01: "",
-                field02: "분기",
+                field02: "월간",
                 field03: "2005 년",
-                field04: "",
+                field04: "2월",
                 field05: "",
             },
             {
                 field01: "",
-                field02: "분기",
+                field02: "월간",
                 field03: "2005 년",
-                field04: "",
+                field04: "3월",
                 field05: "",
             },
             {
                 field01: "",
-                field02: "분기",
+                field02: "월간",
                 field03: "2005 년",
-                field04: "",
+                field04: "4월",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "월간",
+                field03: "2005 년",
+                field04: "5월",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "월간",
+                field03: "2005 년",
+                field04: "6월",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "월간",
+                field03: "2005 년",
+                field04: "7월",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "월간",
+                field03: "2005 년",
+                field04: "8월",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "월간",
+                field03: "2005 년",
+                field04: "9월",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "월간",
+                field03: "2005 년",
+                field04: "10월",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "월간",
+                field03: "2005 년",
+                field04: "11월",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "월간",
+                field03: "2025(고정값) 년",
+                field04: "12월",
                 field05: "",
             },
         ];
-        const columnDefs = [
+        const columnDefs1 = [
             {
                 headerName: "순번",
                 headerClass: "center",
@@ -401,25 +564,392 @@
                 }
             },
         ];
-        let sampleGridApi;
+        let sampleGrid1Api;
 
-        const sampleGridOptions = {
+        const sampleGrid1Options = {
             defaultColDef: {
                 editable: false, // edit 사용 유무
                 autoHeight: true,
                 sortable: false, // sort 사용 유무
             },
-            columnDefs,
+            columnDefs: columnDefs1,
             headerHeight: 41, // header height
-            rowData: rowData,
+            rowData: rowData1,
             rowHeight: 63, // row height
             domLayout: "autoHeight", // 2025-02-19 추가 옵션
             suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
             // data empty style
             overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
         };
-        const sampleGridDiv = document.querySelector("#sampleGrid");
-        sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
+        const sampleGrid1Div = document.querySelector("#sampleGrid1");
+        sampleGrid1Api = agGrid.createGrid(sampleGrid1Div, sampleGrid1Options);
+    </script>
+    <!-- 분기 -->
+    <script type="module">
+        const rowData2 = [
+            {
+                field01: "",
+                field02: "분기",
+                field03: "2005 년",
+                field04: "",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "분기",
+                field03: "2005 년",
+                field04: "",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "분기",
+                field03: "2005 년",
+                field04: "",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "분기",
+                field03: "2005 년",
+                field04: "",
+                field05: "",
+            },
+        ];
+        const columnDefs2 = [
+            {
+                headerName: "순번",
+                headerClass: "center",
+                field: "field01",
+                width: 88,
+                cellClass: "cell-normal",
+                valueGetter: "node.rowIndex + 1"
+            },
+            {
+                headerName: "점검주기유형",
+                headerClass: "center",
+                field: "field02",
+                minWidth: 200,
+                flex: 1,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "점검연도",
+                headerClass: "center",
+                field: "field03",
+                minWidth: 200,
+                flex: 1,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "점검월",
+                headerClass: "center",
+                field: "field04",
+                width: 200,
+                cellClass: "cell-normal input",
+                editable: true,
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                                <!-- select-group -->
+                                <div class="select-group">
+                                    <select class="form-select" aria-label="Default select" required>
+                                        <option value="" selected>선택</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                                <!--// select-group -->
+                            `;
+                    } else {
+                        return value;
+                    }
+                }
+            },
+            {
+                headerName: "점검일",
+                headerClass: "center",
+                field: "field05",
+                width: 200,
+                cellClass: "cell-normal input",
+                editable: true,
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                                        <!-- select-group -->
+                                        <div class="select-group">
+                                            <select class="form-select" aria-label="Default select" required>
+                                                <option value="" selected>선택</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <!--// select-group -->
+                                    `;
+                    } else {
+                        return value;
+                    }
+                }
+            },
+        ];
+        let sampleGrid2Api;
+
+        const sampleGrid2Options = {
+            defaultColDef: {
+                editable: false, // edit 사용 유무
+                autoHeight: true,
+                sortable: false, // sort 사용 유무
+            },
+            columnDefs: columnDefs2,
+            headerHeight: 41, // header height
+            rowData: rowData2,
+            rowHeight: 63, // row height
+            domLayout: "autoHeight", // 2025-02-19 추가 옵션
+            suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
+            // data empty style
+            overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
+        };
+        const sampleGrid2Div = document.querySelector("#sampleGrid2");
+        sampleGrid2Api = agGrid.createGrid(sampleGrid2Div, sampleGrid2Options);
+    </script>
+    <!-- 반기 -->
+    <script type="module">
+        const rowData3 = [
+            {
+                field01: "",
+                field02: "반기",
+                field03: "2005 년",
+                field04: "",
+                field05: "",
+            },
+            {
+                field01: "",
+                field02: "반기",
+                field03: "2005 년",
+                field04: "",
+                field05: "",
+            },
+        ];
+        const columnDefs3 = [
+            {
+                headerName: "순번",
+                headerClass: "center",
+                field: "field01",
+                width: 88,
+                cellClass: "cell-normal",
+                valueGetter: "node.rowIndex + 1"
+            },
+            {
+                headerName: "점검주기유형",
+                headerClass: "center",
+                field: "field02",
+                minWidth: 200,
+                flex: 1,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "점검연도",
+                headerClass: "center",
+                field: "field03",
+                minWidth: 200,
+                flex: 1,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "점검월",
+                headerClass: "center",
+                field: "field04",
+                width: 200,
+                cellClass: "cell-normal input",
+                editable: true,
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                                    <!-- select-group -->
+                                    <div class="select-group">
+                                        <select class="form-select" aria-label="Default select" required>
+                                            <option value="" selected>선택</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <!--// select-group -->
+                                `;
+                    } else {
+                        return value;
+                    }
+                }
+            },
+            {
+                headerName: "점검일",
+                headerClass: "center",
+                field: "field05",
+                width: 200,
+                cellClass: "cell-normal input",
+                editable: true,
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                                            <!-- select-group -->
+                                            <div class="select-group">
+                                                <select class="form-select" aria-label="Default select" required>
+                                                    <option value="" selected>선택</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
+                                            </div>
+                                            <!--// select-group -->
+                                        `;
+                    } else {
+                        return value;
+                    }
+                }
+            },
+        ];
+        let sampleGrid3Api;
+
+        const sampleGrid3Options = {
+            defaultColDef: {
+                editable: false, // edit 사용 유무
+                autoHeight: true,
+                sortable: false, // sort 사용 유무
+            },
+            columnDefs: columnDefs3,
+            headerHeight: 41, // header height
+            rowData: rowData3,
+            rowHeight: 63, // row height
+            domLayout: "autoHeight", // 2025-02-19 추가 옵션
+            suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
+            // data empty style
+            overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
+        };
+        const sampleGrid3Div = document.querySelector("#sampleGrid3");
+        sampleGrid3Api = agGrid.createGrid(sampleGrid3Div, sampleGrid3Options);
+    </script>
+    <!-- 연간 -->
+    <script type="module">
+        const rowData4 = [
+            {
+                field01: "",
+                field02: "연간",
+                field03: "2005 년",
+                field04: "",
+                field05: "",
+            },
+        ];
+        const columnDefs4 = [
+            {
+                headerName: "순번",
+                headerClass: "center",
+                field: "field01",
+                width: 88,
+                cellClass: "cell-normal",
+                valueGetter: "node.rowIndex + 1"
+            },
+            {
+                headerName: "점검주기유형",
+                headerClass: "center",
+                field: "field02",
+                minWidth: 200,
+                flex: 1,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "점검연도",
+                headerClass: "center",
+                field: "field03",
+                minWidth: 200,
+                flex: 1,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "점검월",
+                headerClass: "center",
+                field: "field04",
+                width: 200,
+                cellClass: "cell-normal input",
+                editable: true,
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                                        <!-- select-group -->
+                                        <div class="select-group">
+                                            <select class="form-select" aria-label="Default select" required>
+                                                <option value="" selected>선택</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <!--// select-group -->
+                                    `;
+                    } else {
+                        return value;
+                    }
+                }
+            },
+            {
+                headerName: "점검일",
+                headerClass: "center",
+                field: "field05",
+                width: 200,
+                cellClass: "cell-normal input",
+                editable: true,
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                                                <!-- select-group -->
+                                                <div class="select-group">
+                                                    <select class="form-select" aria-label="Default select" required>
+                                                        <option value="" selected>선택</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                                <!--// select-group -->
+                                            `;
+                    } else {
+                        return value;
+                    }
+                }
+            },
+        ];
+        let sampleGrid4Api;
+
+        const sampleGrid4Options = {
+            defaultColDef: {
+                editable: false, // edit 사용 유무
+                autoHeight: true,
+                sortable: false, // sort 사용 유무
+            },
+            columnDefs: columnDefs4,
+            headerHeight: 41, // header height
+            rowData: rowData4,
+            rowHeight: 63, // row height
+            domLayout: "autoHeight", // 2025-02-19 추가 옵션
+            suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
+            // data empty style
+            overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
+        };
+        const sampleGrid4Div = document.querySelector("#sampleGrid4");
+        sampleGrid4Api = agGrid.createGrid(sampleGrid4Div, sampleGrid4Options);
     </script>
     <!--// script wrap -->
 </body>

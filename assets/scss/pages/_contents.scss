@@ -33,7 +33,7 @@
         @include flex(false, "start", "center");
         padding: rem(60px) rem(40px) rem(48px);
         width: rem(480px);
-        height: rem(414px);
+        min-height: rem(414px);
         border-radius: rem(20px);
         background-color: $white;
         box-shadow: 0 0 rem(20px) rem(12px) rgba(42, 89, 125, 0.40);
@@ -66,7 +66,7 @@
             .form-id-group,
             .form-pw-group {
                 position: relative;
-
+                
                 .form-control {
                     height: rem(52px);
                     color: $gray-002;
@@ -82,7 +82,7 @@
                     left: rem(16px);
                     padding-left: rem(32px);
                     @extend .icon;
-                    width: 100%;
+                    width: calc(100% - rem(32px) - rem(16px));
                     height: 100%;
                     color: $gray-011;
                     @include font-style($font-size-md, $font-weight-normal, $line-height-base);
@@ -113,6 +113,17 @@
                 @include font-style($h3-font-size, $font-weight-bold, rem(32px));
                 border-radius: rem(30px);
                 background: linear-gradient(283deg, $blue-006 18.73%, $secondary 77.87%);
+            }
+        }
+        &.no-icon {
+            .form-id-group,
+            .form-pw-group {
+                .login-id-label,
+                .login-pw-label {
+                    padding-left: 0;
+                    width: calc(100% - rem(16px));
+                    background-image: none;
+                }
             }
         }
     }
@@ -173,7 +184,19 @@
 }
 // Manual end
 
-// 정기점검관리 히든 처리
-.valueWeek:has(.form-group .form-check-group) {
-    display: none;
+// info
+.info-box {
+    @include flex(true, "center", "center");
+    width: 100%;
+    min-height: rem(106px);
+    border: 1px solid $blue-005;
+    .cont {
+        color: $gray-002;
+        @include font-style($font-size-md, $font-weight-normal, rem(26px));
+        letter-spacing: rem(-0.36px);
+        .tags {
+            color: $secondary;
+            font-weight: $font-weight-bold;
+        }
+    }
 }

@@ -201,8 +201,9 @@
         height: 6px;
     }
     ::-webkit-scrollbar-track {
-        background: transparent;
+        background: $gray-001;
         border-radius: 10px;
+        opacity: 0.7;
     }
     ::-webkit-scrollbar-thumb {
         background: $gray-004; 

@@ -11,10 +11,10 @@ $gray-001: #DCDCDC;
 $gray-002: #18191C;
 $gray-003: #A5A5A5; // border color
 $gray-004: #C8C8C8; // placeholder font color
-$gray-005: #18191C; // input focus
+$gray-005: $gray-002; // input focus
 $gray-006: #DCDCDC; // disabled bg
 $gray-007: #C5CDD5;
-$gray-008: #555555;
+$gray-008: #030101;
 $gray-009: #6C757D;
 $gray-010: #EEF2F7; // masthead color
 $gray-011: #828E98;
@@ -65,7 +65,7 @@ $font-size-root:              16px;
 $font-size-base:              16px;
 $font-size-xsm:               $font-size-base * .75; // 12px
 $font-size-sm:                $font-size-base * .875; // 14px
-$font-size-md:                $font-size-base * .888; // 18px
+$font-size-md:                $font-size-base * 1.125; // 18px
 $font-size-lg:                $font-size-base * 1.25; // 20px
 $font-size-xlg:               $font-size-base * 2; // 32px
 $font-size-xxlg:              $font-size-base * 3; // 48px
@@ -252,6 +252,7 @@ $btn-padding-x-lg: 16px;
 $btn-font-size-lg: $font-size-md;
 
 $btn-border-width: 2px;
+$btn-border-width-sm: 1px;
 
 $btn-font-weight: $font-weight-medium;
 $btn-box-shadow: none;

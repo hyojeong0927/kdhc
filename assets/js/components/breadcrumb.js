@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!breadcrumb) return;
 
   const isVisible = breadcrumb.getAttribute("data-visible") === "true";
+  
   if (!isVisible) {
     breadcrumb.style.display = "none";
     return;
