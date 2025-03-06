@@ -40,7 +40,7 @@ const sample = [
         status: "완료",
         start: "2025-02-24",
         end: "2025-02-28",
-        modDate: "",
+        modDate: "2025-03-06",
         design: "O",
         dev: "",
     },
