@@ -18,7 +18,7 @@ const menu02Projects = [
         id: "SB-USR-019",
         depth1: "물리보안",
         depth2: "영상정보장치점검",
-        depth3: "등록",
+        depth3: "등록/상세",
         type: "pop",
         folder: "usr",
         file: "SB-USR-019.html",
