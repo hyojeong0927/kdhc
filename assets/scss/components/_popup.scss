@@ -64,6 +64,11 @@ $popup-md-footer-height: rem(86px);
                 & + .grid-wrap {
                     margin-top: rem(24px);
                     margin-bottom: 0;
+
+                    & + .grid-wrap {
+                        margin-top: rem(24px);
+                        margin-bottom: 0;
+                    }
                 }
             }
             .section-sub {

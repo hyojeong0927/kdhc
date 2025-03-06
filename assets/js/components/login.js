@@ -1,17 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const idInput = document.getElementById("login-id");
-    const idLabel = document.querySelector(".login-id-label");
-
-    const pwInput = document.getElementById("login-pw");
-    const pwLabel = document.querySelector(".login-pw-label");
-
-    const pwInputNew = document.getElementById("login-pw-new");
-    const pwLabelNew = document.querySelector(".login-pw-new");
-
-    const pwInputOk = document.getElementById("login-pw-ok");
-    const pwLabelOk = document.querySelector(".login-pw-ok");
-    
-
     function handleFocus(label) {
         label.classList.add("hidden-label");
     }
@@ -22,15 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    idInput.addEventListener("focus", () => handleFocus(idLabel));
-    idInput.addEventListener("blur", () => handleBlur(idInput, idLabel));
-
-    pwInput.addEventListener("focus", () => handleFocus(pwLabel));
-    pwInput.addEventListener("blur", () => handleBlur(pwInput, pwLabel));
-
-    pwInputNew.addEventListener("focus", () => handleFocus(pwLabelNew));
-    pwInputNew.addEventListener("blur", () => handleBlur(pwInputNew, pwLabelNew));
-
-    pwInputOk.addEventListener("focus", () => handleFocus(pwLabelOk));    
-    pwInputOk.addEventListener("blur", () => handleBlur(pwInputOk, pwLabelOk));
+    // 모든 input 요소에 대해 자동으로 이벤트 등록
+    document.querySelectorAll("input[data-label]").forEach((input) => {
+        const label = document.querySelector(`.${input.dataset.label}`);
+        if (label) {
+            input.addEventListener("focus", () => handleFocus(label));
+            input.addEventListener("blur", () => handleBlur(input, label));
+        }
+    });
 });

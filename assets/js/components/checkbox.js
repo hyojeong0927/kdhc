@@ -17,61 +17,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const allChecked = [...checkboxes].every(cb => cb.checked);
     selectAllCheckbox.checked = allChecked;
     // all check end
-
-    // 정기점검 관리 radio
-    // const sections = {
-    //     // day: document.querySelector("#valueDay"),
-    //     week: document.querySelector("#valueWeek"),
-    //     month: document.querySelector("#valueMonth"),
-    //     quarter: document.querySelector("#valueQuarter"),
-    //     half: document.querySelector("#valueHalf"),
-    //     year: document.querySelector("#valueYear"),
-    // };
-
-    // Object.values(sections).forEach(section => section.style.display = "none");
-
-    // const radioButtons = document.querySelectorAll("input[name='typeValue']");
-
-    // radioButtons.forEach(radio => {
-    //     radio.addEventListener("change", function () {
-    //         Object.values(sections).forEach(section => section.style.display = "none");
-
-    //         if (sections[this.value]) {
-    //             sections[this.value].style.display = "flex";
-    //         }
-    //     });
-    // });
-
-    // const checkedRadio = document.querySelector("input[name='typeValue']:checked");
-
-    // if (checkedRadio && sections[checkedRadio.value]) {
-    //     sections[checkedRadio.value].style.display = "flex";
-    // }
-
-
-    const sections = {
-        // day: document.querySelector("#valueDay"),
-        week: document.querySelector("#valueWeek"),
-        month: document.querySelector("#valueMonth"),
-        quarter: document.querySelector("#valueQuarter"),
-        half: document.querySelector("#valueHalf"),
-        year: document.querySelector("#valueYear"),
-    };
-
-    Object.values(sections).forEach(section => section.style.display = "none");
-
-    const radioButtons = document.querySelectorAll("input[name='typeValue']");
-
-    radioButtons.forEach(radio => {
-        radio.addEventListener("change", function () {
-            Object.values(sections).forEach(section => section.style.display = "none");
-
-            if (sections[this.value]) {
-                sections[this.value].style.display = "flex";
-            }
-        });
-    });
-
-    
-    // 정기점검 관리 end
 });
+
+// 정기점검 관리
+const sections = document.querySelectorAll(".obj");
+sections.forEach(section => section.style.display = "none");
+
+document.addEventListener("change", function (event) {
+    if (event.target.name === "typeValue") {
+        console.log('Radio button changed to:', event.target.value);
+
+        if (event.target.id === "day" && event.target.checked) {
+            sections.forEach(section => section.style.display = "none");
+        } else if (event.target.id === "week" && event.target.checked) {
+           
+            const weekSections = document.querySelectorAll(".week");
+            sections.forEach(section => section.style.display = "none");
+            weekSections.forEach(section => section.style.display = "flex");
+        } else {
+            const selectedSections = document.querySelectorAll(`.${event.target.value}`);
+
+            if (selectedSections && selectedSections.length > 0) {
+
+                sections.forEach(section => section.style.display = "none");
+
+                selectedSections.forEach(section => section.style.display = "block");
+            } else {
+                console.warn(`No sections found with class: ${event.target.value}`);
+
+                const noSectionMessage = document.querySelector("#noSectionMessage");
+
+                if (noSectionMessage) {
+                    noSectionMessage.textContent = `No sections available for "${event.target.value}".`;
+                    noSectionMessage.style.display = "block";
+                }
+            }
+        }
+    }
+});
+
+
