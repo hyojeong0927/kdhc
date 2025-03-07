@@ -10,6 +10,35 @@
     <script src="../../../assets/js/vendors/jquery-3.7.1.min.js"></script>
     <script src="../../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
     <script type="module" src="../../../assets/js/common.js"></script>
+    <style>
+        .ag-center-cols-viewport {
+            &[data-ref="eCenterRowContainer"] {
+                height: 252px !important;
+                .ag-center-cols-container {
+                    &[role="rowgroup"] {
+                        height: 252px !important;
+                    }
+                }
+                .ag-row {
+                    &[row-index="0"] {
+                        height: 63px !important ;
+                    }
+                    &[row-index="1"] {
+                        top: 63px !important;
+                    }
+                    &[row-index="2"] {
+                        top: 126px !important;
+                    }
+                    &[row-index="3"] {
+                        top: 189px !important;
+                    }
+                }
+                textarea {
+                    height: 200px;
+                }
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="pop-wrap" class="kdhc-pop-wrap">
@@ -371,14 +400,13 @@
                 field: "field05",
                 minWidth: 180,
                 flex: 1,
-                editable: false,
+                editable: true,
                 cellEditor: 'agLargeTextCellEditor',
                 rowSpan: (params) => shouldMergeRows(params, ["field01", "field05", "field06"]),
                 cellClass: getMergeCellClass,
                 cellEditorParams: {
                     maxLength: 100
                 },
-                
                 cellRenderer: (params) => {
                     const rowIndex = params.node.rowIndex;
                     const value = params.value ? params.value.trim() : "";
@@ -403,7 +431,7 @@
                 field: "field06",
                 minWidth: 180,
                 flex: 1,
-                editable: false,
+                 editable: true,
                 cellEditor: 'agLargeTextCellEditor',
                 rowSpan: (params) => shouldMergeRows(params, ["field01", "field05", "field06"]),
                 cellClass: getMergeCellClass,
@@ -506,7 +534,13 @@
                 params.api.refreshCells({ force: true });
                 params.api.redrawRows();
             },
-            getRowHeight: (params) => 63,
+            // getRowHeight: (params) => 63,
+            getRowHeight: function(params) {
+                if (params.node.rowIndex === 0) {
+                    return 63;
+                }
+                return 63; // Default height for other rows
+            },
             domLayout: "autoHeight",
             suppressColumnVirtualisation: false,
             suppressRowTransform: true, // merge option 추가
