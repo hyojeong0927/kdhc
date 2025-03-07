@@ -410,6 +410,12 @@ $form-layouts: (
         }
         
     }
+    &.h-300 {
+        .form-control {
+            height: rem(300px);
+        }
+
+    }
 }
 
 // multi group

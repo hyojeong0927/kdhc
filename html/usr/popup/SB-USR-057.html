@@ -14,7 +14,7 @@
 <body>
     <div id="pop-wrap" class="kdhc-pop-wrap">
         <header class="kdhc-pop-header">
-            <h1 class="pop-title">자산관리 상세 등록/수정</h1>
+            <h1 class="pop-title">계정로그 일일 점검내역 등록</h1>
             <button type="button" class="btn-close" aria-label="Close" onclick="window.close()"></button>
         </header>
         <!-- 팝업 컨테이너 영역 -->
@@ -25,9 +25,9 @@
                     <!-- breadcrumbs start -->
                     <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
                         data-breadcrumb='[
-                            { "name": "정보자산", "url": "#" },
-                            { "name": "정보보자산관리", "url": "#" },
-                            { "name": "자산관리 상세 등록/수정", "url": "", "active": true }
+                            { "name": "기술보안", "url": "#" },
+                            { "name": "계정로그 일일 점검내역 등록", "url": "#" },
+                            { "name": "등록", "url": "", "active": true }
                         ]'
                         data-visible="true">
                     </nav>
@@ -35,16 +35,56 @@
 
                     <!--  -->
                     <article class="section">
+                        <!-- input form -->
+                        <div class="input-form-area">
+                            <!-- form start -->
+                            <form>
+                                <fieldset>
+                                    <!-- form-wrap start -->
+                                    <div class="form-wrap type01">
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">점검날짜</div>
+                                                <div class="form-group">
+                                                    <!-- datepicker : class="input-date-group is-error" -->
+                                                    <div class="input-date-group w-50">
+                                                        <input type="text" id="singleDate0" class="form-control datepicker" value=""
+                                                            placeholder="YYYY-MM-DD">
+                                                        <label class="input-group-text" for="singleDate0"><i class="icon calendar"></i></label>
+                                                    </div>
+                                                    <!--// datepicker -->
+                                                    <!-- 에러 문구 : hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--  -->
+                                        </div>
+                                        <!--// row end -->
+                                    </div>
+                                    <!--// form-wrap end -->
+                                </fieldset>
+                            </form>
+                            <!-- form end -->
+                        </div>
+                        <!--// input form -->
+                    </article>
+                    <article class="section">
+                       
                         <!-- grid top start -->
                         <article class="grid-top-area">
                             <!-- grid top button start -->
-                            <div class="grid-top-btn" data-buttons='[{"text": "행추가"}, {"text": "저장"}]'></div>
+                            <div class="grid-top-btn" data-buttons='[{"text": "행추가"}, {"text": "임시저장"}]'>
+                            </div>
                             <!--// grid top button end -->
                         </article>
                         <!--// grid top end -->
+
                         <!-- grid wrap start -->
                         <article class="grid-wrap">
-                            <div id="sampleGrid" class="normal"></div>
+                            <div id="sampleGrid" class="normal row-merge-grid"></div>
                         </article>
                         <!--// grid wrap end -->
                     </article>
@@ -219,61 +259,72 @@
     </div>
     <!-- script wrap -->
     <script type="module">
+        import { bootstrapDatePickerEditor } from "../../../assets/js/components/agGridComponents.js"
+
         const rowData = [
             {
-                field01: "",
-                field02: "시스템 명",
-                field03: "",
-                field04: "",
-                field05: "2025-01-20",
-                field06: "",
-                field07: "2025-01-20",
-                field08: "",
-                field09: "111.111.111",
-                field10: "2025-01-20",
-                field11: "홍길동",
-                field12: "",
-                field13: "",
-                field14: "",
-                field15: "",
-            },
-            {
-                field01: "",
-                field02: "시스템 명",
-                field03: "",
+                field01: "1",
+                field02: "",
+                field03: "분산제어",
                 field04: "",
                 field05: "",
                 field06: "",
                 field07: "",
-                field08: "",
-                field09: "",
-                field10: "",
-                field11: "",
-                field12: "",
-                field13: "",
-                field14: "",
-                field15: "",
+            },
+            {
+                field01: "1",
+                field02: "",
+                field03: "발전제어",
+                field04: "",
+                field05: "",
+                field06: "",
+                field07: "",
+            },
+            {
+                field01: "1",
+                field02: "",
+                field03: "전력제어",
+                field04: "",
+                field05: "",
+                field06: "",
+                field07: "",
+            },
+            {
+                field01: "1",
+                field02: "",
+                field03: "보조제어",
+                field04: "",
+                field05: "",
+                field06: "",
+                field07: "",
             },
         ];
         const columnDefs = [
             {
-                headerName: "자산관리번호",
+                headerName: "순번",
                 headerClass: "center",
                 field: "field01",
-                width: 238,
-                cellClass: "cell-normal",
-                cellEditor: 'customInputSearchEditor',
+                width: 64,
+                rowSpan: (params) => shouldMergeRows(params, ["field01", "field05", "field06"]),
+                cellClass: getMergeCellClass,
+            },
+            {
+                headerName: "점검일",
+                headerClass: "center",
+                field: "field02",
+                width: 180,
+                cellClass: "cell-normal input",
+                editable: true,
+                cellEditor: 'bootstrapDatePickerEditor',
                 cellRenderer: (params) => {
                     const value = params.value;
-
+                    
                     if (!value) {
                         return `
-                            <!-- input search group start -->
-                            <div class="input-search-group">
-                                <input type="search" class="form-control" id="search1" placeholder="자산관리번호" value="">
-                                <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                            <div class="input-date-group">
+                                <input type="text" id="singleDate" class="form-control datepicker" value="" placeholder="YYYY-MM-DD">
+                                <label class="input-group-text" for="singleDate"><i class="icon calendar"></i></label>
                             </div>
-                            <!--// input search group end -->
                         `;
                     } else {
                         return value;
@@ -281,52 +332,33 @@
                 }
             },
             {
-                headerName: "시스템 명",
-                headerClass: "center",
-                field: "field02",
-                width: 180,
-                cellClass: "cell-normal",
-            },
-            {
-                headerName: "계정",
+                headerName: "점검항목",
                 headerClass: "center",
                 field: "field03",
                 width: 180,
                 cellClass: "cell-normal",
-                cellRenderer: (params) => {
-                    const value = params.value;
-
-                    if (!value) {
-                        return `
-                            <!-- input group -->
-                            <div class="input-group">
-                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
-                                <label for="input-text" class="hidden">입력</label>
-                            </div>
-                            <!--// input group -->
-                        `;
-                    } else {
-                        return value;
-                    }
-                }
             },
             {
-                headerName: "비밀번호",
+                headerName: "이상유무(O,X)",
                 headerClass: "center",
                 field: "field04",
                 width: 180,
-                cellClass: "cell-normal",
+                editable: false,
+                cellClass: "cell-normal input",
                 cellRenderer: (params) => {
                     const value = params.value;
 
                     if (!value) {
                         return `
-                            <!-- input group -->
-                            <div class="input-group">
-                                <input type="password" id="input-text" class="form-control" placeholder="입력" value="">
-                                <label for="input-text" class="hidden">입력</label>
+                           <!-- select-group -->
+                            <div class="select-group">
+                                <select class="form-select" aria-label="Default select">
+                                    <option value="" selected>선택</option>
+                                    <option value="O">O</option>
+                                    <option value="X">X</option>
+                                </select>
                             </div>
-                            <!--// input group -->
+                            <!--// select-group -->
                         `;
                     } else {
                         return value;
@@ -334,202 +366,72 @@
                 }
             },
             {
-                headerName: "비밀번호 변경일자",
+                headerName: "점검결과",
                 headerClass: "center",
                 field: "field05",
-                width: 180,
-                cellClass: "cell-normal",
-                cellEditorSelector: (params) => {
-                    return {
-                        component: 'bootstrapDatePickerEditor'
-                    };
+                minWidth: 180,
+                flex: 1,
+                editable: false,
+                cellEditor: 'agLargeTextCellEditor',
+                rowSpan: (params) => shouldMergeRows(params, ["field01", "field05", "field06"]),
+                cellClass: getMergeCellClass,
+                cellEditorParams: {
+                    maxLength: 100
                 },
+                
                 cellRenderer: (params) => {
-                    const value = params.value;
+                    const rowIndex = params.node.rowIndex;
+                    const value = params.value ? params.value.trim() : "";
 
-                    if (!value) {
-                        return `
-                           <!-- datepicker -->
-                           <div class="input-date-group">
-                                <input type="text" id="singleDate5" class="form-control datepicker" value="2025-03-10" placeholder="YYYY-MM-DD">
-                                <label class="input-group-text" for="singleDate5"><i class="icon calendar"></i></label>
+                    if (rowIndex === 0 && !value) {
+                        const htmlContent = `
+                            <!-- textarea -->
+                            <div class="textarea-group">
+                                <textarea class="form-control" id="comment" placeholder="점검결과 내용"></textarea>
                             </div>
-                            <!--// datepicker -->
+                            <!--// textarea -->
                         `;
+                        return htmlContent;
                     } else {
                         return value;
                     }
                 }
             },
             {
-                headerName: "계정 접근권한",
+                headerName: "조치사항",
                 headerClass: "center",
                 field: "field06",
-                width: 180,
-                cellClass: "cell-normal",
-                cellEditor: 'agTextCellEditor',
+                minWidth: 180,
+                flex: 1,
+                editable: false,
+                cellEditor: 'agLargeTextCellEditor',
+                rowSpan: (params) => shouldMergeRows(params, ["field01", "field05", "field06"]),
+                cellClass: getMergeCellClass,
                 cellEditorParams: {
-                    maxLength: 20
+                    maxLength: 100
                 },
                 cellRenderer: (params) => {
-                    const value = params.value;
+                    const rowIndex = params.node.rowIndex;
+                    const value = params.value ? params.value.trim() : "";
 
-                    if (!value) {
-                        return `
-                            <!-- input group -->
-                            <div class="input-group">
-                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
-                                <label for="input-text" class="hidden">입력</label>
+                    if (rowIndex === 0 && !value) {
+                        const htmlContent = `
+                            <!-- textarea -->
+                            <div class="textarea-group">
+                                <textarea class="form-control" id="comment" placeholder="조치사항 내용"></textarea>
                             </div>
-                            <!--// input group -->
+                            <!--// textarea -->
                         `;
+                        return htmlContent;
                     } else {
                         return value;
                     }
                 }
-            },
-            {
-                headerName: "계정 등록일",
-                headerClass: "center",
-                field: "field07",
-                width: 180,
-                cellClass: "cell-normal",
-                cellEditorSelector: (params) => {
-                    return {
-                        component: 'bootstrapDatePickerEditor'
-                    };
-                },
-                cellRenderer: (params) => {
-                    const value = params.value;
-
-                    if (!value) {
-                        return `
-                           <!-- datepicker -->
-                           <div class="input-date-group">
-                                <input type="text" id="singleDate5" class="form-control datepicker" value="2025-03-10" placeholder="YYYY-MM-DD">
-                                <label class="input-group-text" for="singleDate5"><i class="icon calendar"></i></label>
-                            </div>
-                            <!--// datepicker -->
-                        `;
-                    } else {
-                        return value;
-                    }
-                }
-            },
-            {
-                headerName: "계정 공유",
-                headerClass: "center",
-                field: "field08",
-                width: 180,
-                cellClass: "cell-normal",
-                cellEditor: 'agTextCellEditor',
-                cellEditorParams: {
-                    maxLength: 20
-                },
-                cellRenderer: (params) => {
-                    const value = params.value;
-
-                    if (!value) {
-                        return `
-                            <!-- input group -->
-                            <div class="input-group">
-                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
-                                <label for="input-text" class="hidden">입력</label>
-                            </div>
-                            <!--// input group -->
-                        `;
-                    } else {
-                        return value;
-                    }
-                }
-            },
-            {
-                headerName: "IP",
-                headerClass: "center",
-                field: "field09",
-                width: 180,
-                cellClass: "cell-normal",
-            },
-            {
-                headerName: "일자",
-                headerClass: "center",
-                field: "field10",
-                width: 180,
-                cellClass: "cell-normal",
-                cellEditorSelector: (params) => {
-                    return {
-                        component: 'bootstrapDatePickerEditor'
-                    };
-                },
-                cellRenderer: (params) => {
-                    const value = params.value;
-
-                    if (!value) {
-                        return `
-                           <!-- datepicker -->
-                           <div class="input-date-group">
-                                <input type="text" id="singleDate5" class="form-control datepicker" value="2025-03-10" placeholder="YYYY-MM-DD">
-                                <label class="input-group-text" for="singleDate5"><i class="icon calendar"></i></label>
-                            </div>
-                            <!--// datepicker -->
-                        `;
-                    } else {
-                        return value;
-                    }
-                }
-            },
-            {
-                headerName: "점검자",
-                headerClass: "center",
-                field: "field11",
-                width: 180,
-                cellClass: "cell-normal",
-                cellEditor: 'customInputSearchEditor',
-                cellRenderer: (params) => {
-                    const value = params.value;
-
-                    if (!value) {
-                        return `
-                            <!-- input search group start -->
-                            <div class="input-search-group">
-                                <input type="search" class="form-control" id="search1" placeholder="자산관리번호" value="">
-                                <label class="input-group-text" for="search1"><i class="icon search"></i></label>
-                            </div>
-                            <!--// input search group end -->
-                        `;
-                    } else {
-                        return value;
-                    }
-                }
-            },
-            {
-                headerName: "사용자",
-                headerClass: "center",
-                field: "field12",
-                width: 180,
-                cellClass: "cell-normal",
-            },
-            {
-                headerName: "점검여부",
-                headerClass: "center",
-                field: "field13",
-                width: 180,
-                cellClass: "cell-normal",
-                cellRenderer: params => {
-                    return '<button type="button" class="btn btn-grid btn-xxsm">점검 확인</button>';
-                }
-            },
-            {
-                headerName: "점검상태",
-                headerClass: "center",
-                field: "field14",
-                width: 180,
-                cellClass: "cell-normal",
             },
             {
                 headerName: "삭제",
                 headerClass: "center",
-                field: "field15",
+                field: "field07",
                 width: 100,
                 cellClass: "cell-normal",
                 cellRenderer: params => {
@@ -537,117 +439,80 @@
                 }
             },
         ];
+
+        // rowspan start
+        let rowspanMap = {};
+
+        function calculateRowspanMap(data, fields) {
+            const mapKey = fields.join(",");
+            rowspanMap[mapKey] = {};
+
+            let rowIndex = 0;
+
+            while (rowIndex < data.length) {
+                let mergeCount = 1;
+                const key = fields.map(field => data[rowIndex][field]).join(",");
+
+                for (let i = rowIndex + 1; i < data.length; i++) {
+                    const nextKey = fields.map(field => data[i][field]).join(",");
+                    if (nextKey === key) {
+                        mergeCount++;
+                    } else {
+                        break;
+                    }
+                }
+
+                for (let i = 0; i < mergeCount; i++) {
+                    if (i > 0) {
+                        fields.forEach(field => {
+                            data[rowIndex + i][field] = "";
+                        });
+                    }
+                    rowspanMap[mapKey][rowIndex + i] = i === 0 ? mergeCount : 1;
+                }
+
+                rowIndex += mergeCount;
+            }
+        }
+
+        function shouldMergeRows(params, fields) {
+            const mapKey = fields.join(",");
+            const rowIndex = params.node.rowIndex;
+            return rowspanMap[mapKey]?.[rowIndex] || 1;
+        }
+
+        function getMergeCellClass(params) {
+            const mapKey = ["field01", "field05", "field06"].join(",");
+            const rowIndex = params.node.rowIndex;
+            return rowspanMap[mapKey]?.[rowIndex] > 1 ? "merge-cell" : "";
+        }
+        // rowspan end
+
         let sampleGridApi;
 
         const sampleGridOptions = {
             defaultColDef: {
-                editable: true, // edit 사용 유무
+                editable: false, // edit 사용 유무
                 autoHeight: true,
                 sortable: false, // sort 사용 유무
             },
             columnDefs,
             headerHeight: 41, // header height
             rowData: rowData,
-            rowHeight: 56, // row height
-            rowSelection: { // row checkbox
-                mode: "multiRow",
-                groupSelects: "descendants",
-                selectAll: 'filtered',
-                width: 52,
+            rowHeight: 63, // row height
+            
+            onGridReady: (params) => { // merge option
+                calculateRowspanMap(rowData, ["field01", "field05", "field06"]);
+                params.api.refreshCells({ force: true });
+                params.api.redrawRows();
             },
+            getRowHeight: (params) => 63,
             domLayout: "autoHeight",
-            suppressColumnVirtualisation: true,
+            suppressColumnVirtualisation: false,
+            suppressRowTransform: true, // merge option 추가
             components: {
-                bootstrapDatePickerEditor: function() {
-                    return {
-                        init: function(params) {
-                            const input = document.createElement('input');
-                            input.id = 'date';
-                            input.type = 'text';
-                            input.className = 'form-control datepicker';
-                            input.value = params.value || '';
-                            input.placeholder = "YYYY-MM-DD";
-
-                            const label = document.createElement('label');
-                            label.className = 'input-group-text';
-                            label.htmlFor = 'date';
-                            label.innerHTML = '<i class="icon calendar"></i>';
-
-                            input.addEventListener('input', function() {
-                                params.api.stopEditing();
-                            });
-
-                            this.eInput = input;
-                            this.eLabel = label;
-
-                            const wrapper = document.createElement('div');
-                            wrapper.className = 'input-date-group';
-                            wrapper.appendChild(input);
-                            wrapper.appendChild(label);
-                            this.eWrapper = wrapper;
-
-                            $(input).datepicker({
-                                format: 'yyyy-mm-dd',
-                                autoclose: true
-                            });
-                            input.value = params.value;
-
-                            input.addEventListener('change', function() {
-                                params.api.stopEditing();
-                            });
-                        },
-                        getValue: function() {
-                            return this.eInput.value;
-                        },
-                        getGui: function() {
-                            return this.eWrapper;
-                        }
-                    };
-                },
-                customInputSearchEditor: function() {
-                    return {
-                        init: function(params) {
-                            
-                            const input = document.createElement('input');
-                            input.id = 'searchId';
-                            input.type = 'search';
-                            input.className = 'form-control';
-                            input.value = params.value || '';
-                            input.placeholder = "입력";
-
-                            const label = document.createElement('label');
-                            label.htmlFor = 'searchId';
-                            label.className = 'input-group-text';
-                            label.innerHTML = '<i class="icon search"></i>';
-
-                            // 클릭 이벤트 추가
-                            label.addEventListener('click', function() {
-                                alert('검색 버튼이 클릭되었습니다!');
-                            });
-                           
-                            input.addEventListener('input', function() {
-                                params.api.stopEditing();
-                            });
-
-                            this.eInput = input;
-                            this.eLabel = label;
-
-                            const wrapper = document.createElement('div');
-                            wrapper.className = 'input-search-group';
-                            wrapper.appendChild(input);
-                            wrapper.appendChild(label);
-                            this.eWrapper = wrapper;
-                        },
-                        getValue: function() {
-                            return this.eInput.value;
-                        },
-                        getGui: function() {
-                            return this.eWrapper;
-                        }
-                    };
-                },
+                bootstrapDatePickerEditor
             },
-
             // data empty style
             overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
         };

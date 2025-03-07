@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko" data-kdhc-mode="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <script src="../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
     <script type="module" src="../../assets/js/common.js"></script>
 </head>
+
 <body>
     <div id="wrap" class="kdhc-wrap">
 
@@ -45,7 +47,7 @@
                 <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
                 <aside id="sidebar" class="sidebar" data-menu='[
                         { "name": "비밀번호 정책 운영현황", "url": "#" },
-                        { "name": "비밀번호 변경 불가 월간 점검", "url": "#" },
+                        { "name": "비밀번호 변경 불가\n월간 점검", "url": "#" },
                         { "name": "백신 운영현황", "url": "#" },
                         { "name": "백신 미운영 현황", "url": "#" },
                         { "name": "백신 정책 세부내역", "url": "#" },
@@ -55,28 +57,23 @@
                         { "name": "운영소프트웨어\n업데이트 주기", "url": "#" },
                         { "name": "공정제어 설비\n운영 체제 현황", "url": "#" },
                         { "name": "네트워크 장비 소프트웨어", "url": "#" },
-                        { "name": "보안패치 미운영 월간 점검", "url": "#", "active": true }]'></aside>
+                        { "name": "보안패치 미운영 월간 점검", "url": "#" }]'></aside>
                 <!--// 사이드 영역 -->
 
                 <main class="main-contents">
                     <!-- breadcrumbs start : 현재 히든 처리 추후 변경 가능 -->
-                    <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
-                        data-breadcrumb='[
+                    <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" data-breadcrumb='[
                             { "name": "보안정책", "url": "#" },
-                            { "name": "보안패치 미운영 월간 점검", "url": "", "active": true }
-                        ]'
-                        data-visible="false">
-                    </nav> 
+                            { "name": "계정로그 일일 점검내역", "url": "", "active": true }
+                        ]' data-visible="false">
+                    </nav>
                     <!--// breadcrumbs end -->
-                    
+
                     <!-- 컨텐츠 영역 -->
                     <div id="contents" class="contents">
 
                         <!-- page title start -->
-                        <div class="page-title-wrap" 
-                            data-title="보안패치 미운영 월간 점검" 
-                            data-badge="" data-badge-visible="false">
-                        </div>
+                        <div class="page-title-wrap" data-title="계정로그 일일 점검내역" data-badge="" data-badge-visible="false"></div>
                         <!--// page title end -->
 
                         <!-- search start-->
@@ -90,7 +87,7 @@
                                         <!-- row -->
                                         <div class="form-row">
                                             <div class="col">
-                                                <div class="form-label">기준일</div>
+                                                <div class="form-label">기안일자</div>
                                                 <div class="form-group">
                                                     <!-- datepicker-group start -->
                                                     <div class="datepicker-group">
@@ -100,50 +97,34 @@
                                                             <button class="btn btn-outline--round btn-xsm">6개월</button>
                                                             <button class="btn btn-outline--round btn-xsm" disabled>12개월</button>
                                                         </div>
-                                                        <div class="input-date-group is-error">
-                                                            <input type="text" id="startDate" class="form-control" value=""
-                                                                placeholder="YYYY-MM-DD" readonly>
-                                                            <label class="input-group-text" for="startDate"><i
-                                                                    class="icon calendar"></i></label>
+                                                        <!-- class="input-date-group is-error" : 에러  -->
+                                                        <div class="input-date-group">
+                                                            <input type="text" id="startDate" class="form-control" value="" placeholder="YYYY-MM-DD" readonly>
+                                                            <label class="input-group-text" for="startDate"><i class="icon calendar"></i></label>
                                                         </div>
                                                         <div class="to">-</div>
+                                                        <!-- class="input-date-group is-error" : 에러  -->
                                                         <div class="input-date-group">
-                                                            <input type="text" id="endDate" class="form-control" value=""
-                                                                placeholder="YYYY-MM-DD" readonly>
+                                                            <input type="text" id="endDate" class="form-control" value="" placeholder="YYYY-MM-DD" readonly>
                                                             <label class="input-group-text" for="endDate"><i class="icon calendar"></i></label>
                                                         </div>
                                                     </div>
                                                     <!--// datepicker-group end -->
-                                                    <!-- 에러 문구 -->
-                                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                                    <!-- 에러 문구 : hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-row">
+                                            <!-- col -->
                                             <div class="col">
-                                                <!--  -->
-                                                <div class="form-label">기안자</div>
-                                                <div class="form-group">
-                                                    <!-- input search group start -->
-                                                    <div class="input-search-group">
-                                                        <input type="search" class="form-control" id="search2" value="" placeholder="기안자 입력">
-                                                        <label class="input-group-text hidden" for="search2"><i class="icon search"></i></label>
-                                                    </div>
-                                                    <!--// input search group end -->
-                                                    <!-- 에러 문구 : hidden -->
-                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                    <!--// 에러 문구 -->
-                                                </div>
-                                                <!--  -->
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-label">결재상태</div>
+                                                <div class="form-label">결재상태 조회</div>
                                                 <div class="form-group">
                                                     <div class="select-group">
                                                         <select class="form-select" aria-label="Default select" required>
                                                             <option value="" selected>선택</option>
-                                                            <option value="1">One</option>
+                                                            <option value="1">전체</option>
                                                             <option value="2">Two</option>
                                                             <option value="3">Three</option>
                                                         </select>
@@ -153,41 +134,9 @@
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
+                                            <!--// col -->
                                         </div>
-                                        <div class="form-row">
-                                            <div class="col">
-                                                <div class="form-label">점검 월</div>
-                                                <div class="form-group">
-                                                    <!--  -->
-                                                    <div class="select-group">
-                                                        <select class="form-select" aria-label="Default select" required>
-                                                            <option value="" selected>선택</option>
-                                                            <option value="1">One</option>
-                                                            <option value="2">Two</option>
-                                                            <option value="3">Three</option>
-                                                        </select>
-                                                    </div>
-                                                    <!--  -->
-                                                    <!-- 에러 문구 : hidden -->
-                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                    <!--// 에러 문구 -->
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-label">결재자</div>
-                                                <div class="form-group">
-                                                    <!-- input search group start -->
-                                                    <div class="input-search-group">
-                                                        <input type="search" class="form-control" id="search2" value="" placeholder="결재자">
-                                                        <label class="input-group-text hidden" for="search2"><i class="icon search"></i></label>
-                                                    </div>
-                                                    <!--// input search group end -->
-                                                    <!-- 에러 문구 -->
-                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                    <!--// 에러 문구 -->
-                                                </div>
-                                            </div>
-                                        </div>
+                        
                                         <!-- row -->
                                         <div class="form-row search-btn">
                                             <button type="button" class="btn btn-primary lg">조회</button>
@@ -214,10 +163,9 @@
                                 </select>
                             </div>
                             <!--// grid top left end -->
-                        
+
                             <!-- grid top button start -->
-                            <div class="grid-top-btn" data-buttons='[{"text": "관련규정"}, {"text": "결재기안"}, {"text": "출력", "class": "btn btn-secondary btn-sm"}]'>
-                            </div>
+                            <div class="grid-top-btn" data-buttons='[ {"text": "관련규정"}, {"text": "결재기안"}, {"text": "출력", "class": "btn btn-secondary btn-sm"}]'></div>
                             <!--// grid top button end -->
                         
                         </article>
@@ -237,6 +185,7 @@
                             </nav>
                             <!--// 페이징 -->
                         </article>
+                        <!--// grid bottom end -->
 
                     </div>
                     <!--// 컨텐츠 영역 -->
@@ -252,7 +201,7 @@
             <script type="module" src="../../assets/js/layouts/footer.js"></script>
         </footer>
         <!--// 푸터 영역 -->
- 
+
     </div>
     <!-- script wrap -->
     <script type="module">
@@ -260,100 +209,114 @@
             {
                 field01: "판교-25-0001",
                 field02: "계전부",
-                field03: "임찬규",
-                field04: "2024.12.12 12:24:30",
-                field05: "2024.12.12 12:24:30",
-                field06: "step01",
+                field03: "홍창기",
+                field04: "",
+                field05: "2024.12.09",
+                field06: "2024.12.11",
+                field07: "step01",
             },
             {
                 field01: "판교-25-0001",
                 field02: "계전부",
-                field03: "임찬규",
-                field04: "2024.12.12 12:24:30",
-                field05: "2024.12.12 12:24:30",
-                field06: "step01 reject",
+                field03: "홍창기",
+                field04: "",
+                field05: "2024.12.09",
+                field06: "2024.12.11",
+                field07: "step01 reject",
             },
             {
                 field01: "판교-25-0001",
                 field02: "계전부",
-                field03: "임찬규",
-                field04: "2024.12.12 12:24:30",
-                field05: "2024.12.12 12:24:30",
-                field06: "step02",
+                field03: "홍창기",
+                field04: "",
+                field05: "2024.12.09",
+                field06: "2024.12.11",
+                field07: "step02",
             },
             {
                 field01: "판교-25-0001",
                 field02: "계전부",
-                field03: "임찬규",
-                field04: "2024.12.12 12:24:30",
-                field05: "2024.12.12 12:24:30",
-                field06: "step02 reject",
+                field03: "홍창기",
+                field04: "",
+                field05: "2024.12.09",
+                field06: "2024.12.11",
+                field07: "step02 reject",
             },
             {
                 field01: "판교-25-0001",
                 field02: "계전부",
-                field03: "임찬규",
-                field04: "2024.12.12 12:24:30",
-                field05: "2024.12.12 12:24:30",
-                field06: "step03",
+                field03: "홍창기",
+                field04: "",
+                field05: "2024.12.09",
+                field06: "2024.12.11",
+                field07: "step03",
             },
             {
                 field01: "판교-25-0001",
                 field02: "계전부",
-                field03: "임찬규",
-                field04: "2024.12.12 12:24:30",
-                field05: "2024.12.12 12:24:30",
-                field06: "step03 reject",
+                field03: "홍창기",
+                field04: "",
+                field05: "2024.12.09",
+                field06: "2024.12.11",
+                field07: "step03 reject",
             },
             {
                 field01: "판교-25-0001",
                 field02: "계전부",
-                field03: "임찬규",
-                field04: "2024.12.12 12:24:30",
-                field05: "2024.12.12 12:24:30",
-                field06: "done",
+                field03: "홍창기",
+                field04: "",
+                field05: "2024.12.09",
+                field06: "2024.12.11",
+                field07: "done",
             },
         ];
         const columnDefs = [
             {
-                headerName: "문서번호",
+                headerName: "문서 번호",
                 headerClass: "center",
                 field: "field01",
-                width: 180,
+                width: 200,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "기안부서",
                 headerClass: "center",
                 field: "field02",
-                width: 180,
+                width: 120,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "기안자",
                 headerClass: "center",
                 field: "field03",
-                width: 76,
+                width: 100,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "작성일자",
+                headerClass: "center",
+                field: "field04",
+                width: 180,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "기안일자",
                 headerClass: "center",
-                field: "field04",
-                width: 172,
+                field: "field05",
+                width: 180,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "결재일자",
                 headerClass: "center",
-                field: "field05",
-                width: 172,
+                field: "field06",
+                width: 180,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "결재/승인 상태",
                 headerClass: "center",
-                field: "field06",
+                field: "field07",
                 minWidth: 400,
                 flex: 1,
                 cellClass: "cell-normal",
@@ -422,6 +385,7 @@
 
             }
         ];
+
         let sampleGridApi;
 
         const sampleGridOptions = {
@@ -449,8 +413,9 @@
         sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
     </script>
     <!--// script wrap -->
-    
+
     <!-- modal wrap -->
     <!--// modal wrap -->
 </body>
+
 </html>

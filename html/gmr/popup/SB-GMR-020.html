@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko" data-kdhc-mode="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDHC</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../../css/index.css">
+    <!-- script -->
+    <script src="../../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script type="module" src="../../../assets/js/common.js"></script>
+</head>
+
+<body>
+    <div id="pop-wrap" class="kdhc-pop-wrap">
+        <header class="kdhc-pop-header">
+            <h1 class="pop-title" id="staticBackdropLabel">사용자 등록/수정/삭제</h1>
+            <button type="button" class="btn-close" aria-label="Close" onclick="window.close()"></button>
+        </header>
+        <!-- 팝업 컨테이너 영역 -->
+        <section class="kdhc-pop-container">
+            <div class="inner">
+                <!-- 팝업 컨텐츠 영역 -->
+                <div class="contents">
+
+                    <!-- grid wrap start -->
+                    <article class="grid-wrap">
+                        <div id="sampleGrid" class="normal"></div>
+                    </article>
+                    <!--// grid wrap end -->
+
+                    <!-- bottom button area start -->
+                    <div class="bottom-btn-area"
+                        data-buttons='[{"text": "삭제", "class": "btn btn-outline btn-md"}, {"text": "저장"}]'></div>
+                    <!--// bottom button area end -->
+
+                </div>
+                <!--// 팝업 컨텐츠 영역 -->
+            </div>
+        </section>
+        <!--// 팝업 컨테이너 영역 -->
+    </div>
+    <!-- script wrap -->
+    <script type="module">
+        const rowData = [
+            {
+                field01: "",
+                field02: "",
+                field03: "",
+                field04: "",
+                field05: "",
+            },
+        ];
+        const columnDefs = [
+            {
+                headerName: "지사",
+                headerClass: "center",
+                field: "field01",
+                width: 240,
+                cellClass: "cell-normal input",
+                cellRenderer: (params) => {
+                    const value = params.value;
+                    if (!value) {
+                        return `
+                            <div class="select-group">
+                                <select class="form-select" aria-label="Default select" required>
+                                    <option value="" selected>선택</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
+            },
+            {
+                headerName: "부서",
+                headerClass: "center",
+                field: "field02",
+                width: 240,
+                cellClass: "cell-normal input",
+                cellRenderer: (params) => {
+                    const value = params.value;
+                    if (!value) {
+                        return `
+                            <div class="select-group">
+                                <select class="form-select" aria-label="Default select" required>
+                                    <option value="" selected>선택</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
+            },
+            {
+                headerName: "사번",
+                headerClass: "center",
+                field: "field03",
+                width: 180,
+                editable: true,
+                cellClass: "cell-normal input",
+                cellRenderer: (params) => {
+                    const value = params.value;
+                    if (!value) {
+                        return `
+                            <!-- input group -->
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                <label for="input-text" class="hidden">입력</label>
+                            </div>
+                            <!--// input group -->
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
+            },
+            {
+                headerName: "이름",
+                headerClass: "center",
+                field: "field04",
+                width: 180,
+                editable: true,
+                cellClass: "cell-normal input",
+                cellRenderer: (params) => {
+                    const value = params.value;
+                    if (!value) {
+                        return `
+                            <!-- input group -->
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                <label for="input-text" class="hidden">입력</label>
+                            </div>
+                            <!--// input group -->
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
+               
+            },
+            {
+                headerName: "사용자 상태",
+                headerClass: "center",
+                field: "field05",
+                minWidth: 270,
+                flex: 1,
+                cellClass: "cell-normal input",
+                cellRenderer: (params) => {
+                    const value = params.value;
+                    if (!value) {
+                        return `
+                            <div class="select-group">
+                                <select class="form-select" aria-label="Default select" required>
+                                    <option value="" selected>선택</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
+            },
+        ];
+      
+        let sampleGridApi;
+
+        const sampleGridOptions = {
+            defaultColDef: {
+                editable: false, // edit 사용 유무
+                autoHeight: true,
+                sortable: false, // sort 사용 유무
+            },
+            columnDefs,
+            headerHeight: 39, // header height
+            rowData: rowData,
+            rowHeight: 47, // row height
+            domLayout: "autoHeight", // 2025-02-19 추가 옵션
+            suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
+            // data empty style
+            overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
+        };
+        const sampleGridDiv = document.querySelector("#sampleGrid");
+        sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
+    </script>
+    <!--// script wrap -->
+</body>
+
+</html>

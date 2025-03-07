@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko" data-kdhc-mode="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <script src="../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
     <script type="module" src="../../assets/js/common.js"></script>
 </head>
+
 <body>
     <div id="wrap" class="kdhc-wrap">
 
@@ -45,7 +47,7 @@
                 <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
                 <aside id="sidebar" class="sidebar" data-menu='[
                         { "name": "비밀번호 정책 운영현황", "url": "#" },
-                        { "name": "비밀번호 변경 불가 월간 점검", "url": "#" },
+                        { "name": "비밀번호 변경 불가\n월간 점검", "url": "#", "active": true },
                         { "name": "백신 운영현황", "url": "#" },
                         { "name": "백신 미운영 현황", "url": "#" },
                         { "name": "백신 정책 세부내역", "url": "#" },
@@ -55,33 +57,28 @@
                         { "name": "운영소프트웨어\n업데이트 주기", "url": "#" },
                         { "name": "공정제어 설비\n운영 체제 현황", "url": "#" },
                         { "name": "네트워크 장비 소프트웨어", "url": "#" },
-                        { "name": "보안패치 미운영 월간 점검", "url": "#", "active": true }]'></aside>
+                        { "name": "보안패치 미운영 월간 점검", "url": "#" }]'></aside>
                 <!--// 사이드 영역 -->
 
                 <main class="main-contents">
                     <!-- breadcrumbs start : 현재 히든 처리 추후 변경 가능 -->
-                    <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
-                        data-breadcrumb='[
+                    <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" data-breadcrumb='[
                             { "name": "보안정책", "url": "#" },
-                            { "name": "보안패치 미운영 월간 점검", "url": "", "active": true }
-                        ]'
-                        data-visible="false">
-                    </nav> 
+                            { "name": "패스워드변경불가 월간점검현황", "url": "", "active": true }
+                        ]' data-visible="false">
+                    </nav>
                     <!--// breadcrumbs end -->
-                    
+
                     <!-- 컨텐츠 영역 -->
                     <div id="contents" class="contents">
 
                         <!-- page title start -->
-                        <div class="page-title-wrap" 
-                            data-title="보안패치 미운영 월간 점검" 
-                            data-badge="" data-badge-visible="false">
-                        </div>
+                        <div class="page-title-wrap" data-title="패스워드변경불가 월간점검현황" data-badge="" data-badge-visible="false"></div>
                         <!--// page title end -->
 
                         <!-- 팝업 호출 버튼 -->
                         <button type="button" id="large-btn" class="btn btn-primary btn-lg">
-                            보안패치 미운영 월간 점검
+                            패스워드변경불가 월간점검현황 등록/수정
                         </button>
                         <!--// 팝업 호출 버튼 -->
                         
@@ -90,7 +87,7 @@
                             import { setupPopupListeners } from '../../assets/js/components/popup.js';
 
                             const urlList = {
-                                large: './popup/SB-USR-052.html',
+                                large: './popup/SB-USR-055.html',
                             };
                             setupPopupListeners(urlList);
                         </script>
@@ -110,12 +107,14 @@
             <script type="module" src="../../assets/js/layouts/footer.js"></script>
         </footer>
         <!--// 푸터 영역 -->
- 
+
     </div>
     <!-- script wrap -->
+   
     <!--// script wrap -->
-    
+
     <!-- modal wrap -->
     <!--// modal wrap -->
 </body>
+
 </html>

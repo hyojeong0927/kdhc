@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko" data-kdhc-mode="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <script src="../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
     <script type="module" src="../../assets/js/common.js"></script>
 </head>
+
 <body>
     <div id="wrap" class="kdhc-wrap">
 
@@ -44,8 +46,8 @@
                 <!-- 사이드 영역 -->
                 <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
                 <aside id="sidebar" class="sidebar" data-menu='[
-                        { "name": "비밀번호 정책 운영현황", "url": "#" },
-                        { "name": "비밀번호 변경 불가 월간 점검", "url": "#" },
+                        { "name": "비밀번호 정책 운영현황", "url": "#", "active": true },
+                        { "name": "비밀번호 변경 불가\n월간 점검", "url": "#" },
                         { "name": "백신 운영현황", "url": "#" },
                         { "name": "백신 미운영 현황", "url": "#" },
                         { "name": "백신 정책 세부내역", "url": "#" },
@@ -53,30 +55,25 @@
                         { "name": "운영체제 보안패치\n업데이트 현황", "url": "#" },
                         { "name": "운영체제 보안패치\n업데이트 주기", "url": "#" },
                         { "name": "운영소프트웨어\n업데이트 주기", "url": "#" },
-                        { "name": "공정제어 설비\n운영 체제 현황", "url": "#", "active": true },
+                        { "name": "공정제어 설비\n운영 체제 현황", "url": "#" },
                         { "name": "네트워크 장비 소프트웨어", "url": "#" },
                         { "name": "보안패치 미운영 월간 점검", "url": "#" }]'></aside>
                 <!--// 사이드 영역 -->
 
                 <main class="main-contents">
                     <!-- breadcrumbs start : 현재 히든 처리 추후 변경 가능 -->
-                    <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
-                        data-breadcrumb='[
+                    <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" data-breadcrumb='[
                             { "name": "보안정책", "url": "#" },
-                            { "name": "공정제어설비운영체제현황", "url": "", "active": true }
-                        ]'
-                        data-visible="false">
-                    </nav> 
+                            { "name": "비밀번호 정책 운영현황", "url": "", "active": true }
+                        ]' data-visible="false">
+                    </nav>
                     <!--// breadcrumbs end -->
-                    
+
                     <!-- 컨텐츠 영역 -->
                     <div id="contents" class="contents">
 
                         <!-- page title start -->
-                        <div class="page-title-wrap" 
-                            data-title="공정제어설비운영체제현황" 
-                            data-badge="" data-badge-visible="false">
-                        </div>
+                        <div class="page-title-wrap" data-title="비밀번호 정책 운영현황" data-badge="" data-badge-visible="false"></div>
                         <!--// page title end -->
 
                         <!-- search start-->
@@ -90,32 +87,14 @@
                                         <!-- row -->
                                         <div class="form-row">
                                             <div class="col">
-                                                <div class="form-label">기준일</div>
+                                                <div class="form-label">자산관리번호</div>
                                                 <div class="form-group">
-                                                    <!-- datepicker-group start -->
-                                                    <div class="datepicker-group">
-                                                        <div class="datepicker-btn-group">
-                                                            <button class="btn btn-outline--round btn-xsm active">1개월</button>
-                                                            <button class="btn btn-outline--round btn-xsm">3개월</button>
-                                                            <button class="btn btn-outline--round btn-xsm">6개월</button>
-                                                            <button class="btn btn-outline--round btn-xsm" disabled>12개월</button>
-                                                        </div>
-                                                        <!-- class="input-date-group is-error" : 에러  -->
-                                                        <div class="input-date-group">
-                                                            <input type="text" id="startDate" class="form-control" value=""
-                                                                placeholder="YYYY-MM-DD" readonly>
-                                                            <label class="input-group-text" for="startDate"><i
-                                                                    class="icon calendar"></i></label>
-                                                        </div>
-                                                        <div class="to">-</div>
-                                                        <!-- class="input-date-group is-error" : 에러  -->
-                                                        <div class="input-date-group">
-                                                            <input type="text" id="endDate" class="form-control" value=""
-                                                                placeholder="YYYY-MM-DD" readonly>
-                                                            <label class="input-group-text" for="endDate"><i class="icon calendar"></i></label>
-                                                        </div>
+                                                    <!-- input search group start -->
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search2" value="" placeholder="자산관리번호">
+                                                        <label class="input-group-text hidden" for="search2"><i class="icon search"></i></label>
                                                     </div>
-                                                    <!--// datepicker-group end -->
+                                                    <!--// input search group end -->
                                                     <!-- 에러 문구 : hidden 제거 -->
                                                     <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
@@ -125,12 +104,12 @@
                                         <div class="form-row">
                                             <!-- col -->
                                             <div class="col">
-                                                <div class="form-label">분류</div>
+                                                <div class="form-label">시스템명</div>
                                                 <div class="form-group">
                                                     <div class="select-group">
                                                         <select class="form-select" aria-label="Default select" required>
-                                                            <option value="">선택</option>
-                                                            <option value="1" selected>전체</option>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">전체</option>
                                                             <option value="2">Two</option>
                                                             <option value="3">Three</option>
                                                         </select>
@@ -142,15 +121,19 @@
                                             </div>
                                             <!--// col -->
                                             <!-- col -->
-                                             <div class="col">
-                                                <div class="form-label">자산관리번호</div>
+                                            <div class="col">
+                                                <div class="form-label">분류</div>
                                                 <div class="form-group">
-                                                    <!-- input search group start : class="input-search-group is-error" -->
-                                                    <div class="input-search-group">
-                                                        <input type="search" class="form-control" id="search2" value="" placeholder="자산관리번호">
-                                                        <label class="input-group-text hidden" for="search2"><i class="icon search"></i></label>
+                                                    <!--  -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
                                                     </div>
-                                                    <!--// input search group end -->
+                                                    <!--  -->
                                                     <!-- 에러 문구 : hidden -->
                                                     <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
@@ -158,7 +141,7 @@
                                             </div>
                                             <!--// col -->
                                         </div>
-                                        
+                        
                                         <!-- row -->
                                         <div class="form-row search-btn">
                                             <button type="button" class="btn btn-primary lg">조회</button>
@@ -185,9 +168,9 @@
                                 </select>
                             </div>
                             <!--// grid top left end -->
-                        
+
                             <!-- grid top button start -->
-                            <div class="grid-top-btn" data-buttons='[{"text": "관련규정"}, {"text": "출력", "class": "btn btn-secondary btn-sm"}]'>
+                            <div class="grid-top-btn" data-buttons='[ {"text": "관련규정"}, {"text": "출력", "class": "btn btn-secondary btn-sm"}]'>
                             </div>
                             <!--// grid top button end -->
                         
@@ -196,7 +179,6 @@
 
                         <!-- grid wrap start -->
                         <article class="grid-wrap">
-                            <!-- 2025-03-07 : row-merge-grid 제거 -->
                             <div id="sampleGrid" class="normal"></div>
                         </article>
                         <!--// grid wrap end -->
@@ -209,6 +191,7 @@
                             </nav>
                             <!--// 페이징 -->
                         </article>
+                        <!--// grid bottom end -->
 
                     </div>
                     <!--// 컨텐츠 영역 -->
@@ -224,180 +207,121 @@
             <script type="module" src="../../assets/js/layouts/footer.js"></script>
         </footer>
         <!--// 푸터 영역 -->
- 
+
     </div>
     <!-- script wrap -->
     <script type="module">
         const rowData = [
             {
-                field01: "",
-                field02: "발전제어시스템(GTㆍST)",
-                field03: "EWS",
-                field04: "화성-노트북-001",
-                field05: "시스템 1",
-                field06: "EMERSON",
-                field07: "OVATION",
-                field08: "VxWork",
-                field09: "3.5.1",
-                field10: "1년",
-                field11: "1년",
+                field01: "보조설비_TBN BY-PASS(HPU)",
+                field02: "화성-노트북-001",
+                field03: "DROP20",
+                field04: "로직수정",
+                field05: "EMERSON",
+                field06: "2024.12.11",
+                field07: "1회/월",
             },
             {
-                field01: "",
-                field02: "발전제어시스템(GTㆍST)",
-                field03: "EWS",
-                field04: "화성-노트북-001",
-                field05: "시스템 1",
-                field06: "EMERSON",
-                field07: "OVATION",
-                field08: "VxWork",
-                field09: "3.5.1",
-                field10: "1년",
-                field11: "1년",
+                field01: "보조설비_TBN BY-PASS(HPU)",
+                field02: "00-NW-01",
+                field03: "DROP20",
+                field04: "로직수정",
+                field05: "EMERSON",
+                field06: "2024.12.11",
+                field07: "변경없음",
             },
             {
-                field01: "",
-                field02: "발전제어시스템(GTㆍST)",
-                field03: "EWS",
-                field04: "화성-노트북-001",
-                field05: "시스템 1",
-                field06: "EMERSON",
-                field07: "OVATION",
-                field08: "VxWork",
-                field09: "3.5.1",
-                field10: "1년",
-                field11: "1년",
+                field01: "보조설비_TBN BY-PASS(HPU)",
+                field02: "화성-노트북-001",
+                field03: "DROP20",
+                field04: "로직수정",
+                field05: "EMERSON",
+                field06: "2024.12.11",
+                field07: "1회/월",
             },
             {
-                field01: "",
-                field02: "발전제어시스템(GTㆍST)",
-                field03: "EWS",
-                field04: "화성-노트북-001",
-                field05: "시스템 1",
-                field06: "EMERSON",
-                field07: "OVATION",
-                field08: "VxWork",
-                field09: "3.5.1",
-                field10: "1년",
-                field11: "1년",
-            },
-            {
-                field01: "",
-                field02: "발전제어시스템(GTㆍST)",
-                field03: "EWS",
-                field04: "화성-노트북-001",
-                field05: "시스템 1",
-                field06: "EMERSON",
-                field07: "OVATION",
-                field08: "VxWork",
-                field09: "3.5.1",
-                field10: "1년",
-                field11: "1년",
+                field01: "보조설비_TBN BY-PASS(HPU)",
+                field02: "00-NW-01",
+                field03: "DROP20",
+                field04: "로직수정",
+                field05: "EMERSON",
+                field06: "2024.12.11",
+                field07: "변경없음",
             },
         ];
         const columnDefs = [
             {
-                headerName: "순번",
-                headerClass: "center",
-                field: "field01",
-                width: 88,
-                cellClass: "cell-normal",
-                valueGetter: "node.rowIndex + 1"
-
-            },
-            {
                 headerName: "분류",
                 headerClass: "center",
-                field: "field02",
-                minWidth: 180,
-                flex: 1,
-                cellClass: "cell-normal",
-            },
-            {
-                headerName: "설비구분",
-                headerClass: "center",
-                field: "field03",
-                minWidth: 100,
+                field: "field01",
+                minWidth: 300,
                 flex: 1,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "자산관리번호",
                 headerClass: "center",
-                field: "field04",
-                minWidth: 120,
-                flex: 1,
+                field: "field02",
+                width: 180,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "시스템명",
                 headerClass: "center",
-                field: "field05",
-                minWidth: 180,
-                flex: 1,
+                field: "field03",
+                width: 180,
                 cellClass: "cell-normal",
             },
             {
-                headerName: "제조사",
+                headerName: "용도",
+                headerClass: "center",
+                field: "field04",
+                width: 180,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "제어 소프트웨어 제조사",
+                headerClass: "center",
+                field: "field05",
+                width: 180,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "도입연월",
                 headerClass: "center",
                 field: "field06",
-                minWidth: 180,
-                flex: 1,
+                width: 180,
                 cellClass: "cell-normal",
             },
             {
-                headerName: "카드명칭",
+                headerName: "변경주기",
                 headerClass: "center",
                 field: "field07",
-                minWidth: 180,
-                flex: 1,
-                cellClass: "cell-normal",
-            },
-            {
-                headerName: "운영체제",
-                headerClass: "center",
-                field: "field08",
-                minWidth: 180,
-                flex: 1,
-                cellClass: "cell-normal",
-            },
-            {
-                headerName: "버전",
-                headerClass: "center",
-                field: "field09",
-                width: 100,
-                cellClass: "cell-normal",
-            },
-            {
-                headerName: "컨트롤러\n업데이트 주기",
-                headerClass: "center",
-                field: "field10",
-                width: 120,
-                cellClass: "cell-normal",
-            },
-            {
-                headerName: "제어시스템\n업데이트 주기",
-                headerClass: "center",
-                field: "field11",
-                width: 120,
+                width: 180,
                 cellClass: "cell-normal",
             },
         ];
-        
+
         let sampleGridApi;
 
         const sampleGridOptions = {
             defaultColDef: {
                 editable: false, // edit 사용 유무
                 autoHeight: true,
-                sortable:  false, // sort 사용 유무
+                sortable: true, // sort 사용 유무
             },
             columnDefs,
             headerHeight: 41, // header height
             rowData: rowData,
             rowHeight: 63, // row height
-            domLayout: "autoHeight", // 2025-02-19 추가 옵션
-            suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
+            // rowSelection: { // row checkbox
+            //     mode: "multiRow",
+            //     groupSelects: "descendants",
+            //     selectAll: 'filtered',
+            //     width: 52,
+            // },
+            domLayout: "autoHeight", // grid 스크롤 없이 auto height 옵션
+            suppressColumnVirtualisation: true, // grid 스크롤 없이 auto height 옵션
             // data empty style
             overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
         };
@@ -405,8 +329,9 @@
         sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
     </script>
     <!--// script wrap -->
-    
+
     <!-- modal wrap -->
     <!--// modal wrap -->
 </body>
+
 </html>

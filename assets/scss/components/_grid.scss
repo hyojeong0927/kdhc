@@ -254,6 +254,9 @@
             white-space: normal;
             word-break: keep-all;
             border-bottom: 1px solid $gray-007 !important;
+            .ag-cell-wrapper {
+                width: 100%;
+            }
         }
     }
 }

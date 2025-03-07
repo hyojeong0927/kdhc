@@ -21,15 +21,13 @@
 // Spacing end
 
 // width
-.w-348 {
-  flex: none !important;
-  width: rem(348px) !important;
-}
 .w-100 {
   width: 100% !important;
 }
 .w-50 {
+  flex: 0 0 50% !important;
   width: 50% !important;
+  min-width: 50% !important;
 }
 .w-40r {
   flex: 0 0 rem(40px) !important;
@@ -87,7 +85,9 @@
   min-width: rem(140px) !important;
 }
 .w-150 {
+  flex: 0 0 rem(150px) !important;
   width: rem(150px) !important;
+  min-width: rem(150px) !important;
 }
 .w-170 {
   width: rem(170px) !important;
@@ -96,4 +96,18 @@
   flex: 0 0 rem(190px)  !important;
   width: rem(190px) !important;
   min-width: rem(190px) !important;
+}
+.w-200 {
+  flex: none !important;
+  width: rem(200px) !important;
+  min-width: rem(200px) !important;
+}
+.w-220 {
+  flex: none !important;
+  width: rem(220px) !important;
+  min-width: rem(220px) !important;
+}
+.w-348 {
+  flex: none !important;
+  width: rem(348px) !important;
 }
