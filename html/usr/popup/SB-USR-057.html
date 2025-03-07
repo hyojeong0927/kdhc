@@ -14,7 +14,7 @@
         .ag-center-cols-viewport {
             &[data-ref="eCenterRowContainer"] {
                 height: 252px !important;
-                .ag-center-cols-container {
+                /* .ag-center-cols-container {
                     &[role="rowgroup"] {
                         height: 252px !important;
                     }
@@ -33,10 +33,12 @@
                         top: 189px !important;
                     }
                 }
-                textarea {
+                 */
+                 textarea {
                     height: 200px;
                 }
             }
+            
         }
     </style>
 </head>
@@ -287,6 +289,7 @@
         <!--// 팝업 컨테이너 영역 -->
     </div>
     <!-- script wrap -->
+
     <script type="module">
         import { bootstrapDatePickerEditor } from "../../../assets/js/components/agGridComponents.js"
 
@@ -533,14 +536,17 @@
                 calculateRowspanMap(rowData, ["field01", "field05", "field06"]);
                 params.api.refreshCells({ force: true });
                 params.api.redrawRows();
+                adjustGridContainerHeight();
             },
-            // getRowHeight: (params) => 63,
-            getRowHeight: function(params) {
-                if (params.node.rowIndex === 0) {
-                    return 63;
-                }
-                return 63; // Default height for other rows
+            getRowHeight: (params) => 63,
+
+            onFirstDataRendered: function () {
+                adjustRowPositions();
             },
+            onModelUpdated: function () {
+                adjustRowPositions();
+            },
+
             domLayout: "autoHeight",
             suppressColumnVirtualisation: false,
             suppressRowTransform: true, // merge option 추가
@@ -550,9 +556,25 @@
             // data empty style
             overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
         };
+        
+        function adjustRowPositions() {
+            const gridContainer = document.querySelector('.ag-center-cols-viewport[data-ref="eCenterRowContainer"]');
+
+            if (gridContainer) {
+                const rows = gridContainer.querySelectorAll('.ag-row');
+                rows.forEach((row, index) => {
+                    if (index === 0) {
+                        row.style.height = '63px';
+                    } else {
+                        row.style.top = `${index * 63}px`;
+                    }
+                });
+            };
+        }
         const sampleGridDiv = document.querySelector("#sampleGrid");
         sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
     </script>
+    
     <!--// script wrap -->
 </body>
 </html>
