@@ -13,7 +13,7 @@
     <style>
         .ag-center-cols-viewport {
             &[data-ref="eCenterRowContainer"] {
-                height: 252px !important;
+                /* height: 252px !important; */
                 /* .ag-center-cols-container {
                     &[role="rowgroup"] {
                         height: 252px !important;
@@ -330,6 +330,24 @@
                 field06: "",
                 field07: "",
             },
+            {
+                field01: "2",
+                field02: "",
+                field03: "전력제어",
+                field04: "",
+                field05: "",
+                field06: "",
+                field07: "",
+            },
+            {
+                field01: "2",
+                field02: "",
+                field03: "보조제어",
+                field04: "",
+                field05: "",
+                field06: "",
+                field07: "",
+            },
         ];
         const columnDefs = [
             {
@@ -536,16 +554,8 @@
                 calculateRowspanMap(rowData, ["field01", "field05", "field06"]);
                 params.api.refreshCells({ force: true });
                 params.api.redrawRows();
-                adjustGridContainerHeight();
             },
             getRowHeight: (params) => 63,
-
-            onFirstDataRendered: function () {
-                adjustRowPositions();
-            },
-            onModelUpdated: function () {
-                adjustRowPositions();
-            },
 
             domLayout: "autoHeight",
             suppressColumnVirtualisation: false,
@@ -557,20 +567,6 @@
             overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
         };
         
-        function adjustRowPositions() {
-            const gridContainer = document.querySelector('.ag-center-cols-viewport[data-ref="eCenterRowContainer"]');
-
-            if (gridContainer) {
-                const rows = gridContainer.querySelectorAll('.ag-row');
-                rows.forEach((row, index) => {
-                    if (index === 0) {
-                        row.style.height = '63px';
-                    } else {
-                        row.style.top = `${index * 63}px`;
-                    }
-                });
-            };
-        }
         const sampleGridDiv = document.querySelector("#sampleGrid");
         sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
     </script>
