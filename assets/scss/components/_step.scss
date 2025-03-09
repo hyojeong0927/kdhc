@@ -165,7 +165,14 @@ $step-status: ("default", "current", "reject", "done");
     }
 }
 
-
+// .step {
+//     @extend %step-base;
+//     @each $status in $step-status {
+//         &.step-#{$status} {
+//             @include step-status($status);
+//         }
+//     }
+// }
 // .step {
 //     @extend %step-base;
 //     @each $size in $step-size {
