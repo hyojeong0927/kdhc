@@ -267,3 +267,22 @@
     letter-spacing: rem(-1.5px);
     word-break: keep-all;
 }
+
+// input style
+@mixin input-style($padding-y, $padding-x, $width, $height, $font-color, $font-size, $line-height, $font-weight, $letter-spacing, $border-radius, $border-width, $border-style, $border-color, $bg-color, $transition) {
+    display: inline-block;
+    padding: rem($padding-y) rem($padding-x);
+    width: $width;
+    height: rem($height);
+    min-height: rem($height);
+    color: $font-color;
+    font-size: rem($font-size);
+    line-height: $line-height;
+    font-weight: $font-weight;
+    letter-spacing: rem($letter-spacing);
+    border-radius: rem($border-radius);
+    border: $border-width $border-style $border-color;
+    background-color: $bg-color;
+    transition: $transition;
+    box-sizing: border-box;
+}
