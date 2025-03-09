@@ -166,136 +166,17 @@ $step-status: ("default", "current", "reject", "done");
 }
 
 
-
-// Step Sizes and Statuses
-// $step-sizes: ("lg", "sm");
-// $step-statuses: ("default", "current", "reject", "done");
-
-// // Reusable mixins and base styles
-// %step-base {
-//     .step-list {
-//         @include flex(true, "between", "center");
-//         li {
-//             position: relative;
-//             flex: 1;
-//             @include before(true, true, rem(40px), 0, 0, 0);
-//             &::before {
-//                 height: 1px;
-//                 width: 100%;
-//                 background-color: $gray-003;
-//                 z-index: 1;
-//             }
-//             &:last-of-type {
-//                 flex: none;
-//                 &::before { display: none; }
-//             }
-//             dl { position: relative; z-index: 2; }
-//         }
-//     }
-// }
-
-// %step-img {
-//     @include flex(true, "center", "center");
-//     @extend .icon;
-//     border-radius: 50%;
-//     background-size: rem(48px);
-// }
-
-// %step-txt {
-//     font-weight: $font-weight-medium;
-// }
-
-// // Process status wrapper
-// .process-status {
-//     @include flex(true, "center", "center");
-//     margin-bottom: rem(32px);
-//     .step {
-//         width: rem(975px);
-//     }
-// }
-
-// // Step Components
 // .step {
 //     @extend %step-base;
-
-//     // Responsive size styles
-//     @each $size in $step-sizes {
+//     @each $size in $step-size {
 //         &.step-#{$size} {
-//             .step-img {
-//                 @if $size == "lg" {
-//                     width: rem(80px);
-//                     height: rem(80px);
-//                     margin-bottom: rem(12px);
-//                 }
-//                 @else if $size == "sm" {
-//                     width: rem(28px);
-//                     height: rem(28px);
-//                     background-size: rem(16px);
-//                 }
-//             }
-
-//             .txt {
-//                 @if $size == "lg" {
-//                     font-size: rem(18px);
-//                     line-height: rem(21.6px);
-//                     letter-spacing: -2%;
-//                 }
-//                 @else if $size == "sm" {
-//                     font-size: rem(12px);
-//                     line-height: rem(14.4px);
-//                     letter-spacing: -3%;
-//                 }
-//                 @extend %step-txt;
-//             }
+//             @include step-size($size);
 //         }
 //     }
 
-//     // Step statuses
-//     @each $status in $step-statuses {
-//         .step-#{$status} {
-//             .step-img {
-//                 @extend %step-img;
-//                 @if $status == "default" {
-//                     background-color: $gray-003;
-//                     @extend .step-check;
-//                 }
-//                 @else if $status == "current" {
-//                     background-color: $orange-001;
-//                     @extend .step-doc;
-//                 }
-//                 @else if $status == "reject" {
-//                     background-color: $error;
-//                     @extend .step-reject;
-//                 }
-//                 @else if $status == "done" {
-//                     background-color: $blue-002;
-//                     @extend .step-check;
-//                 }
-//             }
-
-//             .txt {
-//                 @if $status == "default" {
-//                     color: $gray-003;
-//                 }
-//                 @else if $status == "current" {
-//                     color: $orange-001;
-//                     font-weight: $font-weight-bold;
-//                 }
-//                 @else if $status == "reject" {
-//                     color: $error;
-//                 }
-//                 @else if $status == "done" {
-//                     color: $blue-002;
-//                 }
-//             }
+//     @each $status in $step-status {
+//         &.step-#{$status} {
+//             @include step-status($status);
 //         }
-//     }
-// }
-
-// // Approval Component
-// .approve {
-//     @include flex(false, "start", "normal", rem(32px));
-//     .title-wrap {
-//         margin-bottom: rem(16px);
 //     }
 // }

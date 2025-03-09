@@ -286,3 +286,100 @@
     transition: $transition;
     box-sizing: border-box;
 }
+// step
+@mixin step-size($size) {
+    @if $size == "lg" {
+        .step-img {
+            width: rem(80px);
+            height: rem(80px);
+            margin-bottom: rem(12px);
+        }
+        .txt {
+            font-size: rem(18px);
+            line-height: rem(21.6px);
+            letter-spacing: -2%;
+        }
+    } @else if $size == "sm" {
+        .step-img {
+            width: rem(28px);
+            height: rem(28px);
+            background-size: rem(16px);
+        }
+        .txt {
+            font-size: rem(12px);
+            line-height: rem(14.4px);
+            letter-spacing: -3%;
+        }
+    }
+}
+
+.step {
+    @extend %step-base;
+    @each $size in $step-size {
+        &.step-#{$size} {
+            @include step-size($size);
+        }
+    }
+}
+@mixin step-status($status) {
+    .step-img {
+        @extend %step-img;
+        @if $status == "default" {
+            background-color: $gray-003;
+            @extend .step-check;
+        } @else if $status == "current" {
+            background-color: $orange-001;
+            @extend .step-doc;
+        } @else if $status == "reject" {
+            background-color: $error;
+            @extend .step-reject;
+        } @else if $status == "done" {
+            background-color: $blue-002;
+            @extend .step-check;
+        }
+    }
+
+    .txt {
+        @if $status == "default" {
+            color: $gray-003;
+        } @else if $status == "current" {
+            color: $orange-001;
+            font-weight: $font-weight-bold;
+        } @else if $status == "reject" {
+            color: $error;
+        } @else if $status == "done" {
+            color: $blue-002;
+        }
+    }
+}
+
+.step {
+    @extend %step-base;
+    @each $status in $step-status {
+        &.step-#{$status} {
+            @include step-status($status);
+        }
+    }
+}
+@mixin step-responsive($size) {
+    @if $size == "lg" {
+        .step-img {
+            width: rem(80px);
+            height: rem(80px);
+            margin-bottom: rem(12px);
+        }
+        .txt {
+            font-size: rem(18px);
+            line-height: rem(21.6px);
+        }
+    } @else if $size == "sm" {
+        .step-img {
+            width: rem(28px);
+            height: rem(28px);
+        }
+        .txt {
+            font-size: rem(12px);
+            line-height: rem(14.4px);
+        }
+    }
+}
