@@ -200,7 +200,7 @@
         }
     }
 }
-
+// info end
 
 .hidden-label {
     visibility: hidden;
@@ -208,3 +208,89 @@
 .obj.week.flex {
     display: flex !important;
 }
+
+// error
+.kdhc-blank-wrap {
+    .kdhc-error-container {
+        width: 100%;
+        height: 100dvh;
+        background-color: $gray-012;
+        .inner {
+            @include flex(true, "center", "center");
+            padding-top: vh(120px);
+        }
+    }
+    .error-box {
+        @include flex(false, "start", "center", rem(60px));
+        min-width: rem(524px);
+        
+        .error-head {
+            @include flex(false, "center", "center", rem(12px));
+
+            .error-type {
+                position: relative;
+                padding-top: rem(180px);
+                width: 100%;
+                color: $gray-002;
+                @include font-style($font-size-xxlg, $font-weight-bold, rem(58px));
+                letter-spacing: rem(-0.96px);
+                text-align: center;
+                @include before(true, true, 0, 0, 0, 50%);
+                &::before {
+                    @extend .icon;
+                    transform: translateX(-50%);
+                    background-position: center top;
+                }
+                &.error-500 {
+                    &::before {
+                        @extend .error-500;
+                    }
+                }
+                &.error-400 {
+                    &::before {
+                        @extend .error-400;
+                    }
+                }
+            }
+            .error-message {
+                color: $error;
+                @include font-style($font-size-slg, $font-weight-bold, rem(38px));
+                letter-spacing: rem(-0.52px);
+                text-align: center;
+            }
+        }
+        .error-content {
+            @include flex(false, "start", "center", rem(20px));
+            .txt {
+                margin: 0;
+                padding: 0;
+                color: $primary;
+                @include font-style($font-size-md, $font-weight-normal, rem(26px));
+                text-align: center;
+                letter-spacing: rem(-0.36px);
+            }
+        }
+        .bottom-btn-area {
+            margin-top: 0;
+        }
+    }
+}
+// error end
+
+// loader
+.loader-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    @include flex(true, "center", "center");
+    background: rgba($white, 0.50);
+    z-index: $zindex-loader;
+    .loader {
+        text-indent: $text-indent;
+        @extend .icon;
+        @extend .loading;
+    }
+}
+// loader end

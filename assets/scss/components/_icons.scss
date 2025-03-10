@@ -63,4 +63,11 @@ $icon: 'icon';
     @include icon("login-brand-name", rem(337px), rem(24px), "#{$img-root}/images/svg/login-brand-name.svg");
     @include icon("login-id", rem(24px), rem(24px), "#{$img-root}/images/svg/login-id.svg");
     @include icon("login-pw", rem(24px), rem(24px), "#{$img-root}/images/svg/login-pw.svg");
+
+    // error
+    @include icon("error-500", rem(160px), rem(160px), "#{$img-root}/images/svg/error-500.svg");
+    @include icon("error-400", rem(160px), rem(160px), "#{$img-root}/images/svg/error-400.svg");
+
+    // loading
+    @include icon("loading", rem(150px), rem(150px), "#{$img-root}/images/svg/loading.svg");
 }

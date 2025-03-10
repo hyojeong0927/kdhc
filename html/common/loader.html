@@ -1,10 +1,176 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko" data-kdhc-mode="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>KDHC</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../css/index.css">
+    <!-- script -->
+    <script src="../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script src="../../assets/js/components/nav.js"></script>
+    <!-- <script type="module" src="../../assets/js/common.js"></script> -->
 </head>
+
 <body>
-    
+    <!-- loader -->
+    <div class="loader-wrap">
+        <div class="loader">진행중</div>
+    </div>
+    <!--// loader -->
+    <div id="wrap" class="kdhc-wrap">
+
+        <!-- 본문 바로가기 영역 -->
+        <div id="kdhc-skip-link">
+            <a href="#breadcrumb">본문 바로가기</a>
+        </div>
+        <!--// 본문 바로가기 영역  -->
+
+        <!-- 상단 배너영역 -->
+        <div id="kdhc-masthead">
+            <script type="module" src="../../assets/js/layouts/top-banner.js"></script>
+        </div>
+        <!-- // 상단 배너영역 -->
+
+        <!-- header 영역 -->
+        <header id="kdhc-header">
+            <h2 class="logo">
+                <a href="../home/SB-USR-001.html" class="logo-img" data-title="한국지역난방공사">한국지역난방공사</a>
+                <a href="../home/SB-USR-001.html" class="logo-txt" data-title="제어망 스마트 보안관리 플랫폼">제어망 스마트 보안관리 플랫폼</a>
+            </h2>
+            <div class="gnb">
+                <ul class="util">
+                    <li class="util-01"><a href="#" data-title="결재관리">결재관리</a></li>
+                    <li class="util-02"><a href="#" data-title="정기점검">정기점검</a></li>
+                    <li class="util-03"><a href="#" data-title="지침 및 매뉴얼">지침 및 매뉴얼</a></li>
+                    <li class="util-04 user"><a href="#" data-title="홍길동 과장">홍길동 과장</a></li>
+                </ul>
+                <div class="header-action">
+                    <button type="button" class="btn btn-link">비밀번호변경</button>
+                    <button type="button" class="btn btn-link">로그아웃</button>
+                </div>
+                <nav class="nav">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" data-title="관리보안">관리보안</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-title="물리보안">물리보안</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-title="기술보안">기술보안</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-title="보안정책">보안정책</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-title="클린PC">클린PC</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-title="정보자산">정보자산</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-title="관리자">관리자</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!--// header 영역 -->
+
+        <!-- 컨테이너 영역 -->
+        <section id="kdhc-container">
+            <div class="inner">
+                <!-- 사이드 영역 -->
+                <aside id="sidebar" class="sidebar">
+                    <div class="sidebar-top-btn">
+                        <button id="toggleButton" class="btn-toggle" aria-label="사이드바 열고 닫기">
+                            <i id="menuIcon" class="icon arrow-close"></i>
+                        </button>
+                    </div>
+                    <!--// 사이드바 열고 닫기 -->
+                    <nav class="sidebar-menu">
+                        <!-- lnb title : 웹접근성으로 인해 넣고 숨김 처리 되어 있음 -->
+                        <h2 class="lnb-tit" data-main-title="관리보안">관리보안</h2>
+                        <!--// lnb title  -->
+                        <ul class="lnb-list">
+                            <li class="lnb-item">
+                                <a href="#" class="lnb-btn lnb-link" data-sub-title="월간사이버보안점검">월간사이버보안점검</a>
+                            </li>
+                            <li class="lnb-item">
+                                <a href="#" class="lnb-btn lnb-link" data-sub-title="클린PC 점검">클린PC 점검</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+                <!--// 사이드 영역 -->
+
+                <main class="main-contents">
+
+                    <!-- 컨텐츠 영역 -->
+                    <div class="contents">
+
+                        <!-- breadcrumbs start -->
+                        <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">정보자산</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">정보자산반출입내역</li>
+                            </ol>
+                        </nav>
+                        <!--// breadcrumbs end -->
+
+                        <!-- page title start -->
+                        <div class="page-title-wrap" data-badge-visible="true">
+                            <h1 class="h-tit">정보자산반출입내역</h1>
+                            <span class="badge-text">대장</span>
+                        </div>
+
+                        <!--// page title end -->
+                        <!-- section tit start -->
+                        <div class="title-wrap">
+                            <h3 class="sec-tit">section title : h3 .sec-tit</h3>
+                        </div>
+                        <!--// section tit end -->
+                        <!-- section tit start -->
+                        <div class="title-wrap">
+                            <h6 class="sec-tit">section title : h6 .sec-tit</h6>
+                        </div>
+                        <!--// section tit end -->
+                        <!-- grid top button 영역 -->
+                        <div class="grid-top-btn">
+                            <button type="button" class="btn btn-outline btn-sm">불용반출기안</button>
+                            <button type="button" class="btn btn-outline btn-sm">등록기안</button>
+                            <button type="button" class="btn btn-secondary btn-sm">출력</button>
+                        </div>
+                        <!--// grid top button 영역 -->
+                        <!-- bottom button area -->
+                        <div class="bottom-btn-area">
+                            <button type="button" class="btn btn-outline btn-md">삭제</button>
+                            <button type="button" class="btn btn-secondary btn-md">저장</button>
+                        </div>
+                        <!--// bottom button area -->
+                    </div>
+                    <!--// 컨텐츠 영역 -->
+
+                </main>
+
+            </div>
+        </section>
+        <!--// 컨테이너 영역 -->
+
+        <!-- 푸터 영역 -->
+        <footer id="kdhc-footer">
+            <script type="module" src="../../assets/js/layouts/footer.js"></script>
+        </footer>
+        <!--// 푸터 영역 -->
+
+    </div>
+    <!-- script wrap -->
+    <!--// script wrap -->
+    <!-- modal wrap -->
+    <!--// modal wrap -->
 </body>
+
 </html>
