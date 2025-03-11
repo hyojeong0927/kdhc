@@ -73,4 +73,7 @@ $sidebar-width: 280px;
             opacity: 0;
         }
     }
+    &.close {
+        width: $sidebar-close-width;
+    }
 }

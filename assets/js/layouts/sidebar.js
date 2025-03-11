@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!sidebar) return;
 
     let menuData = [];
+    let isCollapsed = sidebar.getAttribute("data-collapsed") === "true";
 
     try {
         menuData = JSON.parse(sidebar.getAttribute("data-menu")) || [];
@@ -12,6 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (!Array.isArray(menuData) || menuData.length === 0) return;
+
+    if (isCollapsed) {
+        sidebar.classList.add("collapsed");
+    }
 
     let menuHTML = `
         <div class="sidebar-top-btn">
@@ -48,4 +53,5 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(`선택한 메뉴: ${this.dataset.name}`);
         });
     });
+    
 });
