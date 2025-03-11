@@ -514,9 +514,13 @@
                 headerClass: "center",
                 field: "field13",
                 width: 180,
+                editable: false,
                 cellClass: "cell-normal",
                 cellRenderer: params => {
-                    return '<button type="button" class="btn btn-grid btn-xxsm">점검 확인</button>';
+                    return `
+                        <input type="checkbox" id="btntype" value="" class="btn btn-grid" />
+                        <label for="btntype">점검 확인</label>
+                    `;
                 }
             },
             {

@@ -2,7 +2,7 @@
 ========================================================================== */
 
 // value : width, height, padding-y, padding-x, font-size, radius, border
-$button-size: ( 
+$button-size: (
     "lg": (96px, 42px, $btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg, $btn-border-width),
     "md": (84px, 38px, $btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius, $btn-border-width),
     "sm": (53px, 32px, $btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm, $btn-border-width-sm),
@@ -17,7 +17,8 @@ $button-types: (
     "outline": ($white, $primary, $primary, $gray-009, $btn-disabled),
     "outline--round": ($white, $gray-003, $gray-002, $secondary, $btn-disabled),
     "grid": ($blue-005, $gray-009, $gray-009, $gray-002, $gray-007),
-    "icon": (transparent, transparent, transparent, transparent, transparent)
+    "icon": (transparent, transparent, transparent, transparent, transparent),
+    "more":(transparent, transparent, $secondary, $secondary, $secondary)
 );
 
 // button base style
@@ -75,21 +76,31 @@ $button-types: (
                 }
             }
 
-            @if $bt == "icon" {
+            @if $bt == "icon" or $bt =="more" {
                 padding: 0;
                 border: 0;
                 border-radius: 0;
-                background-color: transparent;
+                background-color: nth($colors, 1);
 
                 &:hover,
                 &:focus,
                 &:active,
                 &.active {
-                    background-color: transparent;
-                    border-color: transparent;
+                    background-color: nth($colors, 1);
+                    border-color: nth($colors, 2);
                 }
                 &[disabled] {
-                    background-color: transparent;
+                    background-color: nth($colors, 1);
+                }
+            }
+            @if $bt =="more" {
+                position: relative;
+                padding-right: rem(28px);
+                @include before(false, true, 0, 0, 0, auto);
+                &::after {
+                    @extend .icon;
+                    @extend .more;
+                    background-position: right center;
                 }
             }
         }

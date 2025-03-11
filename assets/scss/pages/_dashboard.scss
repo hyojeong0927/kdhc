@@ -1,0 +1,261 @@
+/* Dashboard
+========================================================================== */
+.main-dashboard {
+    .contents {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "title title title"
+            "summary summary summary"
+            "row-box-1 row-box-2 row-box-3"
+            "row-box-4 row-box-5 row-box-6"
+            "alarm alarm alarm";
+        grid-auto-columns: minmax(rem(493px), auto);
+        grid-template-rows: rem(32px) rem(74px) rem(268px) rem(268px) rem(40px);
+        grid-column-gap: rem(40px);
+        grid-row-gap: rem(24px);
+
+        .title-wrap {
+            grid-area: title;
+            width: 100%;
+        }
+        .summary {
+            pointer-events: none;
+            @include flex(true, "start", "normal", rem(40px));
+            grid-area: summary;
+            margin-top: rem(-12px);
+            dl {
+                @include flex(true, "center", "baseline", rem(17px));
+                padding: rem(8px) rem(23px) rem(23px);
+                width: 100%;
+                color: $primary;
+                border-radius: $radius-md;
+                box-shadow: 0 0.5px 2px 0 rgba($black, 0.40);
+                backdrop-filter: blur(1.5px);
+
+                &.approval {
+                    &-wait {
+                        background: $approval-wait-gradient;
+                    }
+                    &-progress {
+                        background: $approval-progress-gradient;
+                    }
+                    &-reject {
+                        background: $approval-reject-gradient;
+                    }
+                }
+            }
+            dt {
+                color: inherit;
+                @include font-style($h4-font-size, $font-weight-bold, $line-height-base);
+                letter-spacing: rem(-0.48px);
+            }
+            dd {
+                .num {
+                    color: inherit;
+                    @include font-style($font-size-xxlg, $font-weight-bold, $line-height-base);
+                }
+                .unit {
+                    margin-left: rem(8px);
+                    color: inherit;
+                    @include font-style($h4-font-size, $font-weight-normal, $line-height-base);
+                }
+            }
+
+        }
+        .row-box {
+            &:nth-of-type(5) {
+                padding-right: rem(50px);
+            }
+            padding: rem(30px) rem(12px) rem(25px) rem(48px);
+            border-radius: $radius-md;
+            background: $white;
+            box-shadow: 0px 0px 12px 0px rgba($black, 0.08);
+
+            @for $i from 1 through 6 {
+                &:nth-of-type(#{$i}) {
+                    grid-area: row-box-#{$i};
+                }
+            }
+            .row-box-head {
+                @include flex(true, "between", "baseline");
+                margin-bottom: rem(24px);
+
+                .tit {
+                    color: $gray-002;
+                    @include font-style($font-size-sslg, $font-weight-medium, $line-height-base);
+                    letter-spacing: rem(-0.56px);
+                    &.icon {
+                        position: relative;
+                        padding-left: rem(48px);
+                        @include before(true, true, 50%, 0, 0, 0);
+                        
+                        &::before {
+                            @extend .icon;
+                            background-position: left center;
+                            background-repeat: no-repeat;
+                            background-size: rem(32px);
+                            transform: translateY(-50%);
+                        }
+                        @for $i from 1 through 4 {
+                            &.bullet-#{$i} {
+                                &::before {
+                                    @extend .tit-bullet-#{$i};
+                                }
+                            }
+                            
+                        }
+                    }
+                    &-sm {
+                        color: $gray-002;
+                        @include font-style($h6-font-size, $font-weight-medium, rem(26px));
+                        letter-spacing: rem(-0.36px);
+                    }
+                }
+                .btn-more {
+                    margin-right: rem(36px);
+                }
+            }
+            .row-box-cont {
+                overflow-y: auto;
+                max-height: rem(158px);
+                .ulist,
+                .olist {
+                    .item {
+                        &:not(:last-of-type) {
+                            margin-bottom: rem(7px);
+                        }
+                        padding-right: rem(28px);
+                        .txt {
+                            display: block;
+                            @include ellipsis;
+                            margin-right: auto;
+                            color: $gray-002;
+                            @include font-style($font-size-xmd, $font-weight-normal, $line-height-base);
+                            text-align: left;
+                        }
+                        .date {
+                            margin-left: auto;
+                            color: $gray-003;
+                            @include font-style($font-size-base, $font-weight-normal, rem(23px));
+                        }
+                    }
+                }
+                .ulist {
+                    .item {
+                        position: relative;
+                        padding-left: rem(20px);
+                        @include before(true, true, 50%, 0, 0, 0);
+                        &::before {
+                            @extend .icon;
+                            @extend .list-bullet;
+                            background-position: left center;
+                            background-repeat: no-repeat;
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+                .olist {
+                    &.number {
+                        counter-reset: number 0;
+                        .item {
+                            &::before {
+                                content: counter(number)'.';
+                                counter-increment: number 1;
+                                display: inline-block;
+                                margin-right: rem(4px);
+                                color: inherit;
+                            }
+                            @include flex(true, "between", "center", rem(8px));
+                        }
+                    }
+                }
+            }
+            // chart
+            &.chart-box {
+                padding: rem(22px) rem(48px) 0;
+                .row-box-head {
+                    margin-bottom: 0;
+                }
+                .row-box-cont {
+                    overflow: hidden;
+                    max-height: rem(214px);
+                }
+            }
+        }
+        .summary-sub {
+            pointer-events: none;
+            @include flex(true, "start", "normal", rem(8px));
+            flex-wrap: wrap;
+            dl {
+                flex: 1 1;
+                @include flex(true, "between", "baseline", rem(8px));
+                padding: rem(12px) rem(20px) rem(18px);
+                height: rem(68px);
+                line-height: $line-height-base;
+                border-radius: $radius-md;
+                background: linear-gradient(95deg, rgba(117, 183, 152, 0.20) 4.3%, rgba(25, 135, 84, 0.20) 97.6%);
+            }
+            dt {
+                flex: 1;
+                color: $primary;
+                @include font-style($font-size-lg, $font-weight-medium, $line-height-base);
+            }
+            dd {
+                @include flex(true, "end", "center", rem(4px));
+                .num {
+                    color: $primary;
+                    @include font-style($font-size-xlg, $font-weight-bold, $line-height-base);
+                }
+                em {
+                    color: $gray-009;
+                    @include font-style($font-size-lg, $font-weight-normal, $line-height-base);
+                }
+            }
+        }
+        .alarm-box {
+            grid-area: alarm;
+            @include flex(true, "start", "center");
+            padding: 0 rem(20px);
+            width: 100%;
+            border-radius: $radius-xsm;
+            background: $gray-009;
+            box-shadow: 0px 0px 12px 0px rgba($black, 0.08);
+
+            .alarm-txt {
+                position: relative;
+                padding-left: rem(36px);
+                color: $white;
+                @include font-style($font-size-base, $font-weight-normal, $line-height-base);
+                @include before(true, true, 50%, 0, 0, 0);
+                        
+                &::before {
+                    @extend .icon;
+                    @extend .alarm;
+                    background-position: left center;
+                    background-repeat: no-repeat;
+                    background-size: rem(24px);
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}
+
+.chart-box {
+    .ag-charts-wrapper {
+        width: 100% !important;
+        height: rem(214px) !important;
+    }
+    #assetsChart,
+    #statusChart {
+        margin: 0 rem(-20px);
+        .ag-charts-proxy-legend-toolbar {
+            &[aria-label="Legend"] {
+                color: $gray-002;
+                @include font-style($font-size-xsm, $font-weight-normal, rem(17px));
+                letter-spacing: rem(-0.36px);
+            }
+        }
+    }
+}

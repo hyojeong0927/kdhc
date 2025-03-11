@@ -69,5 +69,14 @@ $icon: 'icon';
     @include icon("error-400", rem(160px), rem(160px), "#{$img-root}/images/svg/error-400.svg");
 
     // loading
-    @include icon("loading", rem(150px), rem(150px), "#{$img-root}/images/svg/loading.svg");
+    @include icon("loading", rem(150px), rem(150px), "#{$img-root}/images/loading.gif");
+
+    // dashboard
+    @include icon("tit-bullet-1", rem(32px), rem(32px), "#{$img-root}/images/svg/title-bullet-1.svg");
+    @include icon("tit-bullet-2", rem(32px), rem(32px), "#{$img-root}/images/svg/title-bullet-2.svg");
+    @include icon("tit-bullet-3", rem(32px), rem(32px), "#{$img-root}/images/svg/title-bullet-3.svg");
+    @include icon("tit-bullet-4", rem(32px), rem(32px), "#{$img-root}/images/svg/title-bullet-4.svg");
+    @include icon("more", rem(20px), rem(20px), "#{$img-root}/images/svg/more-plus.svg");
+    @include icon("list-bullet", rem(6px), rem(6px), "#{$img-root}/images/svg/list-bullet.svg");
+    @include icon("alarm", rem(24px), rem(24px), "#{$img-root}/images/svg/alarm.svg");
 }

@@ -107,3 +107,26 @@
         }
     }
 }
+
+// grid button type
+input[type="checkbox"] {
+    &.btn {
+        &.btn-grid {
+            display: none;
+
+            & + label {
+                @extend .btn;
+                @extend .btn-grid;
+                @extend .btn-xxsm;
+            }
+            &[disabled] {
+                & + label {
+                    @extend .btn;
+                    @extend .btn-grid;
+                    @extend .btn-xxsm;
+                }
+            }
+        }
+    }
+}
+// grid button type end

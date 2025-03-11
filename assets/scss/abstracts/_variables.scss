@@ -54,6 +54,12 @@ $dark: null;
 $error: $red-001;
 // color end
 
+// gradient
+$approval-wait-gradient: linear-gradient(104deg, rgba(167, 172, 177, 0.30) 0%, rgba(86, 94, 100, 0.30) 100%);
+$approval-progress-gradient: linear-gradient(104deg, rgba(114, 189, 250, 0.30) 0%, rgba(1, 98, 177, 0.30) 100%);
+$approval-reject-gradient: linear-gradient(104deg, rgba(255, 143, 149, 0.20) 0%, rgba(191, 18, 18, 0.20) 100%);
+// gradient end
+
 // font-family
 $font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", "Noto Sans KR", Roboto, "Helvetica Neue", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -65,9 +71,11 @@ $font-size-root:              16px;
 $font-size-base:              16px;
 $font-size-xsm:               $font-size-base * .75; // 12px
 $font-size-sm:                $font-size-base * .875; // 14px
+$font-size-xmd:               $font-size-base * 1.0625; // 17px  
 $font-size-md:                $font-size-base * 1.125; // 18px
 $font-size-lg:                $font-size-base * 1.25; // 20px
 $font-size-slg:               $font-size-base * 1.625; // 26px
+$font-size-sslg:              $font-size-base * 1.75; // 28px
 $font-size-xlg:               $font-size-base * 2; // 32px
 $font-size-xxlg:              $font-size-base * 3; // 48px
 
@@ -86,9 +94,22 @@ $line-height-sm:              1.25;
 $line-height-lg:              2;
 
 // letter-spacing
-$letter-spacing-base: -0.48px;
-$letter-spacing-sm:   -0.36px;
-$letter-spacing-xsm:   -0.28px;
+$letter-spacing-base:         -0.48px;
+$letter-spacing-sm:           -0.36px;
+$letter-spacing-xsm:          -0.28px;
+
+
+// border radius
+$radius-xxsm:                   2px;
+$radius-xsm:                    4px;
+$radius-sm:                     6px;
+$radius-md:                     12px;
+$radius-xlg:                    40px;
+$radius-lg:                     null;
+$radius-half:                   50%;
+
+// box shadow
+
 
 // text-decoration
 $text-decoration-none: none;
@@ -102,7 +123,7 @@ $h3-font-size:                $font-size-base * 1.375; // 22px
 
 $h4-font-size:                $font-size-base * 1.5; // 24px
 $h5-font-size:                $font-size-base * 1.25; // 20px
-$h6-font-size:                $font-size-base * 1.125; // 18px
+$h6-font-size:                $font-size-base * 1.125; // 18px 
 
 // spacer 
 $spacer: 1rem;
@@ -129,7 +150,7 @@ $input-letter-spacing:          -1.7px;
 
 $input-border-color:            $gray-003;
 $input-border-width:            1px;
-$input-border-radius:           4px;
+$input-border-radius:           $radius-xsm; // 4px
 $input-border-style:            solid;
 
 $input-bg: $white;
@@ -187,8 +208,8 @@ $form-check-label-left:         4px;
 
 $form-check-input-bg:           $input-bg;
 $form-check-input-border:       1px solid $input-border-color;
-$form-check-input-border-radius: 4px;
-$form-check-radio-border-radius: 50%;
+$form-check-input-border-radius: $radius-xsm; // 4px
+$form-check-radio-border-radius: $radius-half;
 
 $form-check-input-focus-border: $form-check-input-border;
 $form-check-input-focus-box-shadow: none;
@@ -267,12 +288,12 @@ $btn-link-color: $white;
 $btn-link-hover-color: $btn-link-color;
 $btn-link-disabled-color: $btn-link-color;
 
-$btn-border-radius: 6px;
-$btn-border-radius-xxsm: 2px;
-$btn-border-radius-xsm: 40px;
-$btn-border-radius-sm: 4px;
-$btn-border-radius-lg: 6px;
-$btn-border-radius-xlg: 40px;
+$btn-border-radius: $radius-sm;
+$btn-border-radius-xxsm: $radius-xxsm;
+$btn-border-radius-xsm: $radius-xlg;
+$btn-border-radius-sm: $radius-xsm;
+$btn-border-radius-lg: $radius-sm;
+$btn-border-radius-xlg: $radius-xlg;
 
 $btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 // button end
@@ -284,7 +305,7 @@ $badge-color:                       $white;
 $badge-line-height:                 16.8px;
 $badge-padding-y:                   4px;
 $badge-padding-x:                   8px;
-$badge-border-radius:               4px;
+$badge-border-radius:               $radius-xsm;
 // badge end
 
 // modal start
