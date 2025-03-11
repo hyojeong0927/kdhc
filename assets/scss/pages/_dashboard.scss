@@ -66,6 +66,9 @@
         .row-box {
             &:nth-of-type(5) {
                 padding-right: rem(50px);
+                .row-box-cont {
+                    overflow: hidden;
+                }
             }
             padding: rem(30px) rem(12px) rem(25px) rem(48px);
             border-radius: $radius-md;
@@ -173,13 +176,13 @@
             }
             // chart
             &.chart-box {
-                padding: rem(22px) rem(48px) 0;
+                padding: 0;
                 .row-box-head {
                     margin-bottom: 0;
                 }
                 .row-box-cont {
                     overflow: hidden;
-                    max-height: rem(214px);
+                    max-height: rem(268px);
                 }
             }
         }
@@ -241,21 +244,57 @@
         }
     }
 }
-
+// chart
 .chart-box {
-    .ag-charts-wrapper {
-        width: 100% !important;
-        height: rem(214px) !important;
+    position: relative;
+    .row-box-head {
+        position: absolute;
+        top: rem(22px);
+        left: rem(48px);
+        z-index: 2;
     }
-    #assetsChart,
-    #statusChart {
-        margin: 0 rem(-20px);
-        .ag-charts-proxy-legend-toolbar {
-            &[aria-label="Legend"] {
-                color: $gray-002;
-                @include font-style($font-size-xsm, $font-weight-normal, rem(17px));
-                letter-spacing: rem(-0.36px);
+    .row-box-cont {
+        padding: 0 rem(48px);
+    }
+    .custom-legend {
+        @include flex(true, "end", "center", rem(12px));
+        position: absolute;
+        top: rem(26px);
+        right: rem(48px);
+        z-index: 2;
+
+        .legend-label {
+            position: relative;
+            padding-left: rem(13px);
+            color: $gray-002;
+            @include font-style($font-size-xsm, $font-weight-normal, rem(17px));
+            letter-spacing: rem(-0.36px);
+            @include before(true, true, 50%, 0, 0, 0);
+            &::before {
+                width: rem(8px);
+                height: rem(8px);
+                border-radius: $radius-half;
+                transform: translateY(-50%);
+            }
+            &.usb {
+                &::before {
+                    background-color: $green-002;
+                }
+            }
+            &.hard {
+                &::before {
+                    background-color: $blue-007;
+                }
+            }
+            &.cd {
+                &::before {
+                    background-color: $yellow-001;
+                }
             }
         }
+    }
+    .ag-charts-wrapper {
+        width: 100% !important;
+        height: rem(268px) !important;
     }
 }

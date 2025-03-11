@@ -115,4 +115,85 @@ function getStatusData() {
             CD: 4,
         },
     ];
+};
+
+function getAssetsData() {
+    return [
+        {
+            quarter: "화성지사",
+            assets: 20,
+        },
+        {
+            quarter: "파주지사",
+            assets: 45,
+        },
+        {
+            quarter: "동탄지사",
+            assets: 35,
+        },
+        {
+            quarter: "고양사업소",
+            assets: 25,
+        },
+        {
+            quarter: "용인지사",
+            assets: 15,
+        },
+        {
+            quarter: "강남지사",
+            assets: 25,
+        },
+        {
+            quarter: "광교지사",
+            assets: 5,
+        },
+        {
+            quarter: "광주전남지사",
+            assets: 22,
+        },
+        {
+            quarter: "김해사업소",
+            assets: 20,
+        },
+        {
+            quarter: "대구지사",
+            assets: 25,
+        },
+        {
+            quarter: "분당사업소",
+            assets: 33,
+        },
+        {
+            quarter: "삼송지사",
+            assets: 6,
+        },
+        {
+            quarter: "세종지사",
+            assets: 44,
+        },
+        {
+            quarter: "수원사업소",
+            assets: 15,
+        },
+        {
+            quarter: "양산지사",
+            assets: 25,
+        },
+        {
+            quarter: "중앙지사",
+            assets: 8,
+        },
+        {
+            quarter: "청주지사",
+            assets: 14,
+        },
+        {
+            quarter: "판교지사",
+            assets: 6,
+        },
+        {
+            quarter: "평택지사",
+            assets: 22,
+        },
+    ];
 }

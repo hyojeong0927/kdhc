@@ -1,41 +1,272 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-kdhc-mode="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KDHC</title>
     <!-- css -->
-    <link rel="stylesheet" href="../../assets/css/index.css">
+    <link rel="stylesheet" href="../../css/index.css">
     <!-- script -->
+    <script src="../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script src="../../assets/js/vendors/ag-charts-community.js"></script>
     <script type="module" src="../../assets/js/common.js"></script>
 </head>
+
 <body>
-    <!-- container -->
-    <section class="container">
-        <!-- header -->
-        <header>
-            <script src="../../assets/js/layouts/header.js" type="module"></script>
+    <div id="wrap" class="kdhc-wrap">
+
+        <!-- 본문 바로가기 영역 -->
+        <div id="kdhc-skip-link">
+            <a href="#contents">본문 바로가기</a>
+        </div>
+        <!--// 본문 바로가기 영역  -->
+
+        <!-- 상단 배너영역 -->
+        <div id="kdhc-masthead">
+            <script type="module" src="../../assets/js/layouts/top-banner.js"></script>
+        </div>
+        <!-- // 상단 배너영역 -->
+
+        <!-- 헤더 영역 -->
+        <header id="kdhc-header" data-menu='[
+            { "title": "관리보안", "url": "#" },
+            { "title": "물리보안", "url": "#" },
+            { "title": "기술보안", "url": "#"  },
+            { "title": "보안정책", "url": "#" },
+            { "title": "클린PC", "url": "#" },
+            { "title": "정보자산", "url": "#"}]'>
+            <script type="module" src="../../assets/js/layouts/header.js"></script>
         </header>
-        <!--// header -->
-        <!-- aside -->
-        <aside>
-            <script src="../../assets/js/layouts/lnb.js" type="module"></script>
-        </aside>
-        <!--// aside -->
-        <!-- main -->
-        <main class="main">
-            <article class="contents">
-                <div class="search">search</div>
-                <div class="data-tbl">data</div>
-            </article>
-        </main>
-        <!--// main -->
-        <!-- footer -->
-        <footer>
-            <script src="../../assets/js/layouts/footer.js" type="module"></script>
+        <!--// 헤더 영역 -->
+
+        <!-- 컨테이너 영역 -->
+        <section id="kdhc-container">
+            <div class="inner">
+                <!-- 사이드 영역 -->
+                <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
+                <aside id="sidebar" class="sidebar close" data-menu='[
+                        { "name": "지침 및 매뉴얼", "url": "#" },
+                        { "name": "공지게시판", "url": "#" },
+                        { "name": "결재관리", "url": "#" },
+                        { "name": "정기점검", "url": "#" },
+                        { "name": "전자결재", "url": "#" }]'>
+                </aside>
+                <!--// 사이드 영역 -->
+
+                <main class="main-dashboard">
+
+                    <!-- 컨텐츠 영역 -->
+                    <div id="contents" class="contents">
+                        
+                            <!-- section tit start -->
+                            <div class="title-wrap" data-title="결재현황" data-heading="h3"></div>
+                            <!--// section tit end -->
+
+                            <!-- summary --> 
+                            <summary class="summary">
+                                <dl class="approval-wait">
+                                    <dt>결재 대기</dt>
+                                    <dd>
+                                        <span class="num">15</span><em class="unit">건</em>
+                                    </dd>
+                                </dl>
+                                <dl class="approval-progress">
+                                    <dt>결재 진행</dt>
+                                    <dd>
+                                        <span class="num">10</span><em class="unit">건</em>
+                                    </dd>
+                                </dl>
+                                <dl class="approval-reject">
+                                    <dt>결재 반려</dt>
+                                    <dd>
+                                        <span class="num">0</span><em class="unit">건</em>
+                                    </dd>
+                                </dl>
+                            </summary>
+                            <!--// summary -->
+
+                            <!-- 결재 대기 -->
+                            <article class="row-box">
+                                <div class="row-box-head">
+                                    <div class="tit icon bullet-1">결재 대기</div>
+                                    <button class="btn btn-more">더보기</button>
+                                </div>
+                                <div class="row-box-cont">
+                                    <ul class="ulist bullet">
+                                        <li class="item"><span class="txt">12월 사이버 보안진단의 날 보안점검 체크리스트 텍스트가 길어질 경우</span></li>
+                                        <li class="item"><span class="txt">클린PC 반출·입대장</span></li>
+                                        <li class="item"><span class="txt">제어시스템</span></li>
+                                        <li class="item"><span class="txt">노트북 사용대장</span></li>
+                                        <li class="item"><span class="txt">원격 접속 관리대장</span></li>
+                                        <li class="item"><span class="txt">제어·감사시스템 계정 및 IP관리</span></li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <!--// 결재 대기 -->
+
+                            <!-- 결재 진행 -->
+                            <article class="row-box">
+                                <div class="row-box-head">
+                                    <div class="tit icon bullet-2">결재 진행</div>
+                                    <button class="btn btn-more">더보기</button>
+                                </div>
+                                <div class="row-box-cont">
+                                    <ul class="ulist bullet">
+                                        <li class="item"><span class="txt">휴대용저장매체 사용 등록</span></li>
+                                        <li class="item"><span class="txt">클린PC 반출·입대장</span></li>
+                                        <li class="item"><span class="txt">정보자산반출입내역</span></li>
+                                        <li class="item"><span class="txt">노트북 사용대장</span></li>
+                                        <li class="item"><span class="txt">계정정보관</span></li>
+                                        <li class="item"><span class="txt">공개취약점관리</span></li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <!--// 결재 진행 -->
+
+                            <!-- 저장매체 보유현황 -->
+                            <article class="row-box chart-box">
+                                <div class="row-box-head">
+                                    <div class="tit-sm">저장매체 보유현황</div>
+                                </div>
+                                <div class="row-box-cont">
+                                    <div id="custom-legend" class="custom-legend">
+                                        <span class="legend-label usb">USB</span>
+                                        <span class="legend-label hard">외장하드</span>
+                                        <span class="legend-label cd">CD</span>
+                                    </div>
+                                    <div id="statusChart" style="width: 100%; height: 100%;"></div>
+                                </div>
+                            </article>
+                            <!--// 저장매체 보유현황 -->
+
+                            <!-- 공지 사항 -->
+                            <article class="row-box">
+                                <div class="row-box-head">
+                                    <div class="tit icon bullet-3">공지 사항</div>
+                                    <button class="btn btn-more">더보기</button>
+                                </div>
+                                <div class="row-box-cont">
+                                    <ol class="olist number">
+                                        <li class="item">
+                                            <span class="txt">플랜트 제어.감시시스템 정보보안 지침이 개정 되었습니다.</span>
+                                            <span class="date">2025-02-11</span>
+                                        </li>
+                                        <li class="item">
+                                            <span class="txt">취약점 분석 평가 일정안내</span>
+                                            <span class="date">2025-02-11</span>
+                                        </li>
+                                        <li class="item">
+                                            <span class="txt">플랜트 제어.감시시스템 정보보안 지침 가이드 안내</span>
+                                            <span class="date">2025-02-11</span>
+                                        </li>
+                                        <li class="item">
+                                            <span class="txt">취약점 분석 평가 기술교육 안내</span>
+                                            <span class="date">2025-02-11</span>
+                                        </li>
+                                        <li class="item">
+                                            <span class="txt">상반기 제어.감시시스템 자산현행화 안내</span>
+                                            <span class="date">2025-02-11</span>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </article>
+                            <!--// 공지 사항 -->
+
+                            <!-- 정기 점검 -->
+                            <article class="row-box">
+                                <div class="row-box-head">
+                                    <div class="tit icon bullet-4">정기 점검</div>
+                                    <button class="btn btn-more">더보기</button>
+                                </div>
+                                <div class="row-box-cont">
+                                    <summary class="summary-sub">
+                                        <dl>
+                                            <dt>일간</dt>
+                                            <dd>
+                                                <span class="num">10</span>
+                                                <em>건</em>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>주간</dt>
+                                            <dd>
+                                                <span class="num">4</span>
+                                                <em>건</em>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>월간</dt>
+                                            <dd>
+                                                <span class="num">3</span>
+                                                <em>건</em>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>분기</dt>
+                                            <dd>
+                                                <span class="num">1</span>
+                                                <em>건</em>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>반기</dt>
+                                            <dd>
+                                                <span class="num">12</span>
+                                                <em>건</em>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>연간</dt>
+                                            <dd>
+                                                <span class="num">15</span>
+                                                <em>건</em>
+                                            </dd>
+                                        </dl>
+                                   </summary>
+                                </div>
+                            </article>
+                            <!--// 정기 점검 -->
+
+                            <!-- 공개취약 자산현황 -->
+                            <article class="row-box chart-box">
+                                <div class="row-box-head">
+                                    <div class="tit-sm">공개취약 자산현황</div>
+                                </div>
+                                <div class="row-box-cont">
+                                    <div id="assetsChart" style="width: 100%; height: 100%;"></div>
+                                </div>
+                            </article>
+                            <!--// 공개취약 자산현황 -->
+
+                            <!-- 알림 -->
+                            <article class="alarm-box">
+                                <div class="alarm-txt">플랜트 제어·감시시스템 정보보안 지침 이 변경 되었습니다. 지침 확인 부탁드립니다.</div>
+                            </article>
+                            <!--// 알림 -->
+                        
+                    </div>
+                    <!--// 컨텐츠 영역 -->
+
+                </main>
+            </div>
+        </section>
+        <!--// 컨테이너 영역 -->
+
+        <!-- 푸터 영역 -->
+        <footer id="kdhc-footer">
+            <script type="module" src="../../assets/js/layouts/footer.js"></script>
         </footer>
-        <!--// footer -->
-    </section>
-    <!--// container -->
+        <!--// 푸터 영역 -->
+
+    </div>
+    <!-- script wrap -->
+    <script src="./chart/data.js"></script>
+    <script src="./chart/chart.js"></script>
+    <!--// script wrap -->
+
+    <!-- modal wrap -->
+    <!--// modal wrap -->
 </body>
+
 </html>

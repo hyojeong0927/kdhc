@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     menuHTML += `</ul></nav>`;
 
     sidebar.innerHTML = menuHTML;
-
+    
     const menuItems = sidebar.querySelectorAll(".lnb-link");
     
     menuItems.forEach(item => {
