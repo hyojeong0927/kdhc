@@ -79,13 +79,12 @@
                             <!-- form start -->
                             <form>
                                 <fieldset>
-
+                        
                                     <!-- form-wrap start -->
-                                    <!-- 2025-02-14 : type01 추가 -->
-                                    <div class="form-wrap type01">
+                                    <div class="form-wrap type01 form-col-2">
                                         <!-- row -->
                                         <div class="form-row">
-                                            <!-- col -->
+                                            <!--  -->
                                             <div class="col">
                                                 <div class="form-label">기안일자</div>
                                                 <div class="form-group">
@@ -97,28 +96,63 @@
                                                             <button class="btn btn-outline--round btn-xsm">6개월</button>
                                                             <button class="btn btn-outline--round btn-xsm" disabled>12개월</button>
                                                         </div>
-                                                        <!-- class="input-date-group is-error" -->
-                                                        <div class="input-date-group">
-                                                            <input type="text" id="startDate" class="form-control" value="" placeholder="YYYY-MM-DD" readonly>
-                                                            <label class="input-group-text" for="startDate"><i class="icon calendar"></i></label>
+                                                        <div class="input-date-group is-error">
+                                                            <input type="text" id="startDate" class="form-control" value=""
+                                                                placeholder="YYYY-MM-DD" readonly>
+                                                            <label class="input-group-text" for="startDate"><i
+                                                                    class="icon calendar"></i></label>
                                                         </div>
                                                         <div class="to">-</div>
-                                                        <!-- class="input-date-group is-error" -->
                                                         <div class="input-date-group">
-                                                            <input type="text" id="endDate" class="form-control" value="" placeholder="YYYY-MM-DD" readonly>
+                                                            <input type="text" id="endDate" class="form-control" value=""
+                                                                placeholder="YYYY-MM-DD" readonly>
                                                             <label class="input-group-text" for="endDate"><i class="icon calendar"></i></label>
                                                         </div>
                                                     </div>
                                                     <!--// datepicker-group end -->
                                                     <!-- 에러 문구 -->
+                                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--  -->
+                                            <div class="col">
+                                                <!--  2025.03.12 수정정 -->
+                                                <div class="form-label">결재 상태</div>
+                                                <div class="form-group">
+                                                    <!-- form select group-->
+                                                    <div class="select-group is-error">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="" selected>선택</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                                <!--  -->
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-label">기안자</div>
+                                                <div class="form-group">
+                                                    <!-- input search group start -->
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search2" value="" placeholder="기안자 입력">
+                                                        <label class="input-group-text hidden" for="search2"><i class="icon search"></i></label>
+                                                    </div>
+                                                    <!--// input search group end -->
+                                                    <!-- 에러 문구 -->
                                                     <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
-                                            <!--// col -->
-                                            <!-- col -->
                                             <div class="col">
-                                                <div class="form-label">기안자</div>
+                                                <div class="form-label">결재자</div>
                                                 <div class="form-group">
                                                     <!-- input search group start -->
                                                     <div class="input-search-group">
@@ -131,89 +165,15 @@
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
-                                            <!--// col -->
-                                            <!-- col -->
-                                            <div class="col">
-                                                <div class="form-label">결재상태</div>
-                                                <div class="form-group">
-                                                    <div class="select-group">
-                                                        <select class="form-select" aria-label="Default select" required>
-                                                            <option value="" selected>선택</option>
-                                                            <option value="1">One</option>
-                                                            <option value="2">Two</option>
-                                                            <option value="3">Three</option>
-                                                        </select>
-                                                    </div>
-                                                    <!-- 에러 문구 : hidden -->
-                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                    <!--// 에러 문구 -->
-                                                </div>
-                                            </div>
-                                            <!--// col  -->
                                         </div>
                                         <!-- row -->
-                                        <div class="form-row">
-                                            <!-- col -->
-                                            <!-- 2025-03-11 추가 -->
-                                            <div class="col">
-                                                <div class="form-label">시스템 명</div>
-                                                <div class="form-group">
-                                                    <!-- input group -->
-                                                    <div class="input-group">
-                                                        <input type="text" id="input-text" class="form-control" placeholder="시스템 명 입력" value="">
-                                                        <label for="input-text" class="hidden">시스템 명</label>
-                                                    </div>
-                                                    <!--// input group -->
-                                                    <!-- 에러 문구 -->
-                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                    <!--// 에러 문구 -->
-                                                </div>
-                                            </div>
-                                            <!--// col -->
-                                           
-                                            <!-- col -->
-                                            <!-- 2025-03-11 추가 -->
-                                            <div class="col">
-                                                <div class="form-label">자산관리번호</div>
-                                                <div class="form-group">
-                                                    <!-- input group -->
-                                                    <div class="input-group">
-                                                        <input type="text" id="input-text" class="form-control" placeholder="자산관리번호" value="">
-                                                        <label for="input-text" class="hidden">자산관리번호</label>
-                                                    </div>
-                                                    <!--// input group -->
-                                                    <!-- 에러 문구 -->
-                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                    <!--// 에러 문구 -->
-                                                </div>
-                                            </div>
-                                            <!--// col -->
-                                            <!-- col -->
-                                            <div class="col">
-                                                <div class="form-label">기안부서</div>
-                                                <div class="form-group">
-                                                    <div class="select-group">
-                                                        <select class="form-select" aria-label="Default select" required>
-                                                            <option value="" selected>선택</option>
-                                                            <option value="1">One</option>
-                                                            <option value="2">Two</option>
-                                                            <option value="3">Three</option>
-                                                        </select>
-                                                    </div>
-                                                    <!-- 에러 문구 : hidden -->
-                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                    <!--// 에러 문구 -->
-                                                </div>
-                                            </div>
-                                            <!--// col -->
-                                        </div>
                                         <div class="form-row search-btn">
                                             <button type="button" class="btn btn-primary lg">조회</button>
                                         </div>
                                         <!--// row end -->
                                     </div>
                                     <!--// form-wrap end -->
-
+                        
                                 </fieldset>
                             </form>
                             <!--// form end -->
@@ -278,129 +238,115 @@
         const rowData = [
             {
                 field01: "판교-25-0001",
-                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
-                field03: "계전부",
-                field04: "임찬규",
-                field05: "2024.12.10 12:20:33",
-                field06: "2024.12.12 12:24:30",
-                field07: "done",
+                field02: "계전부",
+                field03: "임찬규",
+                field04: "2024.12.10 12:20:33",
+                field05: "2024.12.12 12:24:30",
+                field06: "done",
             },
             {
                 field01: "판교-25-0001",
-                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
-                field03: "계전부",
-                field04: "임찬규",
-                field05: "2024.12.10 12:20:33",
-                field06: "2024.12.12 12:24:30",
-                field07: "done",
+                field02: "계전부",
+                field03: "임찬규",
+                field04: "2024.12.10 12:20:33",
+                field05: "2024.12.12 12:24:30",
+                field06: "done",
             },
             {
                 field01: "판교-25-0001",
-                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
-                field03: "계전부",
-                field04: "임찬규",
-                field05: "2024.12.10 12:20:33",
-                field06: "2024.12.12 12:24:30",
-                field07: "done",
+                field02: "계전부",
+                field03: "임찬규",
+                field04: "2024.12.10 12:20:33",
+                field05: "2024.12.12 12:24:30",
+                field06: "done",
             },
             {
                 field01: "판교-25-0001",
-                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
-                field03: "계전부",
-                field04: "임찬규",
-                field05: "2024.12.10 12:20:33",
-                field06: "2024.12.12 12:24:30",
-                field07: "step01",
+                field02: "계전부",
+                field03: "임찬규",
+                field04: "2024.12.10 12:20:33",
+                field05: "2024.12.12 12:24:30",
+                field06: "step01",
             },
             {
                 field01: "판교-25-0001",
-                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
-                field03: "계전부",
-                field04: "임찬규",
-                field05: "2024.12.10 12:20:33",
-                field06: "2024.12.12 12:24:30",
-                field07: "done",
+                field02: "계전부",
+                field03: "임찬규",
+                field04: "2024.12.10 12:20:33",
+                field05: "2024.12.12 12:24:30",
+                field06: "done",
             },
             {
                 field01: "판교-25-0001",
-                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
-                field03: "계전부",
-                field04: "임찬규",
-                field05: "2024.12.10 12:20:33",
-                field06: "2024.12.12 12:24:30",
-                field07: "step02",
+                field02: "계전부",
+                field03: "임찬규",
+                field04: "2024.12.10 12:20:33",
+                field05: "2024.12.12 12:24:30",
+                field06: "step02",
             },
             {
                 field01: "판교-25-0001",
-                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
-                field03: "계전부",
-                field04: "임찬규",
-                field05: "2024.12.10 12:20:33",
-                field06: "2024.12.12 12:24:30",
-                field07: "done",
+                field02: "계전부",
+                field03: "임찬규",
+                field04: "2024.12.10 12:20:33",
+                field05: "2024.12.12 12:24:30",
+                field06: "done",
             },
             {
                 field01: "판교-25-0001",
-                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
-                field03: "계전부",
-                field04: "임찬규",
-                field05: "2024.12.10 12:20:33",
-                field06: "2024.12.12 12:24:30",
-                field07: "done",
+                field02: "계전부",
+                field03: "임찬규",
+                field04: "2024.12.10 12:20:33",
+                field05: "2024.12.12 12:24:30",
+                field06: "done",
             },
             {
                 field01: "판교-25-0001",
-                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
-                field03: "계전부",
-                field04: "임찬규",
-                field05: "2024.12.10 12:20:33",
-                field06: "2024.12.12 12:24:30",
-                field07: "done",
+                field02: "계전부",
+                field03: "임찬규",
+                field04: "2024.12.10 12:20:33",
+                field05: "2024.12.12 12:24:30",
+                field06: "done",
             },
             {
                 field01: "판교-25-0001",
-                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
-                field03: "계전부",
-                field04: "임찬규",
-                field05: "2024.12.10 12:20:33",
-                field06: "2024.12.12 12:24:30",
-                field07: "step02",
+                field02: "계전부",
+                field03: "임찬규",
+                field04: "2024.12.10 12:20:33",
+                field05: "2024.12.12 12:24:30",
+                field06: "step02",
             },
             {
                 field01: "판교-25-0001",
-                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
-                field03: "계전부",
-                field04: "임찬규",
-                field05: "2024.12.10 12:20:33",
-                field06: "2024.12.12 12:24:30",
-                field07: "done",
+                field02: "계전부",
+                field03: "임찬규",
+                field04: "2024.12.10 12:20:33",
+                field05: "2024.12.12 12:24:30",
+                field06: "done",
             },
             {
                 field01: "판교-25-0001",
-                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
-                field03: "계전부",
-                field04: "임찬규",
-                field05: "2024.12.10 12:20:33",
-                field06: "2024.12.12 12:24:30",
-                field07: "done",
+                field02: "계전부",
+                field03: "임찬규",
+                field04: "2024.12.10 12:20:33",
+                field05: "2024.12.12 12:24:30",
+                field06: "done",
             },
             {
                 field01: "판교-25-0001",
-                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
-                field03: "계전부",
-                field04: "임찬규",
-                field05: "2024.12.10 12:20:33",
-                field06: "2024.12.12 12:24:30",
-                field07: "done",
+                field02: "계전부",
+                field03: "임찬규",
+                field04: "2024.12.10 12:20:33",
+                field05: "2024.12.12 12:24:30",
+                field06: "done",
             },
             {
                 field01: "판교-25-0001",
-                field02: "휴대용저장매체 및 봉인장치 사용 ·관리대장",
-                field03: "계전부",
-                field04: "임찬규",
-                field05: "2024.12.10 12:20:33",
-                field06: "2024.12.12 12:24:30",
-                field07: "done",
+                field02: "계전부",
+                field03: "임찬규",
+                field04: "2024.12.10 12:20:33",
+                field05: "2024.12.12 12:24:30",
+                field06: "done",
             },
         ];
         const columnDefs = [
@@ -412,44 +358,37 @@
                 cellClass: "cell-normal",
             },
             {
-                headerName: "결재명",
-                headerClass: "center",
-                field: "field02",
-                width: 181,
-                cellClass: "cell-normal",
-            },
-            {
                 headerName: "기안부서",
                 headerClass: "center",
-                field: "field03",
+                field: "field02",
                 width: 92,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "기안자",
                 headerClass: "center",
-                field: "field04",
+                field: "field03",
                 width: 76,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "기안일자",
                 headerClass: "center",
-                field: "field05",
+                field: "field04",
                 width: 180,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "결재일자",
                 headerClass: "center",
-                field: "field06",
+                field: "field05",
                 width: 180,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "결재/승인 상태",
                 headerClass: "center",
-                field: "field07",
+                field: "field06",
                 minWidth: 435,
                 flex: 1,
                 cellClass: "cell-normal",

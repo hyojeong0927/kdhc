@@ -275,6 +275,7 @@
                 field10: "",
                 field11: "",
                 field12: "",
+                field13: "",
             },
             {
                 field01: "",
@@ -289,6 +290,7 @@
                 field10: "2025-03-10",
                 field11: "점검자",
                 field12: "",
+                field13: "",
             },
         ];
         const columnDefs = [
@@ -516,6 +518,14 @@
                 cellRenderer: params => {
                     return '<button type="button" class="btn btn-grid btn-xxsm">점검 확인</button>';
                 }
+            },
+            {
+                headerName: "점검 상태",
+                headerClass: "center",
+                field: "field13",
+                width: 120,
+                editable: true,
+                cellClass: "cell-normal",
             },
         ];
         let sampleGridApi;

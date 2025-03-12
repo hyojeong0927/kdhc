@@ -10,20 +10,6 @@
     <script src="../../../assets/js/vendors/jquery-3.7.1.min.js"></script>
     <script src="../../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
     <script type="module" src="../../../assets/js/common.js"></script>
-    <style>
-        .ag-center-cols-viewport {
-            &[data-ref="eCenterRowContainer"] {
-                .textarea-group textarea {
-                    height: 60px;
-                }
-
-                 textarea {
-                    height: 200px;
-                }
-            }
-            
-        }
-    </style>
 </head>
 <body>
     <div id="pop-wrap" class="kdhc-pop-wrap">
@@ -377,6 +363,16 @@
                              <!--// textarea -->
                          `;
                          return htmlContent;
+
+                      } else if (rowIndex === 4 && !value) {
+                         const htmlContent = `
+                             <!-- textarea -->
+                             <div class="textarea-group">
+                                 <textarea class="form-control" id="comment" placeholder="점검결과 내용"></textarea>
+                             </div>
+                             <!--// textarea -->
+                         `;
+                        return htmlContent;
                      } else {
                          return value;
                      }
@@ -408,7 +404,16 @@
                              <!--// textarea -->
                          `;
                          return htmlContent;
-                     } else {
+                     } else if (rowIndex === 4 && !value) {
+                          const htmlContent = `
+                             <!-- textarea -->
+                             <div class="textarea-group">
+                                 <textarea class="form-control" id="comment" placeholder="조치사항 내용"></textarea>
+                             </div>
+                             <!--// textarea -->
+                         `;
+                        return htmlContent;
+                     }  else {
                          return value;
                      }
                  }

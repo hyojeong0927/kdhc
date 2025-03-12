@@ -147,16 +147,15 @@
                                                 </div>
                                             </div>
                                             <div class="col">
-                                                <div class="form-label">기안부서</div>
+                                                <!-- 2025-03-12 결재자 변경 -->
+                                                <div class="form-label">결재자</div>
                                                 <div class="form-group">
-                                                    <div class="select-group">
-                                                        <select class="form-select" aria-label="Default select" required>
-                                                            <option value="" selected>선택</option>
-                                                            <option value="1">One</option>
-                                                            <option value="2">Two</option>
-                                                            <option value="3">Three</option>
-                                                        </select>
+                                                    <!-- input search group start -->
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search2" value="" placeholder="결재자 입력">
+                                                        <label class="input-group-text hidden" for="search2"><i class="icon search"></i></label>
                                                     </div>
+                                                    <!--// input search group end -->
                                                     <!-- 에러 문구 : hidden -->
                                                     <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->

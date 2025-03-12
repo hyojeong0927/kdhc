@@ -243,6 +243,7 @@
                 field06: "",
                 field07: "봉인 관리번호",
                 field08: "비고",
+                field09: "",
             },
             {
                 field01: "1",
@@ -253,6 +254,7 @@
                 field06: "",
                 field07: "봉인 관리번호",
                 field08: "비고",
+                field09: "",
             },
             {
                 field01: "1",
@@ -263,6 +265,7 @@
                 field06: "",
                 field07: "봉인 관리번호",
                 field08: "비고",
+                field09: "",
             },
             {
                 field01: "1",
@@ -273,6 +276,7 @@
                 field06: "",
                 field07: "봉인 관리번호",
                 field08: "비고",
+                field09: "",
             },
             {
                 field01: "2",
@@ -283,6 +287,7 @@
                 field06: "화성-001",
                 field07: "봉인 관리번호",
                 field08: "비고",
+                field09: "",
             },
             {
                 field01: "2",
@@ -293,6 +298,7 @@
                 field06: "화성-001",
                 field07: "봉인 관리번호",
                 field08: "비고",
+                field09: "",
             },
              {
                 field01: "2",
@@ -303,6 +309,7 @@
                 field06: "화성-001",
                 field07: "봉인 관리번호",
                 field08: "비고",
+                field09: "",
             },
         ];
         const columnDefs = [ 
@@ -362,7 +369,7 @@
                 headerName: "시스템명",
                 headerClass: "center",
                 field: "field03",
-                width: 320,
+                width: 200,
                 rowSpan: (params) => shouldMergeRows(params, ["field01", "field02", "field03"]),
                 cellClass: getMergeCellClass,
             },
@@ -374,7 +381,7 @@
                 cellClass: "cell-normal",
             },
             {
-                headerName: "포트락",
+                headerName: "사용 중 포트 봉인",
                 headerClass: "center",
                 width: 322,
                 cellClass: "cell-normal",
@@ -387,7 +394,7 @@
                         cellClass: "cell-normal",
                     },
                     {
-                        headerName: "봉인번호",
+                        headerName: "봉인 관리번호",
                         headerClass: "center",
                         field: "field06",
                         width: 160,
@@ -434,6 +441,17 @@
                 minWidth: 120,
                 flex: 1,
                 cellClass: "cell-normal",
+            },
+            {
+                headerName: "삭제",
+                headerClass: "center",
+                field: "field09",
+                minWidth: 120,
+                flex: 1,
+                cellClass: "cell-normal",
+                 cellRenderer: params => {
+                    return '<button type="button" class="btn btn-icon"><i class="icon del-trash" /></button>';
+                }
             },
         ];
 
