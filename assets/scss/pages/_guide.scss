@@ -1,7 +1,5 @@
 /* Guide
 ========================================================================== */
-@include scroll-y;
-
 .guide-container {
     overflow: hidden;
     @include flex(true, 'start', 'start');
@@ -11,7 +9,7 @@
     height: 100%;
     font-size: rem(13px);
     background-color: #fff;
-
+    @include scroll-y;
     header {
         @include flex(true, 'start', 'center');
         padding: rem(10px);

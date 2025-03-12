@@ -1,41 +1,216 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-kdhc-mode="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KDHC</title>
     <!-- css -->
-    <link rel="stylesheet" href="../../assets/css/index.css">
+    <link rel="stylesheet" href="../../css/index.css">
     <!-- script -->
+    <script src="../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script src="../../assets/js/vendors/ag-charts-community.js"></script>
     <script type="module" src="../../assets/js/common.js"></script>
 </head>
+
 <body>
-    <!-- container -->
-    <section class="container">
-        <!-- header -->
-        <header>
-            <script src="../../assets/js/layouts/header.js" type="module"></script>
+    <div id="wrap" class="kdhc-wrap">
+
+        <!-- 본문 바로가기 영역 -->
+        <div id="kdhc-skip-link">
+            <a href="#contents">본문 바로가기</a>
+        </div>
+        <!--// 본문 바로가기 영역  -->
+
+        <!-- 상단 배너영역 -->
+        <div id="kdhc-masthead">
+            <script type="module" src="../../assets/js/layouts/top-banner.js"></script>
+        </div>
+        <!-- // 상단 배너영역 -->
+
+        <!-- 헤더 영역 -->
+        <header id="kdhc-header" data-menu='[
+            { "title": "관리보안", "url": "#" },
+            { "title": "물리보안", "url": "#" },
+            { "title": "기술보안", "url": "#"  },
+            { "title": "보안정책", "url": "#" },
+            { "title": "클린PC", "url": "#" },
+            { "title": "정보자산", "url": "#"},
+            { "title": "관리자", "url": "#"}]'>
+            <script type="module" src="../../assets/js/layouts/header.js"></script>
         </header>
-        <!--// header -->
-        <!-- aside -->
-        <aside>
-            <script src="../../assets/js/layouts/lnb.js" type="module"></script>
-        </aside>
-        <!--// aside -->
-        <!-- main -->
-        <main class="main">
-            <article class="contents">
-                <div class="search">search</div>
-                <div class="data-tbl">data</div>
-            </article>
-        </main>
-        <!--// main -->
-        <!-- footer -->
-        <footer>
-            <script src="../../assets/js/layouts/footer.js" type="module"></script>
+        <!--// 헤더 영역 -->
+
+        <!-- 컨테이너 영역 -->
+        <section id="kdhc-container">
+            <div class="inner">
+                <!-- 사이드 영역 -->
+                <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
+                <aside id="sidebar" class="sidebar" data-collapsed="true" data-menu='[
+                    { "name": "지침 및 매뉴얼", "url": "#" },
+                    { "name": "공지게시판", "url": "#" },
+                    { "name": "결재관리", "url": "#" },
+                    { "name": "정기점검", "url": "#" },
+                    { "name": "전자결재", "url": "#" }]'>
+                </aside>
+                <!--// 사이드 영역 -->
+
+                <main class="main-dashboard admin">
+
+                    <!-- 컨텐츠 영역 -->
+                    <div id="contents" class="contents">
+
+                        <!-- section tit start -->
+                        <div class="title-wrap" data-title="결재현황" data-heading="h3"></div>
+                        <!--// section tit end -->
+
+                       
+                        <!-- 공지 사항 -->
+                        <article class="row-box">
+                            <div class="row-box-head">
+                                <div class="tit icon bullet-3">공지 사항</div>
+                                <button class="btn btn-more">더보기</button>
+                            </div>
+                            <div class="row-box-cont">
+                                <ol class="olist number">
+                                    <li class="item">
+                                        <span class="txt">플랜트 제어.감시시스템 정보보안 지침이 개정 되었습니다.</span>
+                                        <span class="date">2025-02-11</span>
+                                    </li>
+                                    <li class="item">
+                                        <span class="txt">취약점 분석 평가 일정안내</span>
+                                        <span class="date">2025-02-11</span>
+                                    </li>
+                                    <li class="item">
+                                        <span class="txt">플랜트 제어.감시시스템 정보보안 지침 가이드 안내</span>
+                                        <span class="date">2025-02-11</span>
+                                    </li>
+                                    <li class="item">
+                                        <span class="txt">취약점 분석 평가 기술교육 안내</span>
+                                        <span class="date">2025-02-11</span>
+                                    </li>
+                                    <li class="item">
+                                        <span class="txt">상반기 제어.감시시스템 자산현행화 안내</span>
+                                        <span class="date">2025-02-11</span>
+                                    </li>
+                                    <li class="item">
+                                        <span class="txt">플랜트 제어.감시시스템 정보보안 지침이 개정 되었습니다.</span>
+                                        <span class="date">2025-02-11</span>
+                                    </li>
+                                    <li class="item">
+                                        <span class="txt">취약점 분석 평가 일정안내</span>
+                                        <span class="date">2025-02-11</span>
+                                    </li>
+                                </ol>
+                            </div>
+                        </article>
+                        <!--// 공지 사항 -->
+
+                        <!-- 백신 업데이트 현황 -->
+                        <article class="row-box chart-box">
+                            <div class="row-box-head">
+                                <div class="tit-sm">백신 업데이트 현황</div>
+                            </div>
+                            <div class="row-box-cont">
+                                <div id="vaccineChart" style="width: 100%; height: 100%;"></div>
+                            </div>
+                        </article>
+                        <!--// 백신 업데이트 현황 -->
+
+                        <!-- 저장매체 보유현황 -->
+                        <article class="row-box chart-box">
+                            <div class="row-box-head">
+                                <div class="tit-sm">저장매체 보유현황</div>
+                            </div>
+                            <div class="row-box-cont">
+                                <div id="custom-legend" class="custom-legend">
+                                    <span class="legend-label usb">USB</span>
+                                    <span class="legend-label hard">외장하드</span>
+                                    <span class="legend-label cd">CD</span>
+                                </div>
+                                <div id="statusChart" style="width: 100%; height: 100%;"></div>
+                            </div>
+                        </article>
+                        <!--// 저장매체 보유현황 -->
+
+                        <!-- 전사 자산현항 -->
+                        <article class="row-box chart-box">
+                            <div class="row-box-head">
+                                <div class="tit-sm">전사 자산현항</div>
+                            </div>
+                            <div class="row-box-cont">
+                                <div id="propertyChart" style="width: 100%; height: 100%;"></div>
+                            </div>
+                        </article>
+                        <!--// 전사 자산현항 -->
+
+                        <!-- TEST -->
+                        <article class="row-box chart-box">
+                            <div class="row-box-head">
+                                <div class="tit-sm">TEST</div>
+                            </div>
+                            <div class="row-box-cont">
+                                <div id="testChart" style="width: 100%; height: 100%;"></div>
+                            </div>
+                        </article>
+                        <!--// TEST -->
+                       
+                        <!-- 공개취약 자산현황 -->
+                        <article class="row-box chart-box">
+                            <div class="row-box-head">
+                                <div class="tit-sm">공개취약 자산현황</div>
+                            </div>
+                            <div class="row-box-cont">
+                                <div id="assetsChart" style="width: 100%; height: 100%;"></div>
+                            </div>
+                        </article>
+                        <!--// 공개취약 자산현황 -->
+
+                        <!-- 지원종료운영체제자산현황 -->
+                        <article class="row-box chart-box">
+                            <div class="row-box-head">
+                                <div class="tit-sm">지원종료운영체제자산현황</div>
+                            </div>
+                            <div class="row-box-cont">
+                                <div id="systemChart" style="width: 100%; height: 100%;"></div>
+                            </div>
+                        </article>
+                        <!--// 지원종료운영체제자산현황 -->
+
+                        <!-- 정기점검 (주간/월간) -->
+                        <article class="row-box chart-box">
+                            <div class="row-box-head">
+                                <div class="tit-sm">정기점검 (주간/월간)</div>
+                            </div>
+                            <div class="row-box-cont">
+                                <div id="checkChart" style="width: 100%; height: 100%;"></div>
+                            </div>
+                        </article>
+                        <!--// 정기점검 (주간/월간) -->
+
+                    </div>
+                    <!--// 컨텐츠 영역 -->
+
+                </main>
+            </div>
+        </section>
+        <!--// 컨테이너 영역 -->
+
+        <!-- 푸터 영역 -->
+        <footer id="kdhc-footer">
+            <script type="module" src="../../assets/js/layouts/footer.js"></script>
         </footer>
-        <!--// footer -->
-    </section>
-    <!--// container -->
+        <!--// 푸터 영역 -->
+
+    </div>
+    <!-- script wrap -->
+    <script src="./chart/data.js"></script>
+    <script src="./chart/chart.js"></script>
+    <!--// script wrap -->
+
+    <!-- modal wrap -->
+    <!--// modal wrap -->
 </body>
+
 </html>

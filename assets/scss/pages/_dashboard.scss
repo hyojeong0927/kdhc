@@ -3,21 +3,20 @@
 .main-dashboard {
     .contents {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(rem(493px), 1fr));
         grid-template-areas:
             "title title title"
             "summary summary summary"
             "row-box-1 row-box-2 row-box-3"
             "row-box-4 row-box-5 row-box-6"
             "alarm alarm alarm";
-        grid-auto-columns: minmax(rem(493px), auto);
         grid-template-rows: rem(32px) rem(74px) rem(268px) rem(268px) rem(40px);
         grid-column-gap: rem(40px);
         grid-row-gap: rem(24px);
-
+       
         .title-wrap {
             grid-area: title;
-            width: 100%;
+            width: 100%; 
         }
         .summary {
             pointer-events: none;
@@ -64,16 +63,11 @@
 
         }
         .row-box {
-            &:nth-of-type(5) {
-                padding-right: rem(50px);
-                .row-box-cont {
-                    overflow: hidden;
-                }
-            }
             padding: rem(30px) rem(12px) rem(25px) rem(48px);
             border-radius: $radius-md;
             background: $white;
             box-shadow: 0px 0px 12px 0px rgba($black, 0.08);
+            @include dashboard-scroll-y;
 
             @for $i from 1 through 6 {
                 &:nth-of-type(#{$i}) {
@@ -122,43 +116,35 @@
             .row-box-cont {
                 overflow-y: auto;
                 max-height: rem(158px);
+                
                 .ulist,
                 .olist {
+                    @include flex(false, "start", "normal", rem(11px));
+                    &:not(.olist) {
+                        gap: rem(7px)
+                    }
                     .item {
-                        &:not(:last-of-type) {
-                            margin-bottom: rem(7px);
-                        }
+                        @include flex(true, "between", "center");
                         padding-right: rem(28px);
                         .txt {
-                            display: block;
-                            @include ellipsis;
+                            flex: 1;
+                            display: inline-block;
                             margin-right: auto;
+                            min-width: 0;
                             color: $gray-002;
-                            @include font-style($font-size-xmd, $font-weight-normal, $line-height-base);
+                            @include font-style($font-size-xmd, $font-weight-normal, rem(20px));
                             text-align: left;
+                            @include ellipsis;
                         }
                         .date {
+                            flex-shrink: 0;
                             margin-left: auto;
+                            padding-left: rem(23px);
                             color: $gray-003;
-                            @include font-style($font-size-base, $font-weight-normal, rem(23px));
+                            @include font-style($font-size-base, $font-weight-normal, rem(20px));
+                            text-align: right;
                         }
                     }
-                }
-                .ulist {
-                    .item {
-                        position: relative;
-                        padding-left: rem(20px);
-                        @include before(true, true, 50%, 0, 0, 0);
-                        &::before {
-                            @extend .icon;
-                            @extend .list-bullet;
-                            background-position: left center;
-                            background-repeat: no-repeat;
-                            transform: translateY(-50%);
-                        }
-                    }
-                }
-                .olist {
                     &.number {
                         counter-reset: number 0;
                         .item {
@@ -169,9 +155,34 @@
                                 margin-right: rem(4px);
                                 color: inherit;
                             }
-                            @include flex(true, "between", "center", rem(8px));
                         }
                     }
+                    &.bullet {
+                        .item {
+                            position: relative;
+                            padding-left: rem(20px);
+                            @include before(true, true, 50%, 0, 0, 0);
+                            &::before {
+                                @extend .icon;
+                                @extend .list-bullet;
+                                background-position: left center;
+                                background-repeat: no-repeat;
+                                transform: translateY(-50%);
+                            }
+                        }
+                    }
+                }
+            }
+            &.inspection {
+                padding-right: rem(50px);
+
+                .row-box-head {
+                    .btn-more {
+                        margin-right: 0;
+                    }
+                }
+                .row-box-cont {
+                    overflow: hidden;
                 }
             }
             // chart
@@ -187,11 +198,11 @@
             }
         }
         .summary-sub {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: rem(8px);
             pointer-events: none;
-            @include flex(true, "start", "normal", rem(8px));
-            flex-wrap: wrap;
             dl {
-                flex: 1 1;
                 @include flex(true, "between", "baseline", rem(8px));
                 padding: rem(12px) rem(20px) rem(18px);
                 height: rem(68px);
@@ -241,6 +252,21 @@
                     transform: translateY(-50%);
                 }
             }
+        }
+    }
+    // admin dashboard layout
+    &.admin {
+        .contents {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(rem(493px), 1fr));
+            grid-template-areas:
+                "title title title"
+                "row-box-1 row-box-2 row-box-3"
+                "row-box-4 row-box-5 row-box-6"
+                "row-box-7 row-box-8 row-box-9";
+            grid-template-rows: rem(44px) rem(268px) rem(268px) rem(268px);
+            grid-column-gap: rem(40px);
+            grid-row-gap: rem(24px);
         }
     }
 }

@@ -222,6 +222,26 @@
     }
 }
 
+@mixin dashboard-scroll-y {
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: $gray-007;
+        border-radius: 10px;
+        opacity: 0;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: $gray-007;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: $gray-007;
+    }
+
+}
+// scroll end
 // clearfix
 @mixin clearfix() {
     &::after {
