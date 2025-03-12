@@ -12,7 +12,8 @@ $popup-md-footer-height: rem(86px);
     min-height: 100dvh;
     background-color: $gray-012;
     @include scroll-y;
-    
+    @include scroll-x;
+
     .kdhc-pop-header {
         @include flex(true, "between", "center");
         padding: rem(32px) rem(40px) rem(24px);

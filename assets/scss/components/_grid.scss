@@ -207,6 +207,13 @@
         }
     }
 }
+.ag-body-horizontal-scroll:not(.ag-scrollbar-invisible),
+.ag-body-horizontal-scroll-container,
+.ag-body-horizontal-scroll-viewport {
+    height: rem(6px) !important;
+    min-height: rem(6px) !important;
+    max-height: rem(6px) !important;
+}
 .ag-center-cols-viewport,
 .ag-center-cols-container {
     min-height: rem(47px) !important;
