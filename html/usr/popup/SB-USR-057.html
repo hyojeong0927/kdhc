@@ -263,12 +263,13 @@
         import { bootstrapDatePickerEditor } from "../../../assets/js/components/agGridComponents.js"
         
         const rowData = [
-            { field01: "1", field02: "", field03: "분산제어", field04: "", field05: "등록", field06: "등록", field07: "" },
-            { field01: "1", field02: "", field03: "발전제어", field04: "", field05: "등록", field06: "등록", field07: "" },
-            { field01: "1", field02: "", field03: "전력제어", field04: "", field05: "등록", field06: "등록", field07: "" },
-            { field01: "1", field02: "", field03: "보조제어", field04: "", field05: "등록", field06: "등록", field07: "" },
-            { field01: "2", field02: "", field03: "전력제어", field04: "", field05: "등록", field06: "등록", field07: "" },
-            { field01: "2", field02: "", field03: "보조제어", field04: "", field05: "등록", field06: "등록", field07: "" }
+            { field01: "1", field02: "", field03: "분산제어", field04: "", field05: "", field06: "", field07: "" },
+            { field01: "1", field02: "", field03: "발전제어", field04: "", field05: "", field06: "", field07: "" },
+            { field01: "1", field02: "", field03: "전력제어", field04: "", field05: "", field06: "", field07: "" },
+            { field01: "1", field02: "", field03: "보조제어", field04: "", field05: "", field06: "", field07: "" },
+            { field01: "2", field02: "", field03: "전력제어", field04: "", field05: "", field06: "", field07: "" },
+            { field01: "2", field02: "", field03: "보조제어", field04: "", field05: "", field06: "", field07: "" },
+            { field01: "3", field02: "", field03: "보조제어", field04: "", field05: "", field06: "", field07: "" }
         ];
         const columnDefs = [
              {
@@ -306,7 +307,8 @@
                  headerName: "점검항목",
                  headerClass: "center",
                  field: "field03",
-                 width: 180,
+                 minWidth: 180,
+                 flex: 1,
                  cellClass: "cell-normal",
              },
              {
@@ -345,20 +347,8 @@
                 editable: false,
                 rowSpan: (params) => shouldMergeRows(params, ["field01", "field05", "field06"]),
                 cellClass: getMergeCellClass,
-                cellRenderer: (params) => {
-                    const rowIndex = params.node.rowIndex;
-                    
-                    if (rowIndex === 0 || rowIndex === 4) {
-                        const buttonId = `result-${rowIndex}`;
-
-                        return `
-                            <button type="button" class="btn btn-grid" id="${buttonId}" data-row-index="${rowIndex}" aria-label="Open inspection result">등록</button>
-                        `;
-                    } else {
-                        return params.value || "";
-                    }
-                },
-             },
+                cellRenderer: (params) => createRegisterButton(params, "field05")
+            },
              {
                 headerName: "조치사항",
                 headerClass: "center",
@@ -368,19 +358,7 @@
                 editable: false,
                 rowSpan: (params) => shouldMergeRows(params, ["field01", "field05", "field06"]),
                 cellClass: getMergeCellClass,
-                cellRenderer: (params) => {
-                     const rowIndex = params.node.rowIndex;
-
-                     if (rowIndex === 0 || rowIndex === 4) {
-                         const buttonId = `result-${rowIndex}`;
-
-                         return `
-                            <button type="button" class="btn btn-grid" id="${buttonId}" data-row-index="${rowIndex}" aria-label="Open inspection result">등록</button>
-                        `;
-                     } else {
-                         return params.value || "";
-                     }
-                 },
+                cellRenderer: (params) => createRegisterButton(params, "field06")
              },
              {
                  headerName: "삭제",
@@ -393,6 +371,32 @@
                  }
              },
         ];
+
+        // 등록 버튼 생성
+        function createRegisterButton(params, field) {
+            const rowIndex = params.node.rowIndex;
+            const field01Value = params.data["field01"];
+            const mapKey = ["field01", "field05", "field06"].join(",");
+
+            const isFirstMergedRow = (params) => {
+                if (rowIndex === 0) return true;
+
+                const prevNode = params.api.getDisplayedRowAtIndex(rowIndex - 1);
+                return prevNode && prevNode.data["field01"] !== field01Value;
+            };
+
+            if (isFirstMergedRow(params) && rowspanMap[mapKey]?.[rowIndex] > 1) {
+                const buttonType = field === "field05" ? "result" : "action";
+                const buttonId = `${buttonType}-${rowIndex}`;
+
+                return `
+                    <button type="button" class="btn btn-grid" id="${buttonId}" data-row-index="${rowIndex}" aria-label="Open popup">
+                        등록
+                    </button>
+                `;
+            }
+            return params.value || "";
+        }
 
         // rowspan start
         let rowspanMap = {};
@@ -460,28 +464,36 @@
             params.api.redrawRows();
         },
         getRowHeight: (params) => 63,
+        // popup 
         onFirstDataRendered: () => {
             setTimeout(() => {
-                const buttons = document.querySelectorAll('[id^="result-"]');
+                const buttons = document.querySelectorAll('[id^="result-"], [id^="action-"]');
 
                 buttons.forEach((button) => {
                     button.addEventListener('click', (event) => {
-                        const rowIndex = event.target.dataset.rowIndex;
+                        const buttonElement = event.target.closest("button");
+                        if (!buttonElement) return;
+
+                        const rowIndex = buttonElement.dataset.rowIndex;
+                        
+                        const isInspectionResult = buttonElement.id.startsWith("result");
+                        const popupUrl = isInspectionResult ? "./SB-USR-057_02.html" : "./SB-USR-057_03.html";
+
                         const width = 1400;
                         const height = 800;
-
                         const left = (window.screenLeft || window.screenX) + (window.innerWidth - width) / 2;
                         const top = (window.screenTop || window.screenY) + (window.innerHeight - height) / 2;
 
                         window.open(
-                            "./USR-057_02.html",
-                            "SearchPopup",
+                            popupUrl,
+                            "PopupWindow",
                             `width=${width},height=${height},left=${left},top=${top},scrollbars=yes,resizable=yes`
                         );
                     });
                 });
             }, 0);
         },
+        // popup end
         domLayout: "autoHeight",
         suppressColumnVirtualisation: false,
         suppressRowTransform: true, // merge option 추가
