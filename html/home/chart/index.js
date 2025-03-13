@@ -6,4 +6,12 @@ import testOptions from './testChart.js';
 import systemOptions from './systemChart.js';
 import checkOptions from './checkChart.js';
 
-export { statusOptions, assetsOptions, vaccineOptions, propertyOptions, testOptions, systemOptions, checkOptions };
+export {
+    statusOptions,
+    assetsOptions,
+    vaccineOptions,
+    propertyOptions,
+    testOptions,
+    systemOptions,
+    checkOptions
+};
