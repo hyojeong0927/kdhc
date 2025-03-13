@@ -203,23 +203,24 @@
             grid-gap: rem(8px);
             pointer-events: none;
             dl {
-                @include flex(true, "between", "baseline", rem(8px));
+                @include flex(true, "between", "baseline", rem(2px));
                 padding: rem(12px) rem(20px) rem(18px);
                 height: rem(68px);
                 line-height: $line-height-base;
                 border-radius: $radius-md;
-                background: linear-gradient(95deg, rgba(117, 183, 152, 0.20) 4.3%, rgba(25, 135, 84, 0.20) 97.6%);
+                background: $main-summary-sub;
             }
             dt {
                 flex: 1;
                 color: $primary;
-                @include font-style($font-size-lg, $font-weight-medium, $line-height-base);
+                @include font-style($font-size-md, $font-weight-medium, $line-height-base);
             }
             dd {
                 @include flex(true, "end", "center", rem(4px));
                 .num {
                     color: $primary;
-                    @include font-style($font-size-xlg, $font-weight-bold, $line-height-base);
+                    @include font-style($font-size-xslg, $font-weight-bold, $line-height-base);
+                    letter-spacing: normal;
                 }
                 em {
                     color: $gray-009;

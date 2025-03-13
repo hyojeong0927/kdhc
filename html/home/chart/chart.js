@@ -47,7 +47,7 @@ const options1 = {
             label: {
                 fontSize: 10,
                 fontWeight: 'normal',
-                fontFamily: 'Noto Sans KR',
+                fontFamily: 'Arial',
                 color: '#A5A5A5',
                 rotation: -45
             },
@@ -62,11 +62,17 @@ const options1 = {
             },
             gridLine: {
                 enabled: true,
+                style: [
+                    {
+                        stroke: '#A5A5A5',
+                        lineDash: [],
+                    },
+                ]
             },
             label: {
                 fontSize: 12,
                 fontWeight: 'normal',
-                fontFamily: 'Noto Sans KR',
+                fontFamily: 'Arial',
                 color: '#A5A5A5',
                 rotation: 0
             }
@@ -88,7 +94,7 @@ const options1 = {
                 color: '#18191C',
                 fontSize: 12,
                 fontWeight: 'normal',
-                fontFamily: 'Noto Sans KR',
+                fontFamily: 'Arial',
             }
         }
     },
@@ -124,7 +130,7 @@ const options2 = {
             label: {
                 fontSize: 10,
                 fontWeight: 'normal',
-                fontFamily: 'Noto Sans KR',
+                fontFamily: 'Arial',
                 color: '#A5A5A5',
                 rotation: -45
             },
@@ -139,11 +145,17 @@ const options2 = {
             },
             gridLine: {
                 enabled: true,
+                style: [
+                    {
+                        stroke: '#A5A5A5',
+                        lineDash: [],
+                    },
+                ]
             },
             label: {
                 fontSize: 12,
                 fontWeight: 'normal',
-                fontFamily: 'Noto Sans KR',
+                fontFamily: 'Arial',
                 color: '#A5A5A5',
                 rotation: 0
             }
@@ -184,7 +196,7 @@ const options3 = {
             label: {
                 fontSize: 10,
                 fontWeight: 'normal',
-                fontFamily: 'Noto Sans KR',
+                fontFamily: 'Arial',
                 color: '#A5A5A5',
                 rotation: -45
             },
@@ -199,11 +211,17 @@ const options3 = {
             },
             gridLine: {
                 enabled: true,
+                style: [
+                    {
+                        stroke: '#A5A5A5',
+                        lineDash: [],
+                    },
+                ]
             },
             label: {
                 fontSize: 12,
                 fontWeight: 'normal',
-                fontFamily: 'Noto Sans KR',
+                fontFamily: 'Arial',
                 color: '#A5A5A5',
                 rotation: 0
             }
@@ -244,7 +262,7 @@ const options4 = {
             label: {
                 fontSize: 10,
                 fontWeight: 'normal',
-                fontFamily: 'Noto Sans KR',
+                fontFamily: 'Arial',
                 color: '#A5A5A5',
                 rotation: -45
             },
@@ -259,11 +277,17 @@ const options4 = {
             },
             gridLine: {
                 enabled: true,
+                style: [
+                    {
+                        stroke: '#A5A5A5',
+                        lineDash: [],
+                    },
+                ]
             },
             label: {
                 fontSize: 12,
                 fontWeight: 'normal',
-                fontFamily: 'Noto Sans KR',
+                fontFamily: 'Arial',
                 color: '#A5A5A5',
                 rotation: 0
             }
@@ -304,7 +328,7 @@ const options5 = {
             label: {
                 fontSize: 10,
                 fontWeight: 'normal',
-                fontFamily: 'Noto Sans KR',
+                fontFamily: 'Arial',
                 color: '#A5A5A5',
                 rotation: -45
             },
@@ -319,11 +343,17 @@ const options5 = {
             },
             gridLine: {
                 enabled: true,
+                style: [
+                    {
+                        stroke: '#A5A5A5',
+                        lineDash: [],
+                    },
+                ]
             },
             label: {
                 fontSize: 12,
                 fontWeight: 'normal',
-                fontFamily: 'Noto Sans KR',
+                fontFamily: 'Arial',
                 color: '#A5A5A5',
                 rotation: 0
             }
@@ -364,7 +394,7 @@ const options6 = {
             label: {
                 fontSize: 10,
                 fontWeight: 'normal',
-                fontFamily: 'Noto Sans KR',
+                fontFamily: 'Arial',
                 color: '#A5A5A5',
                 rotation: -45
             },
@@ -379,11 +409,17 @@ const options6 = {
             },
             gridLine: {
                 enabled: true,
+                style: [
+                    {
+                        stroke: '#A5A5A5',
+                        lineDash: [],
+                    },
+                ]
             },
             label: {
                 fontSize: 12,
                 fontWeight: 'normal',
-                fontFamily: 'Noto Sans KR',
+                fontFamily: 'Arial',
                 color: '#A5A5A5',
                 rotation: 0
             }
@@ -424,7 +460,7 @@ const options7 = {
             label: {
                 fontSize: 10,
                 fontWeight: 'normal',
-                fontFamily: 'Noto Sans KR',
+                fontFamily: 'Arial',
                 color: '#A5A5A5',
                 rotation: -45
             },
@@ -439,11 +475,17 @@ const options7 = {
             },
             gridLine: {
                 enabled: true,
+                style: [
+                    {
+                        stroke: '#A5A5A5',
+                        lineDash: [],
+                    },
+                ]
             },
             label: {
                 fontSize: 12,
                 fontWeight: 'normal',
-                fontFamily: 'Noto Sans KR',
+                fontFamily: 'Arial',
                 color: '#A5A5A5',
                 rotation: 0
             }
@@ -454,10 +496,10 @@ const options7 = {
     },
 };
 
-const chart1 = AgCharts.create(options1);
-const chart2 = AgCharts.create(options2);
-const chart3 = AgCharts.create(options3);
-const chart4 = AgCharts.create(options4);
-const chart5 = AgCharts.create(options5);
-const chart6 = AgCharts.create(options6);
-const chart7 = AgCharts.create(options7);
+AgCharts.create(options1);
+AgCharts.create(options2);
+AgCharts.create(options3);
+AgCharts.create(options4);
+AgCharts.create(options5);
+AgCharts.create(options6);
+AgCharts.create(options7);

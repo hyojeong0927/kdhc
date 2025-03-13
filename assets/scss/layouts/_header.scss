@@ -59,10 +59,18 @@ header#kdhc-header {
                     }
                     @if $ut == "04" {
                         @extend .user-circle;
+                        
                     }
                 }
-                &.user {
-                    color: $orange-001;
+            }
+        }
+        .user {
+            a {
+                color: $orange-001;
+                font-weight: $font-weight-bold;
+
+                em { 
+                    margin-left: rem(4px);
                     font-weight: $font-weight-medium;
                 }
             }
@@ -97,7 +105,7 @@ header#kdhc-header {
                 @include font-style($h2-font-size, $font-weight-bold, $line-height-base);
                 .nav-link {
                     position: relative;
-                    padding: 0 rem(28px) rem(20px);
+                    padding: 0 rem(28px) rem(19px);
                     color: $primary;
                     &:hover,
                     &:focus,
