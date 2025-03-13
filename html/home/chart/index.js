@@ -6,7 +6,7 @@ import testOptions from './testChart.js';
 import systemOptions from './systemChart.js';
 import checkOptions from './checkChart.js';
 
-export {
+const allchartOption = [
     statusOptions,
     assetsOptions,
     vaccineOptions,
@@ -14,4 +14,8 @@ export {
     testOptions,
     systemOptions,
     checkOptions
-};
+];
+
+export const chartOptions = allchartOption;
+
+console.log(chartOptions);
