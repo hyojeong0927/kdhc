@@ -342,24 +342,22 @@
                 field: "field05",
                 minWidth: 180,
                 flex: 1,
-                editable: true,
-                cellEditor: 'agLargeTextCellEditor',
+                editable: false,
                 rowSpan: (params) => shouldMergeRows(params, ["field01", "field05", "field06"]),
                 cellClass: getMergeCellClass,
-                cellEditorParams: {
-                    maxLength: 300
-                },
                 cellRenderer: (params) => {
                     const rowIndex = params.node.rowIndex;
+                    
                     if (rowIndex === 0 || rowIndex === 4) {
-                        const values = params.value;
+                        const buttonId = `result-${rowIndex}`;
+
                         return `
-                            <button type="button" class="btn btn-grid">${values}</button>
+                            <button type="button" class="btn btn-grid" id="${buttonId}" data-row-index="${rowIndex}" aria-label="Open inspection result">등록</button>
                         `;
                     } else {
                         return params.value || "";
                     }
-                }
+                },
              },
              {
                 headerName: "조치사항",
@@ -367,24 +365,22 @@
                 field: "field06",
                 minWidth: 180,
                 flex: 1,
-                editable: true,
-                cellEditor: 'agLargeTextCellEditor',
+                editable: false,
                 rowSpan: (params) => shouldMergeRows(params, ["field01", "field05", "field06"]),
                 cellClass: getMergeCellClass,
-                cellEditorParams: {
-                    maxLength: 300
-                },
                 cellRenderer: (params) => {
-                    const rowIndex = params.node.rowIndex;
-                    if (rowIndex === 0 || rowIndex === 4) {
-                        const values = params.value;
-                        return `
-                        <button type="button" class="btn btn-grid">${values}</button>
-                    `;
-                    } else {
-                        return params.value || "";
-                    }
-                }
+                     const rowIndex = params.node.rowIndex;
+
+                     if (rowIndex === 0 || rowIndex === 4) {
+                         const buttonId = `result-${rowIndex}`;
+
+                         return `
+                            <button type="button" class="btn btn-grid" id="${buttonId}" data-row-index="${rowIndex}" aria-label="Open inspection result">등록</button>
+                        `;
+                     } else {
+                         return params.value || "";
+                     }
+                 },
              },
              {
                  headerName: "삭제",
@@ -396,7 +392,8 @@
                      return '<button type="button" class="btn btn-icon"><i class="icon del-trash" /></button>';
                  }
              },
-         ];
+        ];
+
         // rowspan start
         let rowspanMap = {};
 
@@ -463,6 +460,28 @@
             params.api.redrawRows();
         },
         getRowHeight: (params) => 63,
+        onFirstDataRendered: () => {
+            setTimeout(() => {
+                const buttons = document.querySelectorAll('[id^="result-"]');
+
+                buttons.forEach((button) => {
+                    button.addEventListener('click', (event) => {
+                        const rowIndex = event.target.dataset.rowIndex;
+                        const width = 1400;
+                        const height = 800;
+
+                        const left = (window.screenLeft || window.screenX) + (window.innerWidth - width) / 2;
+                        const top = (window.screenTop || window.screenY) + (window.innerHeight - height) / 2;
+
+                        window.open(
+                            "./USR-057_02.html",
+                            "SearchPopup",
+                            `width=${width},height=${height},left=${left},top=${top},scrollbars=yes,resizable=yes`
+                        );
+                    });
+                });
+            }, 0);
+        },
         domLayout: "autoHeight",
         suppressColumnVirtualisation: false,
         suppressRowTransform: true, // merge option 추가
@@ -474,7 +493,7 @@
         };
 
         const sampleGridDiv = document.querySelector("#sampleGrid");
-         sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
+        sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
 
     </script>
     
