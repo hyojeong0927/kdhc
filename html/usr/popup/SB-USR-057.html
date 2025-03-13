@@ -347,11 +347,18 @@
                 rowSpan: (params) => shouldMergeRows(params, ["field01", "field05", "field06"]),
                 cellClass: getMergeCellClass,
                 cellEditorParams: {
-                    maxLength: 100
+                    maxLength: 300
                 },
-                cellRenderer: params => {
-                    const value = params.value;
-                    return `<button type="button" class="btn btn-grid">${value}</button>`;
+                cellRenderer: (params) => {
+                    const rowIndex = params.node.rowIndex;
+                    if (rowIndex === 0 || rowIndex === 4) {
+                        const values = params.value;
+                        return `
+                            <button type="button" class="btn btn-grid">${values}</button>
+                        `;
+                    } else {
+                        return params.value || "";
+                    }
                 }
              },
              {
@@ -365,11 +372,18 @@
                 rowSpan: (params) => shouldMergeRows(params, ["field01", "field05", "field06"]),
                 cellClass: getMergeCellClass,
                 cellEditorParams: {
-                    maxLength: 100
+                    maxLength: 300
                 },
-                cellRenderer: params => {
-                    const value = params.value;
-                    return `<button type="button" class="btn btn-grid">${value}</button>`;
+                cellRenderer: (params) => {
+                    const rowIndex = params.node.rowIndex;
+                    if (rowIndex === 0 || rowIndex === 4) {
+                        const values = params.value;
+                        return `
+                        <button type="button" class="btn btn-grid">${values}</button>
+                    `;
+                    } else {
+                        return params.value || "";
+                    }
                 }
              },
              {
