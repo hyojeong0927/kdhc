@@ -11,6 +11,7 @@
     <script src="../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
     <script src="../../assets/js/vendors/ag-charts-community.js"></script>
     <script type="module" src="../../assets/js/common.js"></script>
+   
 </head>
 
 <body>
@@ -198,42 +199,36 @@
                                         <dt>일간</dt>
                                         <dd>
                                             <span class="num">10</span>
-                                            <em>건</em>
                                         </dd>
                                     </dl>
                                     <dl>
                                         <dt>주간</dt>
                                         <dd>
                                             <span class="num">4</span>
-                                            <em>건</em>
                                         </dd>
                                     </dl>
                                     <dl>
                                         <dt>월간</dt>
                                         <dd>
                                             <span class="num">3</span>
-                                            <em>건</em>
                                         </dd>
                                     </dl>
                                     <dl>
                                         <dt>분기</dt>
                                         <dd>
                                             <span class="num">1</span>
-                                            <em>건</em>
                                         </dd>
                                     </dl>
                                     <dl>
                                         <dt>반기</dt>
                                         <dd>
                                             <span class="num">12</span>
-                                            <em>건</em>
                                         </dd>
                                     </dl>
                                     <dl>
                                         <dt>연간</dt>
                                         <dd>
                                             <span class="num">15</span>
-                                            <em>건</em>
                                         </dd>
                                     </dl>
                                 </summary>
@@ -275,7 +270,12 @@
     </div>
     <!-- script wrap -->
     <script src="./chart/data.js"></script>
-    <script src="./chart/chart.js"></script>
+    <script type="module">
+        import { statusOptions, assetsOptions } from './chart/index.js'
+
+        console.log(statusOptions);
+        console.log(assetsOptions);
+    </script>
     <!--// script wrap -->
 
     <!-- modal wrap -->

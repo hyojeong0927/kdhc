@@ -213,13 +213,13 @@
             dt {
                 flex: 1;
                 color: $primary;
-                @include font-style($font-size-md, $font-weight-medium, $line-height-base);
+                @include font-style($font-size-lg, $font-weight-medium, $line-height-base);
             }
             dd {
                 @include flex(true, "end", "center", rem(4px));
                 .num {
                     color: $primary;
-                    @include font-style($font-size-xslg, $font-weight-bold, $line-height-base);
+                    @include font-style($font-size-xlg, $font-weight-bold, $line-height-base);
                     letter-spacing: normal;
                 }
                 em {

@@ -263,12 +263,12 @@
         import { bootstrapDatePickerEditor } from "../../../assets/js/components/agGridComponents.js"
         
         const rowData = [
-            { field01: "1", field02: "", field03: "분산제어", field04: "", field05: "", field06: "", field07: "" },
-            { field01: "1", field02: "", field03: "발전제어", field04: "", field05: "", field06: "", field07: "" },
-            { field01: "1", field02: "", field03: "전력제어", field04: "", field05: "", field06: "", field07: "" },
-            { field01: "1", field02: "", field03: "보조제어", field04: "", field05: "", field06: "", field07: "" },
-            { field01: "2", field02: "", field03: "전력제어", field04: "", field05: "", field06: "", field07: "" },
-            { field01: "2", field02: "", field03: "보조제어", field04: "", field05: "", field06: "", field07: "" }
+            { field01: "1", field02: "", field03: "분산제어", field04: "", field05: "등록", field06: "등록", field07: "" },
+            { field01: "1", field02: "", field03: "발전제어", field04: "", field05: "등록", field06: "등록", field07: "" },
+            { field01: "1", field02: "", field03: "전력제어", field04: "", field05: "등록", field06: "등록", field07: "" },
+            { field01: "1", field02: "", field03: "보조제어", field04: "", field05: "등록", field06: "등록", field07: "" },
+            { field01: "2", field02: "", field03: "전력제어", field04: "", field05: "등록", field06: "등록", field07: "" },
+            { field01: "2", field02: "", field03: "보조제어", field04: "", field05: "등록", field06: "등록", field07: "" }
         ];
         const columnDefs = [
              {
@@ -337,86 +337,40 @@
                  }
              },
             {
-                 headerName: "점검결과",
-                 headerClass: "center",
-                 field: "field05",
-                 minWidth: 180,
-                 flex: 1,
-                 editable: false,
-                 cellEditor: 'agLargeTextCellEditor',
-                 rowSpan: (params) => shouldMergeRows(params, ["field01", "field05", "field06"]),
-                 cellClass: getMergeCellClass,
-                 cellEditorParams: {
-                     maxLength: 100
-                 },
-                 
-                 cellRenderer: (params) => {
-                     const rowIndex = params.node.rowIndex;
-                     const value = params.value ? params.value.trim() : "";
- 
-                     if (rowIndex === 0 && !value) {
-                         const htmlContent = `
-                             <!-- textarea -->
-                             <div class="textarea-group">
-                                 <textarea class="form-control" id="comment" placeholder="점검결과 내용"></textarea>
-                             </div>
-                             <!--// textarea -->
-                         `;
-                         return htmlContent;
-
-                      } else if (rowIndex === 4 && !value) {
-                         const htmlContent = `
-                             <!-- textarea -->
-                             <div class="textarea-group">
-                                 <textarea class="form-control" id="comment" placeholder="점검결과 내용"></textarea>
-                             </div>
-                             <!--// textarea -->
-                         `;
-                        return htmlContent;
-                     } else {
-                         return value;
-                     }
-                 }
+                headerName: "점검결과",
+                headerClass: "center",
+                field: "field05",
+                minWidth: 180,
+                flex: 1,
+                editable: true,
+                cellEditor: 'agLargeTextCellEditor',
+                rowSpan: (params) => shouldMergeRows(params, ["field01", "field05", "field06"]),
+                cellClass: getMergeCellClass,
+                cellEditorParams: {
+                    maxLength: 100
+                },
+                cellRenderer: params => {
+                    const value = params.value;
+                    return `<button type="button" class="btn btn-grid">${value}</button>`;
+                }
              },
              {
-                 headerName: "조치사항",
-                 headerClass: "center",
-                 field: "field06",
-                 minWidth: 180,
-                 flex: 1,
-                 editable: false,
-                 cellEditor: 'agLargeTextCellEditor',
-                 rowSpan: (params) => shouldMergeRows(params, ["field01", "field05", "field06"]),
-                 cellClass: getMergeCellClass,
-                 cellEditorParams: {
-                     maxLength: 100
-                 },
-                 cellRenderer: (params) => {
-                     const rowIndex = params.node.rowIndex;
-                     const value = params.value ? params.value.trim() : "";
- 
-                     if (rowIndex === 0 && !value) {
-                         const htmlContent = `
-                             <!-- textarea -->
-                             <div class="textarea-group">
-                                 <textarea class="form-control" id="comment" placeholder="조치사항 내용"></textarea>
-                             </div>
-                             <!--// textarea -->
-                         `;
-                         return htmlContent;
-                     } else if (rowIndex === 4 && !value) {
-                          const htmlContent = `
-                             <!-- textarea -->
-                             <div class="textarea-group">
-                                 <textarea class="form-control" id="comment" placeholder="조치사항 내용"></textarea>
-                             </div>
-                             <!--// textarea -->
-                         `;
-                        return htmlContent;
-                     }  else {
-                         return value;
-                     }
-                 }
+                headerName: "조치사항",
+                headerClass: "center",
+                field: "field06",
+                minWidth: 180,
+                flex: 1,
+                editable: true,
+                cellEditor: 'agLargeTextCellEditor',
+                rowSpan: (params) => shouldMergeRows(params, ["field01", "field05", "field06"]),
+                cellClass: getMergeCellClass,
+                cellEditorParams: {
+                    maxLength: 100
+                },
+                cellRenderer: params => {
+                    const value = params.value;
+                    return `<button type="button" class="btn btn-grid">${value}</button>`;
+                }
              },
              {
                  headerName: "삭제",

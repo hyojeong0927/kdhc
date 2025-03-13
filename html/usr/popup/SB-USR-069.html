@@ -45,16 +45,63 @@
                                     <div class="form-wrap type01">
                                         <!-- row -->
                                         <div class="form-row">
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label w-150">클린 PC 자산관리번호</div>
+                                                <div class="form-group">
+                                                    <!-- input search group start : class="input-search-group is-error" -->
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search2" value="" placeholder="클린 PC 자산관리번호">
+                                                        <label class="input-group-text hidden" for="search2"><i class="icon search"></i></label>
+                                                    </div>
+                                                    <!--// input search group end -->
+                                                    <!-- 에러 문구 : hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--// col -->
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label">시스템명</div>
+                                                <div class="form-group">
+                                                    <div class="input-txt">시스템명 1</div>
+                                                </div>
+                                            </div>
+                                            <!--// col -->
+                                        </div>
+                                        <!--// row -->
+                                        <!-- row -->
+                                        <div class="form-row">
                                             <!--  -->
                                             <div class="col">
-                                                <div class="form-label">사용일자</div>
+                                                <div class="form-label w-150">사용일시</div>
                                                 <div class="form-group">
-                                                    <!-- datepicker : class="input-date-group is-error"-->
-                                                    <div class="input-date-group">
-                                                        <input type="text" id="singleDate0" class="form-control datepicker" value="" placeholder="YYYY-MM-DD">
-                                                        <label class="input-group-text" for="singleDate0"><i class="icon calendar"></i></label>
+                                                    <div class="multi-group">
+                                                        <!-- datepicker : class="input-date-group is-error"-->
+                                                        <div class="input-date-group">
+                                                            <input type="text" id="singleDate0" class="form-control datepicker" value="" placeholder="YYYY-MM-DD">
+                                                            <label class="input-group-text" for="singleDate0"><i class="icon calendar"></i></label>
+                                                        </div>
+                                                        <!--// datepicker -->
+                                                        <!-- input time group : class="input-time-group is-error" -->
+                                                        <div class="input-time-group w-50">
+                                                            <select class="form-select" aria-label="Default select" required>
+                                                                <option value="" selected>HH</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                            <div class="to">:</div>
+                                                            <select class="form-select" aria-label="Default select" required>
+                                                                <option value="" selected>MM</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                        </div>
+                                                        <!--// input time group -->
                                                     </div>
-                                                    <!--// datepicker -->
                                                     <!-- 에러 문구 : hidden 제거 -->
                                                     <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
@@ -62,7 +109,7 @@
                                             </div>
                                             <!--  -->
                                             <div class="col">
-                                                <div class="form-label w-140">접속매체</div>
+                                                <div class="form-label">접속매체</div>
                                                 <div class="form-group">
                                                     <!-- input search group start : class="input-search-group is-error" -->
                                                     <div class="input-search-group">
@@ -81,34 +128,7 @@
                                         <div class="form-row">
                                             <!-- col -->
                                             <div class="col">
-                                                <div class="form-label">사용시간</div>
-                                                <div class="form-group">
-                                                    <!-- input time group : class="input-time-group is-error" -->
-                                                    <div class="input-time-group w-100">
-                                                        <select class="form-select" aria-label="Default select" required>
-                                                            <option value="" selected>HH</option>
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                        </select>
-                                                        <div class="to">:</div>
-                                                        <select class="form-select" aria-label="Default select" required>
-                                                            <option value="" selected>MM</option>
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                        </select>
-                                                    </div>
-                                                    <!--// input time group -->
-                                                    <!-- 에러 문구 : hidden -->
-                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                    <!--// 에러 문구 -->
-                                                </div>
-                                            </div>
-                                            <!--// col -->
-                                            <!-- col -->
-                                            <div class="col">
-                                                <div class="form-label w-140">사용목적</div>
+                                                <div class="form-label w-150">사용목적</div>
                                                 <div class="form-group">
                                                     <!-- input group : class="input-group is-error" -->
                                                     <div class="input-group">
@@ -122,8 +142,6 @@
                                                 </div>
                                             </div>
                                             <!--// col -->
-                                        </div>
-                                        <div class="form-row">
                                             <!-- col -->
                                             <div class="col">
                                                 <div class="form-label">특이사항</div>
