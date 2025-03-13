@@ -1,4 +1,6 @@
 // 정기점검 (주간/월간)
+import { getCheckData } from './data.js';
+
 const checkCOptions = {
     container: document.getElementById("checkChart"),
     title: {
@@ -7,7 +9,7 @@ const checkCOptions = {
     subtitle: {
         text: "",
     },
-    data: getCheckData(),
+    data: getCheckData,
     series: [
         {
             type: "bar",

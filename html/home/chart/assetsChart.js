@@ -1,4 +1,6 @@
 // 공개취약점 자산현황
+import { getAssetsData } from './data.js';
+
 const assetsOptions = {
     container: document.getElementById("assetsChart"),
     title: {
@@ -7,7 +9,7 @@ const assetsOptions = {
     subtitle: {
         text: "",
     },
-    data: getAssetsData(),
+    data: getAssetsData,
     series: [
         {
             type: "bar",

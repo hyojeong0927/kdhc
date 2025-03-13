@@ -1,4 +1,6 @@
 // 저장매체 보유현황
+import { getStatusData } from './data.js';
+
 const statusOptions = {
     container: document.getElementById("statusChart"),
     title: {
@@ -7,7 +9,7 @@ const statusOptions = {
     subtitle: {
         text: "",
     },
-    data: getStatusData(),
+    data: getStatusData,
     series: [
         {
             type: "bar",

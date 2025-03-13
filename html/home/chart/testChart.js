@@ -1,4 +1,6 @@
 // TEST
+import { getTestData } from './data.js';
+
 const testOptions = {
     container: document.getElementById("testChart"),
     title: {
@@ -7,7 +9,7 @@ const testOptions = {
     subtitle: {
         text: "",
     },
-    data: getTestData(),
+    data: getTestData,
     series: [
         {
             type: "bar",

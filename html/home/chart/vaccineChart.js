@@ -1,4 +1,6 @@
 // 백신 업데이트 현황
+import { getVaccineData } from './data.js';
+
 const vaccineOptions = {
     container: document.getElementById("vaccineChart"),
     
@@ -8,7 +10,7 @@ const vaccineOptions = {
     subtitle: {
         text: "",
     },
-    data: getVaccineData(),
+    data: getVaccineData,
     series: [
         {
             type: "bar",

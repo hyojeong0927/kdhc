@@ -1,4 +1,6 @@
 // 지원종료운영체제자산현황
+import { getSystemData } from './data.js';
+
 const systemOptions = {
     container: document.getElementById("systemChart"),
     title: {
@@ -7,7 +9,7 @@ const systemOptions = {
     subtitle: {
         text: "",
     },
-    data: getSystemData(),
+    data: getSystemData,
     series: [
         {
             type: "bar",

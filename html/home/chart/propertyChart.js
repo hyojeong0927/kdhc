@@ -1,4 +1,6 @@
 // 전사 자산현항
+import { getPropertyData } from './data.js';
+
 const propertyOptions = {
     container: document.getElementById("propertyChart"),
     title: {
@@ -7,7 +9,7 @@ const propertyOptions = {
     subtitle: {
         text: "",
     },
-    data: getPropertyData(),
+    data: getPropertyData,
     series: [
         {
             type: "bar",
