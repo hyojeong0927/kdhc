@@ -47,23 +47,12 @@ $step-status: ("default", "current", "reject", "done");
 }
 .step {
     @extend %step-base;
-    
+
     @each $size in $step-size {
         &.step-#{$size} {
-            @if $size== "lg" {
-                .step-img {
-                    margin-bottom: rem(12px);
-                    width: rem(80px);
-                    height: rem(80px);
-                }
-                .txt {
-                    font-size: rem(18px);
-                    line-height: rem(21.6px);
-                    letter-spacing: -2%;
-                    @extend %step-txt;
-                }
-            }
-            @else if $size == "sm" {
+            @include step-size($size);
+
+            @if $size =="sm" {
                 .step-list {
                     min-width: rem(390px);
                     li {
@@ -74,15 +63,18 @@ $step-status: ("default", "current", "reject", "done");
                         dl {
                             display: grid;
                             grid-template-columns: rem(28px) 1fr;
-                            grid-template-areas: 
-                            "dt txt01"
-                            "dt txt02";
+                            grid-template-areas:
+                                "dt txt01"
+                                "dt txt02";
                             min-height: rem(38px);
+        
                             dt {
                                 grid-area: dt;
                                 @include flex(true, "center", "center");
                             }
+        
                             dd {
+                                padding: 0 rem(8px);
                                 height: rem(17px);
                                 text-align: left;
                                 &:nth-of-type(1) {
@@ -92,67 +84,16 @@ $step-status: ("default", "current", "reject", "done");
                                 &:nth-of-type(2) {
                                     grid-area: txt02;
                                 }
-                                padding: 0 rem(8px);
                             }
                         }
                     }
-                }
-                .step-img {
-                    width: rem(28px);
-                    height: rem(28px);
-                    background-size: rem(16px);
-                }
-                .txt {
-                    font-size: rem(12px);
-                    line-height: rem(14.4px);
-                    letter-spacing: -3%;
-                    @extend %step-txt;
                 }
             }
         }
     }
     @each $status in $step-status {
         .step-#{$status} {
-            .step-img {
-                @extend %step-img;
-            }
-            @if $status== "default" {
-                .step-img {
-                    background-color: $gray-003;
-                    @extend .step-check;
-                }
-                .txt {
-                    color: $gray-003;
-                }
-            }
-            @else if $status == "current" {
-                .step-img {
-                    background-color: $orange-001;
-                    @extend .step-doc;
-                }
-                .txt {
-                    color: $orange-001;
-                    font-weight: $font-weight-bold;
-                }
-            }
-            @else if $status == "reject" {
-                .step-img {
-                    background-color: $error;
-                    @extend .step-reject;
-                }
-                .txt {
-                    color: $error;
-                }
-            }
-            @else if $status == "done" {
-                .step-img {
-                    background-color: $blue-002;
-                    @extend .step-check;
-                }
-                .txt {
-                    color: $blue-002;
-                }
-            }
+            @include step-status($status);
         }
     }
 }
@@ -164,26 +105,3 @@ $step-status: ("default", "current", "reject", "done");
         margin-bottom: rem(16px);
     }
 }
-
-// .step {
-//     @extend %step-base;
-//     @each $status in $step-status {
-//         &.step-#{$status} {
-//             @include step-status($status);
-//         }
-//     }
-// }
-// .step {
-//     @extend %step-base;
-//     @each $size in $step-size {
-//         &.step-#{$size} {
-//             @include step-size($size);
-//         }
-//     }
-
-//     @each $status in $step-status {
-//         &.step-#{$status} {
-//             @include step-status($status);
-//         }
-//     }
-// }
