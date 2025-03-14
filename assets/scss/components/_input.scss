@@ -116,6 +116,13 @@ textarea {
         min-height: rem($input-textarea-height);
     }
 }
+.textarea-group {
+    &.is-error {
+        .form-control {
+            @extend %input-error;
+        }
+    }
+}
 // textarea end
 
 // input group
