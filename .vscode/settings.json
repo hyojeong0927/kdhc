@@ -6,9 +6,12 @@
           "savePath": "~/../../css",
           // "savePathReplacementPairs": null
         }
-      ],
-      "liveSassCompile.settings.generateMap": false,
-      "liveSassCompile.settings.includeItems": [
-        
-      ],
+    ],
+    "liveSassCompile.settings.generateMap": false,
+    "liveSassCompile.settings.includeItems": [
+    
+    ],
+    "liveSassCompile.settings.autoprefix": [
+
+    ],
 }

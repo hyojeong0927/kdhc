@@ -19,7 +19,6 @@ $popup-md-footer-height: rem(86px);
         padding: rem(32px) rem(40px) rem(24px);
         min-height: $popup-header-height;
         background-color: $primary;
-
         .pop-title {
             color: $white;
             @include font-style($font-size-xlg, $font-weight-bold, rem(38.4px));
@@ -155,4 +154,38 @@ $popup-md-footer-height: rem(86px);
   &.small {
     @extend %popup-base-md-sm;
   }
+}
+// 결재팝업
+.kdhc-pop-wrap {
+    &.approval {
+        @extend %popup-base-md-sm;
+        background-color: $white;
+
+        // header
+        .kdhc-pop-header {
+            padding: rem(20px) rem(24px) rem(16px);
+            background-color: $white;
+            .pop-title {
+                color: $gray-002;
+                line-height: rem(32px);
+            }
+            .btn-close {
+                @extend .close-wh;
+            }
+        }
+
+        .kdhc-pop-container {
+            background-color: $white;
+        }
+
+        // footer
+        .kdhc-pop-footer {
+            .inner {
+                justify-content: center;
+                .btn {
+                    flex: 1;
+                }
+            }
+        }
+    }
 }

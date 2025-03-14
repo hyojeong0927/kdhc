@@ -16,7 +16,7 @@
 <body>
     <div id="pop-wrap" class="kdhc-pop-wrap medium">
         <header class="kdhc-pop-header">
-            <h1 class="pop-title" id="staticBackdropLabel">계정로그 일일 점검내역 점검결과</h1>
+            <h1 class="pop-title" id="staticBackdropLabel">점검결과</h1>
             <button type="button" class="btn-close" aria-label="Close" onclick="window.close()"></button>
         </header>
         <!-- 팝업 컨테이너 영역 -->
@@ -24,94 +24,41 @@
             <div class="inner">
                 <!-- 팝업 컨텐츠 영역 -->
                 <div class="contents">
-
-                    <!-- search start-->
-                    <article class="search-form-area">
-                        <!-- form start -->
+                    <div class="input-form-area">
                         <form>
                             <fieldset>
-
-                                <!-- form-wrap start -->
-                                <div class="form-wrap type06">
-                                    <!-- row -->
-                                    <div class="form-row">
-                                        <!-- col  -->
-                                        <div class="col w-170">
-                                            <div class="form-group">
-                                                <!-- select group : class="select-group is-error" -->
-                                                <div class="select-group">
-                                                    <select class="form-select" aria-label="Default select" required>
-                                                        <option value="" selected>선택</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
-                                                    </select>
+                                <!-- 점검결과 -->
+                                <table class="tbl-input-form type-row mt-0">
+                                    <caption>점검내역</caption>
+                                    <colgroup>
+                                        <col width="160px" />
+                                        <col width="*" />
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">내용</th>
+                                            <td>
+                                                <!-- textarea : class="textarea-group is-error"-->
+                                                <div class="textarea-group h-100">
+                                                    <textarea class="form-control" id="comment" placeholder="점검내역 입력"></textarea>
                                                 </div>
-                                                <!--// select group -->
-                                                <!-- 에러 문구 : hidden -->
-                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                <!--// 에러 문구 -->
-                                            </div>
-                                        </div>
-                                        <!--// col  -->
-                                        <!-- col  -->
-                                        <div class="col w-170">
-                                            <div class="form-group">
-                                                <!-- select group : class="select-group is-error" -->
-                                                <div class="select-group">
-                                                    <select class="form-select" aria-label="Default select" required>
-                                                        <option value="" selected>선택</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
-                                                    </select>
-                                                </div>
-                                                <!--// select group -->
-                                                <!-- 에러 문구 : hidden -->
-                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                <!--// 에러 문구 -->
-                                            </div>
-                                        </div>
-                                        <!--// col  -->
-                                        <!-- col  -->
-                                        <div class="col col-6">
-                                            <div class="form-group">
-
-                                                <!-- input group : class="input-group is-error" -->
-                                                <div class="input-group">
-                                                    <input type="text" id="input-text" class="form-control"
-                                                        placeholder="입력" value="">
-                                                    <label for="input-text" class="hidden">입력</label>
-                                                </div>
-                                                <!--// input group -->
-
+                                                <!--// textarea -->
                                                 <!-- 에러 문구 : hidden 제거 -->
                                                 <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                 <!--// 에러 문구 -->
-                                            </div>
-                                        </div>
-                                        <!--// col  -->
-                                    </div>
-
-                                    <!-- row -->
-                                    <div class="form-row search-btn">
-                                        <button type="button" class="btn btn-primary lg">조회</button>
-                                    </div>
-                                    <!--// row end -->
-                                </div>
-                                <!--// form-wrap end -->
-
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!--// 점검결과 -->
                             </fieldset>
                         </form>
-                        <!--// form end -->
+                    </div>
+                    <!-- bottom button area start -->
+                    <div class="bottom-btn-area" data-buttons='[{"text": "저장"}]'>
+                    </div>
+                    <!--// bottom button area end -->
                 </div>
-                <!--// search end -->
-
-                <!-- grid wrap start -->
-                <article class="grid-wrap">
-                    <div id="sampleGrid" class="normal"></div>
-                </article>
-                <!--// grid wrap end -->
             </div>
             <!--// 팝업 컨텐츠 영역 -->
     </div>
@@ -124,68 +71,7 @@
         </footer> -->
     </div>
     <!-- script wrap -->
-    <script type="module">
-        const rowData = [
-            {
-                field01: "판교",
-                field02: "계전부",
-                field03: "12345",
-                field04: "홍길동",
-            },
 
-        ];
-        const columnDefs = [
-            {
-                headerName: "지사",
-                headerClass: "center",
-                field: "field01",
-                width: 120,
-                cellClass: "cell-normal",
-            },
-            {
-                headerName: "부서",
-                headerClass: "center",
-                field: "field02",
-                width: 120,
-                cellClass: "cell-normal",
-            },
-            {
-                headerName: "사번",
-                headerClass: "center",
-                field: "field03",
-                width: 160,
-                cellClass: "cell-normal",
-            },
-            {
-                headerName: "이름",
-                headerClass: "center",
-                field: "field04",
-                minWidth: 300,
-                flex: 1,
-                cellClass: "cell-normal",
-            },
-        ];
-        let sampleGridApi;
-
-        const sampleGridOptions = {
-            defaultColDef: {
-                editable: true, // edit 사용 유무
-                autoHeight: true,
-                sortable: true, // sort 사용 유무
-            },
-            columnDefs,
-            headerHeight: 41, // header height
-            rowData: rowData,
-            rowHeight: 47, // row height // 2025-02-19 수정
-            domLayout: "autoHeight", // 2025-02-19 추가 옵션
-            suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
-
-            // data empty style
-            overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
-        };
-        const sampleGridDiv = document.querySelector("#sampleGrid");
-        sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
-    </script>
     <!--// script wrap -->
 </body>
 

@@ -47,7 +47,9 @@
                 <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
                 <aside id="sidebar" class="sidebar" data-menu='[
                         { "name": "popup", "url": "#" },
-                        { "name": "alert", "url": "#" }]'></aside>
+                        { "name": "alert", "url": "#" },
+                        { "name": "loader", "url": "#" },
+                        { "name": "error", "url": "#" }]'></aside>
                 <!--// 사이드 영역 -->
 
                 <main class="main-contents">
@@ -86,6 +88,12 @@
                         <button type="button" id="popup06" class="btn btn-primary btn-lg">
                             장표 최신화 공지
                         </button>
+                        <button type="button" id="popup07" class="btn btn-primary btn-lg">
+                            전자결재
+                        </button>
+                        <button type="button" id="popup08" class="btn btn-primary btn-lg">
+                            전자결재 : 반려
+                        </button>
                         <!--// 팝업 호출 버튼 -->
                         
                         <!-- popup script -->
@@ -116,6 +124,14 @@
                                 document.getElementById('popup06').addEventListener('click', () => {
                                     const url = './popup/popup-006.html';
                                     openCenteredPopup(url, 600, 285);
+                                });
+                                document.getElementById('popup07').addEventListener('click', () => {
+                                    const url = './popup/popup-007.html';
+                                    openCenteredPopup(url, 400, 404);
+                                });
+                                document.getElementById('popup08').addEventListener('click', () => {
+                                    const url = './popup/popup-008.html';
+                                    openCenteredPopup(url, 400, 663);
                                 });
                             });
                         </script>

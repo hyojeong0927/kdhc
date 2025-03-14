@@ -29,6 +29,7 @@ $icon: 'icon';
     @include icon("checked-disabled", rem(12px), rem(12px), "#{$img-root}/images/svg/checked-disabled.svg");
     @include icon("radio-checked", rem(20px), rem(20px), "#{$img-root}/images/svg/radio-checked.svg");
     @include icon("close", rem(32px), rem(32px), "#{$img-root}/images/svg/close.svg");
+    @include icon("close-wh", rem(32px), rem(32px), "#{$img-root}/images/svg/close-wh.svg");
     @include icon("empty", rem(40px), rem(40px), "#{$img-root}/images/svg/ag-grid-empty.svg");
     
     // step

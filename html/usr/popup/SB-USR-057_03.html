@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko" data-kdhc-mode="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDHC</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../../css/index.css">
+    <!-- script -->
+    <script src="../../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script type="module" src="../../../assets/js/common.js"></script>
+</head>
+
+<body>
+    <div id="pop-wrap" class="kdhc-pop-wrap medium">
+        <header class="kdhc-pop-header">
+            <h1 class="pop-title" id="staticBackdropLabel">조치사항</h1>
+            <button type="button" class="btn-close" aria-label="Close" onclick="window.close()"></button>
+        </header>
+        <!-- 팝업 컨테이너 영역 -->
+        <section class="kdhc-pop-container not-footer">
+            <div class="inner">
+                <!-- 팝업 컨텐츠 영역 -->
+                <div class="contents">
+                    <div class="input-form-area">
+                        <form>
+                            <fieldset>
+                                <!-- 조치사항 -->
+                                <table class="tbl-input-form type-row mt-0">
+                                    <caption>조치사항</caption>
+                                    <colgroup>
+                                        <col width="160px" />
+                                        <col width="*" />
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">내용</th>
+                                            <td>
+                                                <!-- textarea : class="textarea-group is-error"-->
+                                                <div class="textarea-group h-100">
+                                                    <textarea class="form-control" id="comment" placeholder="조치사항 입력"></textarea>
+                                                </div>
+                                                <!--// textarea -->
+                                                <!-- 에러 문구 : hidden 제거 -->
+                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                <!--// 에러 문구 -->
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!--// 조치사항 -->
+                            </fieldset>
+                        </form>
+                    </div>
+                    <!-- bottom button area start -->
+                    <div class="bottom-btn-area" data-buttons='[{"text": "저장"}]'>
+                    </div>
+                    <!--// bottom button area end -->
+                </div>
+            </div>
+            <!--// 팝업 컨텐츠 영역 -->
+    </div>
+    </section>
+    <!--// 팝업 컨테이너 영역 -->
+    <!-- <footer class="kdhc-pop-footer">
+            <div class="inner">
+                <button type="button" class="btn btn-secondary btn-md">저장</button>
+            </div>
+        </footer> -->
+    </div>
+    <!-- script wrap -->
+
+    <!--// script wrap -->
+</body>
+
+</html>
