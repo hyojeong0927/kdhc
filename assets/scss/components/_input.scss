@@ -140,11 +140,9 @@ textarea {
 .input-search-group,
 .input-date-group {
     @include flex(true, "start", "center");
-    flex-wrap: wrap;
     @extend %input-base;
     padding: 0;
     width: auto;
-    flex: 1;
     // input icon
     .form-control {
         @extend %input-icon-group;
