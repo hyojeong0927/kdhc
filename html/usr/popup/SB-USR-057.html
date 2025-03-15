@@ -10,6 +10,17 @@
     <script src="../../../assets/js/vendors/jquery-3.7.1.min.js"></script>
     <script src="../../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
     <script type="module" src="../../../assets/js/common.js"></script>
+    <style>
+       .ag-row {
+           .ag-cell {
+            &.blank {
+                .btn-grid {
+                    display: none;
+                }
+            }
+           }
+        }
+    </style>
 </head>
 <body>
     <div id="pop-wrap" class="kdhc-pop-wrap">
@@ -269,6 +280,13 @@
             { field01: "1", field02: "", field03: "보조제어", field04: "", field05: "", field06: "", field07: "" },
             { field01: "2", field02: "", field03: "전력제어", field04: "", field05: "", field06: "", field07: "" },
             { field01: "2", field02: "", field03: "보조제어", field04: "", field05: "", field06: "", field07: "" },
+            { field01: "3", field02: "", field03: "보조제어", field04: "", field05: "", field06: "", field07: "" },
+            { field01: "4", field02: "", field03: "보조제어1", field04: "", field05: "", field06: "", field07: "" },
+            { field01: "4", field02: "", field03: "보조제어2", field04: "", field05: "", field06: "", field07: "" },
+            { field01: "4", field02: "", field03: "보조제어3", field04: "", field05: "", field06: "", field07: "" },
+            { field01: "5", field02: "", field03: "보조제어3", field04: "", field05: "", field06: "", field07: "" },
+            { field01: "6", field02: "", field03: "보조제어3", field04: "", field05: "", field06: "", field07: "" },
+            { field01: "6", field02: "", field03: "보조제어3", field04: "", field05: "", field06: "", field07: "" },
         ];
         const columnDefs = [
             {
@@ -279,6 +297,7 @@
                 cellClass: "cell-normal",
                 rowSpan: (params) => shouldMergeRows(params, ["field01", "field05", "field06"]),
                 cellClass: getMergeCellClass,
+                
             },
             {
                 headerName: "점검일",
@@ -372,32 +391,7 @@
             },
         ];
 
-        // 등록 버튼 생성
-        function createRegisterButton(params, field) {
-            const rowIndex = params.node.rowIndex;
-            const field01Value = params.data["field01"];
-            const mapKey = ["field01", "field05", "field06"].join(",");
-
-            const isFirstMergedRow = (params) => {
-                if (rowIndex === 0) return true;
-
-                const prevNode = params.api.getDisplayedRowAtIndex(rowIndex - 1);
-                return prevNode && prevNode.data["field01"] !== field01Value;
-            };
-
-            if (isFirstMergedRow(params) && rowspanMap[mapKey]?.[rowIndex] > 1) {
-                const buttonType = field === "field05" ? "result" : "action";
-                const buttonId = `${buttonType}-${rowIndex}`;
-
-                return `
-                    <button type="button" class="btn btn-grid" id="${buttonId}" data-row-index="${rowIndex}" aria-label="Open popup">
-                        등록
-                    </button>
-                `;
-            }
-            return params.value || "";
-        }
-
+        
         // rowspan start
         let rowspanMap = {};
 
@@ -426,12 +420,13 @@
                             data[rowIndex + i][field] = "";
                         });
                     }
-                    rowspanMap[mapKey][rowIndex + i] = i === 0 ? mergeCount : 1;
+                    rowspanMap[mapKey][rowIndex + i] = i === 0 ? mergeCount : 0;
                 }
 
                 rowIndex += mergeCount;
             }
         }
+
         function shouldMergeRows(params, fields) {
             const mapKey = fields.join(",");
             const rowIndex = params.node.rowIndex;
@@ -441,9 +436,67 @@
         function getMergeCellClass(params) {
             const mapKey = ["field01", "field05", "field06"].join(",");
             const rowIndex = params.node.rowIndex;
-            return rowspanMap[mapKey]?.[rowIndex] > 1 ? "merge-cell" : "";
+            
+            if (rowspanMap[mapKey]?.[rowIndex] > 1) {
+                return "merge-cell";
+            } else if (rowspanMap[mapKey]?.[rowIndex] === 0) {
+                return "blank";
+            }
+            return "cell-normal";
         }
+
+        function getRowHeight(params) {
+            const mapKey = ["field01", "field05", "field06"].join(",");
+            const rowIndex = params.node.rowIndex;
+            return rowspanMap[mapKey]?.[rowIndex] > 1 ? 63 * rowspanMap[mapKey][rowIndex] : 63;
+        }
+
         // rowspan end
+
+        // 등록 버튼 생성
+        function createRegisterButton(params, field) {
+            const rowIndex = params.node.rowIndex;
+            const mapKey = ["field01", "field05", "field06"].join(",");
+            
+            const currentRowspan = rowspanMap[mapKey]?.[rowIndex] || 1;
+            const prevRowspan = rowspanMap[mapKey]?.[rowIndex - 1] || 1;
+
+            const isFirstMergedRow = currentRowspan > 1 && (rowIndex === 0 || prevRowspan === 1);
+
+            if (isFirstMergedRow || currentRowspan === 1) {
+                return `
+                    <button type="button" class="btn btn-grid register-btn" data-row-index="${rowIndex}" data-field="${field}">
+                        등록
+                    </button>
+                `;
+            }
+            return "";
+        }
+        // 등록 버튼 생성 end
+
+        // popup
+        document.addEventListener("click", (event) => {
+            const button = event.target.closest(".register-btn");
+            if (!button) return;
+
+            const rowIndex = button.dataset.rowIndex;
+            const field = button.dataset.field;
+            
+            const isInspectionResult = field === "field05";
+            const popupUrl = isInspectionResult ? "./SB-USR-057_02.html" : "./SB-USR-057_03.html";
+
+            const width = 600;
+            const height = 300;
+            const left = (window.screenLeft || window.screenX) + (window.innerWidth - width) / 2;
+            const top = (window.screenTop || window.screenY) + (window.innerHeight - height) / 2;
+
+            window.open(
+                popupUrl,
+                "PopupWindow",
+                `width=${width},height=${height},left=${left},top=${top},scrollbars=yes,resizable=yes`
+            );
+        });
+        // popup end
 
         let sampleGridApi;
 
@@ -464,37 +517,6 @@
             params.api.redrawRows();
         },
         getRowHeight: (params) => 63,
-
-        // popup 
-        onFirstDataRendered: () => {
-            setTimeout(() => {
-                const buttons = document.querySelectorAll('[id^="result-"], [id^="action-"]');
-
-                buttons.forEach((button) => {
-                    button.addEventListener('click', (event) => {
-                        const buttonElement = event.target.closest("button");
-                        if (!buttonElement) return;
-
-                        const rowIndex = buttonElement.dataset.rowIndex;
-                        
-                        const isInspectionResult = buttonElement.id.startsWith("result");
-                        const popupUrl = isInspectionResult ? "./SB-USR-057_02.html" : "./SB-USR-057_03.html";
-
-                        const width = 600;
-                        const height = 300;
-                        const left = (window.screenLeft || window.screenX) + (window.innerWidth - width) / 2;
-                        const top = (window.screenTop || window.screenY) + (window.innerHeight - height) / 2;
-
-                        window.open(
-                            popupUrl,
-                            "PopupWindow",
-                            `width=${width},height=${height},left=${left},top=${top},scrollbars=yes,resizable=yes`
-                        );
-                    });
-                });
-            }, 0);
-        },
-        // popup end
         domLayout: "autoHeight",
         suppressColumnVirtualisation: false,
         suppressRowTransform: true, // merge option 추가
@@ -507,7 +529,6 @@
 
         const sampleGridDiv = document.querySelector("#sampleGrid");
         sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
-
     </script>
     
     <!--// script wrap -->
