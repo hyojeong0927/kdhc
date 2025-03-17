@@ -1,4 +1,4 @@
-import { rowData } from './data.js'
+import { rowData, rowData3 } from './data.js'
 import { normalColumnDefs, colspanColumnDefs, inputColumnDefs } from './column.js'
 
 // option
@@ -245,7 +245,7 @@ const rowspanGridOptions = {
     },
     columnDefs:rowspanColumnDefs,
     headerHeight: 41,
-    rowData: rowData,
+    rowData: rowData3,
     rowHeight: 63,
     rowSelection: {
         mode: "multiRow",
