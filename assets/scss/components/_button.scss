@@ -12,14 +12,14 @@ $button-size: (
 
 // color : bg, border, font, hover, disabled
 $button-types: (
-    "primary": ($primary, $primary, $btn-link-color, $gray-009, $btn-disabled),
-    "secondary": ($secondary, $secondary, $btn-link-color, $gray-009, $gray-007),
+    "primary": ($secondary, $secondary, $btn-link-color, $gray-009, $btn-disabled),
+    "secondary": ($primary, $primary, $btn-link-color, $gray-009, $gray-007),
     "error": ($error, $error, $btn-link-color, $gray-009, $gray-007),
-    "outline": ($white, $primary, $primary, $gray-009, $btn-disabled),
-    "outline--round": ($white, $gray-003, $gray-002, $secondary, $btn-disabled),
+    "outline": ($white, $secondary, $secondary, $gray-009, $btn-disabled),
+    "outline--round": ($white, $gray-003, $gray-002, $primary, $btn-disabled),
     "grid": ($blue-005, $gray-009, $gray-009, $gray-002, $gray-007),
     "icon": (transparent, transparent, transparent, transparent, transparent),
-    "more":(transparent, transparent, $secondary, $secondary, $secondary)
+    "more":(transparent, transparent, $primary, $primary, $primary)
 );
 
 // button base style

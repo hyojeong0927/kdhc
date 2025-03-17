@@ -80,6 +80,37 @@
         max-height: 100dvh;
         background-color: #f6f6f6;
     }
+    .lnbList {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+
+    .lnbList.active {
+        max-height: 1000px;
+        opacity: 1;
+        background-color: transparent;
+    }
+
+    .lnbList.active li a {
+        background-color: #fff;
+    }
+
+    .guide-frame {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    .guide-main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100dvh;
+        padding: 20px;
+    }
+    
 }
 .guide-contents {
     overflow-y: auto;
@@ -112,6 +143,7 @@
                  &::before {
                     content: counter(custom-counter) ". ";
                     display: inline-block;
+                    margin-right: 4px;
                  }
                  ul {
                     counter-reset: none;
@@ -122,6 +154,7 @@
                             content: "- ";
                             display: inline-block;
                             margin-left: 10px;
+                            margin-right: 4px;
                         }
                         p {
                             padding-left: 20px;
@@ -139,6 +172,10 @@
             line-height: 1.2;
             border: none;
             background-color: #555;
+            &.w-700 {
+                width: 700px;
+                height: 400px;
+            }
         }
     }
     .cont-box {
@@ -177,15 +214,23 @@
                     text-align: center;
                     border: 1px solid #fff;
                     background-color: #ddd;
+                    &.center {
+                        text-align: center;
+                        vertical-align: middle;
+                    }
                 }
                 td {
                     padding: 10px;
                     text-align: left;
+                    vertical-align: middle;
                     border: 1px solid #ddd;
                     background-color: #fff;
                     xmp {
                         display: block;
                         margin: 10px 0;
+                    }
+                    &.center {
+                        text-align: center;
                     }
                 }
             }
@@ -197,6 +242,59 @@
                     text-align: center;
                 }
             }
+            &.color-palette {
+                tbody {
+                    th {
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+                    td {
+                        vertical-align: middle;
+                        &:not(:last-of-type) {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .color-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        height: 50px;
+
+        &.primary {
+            background-color: $primary;
+        }
+        &.secondary {
+            background-color: $secondary;
+        }
+        &.system-01 {
+            background-color: $blue-002;
+        }
+        &.system-02 {
+            background-color: $red-001;
+        }
+        &.system-03 {
+            background-color: $orange-001;
+        }
+        &.basic-blue-gray-01 {
+            background-color: $gray-009;
+        }
+        &.basic-blue-gray-02 {
+            background-color: $gray-011;
+        }
+        &.basic-blue-gray-03 {
+            background-color: $gray-007;
+        }
+        &.basic-blue-gray-04 {
+            background-color: $blue-005;
+        }
+        &.basic-blue-gray-05 {
+            background-color: $blue-004;
         }
     }
 }

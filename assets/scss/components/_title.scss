@@ -19,14 +19,14 @@ $title-types: ('h1', 'h2', 'h3', 'h4', 'h5', 'h6');
     .badge-text {
         position: relative;
         padding-left: rem(20px);
-        color: $secondary;
+        color: $primary;
         @include font-style($font-size-base, $font-weight-normal, $line-height-base);
         @include before(true, true, 50%, 0, 0, 0);
         &::before {
             transform: translateY(-50%);
             width: 1px;
             height: rem(24px);
-            background-color: $secondary;
+            background-color: $primary;
         }
     }
 }

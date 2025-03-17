@@ -48,14 +48,14 @@ nav {
                     background-color: $white;
                     &:hover {
                         color: $white;
-                        background-color: $secondary;
+                        background-color: $primary;
                     }
                 }
                 &.active {
                     background-color: transparent;
                     .page-link {
                         color: $white;
-                        background-color: $secondary;
+                        background-color: $primary;
                     }
                 }
                 &.disabled {

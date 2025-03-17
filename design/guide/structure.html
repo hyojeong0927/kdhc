@@ -19,7 +19,7 @@
                     <col width="10%" />
                     <col width="10%" />
                     <col width="10%" />
-                    <col width="10%" />
+                    <col width="30%" />
                     <col />
                 </colgroup>
                 <thead>
@@ -40,13 +40,14 @@
                         <td>sass 컴파일 경로 세팅 파일</td>
                     </tr>
                     <tr>
-                        <th rowspan="10">assets</th>
-                        <td>css</td>
+                        <th>css</th>
                         <td></td>
-                        <td>index.css</td>
-                        <td>sass 컴파일 된 css 파일</td>
+                        <td></td>
+                        <td>agGrid, bootstrap-datepicker.min, bootstrap-treeview.min, style, index</td>
+                        <td>그리드, ui 라이브러리, scss 컴파일 css 등</td>
                     </tr>
                     <tr>
+                        <th rowspan="15">assets</th>
                         <td>fonts</td>
                         <td></td>
                         <td></td>
@@ -54,9 +55,9 @@
                     </tr>
                     <tr>
                         <td>images</td>
-                        <td>png/svg</td>
+                        <td>svg</td>
                         <td></td>
-                        <td>png, svg 이미지 파일</td>
+                        <td>svg, gif 이미지 파일</td>
                     </tr>
                     <tr>
                         <td rowspan="5">js</td>
@@ -85,53 +86,109 @@
                         <td>ag grid/bootstrap ui 라이브러리 파일</td>
                     </tr>
                     <tr>
-                        <td rowspan="2">scss</td>
-                         <td>abstracts/base/components/layouts/pages/utilities/vendors/theme</td>
-                        <td></td>
-                        <td>scss 폴더 구조</td>
+                        <td rowspan="8">scss</td>
+                        <td>abstracts</td>
+                        <td>function, mixins, variables</td>
+                        <td>함수, 믹스인, 변수 선언 파일</td>
+                    </tr>
+                    <tr>
+                        <td>base</td>
+                        <td>reset, typography</td>
+                        <td>기본 scss 파일</td>
+                    </tr>
+                    <tr>
+                        <td>components</td>
+                        <td>alert, badge, box, button, calendar, checkbox, grid, icons, input, list, modal, popup, selectbox, step, table, title, tree</td>
+                        <td>각 컴퍼넌트 scss 파일</td>
+                    </tr>
+                    <tr>
+                        <td>layouts</td>
+                        <td>header, navigation, sidebar, footer, forms, container, main</td>
+                        <td>레이아웃 관련 scss 파일</td>
+                    </tr>
+                    <tr>
+                        <td>pages</td>
+                        <td>common, contents, dashboard, guide</td>
+                        <td>각 컨텐츠 scss 파일</td>
+                    </tr>
+                    <tr>
+                        <td>utilities</td>
+                        <td>util</td>
+                        <td>util 관련 scss 파일</td>
+                    </tr>
+                    <tr>
+                        <td>vendors</td>
+                        <td>bootstrap</td>
+                        <td>ui 라이브러리 scss</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>index.scss</td>
                         <td>scss 파일 import</td>
-                       
                     </tr>
                     <tr>
-                        <th rowspan="6">html</th>
-                        <td>commpents</td>
+                        <th rowspan="2">design</th>
+                        <td rowspan="2">guide</td>
+                        <td>components</td>
+                        <td>ag-grid, alert, approve, badge, breadcrumbs, button, buttonArea, calendar, chart, checkbox, footer, form-group, form, header, icons, input, layout, list, loader, modal, pagination, popup, search, selectbox, step, table, title, tree</td>
+                        <td>각 컴퍼넌트 가이드</td>
+                    </tr>
+                    <tr>
                         <td></td>
-                        <td>approval-policy.html/approval.html</td>
-                        <td>결제 컴퍼넌트</td>
+                        <td>color, javascript, layout, markup, rule, structure, style, term, typography</td>
+                        <td>각 퍼블 관련 가이드</td>
+                    </tr>
+                    <tr>
+                        <th rowspan="5">html</th>
+                        <td>common</td>
+                        <td></td>
+                        <td>error, alert, loader, popup</td>
+                        <td>에러, 로딩, 공통 팝업</td>
                     </tr>
                     <tr>
                         <td>home</td>
                         <td></td>
-                        <td></td>
+                        <td>SB-USR-001 ~ SB-USR-011</td>
                         <td>홈 관련 파일</td>
                     </tr>
                     <tr>
                         <td>gmr</td>
                         <td></td>
-                        <td></td>
+                        <td>SB-GMR-001 ~ SB-GMR-029</td>
                         <td>관리자 화면 파일</td>
                     </tr>
                     <tr>
                         <td>usr</td>
                         <td></td>
-                        <td></td>
+                        <td>SB-USR-012 ~ SB-USR-085</td>
                         <td>사용자 화면 파일</td>
                     </tr>
                     <tr>
-                        <td>guide</td>
+                        <td>sample</td>
                         <td></td>
                         <td></td>
-                        <td>퍼블 작업 규칙 및 컴퍼넌트 관련 가이드</td>
+                        <td></td>
                     </tr>
                     <tr>
-                        <td>worklist</td>
+                        <th rowspan="4">reference</th>
+                        <td rowspan="4">worklist</td>
+                        <td>css</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>js</td>
                         <td></td>
                         <td></td>
-                        <td>퍼블 현황판 관련 파일</td>
+                    </tr>
+                    <tr>
+                        <td>popup</td>
+                        <td></td>
+                        <td>퍼블 작업 history, 화면 ID로 연결</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>index.html</td>
+                        <td>퍼블 현황판</td>
                     </tr>
                 </tbody>
             </table>

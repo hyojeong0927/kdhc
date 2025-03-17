@@ -9,9 +9,9 @@ $white: #fff;
 // gray
 $gray-001: #DCDCDC;
 $gray-002: #18191C;
-$gray-003: #A5A5A5; // border color
+$gray-003: #A5A5A5; // border color, input focus
 $gray-004: #C8C8C8; // placeholder font color
-$gray-005: $gray-002; // input focus
+$gray-005: null;
 $gray-006: #DCDCDC; // disabled bg
 $gray-007: #C5CDD5;
 $gray-008: #030101;
@@ -29,12 +29,13 @@ $orange-001: #FF8C14;
 
 //yellow
 $yellow-001: #EDB562;
+
 // green
-$green-001: #3D6F94; // secondary
+$green-001: #3D6F94; // primary
 $green-002: #21B2C5;
 
 // blue
-$blue-001: #384B5E; // primary
+$blue-001: #384B5E; // secondary
 $blue-002: #0D63D4;
 $blue-003: #D9EAFF; // badge bg
 $blue-004: #F2F5FA; // body bg
@@ -47,8 +48,8 @@ $body-bg: $blue-004;
 $header-bg: $white;
 
 // theme
-$primary: $blue-001;
-$secondary: $green-001;
+$primary: $green-001;
+$secondary: $blue-001;
 $success: null;
 $info: null;
 $warning: null;
@@ -63,6 +64,7 @@ $approval-wait-gradient: linear-gradient(104deg, rgba(167, 172, 177, 0.30) 0%, r
 $approval-progress-gradient: linear-gradient(104deg, rgba(114, 189, 250, 0.30) 0%, rgba(1, 98, 177, 0.30) 100%);
 $approval-reject-gradient: linear-gradient(104deg, rgba(255, 143, 149, 0.20) 0%, rgba(191, 18, 18, 0.20) 100%);
 $main-summary-sub: linear-gradient(95deg, rgba(117, 183, 152, 0.20) 4.3%, rgba(25, 135, 84, 0.20) 97.6%);
+$login-btn-gradient: linear-gradient(283deg, $blue-006 18.73%, $primary 77.87%);
 // gradient end
 
 // font-family
@@ -110,6 +112,7 @@ $radius-xxsm:                   2px;
 $radius-xsm:                    4px;
 $radius-sm:                     6px;
 $radius-md:                     12px;
+$radius-xmd:                    30px;
 $radius-xlg:                    40px;
 $radius-lg:                     null;
 $radius-half:                   50%;
@@ -315,10 +318,12 @@ $badge-border-radius:               $radius-xsm;
 // badge end
 
 // modal start
-
 $modal-section-btm: 40px;
-
 // modal end
+
+//transition
+$login-transition: opacity 0.3s ease, transform 0.3s ease;
+//transition end
 
 // image root
 // $img-root: '/static/assets'; //개발 이미지 경로

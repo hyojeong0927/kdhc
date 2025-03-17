@@ -20,7 +20,7 @@ $sidebar-width: 280px;
     overflow-y: auto;
     height: 100dvh;
     max-height: calc(100dvh - $header-height);
-    background-color: $primary;
+    background-color: $secondary; //scondary
     .sidebar-top-btn {
         @include flex(true, "end", "center");
         padding: rem(12px);
@@ -54,13 +54,13 @@ $sidebar-width: 280px;
                 word-break: break-word;
                 &.active,
                 &:hover {
-                    background-color: $secondary;
+                    background-color: $primary;
                 }
             }
             &.active,
             &:hover {
-                border-color: $secondary;
-                background-color: $secondary;
+                border-color: $primary;
+                background-color: $primary;
             }
         }
     }

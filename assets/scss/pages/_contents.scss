@@ -7,7 +7,7 @@
 
     width: 100%;
     height: 100dvh;
-    background-color: $secondary;
+    background-color: $primary;
 
     .login-page-title {
         margin-top: vh(48px);
@@ -111,8 +111,8 @@
                 height: rem(60px);
                 color: $white;
                 @include font-style($h3-font-size, $font-weight-bold, rem(32px));
-                border-radius: rem(30px);
-                background: linear-gradient(283deg, $blue-006 18.73%, $secondary 77.87%);
+                border-radius: $radius-xmd;
+                background: $login-btn-gradient;
             }
         }
         &.no-icon {
@@ -129,7 +129,7 @@
     }
     .login-id-label,
     .login-pw-label {
-        transition: opacity 0.3s ease, transform 0.3s ease;
+        transition: $login-transition;
         opacity: 1;
         transform: translateY(0);
     }
@@ -151,7 +151,7 @@
         padding: rem(24px) rem(8px);
         min-width: rem(372px);
         height: rem(680px);
-        color: $gray-005;
+        color: $gray-002;
         @include font-style($font-size-base, $font-weight-normal, rem(23px));
         background-color: $gray-001;
 
@@ -195,7 +195,7 @@
         @include font-style($font-size-md, $font-weight-normal, rem(26px));
         letter-spacing: rem(-0.36px);
         .tags {
-            color: $secondary;
+            color: $primary;
             font-weight: $font-weight-bold;
         }
     }
@@ -264,7 +264,7 @@
             .txt {
                 margin: 0;
                 padding: 0;
-                color: $primary;
+                color: $secondary;
                 @include font-style($font-size-md, $font-weight-normal, rem(26px));
                 text-align: center;
                 letter-spacing: rem(-0.36px);

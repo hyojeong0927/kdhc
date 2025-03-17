@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../css/index.css">
+</head>
+
+<body>
+    <article class="guide-contents">
+        <div class="title">
+            <h3>javascript</h3>
+        </div>
+        <h4>JavaScript 코딩 가이드</h4>
+        <div class="text-box">
+            <ol>
+                <li>코드 스타일
+                    <ul>
+                        <li>ES6 표준 사용</li>
+                        <li>변수 선언: `const`, `let`만 사용(jQuery 제외)</li>
+                        <li>함수: 화살표 함수 사용 권장</li>
+                    </ul>
+                </li>
+                <li>파일 구조
+                    <ul>
+                        <li>주요 기능별 분리</li>
+                        <li>`/js`</li>
+                        <li>`/js/components`: 컴포넌트 관련 js</li>
+                        <li>`/js/grid`: ag grid 샘플</li>
+                        <li>`/js/layouts`: 레이아웃 관련 js</li>
+                        <li>`/js/vendors`: 라이브러리 관련 js</li>
+                        <li>`/js/common.js`: 공통 js import</li>
+                    </ul>
+                </li>
+                <li>페이지내 js 위치
+                    <ul>
+                        <li>head : 공통 및 라이브러리 js</li>
+                        <li>body : ag grid 및 컴퍼넌트 관련 js</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </article>
+</body>
+
+</html>

@@ -24,155 +24,7 @@
 				<li>일관성: 모든 페이지에서 디자인 및 코드가 통일성을 유지해야 합니다.</li>
 				<li>접근성: WCAG(Web Content Accessibility Guidelines) 2.1 AA 기준을 준수합니다.</li>
 				<li>성능 최적화: 로딩 속도를 최소화하고 효율적인 코드 작성 원칙을 따릅니다.</li>
-				<li>반응형 디자인: 다양한 기기 및 해상도에서 일관된 사용자 경험을 제공합니다.</li>
 				<li>유지보수 용이성: 코드 가독성과 재사용성을 높이는 구조로 작성합니다.</li>
-			</ol>
-		</div>
-		
-		<h4>HTML 코딩 가이드</h4>
-		<div class="text-box">
-			<ol>
-				<li>문서 구조
-					<ul>
-						<li>HTML5 표준 준수</li>
-						<li>시맨틱 태그 활용 (header, main, section, article, footer, address 등)</li>
-					</ul>
-				</li>
-				<li>
-					네이밍 규칙
-					<ul>
-						<li>케이스: 소문자 사용</li>
-						<li>구분자: 하이픈(`-`) 사용</li>
-						<li>명명법: 명확하고 간결하게
-							<p>예: `main-header`, `footer-links`, `product-card`</p>
-						</li>
-					</ul>
-				</li>
-				<li>
-					접근성
-					<ul>
-						<li>이미지: 대체 텍스트(`alt`) 제공</li>
-						<li>폼 요소: 라벨(`label`)과 연결</li>
-						<li>키보드 네비게이션 테스트(웹접근성 마크업 프로젝트일 경우에 한해)</li>
-					</ul>
-				</li>
-				<li>
-					기타 규칙
-					<ul>
-						<li>중복 ID 금지</li>
-						<li>필수 메타 태그 설정: `meta charset="UTF-8"`, `meta name="viewport" content="width=device-width, initial-scale=1.0"`
-						</li>
-						<li>주석 예시
-<div>
-<textarea>
-<!-- accordion start -->
-<div class="accordion">
-:
-</div>
-<!--// accordion end -->
-<!---------------------------------
-24.02.04 - 수정 내용
----------------------------------->
-<div>내용</div>
-</textarea>
-</div>
-						</li>
-					</ul>
-				</li>
-			</ol>
-		</div>
-		<h4>CSS 코딩 가이드</h4>
-		<div class="text-box">
-			<ol>
-				<li>
-					구조 및 작성 규칙
-					<ul>
-						<li>CSS 파일 분리: 기본, 레이아웃, 컴포넌트, 유틸리티로 파일 분리</li>
-						<li>코드 순서
-							<p>(1) 레이아웃 스타일</p>
-							<p>(2) 컴포넌트 스타일</p>
-							<p>(3) 유틸리티 스타일</p>
-						</li>
-					</ul>
-				</li>
-				<li>
-					네이밍 방식
-					<ul>
-						<li>BEM(Block-Element-Modifier) 규칙 준수</li>
-						<li>블록: `.card`</li>
-						<li>엘리먼트: `.card__title`</li>
-						<li>수정자: `.card--highlighted`</li>
-					</ul>
-				</li>
-				<li>
-					단위 및 속성 우선순위
-					<ul>
-						<li>단위: 상대 단위 (`em`, `rem`, `%`) 사용 권장</li>
-						<li>속성 순서: 박스 모델(Box Model) 기준으로 정렬
-							<div>
-								<textarea>.example {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 8px;
-	padding: 16px;
-	width: 100%;
-	height: 100%;
-	background-color: #fff;
-}</textarea>
-							</div>
-						</li>
-					</ul>
-				</li>
-				<li>
-					Sass Compiler
-					<ul>
-						<li>vscode 확장 프로그램 Live Sass Compiler 설치</li>
-						<li>.vscode > settings.json : 컴파일 경로 설정
-							<div>
-	<textarea>{
-	"liveSassCompile.settings.formats": [
-	{
-		"format": "expanded",
-		"extensionName": ".css",
-		"savePath": "~/../css",
-		// "savePathReplacementPairs": null
-	}
-	],
-	"liveSassCompile.settings.generateMap": false,
-	"liveSassCompile.settings.includeItems": [
-	],
-}</textarea>
-						</li>
-						<li>vscode 우측 하단 Watch Sass를 클릭하여 실시간 컴파일</li>
-					</ul>
-				</li>
-			</ol>
-		</div>
-		<h4>JavaScript 코딩 가이드</h4>
-		<div class="text-box">
-			<ol>
-				<li>코드 스타일
-					<ul>
-						<li>ES6 표준 사용</li>
-						<li>변수 선언: `const`, `let`만 사용</li>
-						<li>함수: 화살표 함수 사용 권장</li>
-					</ul>
-				</li>
-				<li>파일 구조
-					<ul>
-						<li>주요 기능별 모듈 분리</li>
-						<li>`/js`</li>
-						<li>`/modules`: 재사용 가능한 컴포넌트</li>
-						<li>`/utils`: 공통 유틸리티 함수</li>
-					</ul>
-				</li>
-				<li>이벤트 처리
-					<ul>
-						<li>이벤트 위임 사용</li>
-						<li>익명 함수 대신 명명된 함수 사용</li>
-					</ul>
-				</li>
 			</ol>
 		</div>
 		<h4>테스트 및 QA</h4>
@@ -180,48 +32,40 @@
 			<ol>
 				<li>브라우저 호환성 테스트
 					<ul>
-						<li>주요 브라우저: Chrome, Firefox, Edge, Safari</li>
+						<li>주요 브라우저: Chrome, Firefox, Edge</li>
 					</ul>
 				</li>
-				<li>접근성 검사
+				<li>접근성
 					<ul>
-						<li>Lighthouse, Axe, WAVE 도구 활용</li>
+						<li>웹접근성 기준(대체 텍스트 등)에 맞춤</li>
 					</ul>
 				</li>
-				<li>반응형 테스트
-					<ul>
-						<li>해상도별 테스트: 모바일(375px), 태블릿(768px), 데스크톱(1920px)</li>
-					</ul>
-				</li>
+				<li>해상도 테스트: 데스크톱(1920px)</li>
 			</ol>
 		</div>
-  		<h4>버전 관리</h4>
+  		<h4>업데이트 및 버전 관리</h4>
 		<div class="text-box">
 			<ol>
-				<li>Git 브랜치 전략
+				<li>퍼블 Git
 					<ul>
-						<li>기능 개발: `feature/[기능명]`</li>
-						<li>버그 수정: `bugfix/[버그명]`</li>
-						<li>릴리즈: `release/[버전명]`</li>
+						<li>퍼블 현황판 : <a href="https://kdhc.netlify.app/reference/worklist/index.html" target="_blank">https://kdhc.netlify.app/reference/worklist/index.html</a></li>
+						<li>git 경로 : <a href="https://github.com/hyojeong0927/kdhc" target="_blank">https://github.com/hyojeong0927/kdhc</a></li>
 					</ul>
 				</li>
-				<li>커밋 메시지 템플릿
+				<li>Build
 					<ul>
-						<li>`feat`: 새로운 기능 추가</li>
-						<li>`fix`: 버그 수정</li>
-						<li>`docs`: 문서 추가/수정</li>
-						<li>`style`: 코드 스타일 변경 (CSS 등)</li>
-						<li>`refactor`: 코드 리팩토링</li>
+						<li><a href="https://app.netlify.com/" target="_blank">https://app.netlify.com/</a></li>
+						<li>계정 : marketing@smartee.co.kr</li>
+						<li>비번 : smartee!@#2201</li>
 					</ul>
 				</li>
-			</ol>
-		</div>
-		<h4>업데이트 및 유지보수</h4>
-		<div class="text-box">
-			<ol>
-				<li>주요 업데이트 내역 기록 (CHANGELOG 관리)</li>
-				<li>업데이트 시 모든 팀원에게 공지</li>
-				<li>변경 사항은 QA 검토 후 배포</li>
+				<li>개발 Git
+					<ul>
+						<li>업데이트 : 매주 금요일 오후 개발 github 반영</li>
+						<li>git 경로 : <a href="https://github.com/smartee-devteam/CNSSM" target="_blank">https://github.com/smartee-devteam/src/main/resources/static/publishing</a></li>
+						<li>버전 : dev branch pull 받고 업데이트 날짜 브랜치 생성 후 commit, push (예 : pub20250314)</li>						
+					</ul>
+				</li>
 			</ol>
 		</div>
  	</article>
