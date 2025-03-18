@@ -7,7 +7,6 @@ $icon: 'icon';
     // header
     @include icon("h1-logo", rem(64px), rem(50px), "#{$img-root}/images/svg/logo.svg");
     @include icon("h1-logo-txt", rem(157px), rem(62px), "#{$img-root}/images/svg/logo-txt.svg");
-    @include icon("flag", rem(24px), rem(16px), "#{$img-root}/images/svg/flag.svg");
     
     // header util
     @include icon("clipboard", rem(20px), rem(20px), "#{$img-root}/images/svg/clipboard.svg");

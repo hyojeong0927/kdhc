@@ -68,39 +68,71 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>inline</th>
+                        <th>Inline / All Checkbox</th>
                         <td>
+                            <!-- form-check-group -->
                             <div class="form-check-group">
-                                <input class="form-check-input"  type="checkbox" id="selectAllCheckbox" name="selectAllCheckbox">
-                                <label for="selectAllCheckbox">Select All</label>
-                                <input class="form-check-input" type="checkbox" id="checkbox01" name="checkbox01" class="checkboxes">
-                                <label for="checkbox01">Checkbox 1</label>
-                                <input class="form-check-input" type="checkbox" id="checkbox02" name="checkbox02" class="checkboxes"> <label for="checkbox02">Checkbox 2</label>
-                                <input class="form-check-input" type="checkbox" id="checkbox03" name="checkbox03" class="checkboxes"> <label for="checkbox03">Checkbox 3</label>
-                                <input class="form-check-input" type="checkbox" id="checkbox04" name="checkbox04" class="checkboxes"> <label for="checkbox04">Checkbox 4</label>
+                                <div class="form-check">
+                                    <input class="form-check-input checkboxes" type="checkbox" id="selectAllCheckbox" name="selectAllCheckbox">
+                                    <label for="selectAllCheckbox">전체</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input checkboxes" type="checkbox" id="checkbox01" name="checkbox01">
+                                    <label for="checkbox01">고양</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input checkboxes" type="checkbox" id="checkbox02" name="checkbox02">
+                                    <label for="checkbox02">김해</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input checkboxes" type="checkbox" id="checkbox03" name="checkbox03">
+                                    <label for="checkbox03">마포</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input checkboxes" type="checkbox" id="checkbox04" name="checkbox04">
+                                    <label for="checkbox04">목동</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input checkboxes" type="checkbox" id="checkbox05" name="checkbox05">
+                                    <label for="checkbox05">부천</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input checkboxes" type="checkbox" id="checkbox06" name="checkbox06">
+                                    <label for="checkbox06">분당</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input checkboxes" type="checkbox" id="checkbox07" name="checkbox07">
+                                    <label for="checkbox07">수원</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input checkboxes" type="checkbox" id="checkbox08" name="checkbox08">
+                                    <label for="checkbox08">용인</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input checkboxes" type="checkbox" id="checkbox09" name="checkbox09">
+                                    <label for="checkbox09">청주</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input checkboxes" type="checkbox" id="checkbox10" name="checkbox10">
+                                    <label for="checkbox10">파주</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input checkboxes" type="checkbox" id="checkbox11" name="checkbox11">
+                                    <label for="checkbox11">판교</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input checkboxes" type="checkbox" id="checkbox12" name="checkbox12">
+                                    <label for="checkbox12">화성</label>
+                                </div>
                             </div>
+                            <!--// form-check-group -->
+                            <script type="module" src="../../../assets/js/components/checkbox.js"></script>
                         </td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr>
-                        <th>vertical</th>
-                        <td>
-                            <div class="form-check-group">
-                                <input class="form-check-input" type="checkbox" id="selectAllCheckbox" name="selectAllCheckbox">
-                                <label for="selectAllCheckbox">Select All</label>
-                                <input class="form-check-input" type="checkbox" id="checkbox01" name="checkbox01" class="checkboxes">
-                                <label for="checkbox01">Checkbox 1</label>
-                                <input class="form-check-input" type="checkbox" id="checkbox02" name="checkbox02" class="checkboxes"> <label for="checkbox02">Checkbox 2</label>
-                                <input class="form-check-input" type="checkbox" id="checkbox03" name="checkbox03" class="checkboxes"> <label for="checkbox03">Checkbox 3</label>
-                                <input class="form-check-input" type="checkbox" id="checkbox04" name="checkbox04" class="checkboxes"> <label for="checkbox04">Checkbox 4</label>
-                            </div>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th>checkbox button </th>
+                        <th>Checkbox Button </th>
                         <td>
                             <div class="form-check-group">
                                 <input class="btn btn-grid" type="checkbox" id="btntype" name="btntype">
@@ -164,24 +196,6 @@
                 </tbody>
              </table>
         </div>
-        <!-- 전체 선택 체크박스 스크립트 -->
-        <script>
-            document.getElementById('selectAllCheckbox')
-            .addEventListener('change', (event) => {
-                const checkboxes = document.querySelectorAll('.checkboxes');
-                checkboxes.forEach((checkbox) => {
-                    checkbox.checked = event.target.checked;
-                });
-            });
-
-        const individualCheckboxes = document.querySelectorAll('.checkboxes');
-        individualCheckboxes.forEach((checkbox) => {
-            checkbox.addEventListener('change', () => {
-                const allChecked = Array.from(individualCheckboxes).every(cb => cb.checked);
-                document.getElementById('selectAllCheckbox').checked = allChecked;
-            });
-        });
-        </script>
     </article>
 </body>
 </html>
