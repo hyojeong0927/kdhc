@@ -88,7 +88,7 @@ $popup-md-footer-height: rem(86px);
                 padding: rem(28px) rem($modal-section-btm);
                 border-radius: rem(12px);
                 background-color: $white;
-                box-shadow:0 0 rem(12px) 0 rgba($black, 0.08);
+                box-shadow: $pop-sec-sub-box-shadow;
             }
         }
     }

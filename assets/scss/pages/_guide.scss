@@ -323,5 +323,25 @@
         &.gradient-005 {
             background: $login-btn-gradient;
         }
+        &.box-shadow-001 {
+            background: $white;
+            box-shadow: $login-box-shadow;
+        }
+        &.box-shadow-002 {
+            background: $white;
+            box-shadow: $datepicker-calendar-box-shadow;
+        }
+        &.box-shadow-003 {
+            background: $white;
+            box-shadow: $pop-sec-sub-box-shadow;
+        }
+        &.box-shadow-004 {
+            background: $white;
+            box-shadow: $dashboard-box-shadow;
+        }
+        &.box-shadow-005 {
+            background: $white;
+            box-shadow: $dashboard-sum-box-shadow;
+        }
     }
 }

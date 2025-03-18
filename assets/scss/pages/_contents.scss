@@ -36,7 +36,7 @@
         min-height: rem(414px);
         border-radius: rem(20px);
         background-color: $white;
-        box-shadow: 0 0 rem(20px) rem(12px) rgba(42, 89, 125, 0.40);
+        box-shadow: $login-box-shadow;
     }
 
     .login-header {
