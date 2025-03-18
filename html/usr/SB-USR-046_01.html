@@ -214,90 +214,14 @@
     <!-- script wrap -->
     <script type="module">
         const rowData = [
-            {
-                field01: "1",
-                field02: "분류1",
-                field03: "3대",
-                field04: "불가",
-                field05: "3대",
-                field06: "불가",
-                field07: "3대",
-                field08: "불가",
-                field09: "3대",
-                field10: "불가",
-            },
-            {
-                field01: "1",
-                field02: "분류2",
-                field03: "3대",
-                field04: "불가",
-                field05: "3대",
-                field06: "불가",
-                field07: "3대",
-                field08: "불가",
-                field09: "3대",
-                field10: "불가",
-            },
-            {
-                field01: "1",
-                field02: "분류3",
-                field03: "3대",
-                field04: "불가",
-                field05: "3대",
-                field06: "불가",
-                field07: "3대",
-                field08: "불가",
-                field09: "3대",
-                field10: "불가",
-            },
-            {
-                field01: "1",
-                field02: "분류4",
-                field03: "3대",
-                field04: "불가",
-                field05: "3대",
-                field06: "불가",
-                field07: "3대",
-                field08: "불가",
-                field09: "3대",
-                field10: "불가",
-            },
-            {
-                field01: "1",
-                field02: "분류5",
-                field03: "3대",
-                field04: "불가",
-                field05: "3대",
-                field06: "불가",
-                field07: "3대",
-                field08: "불가",
-                field09: "3대",
-                field10: "불가",
-            },
-            {
-                field01: "2",
-                field02: "분류1",
-                field03: "3대",
-                field04: "불가",
-                field05: "3대",
-                field06: "불가",
-                field07: "3대",
-                field08: "불가",
-                field09: "3대",
-                field10: "불가",
-            },
-            {
-                field01: "2",
-                field02: "분류2",
-                field03: "3대",
-                field04: "불가",
-                field05: "3대",
-                field06: "불가",
-                field07: "3대",
-                field08: "불가",
-                field09: "3대",
-                field10: "불가",
-            },
+            { field01: "1", field02: "분류1", field03: "3대", field04: "불가", field05: "3대", field06: "불가", field07: "3대", field08: "불가", field09: "3대", field10: "불가" },
+            { field01: "1", field02: "분류2", field03: "3대", field04: "불가", field05: "3대", field06: "불가", field07: "3대", field08: "불가", field09: "3대", field10: "불가" },
+            { field01: "1", field02: "분류3", field03: "3대", field04: "불가", field05: "3대", field06: "불가", field07: "3대", field08: "불가", ield09: "3대", field10: "불가" },
+            { field01: "1", field02: "분류4", field03: "3대", field04: "불가", field05: "3대", field06: "불가", field07: "3대", field08: "불가", field09: "3대", field10: "불가" },
+            { field01: "1", field02: "분류5", field03: "3대", field04: "불가", field05: "3대", field06: "불가", field07: "3대", field08: "불가", field09: "3대", field10: "불가" },
+            { field01: "2", field02: "분류1", field03: "3대", field04: "불가", field05: "3대", field06: "불가", field07: "3대", field08: "불가", field09: "3대", field10: "불가" },
+            { field01: "2", field02: "분류2", field03: "3대", field04: "불가", field05: "3대", field06: "불가", field07: "3대", field08: "불가", field09: "3대", field10: "불가" },
+            { field01: "3", field02: "분류2", field03: "3대", field04: "불가", field05: "3대", field06: "불가", field07: "3대", field08: "불가", field09: "3대", field10: "불가" },
         ];
         const columnDefs = [
             {
@@ -431,7 +355,7 @@
                             data[rowIndex + i][field] = "";
                         });
                     }
-                    rowspanMap[mapKey][rowIndex + i] = i === 0 ? mergeCount : 1;
+                    rowspanMap[mapKey][rowIndex + i] = i === 0 ? mergeCount : 0;
                 }
 
                 rowIndex += mergeCount;
@@ -447,8 +371,21 @@
         function getMergeCellClass(params) {
             const mapKey = ["field01"].join(",");
             const rowIndex = params.node.rowIndex;
-            return rowspanMap[mapKey]?.[rowIndex] > 1 ? "merge-cell" : "";
+
+            if (rowspanMap[mapKey]?.[rowIndex] > 1) {
+                return "merge-cell";
+            } else if (rowspanMap[mapKey]?.[rowIndex] === 0) {
+                return "blank";
+            }
+            return "cell-normal";
         }
+
+        function getRowHeight(params) {
+            const mapKey = ["field01"].join(",");
+            const rowIndex = params.node.rowIndex;
+            return rowspanMap[mapKey]?.[rowIndex] > 1 ? 63 * rowspanMap[mapKey][rowIndex] : 63;
+        }
+
         // rowspan end
 
         let sampleGridApi;

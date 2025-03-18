@@ -474,8 +474,14 @@
                 field: "field12",
                 width: 120,
                 cellClass: "cell-normal",
+                cellEditor: 'agCheckboxCellEditor',
                 cellRenderer: params => {
-                    return '<button type="button" class="btn btn-grid btn-xxsm">점검 확인</button>';
+                    return `
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" ${params.value ? 'checked' : ''}>
+                            <label class="form-check-label hidden" for="flexCheckDefault1">default</label>
+                        </div>
+                    `;
                 }
             },
         ];

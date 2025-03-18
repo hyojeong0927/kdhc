@@ -60,8 +60,8 @@
                         <td>rgba(0, 86, 163, 1)</td>
                         <td>
                             <ul>
-                                <li>- outline 버튼 border color</li>
-                                <li>- 텍스트 포인트 컬러</li>
+                                <li>- outline button border color</li>
+                                <li>- text point color</li>
                             </ul>
                         </td>
                     </tr>
@@ -106,7 +106,7 @@
                         <td>rgba(130, 142, 152, 1)</td>
                         <td>
                             <ul>
-                                <li>- 로그인 텍스트 컬러</li>
+                                <li>- login font color</li>
                             </ul>
                         </td>
                     </tr>
@@ -155,12 +155,12 @@
                         <td>
                             <div class="color-box basic-gray-001"></div>
                         </td>
-                        <td>$gray-009</td> 
-                        <td></td>
-                        <td></td>
+                        <td>$gray-002</td> 
+                        <td>#18191C</td>
+                        <td>rgba(24, 25, 28, 1)</td>
                         <td>
                             <ul>
-                                <li>-</li>
+                                <li>- font color</li>
                             </ul>
                         </td>
                     </tr>
@@ -168,12 +168,12 @@
                         <td>
                             <div class="color-box basic-gray-002"></div>
                         </td>
-                        <td>$gray-009</td>
-                        <td></td>
-                        <td></td>
+                        <td>$gray-003</td>
+                        <td>#A5A5A5</td>
+                        <td>rgba(165, 165, 165, 1)</td>
                         <td>
                             <ul>
-                                <li>-</li>
+                                <li>- border color</li>
                             </ul>
                         </td>
                     </tr>
@@ -181,12 +181,13 @@
                         <td>
                             <div class="color-box basic-gray-003"></div>
                         </td>
-                        <td>$gray-009</td>
-                        <td></td>
-                        <td></td>
+                        <td>$gray-004</td>
+                        <td>#C8C8C8</td>
+                        <td>rgba(200, 200, 200, 1)</td>
                         <td>
                             <ul>
-                                <li>-</li>
+                                <li>- disabled color</li>
+                                <li>- input placeholder color</li>
                             </ul>
                         </td>
                     </tr>
@@ -194,20 +195,96 @@
                         <td>
                             <div class="color-box basic-gray-004"></div>
                         </td>
-                        <td>$gray-009</td>
-                        <td></td>
-                        <td></td>
+                        <td>$gray-006</td>
+                        <td>#DCDCDC</td>
+                        <td>rgba(220, 220, 220, 1)</td>
                         <td>
                             <ul>
-                                <li>-</li>
+                                <li>- input disabled bg</li>
                             </ul>
                         </td>
                     </tr>
                     <tr>
-                        <th>그라데이션</th>
+                        <th rowspan="5">Gradient</th>
                         <td>
                             <div class="color-box gradient-001"></div>
                         </td>
+                        <td>$approval-wait-gradient</td>
+                        <td colspan="2">
+                            linear-gradient(104deg, rgba(167, 172, 177, 0.30) 0%, rgba(86, 94, 100, 0.30) 100%)
+                        </td>
+                        <td>
+                            <ul>
+                                <li>- main dashboard 결재 대기</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="color-box gradient-002"></div>
+                        </td>
+                        <td>$approval-progress-gradient</td>
+                        <td colspan="2">
+                            linear-gradient(104deg, rgba(114, 189, 250, 0.30) 0%, rgba(1, 98, 177, 0.30) 100%);
+                        </td>
+                        <td>
+                            <ul>
+                                <li>- main dashboard 결재 진행행</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="color-box gradient-003"></div>
+                        </td>
+                        <td>$approval-reject-gradient</td>
+                        <td colspan="2">
+                            linear-gradient(104deg, rgba(255, 143, 149, 0.20) 0%, rgba(191, 18, 18, 0.20) 100%);
+                        </td>
+                        <td>
+                            <ul>
+                                <li>- main dashboard 결재 반려</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="color-box gradient-004"></div>
+                        </td>
+                        <td>$main-summary-sub</td>
+                        <td colspan="2">
+                            linear-gradient(95deg, rgba(117, 183, 152, 0.20) 4.3%, rgba(25, 135, 84, 0.20) 97.6%);
+                        </td>
+                        <td>
+                            <ul>
+                                <li>- main dashboard 정기점검</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="color-box gradient-005"></div>
+                        </td>
+                        <td>$login-btn-gradient</td>
+                        <td colspan="2">
+                            linear-gradient(283deg, $blue-006 18.73%, $primary 77.87%);
+                        </td>
+                        <td>
+                            <ul>
+                                <li>- login button</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">Box Shadow</th>
+                        <td>
+                            <div class="color-box">
+                                <span class="color-box box-shadow-001"></span>
+                                <span class="color-box box-shadow-002"></span>
+                                <span class="color-box box-shadow-003"></span>
+                                <span class="color-box box-shadow-004"></span>
+                            </div>
+                        </td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -218,9 +295,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>Box Shadow</th>
                         <td>
-                            <div class="color-box gray-001"></div>
+                            <div class="color-box">
+                                <span class="color-box box-shadow-005"></span>
+                                <span class="color-box box-shadow-006"></span>
+                                <span class="color-box box-shadow-007"></span>
+                                <span class="color-box box-shadow-008"></span>
+                            </div>
                         </td>
                         <td></td>
                         <td></td>

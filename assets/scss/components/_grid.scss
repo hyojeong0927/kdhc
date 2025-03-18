@@ -7,7 +7,7 @@
     font-size: $font-size-base;
     border: {
         width: 1px;
-        color: $primary $gray-007 $gray-007 $gray-007;
+        color: $secondary $gray-007 $gray-007 $gray-007;
         style: solid;
     };
     border-radius: 0;
@@ -50,11 +50,10 @@
                 }
             }
         }
+        .ag-header-group-text,
         .ag-header-cell-text {
-            color: $primary;
-            font-size: $font-size-sm;
-            line-height: rem(16.8px);
-            font-weight: $font-weight-medium;
+            color: $secondary;
+            @include font-style($font-size-sm, $font-weight-medium, rem(16.8px));
         }
         .ag-header-group-cell {
             &:not(:last-child) {
@@ -109,9 +108,7 @@
         }
         .ag-cell-value {
             color: $gray-002;
-            font-size: $font-family-base;
-            line-height: rem(19.2px);
-            font-weight: $font-weight-normal;
+            @include font-style($font-size-base, $font-weight-normal, rem(19.2px));
         }
     }
     .ag-cell-inline-editing {
@@ -253,9 +250,7 @@
     }
     .ag-cell {
         &.merge-cell {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include flex(true, "center", "center");
             padding: rem(9px) rem(12px);
             text-align: center;
             white-space: normal;
@@ -266,9 +261,14 @@
             }
         }
         &.blank {
-            .btn-grid {
+            .ag-cell-value {
                 display: none;
             }
+        }
+        .link {
+            cursor: pointer;
+            color: inherit;
+            text-decoration: none;
         }
     }
 }

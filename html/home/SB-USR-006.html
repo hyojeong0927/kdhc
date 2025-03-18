@@ -78,7 +78,7 @@
                                 <fieldset>
 
                                     <!-- form-wrap start -->
-                                    <div class="form-wrap type02">
+                                    <div class="form-wrap type03">
                                         <!-- row -->
                                         <div class="form-row">
                                             <!-- col -->
@@ -112,6 +112,10 @@
                                                 </div>
                                             </div>
                                             <!--// col  -->
+                                        </div>
+                                        <!--// row -->
+                                        <!-- row -->
+                                        <div class="form-row">
                                             <!-- col -->
                                             <div class="col">
                                                 <div class="form-label">게시물명</div>
@@ -128,8 +132,30 @@
                                                 </div>
                                             </div>
                                             <!--// col  -->
-
                                         </div>
+                                        <div class="form-row">
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label">게시글 유형</div>
+                                                <div class="form-group">
+                                                    <!-- class="select-group is-error" -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="">선택</option>
+                                                            <option value="1" selected>전체</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select-group -->
+                                                    <!-- 에러 문구 : hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--// col  -->
+                                        </div>
+                                        <!--// row -->
                                         <!-- row -->
                                         <div class="form-row search-btn">
                                             <button type="button" class="btn btn-primary lg">조회</button>
@@ -196,58 +222,69 @@
         const rowData = [
             {
                 field01: "",
-                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
-                field03: "2024.12.10",
+                field02: "게시물",
+                field03: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field04: "2024.12.10",
             },
             {
                 field01: "",
-                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
-                field03: "2024.12.10",
+                field02: "게시물",
+                field03: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field04: "2024.12.10",
             },
             {
                 field01: "",
-                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
-                field03: "2024.12.10",
+                field02: "게시물",
+                field03: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field04: "2024.12.10",
             },
             {
                 field01: "",
-                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
-                field03: "2024.12.10",
+                field02: "게시물",
+                field03: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field04: "2024.12.10",
             },
             {
                 field01: "",
-                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
-                field03: "2024.12.10",
+                field02: "팝업",
+                field03: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field04: "2024.12.10",
             },
             {
                 field01: "",
-                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
-                field03: "2024.12.10",
+                field02: "팝업",
+                field03: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field04: "2024.12.10",
             },
             {
                 field01: "",
-                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
-                field03: "2024.12.10",
+                field02: "게시물",
+                field03: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field04: "2024.12.10",
             },
             {
                 field01: "",
-                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
-                field03: "2024.12.10",
+                field02: "하단배너",
+                field03: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field04: "2024.12.10",
             },
             {
                 field01: "",
-                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
-                field03: "2024.12.10",
+                field02: "하단배너",
+                field03: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field04: "2024.12.10",
             },
             {
                 field01: "",
-                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
-                field03: "2024.12.10",
+                field02: "게시물",
+                field03: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field04: "2024.12.10",
             },
             {
                 field01: "",
-                field02: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
-                field03: "2024.12.10",
+                field02: "게시물",
+                field03: "제어망 스마트 보안관리 플랫폼 공지게시물 1",
+                field04: "2024.12.10",
             },
         ];
         const columnDefs = [
@@ -255,22 +292,29 @@
                 headerName: "순번",
                 headerClass: "center",
                 field: "field01",
-                width: 180,
+                width: 88,
                 cellClass: "cell-normal",
                 valueGetter: "node.rowIndex + 1"
             },
             {
-                headerName: "게시물명",
+                headerName: "게시글 유형",
                 headerClass: "center",
                 field: "field02",
-                minWidth: 600,
+                width: 180,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "게시물명",
+                headerClass: "center",
+                field: "field03",
+                minWidth: 500,
                 flex: 1,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "게시일자",
                 headerClass: "center",
-                field: "field03",
+                field: "field04",
                 width: 181,
                 cellClass: "cell-normal",
             },

@@ -102,38 +102,11 @@
     <!-- script wrap -->
     <script type="module">
         const rowData = [
-            {
-                field01: "",
-                field02: "용도",
-                field03: "",
-                field04: "봉인 관리번호",
-                field05: "비고",
-                field06: "",
-            },
-            {
-                field01: "",
-                field02: "용도",
-                field03: "화성-001",
-                field04: "봉인 관리번호",
-                field05: "비고",
-                field06: "",
-            },
-            {
-                field01: "",
-                field02: "용도",
-                field03: "화성-001",
-                field04: "봉인 관리번호",
-                field05: "비고",
-                field06: "",
-            },
-            {
-                field01: "",
-                field02: "용도",
-                field03: "화성-001",
-                field04: "봉인 관리번호",
-                field05: "비고",
-                field06: "",
-            },
+            { field01: "", field02: "", field03: "용도1", field04: "", field05: "", field06: "", field07: "" },
+            { field01: "", field02: "", field03: "용도2", field04: "", field05: "", field06: "", field07: "" },
+            { field01: "", field02: "", field03: "용도3", field04: "", field05: "", field06: "", field07: "" },
+            { field01: "", field02: "", field03: "용도4", field04: "", field05: "", field06: "", field07: "" },
+            { field01: "", field02: "", field03: "용도5", field04: "", field05: "", field06: "", field07: "" },
         ];
         const columnDefs = [ 
             {
@@ -166,6 +139,28 @@
                 
             },
             {
+                headerName: "구분 명",
+                headerClass: "center",
+                field: "field02",
+                width: 160,
+                cellClass: "cell-normal input",
+                editable: false,
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                <label for="input-text" class="hidden">구분 명</label>
+                            </div>
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
+            },
+            {
                 headerName: "사용 중 포트 봉인",
                 headerClass: "center",
                 width: 238,
@@ -174,14 +169,14 @@
                     {
                         headerName: "용도",
                         headerClass: "center",
-                        field: "field02",
+                        field: "field03",
                         width: 160,
                         cellClass: "cell-normal",
                     },
                     {
                         headerName: "봉인 관리번호",
                         headerClass: "center",
-                        field: "field03",
+                        field: "field04",
                         width: 160,
                         cellClass: "cell-normal",
                         editable: true,
@@ -191,13 +186,11 @@
 
                             if (!value) {
                                 return `
-                                    <!-- input search group start -->
-                                    <div class="input-search-group">
-                                        <input type="search" class="form-control" id="search1" placeholder="화성" value="">
-                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
-                                    </div>
-                                    <!--// input search group end -->
-                                `;
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                <label for="input-text" class="hidden">봉인 관리번호</label>
+                            </div>
+                        `;
                             } else {
                                 return value;
                             }
@@ -208,32 +201,58 @@
             {
                 headerName: "미사용 포트 봉인",
                 headerClass: "center",
-                minWidth: 160,
-                flex: 1,
                 cellClass: "cell-normal",
                 children: [
                     {
                         headerName: "봉인 관리번호",
                         headerClass: "center",
-                        field: "field04",
+                        field: "field05",
                         width: 160,
                         cellClass: "cell-normal",
+                        cellRenderer: (params) => {
+                            const value = params.value;
+
+                            if (!value) {
+                                return `
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                <label for="input-text" class="hidden">봉인 관리번호</label>
+                            </div>
+                        `;
+                            } else {
+                                return value;
+                            }
+                        }
                     }
                 ]
             },
             {
                 headerName: "비고",
                 headerClass: "center",
-                field: "field05",
+                field: "field06",
                 minWidth: 120,
                 flex: 1,
-                cellClass: "cell-normal",
+                cellClass: "cell-normal input",
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                <label for="input-text" class="hidden">비고</label>
+                            </div>
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
             },
              {
-                headerName: "삭제",
+                headerName: "행 삭제",
                 headerClass: "center",
-                field: "field06",
-                width: 160,
+                field: "field07",
+                width: 100,
                 cellClass: "cell-normal",
                 cellRenderer: params => {
                     return '<button type="button" class="btn btn-icon"><i class="icon del-trash" /></button>';

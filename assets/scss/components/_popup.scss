@@ -18,7 +18,7 @@ $popup-md-footer-height: rem(86px);
         @include flex(true, "between", "center");
         padding: rem(32px) rem(40px) rem(24px);
         min-height: $popup-header-height;
-        background-color: $primary;
+        background-color: $secondary;
         .pop-title {
             color: $white;
             @include font-style($font-size-xlg, $font-weight-bold, rem(38.4px));

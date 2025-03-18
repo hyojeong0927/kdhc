@@ -67,6 +67,17 @@ $main-summary-sub: linear-gradient(95deg, rgba(117, 183, 152, 0.20) 4.3%, rgba(2
 $login-btn-gradient: linear-gradient(283deg, $blue-006 18.73%, $primary 77.87%);
 // gradient end
 
+// box shadow
+$calendar-shadow: null;
+$checkbox-shadow: null;
+$header-shadow: null;
+$login-shadow: null;
+$dashboard-shadow-01: null;
+$dashboard-shadow-02: null;
+$dashboard-shadow-03: null;
+$popup-section: null;
+// box shadow end
+
 // font-family
 $font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", "Noto Sans KR", Roboto, "Helvetica Neue", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;

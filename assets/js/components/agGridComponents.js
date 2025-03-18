@@ -59,23 +59,7 @@ export const customInputSearchEditor = function () {
             const label = document.createElement('label');
             label.htmlFor = 'searchId';
             label.className = 'input-group-text';
-            label.innerHTML = '<i class="icon search"></i>';
-
-            // 컴퍼넌트 검색에서 팝업띄우기
-            label.addEventListener("click", function () {
-                const width = 1400;
-                const height = 800;
-
-                const left = (window.screenLeft || window.screenX) + (window.innerWidth - width) / 2;
-                const top = (window.screenTop || window.screenY) + (window.innerHeight - height) / 2;
-
-                window.open(
-                    "./SB-USR-023.html",
-                    "SearchPopup",
-                    `width=${width},height=${height},left=${left},top=${top},scrollbars=yes,resizable=yes`
-                );
-            });
-                
+            label.innerHTML = '<i class="icon search"></i>';       
             input.addEventListener('input', function () {
                 params.api.stopEditing();
             });

@@ -274,7 +274,6 @@
                 field10: "",
                 field11: "홍길동",
                 field12: "",
-                field13: "점검전",
             },
             {
                 field01: "",
@@ -289,7 +288,6 @@
                 field10: "",
                 field11: "홍길동",
                 field12: "",
-                field13: "점검완료",
             },
         ];
         const columnDefs = [
@@ -437,16 +435,15 @@
                 field: "field12",
                 width: 120,
                 cellClass: "cell-normal",
+                cellEditor: 'agCheckboxCellEditor',
                 cellRenderer: params => {
-                    return '<button type="button" class="btn btn-grid btn-xxsm">점검 확인</button>';
+                    return `
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" ${params.value ? 'checked' : ''}>
+                            <label class="form-check-label hidden" for="flexCheckDefault1">default</label>
+                        </div>
+                    `;
                 }
-            },
-            {
-                headerName: "점검 상태",
-                headerClass: "center",
-                field: "field13",
-                width: 100,
-                cellClass: "cell-normal",
             },
         ];
 

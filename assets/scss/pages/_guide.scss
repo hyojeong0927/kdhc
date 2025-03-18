@@ -296,5 +296,32 @@
         &.basic-blue-gray-05 {
             background-color: $blue-004;
         }
+        &.basic-gray-001 {
+            background-color: $gray-002;
+        }
+        &.basic-gray-002 {
+            background-color: $gray-003;
+        }
+        &.basic-gray-003 {
+            background-color: $gray-004;
+        }
+        &.basic-gray-004 {
+            background-color: $gray-006;
+        }
+        &.gradient-001 {
+            background: $approval-wait-gradient;
+        }
+        &.gradient-002 {
+            background: $approval-progress-gradient;
+        }
+        &.gradient-003 {
+            background: $approval-reject-gradient;
+        }
+        &.gradient-004 {
+            background: $main-summary-sub;
+        }
+        &.gradient-005 {
+            background: $login-btn-gradient;
+        }
     }
 }
