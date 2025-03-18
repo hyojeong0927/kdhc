@@ -14,7 +14,7 @@
 <body>
     <article class="guide-contents">
         <div class="title">
-			<h3>Input</h3>
+			<h3>Input / Textarea / Selectbox</h3>
 		</div>
         <div class="tbl-wrap">
              <table class="tbl">
@@ -59,7 +59,9 @@
                             <input type="text" class="form-control" placeholder="입력해 주세요" value="readonly" aria-readonly="true" readonly>
                         </td>
                         <td>
-                            <input type="text" class="form-control is-error" placeholder="입력해 주세요" value="error">
+                            <div class="input-group is-error">
+                                <input type="text" class="form-control" placeholder="입력해 주세요" value="error">
+                            </div>
                             <p class="form-hint-invalid">잘못 입력하였습니다.</p>
                         </td>
                     </tr>
@@ -81,7 +83,9 @@
                             <input type="number" class="form-control" placeholder="입력해 주세요" value="000" aria-readonly="true" readonly>
                         </td>
                         <td>
-                            <input type="number" class="form-control is-error" placeholder="입력해 주세요" value="000">
+                            <div class="input-group is-error">
+                                <input type="number" class="form-control" placeholder="입력해 주세요" value="000">
+                            </div>
                             <p class="form-hint-invalid">잘못 입력하였습니다.</p>
                         </td>
                     </tr>
@@ -104,13 +108,21 @@
                             <input type="email" class="form-control" placeholder="입력해 주세요" value="readonly" aria-readonly="true" readonly>
                         </td>
                         <td>
-                            <input type="email" class="form-control is-error" placeholder="입력해 주세요" value="name@example.com">
+                            <div class="input-group is-error">
+                                <input type="email" class="form-control" placeholder="입력해 주세요" value="name@example.com">
+                            </div>
                             <p class="form-hint-invalid">잘못 입력하였습니다.</p>
                         </td>
                     </tr>
                     <tr>
                         <th>Input [type="file"]</th>
-                        <td></td>
+                        <td>
+                            <div class="input-file-group">
+                                <label for="file">파일선택</label>
+                                <input class="upload-name" value="선택된 파일이 없습니다." placeholder="선택된 파일이 없습니다.">
+                                <input type="file" id="file" multiple>
+                            </div>
+                        </td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -136,7 +148,9 @@
                             <input type="password" class="form-control" placeholder="입력해 주세요" value="readonly" aria-readonly="true" readonly>
                         </td>
                         <td>
-                            <input type="password" class="form-control is-error" placeholder="입력해 주세요" value="name@example.com">
+                            <div class="input-group is-error">
+                                <input type="password" class="form-control" placeholder="입력해 주세요" value="name@example.com">
+                            </div>
                             <p class="form-hint-invalid">잘못 입력하였습니다.</p>
                         </td>
                     </tr>
@@ -210,7 +224,9 @@
                             <input type="tel" name="phone" class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="000-0000-0000" value="000-0000-0000" aria-readonly="true" readonly />
                         </td>
                         <td>
-                            <input type="tel" name="phone" class="form-control is-error" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="000-0000-0000" value="000-0000-0000" />
+                            <div class="input-group is-error">
+                                <input type="tel" name="phone" class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="000-0000-0000" value="000-0000-0000" />
+                            </div>
                             <p class="form-hint-invalid">잘못 입력하였습니다.</p>
                         </td>
                     </tr>
@@ -232,7 +248,63 @@
                             <input type="url" name="url" id="url" class="form-control"  placeholder="https://example.com" pattern="https://.*" size="30" value="https://example.com" aria-readonly="true" readonly />
                         </td>
                         <td>
-                            <input type="url" name="url" id="url" class="form-control is-error"  placeholder="https://example.com" pattern="https://.*" size="30" value="https://example.com" />
+                            <div class="input-group is-error">
+                                <input type="url" name="url" id="url" class="form-control"  placeholder="https://example.com" pattern="https://.*" size="30" value="https://example.com" />
+                            </div>
+                            <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Select box</th>
+                        <td>
+                            <select class="form-select" aria-label="Default select example" required>
+                                <option value="" selected>선택</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example" required>
+                                <option value="">선택</option>
+                                <option value="1" selected>One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select active" aria-label="Default select example" required>
+                                <option value="">선택</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example" aria-disabled="true" disabled required>
+                                <option value="">선택</option>
+                                <option value="1" selected>One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example" aria-readonly="true" required>
+                                <option value="">선택</option>
+                                <option value="1" selected>One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="select-group is-error">
+                                <select class="form-select" aria-label="Default select example" required>
+                                    <option value="" selected>선택</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
                             <p class="form-hint-invalid">잘못 입력하였습니다.</p>
                         </td>
                     </tr>
@@ -240,7 +312,7 @@
                         <th>TextArea</th>
                         <td>
                             <!-- textarea -->
-                            <div class="textarea-wrap">
+                            <div class="textarea-group">
                                 <textarea class="form-control" id="comment" placeholder="입력해 주세요"></textarea>
                                 <p class="textarea-count">
                                     <span class="count-now">0</span><span class="count-total">/100</span>
@@ -250,7 +322,7 @@
                         </td>
                         <td>
                             <!-- textarea -->
-                            <div class="textarea-wrap">
+                            <div class="textarea-group">
                                 <textarea class="form-control" id="comment" placeholder="입력해 주세요">textarea</textarea>
                                 <p class="textarea-count">
                                     <span class="count-now">0</span><span class="count-total">/100</span>
@@ -260,7 +332,7 @@
                         </td>
                         <td>
                             <!-- textarea -->
-                            <div class="textarea-wrap">
+                            <div class="textarea-group">
                                 <textarea class="form-control active" id="comment" placeholder="입력해 주세요">textarea</textarea>
                                 <p class="textarea-count">
                                     <span class="count-now">0</span><span class="count-total">/100</span>
@@ -270,7 +342,7 @@
                         </td>
                         <td>
                             <!-- textarea -->
-                            <div class="textarea-wrap">
+                            <div class="textarea-group">
                                 <textarea class="form-control" id="comment" placeholder="입력해 주세요" aria-disabled="true" disabled>textarea</textarea>
                                 <p class="textarea-count">
                                     <span class="count-now">0</span><span class="count-total">/100</span>
@@ -280,7 +352,7 @@
                         </td>
                         <td>
                             <!-- textarea -->
-                            <div class="textarea-wrap">
+                            <div class="textarea-group">
                                 <textarea class="form-control" id="comment" placeholder="입력해 주세요" aria-readonly="true" readonly>textarea</textarea>
                                 <p class="textarea-count">
                                     <span class="count-now">0</span><span class="count-total">/100</span>
@@ -290,8 +362,8 @@
                         </td>
                         <td>
                             <!-- textarea -->
-                            <div class="textarea-wrap">
-                                <textarea class="form-control is-error" id="comment" placeholder="입력해 주세요">textarea</textarea>
+                            <div class="textarea-group is-error">
+                                <textarea class="form-control" id="comment" placeholder="입력해 주세요">textarea</textarea>
                                 <p class="textarea-count">
                                     <span class="count-now">0</span><span class="count-total">/100</span>
                                 </p>
@@ -397,8 +469,9 @@
                             <!--// datepicker-group end -->
                         </td>
                     </tr>
+                    
                 </tbody>
-             </table>
+            </table>
         </div>
     </article>
 </body>

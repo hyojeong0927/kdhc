@@ -67,17 +67,6 @@ $main-summary-sub: linear-gradient(95deg, rgba(117, 183, 152, 0.20) 4.3%, rgba(2
 $login-btn-gradient: linear-gradient(283deg, $blue-006 18.73%, $primary 77.87%);
 // gradient end
 
-// box shadow
-$calendar-shadow: null;
-$checkbox-shadow: null;
-$header-shadow: null;
-$login-shadow: null;
-$dashboard-shadow-01: null;
-$dashboard-shadow-02: null;
-$dashboard-shadow-03: null;
-$popup-section: null;
-// box shadow end
-
 // font-family
 $font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", "Noto Sans KR", Roboto, "Helvetica Neue", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -98,6 +87,15 @@ $font-size-xslg:              $font-size-base * 1.875; // 30px
 $font-size-xlg:               $font-size-base * 2; // 32px
 $font-size-xxlg:              $font-size-base * 3; // 48px
 
+// font size
+$h1-font-size: $font-size-base * 1.625; // 26px
+$h2-font-size: $font-size-base * 1.5; // 24px
+$h3-font-size: $font-size-base * 1.375; // 22px
+
+$h4-font-size: $font-size-base * 1.5; // 24px
+$h5-font-size: $font-size-base * 1.25; // 20px
+$h6-font-size: $font-size-base * 1.125; // 18px
+
 $font-weight-lighter:         lighter;
 $font-weight-light:           300;
 $font-weight-normal:          400;
@@ -117,37 +115,11 @@ $letter-spacing-base:         -0.48px;
 $letter-spacing-sm:           -0.36px;
 $letter-spacing-xsm:          -0.28px;
 
-
-// border radius
-$radius-xxsm:                   2px;
-$radius-xsm:                    4px;
-$radius-sm:                     6px;
-$radius-md:                     12px;
-$radius-xmd:                    30px;
-$radius-xlg:                    40px;
-$radius-lg:                     null;
-$radius-half:                   50%;
-
-// box shadow
-$login-box-shadow: 0 0 20px 12px rgba(42, 89, 125, 0.40);
-$datepicker-calendar-box-shadow: 0px 0px 12px 0px rgba($black, 0.08);
-$pop-sec-sub-box-shadow: 0 0 12px 0 rgba($black, 0.08);
-$dashboard-box-shadow: 0px 0px 12px 0px rgba($black, 0.08);
-$dashboard-sum-box-shadow: 0 0.5px 2px 0 rgba($black, 0.40);
-
 // text-decoration
 $text-decoration-none: none;
+
 // text-indent
 $text-indent: -999999rem;
-
-// font size
-$h1-font-size:                $font-size-base * 1.625; // 26px
-$h2-font-size:                $font-size-base * 1.5; // 24px
-$h3-font-size:                $font-size-base * 1.375; // 22px
-
-$h4-font-size:                $font-size-base * 1.5; // 24px
-$h5-font-size:                $font-size-base * 1.25; // 20px
-$h6-font-size:                $font-size-base * 1.125; // 18px 
 
 // spacer 
 $spacer: 1rem;
@@ -160,6 +132,23 @@ $spacers: (
     4: $spacer * 1.5,
     5: $spacer * 3,
 );
+
+// box shadow
+$login-box-shadow: 0 0 20px 12px rgba(42, 89, 125, 0.40);
+$datepicker-calendar-box-shadow: 0px 0px 12px 0px rgba($black, 0.08);
+$pop-sec-sub-box-shadow: 0 0 12px 0 rgba($black, 0.08);
+$dashboard-box-shadow: 0px 0px 12px 0px rgba($black, 0.08);
+$dashboard-sum-box-shadow: 0 0.5px 2px 0 rgba($black, 0.40);
+
+// border radius
+$radius-xxsm:                   2px;
+$radius-xsm:                    4px;
+$radius-sm:                     6px;
+$radius-md:                     12px;
+$radius-xmd:                    30px;
+$radius-xlg:                    40px;
+$radius-lg:                     null;
+$radius-half:                   50%;
 
 // input start
 $input-padding-x:               16px;
@@ -238,7 +227,7 @@ $form-check-radio-border-radius: $radius-half;
 $form-check-input-focus-border: $form-check-input-border;
 $form-check-input-focus-box-shadow: none;
 
-$form-check-input-checked-color: $secondary;
+$form-check-input-checked-color: $primary;
 $form-check-input-checked-bg-color: $form-check-input-checked-color;
 $form-check-input-checked-border-color: $form-check-input-checked-color;
 

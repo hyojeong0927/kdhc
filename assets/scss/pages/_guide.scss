@@ -1,5 +1,7 @@
 /* Guide
 ========================================================================== */
+@use 'sass:math';
+
 .guide-container {
     overflow: hidden;
     @include flex(true, 'start', 'start');
@@ -177,6 +179,57 @@
                 height: 400px;
             }
         }
+        @mixin font-weight-classes {
+            .w-400 { font-weight: $font-weight-normal; }
+            .w-500 { font-weight: $font-weight-medium; }
+            .w-600 { font-weight: $font-weight-semibold; }
+            .w-700 { font-weight: $font-weight-bold; }
+        } 
+        .font-12 {
+            @include flex(true, "start", "start", rem(10px));
+            font-size: $font-size-xsm;
+            @include font-weight-classes;
+        }
+        .font-14 {
+            font-size: $font-size-sm;
+            @include font-weight-classes;
+        }
+        .font-17 {
+            font-size: $font-size-xmd;
+            @include font-weight-classes;
+        }
+        .font-18 {
+            font-size: $font-size-md;
+            @include font-weight-classes;
+        }
+        .font-20 {
+            font-size: $font-size-lg;
+            @include font-weight-classes;
+        }
+        .font-24 {
+            font-size: $h2-font-size;
+            @include font-weight-classes;
+        }
+        .font-26 {
+            font-size: $font-size-slg;
+            @include font-weight-classes;
+        }
+        .font-28 {
+            font-size: $font-size-sslg;
+            @include font-weight-classes;
+        }
+        .font-30 {
+            font-size: $font-size-xslg;
+            @include font-weight-classes;
+        }
+        .font-32 {
+            font-size: $font-size-xlg;
+            @include font-weight-classes;
+        }
+        .font-48 {
+            font-size: $font-size-xxlg;
+            @include font-weight-classes;
+        }
     }
     .cont-box {
         padding: 10px 0 20px;
@@ -342,6 +395,53 @@
         &.box-shadow-005 {
             background: $white;
             box-shadow: $dashboard-sum-box-shadow;
+        }
+    }
+    .layout {
+        &-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 10px;
+            flex-wrap: wrap;
+            width: math.div($device-base-width, 2);
+            height: math.div($device-base-height, 2);
+            background: rgba(231, 231, 231, 1);
+            &.close {
+                .layout-aside {
+                    width: math.div($sidebar-close-width, 2);
+                }
+                .layout-main {
+                    width: calc(100% - (math.div($sidebar-close-width, 2)) - 10px);
+                }
+            }
+        }
+        &-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: math.div($header-height, 2);
+            text-align: center;
+            background: rgba(0, 102, 255, 0.30);
+        }
+        &-aside {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: math.div($sidebar-width, 2);
+            height: calc(100% - (math.div($header-height, 2)) - 10px);
+            text-align: center;
+            background: rgba(0, 102, 255, 0.20);
+        }
+        &-main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: calc(100% - (math.div($sidebar-width, 2)) - 10px);
+            height: calc(100% - (math.div($header-height, 2)) - 10px);
+            text-align: center;
+            background: rgba(56, 53, 183, 0.20);
         }
     }
 }
