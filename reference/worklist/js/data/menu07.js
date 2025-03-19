@@ -100,7 +100,7 @@ const menu07Projects = [
         status: "완료",
         start: "2025-03-04",
         end: "2025-03-07",
-        modDate: "",
+        modDate: "2025-03-19",
         design: "",
         dev: "2025-03-24",
     },

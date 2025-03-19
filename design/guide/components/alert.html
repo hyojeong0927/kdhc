@@ -17,9 +17,105 @@
         <div class="title">
 			<h3>Alert</h3>
 		</div>
-        <div class="alert alert-primary" role="alert">
-            A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
-        </div>
+        <!-- Alert 호출 버튼 -->
+        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#Alert004">
+            Alert - 004
+        </button>
+        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#Alert012">
+            Alert - 012
+        </button>
+        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#Alert014">
+            Alert - 014
+        </button>
+        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#Alert024">
+            Alert - 024
+        </button>
+        <!--// Alert 호출 버튼 -->
     </article>
+    <!-- Modal start : Alert004-->
+    <div class="modal fade" id="Alert004" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <!-- 2025-03-19 : 중앙 정렬 추가 modal-dialog-centered -->
+        <div class="modal-dialog alert modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="inner">
+                        <div class="text-box">
+                            <p>비밀번호를 입력하시지 않으셨습니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline btn-md" data-bs-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-secondary btn-md" data-bs-dismiss="modal">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--// Modal end -->
+    <!-- Modal start : Alert012-->
+    <div class="modal fade" id="Alert012" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <!-- 2025-03-19 : 중앙 정렬 추가 modal-dialog-centered -->
+        <div class="modal-dialog alert modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="inner">
+                        <div class="text-box">
+                            <p>게시물 작성시 제목과 내용은 필수로 작성되어야 합니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline btn-md" data-bs-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-secondary btn-md" data-bs-dismiss="modal">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--// Modal end -->
+    <!-- Modal start : Alert014-->
+    <div class="modal fade" id="Alert014" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <!-- 2025-03-19 : 중앙 정렬 추가 modal-dialog-centered -->
+        <div class="modal-dialog alert modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="inner">
+                        <div class="text-box">
+                            <p>수정된 사항을 저장하시겠습니까?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline btn-md" data-bs-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-secondary btn-md" data-bs-dismiss="modal">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--// Modal end -->
+    <!-- Modal start : Alert024-->
+    <div class="modal fade" id="Alert024" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <!-- 2025-03-19 : 중앙 정렬 추가 modal-dialog-centered -->
+        <div class="modal-dialog alert modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="inner">
+                        <div class="text-box">
+                            <p class="is-error">로그인을 5회 시도하였습니다.</p>
+                            <p>비밀번호가 기억나지 않는경우 관리자에게 연락 부탁드립니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline btn-md" data-bs-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-secondary btn-md" data-bs-dismiss="modal">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--// Modal end -->
 </body>
 </html>

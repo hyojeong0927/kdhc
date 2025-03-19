@@ -20,35 +20,43 @@
 			<ol>
 				<li>팝업 사이즈
                     <ul>
-                        <li>small: </li>
-                        <li>medium: </li>
-                        <li>large: </li>
+                        <li>small: 600 * 500</li>
+                        <li>medium: 800 * 500</li>
+                        <li>large: 1440 * 1080</li>
                     </ul>
                 </li>
 				<li> 여백 규칙
 					<ul>
-						<li>내부 패딩: 최소 16px</li>
+						<li>내부 패딩: 최소 24px</li>
 						<li>외부 마진: 최소 24px</li>
 					</ul>
 				</li>
 			</ol>
 		</div>
         <div class="cont-box">
-            <button id="small-btn">small</button>
-            <button id="medium-btn">medium</button>
-            <button id="large-btn">large</button>
+            <button class="btn btn-primary btn-lg" id="small-btn">small</button>
+            <button class="btn btn-primary btn-lg" id="medium-btn">medium</button>
+            <button class="btn btn-primary btn-lg" id="large-btn">large</button>
+            <button class="btn btn-primary btn-lg" id="popup01">사이즈 지정</button>
         </div>
     </article>
     <script type="module">
-        import { setupPopupListeners } from '../../../assets/js/components/popup.js';
+        import { setupPopupListeners, openCenteredPopup } from '../../../assets/js/components/popup.js';
     
         const urlList = {
-            small: 'https://www.naver.com?type=small',
-            medium: 'https://www.daum.net?type=medium',
-            large: 'https://www.google.com?type=large',
+            small: './popup-sm.html',
+            medium: './popup-md.html',
+            large: './popup-lg.html',
         };
 
         setupPopupListeners(urlList);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('popup01').addEventListener('click', () => {
+                const url = './popup-sm.html';
+                openCenteredPopup(url, 600, 300);
+            });
+        });
     </script>
 </body>
 </html>

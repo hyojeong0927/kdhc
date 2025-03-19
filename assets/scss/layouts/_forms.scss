@@ -485,16 +485,20 @@ $form-layouts: (
 .flex-form {
     @include flex(true, "between", "normal", rem(40px));
     min-height: rem(560px);
+    @include scroll-y;
+    
+    .tree-view {
+        overflow-y: auto;
+        width: rem(382px);
+        max-height: rem(560px);
+    }
     
     .flex-form-left {
-        &.tree-view {
-            overflow-y: auto;
-            width: rem(382px);
-            max-height: rem(560px);
-        }
+       margin-right: auto;
     }
     .flex-form-right {
         flex: 1;
+        margin-left: auto;
         .bottom-btn-area {
             margin-top: rem(32px);
         }

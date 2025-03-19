@@ -7,6 +7,8 @@
     <!-- css -->
     <link rel="stylesheet" href="../../../css/index.css">
     <!-- script -->
+    <script src="../../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
     <script type="module" src="../../../assets/js/common.js"></script>
     
 </head>
@@ -21,5 +23,53 @@
         </div>
         <!--// loader -->
     </article>
+    <script>
+        const loadingUtil = {
+            show: () => {
+                // 이미 로더가 있으면 또 만들지 않음
+                if (document.querySelector('.loader-wrap')) return;
+
+                // 전체 페이지 비활성화 (main-content 같은 wrapper에 적용 추천)
+                const pageContent = document.querySelector('#main-content'); // 실제로 사용 중인 전체 wrapper
+                if (pageContent) {
+                    pageContent.setAttribute('inert', 'true');
+                    pageContent.setAttribute('aria-hidden', 'true');
+                }
+
+                // 로더 태그 생성
+                const loader = document.createElement('div');
+                loader.className = 'loader-wrap';
+                loader.innerHTML = `<div class="loader" role="status" aria-live="polite">진행중</div>`;
+
+                // 스타일 추가
+                loader.style.position = 'fixed';
+                loader.style.top = '0';
+                loader.style.left = '0';
+                loader.style.width = '100vw';
+                loader.style.height = '100vh';
+                loader.style.display = 'flex';
+                loader.style.justifyContent = 'center';
+                loader.style.alignItems = 'center';
+                loader.style.backgroundColor = 'rgba(0,0,0,0.3)';
+                loader.style.zIndex = '9999';
+
+                // body에 추가
+                document.body.appendChild(loader);
+            },
+            hide: () => {
+                const loader = document.querySelector('.loader-wrap');
+                if (loader) {
+                    loader.remove(); // 로더 제거
+                }
+
+                // 페이지 포커스 복구
+                const pageContent = document.querySelector('#main-content');
+                if (pageContent) {
+                    pageContent.removeAttribute('inert');
+                    pageContent.removeAttribute('aria-hidden');
+                }
+            }
+        };
+    </script>
 </body>
 </html>
