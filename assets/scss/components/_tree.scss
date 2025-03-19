@@ -10,10 +10,10 @@
             background-color: transparent;
         } 
         &.node-selected {
-            color: $primary !important;
+            color: $secondary !important;
             background-color: transparent !important;
             a {
-                color: $primary !important;
+                color: $secondary !important;
             }
         }
     }
@@ -34,7 +34,7 @@
     }
     .list-group-item {
         @include flex(true, "start", "center");
-        color: $primary;
+        color: $secondary;
         @include font-style($font-size-base, $font-weight-medium, $line-height-base);
         border: 0;
         a {
@@ -115,7 +115,7 @@
             &::after {
                 content: 'Root';
                 padding-left: rem(27px);
-                color: $primary;
+                color: $secondary;
                 @include font-style($font-size-base, $font-weight-medium, $line-height-base);
                 font-family: $font-family-base;
             }
