@@ -28,7 +28,7 @@
     box-shadow: none;
     outline: none;
 }
-// 공통적으로 적용되는 focus, hover 스타일
+// 공통 interactive
 %input-interactive {
     &.active,
     &:hover,
@@ -36,22 +36,20 @@
     &:focus-visible,
     &:focus-within,
     &:focus {
-        color: $input-focus-color;
-        background-color: $input-bg;
-        border-color: $input-focus-border-color;
-        box-shadow: none;
-        outline: none;
+        @extend %input-focus;
     }
 }
+// 공통 disabled 스타일
 %input-disabled {
     color: $input-disabled-color !important;
     background-color: $input-disabled-bg;
 }
+// 공통 read-only 스타일
 %input-read-only {
     color: $input-font-color;
     background-color: $input-disabled-bg;
 }
-// error 공통 스타일
+// 공통 error 스타일
 %input-error {
     border-color: $input-error-border-color;
 }
@@ -163,17 +161,6 @@ textarea {
             background-color: transparent;
         }
     }
-    // &.active,
-    // &:hover,
-    // &:active,
-    // &:focus-visible,
-    // &:focus-within,
-    // &:focus {
-    //     @extend %input-focus;
-    // }
-    // &.active {
-    //     @extend %input-focus;
-    // }
     &.disabled {
         @extend %input-disabled;
     }
