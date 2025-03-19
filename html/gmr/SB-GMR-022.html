@@ -96,14 +96,14 @@
                                             <div class="col">
                                                 <div class="form-label">그룹코드</div>
                                                 <div class="form-group">
-                                                    <!-- input group -->
-                                                    <div class="input-group is-error">
+                                                    <!-- input group : class="input-group is-error"-->
+                                                    <div class="input-group">
                                                         <input type="text" id="input-text" class="form-control" placeholder="그룹코드 입력" value="">
                                                         <label for="input-text" class="hidden">그룹코드</label>
                                                     </div>
                                                     <!--// input group -->
-                                                    <!-- 에러 문구 -->
-                                                    <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                                                    <!-- 에러 문구 : hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
@@ -202,116 +202,11 @@
     <!-- script wrap -->
     <script type="module">
         const rowData = [
-            {
-                field01: "",
-                field02: "ddd",
-                field03: "ddd",
-                field04: "dd",
-                field05: "dd",
-                field06: "dd",
-                field07: "홍길동",
-                field08: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "",
-                field04: "",
-                field05: "",
-                field06: "",
-                field07: "홍길동",
-                field08: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "",
-                field04: "",
-                field05: "",
-                field06: "",
-                field07: "홍길동",
-                field08: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "",
-                field04: "",
-                field05: "",
-                field06: "",
-                field07: "홍길동",
-                field08: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "",
-                field04: "",
-                field05: "",
-                field06: "",
-                field07: "홍길동",
-                field08: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "",
-                field04: "",
-                field05: "",
-                field06: "",
-                field07: "홍길동",
-                field08: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "",
-                field04: "",
-                field05: "",
-                field06: "",
-                field07: "홍길동",
-                field08: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "",
-                field04: "",
-                field05: "",
-                field06: "",
-                field07: "홍길동",
-                field08: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "",
-                field04: "",
-                field05: "",
-                field06: "",
-                field07: "홍길동",
-                field08: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "",
-                field04: "",
-                field05: "",
-                field06: "",
-                field07: "홍길동",
-                field08: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "",
-                field04: "",
-                field05: "",
-                field06: "",
-                field07: "홍길동",
-                field08: "",
-            },
+            { field01: "", field02: "ddd", field03: "ddd", field04: "dd", field05: "dd", field06: "dd", field07: "홍길동", field08: "" },
+            { field01: "", field02: "ddd", field03: "ddd", field04: "dd", field05: "dd", field06: "dd", field07: "홍길동", field08: "" },
+            { field01: "", field02: "ddd", field03: "ddd", field04: "dd", field05: "dd", field06: "dd", field07: "홍길동", field08: "" },
+            { field01: "", field02: "ddd", field03: "ddd", field04: "dd", field05: "dd", field06: "dd", field07: "홍길동", field08: "" },
+            { field01: "", field02: "ddd", field03: "ddd", field04: "dd", field05: "dd", field06: "dd", field07: "홍길동", field08: "" },
         ];
         const columnDefs = [
             {
@@ -340,7 +235,7 @@
                 headerName: "그룹코드 설명",
                 headerClass: "center",
                 field: "field04",
-                minWidth: 600,
+                minWidth: 400,
                 flex: 1,
                 cellClass: "cell-normal",
             },

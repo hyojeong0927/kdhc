@@ -24,7 +24,7 @@ $form-btn-width: rem(136px);
                 margin: 0;
                 flex: 0 0 rem(100px);
                 min-width: rem(100px);
-                color: $primary;
+                color: $secondary;
                 @include font-style($font-size-base, $font-weight-medium, $line-height-base);
                 letter-spacing: rem(-1.5px);
                 word-break: keep-all;

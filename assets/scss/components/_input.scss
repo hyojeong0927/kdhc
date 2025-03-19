@@ -28,6 +28,21 @@
     box-shadow: none;
     outline: none;
 }
+// 공통적으로 적용되는 focus, hover 스타일
+%input-interactive {
+    &.active,
+    &:hover,
+    &:active,
+    &:focus-visible,
+    &:focus-within,
+    &:focus {
+        color: $input-focus-color;
+        background-color: $input-bg;
+        border-color: $input-focus-border-color;
+        box-shadow: none;
+        outline: none;
+    }
+}
 %input-disabled {
     color: $input-disabled-color !important;
     background-color: $input-disabled-bg;
@@ -36,6 +51,7 @@
     color: $input-font-color;
     background-color: $input-disabled-bg;
 }
+// error 공통 스타일
 %input-error {
     border-color: $input-error-border-color;
 }
@@ -58,16 +74,9 @@
 // input type style start
 .form-control {
     @extend %input-base;
+    @extend %input-interactive;
     &::placeholder {
         @extend %input-placeholder;
-    }
-    &.active,
-    &:hover,
-    &:active,
-    &:focus-visible,
-    &:focus-within,
-    &:focus {
-        @extend %input-focus;
     }
     &:read-only {
         @extend %input-read-only;
@@ -141,6 +150,7 @@ textarea {
 .input-date-group {
     @include flex(true, "start", "center");
     @extend %input-base;
+    @extend %input-interactive;
     padding: 0;
     width: auto;
     // input icon
@@ -153,17 +163,17 @@ textarea {
             background-color: transparent;
         }
     }
-    &.active,
-    &:hover,
-    &:active,
-    &:focus-visible,
-    &:focus-within,
-    &:focus {
-        @extend %input-focus;
-    }
-    &.active {
-        @extend %input-focus;
-    }
+    // &.active,
+    // &:hover,
+    // &:active,
+    // &:focus-visible,
+    // &:focus-within,
+    // &:focus {
+    //     @extend %input-focus;
+    // }
+    // &.active {
+    //     @extend %input-focus;
+    // }
     &.disabled {
         @extend %input-disabled;
     }
