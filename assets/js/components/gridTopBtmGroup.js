@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 버튼 클릭 이벤트 처리
     document.querySelectorAll(".grid-top-btn button").forEach(button => {
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function () {
             alert(`Clicked button: ${this.innerText}`);
         });
     });

@@ -4,18 +4,17 @@
 import "./vendors/bootstrap.bundle.min.js";
 // ag grid
 import "./vendors/ag-grid-community.min.js";
-
 // datepicker
 import "./components/datepicker.js";
 // navigation
 import "./components/nav.js";
-// breadcrumb 컴퍼넌트
-import "./components/breadcrumb.js"
-// 타이틀 컴퍼넌트
-import "./components/title.js"
-// 그리드 top 버튼
+// breadcrumb
+import "./components/breadcrumb.js";
+// title
+import "./components/title.js";
+// grid top button
 import "./components/gridTopBtmGroup.js"
-// 하단버튼
+// bottom button
 import "./components/btmbutton.js"
-// 파일첨부
-import "./components/inputFile.js"
+// input type file
+// import "./components/inputFile.js"

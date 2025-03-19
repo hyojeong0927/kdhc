@@ -17,41 +17,41 @@ document.addEventListener('DOMContentLoaded', () => {
     const allChecked = [...checkboxes].every(cb => cb.checked);
     selectAllCheckbox.checked = allChecked;
     // all check end
-});
+    
+    // 정기점검 관리
+    const sections = document.querySelectorAll(".obj");
+    sections.forEach(section => section.style.display = "none");
 
-// 정기점검 관리
-const sections = document.querySelectorAll(".obj");
-sections.forEach(section => section.style.display = "none");
+    document.addEventListener("change", function (event) {
+        if (event.target.name === "typeValue") {
+            console.log('Radio button changed to:', event.target.value);
 
-document.addEventListener("change", function (event) {
-    if (event.target.name === "typeValue") {
-        console.log('Radio button changed to:', event.target.value);
-
-        if (event.target.id === "day" && event.target.checked) {
-            sections.forEach(section => section.style.display = "none");
-        } else if (event.target.id === "week" && event.target.checked) {
-           
-            const weekSections = document.querySelectorAll(".week");
-            sections.forEach(section => section.style.display = "none");
-            weekSections.forEach(section => section.style.display = "flex");
-        } else {
-            const selectedSections = document.querySelectorAll(`.${event.target.value}`);
-
-            if (selectedSections && selectedSections.length > 0) {
-
+            if (event.target.id === "day" && event.target.checked) {
                 sections.forEach(section => section.style.display = "none");
-
-                selectedSections.forEach(section => section.style.display = "block");
+            } else if (event.target.id === "week" && event.target.checked) {
+            
+                const weekSections = document.querySelectorAll(".week");
+                sections.forEach(section => section.style.display = "none");
+                weekSections.forEach(section => section.style.display = "flex");
             } else {
-                console.warn(`No sections found with class: ${event.target.value}`);
+                const selectedSections = document.querySelectorAll(`.${event.target.value}`);
 
-                const noSectionMessage = document.querySelector("#noSectionMessage");
+                if (selectedSections && selectedSections.length > 0) {
 
-                if (noSectionMessage) {
-                    noSectionMessage.textContent = `No sections available for "${event.target.value}".`;
-                    noSectionMessage.style.display = "block";
+                    sections.forEach(section => section.style.display = "none");
+
+                    selectedSections.forEach(section => section.style.display = "block");
+                } else {
+                    console.warn(`No sections found with class: ${event.target.value}`);
+
+                    const noSectionMessage = document.querySelector("#noSectionMessage");
+
+                    if (noSectionMessage) {
+                        noSectionMessage.textContent = `No sections available for "${event.target.value}".`;
+                        noSectionMessage.style.display = "block";
+                    }
                 }
             }
         }
-    }
+    });
 });
