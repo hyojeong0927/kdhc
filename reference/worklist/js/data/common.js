@@ -52,7 +52,7 @@ const sample = [
         type: "",
         folder: "common",
         file: "alert.html",
-        status: "진행대기",
+        status: "완료",
         start: "2025-03-10",
         end: "2025-03-14",
         modDate: "",
