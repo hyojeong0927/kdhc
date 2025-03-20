@@ -46,14 +46,14 @@
                                     <div class="form-id-group">
                                         <label for="login-id" class="login-id-label">사번 입력</label>
                                         <!-- 2025-03-07 : data-label="login-id-label" 추가 -->
-                                        <input type="text" id="login-id" class="form-control" data-label="login-id-label" aria-label="사번 입력 난" />
+                                        <input type="text" value="" id="login-id" class="form-control" data-label="login-id-label" aria-label="사번 입력 난" />
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-pw-group">
                                         <label for="login-pw" class="login-pw-label">비밀번호 입력</label>
                                         <!-- 2025-03-07 : data-label="login-pw-label" 추가 -->
-                                        <input type="password" id="login-pw" class="form-control" data-label="login-pw-label" aria-label="비밀번호 입력 난" />
+                                        <input type="password" value="" id="login-pw" class="form-control" data-label="login-pw-label" aria-label="비밀번호 입력 난" />
                                     </div>
                                 </div>
                                 <div class="form-btn">
@@ -70,6 +70,30 @@
     </div>
 
     <!-- script wrap -->
+    <script>
+        const loginId = document.querySelector(".form-id-group input");
+        const loginPw = document.querySelector(".form-pw-group input");
+        const loginButton = document.querySelector(".login-content button");
+        const loginErrorMsg = document.querySelector(".login-error-msg");
+
+        loginButton.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            const id = loginId.value.trim();
+            const pw = loginPw.value.trim();
+
+            console.log("hello", id);
+
+            if(id ==="user" && pw === "1234") {
+                alert("로그인 되었습니다.");
+                window.location.href = "SB-USR-001.html";
+                
+            } else  {
+                loginErrorMsg.style.opacity = "1";
+                loginErrorMsg.textContent = "아이디 또는 비밀번호가 틀렸습니다.";
+            }
+        });
+    </script>
     <!--// script wrap -->
 
     <!-- modal wrap -->
