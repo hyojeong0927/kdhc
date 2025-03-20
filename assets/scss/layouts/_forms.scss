@@ -149,11 +149,22 @@ $form-layouts: (
                         .col:only-of-type {
                             width: 100% !important;
                         }
+                       
                     }
                     &.form-col-2 {
                         .form-row {
-                            .col {
+                            .col { 
                                 width: 50%;
+                            }
+                        }
+                    }
+                    &.form-col-3 {
+                        .form-row {
+                            .col {
+                                &:first-of-type {
+                                    @extend .col-4;
+                                }
+                                @extend .col-4;
                             }
                         }
                     }

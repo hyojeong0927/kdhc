@@ -79,7 +79,7 @@
                                     <!-- row -->
                                     <div class="form-row">
                                         <!-- col  -->
-                                        <div class="col col-6">
+                                        <div class="col">
                                             <div class="form-label">파트</div>
                                             <div class="form-group">
                                                 <!-- select-group is-error : 에러 -->
@@ -98,15 +98,31 @@
                                             </div>
                                         </div>
                                         <!--// col  -->
+                                        <!-- col  -->
+                                        <div class="col">
+                                            <div class="form-label">사번</div>
+                                            <div class="form-group">
+                                                <!-- input-group is-error  -->
+                                                <div class="input-group">
+                                                    <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                                    <label for="input-text" class="hidden">입력</label>
+                                                </div>
+                                                <!--// input group -->
+                                                <!-- 에러 문구 : hidden 제거 -->
+                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                <!--// 에러 문구 -->
+                                            </div>
+                                        </div>
+                                        <!--// col  -->
                                     </div>
                                     <!--// row -->
                                     <!-- row -->
                                     <div class="form-row">
                                         <!-- col  -->
                                         <div class="col">
-                                            <div class="form-label">사번</div>
+                                            <div class="form-label">이름</div>
                                             <div class="form-group">
-                                                <!-- input group : class="input-group is-error" -->
+                                                <!-- input-group is-error  -->
                                                 <div class="input-group">
                                                     <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
                                                     <label for="input-text" class="hidden">입력</label>
@@ -120,14 +136,18 @@
                                         <!--// col  -->
                                         <!-- col  -->
                                         <div class="col">
-                                            <div class="form-label">이름</div>
+                                            <div class="form-label">직원상태</div>
                                             <div class="form-group">
-                                                <!-- input group : class="input-group is-error" -->
-                                                <div class="input-group">
-                                                    <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
-                                                    <label for="input-text" class="hidden">입력</label>
+                                                <!-- select-group is-error : 에러 -->
+                                                <div class="select-group">
+                                                    <select class="form-select" aria-label="Default select" required>
+                                                        <option value="">선택</option>
+                                                        <option value="1" selected>전체</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
                                                 </div>
-                                                <!--// input group -->
+                                                <!--// select group -->
                                                 <!-- 에러 문구 : hidden 제거 -->
                                                 <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                 <!--// 에러 문구 -->

@@ -15,9 +15,14 @@
 
 <body>
     <!-- loader -->
-    <!-- <div class="loader-wrap">
-        <div class="loader">진행중</div>
-    </div> -->
+    <div class="modal fade" tabindex="-1" aria-hidden="false">
+        <div class="modal-dialog loader">
+            <div class="modal-content">
+                <div class="loader">진행중</div>
+               
+            </div>
+        </div>
+    </div>
     <!--// loader -->
     <div id="pop-wrap" class="kdhc-pop-wrap small">
         <header class="kdhc-pop-header">
@@ -96,7 +101,7 @@
                     const value = params.value;
                     if (value === "Y") {
                         return `
-                            <!-- select-group -->
+                            <!-- select-group is-error -->
                             <div class="select-group">
                                 <select class="form-select" aria-label="Default select" required>
                                     <option value="">선택</option>
@@ -108,7 +113,7 @@
                         `;
                     } else if (value === "N") {
                         return `
-                            <!-- select-group -->
+                            <!-- select-group is-error -->
                             <div class="select-group">
                                 <select class="form-select" aria-label="Default select" required>
                                     <option value="">선택</option>
@@ -131,7 +136,7 @@
                     const value = params.value;
                     if (value === "분실") {
                         return `
-                            <!-- select-group -->
+                            <!-- select-group is-error -->
                             <div class="select-group">
                                 <select class="form-select" aria-label="Default select" required>
                                     <option value="">선택</option>
@@ -143,7 +148,7 @@
                         `;
                     } else if (value === "정상") {
                         return `
-                            <!-- select-group -->
+                            <!-- select-group is-error -->
                             <div class="select-group">
                                 <select class="form-select" aria-label="Default select" required>
                                     <option value="">선택</option>
