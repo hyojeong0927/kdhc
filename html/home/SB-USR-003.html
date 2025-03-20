@@ -59,9 +59,11 @@
                                 <div class="form-btn">
                                     <button type="button" class="login-btn" aria-label="로그인 버튼">로그인</button>
                                 </div>
+                                <div class="login-error-msg" style="color: red; opacity: 0; transition: opacity 0.3s;">아이디 또는 비밀번호가 틀렸습니다.</div>
                             </fieldset>
                         </form>
                     </article>
+                    
                 </div>
             </div>
         </section>
@@ -92,6 +94,9 @@
                 loginErrorMsg.style.opacity = "1";
                 loginErrorMsg.textContent = "아이디 또는 비밀번호가 틀렸습니다.";
             }
+            
+            loginId.addEventListener("input", () => loginErrorMsg.style.opacity = "0");
+            loginPw.addEventListener("input", () => loginErrorMsg.style.opacity = "0");
         });
     </script>
     <!--// script wrap -->
