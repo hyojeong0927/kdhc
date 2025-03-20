@@ -16,15 +16,9 @@
 
 <body>
     <!-- loader -->
-    <div class="modal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="loader-wrap">
-                    <div class="loader">진행중</div>
-                </div>
-            </div>
-        </div>
-    </div> 
+    <div class="loader-wrap">
+        <div class="loader">진행중</div>
+    </div>
     <!--// loader -->
     <div id="wrap" class="kdhc-wrap">
 
@@ -176,6 +170,26 @@
     <!-- script wrap -->
     <!--// script wrap -->
     <!-- modal wrap -->
+    <!-- loader -->
+    <div class="modal fade" id="loaderOPen" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog loader modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="loader">진행중</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 페이지가 로드되면 모달을 자동으로 열기
+        window.onload = function () {
+            var myModal = new bootstrap.Modal(document.getElementById('loaderOPen'), {
+                keyboard: false
+            });
+            myModal.show();
+        };
+    </script>
+    <!--// loader -->
     <!--// modal wrap -->
 </body>
 

@@ -278,19 +278,6 @@
 // error end
 
 // loader
-.modal-dialog {
-    &.loader {
-        z-index: $zindex-loader;
-        .modal-content {
-            @include flex(true, "center", "center");
-            .loader {
-                text-indent: $text-indent;
-                @extend .icon;
-                @extend .loading;
-            }
-        }
-    }
-}
 .loader-wrap {
     position: fixed;
     top: 0;

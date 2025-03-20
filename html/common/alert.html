@@ -103,12 +103,17 @@
 
     <!-- Modal start : Alert004-->
     <div class="modal fade" id="Alert004" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        aria-labelledby="staticBackdropLabel">
         <!-- 2025-03-19 : 중앙 정렬 추가 modal-dialog-centered -->
         <div class="modal-dialog alert modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="inner">
+                        <!-- loader -->
+                        <div class="loader-wrap">
+                            <div class="loader">진행중</div>
+                        </div>
+                        <!--// loader -->
                         <div class="text-box">
                             <p>비밀번호를 입력하시지 않으셨습니다.</p>
                         </div>
@@ -124,7 +129,7 @@
     <!--// Modal end -->
     <!-- Modal start : Alert012-->
     <div class="modal fade" id="Alert012" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        aria-labelledby="staticBackdropLabel">
         <!-- 2025-03-19 : 중앙 정렬 추가 modal-dialog-centered -->
         <div class="modal-dialog alert modal-dialog-centered">
             <div class="modal-content">
@@ -145,7 +150,7 @@
     <!--// Modal end -->
     <!-- Modal start : Alert014-->
     <div class="modal fade" id="Alert014" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        aria-labelledby="staticBackdropLabel">
         <!-- 2025-03-19 : 중앙 정렬 추가 modal-dialog-centered -->
         <div class="modal-dialog alert modal-dialog-centered">
             <div class="modal-content">
@@ -166,7 +171,7 @@
     <!--// Modal end -->
     <!-- Modal start : Alert024-->
     <div class="modal fade" id="Alert024" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        aria-labelledby="staticBackdropLabel">
         <!-- 2025-03-19 : 중앙 정렬 추가 modal-dialog-centered -->
         <div class="modal-dialog alert modal-dialog-centered">
             <div class="modal-content">
@@ -186,6 +191,16 @@
         </div>
     </div>
     <!--// Modal end -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modals = document.querySelectorAll('.modal');
+            
+            modals.forEach(modal => {
+                const modalInstance = new bootstrap.Modal(modal);
+                modalInstance.hide();
+            });
+        });
+    </script>
 </body>
 
 </html>
