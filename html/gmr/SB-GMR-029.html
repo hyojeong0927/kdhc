@@ -55,8 +55,8 @@
                         { "name": "사용자 관리", "url": "#" },
                         { "name": "공통코드 관리", "url": "#" },
                         { "name": "인사이동 관리", "url": "#"  },
-                        { "name": "USB 저장매체 사용현황", "url": "#", "active": true },
-                        { "name": "스티커 이용내역", "url": "#" }
+                        { "name": "USB 저장매체 사용현황", "url": "#" },
+                        { "name": "스티커 이용내역", "url": "#", "active": true }
                         ]'></aside>
                 <!--// 사이드 영역 -->
 
@@ -65,7 +65,7 @@
                     <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
                         data-breadcrumb='[
                             { "name": "관리자", "url": "#" },
-                            { "name": "USB 저장매체 사용현황", "url": "", "active": true }
+                            { "name": "스티커 이용내역", "url": "", "active": true }
                         ]'
                         data-visible="false">
                     </nav> 
@@ -76,7 +76,7 @@
 
                         <!-- page title start -->
                         <div class="page-title-wrap" 
-                            data-title="USB 저장매체 사용현황" 
+                            data-title="스티커 이용내역" 
                             data-badge=""
                             data-badge-visible="false">
                         </div>
@@ -128,31 +128,37 @@
                                             <!--// col -->
                                             <!-- col -->
                                             <div class="col">
-                                                <div class="form-label w-110r">클린PC<br />자산관리 번호</div>
+                                                <div class="form-label w-110r">사용자</div>
                                                 <div class="form-group">
                                                     <!-- input-group is-error : 에러-->
                                                     <div class="input-group">
-                                                        <input type="text" id="input-text" class="form-control" placeholder="클린PC 자산관리 번호" value="">
-                                                        <label for="input-text" class="hidden">클린PC 자산관리 번호</label>
+                                                        <input type="text" id="input-text" class="form-control" placeholder="사용자" value="">
+                                                        <label for="input-text" class="hidden">사용자</label>
                                                     </div>
                                                     <!--// input group -->
-                                                    <!-- 에러 문구 -->
+                                                    <!-- 에러 문구 : hidden -->
                                                     <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
                                             <!--// col -->
                                             <!-- col -->
-                                            <div class="col">
-                                                <div class="form-label w-110r">클린PC<br />시스템 명</div>
+                                            <div class="col align-center">
+                                                <div class="form-label w-110r">사용여부</div>
                                                 <div class="form-group">
-                                                    <!-- input-group is-error : 에러-->
-                                                    <div class="input-group">
-                                                        <input type="text" id="input-text" class="form-control" placeholder="클린PC 시스템 명" value="">
-                                                        <label for="input-text" class="hidden">클린PC 시스템 명</label>
+                                                    <!-- form-check-group -->
+                                                    <div class="form-check-group">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" id="radio03" name="drone2" value="radio03" checked />
+                                                            <label for="radio03">YES</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" id="radio04" name="drone2" value="radio04" />
+                                                            <label for="radio04">NO</label>
+                                                        </div>
                                                     </div>
-                                                    <!--// input group -->
-                                                    <!-- 에러 문구 -->
+                                                    <!--// form-check-group -->
+                                                    <!-- 에러 문구 : hidden -->
                                                     <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
                                                 </div>
@@ -171,45 +177,45 @@
                                                         <label for="input-text" class="hidden">지사</label>
                                                     </div>
                                                     <!--// input group -->
-                                                    <!-- 에러 문구 -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
                                                     <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
                                             <!--// col -->
                                             <!-- col -->
-                                            <div class="col">
-                                                <div class="form-label w-110r">휴대용 저장매체<br />자산관리번호</div>
+                                            <div class="col align-center">
+                                                <div class="form-label w-110r">클린PC 자산관리 번호</div>
                                                 <div class="form-group">
                                                     <!-- input-group is-error : 에러-->
                                                     <div class="input-group">
-                                                        <input type="text" id="input-text" class="form-control" placeholder="휴대용 저장매체 자산관리번호" value="">
-                                                        <label for="input-text" class="hidden">휴대용 저장매체 자산관리번호</label>
+                                                        <input type="text" id="input-text" class="form-control" placeholder="클린PC 자산관리 번호" value="">
+                                                        <label for="input-text" class="hidden">클린PC 자산관리 번호</label>
                                                     </div>
                                                     <!--// input group -->
-                                                    <!-- 에러 문구 : hidden -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--// col -->
+                                            <!-- col -->
+                                            <div class="col align-center">
+                                                <div class="form-label w-110r">휴대용 저장매체 자산관리번호</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error : 에러-->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="클린PC 시스템 명" value="">
+                                                        <label for="input-text" class="hidden">클린PC 시스템 명</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
                                                     <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
                                             <!--// col -->
                                             
-                                            <!-- col -->
-                                            <div class="col">
-                                                <div class="form-label w-110r">사용자</div>
-                                                <div class="form-group">
-                                                    <!-- input-group is-error : 에러-->
-                                                    <div class="input-group">
-                                                        <input type="text" id="input-text" class="form-control" placeholder="사용자" value="">
-                                                        <label for="input-text" class="hidden">사용자</label>
-                                                    </div>
-                                                    <!--// input group -->
-                                                    <!-- 에러 문구 : hidden -->
-                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                    <!--// 에러 문구 -->
-                                                </div>
-                                            </div>
-                                            <!--// col -->
                                         </div>
                                        
                                         <!-- row -->
@@ -279,35 +285,50 @@
             {
                 field01: "",
                 field02: "화성-0001",
-                field03: "Y",
+                field03: "홍길동",
                 field04: "ㅇㅇ-매체-001",
                 field05: "2024.12.10",
                 field06: "12:00",
                 field07: "2024.12.10",
                 field08: "12:20",
-                field09: "시스템 점검",
+                field09: "Y",
+                field10: "시스템 점검",
             },
             {
                 field01: "",
                 field02: "화성-0001",
-                field03: "Y",
+                field03: "홍길동",
                 field04: "ㅇㅇ-매체-001",
                 field05: "2024.12.10",
                 field06: "12:00",
                 field07: "2024.12.10",
                 field08: "12:20",
-                field09: "시스템 점검",
+                field09: "Y",
+                field10: "시스템 점검",
             },
             {
                 field01: "",
                 field02: "화성-0001",
-                field03: "Y",
+                field03: "홍길동",
                 field04: "ㅇㅇ-매체-001",
                 field05: "2024.12.10",
                 field06: "12:00",
                 field07: "2024.12.10",
                 field08: "12:20",
-                field09: "시스템 점검",
+                field09: "N",
+                field10: "시스템 점검",
+            },
+            {
+                field01: "",
+                field02: "화성-0001",
+                field03: "홍길동",
+                field04: "ㅇㅇ-매체-001",
+                field05: "2024.12.10",
+                field06: "12:00",
+                field07: "2024.12.10",
+                field08: "12:20",
+                field09: "N",
+                field10: "시스템 점검",
             },
         ];
         const columnDefs = [
@@ -327,7 +348,7 @@
                 cellClass: "cell-normal",
             },
             {
-                headerName: "사용여부",
+                headerName: "사용자",
                 headerClass: "center",
                 field: "field03",
                 width: 100,
@@ -370,9 +391,16 @@
                 cellClass: "cell-normal",
             },
             {
-                headerName: "제거 사유",
+                headerName: "사용여부",
                 headerClass: "center",
                 field: "field09",
+                width: 100,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "제거 사유",
+                headerClass: "center",
+                field: "field10",
                 minWidth: 180,
                 flex: 1,
                 cellClass: "cell-normal",

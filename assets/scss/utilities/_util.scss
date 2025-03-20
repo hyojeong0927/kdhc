@@ -2,33 +2,44 @@
 ========================================================================== */
 
 // Spacing start
+// margin
 .mt-0 {
-    margin-top: 0 !important;
-  }
-  
-  .ms-1 {
-    margin-left: ($spacer * .25) !important;
-  }
-  
-  .px-2 {
-    padding-left: ($spacer * .5) !important;
-    padding-right: ($spacer * .5) !important;
-  }
-  
-  .p-3 {
-    padding: $spacer !important;
-  }
+  margin-top: 0 !important;
+}
+.ms-1 {
+  margin-left: ($spacer * .25) !important;
+}  
+// padding
+.px-2 {
+  padding-left: ($spacer * .5) !important;
+  padding-right: ($spacer * .5) !important;
+}
+.p-3 {
+  padding: $spacer !important;
+}
 // Spacing end
 
-// width
+// width %
 .w-100 {
   width: 100% !important;
+}
+.w-40 {
+  flex: 0 0 40% !important;
+  width: 40% !important;
+  min-width: 40% !important;
+}
+.w-45 {
+  flex: 0 0 45% !important;
+  width: 45% !important;
+  min-width: 45% !important;
 }
 .w-50 {
   flex: 0 0 50% !important;
   width: 50% !important;
   min-width: 50% !important;
 }
+
+// rem
 .w-40r {
   flex: 0 0 rem(40px) !important;
   width: rem(40px) !important;
@@ -110,4 +121,19 @@
 .w-348 {
   flex: none !important;
   width: rem(348px) !important;
+}
+// form width rem
+.w-f50 {
+  flex: 0 0 calc(50% - rem(40px)) !important;
+  width: calc(50% - rem(40px)) !important;
+  min-width: calc(50% - rem(40px)) !important;
+}
+.w-f110 {
+  flex: 0 0 rem(110px) !important;
+  width: rem(110px) !important;
+  min-width: rem(110px) !important;
+}
+// flex
+.align-center {
+  align-items: center !important;
 }

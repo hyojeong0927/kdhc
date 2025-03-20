@@ -80,20 +80,21 @@
                         <!--// page title end -->
 
                         <!-- 팝업 호출 버튼 -->
-                        <button type="button" id="large-btn" class="btn btn-primary btn-lg">
+                        <button type="button" id="popup01" class="btn btn-primary btn-lg">
                             사용자 등록/수정/삭제
                         </button>
                         <!--// 팝업 호출 버튼 -->
                         
                         <!-- popup script -->
                         <script type="module">
-                            import { setupPopupListeners } from '../../assets/js/components/popup.js';
+                            import { openCenteredPopup } from '../../assets/js/components/popup.js';
 
-                            const urlList = {
-                                large: './popup/SB-GMR-020.html',
-                            };
-
-                            setupPopupListeners(urlList);
+                            document.addEventListener('DOMContentLoaded', () => {
+                                document.getElementById('popup01').addEventListener('click', () => {
+                                    const url = './popup/SB-GMR-020.html';
+                                    openCenteredPopup(url, 1440, 463);
+                                });
+                            });
                         </script>
                         <!--// popup script -->
 
