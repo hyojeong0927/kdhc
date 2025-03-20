@@ -27,7 +27,7 @@
                 @include flex(true, "center", "baseline", rem(17px));
                 padding: rem(8px) rem(23px) rem(23px);
                 width: 100%;
-                color: $primary;
+                color: $secondary;
                 border-radius: $radius-md;
                 box-shadow: $dashboard-sum-box-shadow;
                 backdrop-filter: blur(1.5px);
@@ -212,13 +212,13 @@
             }
             dt {
                 flex: 1;
-                color: $primary;
+                color: $secondary;
                 @include font-style($font-size-lg, $font-weight-medium, $line-height-base);
             }
             dd {
                 @include flex(true, "end", "center", rem(4px));
                 .num {
-                    color: $primary;
+                    color: $secondary;
                     @include font-style($font-size-xlg, $font-weight-bold, $line-height-base);
                     letter-spacing: normal;
                 }
