@@ -14,9 +14,14 @@
 </head>
 
 <body>
-    <div id="pop-wrap" class="kdhc-pop-wrap approval">
+    <!-- loader -->
+    <div class="loader-wrap">
+        <div class="loader">진행중</div>
+    </div>
+    <!--// loader -->
+    <div id="pop-wrap" class="kdhc-pop-wrap small">
         <header class="kdhc-pop-header">
-            <h1 class="pop-title" id="staticBackdropLabel">전자결재</h1>
+            <h1 class="pop-title" id="staticBackdropLabel">스티커번호관리</h1>
             <button type="button" class="btn-close" aria-label="Close" onclick="window.close()"></button>
         </header>
         <!-- 팝업 컨테이너 영역 -->
@@ -24,76 +29,32 @@
             <div class="inner">
                 <!-- 팝업 컨텐츠 영역 -->
                 <div class="contents">
-                    <!-- input-form -->
-                    <div class="input-form-area">
-                        <form>
-                            <fieldset>
-                                <!-- form-wrap start -->
-                                <div class="form-wrap type04">
-                                    <!-- row -->
-                                    <div class="form-row">
-                                        <!-- col -->
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <div class="select-group">
-                                                    <select class="form-select" aria-label="Default select" required>
-                                                        <option value="">선택</option>
-                                                        <option value="1" selected>반려</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
-                                                    </select>
-                                                </div>
-                                                <!-- 에러 문구 : hidden -->
-                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                <!--// 에러 문구 -->
-                                            </div>
-                                        </div>
-                                        <!--// col  -->
-                                    </div>
-                                    <div class="form-row">
-                                        <!-- col -->
-                                        <div class="col">
-                                            <div class="form-label" aria-required="true">사번</div>
-                                            <div class="form-group">
-                                                <!-- input group : class="input-groupis-error" -->
-                                                <div class="input-group">
-                                                    <input type="text" id="input-text" class="form-control" placeholder="사번 입력" value="">
-                                                    <label for="input-text" class="hidden">사번</label>
-                                                </div>
-                                                <!--// input group -->
-                                                <!-- 에러 문구 : hidden -->
-                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                <!--// 에러 문구 -->
-                                            </div>
-                                        </div>
-                                        <!--// col  -->
-                                    </div>
-                                    <!--// row -->
-                                    <div class="form-row">
-                                        <!-- col -->
-                                        <div class="col">
-                                            <div class="form-label" aria-required="true">비밀번호</div>
-                                            <div class="form-group">
-                                                <!-- input group : class="input-groupis-error" -->
-                                                <div class="input-group">
-                                                    <input type="password" id="input-text" class="form-control" placeholder="비밀번호 입력" value="">
-                                                    <label for="input-text" class="hidden">비밀번호</label>
-                                                </div>
-                                                <!--// input group -->
-                                                <!-- 에러 문구 : hidden -->
-                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                <!--// 에러 문구 -->
-                                            </div>
-                                        </div>
-                                        <!--// col  -->
-                                    </div>
-                                    <!--// row -->
-                                </div>
-                                <!-- form-wrap end -->
-                            </fieldset>
-                        </form>
-                    </div>
-                    <!--// input-form -->
+                    <!-- grid top start -->
+                    <article class="grid-top-area">
+                        <!-- grid top left start -->
+                        <div class="grid-top-left">
+                            <select class="form-select sm" aria-label="Default select" required>
+                                <option value="">선택</option>
+                                <option value="10" selected>10개씩 보기</option>
+                                <option value="20">20개씩 보기</option>
+                                <option value="30">30개씩 보기</option>
+                                <option value="50">50개씩 보기</option>
+                            </select>
+                        </div>
+                        <!--// grid top left end -->
+                    
+                        <!-- grid top button start -->
+                        <div class="grid-top-btn"
+                            data-buttons='[{"text": "조회", "class": "btn btn-secondary btn-sm"}]'>
+                        </div>
+                        <!--// grid top button end -->
+                    </article>
+                    <!--// grid top end -->
+                    <!-- grid wrap start -->
+                    <article class="grid-wrap">
+                        <div id="sampleGrid" class="normal"></div>
+                    </article>
+                    <!--// grid wrap end -->
                 </div>
                 <!--// 팝업 컨텐츠 영역 -->
             </div>
@@ -101,11 +62,131 @@
         <!--// 팝업 컨테이너 영역 -->
         <footer class="kdhc-pop-footer">
             <div class="inner">
-                <button type="button" class="btn btn-secondary btn-md">결재</button>
+                <button type="button" class="btn btn-outline btn-md">저장</button>
             </div>
         </footer>
     </div>
     <!-- script wrap -->
+    <script type="module">
+        const rowData = [
+            { field01: "001", field02: "Y", field03: "분실" },
+            { field01: "002", field02: "Y", field03: "정상" },
+            { field01: "003", field02: "N", field03: "정상" },
+            { field01: "004", field02: "N", field03: "정상" },
+            { field01: "005", field02: "N", field03: "정상" },
+            { field01: "006", field02: "N", field03: "정상" },
+            { field01: "007", field02: "N", field03: "정상" },
+        ];
+        const columnDefs = [
+            {
+                headerName: "스티커번호",
+                headerClass: "center",
+                field: "field01",
+                minWidth: 120,
+                flex: 1,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "사용여부",
+                headerClass: "center",
+                field: "field02",
+                width: 120,
+                cellClass: "cell-normal input",
+                cellRenderer: (params) => {
+                    const value = params.value;
+                    if (value === "Y") {
+                        return `
+                            <!-- select-group -->
+                            <div class="select-group">
+                                <select class="form-select" aria-label="Default select" required>
+                                    <option value="">선택</option>
+                                    <option value="Y" selected>Y</option>
+                                    <option value="N">N</option>
+                                </select>
+                            </div>
+                            <!--// select-group -->
+                        `;
+                    } else if (value === "N") {
+                        return `
+                            <!-- select-group -->
+                            <div class="select-group">
+                                <select class="form-select" aria-label="Default select" required>
+                                    <option value="">선택</option>
+                                    <option value="Y">Y</option>
+                                    <option value="N" selected>N</option>
+                                </select>
+                            </div>
+                            <!--// select-group -->
+                        `;
+                    }
+                }
+            },
+            {
+                headerName: "사유",
+                headerClass: "center",
+                field: "field03",
+                width: 150,
+                cellClass: "cell-normal input",
+                cellRenderer: (params) => {
+                    const value = params.value;
+                    if (value === "분실") {
+                        return `
+                            <!-- select-group -->
+                            <div class="select-group">
+                                <select class="form-select" aria-label="Default select" required>
+                                    <option value="">선택</option>
+                                    <option value="분실" selected>분실</option>
+                                    <option value="정상">정상</option>
+                                </select>
+                            </div>
+                            <!--// select-group -->
+                        `;
+                    } else if (value === "정상") {
+                        return `
+                            <!-- select-group -->
+                            <div class="select-group">
+                                <select class="form-select" aria-label="Default select" required>
+                                    <option value="">선택</option>
+                                    <option value="분실">분실</option>
+                                    <option value="정상" selected>정상</option>
+                                </select>
+                            </div>
+                            <!--// select-group -->
+                        `;
+                    } else {
+                        return value;
+                    }
+                    
+                }
+            },
+        ];
+        let sampleGridApi;
+
+        const sampleGridOptions = {
+            defaultColDef: {
+                editable: true, // edit 사용 유무
+                autoHeight: true,
+                sortable: true, // sort 사용 유무
+            },
+            columnDefs,
+            headerHeight: 41, // header height
+            rowData: rowData,
+            rowHeight: 47, // row height // 2025-02-19 수정
+            rowSelection: { // row checkbox
+                mode: "multiRow",
+                groupSelects: "descendants",
+                selectAll: 'filtered',
+                width: 52,
+            },
+            domLayout: "autoHeight", // 2025-02-19 추가 옵션
+            suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
+
+            // data empty style
+            overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
+        };
+        const sampleGridDiv = document.querySelector("#sampleGrid");
+        sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
+    </script>
     <!--// script wrap -->
 </body>
 
