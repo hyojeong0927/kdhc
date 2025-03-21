@@ -267,8 +267,8 @@
         }
         .link {
             cursor: pointer;
-            color: inherit;
-            text-decoration: none;
+            color: $primary;
+            text-decoration: underline;
         }
     }
 }
