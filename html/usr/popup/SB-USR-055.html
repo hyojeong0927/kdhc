@@ -277,6 +277,7 @@
                 field11: "",
                 field12: "",
                 field13: "",
+                field14: "",
             },
             {
                 field01: "",
@@ -292,6 +293,7 @@
                 field11: "점검자",
                 field12: "",
                 field13: "",
+                field14: "",
             },
         ];
         const columnDefs = [
@@ -527,6 +529,16 @@
                 width: 120,
                 editable: true,
                 cellClass: "cell-normal",
+            },
+            {
+                headerName: "삭제",
+                headerClass: "center",
+                field: "field14",
+                width: 100,
+                cellClass: "cell-normal",
+                cellRenderer: params => {
+                    return '<button type="button" class="btn btn-icon"><i class="icon del-trash" /></button>';
+                }
             },
         ];
         let sampleGridApi;

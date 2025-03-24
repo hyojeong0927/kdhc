@@ -15,7 +15,7 @@
 <body>
     <div id="pop-wrap" class="kdhc-pop-wrap">
         <header class="kdhc-pop-header">
-            <h1 class="pop-title">자산관리 상세 등록/수정</h1>
+            <h1 class="pop-title">계정관리관리 등록</h1>
             <button type="button" class="btn-close" aria-label="Close" onclick="window.close()"></button>
         </header>
         <!-- 팝업 컨테이너 영역 -->
@@ -26,9 +26,9 @@
                     <!-- breadcrumbs start -->
                     <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
                         data-breadcrumb='[
-                            { "name": "정보자산", "url": "#" },
-                            { "name": "정보보자산관리", "url": "#" },
-                            { "name": "자산관리 상세 등록/수정", "url": "", "active": true }
+                            { "name": "기술보안", "url": "#" },
+                            { "name": "계정관리관리", "url": "#" },
+                            { "name": "계정관리관리 등록", "url": "", "active": true }
                         ]'
                         data-visible="true">
                     </nav>
@@ -226,17 +226,16 @@
                 field02: "시스템 명",
                 field03: "",
                 field04: "",
-                field05: "2025-01-20",
+                field05: "",
                 field06: "",
-                field07: "2025-01-20",
+                field07: "",
                 field08: "",
                 field09: "111.111.111",
-                field10: "2025-01-20",
-                field11: "홍길동",
+                field10: "",
+                field11: "",
                 field12: "",
-                field13: "",
+                field13: "checked",
                 field14: "",
-                field15: "",
             },
             {
                 field01: "",
@@ -253,7 +252,6 @@
                 field12: "",
                 field13: "",
                 field14: "",
-                field15: "",
             },
         ];
         const columnDefs = [
@@ -514,27 +512,23 @@
                 headerName: "점검여부",
                 headerClass: "center",
                 field: "field13",
-                width: 180,
+                width: 100,
                 editable: false,
                 cellClass: "cell-normal",
+                cellEditor: 'agCheckboxCellEditor',
                 cellRenderer: params => {
                     return `
-                        <input type="checkbox" id="btntype" value="" class="btn btn-grid" />
-                        <label for="btntype">점검 확인</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" ${params.value ? 'checked' : ''}>
+                            <label class="form-check-label hidden" for="flexCheckDefault1">default</label>
+                        </div>
                     `;
                 }
             },
             {
-                headerName: "점검상태",
-                headerClass: "center",
-                field: "field14",
-                width: 180,
-                cellClass: "cell-normal",
-            },
-            {
                 headerName: "삭제",
                 headerClass: "center",
-                field: "field15",
+                field: "field14",
                 width: 100,
                 cellClass: "cell-normal",
                 cellRenderer: params => {

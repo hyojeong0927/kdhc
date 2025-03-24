@@ -307,6 +307,7 @@
                 field10: "",
                 field11: "",
                 field12: "",
+                field13: "",
             },
         ];
         const columnDefs = [
@@ -483,6 +484,16 @@
                             <label class="form-check-label hidden" for="flexCheckDefault1">default</label>
                         </div>
                     `;
+                }
+            },
+            {
+                headerName: "삭제",
+                headerClass: "center",
+                field: "field14",
+                width: 100,
+                cellClass: "cell-normal",
+                cellRenderer: params => {
+                    return '<button type="button" class="btn btn-icon"><i class="icon del-trash" /></button>';
                 }
             },
         ];

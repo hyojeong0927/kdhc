@@ -158,6 +158,7 @@
             }
             &.depth2 {
                 a {
+                    max-width: rem(230px);
                     font-weight: $font-weight-normal;
                 }
                 .tree-doc {
