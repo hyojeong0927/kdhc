@@ -131,7 +131,7 @@
                                                 <div class="form-group">
                                                     <!-- input search group start -->
                                                     <div class="input-search-group">
-                                                        <input type="search" class="form-control" id="search2" value="" placeholder="기안자 입력">
+                                                        <input type="search" class="form-control" id="search2" value="" placeholder="입력">
                                                         <label class="input-group-text hidden" for="search2"><i class="icon search"></i></label>
                                                     </div>
                                                     <!--// input search group end -->
@@ -148,13 +148,14 @@
                                                     <!-- select-group is-error -->
                                                     <div class="select-group">
                                                         <select class="form-select" aria-label="Default select" required>
-                                                            <option value="" selected>선택</option>
-                                                            <option value="1">One</option>
+                                                            <option value="">선택</option>
+                                                            <option value="1" selected>전체</option>
                                                             <option value="2">Two</option>
                                                             <option value="3">Three</option>
                                                         </select>
                                                     </div>
-                                                    <!--// form select group -->
+                                                    <!--// select-group -->
+                                                   
                                                     <!-- 에러 문구 : hidden -->
                                                     <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
                                                     <!--// 에러 문구 -->
@@ -232,89 +233,103 @@
     <script type="module">
         const rowData = [
             {
-                field01: "홍길동",
-                field02: "6",
-                field03: "2024.12.10 ~ 2024.12.12",
+                field01: "판교",
+                field02: "홍길동",
+                field03: "6",
                 field04: "2024.12.10 ~ 2024.12.12",
-                field05: "step01",
+                field05: "2024.12.10 ~ 2024.12.12",
+                field06: "step01",
             },
             {
-                field01: "홍길동",
-                field02: "6",
-                field03: "2024.12.10 ~ 2024.12.12",
+                field01: "판교",
+                field02: "홍길동",
+                field03: "6",
                 field04: "2024.12.10 ~ 2024.12.12",
-                field05: "step01 reject",
+                field05: "2024.12.10 ~ 2024.12.12",
+                field06: "step01 reject",
             },
             {
-                field01: "홍길동",
-                field02: "6",
-                field03: "2024.12.10 ~ 2024.12.12",
+                field01: "판교",
+                field02: "홍길동",
+                field03: "6",
                 field04: "2024.12.10 ~ 2024.12.12",
-                field05: "step02",
+                field05: "2024.12.10 ~ 2024.12.12",
+                field06: "step02",
             },
             {
-                field01: "홍길동",
-                field02: "6",
-                field03: "2024.12.10 ~ 2024.12.12",
+                field01: "판교",
+                field02: "홍길동",
+                field03: "6",
                 field04: "2024.12.10 ~ 2024.12.12",
-                field05: "step02 reject",
+                field05: "2024.12.10 ~ 2024.12.12",
+                field06: "step02 reject",
             },
             {
-                field01: "홍길동",
-                field02: "6",
-                field03: "2024.12.10 ~ 2024.12.12",
+                field01: "판교",
+                field02: "홍길동",
+                field03: "6",
                 field04: "2024.12.10 ~ 2024.12.12",
-                field05: "step03",
+                field05: "2024.12.10 ~ 2024.12.12",
+                field06: "step03",
             },
             {
-                field01: "홍길동",
-                field02: "6",
-                field03: "2024.12.10 ~ 2024.12.12",
+                field01: "판교",
+                field02: "홍길동",
+                field03: "6",
                 field04: "2024.12.10 ~ 2024.12.12",
-                field05: "step03 reject",
+                field05: "2024.12.10 ~ 2024.12.12",
+                field06: "step03 reject",
             },
             {
-                field01: "홍길동",
-                field02: "6",
-                field03: "2024.12.10 ~ 2024.12.12",
+                field01: "판교",
+                field02: "홍길동",
+                field03: "6",
                 field04: "2024.12.10 ~ 2024.12.12",
-                field05: "done",
+                field05: "2024.12.10 ~ 2024.12.12",
+                field06: "done",
             },
         ];
         const columnDefs = [
             {
-                headerName: "기안자",
+                headerName: "지사",
                 headerClass: "center",
                 field: "field01",
-                width: 200,
+                width: 100,
                 cellClass: "cell-normal",
             },
             {
-                headerName: "인사이동 수",
+                headerName: "기안자",
                 headerClass: "center",
                 field: "field02",
                 width: 200,
                 cellClass: "cell-normal",
             },
             {
-                headerName: "기안일자",
+                headerName: "인사이동 수",
                 headerClass: "center",
                 field: "field03",
                 width: 200,
                 cellClass: "cell-normal",
             },
             {
-                headerName: "결재일자",
+                headerName: "기안일자",
                 headerClass: "center",
                 field: "field04",
                 width: 200,
                 cellClass: "cell-normal",
             },
             {
-                headerName: "결재/승인 상태",
+                headerName: "결재일자",
                 headerClass: "center",
                 field: "field05",
-                minWidth: 600,
+                width: 200,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "결재/승인 상태",
+                headerClass: "center",
+                field: "field06",
+                minWidth: 400,
                 flex: 1,
                 cellClass: "cell-normal",
                 cellRenderer: (params) => {

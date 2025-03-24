@@ -223,6 +223,14 @@
 }
 
 // empty
+.ag-overlay {
+    position: relative;
+    margin-top: rem(-41px);
+    height: rem(120px);
+    .ag-overlay-wrapper {
+        padding-top: 0 !important;
+    }
+}
 .empty {
     @include flex(false, "center", "center", rem(16px));
     width: 100%;

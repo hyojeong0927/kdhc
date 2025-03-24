@@ -47,6 +47,7 @@
                 <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
                 <aside id="sidebar" class="sidebar" data-menu='[
                         { "name": "popup", "url": "#" },
+                        { "name": "전자결재", "url": "#" },
                         { "name": "alert", "url": "#" },
                         { "name": "loader", "url": "#" },
                         { "name": "error", "url": "#" }]'></aside>
@@ -91,12 +92,6 @@
                         <button type="button" id="popup07" class="btn btn-primary btn-lg">
                             스티커번호관리
                         </button>
-                        <button type="button" id="elecPayment" class="btn btn-primary btn-lg">
-                            전자결재
-                        </button>
-                        <button type="button" id="elecPaymentReject" class="btn btn-primary btn-lg">
-                            전자결재 : 반려
-                        </button>
                         <!--// 팝업 호출 버튼 -->
                         
                         <!-- popup script -->
@@ -131,14 +126,6 @@
                                 document.getElementById('popup07').addEventListener('click', () => {
                                     const url = './popup/popup-007.html';
                                     openCenteredPopup(url, 600, 600);
-                                });
-                                document.getElementById('elecPayment').addEventListener('click', () => {
-                                    const url = './popup/elecPayment.html';
-                                    openCenteredPopup(url, 400, 404);
-                                });
-                                document.getElementById('elecPaymentReject').addEventListener('click', () => {
-                                    const url = './popup/elecPaymentReject.html';
-                                    openCenteredPopup(url, 400, 663);
                                 });
                             });
                         </script>

@@ -269,5 +269,20 @@ const menu06Projects = [
         design: "O",
         dev: "2025-02-17",
     },
+    {
+        id: "SB-USR-086",
+        depth1: "공통",
+        depth2: "전자결재",
+        depth3: "",
+        type: "pop",
+        folder: "usr",
+        file: "SB-USR-086.html",
+        status: "완료",
+        start: "",
+        end: "",
+        modDate: "",
+        design: "O",
+        dev: "",
+    },
 ];
 export default menu06Projects;
