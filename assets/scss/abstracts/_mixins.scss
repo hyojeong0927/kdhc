@@ -327,6 +327,8 @@
             background-size: rem(16px);
         }
         .txt {
+            display: flex;
+            align-items: center;
             font-size: rem(12px);
             line-height: rem(14.4px);
             letter-spacing: -3%;
