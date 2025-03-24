@@ -209,7 +209,7 @@ document.addEventListener("click", (event) => {
     const field = button.dataset.field;
     
     const isInspectionResult = field === "field05";
-    const popupUrl = isInspectionResult ? "./SB-USR-057_02.html" : "./SB-USR-057_03.html";
+    const popupUrl = isInspectionResult ? "./grid-pop-01.html" : "./grid-pop-02.html";
 
     const width = 600;
     const height = 300;

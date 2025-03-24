@@ -9,6 +9,7 @@
     <!-- script -->
     <script src="../../../assets/js/vendors/jquery-3.7.1.min.js"></script>
     <script src="../../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script src="../../../assets/js/vendors/ag-charts-community.js"></script>
     <script type="module" src="../../../assets/js/common.js"></script>
 </head>
 <body>
@@ -16,6 +17,13 @@
         <div class="title">
 			<h3>Chart</h3>
 		</div>
+        <div id="statusChart" style="width: 100%; height: 100%;"></div>
+        <div id="vaccineChart" style="width: 100%; height: 100%;"></div>
     </article>
+    <!-- script wrap -->
+    <script type="module">
+        import { chartOptions } from "../../../html/home/chart/index.js"
+    </script>
+    <!--// script wrap -->
 </body>
 </html>
