@@ -18,28 +18,80 @@
         <div class="title">
             <h3>Sidebar</h3>
         </div>
-        <!-- 사이드 영역 -->
-        <aside id="sidebar" class="sidebar">
-            <div class="sidebar-top-btn">
-                <button id="toggleButton" class="btn-toggle" aria-label="사이드바 열고 닫기">
-                    <i id="menuIcon" class="icon arrow-close"></i>
-                </button>
+        <div style="display: flex; align-items: flex-start;">
+            <div style="margin-right: auto; width: 280px;">
+                <!-- 사이드 영역 -->
+                <aside id="sidebar" class="sidebar">
+                    <div class="sidebar-top-btn">
+                        <button id="toggleButton" class="btn-toggle" aria-label="사이드바 열고 닫기">
+                            <i id="menuIcon" class="icon arrow-close"></i>
+                        </button>
+                    </div>
+                    <nav class="sidebar-menu">
+                        <!-- lnb title : 웹접근성으로 인해 넣고 숨김 처리 되어 있음 -->
+                        <h2 class="lnb-tit" data-main-title="관리보안">관리보안</h2>
+                        <!--// lnb title  -->
+                        <ul class="lnb-list">
+                            <li class="lnb-item">
+                                <a href="#" class="lnb-btn lnb-link" data-sub-title="월간사이버보안점검">월간사이버보안점검</a>
+                            </li>
+                            <li class="lnb-item">
+                                <a href="#" class="lnb-btn lnb-link" data-sub-title="클린PC 점검">클린PC 점검</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+                <!--// 사이드 영역 -->
             </div>
-            <nav class="sidebar-menu">
-                <!-- lnb title : 웹접근성으로 인해 넣고 숨김 처리 되어 있음 -->
-                <h2 class="lnb-tit" data-main-title="관리보안">관리보안</h2>
-                <!--// lnb title  -->
-                <ul class="lnb-list">
-                    <li class="lnb-item">
-                        <a href="#" class="lnb-btn lnb-link" data-sub-title="월간사이버보안점검">월간사이버보안점검</a>
-                    </li>
-                    <li class="lnb-item">
-                        <a href="#" class="lnb-btn lnb-link" data-sub-title="클린PC 점검">클린PC 점검</a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-        <!--// 사이드 영역 -->
+            <div style="margin-left: auto; width: calc(100% - 300px);">
+                <div class="cont-box" style="padding-top: 0;">
+<textarea style="margin-top: 0; height: 410px;">
+<!-- 사이드 영역 -->
+<aside id="sidebar" class="sidebar">
+    <div class="sidebar-top-btn">
+        <button id="toggleButton" class="btn-toggle" aria-label="사이드바 열고 닫기">
+            <i id="menuIcon" class="icon arrow-close"></i>
+        </button>
+    </div>
+    <nav class="sidebar-menu">
+        <!-- lnb title : 웹접근성으로 인해 넣고 숨김 처리 되어 있음 -->
+        <h2 class="lnb-tit" data-main-title="관리보안">관리보안</h2>
+        <!--// lnb title  -->
+        <ul class="lnb-list">
+            <li class="lnb-item">
+                <a href="#" class="lnb-btn lnb-link" data-sub-title="월간사이버보안점검">월간사이버보안점검</a>
+            </li>
+            <li class="lnb-item">
+                <a href="#" class="lnb-btn lnb-link" data-sub-title="클린PC 점검">클린PC 점검</a>
+            </li>
+        </ul>
+    </nav>
+</aside>
+<!--// 사이드 영역 -->
+</textarea>                    
+<textarea style="height: 365px;">
+<!-- 사이드 영역 -->
+<script type="module" src="../../assets/js/layouts/sidebar.js"></script>
+<aside id="sidebar" class="sidebar" data-menu='[
+    { "name": "공지사항 관리", "url": "#" },
+    { "name": "정기점검 관리", "url": "#" },
+    { "name": "일반점검 관리", "url": "#" },
+    { "name": "지침 및 매뉴얼 관리", "url": "#" },
+    { "name": "메뉴 관리", "url": "#" },
+    { "name": "권한별 메뉴 관리", "url": "#" },
+    { "name": "페이지 관리", "url": "#" },
+    { "name": "사용자 관리", "url": "#", "active": true },
+    { "name": "공통코드 관리", "url": "#" },
+    { "name": "인사이동 관리", "url": "#" },
+    { "name": "USB 저장매체 사용현황", "url": "#" },
+    { "name": "스티커 이용내역", "url": "#" }
+    ]'></aside>
+<!--// 사이드 영역 -->
+</textarea>
+                </div>
+            </div>
+        </div>
+        
 
     </article>
 </body>
