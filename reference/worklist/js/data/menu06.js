@@ -271,7 +271,7 @@ const menu06Projects = [
     },
     {
         id: "SB-USR-086",
-        depth1: "공통",
+        depth1: "정보자산",
         depth2: "전자결재",
         depth3: "",
         type: "pop",
