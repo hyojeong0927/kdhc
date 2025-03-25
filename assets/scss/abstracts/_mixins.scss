@@ -122,12 +122,12 @@
 }
 // position
 @mixin postion-center($type: absolute) {
-  @if ($type == fixed or $type == absolute) {
-    position: $type;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+    @if ($type == fixed or $type == absolute) {
+        position: $type;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 // :before, :after
@@ -140,58 +140,51 @@
     $right: 0px,
     $bottom: 0px,
     $left: 0px, 
-    ) {
-        @if $before == true {
-            &::before {
-                content:'';
+) {
+    @if $before == true {
+        &::before {
+            content:'';
 
-                @if $absolute == true {
-                    position: absolute;
-                    top: $top;
-                    right: $right;
-                    bottom: $bottom;
-                    left: $left;
-                } @else {
-                    display: inline-block;
-                }
-            }
-        } @else {
-            &::after {
-                content: '';
-
-                @if $absolute == true {
-                    position: absolute;
-                    top: $top;
-                    right: $right;
-                    bottom: $bottom;
-                    left: $left;
-                } @else {
-                    display: inline-block;
-                }
+            @if $absolute == true {
+                position: absolute;
+                top: $top;
+                right: $right;
+                bottom: $bottom;
+                left: $left;
+            } @else {
+                display: inline-block;
             }
         }
+    } @else {
+        &::after {
+            content: '';
+
+            @if $absolute == true {
+                position: absolute;
+                top: $top;
+                right: $right;
+                bottom: $bottom;
+                left: $left;
+            } @else {
+                display: inline-block;
+            }
+        }
+    }
 }
 // icon
 // @include icon($icon-name, $width, $height, $url)
-@mixin icon (
-  $icon-name,
-  $width,
-  $height,
-  $url,
-) {
-  display: inline-block;
-  padding: 0;
-  background: {
-    size: 100%;
-    position: center;
-    repeat: no-repeat;
-  }
-  box-sizing: content-box;
-  &.#{$icon-name} {
-    width: $width;
-    height: $height;
-    background-image: url($url);
-  }
+@mixin icon ( $icon-name, $width, $height, $url ) {
+    &.#{$icon-name} {
+        width: $width;
+        height: $height;
+        background-image: url($url);
+    }
+    display: inline-block;
+    padding: 0;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: content-box;
 }
 
 // scroll
@@ -246,9 +239,9 @@
 // clearfix
 @mixin clearfix() {
     &::after {
-      display: block;
-      clear: both;
-      content: "";
+        display: block;
+        clear: both;
+        content: "";
     }
 }
 

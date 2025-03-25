@@ -17,6 +17,12 @@
         <div class="title">
 			<h3>Alert</h3>
 		</div>
+        <div class="text-box">
+            <ol>
+                <li>Bootstrap Modal</li>
+                <li>작업 이슈 사항 : arial hidden 사용시 loader와의 충돌로 arial hidden 사용 안함</li>
+            </ol>
+        </div>
         <!-- Alert 호출 버튼 -->
         <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#Alert004">
             Alert - 004
@@ -34,7 +40,7 @@
     </article>
     <!-- Modal start : Alert004-->
     <div class="modal fade" id="Alert004" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        aria-labelledby="staticBackdropLabel">
         <!-- 2025-03-19 : 중앙 정렬 추가 modal-dialog-centered -->
         <div class="modal-dialog alert modal-dialog-centered">
             <div class="modal-content">
@@ -55,7 +61,7 @@
     <!--// Modal end -->
     <!-- Modal start : Alert012-->
     <div class="modal fade" id="Alert012" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        aria-labelledby="staticBackdropLabel">
         <!-- 2025-03-19 : 중앙 정렬 추가 modal-dialog-centered -->
         <div class="modal-dialog alert modal-dialog-centered">
             <div class="modal-content">
@@ -76,7 +82,7 @@
     <!--// Modal end -->
     <!-- Modal start : Alert014-->
     <div class="modal fade" id="Alert014" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        aria-labelledby="staticBackdropLabel">
         <!-- 2025-03-19 : 중앙 정렬 추가 modal-dialog-centered -->
         <div class="modal-dialog alert modal-dialog-centered">
             <div class="modal-content">
@@ -97,7 +103,7 @@
     <!--// Modal end -->
     <!-- Modal start : Alert024-->
     <div class="modal fade" id="Alert024" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        aria-labelledby="staticBackdropLabel">
         <!-- 2025-03-19 : 중앙 정렬 추가 modal-dialog-centered -->
         <div class="modal-dialog alert modal-dialog-centered">
             <div class="modal-content">
@@ -117,5 +123,15 @@
         </div>
     </div>
     <!--// Modal end -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modals = document.querySelectorAll('.modal');
+
+            modals.forEach(modal => {
+                const modalInstance = new bootstrap.Modal(modal);
+                modalInstance.hide();
+            });
+        });
+    </script>
 </body>
 </html>
