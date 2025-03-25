@@ -174,17 +174,17 @@
 // icon
 // @include icon($icon-name, $width, $height, $url)
 @mixin icon ( $icon-name, $width, $height, $url ) {
-    &.#{$icon-name} {
-        width: $width;
-        height: $height;
-        background-image: url($url);
-    }
     display: inline-block;
     padding: 0;
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
     box-sizing: content-box;
+    &.#{$icon-name} {
+        width: $width;
+        height: $height;
+        background-image: url($url);
+    }
 }
 
 // scroll

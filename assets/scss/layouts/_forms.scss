@@ -1,7 +1,6 @@
 /* Forms
 ========================================================================== */
 @use "sass:map";
-@use "sass:list";
 
 $form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
 
@@ -110,17 +109,17 @@ $form-layouts: (
    .form-wrap {
         @each $ft, $values in $form-layouts {
             &.#{$ft} {
-                @if map-has-key($values, grid-template) {
+                @if map.has-key($values, grid-template) {
                     display: grid;
-                    grid-template-areas: map-get($values, grid-template);
-                    grid-template-columns: map-get($values, columns);
+                    grid-template-areas: map.get($values, grid-template);
+                    grid-template-columns: map.get($values, columns);
                 }
     
-                @else if map-has-key($values, display) {
-                    display: map-get($values, display);
-                    align-items: map-get($values, align);
-                    justify-content: map-get($values, justify);
-                    padding: map-get($values, padding);
+                @else if map.has-key($values, display) {
+                    display: map.get($values, display);
+                    align-items: map.get($values, align);
+                    justify-content: map.get($values, justify);
+                    padding: map.get($values, padding);
                 }
             }
         }

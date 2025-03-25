@@ -4,14 +4,14 @@
 // vendors
 @import 'vendors/bootstrap';
 
+// base
+@import 'base/reset';
+@import 'base/typography';
+
 // abstracts
 @import 'abstracts/variables';
 @import 'abstracts/function';
 @import 'abstracts/mixins';
-
-// base
-@import 'base/reset';
-@import 'base/typography';
 
 // layouts
 @import 'layouts/header';
