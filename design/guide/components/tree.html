@@ -28,6 +28,64 @@
             <div class="flex-form-left tree-view">
                 <div id="treeview"></div>
             </div>
+            <div class="flex-form-right">
+<div class="cont-box">
+    <textarea style="height: 600px;">
+<div id="treeview"></div>
+<script type="module" src="../../../assets/js/components/treeView.js"></script>
+<script>
+    var treeData = [
+        {
+            text: "관리보안",
+            class: "depth1",
+            href: "#root1",
+            selectable: false,
+            state: { expanded: true },
+            nodes: [
+                { text: "자산정보세부현황", href: "#", icon: "tree-doc", class: "depth2" },
+                { text: "월간사이버보안점검", href: "#", icon: "tree-doc", class: "depth2 last-child" }
+            ]
+        },
+        {
+            text: "물리보안",
+            class: "depth1",
+            href: "#root2",
+            selectable: false,
+            nodes: [
+                { text: "봉인장치사용내역", href: "#", icon: "tree-doc", class: "depth2" },
+                { text: "영상정보장치점검관리", href: "#", icon: "tree-doc", class: "depth2 last-child" }
+            ]
+        },
+        {
+            text: "기술보안",
+            class: "depth1",
+            href: "#root3",
+            selectable: false,
+            nodes: [
+                { text: "계정관리", href: "#", icon: "tree-doc", class: "depth2" },
+                { text: "자산정보세부현황", href: "#", icon: "tree-doc", class: "depth2" },
+                { text: "공개취약점내역", href: "#", icon: "tree-doc", class: "depth2" },
+                { text: "공개취약점조치유예", href: "#", icon: "tree-doc", class: "depth2" },
+                { text: "로그분석결과", href: "#", icon: "tree-doc", class: "depth2" },
+                { text: "원격접속내역", href: "#", icon: "tree-doc", class: "depth2 last-child" }
+            ]
+        },
+        {
+            text: "관리자",
+            class: "depth1 last-child",
+            href: "#root3",
+            selectable: false,
+            nodes: [
+                { text: "관리자1", href: "#", icon: "tree-doc", class: "depth2" },
+                { text: "관리자2", href: "#", icon: "tree-doc", class: "depth2" },
+                { text: "관리자3", href: "#", icon: "tree-doc", class: "depth2 last-child" }
+            ]
+        }
+    ];
+</script>
+</textarea>
+</div>
+            </div>
         </div>
         <!--// tree -->
     </article>
