@@ -5,8 +5,8 @@
 @import 'vendors/bootstrap';
 
 // base
-@import 'base/reset';
 @import 'base/typography';
+@import 'base/reset';
 
 // abstracts
 @import 'abstracts/variables';
@@ -45,7 +45,7 @@
 @import 'components/tree';
 
 // pages
-@import 'pages/guide';
 @import 'pages/common';
 @import 'pages/contents';
 @import 'pages/dashboard';
+@import 'pages/guide';
