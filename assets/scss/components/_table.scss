@@ -6,33 +6,27 @@ $table-types: ("type-row");
 %tbl-input-form-base {
     width: 100%;
     border-top: 1px solid $primary;
-
     border: {
         width: 1px;
         style: solid;
         color: $primary $gray-007 $gray-007;
     }
-
     caption {
         display: none;
     }
-
     thead {
         th {
             padding: rem(10px) rem(12px);
-            color: $primary;
+            color: $secondary;
             @include font-style($font-size-sm, $font-weight-medium, $line-height-base);
             text-align: center;
-
             &:not(:last-of-type) {
                 border-right: 1px solid $gray-007;
             }
-
             border-bottom: 1px solid $gray-007;
             background: $blue-005;
         }
     }
-
     tbody {
         th {
             padding: rem(10px) rem(12px);

@@ -80,7 +80,7 @@ const sample = [
         depth2: "전자결재",
         depth3: "",
         type: "pop",
-        folder: "common",
+        folder: "usr",
         file: "SB-USR-086.html",
         status: "완료",
         start: "",
