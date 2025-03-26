@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded",  () => {
     const sidebar = document.getElementById("sidebar");
     if (!sidebar) return;
 
@@ -45,12 +45,14 @@ document.addEventListener("DOMContentLoaded", function () {
     
     menuItems.forEach(item => {
         item.addEventListener("click", function (event) {
+
             event.preventDefault();
-
             menuItems.forEach(el => el.classList.remove("active"));
-            this.classList.add("active");
 
+            this.classList.add("active");
+            
             console.log(`선택한 메뉴: ${this.dataset.name}`);
+
         });
     });
     

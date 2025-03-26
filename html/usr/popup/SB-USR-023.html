@@ -111,11 +111,11 @@
     <!-- script wrap -->
     <script type="module">
         const rowData = [
-            { field01: "", field02: "", field03: "", field04: "용도2", field05: "", field06: "", field07: "", field08: "" },
-            { field01: "", field02: "", field03: "", field04: "용도1", field05: "", field06: "", field07: "", field08: "" },
-            { field01: "", field02: "", field03: "", field04: "용도3", field05: "", field06: "", field07: "", field08: "" },
-            { field01: "", field02: "", field03: "", field04: "용도4", field05: "", field06: "", field07: "", field08: "" },
-            { field01: "", field02: "", field03: "", field04: "용도5", field05: "", field06: "", field07: "", field08: "" },
+            { field01: "", field02: "", field03: "", field04: "", field05: "111", field06: "111", field07: "", field08: "" },
+            { field01: "", field02: "", field03: "", field04: "", field05: "111", field06: "111", field07: "", field08: "" },
+            { field01: "", field02: "", field03: "", field04: "", field05: "11", field06: "111", field07: "", field08: "" },
+            { field01: "", field02: "", field03: "", field04: "", field05: "111", field06: "111", field07: "", field08: "" },
+            { field01: "", field02: "", field03: "", field04: "", field05: "111", field06: "111", field07: "", field08: "" },
         ];
         const columnDefs = [ 
             {
@@ -206,6 +206,20 @@
                         field: "field04",
                         width: 160,
                         cellClass: "cell-normal",
+                        cellRenderer: (params) => {
+                            const value = params.value;
+
+                            if (!value) {
+                                return `
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                <label for="input-text" class="hidden">용도</label>
+                            </div>
+                        `;
+                            } else {
+                                return value;
+                            }
+                        }
                     },
                     {
                         headerName: "봉인 관리번호",
@@ -214,21 +228,6 @@
                         width: 160,
                         cellClass: "cell-normal",
                         editable: true,
-                        cellEditor: 'customInputSearchEditor',
-                        cellRenderer: (params) => {
-                            const value = params.value;
-
-                            if (!value) {
-                                return `
-                            <div class="input-group">
-                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
-                                <label for="input-text" class="hidden">봉인 관리번호</label>
-                            </div>
-                        `;
-                            } else {
-                                return value;
-                            }
-                        }
                     },
                 ]
             },
@@ -243,20 +242,6 @@
                         field: "field06",
                         width: 160,
                         cellClass: "cell-normal",
-                        cellRenderer: (params) => {
-                            const value = params.value;
-
-                            if (!value) {
-                                return `
-                            <div class="input-group">
-                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
-                                <label for="input-text" class="hidden">봉인 관리번호</label>
-                            </div>
-                        `;
-                            } else {
-                                return value;
-                            }
-                        }
                     }
                 ]
             },

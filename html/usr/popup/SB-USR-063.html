@@ -338,7 +338,6 @@
                 field11: "",
                 field12: "",
                 field13: "",
-                field14: "",
             },
             {
                 field01: "",
@@ -354,7 +353,6 @@
                 field11: "",
                 field12: "",
                 field13: "",
-                field14: "",
             },
             {
                 field01: "",
@@ -370,7 +368,6 @@
                 field11: "",
                 field12: "",
                 field13: "",
-                field14: "",
             },
             {
                 field01: "",
@@ -386,7 +383,6 @@
                 field11: "",
                 field12: "",
                 field13: "",
-                field14: "",
             },
         ];
         const columnDefs = [
@@ -437,32 +433,9 @@
                 }
             },
             {
-                headerName: "장비명",
-                headerClass: "center",
-                field: "field03",
-                minWidth: 184,
-                cellClass: "cell-normal input",
-                cellRenderer: (params) => {
-                    const value = params.value;
-
-                    if (!value) {
-                        return `
-                            <!-- input-group is-error -->
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="장비명 입력">
-                                <label class="hidden">장비명</label>
-                            </div>
-                            <!--// input group -->
-                        `;
-                    } else {
-                        return value;
-                    }
-                }
-            },
-            {
                 headerName: "외장사용",
                 headerClass: "center",
-                field: "field04",
+                field: "field03",
                 minWidth: 180,
                 cellClass: "cell-normal input",
                 cellRenderer: (params) => {
@@ -489,7 +462,7 @@
             {
                 headerName: "개봉(봉인)일자",
                 headerClass: "center",
-                field: "field05",
+                field: "field04",
                 width: 180,
                 cellClass: "cell-normal input",
                 cellRenderer: (params) => {
@@ -512,7 +485,7 @@
             {
                 headerName: "봉인번호",
                 headerClass: "center",
-                field: "field06",
+                field: "field05",
                 width: 162,
                 cellClass: "cell-normal input",
                 cellRenderer: (params) => {
@@ -534,7 +507,7 @@
             {
                 headerName: "개봉시간",
                 headerClass: "center",
-                field: "field07",
+                field: "field06",
                 width: 206,
                 cellClass: "cell-normal input",
                 cellRenderer: (params) => {
@@ -568,7 +541,7 @@
             {
                 headerName: "봉인시간",
                 headerClass: "center",
-                field: "field08",
+                field: "field07",
                 width: 206,
                 cellClass: "cell-normal input",
                 cellRenderer: (params) => {
@@ -608,7 +581,7 @@
                     {
                         headerName: "개봉번호",
                         headerClass: "center",
-                        field: "field09",
+                        field: "field08",
                         width: 162,
                         cellClass: "cell-normal input",
                         cellRenderer: (params) => {
@@ -631,7 +604,7 @@
                     {
                         headerName: "봉인번호",
                         headerClass: "center",
-                        field: "field10",
+                        field: "field09",
                         width: 206,
                         cellClass: "cell-normal input",
                         cellRenderer: (params) => {
@@ -656,7 +629,7 @@
             {
                 headerName: "사용목적",
                 headerClass: "center",
-                field: "field11",
+                field: "field10",
                 minWidth: 184,
                 cellClass: "cell-normal input",
                 cellRenderer: (params) => {
@@ -679,7 +652,7 @@
             {
                 headerName: "삭제",
                 headerClass: "center",
-                field: "field12",
+                field: "field11",
                 width: 78,
                 cellClass: "cell-normal",
                 cellRenderer: params => {
