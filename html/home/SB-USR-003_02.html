@@ -71,6 +71,7 @@
                                 <div class="form-btn">
                                     <button type="button" class="login-btn" aria-label="비밀번호 변경 버튼">비밀번호 변경</button>
                                 </div>
+                                <div class="form-hint-invalid"></div>
                             </fieldset>
                         </form>
                     </article>
@@ -82,6 +83,37 @@
     </div>
 
     <!-- script wrap -->
+    <script>
+        const loginId = document.querySelector("#login-id");
+        const loginPw = document.querySelector("#login-pw");
+        const loginPwNew = document.querySelector("#login-pw-new");
+        const loginPwOK = document.querySelector("#login-pw-ok");
+        const loginButton = document.querySelector(".login-content button");
+        const loginErrorMsg = document.querySelector(".form-hint-invalid");
+
+        loginButton.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            const id = loginId.value.trim();
+            const pw = loginPw.value.trim();
+            const pwNew = loginPwNew.value.trim();
+            const pwOk = loginPwOK.value.trim();
+
+            console.log("hello", id);
+
+            if (id === "user" && pw === "1234" && pwNew === "1234" && pwOk === "1234") {
+                alert("로그인 페이지로 이동");
+                window.location.href = "SB-USR-003.html";
+
+            } else {
+                loginErrorMsg.style.display = "block";
+                loginErrorMsg.textContent = "아이디 또는 비밀번호가 틀렸습니다.";
+            }
+
+            loginId.addEventListener("input", () => loginErrorMsg.style.display = "none");
+            loginPw.addEventListener("input", () => loginErrorMsg.style.display = "none");
+        });
+    </script>
     <!--// script wrap -->
 
     <!-- modal wrap -->

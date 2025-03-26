@@ -29,12 +29,12 @@
 
         <!-- 헤더 영역 -->
         <header id="kdhc-header" data-menu='[
-            { "title": "관리보안", "url": "#" },
-            { "title": "물리보안", "url": "#" },
-            { "title": "기술보안", "url": "#" },
-            { "title": "보안정책", "url": "#" },
-            { "title": "클린PC", "url": "#" },
-            { "title": "정보자산", "url": "#", "active": true }]'>
+            { "title": "관리보안", "url": "../usr/SB-USR-012.html" },
+            { "title": "물리보안", "url": "../usr/SB-USR-021.html" },
+            { "title": "기술보안", "url": "../usr/SB-USR-024.html" },
+            { "title": "보안정책", "url": "../usr/SB-USR-054.html" },
+            { "title": "클린PC", "url": "../usr/SB-USR-059.html" },
+            { "title": "정보자산", "url": "../usr/SB-USR-074.html", "active": true }]'>
             <script type="module" src="../../assets/js/layouts/header.js"></script>
         </header>
         <!--// 헤더 영역 -->
@@ -89,7 +89,7 @@
                                                 <div class="form-group">
                                                    <!-- input-group is-error -->
                                                    <div class="input-group">
-                                                        <input type="text" id="input-text" class="form-control" placeholder="지사 입력" value="판교 지사" disabled>
+                                                        <input type="text" id="input-text" class="form-control" placeholder="지사 입력" value="강남 지사" readonly>
                                                         <label for="input-text" class="hidden">지사</label>
                                                     </div>
                                                     <!--// input group -->
@@ -107,7 +107,7 @@
                                                     <div class="select-group">
                                                         <select class="form-select" aria-label="Default select" required>
                                                             <option value="">선택</option>
-                                                            <option value="1" selected>가락 CES</option>
+                                                            <option value="1" selected>동남권열원</option>
                                                             <option value="2">Two</option>
                                                             <option value="3">Three</option>
                                                         </select>
@@ -182,8 +182,7 @@
                             <!--// grid top left end -->
 
                             <!-- grid top button start -->
-                            <div class="grid-top-btn" 
-                                data-buttons='[{"text": "엑셀다운로드"}, {"text": "자산추가"}, {"text": "출력", "class": "btn btn-secondary btn-sm"}]'>
+                            <div class="grid-top-btn" data-buttons='[{"text": "엑셀다운로드"}, {"text": "자산추가"}, {"text": "출력", "class": "btn btn-secondary btn-sm"}]'>
                             </div>
                             <!--// grid top button end -->
                         </article>
@@ -226,78 +225,81 @@
         const rowData = [
             {
                 field01: "",
-                field02: "",
-                field03: "분산제어시스템 (DCS)",
-                field04: "00-Controller-01",
-                field05: "2017.05",
-                field06: "전자기기실",
-                field07: "계전보안부",
-                field08: "000",
-                field09: "문보경",
-                field10: "홍창기",
-                field11: "김성근",
-                field12: "",
-                field13: "",
-                field14: "",
-                field15: "",
-                field16: "",
-                field17: "",
-                field18: "상",
-                field19: "",
-                field20: "",
+                field02: "동남권열원",
+                field03: "분산제어시스템(DCS)",
+                field04: "강남-CONTROLLER-0011",
+                field05: "2024-08",
+                field06: "전자기기실 1층",
+                field07: "계전부",
+                field08: "전산",
+                field09: "윤성찬",
+                field10: "심영락",
+                field11: "이준성",
+                field12: "양균식",
+                field13: "1",
+                field14: "2",
+                field15: "3",
+                field16: "6.00",
+                field17: "3.00",
+                field18: "9.00",
+                field19: "중",
+                field20: "O",
                 field21: "",
                 field22: "",
-                field23: "",
+                field23: "GT&B.O.P-1 #1",
+                field24: "GT/BOP제어",
             },
             {
                 field01: "",
-                field02: "",
-                field03: "분산제어시스템 (DCS)",
-                field04: "00-Controller-01",
-                field05: "2017.05",
-                field06: "전자기기실",
-                field07: "계전보안부",
-                field08: "000",
-                field09: "문보경",
-                field10: "홍창기",
-                field11: "김성근",
-                field12: "",
-                field13: "",
-                field14: "",
-                field15: "",
-                field16: "",
-                field17: "",
-                field18: "상",
-                field19: "",
-                field20: "",
+                field02: "동남권열원",
+                field03: "발전제어시스템(GTㆍST)",
+                field04: "강남-CONTROLLER-0035",
+                field05: "2024-08",
+                field06: "GT PEECC",
+                field07: "계전부",
+                field08: "전산",
+                field09: "윤성찬",
+                field10: "심영락",
+                field11: "이준성",
+                field12: "양균식",
+                field13: "1",
+                field14: "2",
+                field15: "2",
+                field16: "5.00",
+                field17: "2.00",
+                field18: "7.00",
+                field19: "하",
+                field20: "X",
                 field21: "",
                 field22: "",
-                field23: "",
+                field23: "GOV & Protection",
+                field24: "ST GOV",
             },
             {
                 field01: "",
-                field02: "",
+                field02: "동남권열원",
                 field03: "분산제어시스템 (DCS)",
-                field04: "00-Controller-01",
-                field05: "2017.05",
-                field06: "전자기기실",
-                field07: "계전보안부",
-                field08: "000",
-                field09: "문보경",
-                field10: "홍창기",
-                field11: "김성근",
-                field12: "",
-                field13: "",
-                field14: "",
-                field15: "",
-                field16: "",
-                field17: "",
-                field18: "상",
-                field19: "",
-                field20: "",
+                field04: "강남-CONTROLLER-0017",
+                field05: "2010-11",
+                field06: "GT PEECC",
+                field07: "계전부",
+                field08: "전산",
+                field09: "윤성찬",
+                field10: "심영락",
+                field11: "이준성",
+                field12: "양균식",
+                field13: "1",
+                field14: "2",
+                field15: "3",
+                field16: "6.00",
+                field17: "2.00",
+                field18: "8.00",
+                field19: "하",
+                field20: "O",
                 field21: "",
                 field22: "",
-                field23: "",
+                field23: "GT 제어(Pri)",
+                field24: "MARK VIE 컨트롤러<R>",
             },
         ];
         const columnDefs = [
@@ -359,9 +361,16 @@
                         cellClass: "cell-normal",
                     },
                     {
-                        headerName: "제어보호차(팀)장",
+                        headerName: "담당파트",
                         headerClass: "center",
                         field: "field08",
+                        width: 140,
+                        cellClass: "cell-normal",
+                    },
+                    {
+                        headerName: "관리부서(차)팀장",
+                        headerClass: "center",
+                        field: "field09",
                         width: 140,
                         cellClass: "cell-normal",
                     },
@@ -370,21 +379,21 @@
             {
                 headerName: "제어보호담당자",
                 headerClass: "center",
-                field: "field09",
+                field: "field10",
                 width: 130,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "제어보호담당관",
                 headerClass: "center",
-                field: "field10",
+                field: "field11",
                 width: 130,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "관리자 (지사장)",
                 headerClass: "center",
-                field: "field11",
+                field: "field12",
                 width: 130,
                 cellClass: "cell-normal",
             },
@@ -396,28 +405,28 @@
                     {
                         headerName: "가용성",
                         headerClass: "center",
-                        field: "field12",
+                        field: "field13",
                         width: 120,
                         cellClass: "cell-normal",
                     },
                     {
                         headerName: "무결성",
                         headerClass: "center",
-                        field: "field13",
+                        field: "field14",
                         width: 120,
                         cellClass: "cell-normal",
                     },
                     {
                         headerName: "기밀성",
                         headerClass: "center",
-                        field: "field14",
+                        field: "field15",
                         width: 120,
                         cellClass: "cell-normal",
                     },
                     {
                         headerName: "합계",
                         headerClass: "center",
-                        field: "field15",
+                        field: "field16",
                         width: 120,
                         cellClass: "cell-normal",
                     }
@@ -426,57 +435,57 @@
             {
                 headerName: "긴급도",
                 headerClass: "center",
-                field: "field16",
+                field: "field17",
                 width: 120,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "업무영향도 합계",
                 headerClass: "center",
-                field: "field17",
+                field: "field18",
                 width: 160,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "등급",
                 headerClass: "center",
-                field: "field18",
+                field: "field19",
                 width: 60,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "기반시설 지정여부",
                 headerClass: "center",
-                field: "field19",
+                field: "field20",
                 width: 160,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "IP Address",
                 headerClass: "center",
-                field: "field20",
+                field: "field21",
                 width: 160,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "Mac Address",
                 headerClass: "center",
-                field: "field21",
+                field: "field22",
                 width: 140,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "시스템 용도",
                 headerClass: "center",
-                field: "field22",
-                width: 120,
+                field: "field23",
+                width: 220,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "시스템 명",
                 headerClass: "center",
-                field: "field23",
-                width: 120,
+                field: "field24",
+                width: 220,
                 cellClass: "cell-normal",
             },
         ];

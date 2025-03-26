@@ -106,14 +106,14 @@ header#kdhc-header {
                 .nav-link {
                     position: relative;
                     padding: 0 rem(28px) rem(19px);
-                    color: $primary;
+                    color: $secondary;
                     &:hover,
                     &:focus,
                     &.active {
                         @include before(true, true, 0, 0, rem(-4px), 0);
                         background-color: transparent;
                         &::before {
-                            border-bottom: 4px solid $primary;
+                            border-bottom: 4px solid $secondary;
                         }
                     }
                 }

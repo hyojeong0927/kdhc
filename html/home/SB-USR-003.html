@@ -46,21 +46,19 @@
                                 <div class="form-row">
                                     <div class="form-id-group">
                                         <label for="login-id" class="login-id-label">사번 입력</label>
-                                        <!-- 2025-03-07 : data-label="login-id-label" 추가 -->
                                         <input type="text" value="" id="login-id" class="form-control" data-label="login-id-label" aria-label="사번 입력 난" />
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-pw-group">
                                         <label for="login-pw" class="login-pw-label">비밀번호 입력</label>
-                                        <!-- 2025-03-07 : data-label="login-pw-label" 추가 -->
                                         <input type="password" value="" id="login-pw" class="form-control" data-label="login-pw-label" aria-label="비밀번호 입력 난" />
                                     </div>
                                 </div>
                                 <div class="form-btn">
                                     <button type="button" class="login-btn" aria-label="로그인 버튼">로그인</button>
                                 </div>
-                                <div class="login-error-msg" style="color: red; opacity: 0; transition: opacity 0.3s;">아이디 또는 비밀번호가 틀렸습니다.</div>
+                                <div class="form-hint-invalid"></div>
                             </fieldset>
                         </form>
                     </article>
@@ -74,10 +72,10 @@
 
     <!-- script wrap -->
     <script>
-        const loginId = document.querySelector(".form-id-group input");
-        const loginPw = document.querySelector(".form-pw-group input");
+        const loginId = document.querySelector("#login-id");
+        const loginPw = document.querySelector("#login-pw");
         const loginButton = document.querySelector(".login-content button");
-        const loginErrorMsg = document.querySelector(".login-error-msg");
+        const loginErrorMsg = document.querySelector(".form-hint-invalid");
 
         loginButton.addEventListener("click", (event) => {
             event.preventDefault();
@@ -87,21 +85,25 @@
 
             console.log("hello", id);
 
-            if(id ==="user" && pw === "1234") {
+            if(id ==="1234" && pw === "1234") {
+                alert("비밀번호 변경 페이지로 이동");
+                window.location.href = "SB-USR-003_02.html";
+                
+            } else if (id === "user" && pw === "1234") {
                 alert("로그인 되었습니다.");
                 window.location.href = "SB-USR-001.html";
-                
+
             } else if (id === "admin" && pw === "1234") {
                 alert("로그인 되었습니다.");
                 window.location.href = "SB-USR-002.html";
 
             } else  {
-                loginErrorMsg.style.opacity = "1";
+                loginErrorMsg.style.display = "block";
                 loginErrorMsg.textContent = "아이디 또는 비밀번호가 틀렸습니다.";
             }
             
-            loginId.addEventListener("input", () => loginErrorMsg.style.opacity = "0");
-            loginPw.addEventListener("input", () => loginErrorMsg.style.opacity = "0");
+            loginId.addEventListener("input", () => loginErrorMsg.style.display = "none");
+            loginPw.addEventListener("input", () => loginErrorMsg.style.display = "none");
         });
     </script>
     <!--// script wrap -->

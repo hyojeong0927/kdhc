@@ -28,9 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
         </h2>
         <div class="gnb">
             <ul class="util">
-                <li class="util-01"><a href="#" data-title="결재관리">결재관리</a></li>
-                <li class="util-02"><a href="#" data-title="정기점검">정기점검</a></li>
-                <li class="util-03"><a href="#" data-title="지침 및 매뉴얼">지침 및 매뉴얼</a></li>
+                <li class="util-01"><a href="#" id="SB-USR-008" data-title="결재관리">결재관리</a></li>
+                <li class="util-02"><a href="#" id="SB-GMR-004" data-title="정기점검">정기점검</a></li>
+                <li class="util-03"><a href="#" id="SB-USR-005" data-title="지침 및 매뉴얼">지침 및 매뉴얼</a></li>
                 <li class="util-04 user"><a href="#" data-title="홍길동 과장">홍길동 과장<em>계전보안부</em></a></li>
             </ul>
             <div class="header-action">
@@ -50,25 +50,31 @@ document.addEventListener("DOMContentLoaded", () => {
         const target = event.target;
 
         // 네비게이션 메뉴 클릭 이벤트
-        if (target.classList.contains("nav-link")) {
+        if (target.classList.contains(".nav-link")) {
             event.preventDefault(); 
             console.log(`메뉴 클릭: ${target.getAttribute("data-title")}`);
         }
 
         // 유틸 메뉴 클릭 이벤트
         if (target.closest(".util li a")) {
-            event.preventDefault();
-            console.log(`유틸 메뉴 클릭: ${target.getAttribute("data-title")}`);
+            if (target.id === "SB-USR-008") {
+                window.location.href = "../home/SB-USR-008.html";
+            } else if (target.id === "SB-GMR-004") {
+                window.location.href = "../gmr/SB-GMR-004.html";
+            } else if (target.id === "SB-USR-005") {
+                window.location.href = "../home/SB-USR-005.html";
+            }
         }
 
         // 비밀번호 변경 버튼 클릭 이벤트
         if (target.id === "btn-change-password") {
-            alert("비밀번호 변경 페이지로 이동합니다.");
+            window.location.href = "../home/SB-USR-004.html";
         }
 
         // 로그아웃 버튼 클릭 이벤트
         if (target.id === "btn-logout") {
             alert("로그아웃 되었습니다.");
+            window.location.href = "../home/SB-USR-003.html";
         }
     });
 });
