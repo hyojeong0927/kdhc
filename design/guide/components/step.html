@@ -17,15 +17,14 @@
                 <h3>Step</h3>
             </div>
             <div class="cont-box">
-                <textarea style="height: 170px;">
+                <textarea style="height: 150px;">
 <!-- components -->
 <div id="step-container" class="step step-lg" data-step='[
-    { "status": "step-done", "title": "기안자", "name": "계전보안부 이현경" },
-    { "status": "step-done", "title": "관리부서 차(팀)장", "name": "계전보안부 최원태" },
-    { "status": "step-done", "title": "제어보호담당자", "name": "계전보안부 오승환" },
+    { "status": "step-current", "title": "기안자", "name": "계전보안부 이현경" },
+    { "status": "step-default", "title": "관리부서 차(팀)장", "name": "계전보안부 최원태" },
+    { "status": "step-reject", "title": "제어보호담당자", "name": "계전보안부 오승환" },
     { "status": "step-done", "title": "제어보호담당관", "name": "계전보안부 김현수" }]'></div>
-<script type="module" src="../../../assets/js/components/step.js"></script>
-</textarea>
+<script type="module" src="../../../assets/js/components/step.js"></script></textarea>
             </div>
             <!------------------------------------------------------------------------------------------------
                 Step large
@@ -349,11 +348,21 @@
             
             <!--// step large end -->
             <br /><br /><br />
+            <div class="cont-box">
+                <textarea style="height: 150px;">
+<!-- components -->
+<div id="step-container" class="step step-sm" data-step='[
+    { "status": "step-done", "title": "기안자", "name": "계전보안부 이현경" },
+    { "status": "step-current", "title": "관리부서 차(팀)장", "name": "계전보안부 최원태" },
+    { "status": "step-reject", "title": "제어보호담당자", "name": "계전보안부 오승환" },
+    { "status": "step-default", "title": "제어보호담당관", "name": "계전보안부 김현수" }]'></div>
+<script type="module" src="../../../assets/js/components/step.js"></script></textarea>
+            </div>
             <!------------------------------------------------------------------------------------------------
-                                        Step Small
-            
-                                        현재결재자 : step-current / 기본 : step-default / 결재완료 : step-done  / 반려 : step-reject
-                                    -------------------------------------------------------------------------------------------------->
+                Step Small
+
+                현재결재자 : step-current / 기본 : step-default / 결재완료 : step-done  / 반려 : step-reject
+            -------------------------------------------------------------------------------------------------->
             
             <!-- step 01 start -->
             <div class="step step-sm">
