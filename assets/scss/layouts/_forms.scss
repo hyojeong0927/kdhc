@@ -425,7 +425,7 @@ $form-layouts: (
 
 // validation
 .form-hint-invalid {
-    margin-top: rem(12px);
+    margin-top: rem(4px);
     width: 100%;
     color: $red-001;
     @include font-style($font-size-sm, $font-weight-normal, $line-height-base);
