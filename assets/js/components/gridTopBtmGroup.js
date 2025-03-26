@@ -20,7 +20,8 @@ class GridButtonArea {
                     const parsedButtons = JSON.parse(buttonsData);
                     buttons = parsedButtons.map(button => ({
                         text: button.text && button.text.trim() ? button.text : "기본 버튼",
-                        class: button.class || "btn btn-outline btn-sm"
+                        class: button.class || "btn btn-outline btn-sm",
+                        url: button.url || "#"
                     }));
                 } else {
                     buttons = buttons.map(button => ({
@@ -45,9 +46,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // 버튼 클릭 이벤트 처리
     document.querySelectorAll(".grid-top-btn button").forEach(button => {
         button.addEventListener("click", function () {
-            // alert(`Clicked button: ${this.innerText}`);
-            if (target.button.text === "자산추가") {
-                window.location.href = "./SB-USR-075.html";
+            const url = this.getAttribute("data-url");
+            
+            if (url && url !== "#") {
+                window.location.href = url;
+            } else {
+                alert(`Clicked button: ${this.innerText}`);
             }
         });
     });
