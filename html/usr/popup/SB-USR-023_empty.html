@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko" data-kdhc-mode="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDHC</title>
+    <link rel="icon" href="../../assets/favicon.svg" type="image/x-icon">
+    <!-- css -->
+    <link rel="stylesheet" href="../../../css/index.css">
+    <!-- script -->
+    <script src="../../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script type="module" src="../../../assets/js/common.js"></script>
+</head>
+
+<body>
+    <div id="pop-wrap" class="kdhc-pop-wrap">
+        <header class="kdhc-pop-header">
+            <h1 class="pop-title">봉인장치사용내역 등록 구분 추가</h1>
+            <button type="button" class="btn-close" aria-label="Close" onclick="window.close()"></button>
+        </header>
+        <!-- 팝업 컨테이너 영역 -->
+        <section class="kdhc-pop-container">
+            <div class="inner">
+                <!-- 팝업 컨텐츠 영역 -->
+                <div class="contents">
+                    <!-- breadcrumbs start -->
+                    <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" data-breadcrumb='[
+                        { "name": "물리보안", "url": "#" },
+                        { "name": "영상정보장치 점검", "url": "#" },
+                        { "name": "영상정보장치 점검 등록", "url": "" },
+                        { "name": "구분 추가", "url": "", "active": true }
+                        ]' data-visible="true">
+                    </nav>
+                    <!--// breadcrumbs end -->
+
+                    <!-- 기본정보 -->
+                    <article class="section">
+                    
+                        <!-- input form -->
+                        <div class="input-form-area">
+                            <!-- form start -->
+                            <form>
+                                <fieldset>
+                                    <!-- form-wrap start -->
+                                    <div class="form-wrap type02">
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label">자산관리번호</div>
+                                                <div class="form-group">
+                                                    <div class="input-txt">화성-노트북-0001</div>
+                                                </div>
+                                            </div>
+                                            <!--// col -->
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label">시스템명</div>
+                                                <div class="form-group">
+                                                    <div class="input-txt">네트워크설비 유지보수</div>
+                                                </div>
+                                            </div>
+                                            <!--// col -->
+                                        </div>
+                                        <!--// row end -->
+                                    </div>
+                                    <!--// form-wrap end -->
+                                </fieldset>
+                            </form>
+                            <!-- form end -->
+                        </div>
+                        <!--// input form -->
+                    </article>
+                    <!--// 기본정보 -->
+
+                    <!-- 봉인장치사용내역 등록 : 구분 추가 -->
+                    <!-- grid top start -->
+                    <article class="grid-top-area">
+                        <!-- grid top button start -->
+                        <div class="grid-top-btn" data-buttons='[{"text": "행추가"}]'>
+                        </div>
+                        <!--// grid top button end -->
+                    </article>
+                    <!--// grid top end -->
+                    
+                    <!-- grid wrap start -->
+                    <article class="grid-wrap">
+                        <div id="sampleGrid" class="normal"></div>
+                    </article>
+                    <!--// grid wrap end -->
+                    <!-- bottom button area start -->
+                    <div class="bottom-btn-area" data-buttons='[{"text": "저장"}]'></div>
+                    <!--// bottom button area end -->
+                    <!--// 봉인장치사용내역 등록 : 구분 추가-->
+                </div>
+                <!--// 팝업 컨텐츠 영역 -->
+            </div>
+        </section>
+        <!--// 팝업 컨테이너 영역 -->
+    </div>
+    <!-- script wrap -->
+    <script type="module">
+        const rowData = [
+           
+        ];
+        const columnDefs = [ 
+            {
+                headerName: "구분",
+                headerClass: "center",
+                field: "field01",
+                width: 160,
+                cellClass: "cell-normal input",
+                editable: true,
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                            <!-- select-group is-error -->
+                            <div class="select-group">
+                                <select class="form-select" aria-label="Default select" required>
+                                    <option value="" selected>선택</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <!--// select-group -->
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
+            },
+            {
+                headerName: "구분 명",
+                headerClass: "center",
+                field: "field02",
+                width: 160,
+                cellClass: "cell-normal input",
+                editable: false,
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                <label for="input-text" class="hidden">구분 명</label>
+                            </div>
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
+            },
+            {
+                headerName: "사용여부",
+                headerClass: "center",
+                field: "field03",
+                width: 120,
+                cellClass: "cell-normal input",
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                            <!-- select-group is-error -->
+                            <div class="select-group">
+                                <select class="form-select" aria-label="Default select" required>
+                                    <option value="" selected>선택</option>
+                                    <option value="Y">Y</option>
+                                    <option value="N">N</option>
+                                </select>
+                            </div>
+                            <!--// select-group -->
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
+            },
+            {
+                headerName: "사용 중 포트 봉인",
+                headerClass: "center",
+                width: 238,
+                cellClass: "cell-normal",
+                children: [
+                    {
+                        headerName: "용도",
+                        headerClass: "center",
+                        field: "field04",
+                        width: 160,
+                        cellClass: "cell-normal",
+                    },
+                    {
+                        headerName: "봉인 관리번호",
+                        headerClass: "center",
+                        field: "field05",
+                        width: 160,
+                        cellClass: "cell-normal",
+                        editable: true,
+                        cellEditor: 'customInputSearchEditor',
+                        cellRenderer: (params) => {
+                            const value = params.value;
+
+                            if (!value) {
+                                return `
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                <label for="input-text" class="hidden">봉인 관리번호</label>
+                            </div>
+                        `;
+                            } else {
+                                return value;
+                            }
+                        }
+                    },
+                ]
+            },
+            {
+                headerName: "미사용 포트 봉인",
+                headerClass: "center",
+                cellClass: "cell-normal",
+                children: [
+                    {
+                        headerName: "봉인 관리번호",
+                        headerClass: "center",
+                        field: "field06",
+                        width: 160,
+                        cellClass: "cell-normal",
+                        cellRenderer: (params) => {
+                            const value = params.value;
+
+                            if (!value) {
+                                return `
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                <label for="input-text" class="hidden">봉인 관리번호</label>
+                            </div>
+                        `;
+                            } else {
+                                return value;
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                headerName: "비고",
+                headerClass: "center",
+                field: "field07",
+                minWidth: 120,
+                flex: 1,
+                cellClass: "cell-normal input",
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                            <div class="input-group">
+                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                <label for="input-text" class="hidden">비고</label>
+                            </div>
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
+            },
+             {
+                headerName: "행 삭제",
+                headerClass: "center",
+                field: "field08",
+                width: 100,
+                cellClass: "cell-normal",
+                cellRenderer: params => {
+                    return '<button type="button" class="btn btn-icon"><i class="icon del-trash" /></button>';
+                }
+            },
+        ];
+        let sampleGridApi;
+        
+        const sampleGridOptions = {
+            defaultColDef: {
+                editable: false, // edit 사용 유무
+                autoHeight: true,
+                sortable: false, // sort 사용 유무
+            },
+            columnDefs,
+            headerHeight: 41, // header height
+            rowData: rowData,
+            rowHeight: 63, // row height
+            domLayout: "autoHeight", // 2025-02-19 추가 옵션
+            suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
+            components: {
+                customInputSearchEditor: function () {
+                    return {
+                        init: function (params) {
+
+                            const input = document.createElement('input');
+                            input.id = 'searchId';
+                            input.type = 'search';
+                            input.className = 'form-control';
+                            input.value = params.value || '';
+                            input.placeholder = "입력";
+
+                            const label = document.createElement('label');
+                            label.htmlFor = 'searchId';
+                            label.className = 'input-group-text';
+                            label.innerHTML = '<i class="icon search"></i>';
+
+                            // 클릭 이벤트 추가
+                            label.addEventListener('click', function () {
+                                alert('검색 버튼이 클릭되었습니다!');
+                            });
+
+                            input.addEventListener('input', function () {
+                                params.api.stopEditing();
+                            });
+
+                            this.eInput = input;
+                            this.eLabel = label;
+
+                            const wrapper = document.createElement('div');
+                            wrapper.className = 'input-search-group';
+                            wrapper.appendChild(input);
+                            wrapper.appendChild(label);
+                            this.eWrapper = wrapper;
+                        },
+                        getValue: function () {
+                            return this.eInput.value;
+                        },
+                        getGui: function () {
+                            return this.eWrapper;
+                        }
+                    };
+                },
+            },
+            // data empty style
+            overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
+        };
+        const sampleGridDiv = document.querySelector("#sampleGrid");
+        sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
+    </script>
+    <!--// script wrap -->
+</body>
+</html>

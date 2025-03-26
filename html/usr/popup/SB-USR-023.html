@@ -51,7 +51,15 @@
                                             <div class="col">
                                                 <div class="form-label">자산관리번호</div>
                                                 <div class="form-group">
-                                                    <div class="input-txt">화성-노트북-0001</div>
+                                                    <!-- input-search-group is-error -->
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search1" value="화성-ST-노트북 001" placeholder="자산관리번호 입력">
+                                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                                    </div>
+                                                    <!--// input search group end -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
                                                 </div>
                                             </div>
                                             <!--// col -->
@@ -103,11 +111,11 @@
     <!-- script wrap -->
     <script type="module">
         const rowData = [
-            { field01: "", field02: "", field03: "용도1", field04: "", field05: "", field06: "", field07: "" },
-            { field01: "", field02: "", field03: "용도2", field04: "", field05: "", field06: "", field07: "" },
-            { field01: "", field02: "", field03: "용도3", field04: "", field05: "", field06: "", field07: "" },
-            { field01: "", field02: "", field03: "용도4", field04: "", field05: "", field06: "", field07: "" },
-            { field01: "", field02: "", field03: "용도5", field04: "", field05: "", field06: "", field07: "" },
+            { field01: "", field02: "", field03: "", field04: "용도2", field05: "", field06: "", field07: "", field08: "" },
+            { field01: "", field02: "", field03: "", field04: "용도1", field05: "", field06: "", field07: "", field08: "" },
+            { field01: "", field02: "", field03: "", field04: "용도3", field05: "", field06: "", field07: "", field08: "" },
+            { field01: "", field02: "", field03: "", field04: "용도4", field05: "", field06: "", field07: "", field08: "" },
+            { field01: "", field02: "", field03: "", field04: "용도5", field05: "", field06: "", field07: "", field08: "" },
         ];
         const columnDefs = [ 
             {
@@ -137,7 +145,6 @@
                         return value;
                     }
                 }
-                
             },
             {
                 headerName: "구분 명",
@@ -162,6 +169,32 @@
                 }
             },
             {
+                headerName: "사용여부",
+                headerClass: "center",
+                field: "field03",
+                width: 120,
+                cellClass: "cell-normal input",
+                cellRenderer: (params) => {
+                    const value = params.value;
+
+                    if (!value) {
+                        return `
+                            <!-- select-group is-error -->
+                            <div class="select-group">
+                                <select class="form-select" aria-label="Default select" required>
+                                    <option value="" selected>선택</option>
+                                    <option value="Y">Y</option>
+                                    <option value="N">N</option>
+                                </select>
+                            </div>
+                            <!--// select-group -->
+                        `;
+                    } else {
+                        return value;
+                    }
+                }
+            },
+            {
                 headerName: "사용 중 포트 봉인",
                 headerClass: "center",
                 width: 238,
@@ -170,14 +203,14 @@
                     {
                         headerName: "용도",
                         headerClass: "center",
-                        field: "field03",
+                        field: "field04",
                         width: 160,
                         cellClass: "cell-normal",
                     },
                     {
                         headerName: "봉인 관리번호",
                         headerClass: "center",
-                        field: "field04",
+                        field: "field05",
                         width: 160,
                         cellClass: "cell-normal",
                         editable: true,
@@ -207,7 +240,7 @@
                     {
                         headerName: "봉인 관리번호",
                         headerClass: "center",
-                        field: "field05",
+                        field: "field06",
                         width: 160,
                         cellClass: "cell-normal",
                         cellRenderer: (params) => {
@@ -230,7 +263,7 @@
             {
                 headerName: "비고",
                 headerClass: "center",
-                field: "field06",
+                field: "field07",
                 minWidth: 120,
                 flex: 1,
                 cellClass: "cell-normal input",
@@ -252,7 +285,7 @@
              {
                 headerName: "행 삭제",
                 headerClass: "center",
-                field: "field07",
+                field: "field08",
                 width: 100,
                 cellClass: "cell-normal",
                 cellRenderer: params => {

@@ -237,16 +237,16 @@
         import { customInputSearchEditor } from "../../../assets/js/components/agGridComponents.js"
 
         const rowData = [
-            { field01: "1", field02: "", field03: "네트워크설비 유지보수", field04: "USB 1", field05: "", field06: "", field07: "화성 - 001", field08: "화성 - 001", field09: "비고", field10: "" },
-            { field01: "1", field02: "", field03: "네트워크설비 유지보수", field04: "USB 2", field05: "", field06: "", field07: "화성 - 002", field08: "화성 - 002", field09: "비고", field10: "" },
-            { field01: "1", field02: "", field03: "네트워크설비 유지보수", field04: "USB 3", field05: "", field06: "", field07: "화성 - 003", field08: "화성 - 003", field09: "비고", field10: "" },
-            { field01: "1", field02: "", field03: "네트워크설비 유지보수", field04: "USB 4", field05: "", field06: "", field07: "화성 - 004", field08: "화성 - 004", field09: "비고", field10: ""  },
-            { field01: "2", field02: "", field03: "네트워크설비 유지보수01", field04: "USB 4", field05: "", field06: "", field07: "화성 - 005", field08: "화성 - 005", field09: "비고", field10: "" },
-            { field01: "2", field02: "", field03: "네트워크설비 유지보수01", field04: "USB 4", field05: "", field06: "", field07: "화성 - 007", field08: "화성 - 006", field09: "비고", field10: "" },
-            { field01: "3", field02: "", field03: "네트워크설비 유지보수01", field04: "USB 4", field05: "", field06: "", field07: "화성 - 008", field08: "화성 - 007", field09: "비고", field10: "" },
-            { field01: "4", field02: "", field03: "네트워크설비 유지보수01", field04: "USB 4", field05: "", field06: "", field07: "화성 - 008", field08: "화성 - 008", field09: "비고", field10: "" },
-            { field01: "4", field02: "", field03: "네트워크설비 유지보수01", field04: "USB 4", field05: "", field06: "", field07: "화성 - 008", field08: "화성 - 009", field09: "비고", field10: "" },
-            { field01: "5", field02: "", field03: "네트워크설비 유지보수01", field04: "USB 4", field05: "", field06: "", field07: "화성 - 006", field08: "화성 - 010", field09: "비고", field10: "" },
+            { field01: "1", field02: "화성-ST-노트북-0001", field03: "네트워크설비 유지보수", field04: "USB 1", field05: "", field06: "", field07: "화성 - 001", field08: "화성 - 001", field09: "비고", field10: "" },
+            { field01: "1", field02: "화성-ST-노트북-0001", field03: "네트워크설비 유지보수", field04: "USB 2", field05: "", field06: "", field07: "화성 - 002", field08: "화성 - 002", field09: "비고", field10: "" },
+            { field01: "1", field02: "화성-ST-노트북-0001", field03: "네트워크설비 유지보수", field04: "USB 3", field05: "", field06: "", field07: "화성 - 003", field08: "화성 - 003", field09: "비고", field10: "" },
+            { field01: "1", field02: "화성-ST-노트북-0001", field03: "네트워크설비 유지보수", field04: "USB 4", field05: "", field06: "", field07: "화성 - 004", field08: "화성 - 004", field09: "비고", field10: ""  },
+            { field01: "2", field02: "화성-ST-노트북-0001", field03: "네트워크설비 유지보수01", field04: "USB 4", field05: "", field06: "", field07: "화성 - 005", field08: "화성 - 005", field09: "비고", field10: "" },
+            { field01: "2", field02: "화성-ST-노트북-0001", field03: "네트워크설비 유지보수01", field04: "USB 4", field05: "", field06: "", field07: "화성 - 007", field08: "화성 - 006", field09: "비고", field10: "" },
+            { field01: "3", field02: "화성-ST-노트북-0001", field03: "네트워크설비 유지보수01", field04: "USB 4", field05: "", field06: "", field07: "화성 - 008", field08: "화성 - 007", field09: "비고", field10: "" },
+            { field01: "4", field02: "화성-ST-노트북-0001", field03: "네트워크설비 유지보수01", field04: "USB 4", field05: "", field06: "", field07: "화성 - 008", field08: "화성 - 008", field09: "비고", field10: "" },
+            { field01: "4", field02: "화성-ST-노트북-0001", field03: "네트워크설비 유지보수01", field04: "USB 4", field05: "", field06: "", field07: "화성 - 008", field08: "화성 - 009", field09: "비고", field10: "" },
+            { field01: "5", field02: "화성-ST-노트북-0001", field03: "네트워크설비 유지보수01", field04: "USB 4", field05: "", field06: "", field07: "화성 - 006", field08: "화성 - 010", field09: "비고", field10: "" },
         ];
         const columnDefs = [ 
             {
@@ -263,23 +263,8 @@
                 field: "field02",
                 width: 180,
                 editable: false,
-                cellEditor: 'customInputSearchEditor',
                 rowSpan: (params) => shouldMergeRows(params, ["field01", "field02", "field03"]),
                 cellClass: getMergeCellClass,
-                cellRenderer: (params) => {
-                    const value = params.value;
-
-                    if (!value) {
-                        return `
-                            <div class="input-search-group">
-                                <input type="search" class="form-control" id="search1" placeholder="자산관리번호" value="">
-                                <label class="input-group-text" for="search1"><i class="icon search"></i></label>
-                            </div>
-                        `;
-                    } else {
-                        return value;
-                    }
-                }
             },
             {
                 headerName: "시스템명",
