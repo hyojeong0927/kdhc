@@ -21,12 +21,8 @@ class GridButtonArea {
                     buttons = parsedButtons.map(button => ({
                         text: button.text && button.text.trim() ? button.text : "기본 버튼",
                         class: button.class || "btn btn-outline btn-sm",
-                        url: button.url || "#"
-                    }));
-                } else {
-                    buttons = buttons.map(button => ({
-                        ...button,
-                        text: "기본 버튼"
+                        url: button.url || "#",
+                        popup: button.popup || false
                     }));
                 }
             } catch (error) {
@@ -34,25 +30,33 @@ class GridButtonArea {
             }
 
             element.innerHTML = buttons
-                .map(button => `<button type="button" class="${button.class}">${button.text}</button>`)
+                .map(button => `<button type="button" class="${button.class}" data-url="${button.url}" data-popup="${button.popup}">${button.text}</button>`)
                 .join("");
+            
+            // 버튼 클릭 이벤트 추가
+            element.querySelectorAll("button").forEach(button => {
+                button.addEventListener("click", () => {
+                    const url = button.getAttribute("data-url");
+                    const isPopup = button.getAttribute("data-popup") === "true"; 
+
+                    if (isPopup && this.popupUrls.large) {
+                        setupPopupListeners({ large: url });
+
+                    } else if (url && url !== "#") {
+                        window.location.href = url;
+
+                    } else {
+                        alert(`Clicked button: ${button.innerText}`);
+                    }
+                });
+            });
         });
     }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    new GridButtonArea(".grid-top-btn");
-
-    // 버튼 클릭 이벤트 처리
-    document.querySelectorAll(".grid-top-btn button").forEach(button => {
-        button.addEventListener("click", function () {
-            const url = this.getAttribute("data-url");
-            
-            if (url && url !== "#") {
-                window.location.href = url;
-            } else {
-                alert(`Clicked button: ${this.innerText}`);
-            }
-        });
-    });
+    const urlList = {
+        large: './popup/SB-USR-013.html',
+    };
+    new GridButtonArea(".grid-top-btn", urlList);
 });
