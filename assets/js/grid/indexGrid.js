@@ -106,7 +106,7 @@ const indexColumnDefs = [
                         <input type="search" class="form-control" id="search1" placeholder="이름" value="">
                         <label class="input-group-text" for="search1"><i class="icon search"></i></label>
                     </div>
-                    <!--// input search group end -->
+                    <!--// input search group -->
                 `;
             } else {
                 return value;
