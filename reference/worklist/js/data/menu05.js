@@ -18,7 +18,7 @@ const menu05Projects = [
         id: "SB-USR-060",
         depth1: "클린PC",
         depth2: "휴대용저장매체 등록 관리",
-        depth3: "휴대용저장매체 불용반출",
+        depth3: "휴대용저장매체 등록",
         type: "pop",
         folder: "usr",
         file: "SB-USR-060.html",
