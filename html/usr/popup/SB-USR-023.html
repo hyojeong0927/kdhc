@@ -53,7 +53,7 @@
                                                 <div class="form-group">
                                                     <!-- input-search-group is-error -->
                                                     <div class="input-search-group">
-                                                        <input type="search" class="form-control" id="search1" value="화성-ST-노트북 001" placeholder="자산관리번호 입력">
+                                                        <input type="search" class="form-control" id="search1" value="강남-PC-0001" placeholder="자산관리번호 입력">
                                                         <label class="input-group-text" for="search1"><i class="icon search"></i></label>
                                                     </div>
                                                     <!--// input search group -->
@@ -67,7 +67,7 @@
                                             <div class="col">
                                                 <div class="form-label">시스템명</div>
                                                 <div class="form-group">
-                                                    <div class="input-txt">네트워크설비 유지보수</div>
+                                                    <div class="input-txt">EWS(DBS)(drop200)</div>
                                                 </div>
                                             </div>
                                             <!--// col -->
@@ -111,11 +111,13 @@
     <!-- script wrap -->
     <script type="module">
         const rowData = [
-            { field01: "", field02: "", field03: "", field04: "", field05: "111", field06: "111", field07: "", field08: "" },
-            { field01: "", field02: "", field03: "", field04: "", field05: "111", field06: "111", field07: "", field08: "" },
-            { field01: "", field02: "", field03: "", field04: "", field05: "11", field06: "111", field07: "", field08: "" },
-            { field01: "", field02: "", field03: "", field04: "", field05: "111", field06: "111", field07: "", field08: "" },
-            { field01: "", field02: "", field03: "", field04: "", field05: "111", field06: "111", field07: "", field08: "" },
+            { field01: "USB", field02: "USB1", field03: "Y", field04: "", field05: "", field06: "강남-UP-0001", field07: "없음", field08: "" },
+            { field01: "USB", field02: "USB2", field03: "Y", field04: "", field05: "", field06: "강남-UP-0002", field07: "", field08: "" },
+            { field01: "USB", field02: "USB3", field03: "Y", field04: "데이터수집", field05: "강남-SK-0002", field06: "", field07: "", field08: "" },
+            { field01: "USB", field02: "USB4", field03: "Y", field04: "", field05: "", field06: "강남-UP-0004", field07: "", field08: "" },
+            { field01: "LAN", field02: "LAN1", field03: "Y", field04: "", field05: "", field06: "강남-LP-0001", field07: "", field08: "" },
+            { field01: "광모듈", field02: "광모듈1", field03: "Y", field04: "", field05: "", field06: "강남-OM-0001", field07: "", field08: "" },
+            { field01: "CD-ROM", field02: "CD-ROM1", field03: "Y", field04: "", field05: "", field06: "강남-CD-0001", field07: "", field08: "" },
         ];
         const columnDefs = [ 
             {
@@ -127,23 +129,21 @@
                 editable: true,
                 cellRenderer: (params) => {
                     const value = params.value;
+                    const rowIndex = params.node.rowIndex;
 
-                    if (!value) {
-                        return `
-                            <!-- select-group is-error -->
-                            <div class="select-group">
-                                <select class="form-select" aria-label="Default select" required>
-                                    <option value="" selected>선택</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                            <!--// select-group -->
-                        `;
-                    } else {
-                        return value;
-                    }
+                    return `
+                        <!-- select-group -->
+                        <div class="select-group">
+                            <select class="form-select" id="select-${rowIndex}" name="select-${rowIndex}" data-row-index="${rowIndex}" aria-label="Default select" required>
+                                <option value="" ${!value ? "selected" : ""}>선택</option>
+                                <option value="USB" ${value === "USB" ? "selected" : ""}>USB</option>
+                                <option value="LAN" ${value === "LAN" ? "selected" : ""}>LAN</option>
+                                <option value="광모듈" ${value === "광모듈" ? "selected" : ""}>광모듈</option>
+                                <option value="CD-ROM" ${value === "CD-ROM" ? "selected" : ""}>CD-ROM</option>
+                            </select>
+                        </div>
+                        <!--// select-group -->
+                    `;
                 }
             },
             {
@@ -155,17 +155,14 @@
                 editable: false,
                 cellRenderer: (params) => {
                     const value = params.value;
+                    const rowIndex = params.node.rowIndex;
 
-                    if (!value) {
-                        return `
-                            <div class="input-group">
-                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
-                                <label for="input-text" class="hidden">구분 명</label>
-                            </div>
-                        `;
-                    } else {
-                        return value;
-                    }
+                    return `
+                        <div class="input-group">
+                            <input type="text" id="input-text-${rowIndex}" class="form-control" placeholder="입력" value="${value || ''}">
+                            <label for="input-text-${rowIndex}" class="hidden">구분 명</label>
+                        </div>
+                    `;
                 }
             },
             {
@@ -174,24 +171,21 @@
                 field: "field03",
                 width: 120,
                 cellClass: "cell-normal input",
-                cellRenderer: (params) => {
+                 cellRenderer: (params) => {
                     const value = params.value;
+                    const rowIndex = params.node.rowIndex;
 
-                    if (!value) {
-                        return `
-                            <!-- select-group is-error -->
-                            <div class="select-group">
-                                <select class="form-select" aria-label="Default select" required>
-                                    <option value="" selected>선택</option>
-                                    <option value="Y">Y</option>
-                                    <option value="N">N</option>
-                                </select>
-                            </div>
-                            <!--// select-group -->
-                        `;
-                    } else {
-                        return value;
-                    }
+                    return `
+                        <!-- select-group -->
+                        <div class="select-group">
+                            <select class="form-select" id="select-${rowIndex}" name="select-${rowIndex}" data-row-index="${rowIndex}" aria-label="Default select" required>
+                                <option value="" ${!value ? "selected" : ""}>선택</option>
+                                <option value="Y" ${value === "Y" ? "selected" : ""}>Y</option>
+                                <option value="N" ${value === "N" ? "selected" : ""}>N</option>
+                            </select>
+                        </div>
+                        <!--// select-group -->
+                    `;
                 }
             },
             {
@@ -208,17 +202,14 @@
                         cellClass: "cell-normal",
                         cellRenderer: (params) => {
                             const value = params.value;
+                            const rowIndex = params.node.rowIndex;
 
-                            if (!value) {
-                                return `
-                            <div class="input-group">
-                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
-                                <label for="input-text" class="hidden">용도</label>
-                            </div>
-                        `;
-                            } else {
-                                return value;
-                            }
+                            return `
+                                <div class="input-group">
+                                    <input type="text" id="input-text-${rowIndex}" class="form-control" placeholder="입력" value="${value || ''}">
+                                    <label for="input-text-${rowIndex}" class="hidden">용도</label>
+                                </div>
+                            `;
                         }
                     },
                     {
@@ -254,20 +245,17 @@
                 cellClass: "cell-normal input",
                 cellRenderer: (params) => {
                     const value = params.value;
+                    const rowIndex = params.node.rowIndex;
 
-                    if (!value) {
-                        return `
-                            <div class="input-group">
-                                <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
-                                <label for="input-text" class="hidden">비고</label>
-                            </div>
-                        `;
-                    } else {
-                        return value;
-                    }
+                    return `
+                        <div class="input-group">
+                            <input type="text" id="input-text-${rowIndex}" class="form-control" placeholder="입력" value="${value || ''}">
+                            <label for="input-text-${rowIndex}" class="hidden">비고</label>
+                        </div>
+                    `;
                 }
             },
-             {
+            {
                 headerName: "행 삭제",
                 headerClass: "center",
                 field: "field08",

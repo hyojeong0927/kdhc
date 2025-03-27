@@ -45,7 +45,7 @@
                 <!-- 사이드 영역 -->
                 <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
                 <aside id="sidebar" class="sidebar" data-menu='[
-                        { "name": "휴대용 저장매체 사용등록", "url": "../SB-USR-059.html" "active": true },
+                        { "name": "휴대용 저장매체 사용등록", "url": "../SB-USR-059.html", "active": true },
                         { "name": "휴대용 저장매체 사용내역", "url": "../usr/SB-USR-062.html" },
                         { "name": "휴대용 저장매체 점검내역", "url": "../usr/SB-USR-065.html" },
                         { "name": "클린PC 사용내역", "url": "../usr/SB-USR-068.html" }]'>
@@ -225,7 +225,10 @@
                             <!--// grid top left end -->
                         
                             <!-- grid top button start -->
-                            <div class="grid-top-btn" data-buttons='[{"text": "불용반출기안"}, {"text": "등록기안"}, {"text": "출력", "class": "btn btn-secondary btn-sm"}]'></div>
+                            <div class="grid-top-btn" data-buttons='[
+                                {"text": "불용반출기안", "url": "./popup/SB-USR-061.html", "popup": true, "popupSize": "large"},
+                                {"text": "등록기안", "url": "./popup/SB-USR-060.html", "popup": true, "popupSize": "large"},
+                                {"text": "출력", "class": "btn btn-secondary btn-sm"}]'></div>
                             <!--// grid top button end -->
 
                         </article>

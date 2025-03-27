@@ -182,8 +182,11 @@
                             <!--// grid top left end -->
 
                             <!-- grid top button start -->
-                            <div class="grid-top-btn" data-buttons='[{"text": "엑셀다운로드"}, {"text": "자산추가"}, {"text": "출력", "class": "btn btn-secondary btn-sm"}]'>
-                            </div>
+                            <div class="grid-top-btn" data-buttons='[
+                                {"text": "엑셀 다운로드"},
+                                {"text": "자산 추가", "url": "./popup/SB-USR-075_02.html", "popup": true, "popupSize": "large"},
+                                {"text": "출력", "class": "btn btn-secondary btn-sm"}
+                            ]'></div>
                             <!--// grid top button end -->
                         </article>
                         <!--// grid top end -->
@@ -221,6 +224,7 @@
  
     </div>
     <!-- script wrap -->
+     
     <script type="module">
         const rowData = [
             {

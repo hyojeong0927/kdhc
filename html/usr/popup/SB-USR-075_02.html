@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ko" data-kdhc-mode="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDHC</title>
+    <link rel="icon" href="../../assets/favicon.svg" type="image/x-icon">
+    <!-- css -->
+    <link rel="stylesheet" href="../../../css/index.css">
+    <!-- script -->
+    <script src="../../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script type="module" src="../../../assets/js/common.js"></script>
+</head>
+<body>
+    <div id="pop-wrap" class="kdhc-pop-wrap">
+        <header class="kdhc-pop-header">
+            <h1 class="pop-title">자산관리 상세 등록/수정</h1>
+            <button type="button" class="btn-close" aria-label="Close" onclick="window.close()"></button>
+        </header>
+        <!-- 팝업 컨테이너 영역 -->
+        <section class="kdhc-pop-container">
+            <div class="inner">
+                <!-- 팝업 컨텐츠 영역 -->
+                <div class="contents">
+                    <!-- breadcrumbs start -->
+                    <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
+                        data-breadcrumb='[
+                        { "name": "정보자산", "url": "#" },
+                        { "name": "정보보자산관리", "url": "#" },
+                        { "name": "자산관리 상세 등록/수정", "url": "", "active": true }
+                        ]'
+                        data-visible="true">
+                    </nav>
+                    <!--// breadcrumbs end -->
+
+                    <!--  -->
+                    <article class="section">
+                        
+                        <!-- input form -->
+                        <div class="input-form-area">
+                            <!-- form start -->
+                             <form>
+                                <fieldset>
+                                    <!-- form-wrap start -->
+                                    <div class="form-wrap type01">
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label">자산범주</div>
+                                                <div class="form-group">
+                                                    <!-- select-group is-error -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="">선택</option>
+                                                            <option value="1" selected>공정제어(controller)</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select-group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                        </div>
+                                        <!--// row end -->
+                                    </div>
+                                    <!--// form-wrap end -->
+                                </fieldset>
+                             </form>
+                            <!-- form end -->
+                        </div>
+                        <!--// input form -->
+                    </article>
+                    <!--//  -->
+                    <article class="section">
+                        <!-- input form -->
+                        <div class="input-form-area">
+                            <!-- form start -->
+                            <form>
+                                <fieldset>
+                                    <!-- form-wrap start -->
+                                    <div class="form-wrap type02">
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">지사구분</div>
+                                                <div class="form-group">
+                                                    <!--  select-group is-error  -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="">선택</option>
+                                                            <option value="1" selected>강남</option>
+                                                            <option value="2">판교</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">자산범주</div>
+                                                <div class="form-group">
+                                                    <!--  select-group is-error  -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="">선택</option>
+                                                            <option value="1" selected>공정제어(PLC)</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">열원구분</div>
+                                                <div class="form-group">
+                                                    <!--  select-group is-error  -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="">선택</option>
+                                                            <option value="1" selected>동남권열원</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select group -->
+                                                    <!-- 에러 문구 : hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">자산관리번호</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="용도내용 입력" value="강남-CONTROLLER-0011">
+                                                        <label for="input-text" class="hidden">자산분류</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">구축시기(년,월)</div>
+                                                <div class="form-group">
+                                                    <!-- input-date-group is-error" -->
+                                                    <div class="input-date-group w-100">
+                                                        <input type="text" id="singleDate0" class="form-control datepicker" value="2024-08" placeholder="YYYY-MM-DD" readonly>
+                                                        <label class="input-group-text" for="singleDate0"><i class="icon calendar"></i></label>
+                                                    </div>
+                                                    <!--// input-date-group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">자산위치</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="용도 내용 입력" value="전자기기실 1 층">
+                                                        <label for="input-text" class="hidden">자산위치</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">관리부서 부서명</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="계전부" disabled>
+                                                        <label for="input-text" class="hidden">자산위치</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">관리부서 담당파트</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="전산" disabled>
+                                                        <label for="input-text" class="hidden">관리부서 부서명</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">관리부서 차(팀)장</div>
+                                                <div class="form-group">
+                                                    <!-- input-search-group is-error -->
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search1" value="윤성찬" placeholder="입력">
+                                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                                    </div>
+                                                    <!--// input search group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">제어보호담당자</div>
+                                                <div class="form-group">
+                                                    <!-- input-search-group is-error -->
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search1" value="심영락" placeholder="입력">
+                                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                                    </div>
+                                                    <!--// input search group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">제어보호담당관</div>
+                                                <div class="form-group">
+                                                    <!-- input-search-group is-error -->
+                                                    <div class="input-search-group">
+                                                        <input type="search" class="form-control" id="search1" value="이준성" placeholder="입력">
+                                                        <label class="input-group-text" for="search1"><i class="icon search"></i></label>
+                                                    </div>
+                                                    <!--// input search group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">제어보호 관리자</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="양균식" disabled>
+                                                        <label for="input-text" class="hidden">자산중요도 가용성</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">자산중요도 가용성</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="1">
+                                                        <label for="input-text" class="hidden">자산중요도 가용성</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">자산중요도 무결성</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="2">
+                                                        <label for="input-text" class="hidden">자산중요도 무결성</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">자산중요도 기밀성</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="3">
+                                                        <label for="input-text" class="hidden">자산중요도 기밀성</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                             <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">자산중요도 합계</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="6.00">
+                                                        <label for="input-text" class="hidden">자산중요도 합계</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">긴급도</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="3.00">
+                                                        <label for="input-text" class="hidden">긴급도</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                             <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">업무영향도 합계</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="3.00">
+                                                        <label for="input-text" class="hidden">업무영향도 합계</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">등급</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="하">
+                                                        <label for="input-text" class="hidden">등급</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">기반시설 지정여부</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="Y">
+                                                        <label for="input-text" class="hidden">기반시설 지정여부</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">IP Address</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">IP Address</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">Mac Address</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">Mac Address</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">시스템 용도</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="GT&B.O.P-1 #1">
+                                                        <label for="input-text" class="hidden">시스템 용도</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">시스템 명</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="GT/BOP제어">
+                                                        <label for="input-text" class="hidden">시스템 명</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                        </div>
+                                        <!--// row end-->
+                                    </div>
+                                    <!--// form-wrap end -->
+                                    <br />
+                                    <!-- form-wrap start -->
+                                    <div class="form-wrap type02">
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">자산분류</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="분산제어시스템(DCS)">
+                                                        <label for="input-text" class="hidden">자산분류</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">컨트롤러 제조사</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="ABB">
+                                                        <label for="input-text" class="hidden">컨트롤러 제조사</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                        </div>
+                                        <!--// row -->
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">컨트롤러 모델</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="BRC410">
+                                                        <label for="input-text" class="hidden">컨트롤러 모델</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">컨트롤러 운영체제</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="">
+                                                        <label for="input-text" class="hidden">컨트롤러 운영체제</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                        </div>
+                                        <!--// row -->
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">컨트롤러 펌웨어 버전</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="MC">
+                                                        <label for="input-text" class="hidden">컨트롤러 펌웨어 버전</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                            <!--  -->
+                                            <div class="col">
+                                                <div class="form-label w-220">컨트롤러 업데이트 주기</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error  -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="입력" value="필요시">
+                                                        <label for="input-text" class="hidden">컨트롤러 업데이트 주기</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--//  -->
+                                        </div>
+                                        <!--// row end-->
+                                    </div>
+                                    <!--// form-wrap end -->
+                                </fieldset>
+                            </form>
+                            <!-- form end -->
+                        </div>
+                        <!--// input form -->
+                    </article>
+                    <!-- bottom button area start -->
+                    <div class="bottom-btn-area" 
+                    data-buttons='[{"text": "저장"}]'>
+                </div>
+                <!--// bottom button area end -->
+                </div>
+                <!--// 팝업 컨텐츠 영역 -->
+            </div>
+        </section>
+        <!--// 팝업 컨테이너 영역 -->
+    </div>
+</body>
+</html>

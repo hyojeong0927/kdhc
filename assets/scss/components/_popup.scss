@@ -60,10 +60,6 @@ $popup-md-footer-height: rem(86px);
                 &:not(:last-of-type) {
                     padding: 0 0 rem($modal-section-btm);
                 }
-                & + .bottom-btn-area {
-                    margin-top: rem(-24px);
-                    margin-bottom: rem(20px);
-                }
             }
             .input-form-area {
                 & + .input-form-area {
