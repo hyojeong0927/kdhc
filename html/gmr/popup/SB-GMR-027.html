@@ -233,55 +233,55 @@
                 field01: "",
                 field02: "checked",
                 field03: "판교",
-                field04: "",
-                field05: "987654",
-                field06: "",
-                field07: "",
-                field08: "",
-                field09: "",
-            },
-            {
-                field01: "",
-                field02: "checked",
-                field03: "판교",
-                field04: "",
-                field05: "987654",
-                field06: "",
-                field07: "",
-                field08: "",
-                field09: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "대구",
-                field04: "",
-                field05: "987654",
-                field06: "",
-                field07: "",
-                field08: "",
-                field09: "",
-            },
-            {
-                field01: "",
-                field02: "",
-                field03: "광교",
-                field04: "",
-                field05: "987654",
-                field06: "",
-                field07: "",
-                field08: "",
+                field04: "홍길동",
+                field05: "12345",
+                field06: "계전부",
+                field07: "제어",
+                field08: "팀장",
                 field09: "",
             },
             {
                 field01: "",
                 field02: "",
                 field03: "판교",
-                field04: "",
-                field05: "987654",
-                field06: "",
-                field07: "",
-                field08: "",
+                field04: "홍길동",
+                field05: "12345",
+                field06: "계전부",
+                field07: "전산",
+                field08: "제어보호담당자",
+                field09: "",
+            },
+            {
+                field01: "",
+                field02: "",
+                field03: "수원",
+                field04: "갑순이",
+                field05: "12345",
+                field06: "계전부",
+                field07: "전산",
+                field08: "제어보호담당자",
+                field09: "",
+            },
+            {
+                field01: "",
+                field02: "",
+                field03: "파주",
+                field04: "이병헌",
+                field05: "12345",
+                field06: "공무부",
+                field07: "배전",
+                field08: "일반",
+                field09: "",
+            },
+            {
+                field01: "",
+                field02: "",
+                field03: "판교",
+                field04: "최민식",
+                field05: "12345",
+                field06: "공무부",
+                field07: "기계",
+                field08: "팀장",
                 field09: "",
             },
         ];
@@ -326,19 +326,16 @@
                 cellEditor: 'customInputSearchEditor',
                 cellRenderer: (params) => {
                     const value = params.value;
+                    const rowIndex = params.node.rowIndex;
 
-                    if (!value) {
-                        return `
-                            <!-- input-search-group is-error -->
-                            <div class="input-search-group">
-                                <input type="search" class="form-control" id="search1" placeholder="이름" value="">
-                                <label class="input-group-text" for="search1"><i class="icon search"></i></label>
-                            </div>
-                            <!--// input search group -->
-                        `;
-                    } else {
-                        return value;
-                    }
+                    return `
+                        <!-- input-search-group is-error -->
+                        <div class="input-search-group">
+                            <input type="search" class="form-control" id="search1-${rowIndex}" placeholder="이름" value="${value || ''}">
+                            <label class="input-group-text" for="search1-${rowIndex}"><i class="icon search"></i></label>
+                        </div>
+                        <!--// input search group -->
+                    `;
                 }
             },
             {
@@ -358,23 +355,18 @@
                 editable: true,
                 cellRenderer: (params) => {
                     const value = params.value;
-
-                    if (!value) {
-                        return `
-                                <!-- select-group is-error -->
-                                <div class="select-group">
-                                    <select class="form-select" aria-label="Default select" required>
-                                        <option value="" selected>선택</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                </div>
-                                <!--// select-group -->
-                            `;
-                    } else {
-                        return value;
-                    }
+                    const rowIndex = params.node.rowIndex;
+                    return `
+                        <!-- select-group -->
+                        <div class="select-group">
+                            <select class="form-select" id="select-${rowIndex}" name="select-${rowIndex}" data-row-index="${rowIndex}" aria-label="Default select" required>
+                                <option value="" ${!value ? "selected" : ""}>선택</option>
+                                <option value="계전부" ${value === "계전부" ? "selected" : ""}>계전부</option>
+                                <option value="공무부" ${value === "공무부" ? "selected" : ""}>공무부</option>
+                            </select>
+                        </div>
+                        <!--// select-group -->
+                    `;
                 }
             },
             {
@@ -387,23 +379,21 @@
                 editable: true,
                 cellRenderer: (params) => {
                     const value = params.value;
+                    const rowIndex = params.node.rowIndex;
 
-                    if (!value) {
-                        return `
-                                <!-- select-group is-error -->
-                                <div class="select-group">
-                                    <select class="form-select" aria-label="Default select" required>
-                                        <option value="" selected>선택</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                </div>
-                                <!--// select-group -->
-                            `;
-                    } else {
-                        return value;
-                    }
+                    return `
+                        <!-- select-group -->
+                        <div class="select-group">
+                            <select class="form-select" id="select-${rowIndex}" name="select-${rowIndex}" data-row-index="${rowIndex}" aria-label="Default select" required>
+                                <option value="" ${!value ? "selected" : ""}>선택</option>
+                                <option value="제어" ${value === "제어" ? "selected" : ""}>제어</option>
+                                <option value="전산" ${value === "전산" ? "selected" : ""}>전산</option>
+                                <option value="배전" ${value === "배전" ? "selected" : ""}>배전</option>
+                                <option value="기계" ${value === "기계" ? "selected" : ""}>기계</option>
+                            </select>
+                        </div>
+                        <!--// select-group -->
+                    `;
                 }
             },
              {
@@ -416,23 +406,20 @@
                 editable: true,
                 cellRenderer: (params) => {
                     const value = params.value;
+                    const rowIndex = params.node.rowIndex;
 
-                    if (!value) {
-                        return `
-                            <!-- select-group is-error -->
-                            <div class="select-group">
-                                <select class="form-select" aria-label="Default select" required>
-                                    <option value="" selected>선택</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                            <!--// select-group -->
+                    return `
+                        <!-- select-group -->
+                        <div class="select-group">
+                            <select class="form-select" id="select-${rowIndex}" name="select-${rowIndex}" data-row-index="${rowIndex}" aria-label="Default select" required>
+                                <option value="" ${!value ? "selected" : ""}>선택</option>
+                                <option value="팀장" ${value === "팀장" ? "selected" : ""}>팀장</option>
+                                <option value="제어보호담당자" ${value === "제어보호담당자" ? "selected" : ""}>제어보호담당자</option>
+                                <option value="일반" ${value === "일반" ? "selected" : ""}>일반</option>
+                            </select>
+                        </div>
+                        <!--// select-group -->
                         `;
-                    } else {
-                        return value;
-                    }
                 }
             },
             {

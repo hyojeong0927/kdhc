@@ -147,7 +147,7 @@
                                                 <div class="form-group">
                                                     <!-- input-group is-error  -->
                                                     <div class="input-group">
-                                                        <input type="text" id="input-text" class="form-control" placeholder="지사" value="판교" disabled>
+                                                        <input type="text" id="input-text" class="form-control" placeholder="지사" value="강남" disabled>
                                                         <label for="input-text" class="hidden">지사</label>
                                                     </div>
                                                     <!--// input group -->
@@ -186,7 +186,7 @@
                             <!--// grid top left end -->
                             <!-- grid top button start -->
                             <div class="grid-top-btn" 
-                                data-buttons='[{"text": "인사등록"}]'>
+                                data-buttons='[{"text": "인사등록", "url": "./popup/SB-GMR-027.html", "popup": true, "popupSize": "large"}]'>
                             </div>
                             <!--// grid top button end -->
                         </article>
@@ -228,59 +228,59 @@
     <script type="module">
         const rowData = [
             {
-                field01: "판교",
-                field02: "홍길동",
-                field03: "6",
-                field04: "2024.12.10 ~ 2024.12.12",
-                field05: "2024.12.10 ~ 2024.12.12",
+                field01: "강남",
+                field02: "홍창기",
+                field03: "2",
+                field04: "2019.01.14 09:22:24",
+                field05: "2019.01.15 09:22:24",
                 field06: "step01",
             },
             {
-                field01: "판교",
-                field02: "홍길동",
-                field03: "6",
-                field04: "2024.12.10 ~ 2024.12.12",
-                field05: "2024.12.10 ~ 2024.12.12",
+                field01: "강남",
+                field02: "홍창기",
+                field03: "3",
+                field04: "2019.06.14 09:22:24",
+                field05: "2019.06.15 09:22:24",
                 field06: "step01 reject",
             },
             {
-                field01: "판교",
-                field02: "홍길동",
-                field03: "6",
-                field04: "2024.12.10 ~ 2024.12.12",
-                field05: "2024.12.10 ~ 2024.12.12",
+                field01: "강남",
+                field02: "홍창기",
+                field03: "5",
+                field04: "2020.01.18 09:22:24",
+                field05: "2020.01.19 09:22:24",
                 field06: "step02",
             },
             {
-                field01: "판교",
-                field02: "홍길동",
+                field01: "강남",
+                field02: "홍창기",
                 field03: "6",
-                field04: "2024.12.10 ~ 2024.12.12",
-                field05: "2024.12.10 ~ 2024.12.12",
+                field04: "2021.06.21 09:12:24",
+                field05: "2021.06.22 09:12:24",
                 field06: "step02 reject",
             },
             {
-                field01: "판교",
-                field02: "홍길동",
-                field03: "6",
-                field04: "2024.12.10 ~ 2024.12.12",
-                field05: "2024.12.10 ~ 2024.12.12",
+                field01: "강남",
+                field02: "홍창기",
+                field03: "2",
+                field04: "2022.01.14 09:22:24",
+                field05: "2022.01.15 09:22:24",
                 field06: "step03",
             },
             {
-                field01: "판교",
-                field02: "홍길동",
-                field03: "6",
-                field04: "2024.12.10 ~ 2024.12.12",
-                field05: "2024.12.10 ~ 2024.12.12",
+                field01: "강남",
+                field02: "홍창기",
+                field03: "32",
+                field04: "2023.03.17 09:22:24",
+                field05: "2023.03.18 09:22:24",
                 field06: "step03 reject",
             },
             {
-                field01: "판교",
-                field02: "홍길동",
-                field03: "6",
-                field04: "2024.12.10 ~ 2024.12.12",
-                field05: "2024.12.10 ~ 2024.12.12",
+                field01: "강남",
+                field02: "홍창기",
+                field03: "4",
+                field04: "2024.01.18 09:22:24",
+                field05: "2024.01.19 09:22:24",
                 field06: "done",
             },
         ];
@@ -404,12 +404,12 @@
             headerHeight: 39, // header height
             rowData: rowData,
             rowHeight: 47, // row height
-            rowSelection: { // row checkbox
-                mode: "multiRow",
-                groupSelects: "descendants",
-                selectAll: 'filtered',
-                width: 52,
-            },
+            // rowSelection: { // row checkbox
+            //     mode: "multiRow",
+            //     groupSelects: "descendants",
+            //     selectAll: 'filtered',
+            //     width: 52,
+            // },
             domLayout: "autoHeight", // 2025-02-19 추가 옵션
             suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
             // data empty style
