@@ -85,20 +85,19 @@
 
             console.log("hello", id);
 
-            if(id ==="1234" && pw === "1234") {
+            if(id ==="4100415" && pw === "123456") {
                 window.location.href = "SB-USR-003_02.html";
                 
-            } else if (id === "user" && pw === "1234") {
+            } else if (id === "4100415" && pw === "********") {
                 window.location.href = "SB-USR-001.html";
 
-            } else if (id === "admin" && pw === "1234") {
+            } else if (id === "admin" && pw === "********") {
                 window.location.href = "SB-USR-002.html";
 
             } else  {
                 loginErrorMsg.style.display = "block";
                 loginErrorMsg.textContent = "아이디 또는 비밀번호가 틀렸습니다.";
             }
-            
             loginId.addEventListener("input", () => loginErrorMsg.style.display = "none");
             loginPw.addEventListener("input", () => loginErrorMsg.style.display = "none");
         });

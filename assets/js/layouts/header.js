@@ -76,5 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("로그아웃 되었습니다.");
             window.location.href = "../home/SB-USR-003.html";
         }
+
     });
 });
