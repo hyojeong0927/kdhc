@@ -462,12 +462,11 @@
                 headerName: "봉인번호",
                 headerClass: "center",
                 field: "field05",
-                width: 140,
+                width: 180,
                 cellClass: "cell-normal input",
                 cellRenderer: (params) => {
                     const value = params.value;
-                    if (!value) {
-                        return `
+                    return `
                             <!-- input-search-group is-error -->
                             <div class="input-search-group">
                                 <input type="search" class="form-control" id="search1" placeholder="봉인번호" value="${value || ''}">
@@ -475,9 +474,6 @@
                             </div>
                             <!--// input search group -->
                         `;
-                    } else {
-                        return value;
-                    }
                 }
             },
             {
