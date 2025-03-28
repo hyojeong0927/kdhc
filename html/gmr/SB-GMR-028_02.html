@@ -153,7 +153,7 @@
                                                 <div class="form-group">
                                                     <!-- input search group is-error : 에러 -->
                                                     <div class="input-search-group ">
-                                                        <input type="search" class="form-control" id="search2" value="" placeholder="기안자 명">
+                                                        <input type="search" class="form-control" id="search2" value="" placeholder="사번">
                                                         <label class="input-group-text hidden" for="search2"><i class="icon search"></i></label>
                                                     </div>
                                                     <!--// input search group -->
@@ -168,8 +168,8 @@
                                         <!-- row -->
                                         <div class="form-row">
                                             <!-- col -->
-                                             <div class="col">
-                                                <div class="form-label w-120r">자산관리번호</div>
+                                             <div class="col align-center">
+                                                <div class="form-label w-120r">저장매체 자산관리번호</div>
                                                 <div class="form-group">
                                                     <!-- input search group is-error : 에러 -->
                                                     <div class="input-search-group ">
@@ -184,8 +184,8 @@
                                              </div>
                                             <!--// col -->
                                             <!-- col -->
-                                            <div class="col">
-                                                <div class="form-label w-120r">VM Window 계정</div>
+                                            <div class="col align-center">
+                                                <div class="form-label w-120r">클린PC 자산관리번호</div>
                                                 <div class="form-group">
                                                     <!-- input-group is-error -->
                                                     <div class="input-group">
@@ -309,36 +309,63 @@
         const rowData = [
             {
                 field01: "판교",
-                field02: "2024.12.10 12:00",
-                field03: "1234565",
+                field02: "2025.03.14 09:22:24",
+                field03: "23432",
                 field04: "홍길동",
-                field05: "ㅇㅇ-매체-001",
-                field06: "화성-노트북-001",
-                field07: "Window 1",
-                field08: "USB",
-                field09: "쓰기",
+                field05: "강남-HDD-002",
+                field06: "1232-2323-1110-2323",
+                field07: "강남-PC-0005",
+                field08: "VM USER 01",
+                field09: "USB",
+                field10: "접속",
+            },
+            {
+                field01: "강남",
+                field02: "2025.03.17 09:22:24",
+                field03: "23432",
+                field04: "홍길동",
+                field05: "강남-HDD-002",
+                field06: "1232-2323-1110-2323",
+                field07: "강남-PC-0005",
+                field08: "VM USER 01",
+                field09: "USB",
+                field10: "쓰기",
             },
             {
                 field01: "판교",
-                field02: "2024.12.10 12:00",
-                field03: "1234565",
+                field02: "2025.03.18 09:22:24",
+                field03: "23432",
                 field04: "홍길동",
-                field05: "ㅇㅇ-매체-001",
-                field06: "화성-노트북-001",
-                field07: "Window 1",
-                field08: "외장형 하드",
-                field09: "쓰기",
+                field05: "강남-HDD-002",
+                field06: "1232-2323-1110-2323",
+                field07: "강남-PC-0005",
+                field08: "VM USER 01",
+                field09: "USB",
+                field10: "쓰기",
             },
             {
                 field01: "판교",
-                field02: "2024.12.10 12:00",
-                field03: "1234565",
-                field04: "홍길동",
-                field05: "ㅇㅇ-매체-001",
-                field06: "화성-노트북-001",
-                field07: "Window 1",
-                field08: "CD - ROM",
-                field09: "접속",
+                field02: "2025.03.21 09:12:24",
+                field03: "45678",
+                field04: "홍창기",
+                field05: "강남-HDD-001",
+                field06: "1232-2323-0000-2323",
+                field07: "강남-PC-0004",
+                field08: "VM USER 01",
+                field09: "USB",
+                field10: "접속",
+            },
+            {
+                field01: "판교",
+                field02: "2025.03.21 09:22:24",
+                field03: "45678",
+                field04: "홍창기",
+                field05: "강남-HDD-001",
+                field06: "1232-2323-0000-2323",
+                field07: "강남-PC-0004",
+                field08: "VM USER 01",
+                field09: "USB",
+                field10: "쓰기",
             },
         ];
         const columnDefs = [
@@ -371,7 +398,7 @@
                 cellClass: "cell-normal",
             },
             {
-                headerName: "자산관리번호",
+                headerName: "저장매체 자산관리번호",
                 headerClass: "center",
                 field: "field05",
                 minWidth: 180,
@@ -387,16 +414,24 @@
                 cellClass: "cell-normal",
             },
             {
-                headerName: "VM Window 계정",
+                headerName: "클린PC자산관리번호",
                 headerClass: "center",
                 field: "field07",
+                minWidth: 180,
+                flex: 1,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "VM Window 계정",
+                headerClass: "center",
+                field: "field08",
                 width: 180,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "저장매체 구분",
                 headerClass: "center",
-                field: "field08",
+                field: "field09",
                 minWidth: 180,
                 flex: 1,
                 cellClass: "cell-normal",
@@ -404,7 +439,7 @@
             {
                 headerName: "접속구분",
                 headerClass: "center",
-                field: "field09",
+                field: "field10",
                 minWidth: 180,
                 flex: 1,
                 cellClass: "cell-normal",
