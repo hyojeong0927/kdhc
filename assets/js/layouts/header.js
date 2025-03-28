@@ -1,3 +1,5 @@
+import { openCenteredPopup } from '../../../assets/js/components/popup.js';
+
 document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector("header#kdhc-header");
     if (!header) return;
@@ -67,8 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // 비밀번호 변경 버튼 클릭 이벤트
-        if (target.id === "btn-change-password") {
-            window.location.href = "../home/SB-USR-004.html";
+        const changePasswordBtn = document.getElementById('btn-change-password');
+        if (changePasswordBtn) {
+            changePasswordBtn.addEventListener('click', (event) => {
+                event.preventDefault();
+                openCenteredPopup('./popup/SB-USR-004.html', 600, 610);
+            });
         }
 
         // 로그아웃 버튼 클릭 이벤트
