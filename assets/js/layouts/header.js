@@ -68,15 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        // 비밀번호 변경 버튼 클릭 이벤트
-        const changePasswordBtn = document.getElementById('btn-change-password');
-        if (changePasswordBtn) {
-            changePasswordBtn.addEventListener('click', (event) => {
-                event.preventDefault();
-                openCenteredPopup('./popup/SB-USR-004.html', 600, 610);
-            });
-        }
-
         // 로그아웃 버튼 클릭 이벤트
         if (target.id === "btn-logout") {
             alert("로그아웃 되었습니다.");
@@ -84,4 +75,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
     });
+    
+    // 비밀번호 변경 이벤트 핸들러
+    const changePasswordBtn = document.getElementById('btn-change-password');
+    if (changePasswordBtn) {
+        changePasswordBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            openCenteredPopup('./popup/SB-USR-004.html', 600, 610);
+        });
+    }
 });
