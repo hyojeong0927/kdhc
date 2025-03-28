@@ -51,6 +51,15 @@
                         <div id="sampleGrid" class="normal"></div>
                     </article>
                     <!--// grid wrap end -->
+                    <!-- grid bottom start -->
+                    <article class="grid-bottom-area">
+                        <!-- 페이징 -->
+                        <nav class="page-navigation" aria-label="page navigation">
+                            <script type="module" src="../../../assets/js/components/pagination.js"></script>
+                        </nav>
+                        <!--// 페이징 -->
+                    </article>
+                    <!--// grid bottom end -->
                 </div>
                 <!--// 팝업 컨텐츠 영역 -->
             </div>
@@ -173,6 +182,18 @@
                 groupSelects: "descendants",
                 selectAll: 'filtered',
                 width: 52,
+            },
+            // grid rowSelection checked 조건
+            onGridReady: (params) => {
+                const gridApi = params.api;
+
+                setTimeout(() => {
+                    const firstRow = gridApi.getDisplayedRowAtIndex(0);
+                    const secondRow = gridApi.getDisplayedRowAtIndex(1);
+
+                    if (firstRow) firstRow.setSelected(true);
+                    if (secondRow) secondRow.setSelected(true);
+                }, 100);
             },
             domLayout: "autoHeight", // 2025-02-19 추가 옵션
             suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션

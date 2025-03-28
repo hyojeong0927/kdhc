@@ -37,7 +37,7 @@
                                     <!-- row -->
                                     <div class="form-row">
                                         <!-- col  -->
-                                        <div class="col w-170">
+                                        <div class="col w-150">
                                             <div class="form-group">
                                                 <!-- select-group is-error -->
                                                 <div class="select-group">
@@ -56,26 +56,7 @@
                                         </div>
                                         <!--// col  -->
                                         <!-- col  -->
-                                        <div class="col w-170">
-                                            <div class="form-group">
-                                                <!-- select-group is-error -->
-                                                <div class="select-group">
-                                                    <select class="form-select" aria-label="Default select" required>
-                                                        <option value="" selected>선택</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
-                                                    </select>
-                                                </div>
-                                                <!--// select group -->
-                                                <!-- 에러 문구 : hidden -->
-                                                <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
-                                                <!--// 에러 문구 -->
-                                            </div>
-                                        </div>
-                                        <!--// col  -->
-                                        <!-- col  -->
-                                        <div class="col col-6">
+                                        <div class="col">
                                             <div class="form-group">
 
                                                 <!-- input-group is-error  -->
@@ -136,36 +117,47 @@
     <script type="module">
         const rowData = [
             {
-                field01: "화성-000",
-                field02: "Y",
+                field01: "USB",
+                field02: "화성-USB-001",
+                field03: "Y",
             },
             {
-                field01: "화성-000",
-                field02: "Y",
+                field01: "LAN",
+                field02: "화성-LAN-001",
+                field03: "N",
             },
             {
-                field01: "화성-000",
-                field02: "N",
+                field01: "광모듈",
+                field02: "화성-OM-001",
+                field03: "N",
             },
             {
-                field01: "화성-000",
-                field02: "Y",
+                field01: "CD-ROM",
+                field02: "화성-CD-001",
+                field03: "Y",
             },
         ];
         const columnDefs = [
             {
-                headerName: "봉인관리번호",
+                headerName: "구분",
                 headerClass: "center",
                 field: "field01",
-                width: 360,
+                width: 120,
+                cellClass: "cell-normal",
+            },  
+            {
+                headerName: "봉인관리번호",
+                headerClass: "center",
+                field: "field02",
+                minWidth: 260,
+                flex: 1,
                 cellClass: "cell-normal",
             },     
             {
                 headerName: "사용여부",
                 headerClass: "center",
-                field: "field02",
-                minWidth: 360,
-                flex: 1,
+                field: "field03",
+                width: 90,
                 cellClass: "cell-normal",
             },
         ];
