@@ -2,50 +2,50 @@
 ========================================================================== */
 
 // vendors
-@import 'vendors/bootstrap';
+@import './vendors/bootstrap';
 
 // base
-@import 'base/typography';
-@import 'base/reset';
+@import './base/reset';
+@import './base/typography';
 
 // abstracts
-@import 'abstracts/variables';
-@import 'abstracts/functions';
-@import 'abstracts/mixins';
+@import './abstracts/variables';
+@import './abstracts/functions';
+@import './abstracts/mixins';
 
 // layouts
-@import 'layouts/header';
-@import 'layouts/navigation';
-@import 'layouts/footer';
-@import 'layouts/sidebar';
-@import 'layouts/forms';
-@import 'layouts/main';
-@import 'layouts/container';
+@import './layouts/header';
+@import './layouts/navigation';
+@import './layouts/footer';
+@import './layouts/sidebar';
+@import './layouts/forms';
+@import './layouts/main';
+@import './layouts/container';
 
 // utilities
-@import 'utilities/util';
+@import './utilities/util';
 
 // components
-@import 'components/alert';
-@import 'components/badge';
-@import 'components/box';
-@import 'components/button';
-@import 'components/calendar';
-@import 'components/checkbox';
-@import 'components/grid';
-@import 'components/icons';
-@import 'components/input';
-@import 'components/list';
-@import 'components/modal';
-@import 'components/popup';
-@import 'components/step';
-@import 'components/selectbox';
-@import 'components/table';
-@import 'components/title';
-@import 'components/tree';
+@import './components/alert';
+@import './components/badge';
+@import './components/box';
+@import './components/button';
+@import './components/calendar';
+@import './components/checkbox';
+@import './components/grid';
+@import './components/icons';
+@import './components/input';
+@import './components/list';
+@import './components/modal';
+@import './components/popup';
+@import './components/step';
+@import './components/selectbox';
+@import './components/table';
+@import './components/title';
+@import './components/tree';
 
 // pages
-@import 'pages/common';
-@import 'pages/contents';
-@import 'pages/dashboard';
-@import 'pages/guide';
+@import './pages/common';
+@import './pages/contents';
+@import './pages/dashboard';
+@import './pages/guide';
