@@ -1,5 +1,6 @@
 /* Mixin
 ========================================================================== */
+@use './variables as var';
 
 // mixin flex
 // @include flex($flexDirection, '$justifyContent', '$alignItems', $gap)
