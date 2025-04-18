@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (target.id === "SB-USR-008") {
                 window.location.href = "../home/SB-USR-008.html";
             } else if (target.id === "SB-GMR-004") {
-                window.location.href = "../gmr/SB-GMR-004.html";
+                window.location.href = "https://kdhc.netlify.app/html/home/sb-usr-010";
             } else if (target.id === "SB-USR-005") {
                 window.location.href = "../home/SB-USR-005.html";
             }

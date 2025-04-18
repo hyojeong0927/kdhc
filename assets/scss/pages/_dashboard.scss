@@ -10,10 +10,8 @@
             "row-box-1 row-box-2 row-box-3"
             "row-box-4 row-box-5 row-box-6"
             "alarm alarm alarm";
-        grid-template-rows: rem(32px) rem(74px) rem(268px) rem(268px) rem(40px);
-        grid-column-gap: rem(40px);
-        grid-row-gap: rem(24px);
-       
+        grid-template-rows: rem(32px) rem(74px) rem(268px) rem(268px) auto;
+        gap: 1.5rem 2.5rem;
         .title-wrap {
             grid-area: title;
             width: 100%; 
@@ -24,6 +22,8 @@
             grid-area: summary;
             margin-top: rem(-12px);
             dl {
+                pointer-events: auto;
+                cursor: pointer;
                 @include flex(true, "center", "baseline", rem(17px));
                 padding: rem(8px) rem(23px) rem(23px);
                 width: 100%;
@@ -259,35 +259,65 @@
             }
         }
         .alarm-box {
+            position: relative;
+            overflow: hidden;
             grid-area: alarm;
+            align-self: end;
             @include flex(true, "start", "center");
-            padding: 0 rem(20px);
+            padding: 0 rem(20px) 0 rem(52px);
             width: 100%;
+            height: rem(40px);
             border-radius: $radius-xsm;
-            background: $gray-009;
+            background-color: $gray-009;
             box-shadow: $dashboard-box-shadow;
-
+            @include before(true, true, 50%, 0, 0, rem(20px));
+            &::before {
+                @extend .icon;
+                @extend .alarm;
+                background-position: left center;
+                background-repeat: no-repeat;
+                background-size: rem(24px);
+                transform: translateY(-50%);
+            }
             .alarm-txt {
-                position: relative;
-                padding-left: rem(36px);
+                width: 100%;
                 color: $white;
                 @include font-style($font-size-base, $font-weight-normal, $line-height-base);
-                @include before(true, true, 50%, 0, 0, 0);
+
+                &:hover .marquee .marquee-content {
+                    animation-play-state: paused;
+                }
+                .marquee {
+                    @include flex(true, "start", "center");
+                    position: relative; 
+                    overflow: hidden;
+                    .marquee-content {
+                        @include flex(true, "start", "center");
+                        animation: marquee-loop 60s linear infinite;
+                    }
+                }
                 a {
+                    display: inline-block;
+                    margin-right: rem(40px);
                     color: $white;
                     text-decoration: none;
+                    white-space: nowrap;
+                    &:focus {
+                        animation-play-state: paused;
+                    }
                 }
-                &::before {
-                    @extend .icon;
-                    @extend .alarm;
-                    background-position: left center;
-                    background-repeat: no-repeat;
-                    background-size: rem(24px);
-                    transform: translateY(-50%);
+            }
+            @keyframes marquee-loop {
+                0% {
+                    transform: translateX(100%);
+                }
+                100% {
+                    transform: translateX(-100%);
                 }
             }
         }
     }
+
     // admin dashboard layout
     &.admin {
         .contents {
@@ -358,3 +388,4 @@
         height: rem(268px) !important;
     }
 }
+
