@@ -25,8 +25,8 @@ const menu00Projects = [
         status: "완료",
         start: "2025-03-10",
         end: "2025-03-14",
-        modDate: "",
-        design: "△",
+        modDate: "2025-04-18",
+        design: "O",
         dev: "2025-04-14",
     },
     {
