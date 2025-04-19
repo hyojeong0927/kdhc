@@ -19,7 +19,7 @@ import "./components/btmbutton.js"
 // input type file
 // import "./components/inputFile.js"
 
-// 팝업일 경우 body 에 popup 클래스 추가
+// 윈도우 팝업일 경우 body 에 popup 클래스 추가
 if (window.opener) {
     document.body.classList.add("popup");
 }
