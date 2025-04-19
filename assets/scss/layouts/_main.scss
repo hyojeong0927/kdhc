@@ -29,6 +29,7 @@
     }
     &.admin {
         height: 100%;
+        max-height: calc(100dvh - $header-height);
         .contents {
             height: 100%;
         }
