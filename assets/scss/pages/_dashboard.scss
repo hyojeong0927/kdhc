@@ -293,7 +293,16 @@
                     overflow: hidden;
                     .marquee-content {
                         @include flex(true, "start", "center");
-                        animation: marquee-loop 60s linear infinite;
+                        white-space: nowrap;
+                        transform: translateX(0%);
+
+                        &.animate {
+                            animation-name: marquee-loop;
+                            animation-timing-function: linear;
+                            animation-iteration-count: infinite;
+                            animation-fill-mode: forwards;
+                            // duration은 JS에서 개별 적용
+                        }
                     }
                 }
                 a {
@@ -308,12 +317,8 @@
                 }
             }
             @keyframes marquee-loop {
-                0% {
-                    transform: translateX(100%);
-                }
-                100% {
-                    transform: translateX(-100%);
-                }
+                0%   { transform: translateX(0%); }
+                100% { transform: translateX(-100%); }
             }
         }
     }

@@ -332,16 +332,30 @@
             });
         });
         
-        // marquee 애니메이션 흐름을 부드럽게 하기 위해 반복 되게 함
+        // 알림 애니메이션
         window.addEventListener('DOMContentLoaded', () => {
             const marquee = document.querySelector('.alarm-box .marquee');
             const content = marquee.querySelector('.marquee-content');
 
+            // 무한 루프 자연스럽게
             if (!marquee.classList.contains('duplicated')) {
                 const clone = content.cloneNode(true);
                 marquee.appendChild(clone);
                 marquee.classList.add('duplicated');
             }
+            // 애니메이션 지연 실행 + 속도 자동 계산
+            setTimeout(() => {
+                const allContents = marquee.querySelectorAll('.marquee-content');
+
+                allContents.forEach(el => {
+                    const contentWidth = el.scrollWidth;
+                    const marqueeWidth = marquee.offsetWidth;
+                    const duration = Math.max((contentWidth + marqueeWidth) / 100, 5);
+
+                    el.style.animationDuration = `${duration}s`;
+                    el.classList.add('animate');
+                });
+            }, 2000);
         });
     </script>
     <!--// script wrap -->
