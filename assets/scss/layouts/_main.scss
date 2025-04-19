@@ -27,4 +27,9 @@
         min-height: 100%;
         height: calc(100dvh - $header-height - rem(20px) - rem(27px));
     }
+    &.admin {
+        .contents {
+            height: 100%;
+        }
+    }
 }
