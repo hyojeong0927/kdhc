@@ -28,6 +28,7 @@
         height: calc(100dvh - $header-height - rem(20px) - rem(27px));
     }
     &.admin {
+        height: 100%;
         .contents {
             height: 100%;
         }
