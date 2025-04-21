@@ -30,6 +30,11 @@
     width: 100%;
     height: rem(24px);
     background-color: $gray-010;
+    .toggle-head {
+        .inner {
+            @include flex(true, "start", "center");
+        }
+    }
     .nuri-txt {
         position: relative;
         padding-left: rem(18px);
