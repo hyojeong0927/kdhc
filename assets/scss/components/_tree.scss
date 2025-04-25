@@ -165,7 +165,7 @@
                     @include before(true, true, rem(-14px), 0, 0, rem(-26px));
                     @include before(false, true, rem(10px), 0, 0, rem(-24px));
                     &::before {
-                        height: calc(100% + rem(18px));
+                        height: calc(100% + #{rem(18px)});
                         @extend .dot-line;
                         z-index: -1;
                     }
