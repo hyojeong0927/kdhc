@@ -161,7 +161,7 @@
         border: $form-select-border;
         border-radius: rem($form-select-border-radius);
         background-color: $input-bg;
-        transition: max-height 0.2s ease;
+        transition: display 0.2s ease;
         z-index: $zindex-dropdown;
         
         label {
