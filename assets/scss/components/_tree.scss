@@ -178,8 +178,8 @@
                 &.last-child {
                     .tree-doc {
                         &::before {
-                            top: rem(-8px);
-                            height: 100%;
+                            top: calc(-100% - #{rem(30px)});
+                            height: calc(100% + #{rem(40px)});
                         }
                     }
                 }
