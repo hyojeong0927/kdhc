@@ -150,17 +150,20 @@
     .options {
         display: none;
         overflow-y: auto;
+        overflow-x: hidden;
         position: absolute;
         top: 100%;
         left: 0; 
         margin-top: rem(8px);
         padding: rem(12px) 0;
         width: 100%;
+        max-height: rem(150px);
         border: $form-select-border;
         border-radius: rem($form-select-border-radius);
         background-color: $input-bg;
-        max-height: rem(150px);
+        transition: max-height 0.2s ease;
         z-index: $zindex-dropdown;
+        
         label {
             cursor: pointer;
             color: $form-select-font-color;
