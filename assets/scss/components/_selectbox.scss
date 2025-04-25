@@ -1,7 +1,7 @@
 /* selectbox
 ========================================================================== */
-// selectbox start
-.form-select {
+// common
+%form-select-common {
     cursor: pointer;
     padding: {
         top: rem($form-select-padding-y);
@@ -11,20 +11,24 @@
     };
     width: $form-select-width;
     height: $form-select-height;
-    color: $form-select-font-color;
-    font-size: rem($form-select-font-size);
-    line-height: $form-select-font-line-height;
-    font-weight: $form-select-font-weight;
-    letter-spacing: $form-select-letter-spacing;
     border-radius: rem($form-select-border-radius);
     border: $form-select-border;
     background-color: $input-bg;
-    transition: $input-transition;
     @extend .icon;
     @extend .arrow-down;
     background-size: rem(20px);
     background-position: right rem(12px) center;
     box-sizing: border-box;
+}
+// selectbox start
+.form-select {
+    @extend %form-select-common;
+    color: $form-select-font-color;
+    font-size: rem($form-select-font-size);
+    line-height: $form-select-font-line-height;
+    font-weight: $form-select-font-weight;
+    letter-spacing: $form-select-letter-spacing;
+    transition: $input-transition;
     &:required:invalid {
         color: $form-select-placeholder-color;
     }
@@ -77,3 +81,103 @@
     }
 }
 // selectbox end
+
+// combobox
+.minwidth {
+    @include minwidth;
+}
+.combo-box {
+    position: relative;
+    display: block;
+    width: 100%;
+    @include minwidth;
+    @include scroll-y;
+    .selectbox {
+        @include flex(true, "start", "center");
+        @extend %form-select-common;
+        overflow: hidden;
+        @include minwidth;
+        .selected {
+            @include ellipsis(1);
+            flex: 1 1 auto;
+            display: block;
+            @include minwidth;
+            width: 100%;
+            margin-right: rem(40px);
+            color: $form-select-font-color;
+            font-size: rem($form-select-font-size);
+            line-height: $line-height-base;
+            font-weight: $form-select-font-weight;
+            letter-spacing: $form-select-letter-spacing;
+        }
+        &.placeholder {
+            span {
+                color: $input-placeholder-color; 
+            }
+            opacity: 1;
+        }
+    }
+    &.active,
+    &:active,
+    &:hover,
+    &:focus-visible,
+    &:focus-within,
+    &:focus {
+        .selectbox {
+            border-color: $gray-002;
+        }
+    }
+    &.is-error {
+        .selectbox {
+            @extend %input-error;
+        }
+    }
+    &[aria-disabled="true"] {
+        pointer-events: none;
+        .selectbox {
+            background-color: $input-disabled-bg;
+            .selected {
+                color: $input-disabled-color;
+            }
+        }
+    }
+    &[aria-readonly="true"] {
+        pointer-events: none;
+        .selectbox {
+            background-color: $input-disabled-bg;
+        }
+    }
+    .options {
+        display: none;
+        overflow-y: auto;
+        position: absolute;
+        top: 100%;
+        left: 0; 
+        margin-top: rem(8px);
+        padding: rem(12px) 0;
+        width: 100%;
+        border: $form-select-border;
+        border-radius: rem($form-select-border-radius);
+        background-color: $input-bg;
+        max-height: rem(150px);
+        z-index: $zindex-dropdown;
+        label {
+            cursor: pointer;
+            color: $form-select-font-color;
+            font-size: rem($form-select-font-size);
+        }
+        li {
+            @include flex(true, "start", "center");
+            padding: 0 rem(16px);
+            min-height: rem(34px);
+            .form-check-group {
+                gap: rem(4px);
+            }
+            &:hover {
+                background-color: $blue-003;
+            }
+        }
+    }
+    
+}
+// combobox end

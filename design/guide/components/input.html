@@ -12,7 +12,7 @@
     <script type="module" src="../../../assets/js/common.js"></script>
     <script src="../../../assets/js/components/inputFile.js"></script>
 </head>
-<body>
+<body class="guide">
     <article class="guide-contents">
         <div class="title">
 			<h3>Input / Textarea / Selectbox</h3>
@@ -302,6 +302,424 @@
                                 </select>
                             </div>
                             <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Combo box</th>
+                        <td>
+                            <!-- placeholder -->
+                            <!-- combo-box is-error -->
+                            <div class="combo-box" aria-disabled="false">
+                                <div class="selectbox" id="multiSelectBox" role="combobox" aria-expanded="false" aria-label="옵션 선택">
+                                    <span class="selected">Selected</span>
+                                </div>
+                                <ul class="options" id="multiOptions">
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" id="selectAll"><label for="selectAll">전체</label>
+                                        </div>
+                                    </li> 
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option1" value="고양"><label for="option1">고양</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option2" value="김해"><label for="option2">김해</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option3" value="마포"><label for="option3">마포</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option4" value="목동"><label for="option4">목동</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option5" value="부천"><label for="option5">부천</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option6" value="분당"><label for="option6">분당</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option7" value="수원"><label for="option7">수원</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option8" value="용인"><label for="option8">용인</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option9" value="청주"><label for="option9">청주</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option10" value="파주"><label for="option10">파주</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option11" value="판교"><label for="option11">판교</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option12" value="화성"><label for="option12">화성</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--// combo-box -->
+                        </td>
+                        <td class="minwidth">
+                            <!-- normal checked-->
+                            <!-- combo-box is-error -->
+                            <div class="combo-box" aria-disabled="false">
+                                <div class="selectbox" id="multiSelectBox" role="combobox" aria-expanded="false" aria-label="옵션 선택">
+                                    <span class="selected">Selected</span>
+                                </div>
+                                <ul class="options" id="multiOptions">
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" id="selectAll1"><label for="selectAll1">전체</label>
+                                        </div>
+                                    </li> 
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option11" value="고양" checked><label for="option11">고양</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option12" value="김해"><label for="option12">김해</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option13" value="마포"><label for="option13">마포</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option14" value="목동"><label for="option14">목동</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option15" value="부천"><label for="option15">부천</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option16" value="분당"><label for="option16">분당</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option17" value="수원"><label for="option17">수원</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option18" value="용인"><label for="option18">용인</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option19" value="청주"><label for="option19">청주</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option20" value="파주"><label for="option20">파주</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--// combo-box -->
+                        </td>
+                        <td class="minwidth">
+                            <!-- focus/hover -->
+                            <!-- combo-box is-error -->
+                            <div class="combo-box active" aria-disabled="false">
+                                <div class="selectbox" id="multiSelectBox" role="combobox" aria-expanded="false" aria-label="옵션 선택">
+                                    <span class="selected">Selected</span>
+                                </div>
+                                <ul class="options" id="multiOptions">
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" id="selectAll2"><label for="selectAll2">전체</label>
+                                        </div>
+                                    </li> 
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option21" value="고양" checked><label for="option21">고양</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option22" value="김해"><label for="option22">김해</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option23" value="마포"><label for="option23">마포</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option24" value="목동"><label for="option24">목동</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option25" value="부천"><label for="option25">부천</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option26" value="분당"><label for="option26">분당</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option27" value="수원"><label for="option27">수원</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option28" value="용인"><label for="option28">용인</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option29" value="청주"><label for="option29">청주</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option30" value="파주"><label for="option30">파주</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--// combo-box -->
+                        </td>
+                        <td class="minwidth">
+                            <!-- disable -->
+                            <!-- combo-box is-error -->
+                            <div class="combo-box" aria-disabled="true">
+                                <div class="selectbox" id="multiSelectBox" role="combobox" aria-expanded="false" aria-label="옵션 선택">
+                                    <span class="selected">Selected</span>
+                                </div>
+                                <ul class="options" id="multiOptions">
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" id="selectAll3"><label for="selectAll3">전체</label>
+                                        </div>
+                                    </li> 
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option31" value="고양" checked><label for="option31">고양</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option32" value="김해"><label for="option32">김해</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option33" value="마포"><label for="option33">마포</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option34" value="목동"><label for="option34">목동</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option35" value="부천"><label for="option35">부천</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option36" value="분당"><label for="option36">분당</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option37" value="수원"><label for="option37">수원</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option38" value="용인"><label for="option38">용인</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option39" value="청주"><label for="option39">청주</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option40" value="파주"><label for="option40">파주</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--// combo-box -->
+                        </td>
+                        <td class="minwidth">
+                            <!-- readonly -->
+                            <!-- combo-box is-error -->
+                            <div class="combo-box" aria-readonly="true">
+                                <div class="selectbox" id="multiSelectBox" role="combobox" aria-expanded="false" aria-label="옵션 선택">
+                                    <span class="selected">Selected</span>
+                                </div>
+                                <ul class="options" id="multiOptions">
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" id="selectAll4"><label for="selectAll4">전체</label>
+                                        </div>
+                                    </li> 
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option41" value="고양" checked><label for="option41">고양</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option42" value="김해"><label for="option42">김해</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option43" value="마포"><label for="option43">마포</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option44" value="목동"><label for="option44">목동</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option45" value="부천"><label for="option45">부천</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option46" value="분당"><label for="option46">분당</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option47" value="수원"><label for="option47">수원</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option48" value="용인"><label for="option48">용인</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option49" value="청주"><label for="option49">청주</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option50" value="파주"><label for="option50">파주</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--// combo-box -->
+                        </td>
+                        <td class="minwidth">
+                            <!-- error -->
+                            <!-- combo-box is-error -->
+                            <div class="combo-box is-error" aria-disabled="false">
+                                <div class="selectbox" id="multiSelectBox" role="combobox" aria-expanded="false" aria-label="옵션 선택">
+                                    <span class="selected">Selected</span>
+                                </div>
+                                <ul class="options" id="multiOptions">
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" id="selectAll5"><label for="selectAll5">전체</label>
+                                        </div>
+                                    </li> 
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option51" value="고양" checked><label for="option51">고양</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option52" value="김해"><label for="option52">김해</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option53" value="마포"><label for="option53">마포</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option54" value="목동"><label for="option54">목동</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option55" value="부천"><label for="option55">부천</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option56" value="분당"><label for="option56">분당</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option57" value="수원"><label for="option57">수원</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option58" value="용인"><label for="option58">용인</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option59" value="청주"><label for="option59">청주</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check-group">
+                                            <input type="checkbox" class="form-check-input" name="multi-options" id="option60" value="파주"><label for="option60">파주</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--// combo-box -->
+                            <!-- 에러 문구 :  hidden 제거 -->
+                            <p class="form-hint-invalid">잘못 입력하였습니다.</p>
+                            <!--// 에러 문구 -->
                         </td>
                     </tr>
                     <tr>

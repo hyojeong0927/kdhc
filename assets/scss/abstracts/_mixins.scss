@@ -386,3 +386,7 @@
 @mixin content-min-width($reduce: 0) {
     min-width: calc(#{$device-base-width} - #{$sidebar-width} - #{$reduce});
 }
+
+@mixin minwidth {
+    min-width: 0;
+}

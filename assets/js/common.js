@@ -6,6 +6,8 @@ import "./vendors/bootstrap.bundle.min.js";
 import "./vendors/ag-grid-community.min.js";
 // datepicker
 import "./components/datepicker.js";
+// select
+import "./components/select.js";
 // navigation
 import "./components/nav.js";
 // breadcrumb

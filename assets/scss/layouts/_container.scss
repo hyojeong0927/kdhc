@@ -1,6 +1,6 @@
 /* Container
 ========================================================================== */
-body:not(.popup) {
+body:not(.popup):not(.guide) {
   overflow-x: auto;
   min-width: rem($device-base-width);
 }
