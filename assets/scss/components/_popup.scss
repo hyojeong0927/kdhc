@@ -9,7 +9,7 @@ $popup-md-footer-height: rem(86px);
     @include flex(false, "between", "normal");
     width: 100%;
     height: 100%;
-    min-height: 100dvh;
+    min-height: 100vh;
     background-color: $gray-012;
     @include scroll-y;
     @include scroll-x;
@@ -46,7 +46,7 @@ $popup-md-footer-height: rem(86px);
             overflow-y: auto;
             padding: rem(20px) rem(40px) rem(40px);
             height: 100%;
-            max-height: calc(100dvh - $popup-header-height);
+            max-height: calc(100vh - $popup-header-height);
             .contents {
                 padding-bottom: rem(1px);
             }
@@ -106,17 +106,17 @@ $popup-md-footer-height: rem(86px);
         }
     }
     .kdhc-pop-container {
-        max-height: calc(100dvh - $popup-md-header-height - $popup-md-footer-height);
+        max-height: calc(100vh - $popup-md-header-height - $popup-md-footer-height);
         .inner {
             overflow-y: auto;
             padding: rem(24px) rem(24px) 0;
-            max-height: calc(100dvh - $popup-md-header-height - $popup-md-footer-height);
+            max-height: calc(100vh - $popup-md-header-height - $popup-md-footer-height);
         }
         &.not-footer {
-            max-height: calc(100dvh - $popup-md-header-height);
+            max-height: calc(100vh - $popup-md-header-height);
             .inner {
                 padding: rem(24px);
-                max-height: calc(100dvh - $popup-md-header-height);
+                max-height: calc(100vh - $popup-md-header-height);
             }
         }
         .grid-wrap {

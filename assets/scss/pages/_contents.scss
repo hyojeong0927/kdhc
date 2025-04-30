@@ -6,7 +6,7 @@
     @include flex(false, "start", "center", rem(40px));
 
     width: 100%;
-    height: 100dvh;
+    height: 100vh;
     background-color: $primary;
 
     .login-page-title {
@@ -213,7 +213,7 @@
 .kdhc-blank-wrap {
     .kdhc-error-container {
         width: 100%;
-        height: 100dvh;
+        height: 100vh;
         background-color: $gray-012;
         .inner {
             @include flex(true, "center", "center");
@@ -283,7 +283,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100dvh;
+    height: 100vh;
     @include flex(true, "center", "center");
     background: rgba($white, 0.50);
     z-index: $zindex-loader;

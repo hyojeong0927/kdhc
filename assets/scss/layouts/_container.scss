@@ -17,7 +17,7 @@ body:not(.popup):not(.guide) {
         width: 100%;
         min-width: rem($device-base-width);
         height: 100%;
-        max-height: 100dvh;
+        max-height: 100vh;
         background-color: $body-bg;
         @include scroll-y;
     }

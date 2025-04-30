@@ -20,7 +20,7 @@ $dashboard-padding: rem(20px) rem(40px) rem(27px);
     @extend %main-contents-common;
     padding: $main-padding;
     height: 100%;
-    max-height: calc(100dvh - $header-height);
+    max-height: calc(100vh - $header-height);
     .contents {
         height: 100%;
     }
@@ -31,14 +31,14 @@ $dashboard-padding: rem(20px) rem(40px) rem(27px);
     @extend %main-contents-common;
     padding: $dashboard-padding;
     min-height: 100%;
-    height: calc(100dvh - $header-height);
+    height: calc(100vh - $header-height);
     .contents {
         min-height: 100%;
-        height: calc(100dvh - $header-height - rem(20px) - rem(27px));
+        height: calc(100vh - $header-height - rem(20px) - rem(27px));
     }
     &.admin {
         height: 100%;
-        max-height: calc(100dvh - $header-height);
+        max-height: calc(100vh - $header-height);
         .contents {
             height: 100%;
         }

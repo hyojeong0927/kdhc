@@ -18,8 +18,8 @@ $sidebar-width: 280px;
 }
 .sidebar {
     overflow-y: auto;
-    height: 100dvh;
-    max-height: calc(100dvh - $header-height);
+    height: 100vh;
+    max-height: calc(100vh - $header-height);
     background-color: $secondary; //scondary
     .sidebar-top-btn {
         @include flex(true, "end", "center");
