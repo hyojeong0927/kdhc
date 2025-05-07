@@ -204,6 +204,10 @@
         }
     }
 }
+.ag-body-horizontal-scroll {
+    position: absolute;
+    bottom: 0;
+}
 .ag-body-horizontal-scroll:not(.ag-scrollbar-invisible),
 .ag-body-horizontal-scroll-container,
 .ag-body-horizontal-scroll-viewport {
