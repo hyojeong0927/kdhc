@@ -10,16 +10,18 @@ nav {
             @include font-style($font-size-sm, $font-weight-normal, $line-height-base);
             letter-spacing: $letter-spacing-xsm;
             a {
-                color: $gray-002;
+                color: inherit;
                 text-decoration: $text-decoration-none;
             }
             &.active {
+                font-size: $font-size-base;
                 font-weight: $font-weight-medium;
                 background-color: transparent
             }
             & + .breadcrumb-item{
                 &::before {
                     content: '>';
+                    font-weight: $font-weight-normal;
                     padding-right: rem(6px);
                 }
             }
