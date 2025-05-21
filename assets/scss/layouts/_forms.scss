@@ -2,7 +2,7 @@
 ========================================================================== */
 @use "sass:map";
 
-$form-types: ("type01", "type02", "type03", "type04", "type05", "type06");
+$form-types: ("type01", "type02", "type03", "type04", "type05", "type06", "type-expand");
 
 $form-label-width: rem(100px);
 $form-btn-width: rem(136px);
@@ -99,7 +99,8 @@ $form-layouts: (
     type03: (grid-template: "row-01 row-02 btn" "row-01 row-03 btn", columns: 1fr 1fr rem(136px)),
     type04: (grid-template: "row-01 row-02 row-03 btn", columns: 1fr 1fr 1fr rem(136px)),
     type05: (grid-template: "row-01 row-02 row-03 btn", columns: 1fr 1fr 1fr rem(136px)),
-    type06: (display: flex, align: normal, justify: flex-start, padding: rem(14px) rem(20px))
+    type06: (display: flex, align: normal, justify: flex-start, padding: rem(14px) rem(20px)),
+    type-expand: (display: flex, align: normal, justify: flex-start, padding: rem(14px) rem(20px))
  );
 
 
@@ -254,7 +255,7 @@ $form-layouts: (
                         }
                     }
                 }
-                @else if $ft =="type06" {
+                @else if $ft == "type06" {
                     .form-row {
                         gap: rem(8px);
                         &:not(.search-btn) {
@@ -268,6 +269,17 @@ $form-layouts: (
                             }
                         }
                     }
+                }
+                @else if $ft == "type-expand" {
+                    .form-row {
+                        &.form-expand-row {
+                            display: none;
+                            &.show {
+                                display: flex;
+                            }
+                        }
+                    }
+                    
                 }
             }  
         }

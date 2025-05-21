@@ -18,7 +18,7 @@ nav {
                 font-weight: $font-weight-medium;
                 background-color: transparent
             }
-            & + .breadcrumb-item{
+            & + .breadcrumb-item {
                 &::before {
                     content: '>';
                     font-weight: $font-weight-normal;
