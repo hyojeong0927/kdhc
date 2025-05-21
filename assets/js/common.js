@@ -19,7 +19,7 @@ import "./components/gridTopBtmGroup.js"
 // bottom button
 import "./components/btmbutton.js"
 // search expand
-import "./components/expand.js"
+import "./components/searchExpand.js"
 
 // 윈도우 팝업일 경우 body 에 popup 클래스 추가
 if (window.opener) {
