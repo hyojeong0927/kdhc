@@ -1,6 +1,7 @@
 /* Forms
 ========================================================================== */
 @use "sass:map";
+@use 'sass:math';
 
 $form-types: ("type01", "type02", "type03", "type04", "type05", "type06", "type-expand");
 
@@ -100,7 +101,7 @@ $form-layouts: (
     type04: (grid-template: "row-01 row-02 row-03 btn", columns: 1fr 1fr 1fr rem(136px)),
     type05: (grid-template: "row-01 row-02 row-03 btn", columns: 1fr 1fr 1fr rem(136px)),
     type06: (display: flex, align: normal, justify: flex-start, padding: rem(14px) rem(20px)),
-    type-expand: (display: flex, align: normal, justify: flex-start, padding: rem(14px) rem(20px))
+    type-expand: (grid-template: "defaultRow searchBtn" "expandRow searchBtn" "expandBtn expandBtn", columns: 1fr rem(136px))
  );
 
 
@@ -272,11 +273,41 @@ $form-layouts: (
                 }
                 @else if $ft == "type-expand" {
                     .form-row {
+                        &.form-default-row {
+                            grid-area: defaultRow;
+                        }
                         &.form-expand-row {
+                            grid-area: expandRow;
                             display: none;
                             &.show {
                                 display: flex;
                             }
+                        }
+                        &.form-default-row,
+                        &.form-expand-row {
+                            flex-wrap: wrap;
+                            .col {
+                                align-items: normal;
+                                flex: none;
+                                min-width: math.div(100%, 3);
+                                width: math.div(100%, 3);
+                                &.col-6{
+                                    width: math.div(100%, 2);
+                                }
+                                &.col-8 {
+                                    width: math.div(100% * 2, 3);
+                                }
+                            }
+                        }
+                        &.expand-btn {
+                            grid-area: expandBtn;
+                            @include flex(true, "center", "center");
+                            margin-top: rem(9px);
+                            margin-bottom: rem(-9px);
+                            border-top: 1px solid $gray-007;
+                        }
+                        &.search-btn {
+                            grid-area: searchBtn !important;
                         }
                     }
                     
