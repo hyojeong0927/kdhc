@@ -305,6 +305,15 @@ $form-layouts: (
                             margin-top: rem(9px);
                             margin-bottom: rem(-9px);
                             border-top: 1px solid $gray-007;
+                            .btn-icon {
+                                @include flex(true, "center", "center");
+                                .icon {
+                                    &.arrow-up {
+                                        @extend .arrow-down;
+                                        transform: rotate(-180deg);
+                                    }
+                                }
+                            }
                         }
                         &.search-btn {
                             grid-area: searchBtn !important;

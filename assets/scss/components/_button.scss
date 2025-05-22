@@ -20,8 +20,7 @@ $button-types: (
     "outline--round": ($white, $gray-003, $gray-002, $primary, $btn-disabled),
     "grid": ($blue-005, $gray-009, $gray-009, $gray-002, $gray-007),
     "icon": (transparent, transparent, transparent, transparent, transparent),
-    "more":(transparent, transparent, $primary, $primary, $primary),
-    "txt": (transparent, transparent, $primary, transparent, $primary)
+    "more":(transparent, transparent, $primary, $primary, $primary)
 );
 
 // button base style

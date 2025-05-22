@@ -11,7 +11,11 @@
 
         expandBtn?.addEventListener('click', () => {
             const isOpen = expandRow.classList.toggle('show');
-            expandBtn.textContent = isOpen ? '접기' : '더보기';
+            expandBtn.innerHTML = isOpen
+                ? '<i class="icon arrow-up"></i>'
+                : '<i class="icon arrow-down"></i>';
         });
+
+        expandBtn.innerHTML = '<i class="icon arrow-down"></i>';
     });
 })();
