@@ -79,11 +79,19 @@
                             <!-- form start -->
                             <form>
                                 <fieldset>
+                                    <!----------------------------------------------------------------
+                                        수정일 : 2025.05.22 확장형으로 변경
+                                        - type-expand 확장형 타입 추가
+                                        - form-default-row 기본 row 추가
+                                        - form-expand-row 확장형 row 추가
+                                        - 더보기 버튼 추가
+                                    ----------------------------------------------------------------->
                                     <!-- form-wrap start -->
-                                    <div class="form-wrap type01 form-col-2">
-                                        <!-- row -->
-                                        <div class="form-row">
-                                            <!--  -->
+                                    <div class="form-wrap type-expand">
+
+                                        <!-- default row -->
+                                        <div class="form-row form-default-row">
+                                            <!-- col -->
                                             <div class="col">
                                                 <div class="form-label">지사</div>
                                                 <div class="form-group">
@@ -98,8 +106,8 @@
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
-                                            <!--//  -->
-                                            <!--  -->
+                                            <!--// col -->
+                                            <!-- col -->
                                             <div class="col">
                                                 <div class="form-label">열원구분</div>
                                                 <div class="form-group">
@@ -118,11 +126,8 @@
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
-                                            <!--//  -->
-                                        </div>
-                                        <!-- row -->
-                                        <div class="form-row">
-                                            <!--  -->
+                                            <!--// col -->
+                                            <!-- col -->
                                             <div class="col">
                                                 <div class="form-label">시스템 명</div>
                                                 <div class="form-group">
@@ -137,8 +142,8 @@
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
-                                            <!--//  -->
-                                            <!--  -->
+                                            <!--// col -->
+                                            <!-- col -->
                                             <div class="col">
                                                 <div class="form-label">자산관리번호</div>
                                                 <div class="form-group">
@@ -153,12 +158,108 @@
                                                     <!--// 에러 문구 -->
                                                 </div>
                                             </div>
-                                            <!--//  -->
+                                            <!--// col -->
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label">추가</div>
+                                                <div class="form-group">
+                                                   <!-- input-group is-error -->
+                                                   <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="시스템 명 입력" value="">
+                                                        <label for="input-text" class="hidden">시스템 명</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--// col -->
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label">추가</div>
+                                                <div class="form-group">
+                                                   <!-- input-group is-error -->
+                                                   <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="시스템 명 입력" value="">
+                                                        <label for="input-text" class="hidden">시스템 명</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--// col -->
                                         </div>
+                                        <!--// default row end  -->
+
+                                        <!-- expand row -->
+                                        <div class="form-row form-expand-row">
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label">추가</div>
+                                                <div class="form-group">
+                                                   <!-- input-group is-error -->
+                                                   <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="시스템 명 입력" value="">
+                                                        <label for="input-text" class="hidden">시스템 명</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--// col -->
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label">추가</div>
+                                                <div class="form-group">
+                                                   <!-- input-group is-error -->
+                                                   <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="시스템 명 입력" value="">
+                                                        <label for="input-text" class="hidden">시스템 명</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--// col -->
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label">추가</div>
+                                                <div class="form-group">
+                                                   <!-- input-group is-error -->
+                                                   <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="시스템 명 입력" value="">
+                                                        <label for="input-text" class="hidden">시스템 명</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--// col -->
+                                        </div>
+                                        <!--// expand row -->
+                                        
+                                        <!-- expand btn -->
+                                        <div class="form-row expand-btn">
+                                            <button type="button" class="btn btn-txt sm">더보기</button>
+                                        </div>
+                                        <!--// expand btn end -->
+
+                                        <!-- search-btn -->
                                         <div class="form-row search-btn">
                                             <button type="button" class="btn btn-primary lg">조회</button>
                                         </div>
-                                        <!--// row end -->
+                                        <!--// search-btn end -->
+
+                                        <!--// expand row end -->
                                     </div>
                                     <!--// form-wrap end -->
 
