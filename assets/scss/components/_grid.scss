@@ -31,6 +31,16 @@
             justify-content: flex-end;
         }
     }
+    .bgColor {
+        background-color: $blue-003;
+    }
+    .headerBlank {
+        background-color: $gray-007;
+    }  
+    .merge-cell-bg {
+        padding: rem(9px) 0 !important;
+        background-color: $gray-007;
+    }
     // header
     .ag-header {
         border-bottom: 1px solid $gray-007;

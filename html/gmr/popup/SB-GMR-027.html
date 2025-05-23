@@ -29,7 +29,7 @@
                     <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" data-breadcrumb='[
                         { "name": "관리자", "url": "#" },
                         { "name": "인사이동 관리", "url": "../gmr/SB-GMR-025.html" },
-                        { "name": "월인사이동 관리 등록/수정", "url": "", "active": true }
+                        { "name": "인사이동 관리 등록/수정", "url": "", "active": true }
                         ]' data-visible="true">
                     </nav>
                     <!--// breadcrumbs end -->
@@ -44,7 +44,7 @@
 
                     <!-- grid wrap start -->
                     <article class="grid-wrap">
-                        <div id="sampleGrid" class="normal"></div>
+                        <div id="sampleGrid" class="normal row-merge-grid"></div>
                     </article>
                     <!--// grid wrap end -->
 
@@ -93,11 +93,10 @@
                                     <div class="process-status">
                                         <!-- step start -->
                                         <div id="step-container" class="step step-lg" data-step='[
-                                                                { "status": "step-done", "title": "기안자", "name": "계전보안부 이현경" },
-                                                                { "status": "step-current", "title": "제어보호담당자", "name": "계전보안부 오승환" },
-                                                                { "status": "step-default", "title": "제어보호담당관", "name": "계전보안부 김현수" },
-                                                                { "status": "step-reject", "title": "제어보호담당관", "name": "계전보안부 김현수" }]'>
-                    
+                                            { "status": "step-done", "title": "기안자", "name": "계전보안부 이현경" },
+                                            { "status": "step-current", "title": "제어보호담당자", "name": "계전보안부 오승환" },
+                                            { "status": "step-default", "title": "제어보호담당관", "name": "계전보안부 김현수" },
+                                            { "status": "step-reject", "title": "제어보호담당관", "name": "계전보안부 김현수" }]'>
                                         </div>
                                         <script type="module" src="../../../assets/js/components/step.js"></script>
                                         <!-- step end -->
@@ -227,62 +226,71 @@
     <!-- script wrap -->
     <script type="module">
         import { customInputSearchEditor } from "../../../assets/js/components/agGridComponents.js"
-
         const rowData = [
             {
                 field01: "",
-                field02: "checked",
-                field03: "판교",
-                field04: "홍길동",
-                field05: "12345",
-                field06: "계전부",
-                field07: "제어",
-                field08: "팀장",
-                field09: "",
+                field02: "987654",
+                field03: "양병만",
+                field04: "대구",
+                field05: "divider",
+                field06: "checked",
+                field07: "판교",
+                field08: "공무부",
+                field09: "기계과",
+                field10: "팀장",
+                field11: "",
             },
             {
                 field01: "",
-                field02: "",
-                field03: "판교",
-                field04: "홍길동",
-                field05: "12345",
-                field06: "계전부",
-                field07: "전산",
-                field08: "제어보호담당자",
-                field09: "",
+                field02: "987654",
+                field03: "양병만",
+                field04: "대구",
+                field05: "divider",
+                field06: "",
+                field07: "판교",
+                field08: "공무부",
+                field09: "제어과",
+                field10: "팀장",
+                field11: "",
             },
             {
                 field01: "",
-                field02: "",
-                field03: "수원",
-                field04: "갑순이",
-                field05: "12345",
-                field06: "계전부",
-                field07: "전산",
-                field08: "제어보호담당자",
+                field02: "987654",
+                field03: "양병만",
+                field04: "대구",
+                field05: "divider",
+                field06: "",
+                field07: "판교",
+                field08: "계전부",
                 field09: "",
+                field10: "제어보호 담당자",
+                field11: "",
             },
             {
                 field01: "",
-                field02: "",
-                field03: "파주",
-                field04: "이병헌",
-                field05: "12345",
-                field06: "공무부",
-                field07: "배전",
-                field08: "일반",
-                field09: "",
+                field02: "234567",
+                field03: "박동원",
+                field04: "파주",
+                field05: "divider",
+                field06: "checked",
+                field07: "판교",
+                field08: "공무부",
+                field09: "기계과",
+                field10: "기안자",
+                field11: "",
             },
             {
                 field01: "",
-                field02: "",
-                field03: "판교",
-                field04: "최민식",
-                field05: "12345",
-                field06: "공무부",
-                field07: "기계",
-                field08: "팀장",
-                field09: "",
+                field02: "234567",
+                field03: "홍길동",
+                field04: "광주",
+                field05: "divider",
+                field06: "checked",
+                field07: "판교",
+                field08: "계전부",
+                field09: "기계과",
+                field10: "제어보호 담당관",
+                field11: "",
             },
         ];
         const columnDefs = [
@@ -295,32 +303,16 @@
                 valueGetter: "node.rowIndex + 1"
             },
             {
-                headerName: "주부서",
+                headerName: "사번",
                 headerClass: "center",
                 field: "field02",
-                width: 88,
-                cellClass: "cell-normal",
-                cellEditor: 'agCheckboxCellEditor',
-                cellRenderer: params => {
-                    return `
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" ${params.value ? 'checked' : ''}>
-                            <label class="form-check-label hidden" for="flexCheckDefault1">default</label>
-                        </div>
-                    `;
-                }
-            },
-            {
-                headerName: "지사",
-                headerClass: "center",
-                field: "field03",
                 width: 120,
                 cellClass: "cell-normal",
             },
             {
                 headerName: "이름",
                 headerClass: "center",
-                field: "field04",
+                field: "field03",
                 width: 180,
                 cellClass: "cell-normal input",
                 cellEditor: 'customInputSearchEditor',
@@ -339,23 +331,64 @@
                 }
             },
             {
-                headerName: "사번",
+                headerName: "현지사",
                 headerClass: "center",
-                field: "field05",
-                width: 120,
+                field: "field04",
+                minWidth: 120,
+                flex: 1,
                 cellClass: "cell-normal",
             },
             {
-                headerName: "부서",
-                headerClass: "center",
+                headerName: "",
+                headerClass: "center headerBlank",
+                field: "field05",
+                width: 30,
+                cellClass: getMergeCellClass,
+                rowSpan: (params) => shouldMergeRows(params, ["field05"]),
+                cellRenderer: (params) => {
+                    const value = params.value;
+                    
+                    if (value === "divider") {
+                        return `<i class="icon arrow-right"></i>`;
+                    }
+                    return '';
+                }
+            },
+            {
+                headerName: "주부서",
+                headerClass: "center bgColor",
                 field: "field06",
+                width: 88,
+                cellClass: "cell-normal",
+                cellEditor: 'agCheckboxCellEditor',
+                cellRenderer: params => {
+                    return `
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" ${params.value ? 'checked' : ''}>
+                            <label class="form-check-label hidden" for="flexCheckDefault1">default</label>
+                        </div>
+                    `;
+                }
+            },
+            {
+                headerName: "발령지사",
+                headerClass: "center bgColor",
+                field: "field07",
+                minWidth: 150,
+                flex: 1,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "발령부서",
+                headerClass: "center bgColor",
+                field: "field08",
                 minWidth: 150,
                 flex: 1,
                 cellClass: "cell-normal input",
-                editable: true,
                 cellRenderer: (params) => {
                     const value = params.value;
                     const rowIndex = params.node.rowIndex;
+
                     return `
                         <!-- select-group -->
                         <div class="select-group">
@@ -370,9 +403,9 @@
                 }
             },
             {
-                headerName: "부서과",
-                headerClass: "center",
-                field: "field07",
+                headerName: "발령부서과",
+                headerClass: "center bgColor",
+                field: "field09",
                 minWidth: 150,
                 flex: 1,
                 cellClass: "cell-normal input",
@@ -380,26 +413,25 @@
                 cellRenderer: (params) => {
                     const value = params.value;
                     const rowIndex = params.node.rowIndex;
-
                     return `
                         <!-- select-group -->
                         <div class="select-group">
                             <select class="form-select" id="select-${rowIndex}" name="select-${rowIndex}" data-row-index="${rowIndex}" aria-label="Default select" required>
                                 <option value="" ${!value ? "selected" : ""}>선택</option>
-                                <option value="제어" ${value === "제어" ? "selected" : ""}>제어</option>
-                                <option value="전산" ${value === "전산" ? "selected" : ""}>전산</option>
-                                <option value="배전" ${value === "배전" ? "selected" : ""}>배전</option>
-                                <option value="기계" ${value === "기계" ? "selected" : ""}>기계</option>
+                                <option value="제어과" ${value === "제어과" ? "selected" : ""}>제어과</option>
+                                <option value="전산과" ${value === "전산과" ? "selected" : ""}>전산과</option>
+                                <option value="배전과" ${value === "배전과" ? "selected" : ""}>배전과</option>
+                                <option value="기계과" ${value === "기계과" ? "selected" : ""}>기계과</option>
                             </select>
                         </div>
                         <!--// select-group -->
                     `;
                 }
             },
-             {
+            {
                 headerName: "권한",
-                headerClass: "center",
-                field: "field08",
+                headerClass: "center bgColor",
+                field: "field10",
                 minWidth: 220,
                 flex: 1,
                 cellClass: "cell-normal input",
@@ -414,25 +446,89 @@
                             <select class="form-select" id="select-${rowIndex}" name="select-${rowIndex}" data-row-index="${rowIndex}" aria-label="Default select" required>
                                 <option value="" ${!value ? "selected" : ""}>선택</option>
                                 <option value="팀장" ${value === "팀장" ? "selected" : ""}>팀장</option>
-                                <option value="제어보호담당자" ${value === "제어보호담당자" ? "selected" : ""}>제어보호담당자</option>
+                                <option value="제어보호 담당자" ${value === "제어보호 담당자" ? "selected" : ""}>제어보호 담당자</option>
+                                <option value="제어보호 담당관" ${value === "제어보호 담당관" ? "selected" : ""}>제어보호 담당관</option>
+                                <option value="기안자" ${value === "기안자" ? "selected" : ""}>기안자</option>
                                 <option value="일반" ${value === "일반" ? "selected" : ""}>일반</option>
                             </select>
                         </div>
                         <!--// select-group -->
-                        `;
+                    `;
                 }
             },
             {
                 headerName: "삭제",
-                headerClass: "center",
-                field: "field09",
-                width: 112,
+                headerClass: "center bgColor",
+                field: "field11",
+                width: 80,
                 cellClass: "cell-normal",
                 cellRenderer: params => {
                     return '<button type="button" class="btn btn-icon"><i class="icon del-trash" /></button>';
                 }
             }
         ];
+
+        // rowspan start
+        let rowspanMap = {};
+
+        function calculateRowspanMap(data, fields) {
+            const mapKey = fields.join(",");
+            rowspanMap[mapKey] = {};
+
+            let rowIndex = 0;
+
+            while (rowIndex < data.length) {
+                let mergeCount = 1;
+                const key = fields.map(field => data[rowIndex][field]).join(",");
+
+                for (let i = rowIndex + 1; i < data.length; i++) {
+                    const nextKey = fields.map(field => data[i][field]).join(",");
+                    if (nextKey === key) {
+                        mergeCount++;
+                    } else {
+                        break;
+                    }
+                }
+
+                for (let i = 0; i < mergeCount; i++) {
+                    if (i > 0) {
+                        fields.forEach(field => {
+                            data[rowIndex + i][field] = "";
+                        });
+                    }
+                    rowspanMap[mapKey][rowIndex + i] = i === 0 ? mergeCount : 0;
+                }
+
+                rowIndex += mergeCount;
+            }
+        }
+
+        function shouldMergeRows(params, fields) {
+            const mapKey = fields.join(",");
+            const rowIndex = params.node.rowIndex;
+            return rowspanMap[mapKey]?.[rowIndex] || 1;
+        }
+
+        function getMergeCellClass(params) {
+            const mapKey = ["field05"].join(",");
+            const rowIndex = params.node.rowIndex;
+
+            if (rowspanMap[mapKey]?.[rowIndex] > 1) {
+                return "merge-cell merge-cell-bg";
+            } else if (rowspanMap[mapKey]?.[rowIndex] === 0) {
+                return "blank";
+            }
+            return "cell-normal";
+        }
+
+        function getRowHeight(params) {
+            const mapKey = ["field05"].join(",");
+            const rowIndex = params.node.rowIndex;
+            return rowspanMap[mapKey]?.[rowIndex] > 1 ? 63 * rowspanMap[mapKey][rowIndex] : 63;
+        }
+
+        // rowspan end
+        
         let sampleGridApi;
 
         const sampleGridOptions = {
@@ -444,15 +540,22 @@
             columnDefs,
             headerHeight: 41, // header height
             rowData: rowData,
-            rowHeight: 56, // row height // 2025-02-19 수정
-            domLayout: "autoHeight", // 2025-02-19 추가 옵션
-            suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
+            rowHeight: 56, // row height
+            domLayout: "autoHeight",
+            onGridReady: (params) => { // merge option
+                calculateRowspanMap(rowData, ["field05"]);
+                params.api.refreshCells({ force: true });
+                params.api.redrawRows();
+            },
+            suppressColumnVirtualisation: true,
+            suppressRowTransform: true,
             components: {
                 customInputSearchEditor
             },
             // data empty style
             overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
         };
+
         const sampleGridDiv = document.querySelector("#sampleGrid");
         sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
     </script>
