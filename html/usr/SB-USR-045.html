@@ -373,7 +373,7 @@
                 headerName: "결재/승인 상태",
                 headerClass: "center",
                 field: "field07",
-                minWidth: 435,
+                minWidth: 600,
                 flex: 1,
                 cellClass: "cell-normal",
                 cellRenderer: (params) => {
@@ -382,43 +382,64 @@
                     
                     if (status === "step01") {
                         stepsData = [
-                            { "status": "step-current", "title": "기안자", "name": "박동원" },
+                            { "status": "step-current", "title": "기안자", "name": "심영락 4급(병)" },
+                            { "status": "step-default", "title": "팀장", "name": "심영락 4급(병)" },
                             { "status": "step-default", "title": "제어보호담당자", "name": "오승환" },
                             { "status": "step-default", "title": "제어보호담당자", "name": "김현수" }
                         ];
                     } else if (status === "step01 reject") {
-                    stepsData = [
-                        { "status": "step-reject", "title": "기안자", "name": "박동원" },
-                        { "status": "step-default", "title": "제어보호담당자", "name": "오승환" },
-                        { "status": "step-default", "title": "제어보호담당관", "name": "김현수" }
-                    ];
+                        stepsData = [
+                            { "status": "step-reject", "title": "기안자", "name": "심영락 4급(병)" },
+                            { "status": "step-default", "title": "팀장", "name": "심영락 4급(병)" },
+                            { "status": "step-default", "title": "제어보호담당자", "name": "심영락 4급(병)" },
+                            { "status": "step-default", "title": "제어보호담당관", "name": "김현수" }
+                        ];
                     } else if (status === "step02") {
                         stepsData = [
-                            { "status": "step-done", "title": "기안자", "name": "박동원" },
-                            { "status": "step-current", "title": "제어보호담당자", "name": "오승환" },
+                            { "status": "step-done", "title": "기안자", "name": "심영락 4급(병)" },
+                            { "status": "step-current", "title": "팀장", "name": "심영락 4급(병)" },
+                            { "status": "step-default", "title": "제어보호담당자", "name": "심영락 4급(병)" },
                             { "status": "step-default", "title": "제어보호담당관", "name": "김현수" }
                         ];
                     } else if (status === "step02 reject") {
                         stepsData = [
-                            { "status": "step-done", "title": "기안자", "name": "박동원" },
-                            { "status": "step-reject", "title": "제어보호담당자", "name": "오승환" },
+                            { "status": "step-done", "title": "기안자", "name": "심영락 4급(병)" },
+                            { "status": "step-reject", "title": "팀장", "name": "심영락 4급(병)" },
+                            { "status": "step-default", "title": "제어보호담당자", "name": "심영락 4급(병)" },
                             { "status": "step-default", "title": "제어보호담당관", "name": "김현수" }
                         ];
                     } else if (status === "step03") {
                         stepsData = [
-                            { "status": "step-done", "title": "기안자", "name": "박동원" },
+                            { "status": "step-done", "title": "기안자", "name": "심영락 4급(병)" },
+                            { "status": "step-done", "title": "팀장", "name": "심영락 4급(병)" },
+                            { "status": "step-current", "title": "제어보호담당자", "name": "오승환" },
+                            { "status": "step-default", "title": "제어보호담당관", "name": "김현수" }
+                        ];
+                    } else if (status === "step03 reject") {
+                        stepsData = [
+                            { "status": "step-done", "title": "기안자", "name": "심영락 4급(병)" },
+                            { "status": "step-done", "title": "팀장", "name": "심영락 4급(병)" },
+                            { "status": "step-reject", "title": "제어보호담당자", "name": "오승환" },
+                            { "status": "step-default", "title": "제어보호담당관", "name": "김현수" }
+                        ];
+                    } else if (status === "step04") {
+                        stepsData = [
+                            { "status": "step-done", "title": "기안자", "name": "심영락 4급(병)" },
+                            { "status": "step-done", "title": "팀장", "name": "심영락 4급(병)" },
                             { "status": "step-done", "title": "제어보호담당자", "name": "오승환" },
                             { "status": "step-current", "title": "제어보호담당관", "name": "김현수" }
                         ];
-                     } else if (status === "step03 reject") {
+                    } else if (status === "step04 reject") {
                         stepsData = [
-                            { "status": "step-done", "title": "기안자", "name": "박동원" },
+                            { "status": "step-done", "title": "기안자", "name": "심영락 4급(병)" },
+                            { "status": "step-done", "title": "팀장", "name": "심영락 4급(병)" },
                             { "status": "step-done", "title": "제어보호담당자", "name": "오승환" },
                             { "status": "step-reject", "title": "제어보호담당관", "name": "김현수" }
                         ];
                     } else if (status === "done") {
                         stepsData = [
-                            { "status": "step-done", "title": "기안자", "name": "박동원" },
+                            { "status": "step-done", "title": "기안자", "name": "심영락 4급(병)" },
+                            { "status": "step-done", "title": "팀장", "name": "심영락 4급(병)" },
                             { "status": "step-done", "title": "제어보호담당자", "name": "오승환" },
                             { "status": "step-done", "title": "제어보호담당관", "name": "김현수" }
                         ];

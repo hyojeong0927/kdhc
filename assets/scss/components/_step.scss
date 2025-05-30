@@ -52,9 +52,9 @@ $step-status: ("default", "current", "reject", "done");
         &.step-#{$size} {
             @include step-size($size);
 
-            @if $size =="sm" {
+            @if $size == sm {
                 .step-list {
-                    min-width: rem(390px);
+                    min-width: rem(500px);
                     li {
                         &::before {
                             top: 50%;
