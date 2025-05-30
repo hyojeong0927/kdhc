@@ -120,6 +120,18 @@
             color: $gray-002;
             @include font-style($font-size-base, $font-weight-normal, rem(19.2px));
         }
+        &.ag-text-left {
+            text-align: left;
+            justify-content: flex-start;
+        }
+        &.ag-text-center {
+            text-align: center;
+            justify-content: center;
+        }
+        &.ag-text-right {
+            text-align: right;
+            justify-content: flex-end;
+        }
     }
     .ag-cell-inline-editing {
         border: {

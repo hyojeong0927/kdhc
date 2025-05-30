@@ -62,14 +62,14 @@ const normalColumnDefs = [
         headerClass: "center",
         field: "field01",
         width: 160,
-        cellClass: "cell-normal",
+        cellClass: "cell-normal ag-text-left",
     },
     {
         headerName: "기안부서",
         headerClass: "center",
         field: "field02",
         width: 92,
-        cellClass: "cell-normal",
+        cellClass: "cell-normal ag-text-right",
     },
     {
         headerName: "기안자",
