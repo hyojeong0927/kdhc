@@ -472,9 +472,13 @@
             rowHeight: 63, // row height
 
             onGridReady: (params) => { // merge option
+                alert("로딩 중입니다...");
+
                 calculateRowspanMap(rowData, ["field01", "field02", "field03"]);
                 params.api.refreshCells({ force: true });
                 params.api.redrawRows();
+
+                alert("로딩이 완료되었습니다.");
             },
             getRowHeight: (params) => 63,
             suppressRowTransform: true, // merge option 추가

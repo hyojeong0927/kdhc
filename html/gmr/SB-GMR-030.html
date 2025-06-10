@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ko" data-kdhc-mode="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDHC</title>
+    <link rel="icon" href="../../assets/favicon.svg" type="image/x-icon">
+    <!-- css -->
+    <link rel="stylesheet" href="../../css/index.css">
+    <!-- script -->
+    <script src="../../assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
+    <script type="module" src="../../assets/js/common.js"></script>
+</head>
+<body>
+    <div id="wrap" class="kdhc-wrap">
+
+        <!-- 본문 바로가기 영역 -->
+        <div id="kdhc-skip-link">
+            <a href="#contents">본문 바로가기</a>
+        </div>
+        <!--// 본문 바로가기 영역  -->
+
+        <!-- 상단 배너영역 -->
+        <div id="kdhc-masthead">
+            <script type="module" src="../../assets/js/layouts/top-banner.js"></script>
+        </div>
+        <!-- // 상단 배너영역 -->
+
+        <!-- 헤더 영역 -->
+        <header id="kdhc-header" data-menu='[
+            { "title": "관리보안", "url": "../usr/SB-USR-012.html" },
+            { "title": "물리보안", "url": "../usr/SB-USR-021.html" },
+            { "title": "기술보안", "url": "../usr/SB-USR-024.html" },
+            { "title": "보안정책", "url": "../usr/SB-USR-054.html" },
+            { "title": "클린PC", "url": "../usr/SB-USR-059.html" },
+            { "title": "정보자산", "url": "../usr/SB-USR-074.html" },
+            { "title": "관리자", "url": "#", "active": true }]'>
+            <script type="module" src="../../assets/js/layouts/header.js"></script>
+        </header>
+        <!--// 헤더 영역 -->
+
+        <!-- 컨테이너 영역 -->
+        <section id="kdhc-container">
+            <div class="inner">
+                <!-- 사이드 영역 -->
+                <script type="module" src="../../assets/js/layouts/sidebar.js"></script>
+                <aside id="sidebar" class="sidebar" data-menu='[
+                        { "name": "공지사항 관리", "url": "../gmr/SB-GMR-001.html" },
+                        { "name": "정기점검 관리", "url": "../gmr/SB-GMR-004.html" },
+                        { "name": "지침 및 매뉴얼 관리", "url": "../gmr/SB-GMR-007.html" },
+                        { "name": "메뉴 관리", "url": "../gmr/SB-GMR-010.html" },
+                        { "name": "권한별 메뉴 관리", "url": "../gmr/SB-GMR-013.html" },
+                        { "name": "페이지 관리", "url": "../gmr/SB-GMR-016.html" },
+                        { "name": "사용자 관리", "url": "../gmr/SB-GMR-019.html" },
+                        { "name": "공통코드 관리", "url": "../gmr/SB-GMR-022.html" },
+                        { "name": "인사이동 관리", "url": "../gmr/SB-GMR-025.html", "active": true  },
+                        { "name": "USB 저장매체 사용현황", "url": "../gmr/SB-GMR-028.html" },
+                        { "name": "스티커 이용내역", "url": "../gmr/SB-GMR-029.html" }
+                        ]'></aside>
+                <!--// 사이드 영역 -->
+
+                <main class="main-contents">
+                    <!-- breadcrumbs start : 현재 히든 처리 추후 변경 가능 -->
+                    <nav id="breadcrumb" class="breadcrumb-wrap" aria-label="breadcrumb" 
+                        data-breadcrumb='[
+                            { "name": "관리자", "url": "#" },
+                            { "name": "인사이동내역조회", "url": "", "active": true }
+                        ]'
+                        data-visible="false">
+                    </nav> 
+                    <!--// breadcrumbs end -->
+                    
+                    <!-- 컨텐츠 영역 -->
+                    <div id="contents" class="contents">
+
+                        <!-- page title start -->
+                        <div class="page-title-wrap" 
+                            data-title="인사이동내역조회" 
+                            data-badge=""
+                            data-badge-visible="false">
+                        </div>
+                        <!--// page title end -->
+
+                        <!-- search start-->
+                        <article class="search-form-area">
+                            <!-- form start -->
+                            <form>
+                                <fieldset>
+                        
+                                    <!-- form-wrap start -->
+                                    <div class="form-wrap type03">
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label">기안일자</div>
+                                                <div class="form-group">
+                                                    <!-- datepicker-group start -->
+                                                    <div class="datepicker-group">
+                                                        <div class="datepicker-btn-group">
+                                                            <button class="btn btn-outline--round btn-xsm active">1개월</button>
+                                                            <button class="btn btn-outline--round btn-xsm">3개월</button>
+                                                            <button class="btn btn-outline--round btn-xsm">6개월</button>
+                                                            <button class="btn btn-outline--round btn-xsm" disabled>12개월</button>
+                                                        </div>
+                                                        <!-- input-date-group is-error -->
+                                                        <div class="input-date-group">
+                                                            <input type="text" id="startDate" class="form-control" value=""
+                                                                placeholder="YYYY-MM-DD" readonly>
+                                                            <label class="input-group-text" for="startDate"><i
+                                                                    class="icon calendar"></i></label>
+                                                        </div>
+                                                        <div class="to">-</div>
+                                                        <!-- input-date-group is-error -->
+                                                        <div class="input-date-group">
+                                                            <input type="text" id="endDate" class="form-control" value=""
+                                                                placeholder="YYYY-MM-DD" readonly>
+                                                            <label class="input-group-text" for="endDate"><i class="icon calendar"></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <!--// datepicker-group end -->
+                                                    <!-- 에러 문구 : hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--// col -->
+                                        </div>
+                                        <div class="form-row">
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label">사용자</div>
+                                                <div class="form-group">
+                                                    <!-- input-group is-error -->
+                                                    <div class="input-group">
+                                                        <input type="text" id="input-text" class="form-control" placeholder="사용자" value="">
+                                                        <label for="input-text" class="hidden">사용자</label>
+                                                    </div>
+                                                    <!--// input group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--// col -->
+                                            <!-- col -->
+                                            <div class="col align-center">
+                                                <div class="form-label">권한</div>
+                                                <div class="form-group">
+                                                    <!-- select-group is-error -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="">선택</option>
+                                                            <option value="1" selected>전체</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select-group -->
+                                                    <!-- 에러 문구 : hidden -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--// col -->
+                                        </div>
+                                        <!-- row -->
+                                        <div class="form-row">
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="form-label">발령전지사</div>
+                                                <div class="form-group">
+                                                    <!-- select-group is-error -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="">선택</option>
+                                                            <option value="1" selected>전체</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select-group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--// col -->
+                                            <!-- col -->
+                                            <div class="col align-center">
+                                                <div class="form-label">발령후지사</div>
+                                                <div class="form-group">
+                                                    <!-- select-group is-error -->
+                                                    <div class="select-group">
+                                                        <select class="form-select" aria-label="Default select" required>
+                                                            <option value="">선택</option>
+                                                            <option value="1" selected>전체</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--// select-group -->
+                                                    <!-- 에러 문구 :  hidden 제거 -->
+                                                    <p class="form-hint-invalid hidden">잘못 입력하였습니다.</p>
+                                                    <!--// 에러 문구 -->
+                                                </div>
+                                            </div>
+                                            <!--// col -->
+                                        </div>
+                                       
+                                        <!-- row -->
+                                        <div class="form-row search-btn">
+                                            <button type="button" class="btn btn-primary lg">조회</button>
+                                        </div>
+                                        <!--// row end -->
+                                    </div>
+                                    <!--// form-wrap end -->
+                        
+                                </fieldset>
+                            </form>
+                            <!--// form end -->
+                        </article>
+                        <!--// search end-->
+
+                        <!-- grid top start -->
+                        <article class="grid-top-area">
+                            <!-- grid top left start -->
+                            <div class="grid-top-left">
+                                <select class="form-select sm" aria-label="Default select" required>
+                                    <option value="">선택</option>
+                                    <option value="10" selected>10개씩 보기</option>
+                                    <option value="20">20개씩 보기</option>
+                                    <option value="30">30개씩 보기</option>
+                                </select>
+                            </div>
+                            <!--// grid top left end -->
+                        </article>
+                        <!--// grid top end -->
+
+                        <!-- grid wrap start -->
+                        <article class="grid-wrap">
+                            <div id="sampleGrid" class="normal"></div>
+                        </article>
+                        <!--// grid wrap end -->
+
+                        <!-- grid bottom start -->
+                        <article class="grid-bottom-area">
+                            <!-- 페이징 -->
+                            <nav class="page-navigation" aria-label="page navigation">
+                                <script type="module" src="../../assets/js/components/pagination.js"></script>
+                            </nav>
+                            <!--// 페이징 -->
+                        </article>
+                        <!--// grid bottom end -->
+                    
+                    </div>
+                    <!--// 컨텐츠 영역 -->
+
+                </main>
+
+            </div>
+        </section>
+        <!--// 컨테이너 영역 -->
+
+        <!-- 푸터 영역 -->
+        <footer id="kdhc-footer">
+            <script type="module" src="../../assets/js/layouts/footer.js"></script>
+        </footer>
+        <!--// 푸터 영역 -->
+ 
+    </div>
+    <!-- script wrap -->
+    <script type="module">
+        const rowData = [
+            {
+                field01: "",
+                field02: "checked",
+                field03: "2024.12.12 11:45",
+                field04: "판교",
+                field05: "홍길동",
+                field06: "987654",
+                field07: "대구",
+                field08: "공무부",
+                field09: "기계과",
+                field10: "팀장",
+            },
+            {
+                field01: "",
+                field02: "",
+                field03: "2024.12.12 11:45",
+                field04: "판교",
+                field05: "갑돌이",
+                field06: "987654",
+                field07: "대구",
+                field08: "계전부",
+                field09: "제어과",
+                field10: "제어보호담당자",
+            },
+            {
+                field01: "",
+                field02: "",
+                field03: "2024.12.12 11:45",
+                field04: "대구",
+                field05: "갑순이",
+                field06: "987654",
+                field07: "대구",
+                field08: "공무부",
+                field09: "전산과",
+                field10: "제어보호담당관",
+            },
+            {
+                field01: "",
+                field02: "checked",
+                field03: "2024.12.12 11:45",
+                field04: "판교",
+                field05: "김철수",
+                field06: "234567",
+                field07: "대구",
+                field08: "계전부",
+                field09: "기계과",
+                field10: "팀원",
+            },
+            {
+                field01: "",
+                field02: "checked",
+                field03: "2024.12.12 11:45",
+                field04: "양산",
+                field05: "김영희",
+                field06: "345678",
+                field07: "대구",
+                field08: "공무부",
+                field09: "제어과",
+                field10: "팀원",
+            },
+            {
+                field01: "",
+                field02: "checked",
+                field03: "2024.12.12 11:45",
+                field04: "판교",
+                field05: "홍길동",
+                field06: "987654",
+                field07: "대구",
+                field08: "공무부",
+                field09: "기계과",
+                field10: "팀장",
+            },
+            {
+                field01: "",
+                field02: "",
+                field03: "2024.12.12 11:45",
+                field04: "판교",
+                field05: "갑돌이",
+                field06: "987654",
+                field07: "대구",
+                field08: "계전부",
+                field09: "제어과",
+                field10: "제어보호담당자",
+            },
+            {
+                field01: "",
+                field02: "",
+                field03: "2024.12.12 11:45",
+                field04: "대구",
+                field05: "갑순이",
+                field06: "987654",
+                field07: "대구",
+                field08: "공무부",
+                field09: "전산과",
+                field10: "제어보호담당관",
+            },
+            {
+                field01: "",
+                field02: "checked",
+                field03: "2024.12.12 11:45",
+                field04: "판교",
+                field05: "김철수",
+                field06: "234567",
+                field07: "대구",
+                field08: "계전부",
+                field09: "기계과",
+                field10: "팀원",
+            },
+            {
+                field01: "",
+                field02: "checked",
+                field03: "2024.12.12 11:45",
+                field04: "양산",
+                field05: "김영희",
+                field06: "345678",
+                field07: "대구",
+                field08: "공무부",
+                field09: "제어과",
+                field10: "팀원",
+            },
+        ];
+        const columnDefs = [
+            {
+                headerName: "순번",
+                headerClass: "center",
+                field: "field01",
+                width: 88,
+                cellClass: "cell-normal",
+                valueGetter: "node.rowIndex + 1"
+            },
+            {
+                headerName: "주부처",
+                headerClass: "center",
+                field: "field02",
+                width: 88,
+                cellClass: "cell-normal",
+                cellEditor: 'agCheckboxCellEditor',
+                cellRenderer: params => {
+                    return `
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" ${params.value ? 'checked' : ''}>
+                            <label class="form-check-label hidden" for="flexCheckDefault1">default</label>
+                        </div>
+                    `;
+                }
+            },
+            {
+                headerName: "결재일자",
+                headerClass: "center",
+                field: "field03",
+                width: 180,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "전지사",
+                headerClass: "center",
+                field: "field04",
+                width: 180,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "이름",
+                headerClass: "center",
+                field: "field05",
+                width: 180,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "사번",
+                headerClass: "center",
+                field: "field06",
+                width: 180,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "발령지사",
+                headerClass: "center",
+                field: "field07",
+                minWidth: 180,
+                flex: 1,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "발령부서",
+                headerClass: "center",
+                field: "field08",
+                minWidth: 180,
+                flex: 1,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "발령부서과",
+                headerClass: "center",
+                field: "field09",
+                minWidth: 180,
+                flex: 1,
+                cellClass: "cell-normal",
+            },
+            {
+                headerName: "권한",
+                headerClass: "center",
+                field: "field10",
+                minWidth: 180,
+                flex: 1,
+                cellClass: "cell-normal",
+            },
+        ];
+        let sampleGridApi;
+
+        const sampleGridOptions = {
+            defaultColDef: {
+                editable: false, // edit 사용 유무
+                autoHeight: true,
+                sortable: true, // sort 사용 유무
+            }, 
+            columnDefs,
+            headerHeight: 39, // header height
+            rowData: rowData,
+            rowHeight: 47, // row height
+            domLayout: "autoHeight", // 2025-02-19 추가 옵션
+            suppressColumnVirtualisation: true, // 2025-02-19 추가 옵션
+            // data empty style
+            overlayNoRowsTemplate: '<div class="empty"><div class="empty-img"></div><div class="empty-txt">데이타가 없습니다.</div></div>',
+        };
+        const sampleGridDiv = document.querySelector("#sampleGrid");
+        sampleGridApi = agGrid.createGrid(sampleGridDiv, sampleGridOptions);
+    </script>
+    <!--// script wrap -->
+    
+    <!-- modal wrap -->
+    <!--// modal wrap -->
+</body>
+</html>

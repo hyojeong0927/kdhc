@@ -189,8 +189,8 @@
 // scroll
 @mixin scroll-y {
     ::-webkit-scrollbar {
-        width: 6px;
-        height: 6px;
+        width: 10px;
+        height: 10px;
     }
     ::-webkit-scrollbar-track {
         background: $gray-001;
@@ -198,11 +198,11 @@
         opacity: 0.7;
     }
     ::-webkit-scrollbar-thumb {
-        background: $gray-004; 
+        background: $gray-011; 
         border-radius: 10px;
     }
     ::-webkit-scrollbar-thumb:hover {
-        background: $gray-004;
+        background: $gray-011;
     }
 }
 

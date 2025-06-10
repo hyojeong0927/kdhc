@@ -479,5 +479,20 @@ const menu07Projects = [
         design: "",
         dev: "2025-04-14",
     },
+    {
+        id: "SB-GMR-030",
+        depth1: "관리자",
+        depth2: "인사이동 내역 조회",
+        depth3: "",
+        type: "",
+        folder: "gmr",
+        file: "SB-GMR-030.html",
+        status: "완료",
+        start: "2025-06-10",
+        end: "2025-06-10",
+        modDate: "",
+        design: "",
+        dev: "",
+    },
 ];
 export default menu07Projects;
