@@ -186,55 +186,62 @@
     }
 }
 
-// scroll
-@mixin scroll-y {
+// 기본 scrollbar 스타일 공통 정의
+@mixin scrollbar-base($width: 6px, $height: 6px) {
     ::-webkit-scrollbar {
-        width: 10px;
-        height: 10px;
-    }
-    ::-webkit-scrollbar-track {
-        background: $gray-001;
-        border-radius: 10px;
-        opacity: 0.7;
-    }
-    ::-webkit-scrollbar-thumb {
-        background: $gray-011; 
-        border-radius: 10px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background: $gray-011;
+        width: $width;
+        height: $height;
+        background: transparent;
     }
 }
+  
+// 트랙 스타일 공통 정의
+@mixin scrollbar-track($color: $gray-001, $opacity: 0.7) {
+    ::-webkit-scrollbar-track {
+        background: $color;
+        border-radius: 10px;
+        opacity: $opacity;
+    }
+}
+  
+// 썸 스타일 공통 정의
+@mixin scrollbar-thumb($color: $gray-007) {
+::-webkit-scrollbar-thumb {
+    background: $color;
+    border-radius: 10px;
+}
 
+::-webkit-scrollbar-thumb:hover {
+    background: $color;
+}
+}
+
+// 스크롤 Y 전용
+@mixin scroll-y {
+    @include scrollbar-base(6px, 6px);
+    @include scrollbar-track($gray-001, 0.7);
+    @include scrollbar-thumb($gray-007);
+}
+
+// 스크롤 X와 Y 공통
 @mixin scroll-x {
     @include scroll-y;
-    ::-webkit-scrollbar {
-        width: 6px;
-        height: 6px;
-    }
+}
+
+@mixin body-scroll-y {
+    @include scrollbar-base(8px, 8px);
+    @include scrollbar-track($gray-001, 0.7);
+    @include scrollbar-thumb($gray-011);
 }
 
 @mixin dashboard-scroll-y {
-    ::-webkit-scrollbar {
-        background: transparent;
-        width: 8px;
-        height: 8px;
-    }
-    ::-webkit-scrollbar-track {
-        background: transparent;
-        border-radius: 10px;
-        opacity: 0;
-    }
-    ::-webkit-scrollbar-thumb {
-        background: $gray-007;
-        border-radius: 10px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background: $gray-007;
-    }
-
+    @include scrollbar-base(8px, 8px);
+    @include scrollbar-track(transparent, 0);
+    @include scrollbar-thumb($gray-007);
 }
+  
 // scroll end
+
 // clearfix
 @mixin clearfix() {
     &::after {
