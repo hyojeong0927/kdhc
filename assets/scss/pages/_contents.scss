@@ -11,17 +11,17 @@
 
     .login-page-title {
         margin-top: vh(48px);
-        padding-top: rem(92px);
+        @include icons("login-user");
         width: auto;
-        height: auto;
-        @extend .icon;
-        @extend .login-user;
+        height: rem(162px);
         background-size: rem(80px);
         background-position: center top;
         mix-blend-mode: screen;
 
         h2 {
             &.title {
+                margin: 0;
+                padding-top: rem(92px);
                 color: $white;
                 @include font-style($font-size-xxlg, $font-weight-bold, $line-height-base);
                 letter-spacing: rem(-0.96px);
@@ -44,8 +44,7 @@
             @include flex(true, "center", "center", rem(15px));
 
             .brand-name {
-                @extend .icon;
-                @extend .login-brand-name;
+                @include icons("login-brand-name");
                 text-indent: $text-indent;
             }
         }
@@ -73,7 +72,13 @@
                     @include font-style($font-size-md, $font-weight-normal, $line-height-base);
                     letter-spacing: rem(-0.54px);
                 }
+                .login-id-label {
+                    @include icons("login-id");
+                }
 
+                .login-pw-label {
+                    @include icons("login-pw");
+                }
                 .login-id-label,
                 .login-pw-label {
                     @include flex(true, "start", "center");
@@ -81,7 +86,6 @@
                     top: 50%;
                     left: rem(16px);
                     padding-left: rem(32px);
-                    @extend .icon;
                     width: calc(100% - rem(32px) - rem(16px));
                     height: 100%;
                     color: $gray-011;
@@ -91,14 +95,6 @@
                     background-position: left center;
                     transform: translateY(-50%);
                     z-index: 2;
-                }
-
-                .login-id-label {
-                    @extend .login-id;
-                }
-
-                .login-pw-label {
-                    @extend .login-pw;
                 }
             }
         }
@@ -237,18 +233,17 @@
                 text-align: center;
                 @include before(true, true, 0, 0, 0, 50%);
                 &::before {
-                    @extend .icon;
                     transform: translateX(-50%);
                     background-position: center top;
                 }
                 &.error-500 {
                     &::before {
-                        @extend .error-500;
+                        @include icons("error-500");
                     }
                 }
                 &.error-400 {
                     &::before {
-                        @extend .error-400;
+                        @include icons("error-400");
                     }
                 }
             }
@@ -289,8 +284,7 @@
     z-index: $zindex-loader;
     .loader {
         text-indent: $text-indent;
-        @extend .icon;
-        @extend .loading;
+        @include icons("loading");
     }
 }
 // loader end

@@ -7,7 +7,10 @@
     <title>KDHC</title>
     <link rel="icon" href="../../assets/favicon.svg" type="image/x-icon">
     <!-- css -->
-    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/agGrid.css">
+    <link rel="stylesheet" href="../../css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap-treeview.min.css">
+    <link rel="stylesheet" href="../../css/style.css?v=20250616"><!-- 버전 관리 적용 -->
     <!-- script -->
     <script src="../../assets/js/vendors/jquery-3.7.1.min.js"></script>
     <script src="../../assets/js/vendors/bootstrap-datepicker.min.js"></script>
@@ -64,138 +67,149 @@
                     ]'></aside>
                 <!--// 사이드 영역 -->
 
-                <main class="main-dashboard admin">
+                <!-- 2025-06-15 : main-dashboard => main-contents 변경-->
+                <main class="main-contents">
 
                     <!-- 컨텐츠 영역 -->
                     <div id="contents" class="contents">
 
-                        <!-- section tit start -->
-                        <div class="title-wrap" data-title="결재현황" data-heading="h3"></div>
-                        <!--// section tit end -->
+                        <!-- 2025-06-15 : dashboard admin 태그 추가 -->
+                        <div class="dashboard admin">
 
-                       
-                        <!-- 공지 사항 -->
-                        <article class="row-box">
-                            <div class="row-box-head">
-                                <div class="tit icon bullet-3">공지 사항</div>
-                                <button class="btn btn-more" onclick="location.href='https://kdhc.netlify.app/html/home/sb-usr-007'">더보기</button>
-                            </div>
-                            <div class="row-box-cont">
-                                <ol class="olist number">
-                                    <li class="item">
-                                        <span class="txt"><a href="#">플랜트 제어.감시시스템 정보보안 지침이 개정 되었습니다.</a></span>
-                                        <span class="date">2025-02-11</span>
-                                    </li>
-                                    <li class="item">
-                                        <span class="txt"><a href="#">취약점 분석 평가 일정안내</a></span>
-                                        <span class="date">2025-02-11</span>
-                                    </li>
-                                    <li class="item">
-                                        <span class="txt"><a href="#">플랜트 제어.감시시스템 정보보안 지침 가이드 안내</a></span>
-                                        <span class="date">2025-02-11</span>
-                                    </li>
-                                    <li class="item">
-                                        <span class="txt"><a href="#">취약점 분석 평가 기술교육 안내</a></span>
-                                        <span class="date">2025-02-11</span>
-                                    </li>
-                                    <li class="item">
-                                        <span class="txt"><a href="#">상반기 제어.감시시스템 자산현행화 안내</a></span>
-                                        <span class="date">2025-02-11</span>
-                                    </li>
-                                    <li class="item">
-                                        <span class="txt"><a href="#">플랜트 제어.감시시스템 정보보안 지침이 개정 되었습니다.</a></span>
-                                        <span class="date">2025-02-11</span>
-                                    </li>
-                                    <li class="item">
-                                        <span class="txt"><a href="#">취약점 분석 평가 일정안내</a></span>
-                                        <span class="date">2025-02-11</span>
-                                    </li>
-                                </ol>
-                            </div>
-                        </article>
-                        <!--// 공지 사항 -->
+                            <!-- 2025-06-15 : dashboard-inner 태그 추가 -->
+                            <div class="dashboard-inner">
 
-                        <!-- 백신 업데이트 현황 -->
-                        <article class="row-box chart-box">
-                            <div class="row-box-head">
-                                <div class="tit-sm">백신 업데이트 현황</div>
-                            </div>
-                            <div class="row-box-cont">
-                                <div id="vaccineChart" style="width: 100%; height: 100%;"></div>
-                            </div>
-                        </article>
-                        <!--// 백신 업데이트 현황 -->
+                                <!-- section tit start -->
+                                <div class="title-wrap" data-title="결재현황" data-heading="h3"></div>
+                                <!--// section tit end -->
 
-                        <!-- 저장매체 보유현황 -->
-                        <article class="row-box chart-box">
-                            <div class="row-box-head">
-                                <div class="tit-sm">저장매체 보유현황</div>
-                            </div>
-                            <div class="row-box-cont">
-                                <div id="custom-legend" class="custom-legend">
-                                    <span class="legend-label usb">USB</span>
-                                    <span class="legend-label hard">외장하드</span>
-                                    <span class="legend-label cd">CD</span>
-                                </div>
-                                <div id="statusChart" style="width: 100%; height: 100%;"></div>
-                            </div>
-                        </article>
-                        <!--// 저장매체 보유현황 -->
+                                <!-- 공지 사항 -->
+                                <article class="row-box">
+                                    <div class="row-box-head">
+                                        <div class="tit icon bullet-3">공지 사항</div>
+                                        <button class="btn btn-more" onclick="location.href='https://kdhc.netlify.app/html/home/sb-usr-007'">더보기</button>
+                                    </div>
+                                    <div class="row-box-cont">
+                                        <ol class="olist number">
+                                            <li class="item">
+                                                <span class="txt"><a href="#">플랜트 제어.감시시스템 정보보안 지침이 개정 되었습니다.</a></span>
+                                                <span class="date">2025-02-11</span>
+                                            </li>
+                                            <li class="item">
+                                                <span class="txt"><a href="#">취약점 분석 평가 일정안내</a></span>
+                                                <span class="date">2025-02-11</span>
+                                            </li>
+                                            <li class="item">
+                                                <span class="txt"><a href="#">플랜트 제어.감시시스템 정보보안 지침 가이드 안내</a></span>
+                                                <span class="date">2025-02-11</span>
+                                            </li>
+                                            <li class="item">
+                                                <span class="txt"><a href="#">취약점 분석 평가 기술교육 안내</a></span>
+                                                <span class="date">2025-02-11</span>
+                                            </li>
+                                            <li class="item">
+                                                <span class="txt"><a href="#">상반기 제어.감시시스템 자산현행화 안내</a></span>
+                                                <span class="date">2025-02-11</span>
+                                            </li>
+                                            <li class="item">
+                                                <span class="txt"><a href="#">플랜트 제어.감시시스템 정보보안 지침이 개정 되었습니다.</a></span>
+                                                <span class="date">2025-02-11</span>
+                                            </li>
+                                            <li class="item">
+                                                <span class="txt"><a href="#">취약점 분석 평가 일정안내</a></span>
+                                                <span class="date">2025-02-11</span>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </article>
+                                <!--// 공지 사항 -->
 
-                        <!-- 전사 자산현항 -->
-                        <article class="row-box chart-box">
-                            <div class="row-box-head">
-                                <div class="tit-sm">전사 자산현항</div>
-                            </div>
-                            <div class="row-box-cont">
-                                <div id="propertyChart" style="width: 100%; height: 100%;"></div>
-                            </div>
-                        </article>
-                        <!--// 전사 자산현항 -->
+                                <!-- 백신 업데이트 현황 -->
+                                <article class="row-box chart-box">
+                                    <div class="row-box-head">
+                                        <div class="tit-sm">백신 업데이트 현황</div>
+                                    </div>
+                                    <div class="row-box-cont">
+                                        <div id="vaccineChart" style="width: 100%; height: 100%;"></div>
+                                    </div>
+                                </article>
+                                <!--// 백신 업데이트 현황 -->
 
-                        <!-- TEST -->
-                        <article class="row-box chart-box">
-                            <div class="row-box-head">
-                                <div class="tit-sm">TEST</div>
-                            </div>
-                            <div class="row-box-cont">
-                                <div id="testChart" style="width: 100%; height: 100%;"></div>
-                            </div>
-                        </article>
-                        <!--// TEST -->
-                       
-                        <!-- 공개취약 자산현황 -->
-                        <article class="row-box chart-box">
-                            <div class="row-box-head">
-                                <div class="tit-sm">공개취약 자산현황</div>
-                            </div>
-                            <div class="row-box-cont">
-                                <div id="assetsChart" style="width: 100%; height: 100%;"></div>
-                            </div>
-                        </article>
-                        <!--// 공개취약 자산현황 -->
+                                <!-- 저장매체 보유현황 -->
+                                <article class="row-box chart-box">
+                                    <div class="row-box-head">
+                                        <div class="tit-sm">저장매체 보유현황</div>
+                                    </div>
+                                    <div class="row-box-cont">
+                                        <div id="custom-legend" class="custom-legend">
+                                            <span class="legend-label usb">USB</span>
+                                            <span class="legend-label hard">외장하드</span>
+                                            <span class="legend-label cd">CD</span>
+                                        </div>
+                                        <div id="statusChart" style="width: 100%; height: 100%;"></div>
+                                    </div>
+                                </article>
+                                <!--// 저장매체 보유현황 -->
 
-                        <!-- 지원종료운영체제자산현황 -->
-                        <article class="row-box chart-box">
-                            <div class="row-box-head">
-                                <div class="tit-sm">지원종료운영체제자산현황</div>
-                            </div>
-                            <div class="row-box-cont">
-                                <div id="systemChart" style="width: 100%; height: 100%;"></div>
-                            </div>
-                        </article>
-                        <!--// 지원종료운영체제자산현황 -->
+                                <!-- 전사 자산현항 -->
+                                <article class="row-box chart-box">
+                                    <div class="row-box-head">
+                                        <div class="tit-sm">전사 자산현항</div>
+                                    </div>
+                                    <div class="row-box-cont">
+                                        <div id="propertyChart" style="width: 100%; height: 100%;"></div>
+                                    </div>
+                                </article>
+                                <!--// 전사 자산현항 -->
 
-                        <!-- 정기점검 (주간/월간) -->
-                        <article class="row-box chart-box">
-                            <div class="row-box-head">
-                                <div class="tit-sm">정기점검 (주간/월간)</div>
+                                <!-- TEST -->
+                                <article class="row-box chart-box">
+                                    <div class="row-box-head">
+                                        <div class="tit-sm">TEST</div>
+                                    </div>
+                                    <div class="row-box-cont">
+                                        <div id="testChart" style="width: 100%; height: 100%;"></div>
+                                    </div>
+                                </article>
+                                <!--// TEST -->
+                            
+                                <!-- 공개취약 자산현황 -->
+                                <article class="row-box chart-box">
+                                    <div class="row-box-head">
+                                        <div class="tit-sm">공개취약 자산현황</div>
+                                    </div>
+                                    <div class="row-box-cont">
+                                        <div id="assetsChart" style="width: 100%; height: 100%;"></div>
+                                    </div>
+                                </article>
+                                <!--// 공개취약 자산현황 -->
+
+                                <!-- 지원종료운영체제자산현황 -->
+                                <article class="row-box chart-box">
+                                    <div class="row-box-head">
+                                        <div class="tit-sm">지원종료운영체제자산현황</div>
+                                    </div>
+                                    <div class="row-box-cont">
+                                        <div id="systemChart" style="width: 100%; height: 100%;"></div>
+                                    </div>
+                                </article>
+                                <!--// 지원종료운영체제자산현황 -->
+
+                                <!-- 정기점검 (주간/월간) -->
+                                <article class="row-box chart-box">
+                                    <div class="row-box-head">
+                                        <div class="tit-sm">정기점검 (주간/월간)</div>
+                                    </div>
+                                    <div class="row-box-cont">
+                                        <div id="checkChart" style="width: 100%; height: 100%;"></div>
+                                    </div>
+                                </article>
+                                <!--// 정기점검 (주간/월간) -->
+
+
                             </div>
-                            <div class="row-box-cont">
-                                <div id="checkChart" style="width: 100%; height: 100%;"></div>
-                            </div>
-                        </article>
-                        <!--// 정기점검 (주간/월간) -->
+                        </div>
+                        
 
                     </div>
                     <!--// 컨텐츠 영역 -->

@@ -1,9 +1,7 @@
 /* Mixin
 ========================================================================== */
-// mixin flex
-// @include flex($flexDirection, '$justifyContent', '$alignItems', $gap)
-// @include flex(true, 'end', 'start', 10px); 
 
+// flex
 @mixin flex(
         $flexDirection: true, 
         $justifyContent:'start',
@@ -46,16 +44,7 @@
     }
     gap: $gap;
 }
-// mixin grid
-// @include grid($columns: repeat(3, 1fr), $gap: 1rem);
-// @include grid(
-//   $columns: repeat(auto-fill, minmax(200px, 1fr)),
-//   $rows: auto,
-//   $gap: 2rem,
-//   $justifyItems: center,
-//   $alignItems: start
-// );
-// @include grid();
+// grid
 @mixin grid(
     $columns: auto,
     $rows: auto,
@@ -72,9 +61,6 @@
 }
 
 // Box
-// @include box($type, $header, $content, $footer, $round);
-// @include box(.box-type-02, true, true, false, 16px); 
-
 @mixin box (
   $type: '.#{$type}',
   $header: false,
@@ -130,8 +116,6 @@
 }
 
 // :before, :after
-// $before($before, $absolute, 2px, 3px, 0px, 0px);
-// before(true, true, 2px, 3px, 0px, 0px);
 @mixin before (
     $before: true,
     $absolute: true,
@@ -168,21 +152,6 @@
                 display: inline-block;
             }
         }
-    }
-}
-// icon
-// @include icon($icon-name, $width, $height, $url)
-@mixin icon ( $icon-name, $width, $height, $url ) {
-    display: inline-block;
-    padding: 0;
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-sizing: content-box;
-    &.#{$icon-name} {
-        width: $width;
-        height: $height;
-        background-image: url($url);
     }
 }
 
@@ -305,89 +274,6 @@
     background-color: $bg-color;
     transition: $transition;
     box-sizing: border-box;
-}
-// step
-@mixin step-size($size) {
-    @if $size == "lg" {
-        .step-img {
-            width: rem(80px);
-            height: rem(80px);
-            margin-bottom: rem(12px);
-        }
-        .txt {
-            font-size: rem(18px);
-            line-height: rem(21.6px);
-            letter-spacing: -2%;
-        }
-    } @else if $size == "sm" {
-        .step-img {
-            width: rem(28px);
-            height: rem(28px);
-            background-size: rem(16px);
-        }
-        .txt {
-            display: flex;
-            align-items: center;
-            font-size: rem(12px);
-            line-height: rem(14.4px);
-            letter-spacing: -3%;
-        }
-    }
-}
-
-@mixin step-status($status) {
-    .step-img {
-        @extend %step-img;
-        @if $status == "default" {
-            background-color: $gray-003;
-            @extend .step-check;
-        } @else if $status == "current" {
-            background-color: $orange-001;
-            @extend .step-doc;
-        } @else if $status == "reject" {
-            background-color: $error;
-            @extend .step-reject;
-        } @else if $status == "done" {
-            background-color: $blue-002;
-            @extend .step-check;
-        }
-    }
-
-    .txt {
-        @if $status == "default" {
-            color: $gray-003;
-        } @else if $status == "current" {
-            color: $orange-001;
-            font-weight: $font-weight-bold;
-        } @else if $status == "reject" {
-            color: $error;
-        } @else if $status == "done" {
-            color: $blue-002;
-        }
-    }
-}
-
-@mixin step-responsive($size) {
-    @if $size == "lg" {
-        .step-img {
-            width: rem(80px);
-            height: rem(80px);
-            margin-bottom: rem(12px);
-        }
-        .txt {
-            font-size: rem(18px);
-            line-height: rem(21.6px);
-        }
-    } @else if $size == "sm" {
-        .step-img {
-            width: rem(28px);
-            height: rem(28px);
-        }
-        .txt {
-            font-size: rem(12px);
-            line-height: rem(14.4px);
-        }
-    }
 }
 
 @mixin content-min-width($reduce: 0) {

@@ -65,7 +65,7 @@
                 content: none;
             }
             .glyphicon {
-                @extend .tree-root;
+                @include icons("tree-root");
             }
             .tree-folder-close {
                 display: none;
@@ -73,7 +73,7 @@
         }
         .tree-minus {
             & + .tree-folder-close {
-                @extend .tree-folder-open;
+                @include icons("tree-folder-open");
             }
         }
         a {
@@ -107,8 +107,7 @@
             &::before {
                 width: 100%;
                 height: rem(26px);
-                @extend .icon;
-                @extend .tree-root;
+                @include icons("tree-root");
                 background-size: rem(20px);
                 background-position: left top;
             }

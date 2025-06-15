@@ -44,8 +44,7 @@
         &::before {
             border-radius: 100%;
             transform: translateY(-50%);
-            @extend .icon;
-            @extend .h1-logo;
+            @include icons("h1-logo");
             background-size: rem(16px);
             background-position: left center;
         }

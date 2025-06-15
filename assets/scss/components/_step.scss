@@ -1,107 +1,233 @@
+@use "sass:map";
+@use "sass:list";
+
 /* Step
 ========================================================================== */
-$step-size: ("lg", "sm");
-$step-status: ("default", "current", "reject", "done");
 
+// 상태별 config
+$step-config: (
+	default: (
+		icon: step-check,
+		color: $gray-003
+	),
+	current: (
+		icon: step-doc,
+		color: $orange-001
+	),
+	reject: (
+		icon: step-reject,
+		color: $error
+	),
+	done: (
+		icon: step-check,
+		color: $blue-002
+	)
+);
+
+// 사이즈별 config
+$step-size-config: (
+	lg: (
+		img-size: 80px,
+		img-margin-bottom: 12px,
+		font-size: 18px,
+		line-height: 21.6px,
+		letter-spacing: $letter-spacing-ssm,
+		icon-size: 48px
+	),
+	sm: (
+		img-size: 28px,
+		img-margin-bottom: 0,
+		font-size: 12px,
+		line-height: 14.4px,
+		letter-spacing: $letter-spacing-base,
+		icon-size: 16px
+	)
+);
+
+@function step-conf($status, $key) {
+  	@return map.get(map.get($step-config, $status), $key);
+}
+
+@function step-size-conf($size, $key) {
+  	@return map.get(map.get($step-size-config, $size), $key);
+}
+
+// 이미지 스타일
+@mixin step-img-style($status) {
+	background-color: step-conf($status, color);
+	@include icons(step-conf($status, icon));
+}
+
+// 텍스트 스타일
+@mixin step-text-style($status) {
+  	color: step-conf($status, color);
+
+	@if $status == current {
+		font-weight: $font-weight-bold;
+	}
+}
+
+// 사이즈 스타일
+@mixin step-size-img($size) {
+	.step-img {
+		width: rem(step-size-conf($size, img-size));
+		height: rem(step-size-conf($size, img-size));
+		background-size: rem(step-size-conf($size, icon-size));
+	
+		@if $size == lg {
+			margin-bottom: rem(step-size-conf($size, img-margin-bottom));
+		}
+	}
+  }
+  
+  @mixin step-size-txt($size) {
+	.txt {
+		font-size: rem(step-size-conf($size, font-size));
+		line-height: rem(step-size-conf($size, line-height));
+		letter-spacing: rem(step-size-conf($size, letter-spacing));
+	
+		@if $size == sm {
+			display: flex;
+			align-items: center;
+		}
+	}
+  }
+
+// 상태 스타일
+@mixin step-status($status) {
+	.step-img {
+		@extend %step-img;
+		@include step-img-style($status);
+	}
+
+	.txt {
+		@include step-text-style($status);
+	}
+}
+
+// 공통 베이스 스타일
 %step-base {
-    .step-list {
-        @include flex(true, "between", "center");
-        li {
-            position: relative;
-            flex: 1;
-            @include before(true, true, rem(40px), 0, 0, 0);
-            &::before {
-                height: 1px;
-                width: 100%;
-                background-color: $gray-003;
-                z-index: 1;
-            }
-            &:last-of-type {
-                flex: none;
-                &::before {
-                   display: none
-                }
-            }
-            dl {
-                position: relative;
-                z-index: 2;
-            }
-        }
-    }
+	.step-list {
+		@include flex(true, "between", "center");
+
+		li {
+			position: relative;
+			flex: 1;
+			@include before(true, true, rem(40px), 0, 0, 0);
+
+			&::before {
+				height: 1px;
+				width: 100%;
+				background-color: $gray-003;
+				z-index: 1;
+			}
+
+			&:last-of-type {
+				flex: none;
+
+				&::before {
+					display: none;
+				}
+			}
+
+			dl {
+				position: relative;
+				z-index: 2;
+			}
+		}
+	}
 }
+
+// step 이미지 기본 스타일
 %step-img {
-    @include flex(true, "center", "center");
-    @extend .icon;
-    background-size: rem(48px);
-    border-radius: 50%;
+	@include flex(true, "center", "center");
+	border-radius: 50%;
 }
+
+// 텍스트 기본 스타일
 %step-txt {
-    font-weight: $font-weight-medium;
+  	font-weight: $font-weight-medium;
 }
+
+// 프로세스 바
 .process-status {
-    @include flex(true, "center", "center");
-    margin-bottom: rem(32px);
-    .step {
-        width: rem(975px);
-    }
+	@include flex(true, "center", "center");
+	margin-bottom: rem(32px);
+
+	.step {
+		width: rem(975px);
+	}
 }
+
+// step 컴포넌트
 .step {
-    @extend %step-base;
+	@extend %step-base;
 
-    @each $size in $step-size {
-        &.step-#{$size} {
-            @include step-size($size);
+	// 사이즈 스타일
+	@each $size, $config in $step-size-config {
+		&.step-#{$size} {
+			> .step-list {
+				@include step-size-img($size);
+				@include step-size-txt($size);
+			}
 
-            @if $size == sm {
-                .step-list {
-                    min-width: rem(550px);
-                    li {
-                        &::before {
-                            top: 50%;
-                            transform: translateY(-50%);
-                        }
-                        dl {
-                            display: grid;
-                            grid-template-columns: rem(28px) 1fr;
-                            grid-template-areas:
-                                "dt txt01"
-                                "dt txt02";
-                            min-height: rem(38px);
-        
-                            dt {
-                                grid-area: dt;
-                                @include flex(true, "center", "center");
-                            }
-        
-                            dd {
-                                padding: 0 rem(8px);
-                                height: rem(17px);
-                                text-align: left;
-                                &:nth-of-type(1) {
-                                    grid-area: txt01;
-                                    margin-bottom: rem(4px);
-                                }
-                                &:nth-of-type(2) {
-                                    grid-area: txt02;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    @each $status in $step-status {
-        .step-#{$status} {
-            @include step-status($status);
-        }
-    }
+			@if $size == sm {
+				.step-list {
+					min-width: rem(550px);
+
+					li {
+						&::before {
+							top: 50%;
+							transform: translateY(-50%);
+						}
+
+						dl {
+							display: grid;
+							grid-template-columns: rem(28px) 1fr;
+							grid-template-areas:
+								"dt txt01"
+								"dt txt02";
+							min-height: rem(38px);
+
+						dt {
+							grid-area: dt;
+							@include flex(true, "center", "center");
+						}
+
+						dd {
+							padding: 0 rem(8px);
+							height: rem(17px);
+							text-align: left;
+
+							&:nth-of-type(1) {
+								grid-area: txt01;
+								margin-bottom: rem(4px);
+							}
+
+							&:nth-of-type(2) {
+								grid-area: txt02;
+							}
+						}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// 상태 스타일
+	@each $status, $config in $step-config {
+		.step-#{$status} {
+			@include step-status($status);
+		}
+	}
 }
 
-// 결재 컴퍼넌트
+// 결재 컴포넌트
 .approve {
-    @include flex(false, "start", "normal", rem(32px));
-    .title-wrap {
-        margin-bottom: rem(16px);
-    }
+	@include flex(false, "start", "normal", rem(32px));
+
+	.title-wrap {
+		margin-bottom: rem(16px);
+	}
 }

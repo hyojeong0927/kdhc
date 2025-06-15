@@ -4,23 +4,23 @@
 
 // value : width, height, padding-y, padding-x, font-size, radius, border
 $button-size: (
-    "lg": (96px, 42px, $btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg, $btn-border-width),
-    "md": (84px, 38px, $btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius, $btn-border-width),
-    "sm": (53px, 32px, $btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm, $btn-border-width-sm),
-    "xsm": (49px, 28px, $btn-padding-y-xsm, $btn-padding-x-xsm, $btn-font-size-xsm, $btn-border-radius-xsm, $btn-border-width-sm),
-    "xxsm": (50px, 26px, $btn-padding-y-xxsm, $btn-padding-x-xxsm, $btn-font-size-xxsm, $btn-border-radius-xxsm, $btn-border-width-sm)
+    lg: (96px, 42px, $btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg, $btn-border-width),
+    md: (84px, 38px, $btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius, $btn-border-width),
+    sm: (53px, 32px, $btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm, $btn-border-width-sm),
+    xsm: (49px, 28px, $btn-padding-y-xsm, $btn-padding-x-xsm, $btn-font-size-xsm, $btn-border-radius-xsm, $btn-border-width-sm),
+    xxsm: (50px, 26px, $btn-padding-y-xxsm, $btn-padding-x-xxsm, $btn-font-size-xxsm, $btn-border-radius-xxsm, $btn-border-width-sm)
 );
 
 // color : bg, border, font, hover, disabled
 $button-types: (
-    "primary": ($secondary, $secondary, $btn-link-color, $gray-009, $btn-disabled),
-    "secondary": ($primary, $primary, $btn-link-color, $gray-009, $gray-007),
-    "error": ($error, $error, $btn-link-color, $gray-009, $gray-007),
-    "outline": ($white, $secondary, $secondary, $gray-009, $btn-disabled),
-    "outline--round": ($white, $gray-003, $gray-002, $primary, $btn-disabled),
-    "grid": ($blue-005, $gray-009, $gray-009, $gray-002, $gray-007),
-    "icon": (transparent, transparent, transparent, transparent, transparent),
-    "more":(transparent, transparent, $primary, $primary, $primary)
+    primary: ($secondary, $secondary, $btn-link-color, $gray-009, $btn-disabled),
+    secondary: ($primary, $primary, $btn-link-color, $gray-009, $gray-007),
+    error: ($error, $error, $btn-link-color, $gray-009, $gray-007),
+    outline: ($white, $secondary, $secondary, $gray-009, $btn-disabled),
+    outline--round: ($white, $gray-003, $gray-002, $primary, $btn-disabled),
+    grid: ($blue-005, $gray-009, $gray-009, $gray-002, $gray-007),
+    icon: (transparent, transparent, transparent, transparent, transparent),
+    more:(transparent, transparent, $primary, $primary, $primary)
 );
 
 // button base style
@@ -100,8 +100,7 @@ $button-types: (
                 padding-right: rem(28px);
                 @include before(false, true, 0, 0, 0, auto);
                 &::after {
-                    @extend .icon;
-                    @extend .more;
+                    @include icons("more");
                     background-position: right center;
                 }
             }

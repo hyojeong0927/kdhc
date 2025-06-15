@@ -1,42 +1,47 @@
-/* Function
-========================================================================== */
 @use 'sass:math';
 
+/* Function
+========================================================================== */
 $base-rem-size: 16px;
 $device-base-width: 1920px;
 $device-base-height: 1080px;
 
-// 단위 변환 함수 px => rem
-// ex) font-size: rem(12px)
+// px → em
 @function rem($value, $base: $base-rem-size) {
-    $remCalc: math.div($value, $base) * 1rem;
-    @return  math.div(math.round($remCalc * 100), 100);
+    $num-value: math.div($value, 1px);
+    $num-base: math.div($base, 1px);
+    $raw-rem: math.div($num-value, $num-base);
+    $rounded-rem: math.div(math.round($raw-rem * 100), 100);
+  
+    @return $rounded-rem * 1rem;
 }
 
-// 단위 변환 함수 px => em
-// ex) font-size: em(12px)
-@function em($value, $base: $base-rem-size) {
-    $emCalc: math.div($value, $base) * 1em;
-    @return math.div(math.round($emCalc * 100), 100);
-}
-
-// 단위 변환 함수 px => %
-// ex) width: per(12px)
+// px → %
 @function per($value) {
-    $perCalc: (math.div($value, $device-base-width) * 100) * 1%;
-    @return math.div(math.round($perCalc * 100), 100);
-}
+    $num-value: math.div($value, 1px);
+    $num-base: math.div($device-base-width, 1px);
+    $raw-per: math.div($num-value, $num-base) * 100;
+    $rounded-per: math.div(math.round($raw-per * 100), 100);
 
-// 단위 변환 함수 px => vw
-// ex) width: vw(100px);
-@function vw($value) {
-    $vwCalc: (math.div($value, $device-base-width) * 100) * 1vw;
-    @return math.div(math.round($vwCalc * 100), 100);
+    @return $rounded-per * 1%;
 }
+  
+  // px → vw
+  @function vw($value) {
+    $num-value: math.div($value, 1px);
+    $num-base: math.div($device-base-width, 1px);
+    $raw-vw: math.div($num-value, $num-base) * 100;
+    $rounded-vw: math.div(math.round($raw-vw * 100), 100);
 
-// 단위 변환 함수 px => vh
-// ex) width: vh(100px);
-@function vh($value) {
-    $vhCalc: (math.div($value, $device-base-height) * 100) * 1vh;
-    @return math.div(math.round($vhCalc * 100), 100);
+    @return $rounded-vw * 1vw;
+}
+  
+  // px → vh
+  @function vh($value) {
+    $num-value: math.div($value, 1px);
+    $num-base: math.div($device-base-height, 1px);
+    $raw-vh: math.div($num-value, $num-base) * 100;
+    $rounded-vh: math.div(math.round($raw-vh * 100), 100);
+
+    @return $rounded-vh * 1vh;
 }

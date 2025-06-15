@@ -29,8 +29,7 @@ $modal-sizes: (
         .btn-close {
             width: rem(32px);
             height: rem(32px);
-            @extend .icon;
-            @extend .close;
+            @include icons("close");
             opacity: 1;
 
             &:focus,

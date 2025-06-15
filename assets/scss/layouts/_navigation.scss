@@ -80,7 +80,6 @@ nav {
                         @include before(true, true, 50%, 0, 0, 50%);
                         &::before {
                             transform: translate(-50%, -50%);
-                            @extend .icon;
                         }
                     }
                     &:hover,
@@ -93,13 +92,13 @@ nav {
                 &.first {
                     .page-link {
                         &::before {
-                            @extend .arrow-first;
+                            @include icons("arrow-first");
                         }
                     }
                     &.disabled {
                         .page-link {
                             &::before {
-                                @extend .arrow-first-off;
+                                @include icons("arrow-first-off");
                             }
                         }
                     }
@@ -107,13 +106,13 @@ nav {
                 &.prev {
                     .page-link {
                         &::before {
-                            @extend .arrow-left;
+                            @include icons("arrow-left");
                         }
                     }
                     &.disabled {
                         .page-link {
                             &::before {
-                                @extend .arrow-left-off;
+                                @include icons("arrow-left-off");
                             }
                         }
                     }
@@ -121,13 +120,13 @@ nav {
                 &.next {
                     .page-link {
                         &::before {
-                            @extend .arrow-right;   
+                            @include icons("arrow-right");
                         }
                     }
                     &.disabled {
                         .page-link {
                             &::before {
-                                @extend .arrow-right-off;
+                                @include icons("arrow-right-off");
                             }
                         }
                     }
@@ -135,13 +134,13 @@ nav {
                 &.last {
                     .page-link {
                         &::before {
-                            @extend .arrow-last;   
+                            @include icons("arrow-last");
                         }
                     }
                     &.disabled {
                         .page-link {
                             &::before {
-                                @extend .arrow-last-off;
+                                @include icons("arrow-last-off");
                             }
                         }
                     }

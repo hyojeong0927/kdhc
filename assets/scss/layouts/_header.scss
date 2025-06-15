@@ -14,14 +14,12 @@ header#kdhc-header {
     .logo {
         @include flex(true, "center", "center");
         .logo-img {
-            @extend .icon;
-            @extend .h1-logo;
+            @include icons("h1-logo");
             text-indent: $text-indent; 
         }
         .logo-txt {
             margin-left: rem(12px);
-            @extend .icon;
-            @extend .h1-logo-txt;
+            @include icons("h1-logo-txt");
             text-indent: $text-indent;
         }
         &:focus-visible {
@@ -44,22 +42,20 @@ header#kdhc-header {
                     @include font-style($font-size-base, $font-weight-normal, $line-height-base);
                     text-decoration: $text-decoration-none;
                 }
-                @extend .icon;
                 @include before(true, true, 50%, 0, 0, 0);
                 &::before {
                     transform: translateY(-50%);
                     @if $ut == "01" {
-                        @extend .clipboard;
+                        @include icons("clipboard");
                     }
                     @if $ut == "02" {
-                        @extend .calendar-check;
+                        @include icons("calendar-check")
                     }
                     @if $ut == "03" {
-                        @extend .file-check; 
+                        @include icons("file-check")
                     }
                     @if $ut == "04" {
-                        @extend .user-circle;
-                        
+                        @include icons("user-circle")
                     }
                 }
             }

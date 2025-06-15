@@ -1,82 +1,113 @@
+@use "sass:map";
+@use "sass:list";
+
 /* Icons
-//@include icon($icon-name, $width, $height, $url)
 ========================================================================== */
-$icon: 'icon';
-
-.#{$icon} {
+$icons: (
     // header
-    @include icon("h1-logo", rem(64px), rem(50px), "#{$img-root}/images/svg/logo.svg");
-    @include icon("h1-logo-txt", rem(157px), rem(62px), "#{$img-root}/images/svg/logo-txt.svg");
-    
+    h1-logo: (64px, 50px, "svg"),
+    h1-logo-txt: (157px, 62px, "svg"),
     // header util
-    @include icon("clipboard", rem(20px), rem(20px), "#{$img-root}/images/svg/clipboard.svg");
-    @include icon("calendar-check", rem(20px), rem(20px), "#{$img-root}/images/svg/calendar-check.svg");
-    @include icon("file-check", rem(20px), rem(20px), "#{$img-root}/images/svg/file-check.svg");
-    @include icon("user-circle", rem(20px), rem(20px), "#{$img-root}/images/svg/user-circle.svg");
-    
+    clipboard: (20px, 20px, "svg"),
+    calendar-check: (20px, 20px, "svg"),
+    file-check: (20px, 20px, "svg"),
+    user-circle: (20px, 20px, "svg"),
     // lnb
-    @include icon("arrow-expansion", rem(32px), rem(32px), "#{$img-root}/images/svg/arrow-expansion.svg");
-    @include icon("arrow-close", rem(32px), rem(32px), "#{$img-root}/images/svg/arrow-close.svg");
-
+    arrow-expansion: (32px, 32px, "svg"),
+    arrow-close: (32px, 32px, "svg"),
     // components
-    @include icon("calendar", rem(20px), rem(20px), "#{$img-root}/images/svg/calendar.svg");
-    @include icon("calendar-on", rem(20px), rem(20px), "#{$img-root}/images/svg/calendar-on.svg");
-    @include icon("arrow-down", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-down.svg");
-    @include icon("search", rem(20px), rem(20px), "#{$img-root}/images/svg/search.svg");
-    @include icon("search-on", rem(20px), rem(20px), "#{$img-root}/images/svg/search-on.svg");
-    @include icon("checked", rem(12px), rem(12px), "#{$img-root}/images/svg/checked.svg");
-    @include icon("checked-disabled", rem(12px), rem(12px), "#{$img-root}/images/svg/checked-disabled.svg");
-    @include icon("radio-checked", rem(20px), rem(20px), "#{$img-root}/images/svg/radio-checked.svg");
-    @include icon("close", rem(32px), rem(32px), "#{$img-root}/images/svg/close.svg");
-    @include icon("close-wh", rem(32px), rem(32px), "#{$img-root}/images/svg/close-wh.svg");
-    @include icon("empty", rem(40px), rem(40px), "#{$img-root}/images/svg/ag-grid-empty.svg");
-    
+    calendar: (20px, 20px, "svg"),
+    calendar-on: (20px, 20px, "svg"),
+    arrow-down: (20px, 20px, "svg"),
+    search: (20px, 20px, "svg"),
+    search-on: (20px, 20px, "svg"),
+    checked: (12px, 12px, "svg"),
+    checked-disabled: (12px, 12px, "svg"),
+    radio-checked: (20px, 20px, "svg"),
+    close: (32px, 32px, "svg"),
+    close-wh: (32px, 32px, "svg"),
+    empty: (40px, 40px, "svg"),
     // step
-    @include icon("step-doc", rem(48px), rem(48px), "#{$img-root}/images/svg/step-doc.svg");
-    @include icon("step-reject", rem(48px), rem(48px), "#{$img-root}/images/svg/step-reject.svg");
-    @include icon("step-check", rem(48px), rem(48px), "#{$img-root}/images/svg/step-check.svg");
-
+    step-doc: (48px, 48px, "svg"),
+    step-reject: (48px, 48px, "svg"),
+    step-check: (48px, 48px, "svg"),
     // pagination arrow
-    @include icon("arrow-left", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-left.svg");
-    @include icon("arrow-left-off", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-left-off.svg");
-    @include icon("arrow-right", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-right.svg");
-    @include icon("arrow-right-off", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-right-off.svg");
-    @include icon("arrow-first", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-first.svg");
-    @include icon("arrow-first-off", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-first-off.svg");
-    @include icon("arrow-last", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-last.svg");
-    @include icon("arrow-last-off", rem(20px), rem(20px), "#{$img-root}/images/svg/arrow-last-off.svg");
-
+    arrow-left: (20px, 20px, "svg"),
+    arrow-left-off: (20px, 20px, "svg"),
+    arrow-right: (20px, 20px, "svg"),
+    arrow-right-off: (20px, 20px, "svg"),
+    arrow-first: (20px, 20px, "svg"),
+    arrow-first-off: (20px, 20px, "svg"),
+    arrow-last: (20px, 20px, "svg"),
+    arrow-last-off: (20px, 20px, "svg"),
     // tree view
-    @include icon("tree-root", rem(20px), rem(20px), "#{$img-root}/images/svg/tree-root.svg");
-    @include icon("tree-folder-open", rem(20px), rem(20px), "#{$img-root}/images/svg/tree-folder-open.svg");
-    @include icon("tree-folder-close", rem(20px), rem(20px), "#{$img-root}/images/svg/tree-folder-close.svg");
-    @include icon("tree-doc", rem(20px), rem(20px), "#{$img-root}/images/svg/tree-doc.svg");
-    @include icon("tree-minus", rem(16px), rem(16px), "#{$img-root}/images/svg/tree-minus.svg");
-    @include icon("tree-plus", rem(16px), rem(16px), "#{$img-root}/images/svg/tree-plus.svg");
-    
+    tree-root: (20px, 20px, "svg"), 
+    tree-folder-open: (20px, 20px, "svg"),
+    tree-folder-close: (20px, 20px, "svg"),
+    tree-doc: (20px, 20px, "svg"),
+    tree-minus: (16px, 16px, "svg"),
+    tree-plus: (16px, 16px, "svg"),
     // grid
-    @include icon("del-trash", rem(24px), rem(24px), "#{$img-root}/images/svg/trash-01.svg");
-
+    del-trash: (24px, 24px, "svg"),
     // login
-    @include icon("login-user", rem(80px), rem(80px), "#{$img-root}/images/svg/login-user.svg");
-    @include icon("login-logo", rem(48px), rem(38px), "#{$img-root}/images/svg/login-logo.svg");
-    @include icon("login-brand-name", rem(337px), rem(24px), "#{$img-root}/images/svg/login-brand-name.svg");
-    @include icon("login-id", rem(24px), rem(24px), "#{$img-root}/images/svg/login-id.svg");
-    @include icon("login-pw", rem(24px), rem(24px), "#{$img-root}/images/svg/login-pw.svg");
-
+    login-user: (80px, 80px, "svg"),
+    login-logo: (48px, 38px, "svg"),
+    login-brand-name: (337px, 24px, "svg"), 
+    login-id: (24px, 24px, "svg"),
+    login-pw: (24px, 24px, "svg"),
     // error
-    @include icon("error-500", rem(160px), rem(160px), "#{$img-root}/images/svg/error-500.svg");
-    @include icon("error-400", rem(160px), rem(160px), "#{$img-root}/images/svg/error-400.svg");
-
+    error-500: (160px, 160px, "svg"),
+    error-400: (160px, 160px, "svg"),
     // loading
-    @include icon("loading", rem(150px), rem(150px), "#{$img-root}/images/loading.gif");
-
+    loading: (150px, 150px, "gif"),
     // dashboard
-    @include icon("tit-bullet-1", rem(32px), rem(32px), "#{$img-root}/images/svg/title-bullet-1.svg");
-    @include icon("tit-bullet-2", rem(32px), rem(32px), "#{$img-root}/images/svg/title-bullet-2.svg");
-    @include icon("tit-bullet-3", rem(32px), rem(32px), "#{$img-root}/images/svg/title-bullet-3.svg");
-    @include icon("tit-bullet-4", rem(32px), rem(32px), "#{$img-root}/images/svg/title-bullet-4.svg");
-    @include icon("more", rem(20px), rem(20px), "#{$img-root}/images/svg/more-plus.svg");
-    @include icon("list-bullet", rem(6px), rem(6px), "#{$img-root}/images/svg/list-bullet.svg");
-    @include icon("alarm", rem(24px), rem(24px), "#{$img-root}/images/svg/alarm.svg");
+    tit-bullet-1: (32px, 32px, "svg"),
+    tit-bullet-2: (32px, 32px, "svg"),
+    tit-bullet-3: (32px, 32px, "svg"),
+    tit-bullet-4: (32px, 32px, "svg"),
+    more: (20px, 20px, "svg"),
+    list-bullet: (6px, 6px, "svg"),
+    alarm: (24px, 24px, "svg") 
+);
+
+// icon
+@mixin icon-base {
+    display: inline-block;
+    padding: 0;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: content-box;
+}
+.icon {
+    @include icon-base;
+}
+// icon 경로
+@function icon-path($name, $ext) {
+    @return "#{$img-root}/images/#{$ext}/#{$name}.#{$ext}";
+}
+
+@mixin icons($name) {
+    @include icon-base;
+
+    @if map.has-key($icons, $name) {
+        $props: map.get($icons, $name);
+
+        $width: list.nth($props, 1);
+        $height: list.nth($props, 2);
+        $ext: list.nth($props, 3);
+
+        width: rem($width);
+        height: rem($height);
+        // background-size: $width $height;
+        background-image: url(icon-path($name, $ext));
+    } @else {
+        @error "icons() mixin: '#{$name}' 아이콘이 $icons에 없습니다.";
+    }
+}
+
+@each $name, $props in $icons {
+    .icon.#{$name} {
+        @include icons($name);
+    }
 }

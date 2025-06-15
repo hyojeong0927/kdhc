@@ -178,7 +178,7 @@ textarea {
             & + .input-group-text {
                 .icon {
                     &.calendar {
-                        @extend .calendar-on;
+                        @include icons("calendar-on");
                     }
                 }
             }
@@ -195,7 +195,7 @@ textarea {
                 cursor: pointer;
                 .icon {
                     &.search {
-                        @extend .search-on;
+                        @include icons("search-on");
                     }
                 }
             }

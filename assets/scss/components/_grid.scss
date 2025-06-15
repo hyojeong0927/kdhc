@@ -12,6 +12,8 @@
     };
     border-radius: 0;
     background-color: $white;
+    @include scroll-y;
+    @include scroll-x;
 
     .left {
         text-align: left;
@@ -261,8 +263,7 @@
     @include flex(false, "center", "center", rem(16px));
     width: 100%;
     .empty-img {
-        @extend .icon;
-        @extend .empty;
+        @include icons("empty");
     }
     .empty-txt {
         color: $gray-004;

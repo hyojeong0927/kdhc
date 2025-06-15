@@ -1,8 +1,8 @@
+@use "sass:map";
+@use "sass:math";
+
 /* Forms
 ========================================================================== */
-@use "sass:map";
-@use 'sass:math';
-
 $form-types: ("type01", "type02", "type03", "type04", "type05", "type06", "type-expand");
 
 $form-label-width: rem(100px);
@@ -309,7 +309,7 @@ $form-layouts: (
                                 @include flex(true, "center", "center");
                                 .icon {
                                     &.arrow-up {
-                                        @extend .arrow-down;
+                                        @include icons("arrow-down");
                                         transform: rotate(-180deg);
                                     }
                                 }
