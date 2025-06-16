@@ -26,6 +26,7 @@
                 color: $white;
                 @include font-style($font-size-xxlg, $font-weight-bold, $line-height-base);
                 letter-spacing: rem(-0.96px);
+                text-align: center;
             }
         }
     }
