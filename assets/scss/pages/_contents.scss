@@ -13,7 +13,8 @@
         margin-top: vh(48px);
         @include icons("login-user");
         width: auto;
-        height: rem(162px);
+        min-height: rem(162px);
+        height: auto;
         background-size: rem(80px);
         background-position: center top;
         mix-blend-mode: screen;
@@ -132,6 +133,9 @@
     .hidden-label {
         opacity: 0;
         transform: translateY(-5px);
+    }
+    &.login-dev {
+        background-color: $gray-002;
     }
 }
 // Login end

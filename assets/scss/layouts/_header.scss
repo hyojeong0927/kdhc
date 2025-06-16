@@ -22,6 +22,12 @@ header#kdhc-header {
             @include icons("h1-logo-txt");
             text-indent: $text-indent;
         }
+        .logo-dev {
+            width: rem(232px);
+            color: $gray-002;
+            @include font-style($font-size-xxlg, $font-weight-bold, $line-height-base);
+            text-decoration: $text-decoration-none;
+        }
         &:focus-visible {
             box-shadow: var(--bs-btn-focus-box-shadow);
         }

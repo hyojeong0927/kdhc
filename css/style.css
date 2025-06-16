@@ -13622,6 +13622,15 @@ header#kdhc-header .logo .logo-txt {
   background-image: url("../../assets/images/svg/h1-logo-txt.svg");
   text-indent: -999999rem;
 }
+header#kdhc-header .logo .logo-dev {
+  width: 14.5rem;
+  color: #18191C;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.03rem;
+  line-height: normal;
+  text-decoration: none;
+}
 header#kdhc-header .logo:focus-visible {
   box-shadow: var(--bs-btn-focus-box-shadow);
 }
@@ -17337,7 +17346,8 @@ textarea.form-control {
   height: 5rem;
   background-image: url("../../assets/images/svg/login-user.svg");
   width: auto;
-  height: 10.13rem;
+  min-height: 10.13rem;
+  height: auto;
   background-size: 5rem;
   background-position: center top;
   mix-blend-mode: screen;
@@ -17501,6 +17511,9 @@ textarea.form-control {
 .kdhc-login-wrap .hidden-label {
   opacity: 0;
   transform: translateY(-5px);
+}
+.kdhc-login-wrap.login-dev {
+  background-color: #18191C;
 }
 
 .manual-box-wrap {
