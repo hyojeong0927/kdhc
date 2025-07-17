@@ -18111,6 +18111,7 @@ textarea.form-control {
 }
 .dashboard .dashboard-inner .summary-sub dl:nth-of-type(3) dd {
   justify-content: center;
+  margin-top: 0;
 }
 .dashboard .dashboard-inner .summary-sub dl:nth-of-type(4) {
   grid-column: 1;
@@ -18121,7 +18122,6 @@ textarea.form-control {
   grid-row: 2;
 }
 .dashboard .dashboard-inner .summary-sub dt {
-  flex: 1;
   color: #384B5E;
   font-size: 0.88rem;
   font-weight: 500;

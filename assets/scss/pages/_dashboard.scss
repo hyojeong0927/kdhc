@@ -265,6 +265,7 @@
                     grid-row: 1 / span 2;
                     dd {
                         justify-content: center;
+                        margin-top: 0;
                     }
                 }
                 &:nth-of-type(4) {
@@ -277,7 +278,6 @@
                 }
             }
             dt {
-                flex: 1;
                 color: $secondary;
                 @include font-style($font-size-sm, $font-weight-medium, $line-height-base);
             }
