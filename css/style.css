@@ -18065,6 +18065,12 @@ textarea.form-control {
   overflow: hidden;
   max-height: 16.75rem;
 }
+.dashboard .dashboard-inner .row-box.chart-box .custom-legend .legend-label.nas::before {
+  background-color: #A06CE2;
+}
+.dashboard .dashboard-inner .row-box.chart-box .custom-legend .legend-label.dongle::before {
+  background-color: #6AC66E;
+}
 .dashboard .dashboard-inner .row-box a {
   text-decoration: none;
 }
@@ -18079,11 +18085,11 @@ textarea.form-control {
   pointer-events: auto;
   cursor: pointer;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: baseline;
   gap: 0.13rem;
-  padding: 0.75rem 1.25rem 1.13rem;
+  padding: 0.75rem 1.25rem 0.75rem;
   min-height: 4.25rem;
   line-height: normal;
   border-radius: 12px;
@@ -18099,8 +18105,12 @@ textarea.form-control {
 }
 .dashboard .dashboard-inner .summary-sub dl:nth-of-type(3) {
   align-items: center;
+  justify-content: center;
   grid-column: 3;
   grid-row: 1/span 2;
+}
+.dashboard .dashboard-inner .summary-sub dl:nth-of-type(3) dd {
+  justify-content: center;
 }
 .dashboard .dashboard-inner .summary-sub dl:nth-of-type(4) {
   grid-column: 1;
@@ -18113,7 +18123,7 @@ textarea.form-control {
 .dashboard .dashboard-inner .summary-sub dt {
   flex: 1;
   color: #384B5E;
-  font-size: 1.25rem;
+  font-size: 0.88rem;
   font-weight: 500;
   letter-spacing: -0.03rem;
   line-height: normal;
@@ -18122,10 +18132,13 @@ textarea.form-control {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-end;
   gap: 0.25rem;
+  margin-top: -1.25rem;
+  width: 100%;
 }
 .dashboard .dashboard-inner .summary-sub dd .num {
+  display: inline-block;
   color: #384B5E;
   font-size: 2rem;
   font-weight: 700;

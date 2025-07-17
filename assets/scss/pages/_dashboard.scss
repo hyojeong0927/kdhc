@@ -220,6 +220,16 @@
                     overflow: hidden;
                     max-height: rem(268px);
                 }
+                .custom-legend {
+                    .legend-label {
+                        &.nas::before {
+                            background-color: $purple-001;
+                        }
+                        &.dongle::before {
+                            background-color: $green-003;
+                        }
+                    }
+                }
             }
             a {
                 text-decoration: none;
@@ -234,8 +244,8 @@
             dl {
                 pointer-events: auto;
                 cursor: pointer;
-                @include flex(true, "between", "baseline", rem(2px));
-                padding: rem(12px) rem(20px) rem(18px);
+                @include flex(false, "between", "baseline", rem(2px));
+                padding: rem(12px) rem(20px) rem(12px);
                 min-height: rem(68px);
                 line-height: $line-height-base;
                 border-radius: $radius-md;
@@ -250,8 +260,12 @@
                 }
                 &:nth-of-type(3) {
                     align-items: center;
+                    justify-content: center;
                     grid-column: 3;
                     grid-row: 1 / span 2;
+                    dd {
+                        justify-content: center;
+                    }
                 }
                 &:nth-of-type(4) {
                     grid-column: 1;
@@ -265,11 +279,14 @@
             dt {
                 flex: 1;
                 color: $secondary;
-                @include font-style($font-size-lg, $font-weight-medium, $line-height-base);
+                @include font-style($font-size-sm, $font-weight-medium, $line-height-base);
             }
             dd {
-                @include flex(true, "end", "center", rem(4px));
+                @include flex(true, "end", "end", rem(4px));
+                margin-top: rem(-20px);
+                width: 100%;
                 .num {
+                    display: inline-block;
                     color: $secondary;
                     @include font-style($font-size-xlg, $font-weight-bold, $line-height-base);
                     letter-spacing: normal;
