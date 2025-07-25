@@ -14,7 +14,8 @@
                 "title title title"
                 "row-box-1 row-box-2 row-box-3"
                 "row-box-4 row-box-5 row-box-6"
-                "row-box-7 row-box-8 row-box-9";
+                "row-box-7 row-box-8 row-box-9"
+                "alarm alarm alarm";
             grid-template-rows: rem(44px) repeat(auto-fit, minmax(rem(44px), rem(268px)));
             grid-column-gap: rem(40px);
             grid-row-gap: rem(24px);

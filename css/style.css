@@ -2513,7 +2513,7 @@ textarea.form-control-lg {
   pointer-events: none;
 }
 
-.btn-check:disabled + .btn, .input-file-group .btn-check:disabled + label, input[type=checkbox].btn.btn-grid.btn-check:disabled + label, .btn-check[disabled] + .btn, .input-file-group .btn-check[disabled] + label, input[type=checkbox].btn.btn-grid[disabled].btn-check + label {
+.btn-check:disabled + .btn, .input-file-group .btn-check:disabled + label, input.btn-check[type=checkbox].btn.btn-grid:disabled + label, .btn-check[disabled] + .btn, .input-file-group .btn-check[disabled] + label, input.btn-check[disabled][type=checkbox].btn.btn-grid + label {
   pointer-events: none;
   filter: none;
   opacity: 0.65;
@@ -3212,7 +3212,7 @@ input.is-invalid[type=url]:focus, .ag-date-field-input-wrapper input.is-invalid[
   border-color: var(--bs-btn-hover-border-color);
 }
 
-.btn-check + .btn:hover, .input-file-group .btn-check + label:hover, input[type=checkbox].btn.btn-grid.btn-check + label:hover {
+.btn-check + .btn:hover, .input-file-group .btn-check + label:hover, input.btn-check[type=checkbox].btn.btn-grid + label:hover {
   color: var(--bs-btn-color);
   background-color: var(--bs-btn-bg);
   border-color: var(--bs-btn-border-color);
@@ -3226,23 +3226,23 @@ input.is-invalid[type=url]:focus, .ag-date-field-input-wrapper input.is-invalid[
   box-shadow: var(--bs-btn-focus-box-shadow);
 }
 
-.btn-check:focus-visible + .btn, .input-file-group .btn-check:focus-visible + label, input[type=checkbox].btn.btn-grid.btn-check:focus-visible + label {
+.btn-check:focus-visible + .btn, .input-file-group .btn-check:focus-visible + label, input.btn-check[type=checkbox].btn.btn-grid:focus-visible + label {
   border-color: var(--bs-btn-hover-border-color);
   outline: 0;
   box-shadow: var(--bs-btn-focus-box-shadow);
 }
 
-.btn-check:checked + .btn, .input-file-group .btn-check:checked + label, input[type=checkbox].btn.btn-grid.btn-check:checked + label, .btn.active, .input-file-group label.active, input[type=checkbox].btn.btn-grid + label.active, .btn.show, .input-file-group label.show, input[type=checkbox].btn.btn-grid + label.show, .btn:first-child:active, .input-file-group label:first-child:active, input[type=checkbox].btn.btn-grid + label:first-child:active, :not(.btn-check) + .btn:active, .input-file-group :not(.btn-check) + label:active, input[type=checkbox].btn.btn-grid:not(.btn-check) + label:active {
+.btn-check:checked + .btn, .input-file-group .btn-check:checked + label, input.btn-check[type=checkbox].btn.btn-grid:checked + label, .btn.active, .input-file-group label.active, input[type=checkbox].btn.btn-grid + label.active, .btn.show, .input-file-group label.show, input[type=checkbox].btn.btn-grid + label.show, .btn:first-child:active, .input-file-group label:first-child:active, input[type=checkbox].btn.btn-grid + label:first-child:active, :not(.btn-check) + .btn:active, .input-file-group :not(.btn-check) + label:active, input[type=checkbox].btn.btn-grid:not(.btn-check) + label:active {
   color: var(--bs-btn-active-color);
   background-color: var(--bs-btn-active-bg);
   border-color: var(--bs-btn-active-border-color);
 }
 
-.btn-check:checked + .btn:focus-visible, .input-file-group .btn-check:checked + label:focus-visible, input[type=checkbox].btn.btn-grid.btn-check:checked + label:focus-visible, .btn.active:focus-visible, .input-file-group label.active:focus-visible, input[type=checkbox].btn.btn-grid + label.active:focus-visible, .btn.show:focus-visible, .input-file-group label.show:focus-visible, input[type=checkbox].btn.btn-grid + label.show:focus-visible, .btn:first-child:active:focus-visible, .input-file-group label:first-child:active:focus-visible, input[type=checkbox].btn.btn-grid + label:first-child:active:focus-visible, :not(.btn-check) + .btn:active:focus-visible, .input-file-group :not(.btn-check) + label:active:focus-visible, input[type=checkbox].btn.btn-grid:not(.btn-check) + label:active:focus-visible {
+.btn-check:checked + .btn:focus-visible, .input-file-group .btn-check:checked + label:focus-visible, input.btn-check[type=checkbox].btn.btn-grid:checked + label:focus-visible, .btn.active:focus-visible, .input-file-group label.active:focus-visible, input[type=checkbox].btn.btn-grid + label.active:focus-visible, .btn.show:focus-visible, .input-file-group label.show:focus-visible, input[type=checkbox].btn.btn-grid + label.show:focus-visible, .btn:first-child:active:focus-visible, .input-file-group label:first-child:active:focus-visible, input[type=checkbox].btn.btn-grid + label:first-child:active:focus-visible, :not(.btn-check) + .btn:active:focus-visible, .input-file-group :not(.btn-check) + label:active:focus-visible, input[type=checkbox].btn.btn-grid:not(.btn-check) + label:active:focus-visible {
   box-shadow: var(--bs-btn-focus-box-shadow);
 }
 
-.btn-check:checked:focus-visible + .btn, .input-file-group .btn-check:checked:focus-visible + label, input[type=checkbox].btn.btn-grid.btn-check:checked:focus-visible + label {
+.btn-check:checked:focus-visible + .btn, .input-file-group .btn-check:checked:focus-visible + label, input.btn-check[type=checkbox].btn.btn-grid:checked:focus-visible + label {
   box-shadow: var(--bs-btn-focus-box-shadow);
 }
 
@@ -3944,7 +3944,7 @@ input.is-invalid[type=url]:focus, .ag-date-field-input-wrapper input.is-invalid[
   flex: 1 1 auto;
 }
 
-.btn-group-vertical > .btn-check:checked + .btn, .input-file-group .btn-group-vertical > .btn-check:checked + label, .btn-group-vertical > input[type=checkbox].btn.btn-grid.btn-check:checked + label, .btn-group-vertical > .btn-check:focus + .btn, .input-file-group .btn-group-vertical > .btn-check:focus + label, .btn-group-vertical > input[type=checkbox].btn.btn-grid.btn-check:focus + label, .btn-group-vertical > .btn.active, .input-file-group .btn-group-vertical > label.active, .btn-group-vertical > input[type=checkbox].btn.btn-grid + label.active, .btn-group-vertical > .btn:active, .input-file-group .btn-group-vertical > label:active, .btn-group-vertical > input[type=checkbox].btn.btn-grid + label:active, .btn-group-vertical > .btn:focus, .input-file-group .btn-group-vertical > label:focus, .btn-group-vertical > input[type=checkbox].btn.btn-grid + label:focus, .btn-group-vertical > .btn:hover, .input-file-group .btn-group-vertical > label:hover, .btn-group-vertical > input[type=checkbox].btn.btn-grid + label:hover, .btn-group > .btn-check:checked + .btn, .input-file-group .btn-group > .btn-check:checked + label, .btn-group > input[type=checkbox].btn.btn-grid.btn-check:checked + label, .btn-group > .btn-check:focus + .btn, .input-file-group .btn-group > .btn-check:focus + label, .btn-group > input[type=checkbox].btn.btn-grid.btn-check:focus + label, .btn-group > .btn.active, .input-file-group .btn-group > label.active, .btn-group > input[type=checkbox].btn.btn-grid + label.active, .btn-group > .btn:active, .input-file-group .btn-group > label:active, .btn-group > input[type=checkbox].btn.btn-grid + label:active, .btn-group > .btn:focus, .input-file-group .btn-group > label:focus, .btn-group > input[type=checkbox].btn.btn-grid + label:focus, .btn-group > .btn:hover, .input-file-group .btn-group > label:hover, .btn-group > input[type=checkbox].btn.btn-grid + label:hover {
+.btn-group-vertical > .btn-check:checked + .btn, .input-file-group .btn-group-vertical > .btn-check:checked + label, .btn-group-vertical > input.btn-check[type=checkbox].btn.btn-grid:checked + label, .btn-group-vertical > .btn-check:focus + .btn, .input-file-group .btn-group-vertical > .btn-check:focus + label, .btn-group-vertical > input.btn-check[type=checkbox].btn.btn-grid:focus + label, .btn-group-vertical > .btn.active, .input-file-group .btn-group-vertical > label.active, .btn-group-vertical > input[type=checkbox].btn.btn-grid + label.active, .btn-group-vertical > .btn:active, .input-file-group .btn-group-vertical > label:active, .btn-group-vertical > input[type=checkbox].btn.btn-grid + label:active, .btn-group-vertical > .btn:focus, .input-file-group .btn-group-vertical > label:focus, .btn-group-vertical > input[type=checkbox].btn.btn-grid + label:focus, .btn-group-vertical > .btn:hover, .input-file-group .btn-group-vertical > label:hover, .btn-group-vertical > input[type=checkbox].btn.btn-grid + label:hover, .btn-group > .btn-check:checked + .btn, .input-file-group .btn-group > .btn-check:checked + label, .btn-group > input.btn-check[type=checkbox].btn.btn-grid:checked + label, .btn-group > .btn-check:focus + .btn, .input-file-group .btn-group > .btn-check:focus + label, .btn-group > input.btn-check[type=checkbox].btn.btn-grid:focus + label, .btn-group > .btn.active, .input-file-group .btn-group > label.active, .btn-group > input[type=checkbox].btn.btn-grid + label.active, .btn-group > .btn:active, .input-file-group .btn-group > label:active, .btn-group > input[type=checkbox].btn.btn-grid + label:active, .btn-group > .btn:focus, .input-file-group .btn-group > label:focus, .btn-group > input[type=checkbox].btn.btn-grid + label:focus, .btn-group > .btn:hover, .input-file-group .btn-group > label:hover, .btn-group > input[type=checkbox].btn.btn-grid + label:hover {
   z-index: 1;
 }
 
@@ -17741,7 +17741,7 @@ textarea.form-control {
 .dashboard.admin .dashboard-inner {
   display: grid;
   grid-template-columns: repeat(3, minmax(30.81rem, 1fr));
-  grid-template-areas: "title title title" "row-box-1 row-box-2 row-box-3" "row-box-4 row-box-5 row-box-6" "row-box-7 row-box-8 row-box-9";
+  grid-template-areas: "title title title" "row-box-1 row-box-2 row-box-3" "row-box-4 row-box-5 row-box-6" "row-box-7 row-box-8 row-box-9" "alarm alarm alarm";
   grid-template-rows: 2.75rem repeat(auto-fit, minmax(2.75rem, 16.75rem));
   grid-column-gap: 2.5rem;
   grid-row-gap: 1.5rem;
