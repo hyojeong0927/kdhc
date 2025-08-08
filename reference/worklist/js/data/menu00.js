@@ -139,7 +139,7 @@ const menu00Projects = [
         depth1: "홈",
         depth2: "공지사항",
         depth3: "상세",
-        type: "",
+        type: "pop",
         folder: "home",
         file: "SB-USR-007.html",
         status: "완료",
