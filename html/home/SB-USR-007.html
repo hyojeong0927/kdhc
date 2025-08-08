@@ -75,77 +75,24 @@
                         </div>
                         <!--// page title end -->
 
-                        <!-- input form -->
-                        <div class="input-form-area">
-                            <!-- form start -->
-                            <form>
-                                <fieldset>
-                                    <!-- form-wrap start -->
-                                    <div class="form-wrap type02">
-                                        <!-- row -->
-                                        <div class="form-row">
-                                            <div class="col">
-                                                <div class="form-label" aria-required="false">등록일시</div>
-                                                <div class="form-group">
-                                                    <div class="input-txt">2025.03.24</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- row -->
-                                        <div class="form-row">
-                                            <div class="col">
-                                                <div class="form-label" aria-required="true">제목</div>
-                                                <div class="form-group">
-                                                    <div class="input-txt tit">제어망 스마트 보안관리 플랫폼 공지게시물 1 제어망 스마트 보안관리 플랫폼 공지게시물 1제어망 스마트 보안관리 플랫폼 공지게시물 1제어망 스마트 보안관리 플랫폼 공지게시물 1제어망 스마트 보안관리 플랫폼 공지게시물 1제어망 스마트 보안관리 플랫폼 공지게시물 1</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- row -->
-                                        <div class="form-row">
-                                            <div class="col">
-                                                <div class="form-label" aria-required="false">게시글 유형</div>
-                                                <div class="form-group">
-                                                    <div class="input-txt">팝업</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- row -->
-                                        <div class="form-row">
-                                            <div class="col">
-                                                <div class="form-label" aria-required="true">내용</div>
-                                                <div class="form-group">
-                                                    <div class="input-txt cont">
-                                                        
-                                                        제어망 스마트 보안관리 플랫폼 공지게시물 내용 제어망 스마트 보안관리 플랫폼 공지게시물 내용 제어망 스마트 보안관리 플랫폼 공지게시물 내용
-                                                        제어망 스마트 보안관리 플랫폼 공지게시물 내용 제어망 스마트 보안관리 플랫폼 공지게시물 내용
-                                                        제어망 스마트 보안관리 플랫폼 공지게시물 내용제어망 스마트 보안관리 플랫폼 공지게시물 내용제어망 스마트
-                                                        제어망 스마트 보안관리 플랫폼 공지게시물 내용제어망 스마트 보안관리 플랫폼 공지게시물 내용제어망 스마트
-                                                        제어망 스마트 보안관리 플랫폼 공지게시물 내용제어망 스마트 보안관리 플랫폼 공지게시물 내용제어망 스마트
-                                                        제어망 스마트 보안관리 플랫폼 공지게시물 내용제어망 스마트 보안관리 플랫폼 공지게시물 내용제어망 스마트
-                                                        제어망 스마트 보안관리 플랫폼 공지게시물 내용제어망 스마트 보안관리 플랫폼 공지게시물 내용제어망 스마트
-                                                        제어망 스마트 보안관리 플랫폼 공지게시물 내용제어망 스마트 보안관리 플랫폼 공지게시물 내용제어망 스마트
-                                                        제어망 스마트 보안관리 플랫폼 공지게시물 내용제어망 스마트 보안관리 플랫폼 공지게시물 내용제어망 스마트
-                                                        제어망 스마트 보안관리 플랫폼 공지게시물 내용 제어망 스마트 보안관리 플랫폼 공지게시물 내용 제어망 스마트 보안관리 플랫폼 공지게시물 내용
-                                                        제어망 스마트 보안관리 플랫폼 공지게시물 내용 제어망 스마트 보안관리 플랫폼 공지게시물 내용
-                                                        제어망 스마트 보안관리 플랫폼 공지게시물 내용제어망 스마트 보안관리 플랫폼 공지게시물 내용제어망 스마트
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--// row end-->
-                                    </div>
-                                    <!--// form-wrap end -->
-                                </fieldset>
-                            </form>
-                            <!-- form end -->
-                        </div>
-                        <!--// input form -->
-                        <!-- bottom button area start -->
-                        <div class="bottom-btn-area"
-                            data-buttons='[{"text": "목록"}]'>
-                        </div>
-                        <!--// bottom button area end -->
+                        <!-- 팝업 호출 버튼 -->
+                        <button type="button" id="popup-btn" class="btn btn-primary btn-lg">
+                            공지글 상세조회
+                        </button>
+                        <!--// 팝업 호출 버튼 -->
+                        
+                        <!-- popup script -->
+                        <script type="module">
+                            import { openCenteredPopup } from '../../assets/js/components/popup.js';
+
+                            document.addEventListener('DOMContentLoaded', () => {
+                                document.getElementById('popup-btn').addEventListener('click', () => {
+                                    const url = './popup/SB-USR-007.html';
+                                    openCenteredPopup(url, 800, 500);
+                                });
+                            });
+                        </script>
+                        
                     </div>
                     <!--// 컨텐츠 영역 -->
 
